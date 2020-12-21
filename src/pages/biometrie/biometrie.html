@@ -1,0 +1,59 @@
+<!--
+  Generated template for the BiométriePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+  <ion-item color="secondary"> 
+    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg 
+      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p> 
+      <p>Allergie : {{Allergie}}</p>
+    </ion-label>
+    
+    </ion-item>
+</ion-header>
+
+<ion-content padding>
+
+  <form (ngSubmit)="logForm()">
+
+    <ion-list> <ion-item-group>
+        <ion-item-divider color="warning">
+          <ion-label>Poids 
+            <p><i>(ex 3,5 kg : indiquer 3 puis 500)</i></p></ion-label>
+        </ion-item-divider> 
+
+  <ion-item>
+    <ion-label position="stacked">Kilogrammes</ion-label>
+    <ion-input inputmode ="numeric" type="number" [(ngModel)]="biometrie.Kg" name="poids" placeholder="{{KgFill}}"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Grammes</ion-label>
+    <ion-input inputmode ="numeric" type="number" [(ngModel)]="biometrie.Gr" name="poids" placeholder="{{GrFill}}"></ion-input>
+  </ion-item>
+
+      </ion-item-group>
+
+      <ion-item-group>
+        <ion-item-divider color="warning">
+          <ion-label>Age 
+              <p><i>(ex 1 an et demi : indiquer 1 puis 6)</i></p></ion-label>
+        </ion-item-divider> 
+
+  <ion-item>
+    <ion-label position="stacked">Années</ion-label>
+    <ion-input inputmode="numeric" type="number" [(ngModel)]="biometrie.ans" name="ans" placeholder="{{AnsFill}}"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Mois</ion-label>
+    <ion-input inputmode="numeric" type="number" [(ngModel)]="biometrie.mois" name="mois" placeholder="{{MoisFill}}"></ion-input>
+  </ion-item>
+  <button ion-button type="submit" block>Enregistrer les données</button>
+ 
+      </ion-item-group>
+</ion-list>
+</form>
+<button ion-button (click)="delete()" block color="danger">Effacer les données</button>
+</ion-content>

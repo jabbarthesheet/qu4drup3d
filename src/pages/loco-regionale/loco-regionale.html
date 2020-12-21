@@ -1,0 +1,244 @@
+<ion-header translucent>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Anesthésie loco-régionale</ion-title>
+  </ion-navbar>
+  <ion-item color="secondary"> 
+    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg 
+      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+    <p>Allergie : {{Allergie}}</p></ion-label>
+    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> 
+  </ion-item>
+</ion-header>
+
+<ion-content padding>
+
+  
+  <ion-item-divider (click)="ToggleAPD()" color="warning">
+    <ion-label>Anesthésie péridurale pédiatrique
+  <ion-icon *ngIf="!isShownAPD" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
+  <ion-icon *ngIf="isShownAPD" class="fluidIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+    </ion-label>
+  </ion-item-divider> 
+
+  <ion-card *ngIf="isShownAPD">
+
+      <ion-item> <b>Ponction :</b> 
+        <p>Espace L4-L5 (voie de Taylor),</p> 
+        <p>Entre les épines iliaques postérieures,</p>
+        <p>Aiguille pédiatrique (graduation/5mm). </p> </ion-item>
+
+      <ion-item><b>Distance</b> de l'espace péridural :
+        <p>Estimation</p> 
+      
+
+      <ion-item font-size="smaller">- Selon Kemura : <b>{{Kemura}} mm</b> 
+        <p>Formule basée sur le poids.</p> </ion-item> 
+
+      <ion-item>- Selon Busoni <b>{{Busoni}} mm</b> 
+        <p>Formule basée sur l'âge ;</p> 
+        <p>Valable après 2 ans.</p></ion-item>
+
+      </ion-item>
+
+      <ion-item>Cathétériser l'EPD sur <b>30 mm</b>.</ion-item>
+
+      <ion-item><b>Cassette de PIEB + PCEA :</b>
+        <p>- Volume total de 50 mL,</p>
+        <p>- Ropi 1 mg/mL + Suf 0,2 µg/mL,</p>
+        <p>- Tubulure et clef sécurité en SSPI.</p>
+        </ion-item>
+
+      <ion-item><b>Posologies</b> (suggestions) :
+      <p> - Bolus horaire : <b>{{BolusPIEBRopiSuf}} mL</b> toutes les heures,</p>
+      <p> - Bolus à demande : <b>{{BolusPCEARopiSuf}} mL</b>, PR 20 min,</p>
+      <p> - Dose max. : <b>{{DoseMaxPCEARopiSuf}} mL</b> toutes les 4 heures.</p>
+      </ion-item>
+  
+  </ion-card>
+
+  <ion-item-divider (click)="ToggleRachi()" color="danger">
+    <ion-label>Rachi-anesthésie néo-natale
+  <ion-icon *ngIf="!isShownRachi" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
+  <ion-icon *ngIf="isShownRachi" class="fluidIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+    </ion-label>
+  </ion-item-divider> 
+
+  <ion-card *ngIf="isShownRachi">
+
+      <ion-item><b>Indications</b> :
+        <p>- Chirurgie sous ombilicale,</p>
+        <p>- Nouveau né de moins de 5 kg.</p></ion-item>
+
+      <ion-item> <b>Ponction :</b> 
+        <p>Espace L4-L5 (voie de Taylor),</p> 
+        <p>Entre les épines iliaques postérieures,</p>
+        <p>Aguille 25G courte (bleue).</p> </ion-item>
+
+      <ion-item><b>Bupivacaïne hyperbare</b>
+        <p>- 5 mg/mL</p>
+        <p>- {{VolBupi5NN}} mL (pour 0,2 mL/kg)</p>
+        <p>- Utiliser une seringue à insuline.</p>
+        </ion-item>
+
+      <div class="astucediv" padding = "15 px">
+        <img class="lightbulb" src="/assets/imgs/light-bulb.png">
+        <p class="astucepara"> 
+        <b>L'astuce de Joëlle</b> : Quelques gouttes de G30% sur les lèvres, avant, pendant et après la rachianesthésie</p>
+        
+        </div>
+  
+  </ion-card>
+
+
+  <ion-item-divider (click)="ToggleALRP()" color="tertiary">
+    <ion-label>Blocs périphériques
+  <ion-icon *ngIf="!isShownALRP" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
+  <ion-icon *ngIf="isShownALRP" class="fluidIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+    </ion-label>
+  </ion-item-divider> 
+
+  <ion-item *ngIf="isShownALRP">
+    <ion-label>Dilutions suggérées : 
+      <p> - Ropivacaïne : 2 mg/mL</p>
+      <p> - Lévobupivacaïne : 2,5 mg/mL</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item *ngIf="isShownALRP">
+    <ion-label>Posologies suggérées : 
+      <p>(en injection unique)</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-grid fixed="true" *ngIf="isShownALRP" >
+    <ion-row class="ionFirstRow">
+      <ion-col>
+      Bloc
+      </ion-col>
+      <ion-col>
+      Volume/poids
+      </ion-col>
+      <ion-col>
+      Mon patient
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Axillaire
+            </ion-col>
+      <ion-col>
+      0,2 à 0,5 mL/kg
+      </ion-col>
+      <ion-col>
+     {{VolBAXmin}} à {{VolBAXmax}} mL
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Fémoral
+            </ion-col>
+      <ion-col>
+        0,3 à 1 mL/kg
+      </ion-col>
+      <ion-col>
+      {{VolFEMmin}} à {{VolFEMmax}} mL
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Sciatique
+            </ion-col>
+      <ion-col>
+       0,3 à 1 mL/kg
+      </ion-col>
+      <ion-col>
+      {{VolSciatMin}} à {{VolSciatMax}} mL
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Ilio-hypogastrique
+            </ion-col>
+      <ion-col>
+       0,5 mL/kg
+      </ion-col>
+      <ion-col>
+        {{VolIH}} mL
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Pénien
+            </ion-col>
+      <ion-col>
+       0,1 mL/kg
+      </ion-col>
+      <ion-col>
+    {{VolPenien}} mL
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Paravertébral
+            </ion-col>
+      <ion-col>
+       0,5 mL/kg
+      </ion-col>
+      <ion-col>
+        {{VolBPV}} mL
+      </ion-col>
+    </ion-row>
+
+  <ion-row>
+    <ion-col>
+      TAP
+          </ion-col>
+    <ion-col>
+     0,3 à 0,5 mL/kg
+    </ion-col>
+    <ion-col>
+      {{VolTAPmin}} à {{VolTAPmax}} mL
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      Carré des lombes 
+          </ion-col>
+    <ion-col>
+     Volume
+    </ion-col>
+    <ion-col>
+      Volume
+     </ion-col>
+
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      Erecteurs du rachis
+    </ion-col>
+    <ion-col>
+     Volume
+    </ion-col>
+    <ion-col>
+      Volume
+    </ion-col>
+  </ion-row>
+
+</ion-grid>
+
+
+
+</ion-content>
+

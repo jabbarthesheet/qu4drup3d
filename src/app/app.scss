@@ -14,3 +14,29 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+.dilution {
+    font-size: smaller; 
+    font-style: italic;
+}
+
+.menuIcon {
+
+    float: right !important;    
+
+};
+
+.ionFirstRow {
+    border: 0.5px solid grey;
+    text-align: center;
+    vertical-align: center !important;
+    font-style: bold !important; 
+    font-size: 120% !important; 
+  }
+
+  ion-row {
+    border: 0.5px solid grey;
+    text-align: center;
+    font-size: smaller !important;
+  }

@@ -1,0 +1,118 @@
+<!--
+  Generated template for the GestionFluidesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header translucent>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Gestion des apports</ion-title>
+  </ion-navbar>
+  <ion-item color="secondary"> 
+    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg 
+      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+      <p>Allergie : {{Allergie}}</p></ion-label> 
+    </ion-item>
+</ion-header>
+
+<ion-content padding>
+
+
+      <!-- ITEM MON PATIENT -->
+
+  
+      <!-- ITEMS CALCULES-->
+  
+      <ion-list>
+        <ion-item-group>
+          
+          <ion-item-divider (click)="ToggleApports()" color="primary">
+            <ion-label>Apports hydriques
+          <ion-icon *ngIf="!isShownApports" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
+          <ion-icon *ngIf="isShownApports" class="fluidIcon" name="close-circle" style="zoom:1.5"></ion-icon>
+            </ion-label>
+          </ion-item-divider> 
+
+
+          <ion-card *ngIf="isShownApports">
+          <ion-item>Besoins de base 
+            <p><b>{{Solute}} : {{ApportBaseHoraire}} mL/h</b></p>
+          </ion-item>
+          <ion-item>Compensation du jeûne ({{DureeJeune}} heures)
+            <p><b>{{Solute}} : {{CompJeune}} mL</b></p>
+            <p>Passer {{CompJeuneH1}} mL sur 1h</p>
+            <p>Puis passer {{CompJeuneH2}} mL sur 2h</p>
+          </ion-item>
+          <ion-item> <ion-label>Pertes chirurgicales</ion-label>
+            <ion-select #newselect (ionChange)="SelectPerteChir(chir.pertes)" [(ngModel)]="chir.pertes" interface="action-sheet" placeholder="choisir"
+             okText="Yup." cancelText="Retour">
+              <ion-option checked="true" value="Mineures">Mineures (2 mL/kg/h)</ion-option>
+              <ion-option value="Moderees">Modérées (5 mL/kg/h)</ion-option>
+              <ion-option value="Importantes">Importantes (10 mL/kg/h)</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>Pertes insensibles
+            <p><b>{{Solute}} : {{CompPertesChir}} mL/h</b></p>
+          </ion-item>
+          <ion-item>Apports recommandés : <b>
+            <p> - La 1ere heure {{Solute}} : {{TotalH1}} mL</p>
+            <p> - La 2e et la 3e heure {{Solute}} : {{TotalH2et3}} mL</p>
+            <p> - puis {{Solute}} : {{TotalHoraire}} mL/h</p>
+          </b>
+          </ion-item>
+        </ion-card>
+
+          
+
+          <ion-item-divider (click)="ToggleCGR()" color="danger">
+            <ion-label>Transfusion CGR
+          <ion-icon *ngIf="!isShownCGR" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
+          <ion-icon *ngIf="isShownCGR" class="fluidIcon" name="close-circle" style="zoom:1.5"></ion-icon>
+            </ion-label>
+          </ion-item-divider> 
+
+          <ion-card *ngIf="isShownCGR">
+          <ion-item>Masse sanguine estimée (80 mL/kg) : 
+            <p><b>{{MasseSanguine}} mL</b></p></ion-item>
+          <ion-item>
+            <ion-label color="danger">Hémogloginémie mesurée : <b>{{Hbmesuree}} g/dL</b></ion-label>
+            <ion-range max="16" step="1"  pin="true" color="danger"
+             (ionChange)="MesureeHb()" [(ngModel)]="Hbmesuree"> </ion-range>
+          </ion-item>
+
+          <ion-item >
+             <ion-label color="secondary">Objectif d'hémoglobinémie : <b>{{Hbsouhaitee}} g/dL</b></ion-label>
+            <ion-range  color="secondary" max="16" pin="true" step="1"  
+             (ionChange)="SouhaiteeHb()" [(ngModel)]="Hbsouhaitee"> </ion-range>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Transfuser : {{VolCGR}}
+              <p><b>Pour corriger {{DiffHb}} g/dL d'hémoglobine</b></p>
+            </ion-label>
+        </ion-item>
+        </ion-card>
+
+        <ion-item-divider (click)="ToggleAutresPSL()" color="warning">
+          <ion-label>Autres PSL
+            <ion-icon *ngIf="!isShownAutresPSL" class="fluidIcon" name="add-circle"  style="zoom:1.5"></ion-icon>
+          <ion-icon *ngIf="isShownAutresPSL" class="fluidIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+          </ion-label>
+        </ion-item-divider> 
+
+          <ion-card *ngIf="isShownAutresPSL">
+          <ion-item>Unités plaquettaires
+            <p><b>Passer {{UnitesPlaquettaires}} UI Plaquettaires</b></p>
+          </ion-item>
+          <ion-item>Plasma frais congelé
+            <p><b>Passer {{VolPFC}} mL de PFC</b></p>
+          </ion-item>
+        </ion-card>
+
+        </ion-item-group>
+        </ion-list>
+
+</ion-content>

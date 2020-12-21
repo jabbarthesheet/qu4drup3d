@@ -1,1 +1,52 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content" type="overlay" side="start" menuId="custom" contentId="main" class="my-custom-menu">
+
+  <ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-title>Menu QuadruPed</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+
+      <ion-item (click)="openAccueilPage()">Accueil </ion-item>
+      <ion-item (click)="openPatientPage()" color="warning">Mon patient</ion-item>
+
+      <ion-item-divider (click)="ToggleCalculs()"> 
+        <ion-label>Mes calculs
+          <ion-icon *ngIf="!isShownCalculs" class="menuIcon" name="arrow-down" style="zoom:1.5"></ion-icon>
+          <ion-icon *ngIf="isShownCalculs" class="menuIcon" name="arrow-up"  style="zoom:1.5"></ion-icon>
+        </ion-label>
+      </ion-item-divider> 
+     
+      <ion-list *ngIf="isShownCalculs">
+      <ion-item (click)="openInductionPage()"> Induction anesthésique</ion-item>
+      <ion-item (click)="openVASPage()">Gestion des voies aériennes</ion-item>
+      <ion-item (click)="openALRPage()">Anesthésie loco-régionale</ion-item>
+      
+      <ion-item (click)="openEntretienPage()">Entretien anesthésique</ion-item>
+      <ion-item (click)="openFluidesPage()">Gestion des fluides</ion-item>
+      <ion-item (click)="openAntalgiePage()">Analgésie et NVPO</ion-item>
+
+      <ion-item (click)="openUrgencesPage()" color="danger">Urgences</ion-item> 
+    </ion-list>
+    
+      <ion-item-divider (click)="ToggleProtocoles()"> 
+        <ion-label>Mes protocoles
+          <ion-icon *ngIf="!isShownProtocoles" class="menuIcon" name="arrow-down" style="zoom:1.5"></ion-icon>
+          <ion-icon *ngIf="isShownProtocoles" class="menuIcon" name="arrow-up"  style="zoom:1.5"></ion-icon>
+        </ion-label>
+      </ion-item-divider> 
+    
+    <ion-list *ngIf="isShownProtocoles">
+        <ion-item (click)="openAntiInfPage()">Anti-infectieux</ion-item>
+    </ion-list>     
+
+  </ion-list>
+  </ion-content>
+  
+    </ion-menu>
+
+
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+

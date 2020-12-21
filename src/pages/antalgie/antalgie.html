@@ -1,0 +1,206 @@
+<!--
+  Generated template for the AntalgiePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header translucent>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Analgésie & NVPO</ion-title>
+  </ion-navbar>
+  <ion-item color="secondary"> 
+    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg 
+      <p>Allergie : {{Allergie}}</p></ion-label>
+    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> 
+  </ion-item>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item-group>
+      <ion-item-divider (click)="TogglePalier1()" color="primary"> 
+        <ion-label>Palier 1 
+          <ion-icon *ngIf="!isShownPal1" class="antalgiquesIcon" name="add-circle"  style="zoom:1.5"></ion-icon>
+          <ion-icon *ngIf="isShownPal1" class="antalgiquesIcon" name="close-circle" style="zoom:1.5"></ion-icon>
+        </ion-label>
+      </ion-item-divider> 
+  
+      <ion-card *ngIf="isShownPal1">
+      <ion-item>
+        <ion-label><b>Paracétamol : {{AdminParacetamol}} mg IVL ou PO</b>
+          <p>pour 15 mg/kg, toutes les 6h</p>
+        </ion-label>
+      </ion-item>
+  
+      <ion-item >
+        <ion-label><b>Ketoprofene (Profenid<span>&#174;</span>) : {{AdminKeto}} mg IVL</b>
+          <p>pour 1 mg/kg, toutes les 8 h</p> 
+        </ion-label>
+      </ion-item>
+
+      <ion-item >
+        <ion-label><b>Ibuprofene : {{AdminIbu}} mg PO</b>
+          <p>pour 10 mg/kg, toutes les 8h</p> 
+        </ion-label>
+      </ion-item>
+    </ion-card>
+      
+  
+      <ion-item-divider (click)="TogglePalier2()" color="warning">
+        <ion-label>Palier 2
+
+          <ion-icon *ngIf="!isShownPal2" class="antalgiquesIcon" name="add-circle"  style="zoom:1.5"></ion-icon>
+          <ion-icon *ngIf="isShownPal2" class="antalgiquesIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+
+        </ion-label>
+      </ion-item-divider>
+
+      <ion-card *ngIf="isShownPal2">
+      <ion-item >
+        <ion-label><b>Nalbuphine (Nubain<span>&#174;</span>) : {{AdminNubain}} mg IVL</b>
+          <p>pour 0,2 mg/kg, toutes les 4h</p> 
+          <p>en ambulatoire, diviser par 2 : {{AdminNubainHdJ}} mg</p>
+          <p>injecter sur 20 minutes avant 1 an</p>
+        </ion-label>
+      </ion-item>
+      
+      <ion-item >
+        <ion-label><b>Nefopam (Acupan<span>&#174;</span>) : {{AdminAcupan}} mg/j IVSE</b>
+          <p>pour 1 mg/kg/j</p> 
+        </ion-label>
+      </ion-item>
+      
+      <ion-item >
+        <ion-label><b>Tramadol (Contramal<span>&#174;</span>) : {{AdminTramadol}} mg IVL ou PO</b>
+          <p>pour 1 mg/kg, toutes les 6h</p> 
+        </ion-label>
+      </ion-item>
+
+    </ion-card>
+  
+      <ion-item-divider (click)="TogglePalier3()" color="danger">
+        <ion-label >Palier 3
+
+          <ion-icon *ngIf="!isShownPal3" class="antalgiquesIcon" name="add-circle"  style="zoom:1.5"></ion-icon>
+          <ion-icon *ngIf="isShownPal3" class="antalgiquesIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+
+        </ion-label>
+      </ion-item-divider>
+  
+
+      <ion-card *ngIf="isShownPal3">
+      <ion-item>
+        <ion-label><b>Morphine avant réveil : {{AdminMorphineBO}} mg IVD</b>
+          <p>pour 100 µg/kg, une seule fois</p> 
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label><b>Morphine en titration : {{AdminMorphineTitration}} mg IVD</b>
+          <p>pour 25 µg/kg, toutes les 3 min</p> 
+          <p>revoir après 4 boli</p> 
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label><b>Morphine en PCA : {{AdminMorphinePCA}} mg IVL</b>
+          <p>pour 20 µg/kg, PR de 5 min</p> 
+          <p>Dose max : {{AdminMorphinePCAMax}} mg (400 µg/kg), pour 4h</p> 
+        </ion-label>
+      </ion-item> 
+
+      <ion-item>
+        <ion-label><b>Morphine per os : </b>
+          <p> - {{AdminMorphinePOLP}} mg LP toutes les 12h (1 mg/kg) PO</p> 
+          <p>- {{AdminMorphinePOID}} mg toutes les 4h SB (0,1 mg/kg) PO</p> 
+        </ion-label>
+      </ion-item> 
+
+    </ion-card>
+
+
+      <ion-item-divider (click)="ToggleAutres()" color="tertiary">
+        <ion-label >Autres antalgiques
+
+          <ion-icon *ngIf="!isShownAutres" class="antalgiquesIcon" name="add-circle"  style="zoom:1.5"></ion-icon>
+          <ion-icon *ngIf="isShownAutres" class="antalgiquesIcon" name="close-circle"   style="zoom:1.5"></ion-icon>
+
+        </ion-label>
+      </ion-item-divider>
+  
+      <ion-card *ngIf="isShownAutres">
+
+      <ion-item>
+        <ion-label><b>Gabapentine (Neurontin<span>&#174;</span>): {{AdminNeurontin}} mg PO</b>
+          <p>pour 5 mg/kg, toutes les 8h</p> 
+          <p>NB comprimés de 150 ou 300 mg</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label><b>Phloroglucinol (Spasfon<span>&#174;</span>) : </b>
+          <p>- <b>{{AdminSpasfonIV}} mg</b> (0,5 mg/kg) IVL, toutes les 6h</p> 
+          <p>- <b>{{AdminSpasfonPO}} mg</b> (1,5 mg/kg) PO, toutes les 6h</p> 
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label><b>Amitryptiline (Laroxyl<span>&#174;</span>) : </b>
+          <p>- <b>{{AdminLaroxylIV}} mg</b> (0,5 mg/kg/j) IVSE sur 6h, 1 fois</p> 
+          <p>- <b>{{AdminLaroxylPO}} mg</b> (0,5 mg/kg/j) PO, 1 fois</p> 
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label><b>Clonazepam (Rivotril<span>&#174;</span>) : {{AdminRivotrilPO}} mg PO</b>
+          <p>- pour 0,01 mg/kg, toutes les 8h</p> 
+          <p>- soit <b>{{GouttesRivotril}} gouttes</b> (1 gtte/10kg), 3 fois par jour</p> 
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label><b>Catapressan (Clonidine <span>&#174;</span>) : </b>
+          <p>- <b>{{AdminClonidineIVSE}} µg/h</b> (0,5 µg/kg/h) IVSE</p> 
+          <p>> possibilité de doubler si insuffisant</p>
+          <p>- <b>{{AdminClonidinePO}} mg</b> (5 µg/kg) PO, toutes les 8h</p> 
+        </ion-label>
+      </ion-item>
+
+      </ion-card>
+
+
+      <ion-item-divider (click)="ToggleAntiEmet()">
+        <ion-label >Anti-émétiques
+
+          <ion-icon *ngIf="!isShownAntiEmet" class="antalgiquesIcon" name="add-circle"  style="zoom:1.5"></ion-icon>
+          <ion-icon *ngIf="isShownAntiEmet" class="antalgiquesIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+
+        </ion-label>
+      </ion-item-divider>
+  
+      <ion-card *ngIf="isShownAntiEmet">
+
+      <ion-item>
+        <ion-label><b>Ondansétron (Zophren<span>&#174;</span>): {{AdminZophren}} mg IVL ou PO</b>
+          <p>pour 0,1 mg/kg, toutes les 8h</p> 
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label><b>Dropéridol (Droleptan<span>&#174;</span>) : {{AdminDroleptan}} µg IVL</b>
+          <p>pour 25 µg/kg , renouvelable 1 fois</p>
+        </ion-label>
+      </ion-item>
+
+      </ion-card>
+
+  
+    </ion-item-group>
+  </ion-list>
+
+</ion-content>

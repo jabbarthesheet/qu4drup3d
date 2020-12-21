@@ -1,0 +1,39 @@
+<ion-header translucent>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Anti-infectieux</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar
+    [(ngModel)]="searchTerm"
+    (ionChange)="setFilteredItems()"
+  ></ion-searchbar>
+
+  NB : les posologies indiquées sont adaptées à la <b>pédiatrie</b> uniquement.
+
+  <ion-list>
+    <ion-card *ngFor="let card of cards, let i = index" [attr.data-index]="i" padding="5%">
+      <ion-card-title (click)="ToggleCard(card, i)" class="carteATB"><u>{{card.title}}</u>
+        <ion-icon *ngIf="!cards.isShownCard" class="fluidIcon" name="add-circle"  style="zoom:1"></ion-icon>
+        <ion-icon *ngIf="cards.isShownCard" class="fluidIcon" name="close-circle"   style="zoom:1"></ion-icon>
+      </ion-card-title>
+      <ion-card-content *ngIf="cards.isShownCard">
+        <p><b>Posologie</b> : {{card.posologie}}</p>
+        <br>
+        <p><b>Reconstitution</b> : {{card.reconstitution}}</p>
+        <br>
+        <p><b>Dilution</b> : {{card.dilution}}</p>
+        <br>
+        <p><b>Administration</b> : {{card.administration}}</p>
+        <br>
+        <p><b>Remarques</b> : {{card.remarques}}</p>
+        <br>
+      </ion-card-content>
+
+    </ion-card>
+  </ion-list>
+</ion-content>

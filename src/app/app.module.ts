@@ -1,30 +1,85 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-
+import { NgModule, ErrorHandler } from '@angular/core';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { App, NavController, NavParams } from 'ionic-angular';
+import { ModalController, ViewController } from 'ionic-angular';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from "@angular/forms";
+
+import { AccueilPage } from '../pages/accueil/accueil';
+
+import { PatientPage } from '../pages/patient/patient';
+import { BiometriePage } from '../pages/biometrie/biometrie';
+import { OptionsPage } from '../pages/options/options';
+import { PlateauInductionPage } from '../pages/plateau-induction/plateau-induction';
+import { PlateauVasPage } from '../pages/plateau-vas/plateau-vas';
+import { GestionFluidesPage } from '../pages/gestion-fluides/gestion-fluides';
+import { AntalgiePage } from '../pages/antalgie/antalgie';
+import { UrgencePage } from '../pages/urgence/urgence';
+import { EntretienAnesthPage } from '../pages/entretien-anesth/entretien-anesth';
+import { LocoRegionalePage } from '../pages/loco-regionale/loco-regionale';
+
+
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { AntiInfectieuxPage } from '../pages/anti-infectieux/anti-infectieux';
+import { ServiceDataProvider } from '../providers/service-data/liste_anti_infectieux';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    AccueilPage,
+    PatientPage,
+    BiometriePage, 
+    OptionsPage,
+    PlateauInductionPage,
+    PlateauVasPage,
+    GestionFluidesPage,
+    AntalgiePage,
+    UrgencePage,
+    EntretienAnesthPage,
+    AntiInfectieuxPage,
+    LocoRegionalePage,
   ],
+
   imports: [
+
+    HttpClientModule,  
+    ReactiveFormsModule,
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      backButtonText: 'retour',
+      iconMode: 'md'
+     }),
+    IonicStorageModule.forRoot(),
+    
   ],
+
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    AccueilPage,
+    PatientPage,
+    BiometriePage, 
+    OptionsPage,
+    PlateauInductionPage,
+    PlateauVasPage,
+    GestionFluidesPage,
+    AntalgiePage,
+    UrgencePage,
+    EntretienAnesthPage,
+    AntiInfectieuxPage,
+    LocoRegionalePage,
   ],
+
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ServiceDataProvider
   ]
 })
 export class AppModule {}

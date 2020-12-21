@@ -1,0 +1,136 @@
+<ion-header translucent>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Drogues d'urgences</ion-title>
+  </ion-navbar>
+  <ion-item color="secondary"> 
+    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg 
+      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+          <p>Allergie : {{Allergie}}</p></ion-label>
+    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> 
+  </ion-item>
+</ion-header>
+
+<ion-content>
+
+
+
+    <ion-card>
+      <ion-card-header (click)="ToggleHypoTA()">
+        <ion-card-title>Hypotension artérielle
+        </ion-card-title>
+        <ion-icon *ngIf="!isShownHypoTA" class="urgenceIcon" name="add-circle"  style="zoom:1.2"></ion-icon>
+          <ion-icon *ngIf="isShownHypoTA" class="urgenceIcon" name="close-circle" style="zoom:1.2"></ion-icon>
+      </ion-card-header>
+      <ion-card-content *ngIf="isShownHypoTA">
+        <p>Définition : PAM abaissée de 20% ou plus par rapport la valeur mesurée avant induction ou pour un <b>enfant de {{ageAnnees}} ans</b>,
+          <b>PAS &lt; {{PAShypoTA}} mmHg.</b> </p>
+        <p>Mesures à envisager :</p>
+        <p> - Remplissage par <b>{{VolRemplissage}} mL </b> de <b>{{SoluteRemplissage}}</b>, renouvelable une fois,</p>
+        <p> - Ephédrine par bolus IVD de <b>{{AdminEphedrine}} mg</b>, renouvelable </p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="ToggleACR()" color="danger">
+      <ion-card-header>
+        <ion-card-title>Arrêt Cardio-Respiratoire
+        </ion-card-title>
+        <ion-icon *ngIf="!isShownACR" class="urgenceIcon" name="add-circle"  style="zoom:1.2"></ion-icon>
+          <ion-icon *ngIf="isShownACR" class="urgenceIcon" name="close-circle"  style="zoom:1.2"></ion-icon>
+      </ion-card-header>
+      <ion-card-content *ngIf="isShownACR">
+          <p>1. Appel d'urgence : <b>3535</b>.</p>
+          <p>2. Débuter le massage cardiaque externe.</p>
+          <p>3. Ventiler en FiO2 1.</p>
+          <br>
+          <h4>Posologies ACR : </h4>
+
+        <ion-item color="danger">
+          <ion-label>
+            Adrénaline : <b>{{PosoAdrenalineACR}} µg</b> - IVD/5 minutes
+            <p>- 10 µg/kg, renouvellable</p>
+            <p>- d'emblée si asystolie, au 3e choc si TV/FV</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item color="danger">
+          <ion-label>
+            CEE : <b>{{CEEACR}} J</b> 
+            <p>- 4 J/kg</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item color="danger">
+          <ion-label>
+            Cordarone : <b>{{PosoCordaroneACR}} mg</b> - IVD 
+            <p>- 5 mg/kg</p>
+            <p>- renouvelable 1 fois après 5 min</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item color="danger">
+          <ion-label>
+            Bicar 4,2% : <b>{{PosoBicarACR}} mL</b> - IVL 
+            <p>- 2 mL/kg dès la 15e minute</p>
+          </ion-label>
+        </ion-item>
+
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card>
+      <ion-card-header (click)="ToggleChocAna()">
+        <ion-card-title>Anaphylaxie
+        </ion-card-title>
+        <ion-icon *ngIf="!isShownChocAna" class="urgenceIcon" name="add-circle"  style="zoom:1.2"></ion-icon>
+          <ion-icon *ngIf="isShownChocAna" class="urgenceIcon" name="close-circle"  style="zoom:1.2"></ion-icon>
+      </ion-card-header>
+      <ion-card-content *ngIf="isShownChocAna">
+        <p>Définition : réaction anaphylactique de grade 2 ou 3 si : HypoTA (-30%), Tachy (FC +30%) ou oedeme de Quincke ou bronchospasme.</p>
+        <br>
+        <p>Mesures à mettre en place :</p>
+        <p> - éviction de tout allergène suspecté,</p>
+        <p> - adrénaline : <b>{{PosoAdrenalineAnaph}} µg IVD</b>, renouvelable 5 à 10 fois,</p>
+        <p> - solumédrol : <b>{{PosoSoluAnaph}} mg IVD</b>, renouvelable 1 fois,</p>
+        <p> - prévoir bilan allergo-immunologique après contrôle de la situation clinique.</p>
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card color="warning">
+      <ion-card-header (click)="ToggleHTM()">
+        <ion-card-title>Hyperthermie maligne
+        </ion-card-title>
+        <ion-icon *ngIf="!isShownHTM" class="urgenceIcon" name="add-circle"  style="zoom:1.2"></ion-icon>
+          <ion-icon *ngIf="isShownHTM" class="urgenceIcon" name="close-circle"  style="zoom:1.2"></ion-icon>
+      </ion-card-header>
+      <ion-card-content *ngIf="isShownHTM">
+        <p>Evoquer devant une augmentation importante et inexpliquée de l'EtCO2, la FC, la température ; devant l'apparition d'une rigidité musculaire des masséters, du tronc ou des membres.</p>
+        <p>Conduite à tenir en cas de suspicion :</p>
+        <p>- Arrêt halogénés, changement des filtres et tuyaux</p>
+        <p>- Hyperventilation en FiO2 1</p>
+        <p>- Contre indication absolue celocurine jusqu'à preuve du contraire</p>
+        <p>- Dantrolène <b>{{AdminDantroleneHTM}} mg IVL</b> (soit 2,5 mg/kg, renouvelable 4 fois max) à diluer dans de l'<b>EPPI</b></p>
+        <p><i>NB : le dantrolène est au dessus du frigo en SSPI.</i></p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header (click)="ToggleIAL()">
+        <ion-card-title>Intoxication aux AL
+        </ion-card-title>
+        <ion-icon *ngIf="!isShownIAL" class="urgenceIcon" name="add-circle"  style="zoom:1.2"></ion-icon>
+          <ion-icon *ngIf="isShownIAL" class="urgenceIcon" name="close-circle"  style="zoom:1.2"></ion-icon>
+      </ion-card-header>
+      <ion-card-content *ngIf="isShownIAL">
+        <p>Devant toute suspicion, en présence de signes neurologiques :</p>
+        <p>- Rivotril : <b>{{PosoRivotrilIAL}} µg IVD</b> (soit 15 µg/kg)</p>
+        <p>- Intralipides 20% : <b>{{PosoIntralipidesIAL}} mL IVL</b> (soit 3mL/kg), renouvelable</p>
+        
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>

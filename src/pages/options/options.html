@@ -1,0 +1,52 @@
+<!--
+  Generated template for the OptionsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-item color="secondary"> 
+    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg 
+      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h </p>
+      <p>Allergies : <span color="danger">{{Allergie}}</span></p></ion-label>
+    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> 
+    </ion-item>
+</ion-header>
+
+<ion-content padding>
+
+    <!-- ITEM MON PATIENT -->
+
+    <ion-item>
+      <ion-label position="stacked">Allergies</ion-label>
+      <ion-input inputmode ="text" type="text" (ionChange)="addAllergie()" [(ngModel)]="NewAllergie" name="" placeholder="{{Renseigner}}"></ion-input>
+    </ion-item>
+
+  <ion-item>
+    <ion-label> Durée du jeune pré-opératoire : 
+      <p></p><p><b>{{DureeJeune}} heures</b></p></ion-label>
+    <ion-range  max="12" pin="true" step="1" ticks="true" snaps (ionChange)="FnDureeJeune()" [(ngModel)]="DureeJeune"> </ion-range>
+  </ion-item>
+    
+
+    <ion-card color="warning">
+      <ion-card-content>
+       Attention : La durée du jeûne est utilisée pour déterminer les <b>apports hydriques recommandés</b>, pas le risque 
+          d'inhalation à l'induction. <i>Exemple : sténose du pylore avec durée de jeûne de 6h : risque d'inhalation.</i> 
+        Le risque d'<b>estomac plein</b> est à renseigner ci-dessous, indépendemment de la durée du jeûne.
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-item>
+      <ion-label>Estomac plein</ion-label>
+      <ion-toggle checked="{{estomaclast}}" [(ngModel)]="options.estomacplein" (ionChange)="FnEstomacPlein(options)"></ion-toggle>
+    </ion-item>
+
+
+
+ 
+
+
+
+</ion-content>

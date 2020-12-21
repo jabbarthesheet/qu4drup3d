@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Bienvenue !</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card class="cardWelcome">
+    <ion-card-title padding="5%" ></ion-card-title>
+    <img class="resize" src="/assets/imgs/sleeping-baby.png"> 
+    <ion-card-content class="card"> QuadruPed est une petite application pour se faciliter la vie au bloc opératoire. Pour commencer, cliquez sur le bouton ci-dessous et saisissez les informations relatives à votre patient. 
+ 
+      <ion-item>
+        <ion-label>
+          <button ion-button padding="5%" color="primary" (click)="newPatient()">Nouveau patient</button>
+        </ion-label>
+      </ion-item>
+      <p>Attention : 'Nouveau patient' efface toutes les données précédentes.</p>
+
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
+
+
+  
+  <ion-footer>
+    <ion-toolbar padding="5%">
+      <ion-title>info </ion-title>
+      <br>
+      QuadruPed est une application gratuite, sans publicité, qui ne propose que des <b>suggestions</b> de posologie.
+      En utilisant l'application, vous acceptez les <a href=""> conditions générales d'utilisation</a>.  
+      <br><br>
+  </ion-toolbar>
+</ion-footer>

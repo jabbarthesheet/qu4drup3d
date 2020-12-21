@@ -1,0 +1,68 @@
+<!--
+  Generated template for the PlateauVasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header translucent>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Voies aériennes</ion-title>
+  </ion-navbar>
+  <ion-item color="secondary"> 
+    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg 
+      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+    <p>Allergie : {{Allergie}}</p></ion-label>
+    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> 
+  </ion-item>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list> 
+      <ion-item-group>
+        <ion-item-divider (click)="ToggleVentilation()" color="primary">
+          <ion-label>Ventilation
+          <ion-icon *ngIf="!isShownVentilation" class="urgenceIcon" name="add-circle"  style="zoom:1.2"></ion-icon>
+          <ion-icon *ngIf="isShownVentilation" class="urgenceIcon" name="close-circle" style="zoom:1.2"></ion-icon>
+        </ion-label>
+        </ion-item-divider> 
+
+        <ion-card *ngIf="isShownVentilation">
+          <ion-item>Taille du filtre : {{TailleFiltre}}</ion-item>
+          <ion-item>Canule de Guédel & masque : {{CouleurCanuleMasque}}</ion-item>
+          <ion-item>Volume courant : <b>{{Volumecourant}} mL</b>
+            <p>pour 6 mL/kg</p>
+          </ion-item>
+        </ion-card>
+        
+        <ion-item-divider (click)="ToggleIntubation()" color="primary">
+          <ion-label>Intubation
+          <ion-icon *ngIf="!isShownIntubation" class="urgenceIcon" name="add-circle"  style="zoom:1.2"></ion-icon>
+          <ion-icon *ngIf="isShownIntubation" class="urgenceIcon" name="close-circle"  style="zoom:1.2"></ion-icon>
+        </ion-label>
+        </ion-item-divider> 
+
+        <ion-card *ngIf="isShownIntubation">
+            <ion-item>Lame intubation : <p>{{LameIntubation}}</p>
+            </ion-item>
+            <ion-item>Taille de la sonde d'intubation : 
+              <p> - Proposée selon l'âge : {{TailleSITage}} mm</p>
+              <p> - Proposée selon le poids : {{TailleSITpoids}} mm</p>
+            </ion-item>
+            <ion-item>Repère de fixation de la sonde : 
+              <p>Approx. : taille sonde x3 : {{RepereSITenfant}} </p>
+              <p><b> - Repère dents : {{RepereSITdents}} cm</b></p>
+              <p><b> - Repère nez : {{RepereSITnez}} cm</b></p>
+              </ion-item>
+        </ion-card>
+           
+
+  </ion-item-group>
+
+  </ion-list>
+
+
+</ion-content>

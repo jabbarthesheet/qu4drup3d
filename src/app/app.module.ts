@@ -20,12 +20,13 @@ import { AntalgiePage } from '../pages/antalgie/antalgie';
 import { UrgencePage } from '../pages/urgence/urgence';
 import { EntretienAnesthPage } from '../pages/entretien-anesth/entretien-anesth';
 import { LocoRegionalePage } from '../pages/loco-regionale/loco-regionale';
+import { ExtrophieVesicalePage } from '../pages/extrophie-vesicale/extrophie-vesicale';
 
+import { AntiInfectieuxPage } from '../pages/anti-infectieux/anti-infectieux';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { AntiInfectieuxPage } from '../pages/anti-infectieux/anti-infectieux';
 import { ServiceDataProvider } from '../providers/service-data/liste_anti_infectieux';
 
 @NgModule({
@@ -43,6 +44,7 @@ import { ServiceDataProvider } from '../providers/service-data/liste_anti_infect
     EntretienAnesthPage,
     AntiInfectieuxPage,
     LocoRegionalePage,
+    ExtrophieVesicalePage,
   ],
 
   imports: [
@@ -73,6 +75,7 @@ import { ServiceDataProvider } from '../providers/service-data/liste_anti_infect
     EntretienAnesthPage,
     AntiInfectieuxPage,
     LocoRegionalePage,
+    ExtrophieVesicalePage,
   ],
 
   providers: [

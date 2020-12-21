@@ -6,6 +6,7 @@ import { ServiceDataProvider } from "../../providers/service-data/liste_anti_inf
   selector: 'app-home',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage 
   implements OnInit {
   public searchTerm: string = "";

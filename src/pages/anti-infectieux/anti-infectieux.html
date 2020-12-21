@@ -5,6 +5,8 @@
     </button>
     <ion-title>Anti-infectieux</ion-title>
   </ion-navbar>
+ <ion-card-content color="danger">Les posologies indiquées sont adaptées à la <b>pédiatrie</b> uniquement.
+  </ion-card-content>
 </ion-header>
 
 <ion-content padding>
@@ -13,7 +15,6 @@
     (ionChange)="setFilteredItems()"
   ></ion-searchbar>
 
-  NB : les posologies indiquées sont adaptées à la <b>pédiatrie</b> uniquement.
 
   <ion-list>
     <ion-card *ngFor="let card of cards, let i = index" [attr.data-index]="i" padding="5%">

@@ -36600,6 +36600,10 @@ ion-row {
   text-align: left !important;
 }
 
+.entete_protocole {
+  font-size: smaller !important;
+}
+
 .fluidIcon {
   float: right !important;
 }

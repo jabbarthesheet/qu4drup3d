@@ -40,7 +40,7 @@ webpackEmptyAsyncContext.id = 155;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PatientPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__biometrie_biometrie__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__options_options__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(13);
@@ -95,7 +95,7 @@ var PatientPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BiometriePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -300,7 +300,7 @@ var BiometriePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OptionsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -414,7 +414,7 @@ var OptionsPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlateauInductionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__patient_patient__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -776,7 +776,7 @@ var PlateauInductionPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GestionFluidesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__patient_patient__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1050,7 +1050,7 @@ var GestionFluidesPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlateauVasPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__patient_patient__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1291,7 +1291,7 @@ var PlateauVasPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntalgiePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__patient_patient__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1543,7 +1543,7 @@ var AntalgiePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UrgencePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__patient_patient__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1773,7 +1773,7 @@ var UrgencePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EntretienAnesthPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__patient_patient__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1994,10 +1994,10 @@ var EntretienAnesthPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntiInfectieuxPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_anti_infectieux__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__ = __webpack_require__(279);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2034,7 +2034,7 @@ var AntiInfectieuxPage = /** @class */ (function () {
     };
     AntiInfectieuxPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-anti-infectieux',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\anti-infectieux\anti-infectieux.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Anti-infectieux</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-searchbar\n    [(ngModel)]="searchTerm"\n    (ionChange)="setFilteredItems()"\n  ></ion-searchbar>\n\n  NB : les posologies indiquées sont adaptées à la <b>pédiatrie</b> uniquement.\n\n  <ion-list>\n    <ion-card *ngFor="let card of cards, let i = index" [attr.data-index]="i" padding="5%">\n      <ion-card-title (click)="ToggleCard(card, i)" class="carteATB"><u>{{card.title}}</u>\n        <ion-icon *ngIf="!cards.isShownCard" class="fluidIcon" name="add-circle"  style="zoom:1"></ion-icon>\n        <ion-icon *ngIf="cards.isShownCard" class="fluidIcon" name="close-circle"   style="zoom:1"></ion-icon>\n      </ion-card-title>\n      <ion-card-content *ngIf="cards.isShownCard">\n        <p><b>Posologie</b> : {{card.posologie}}</p>\n        <br>\n        <p><b>Reconstitution</b> : {{card.reconstitution}}</p>\n        <br>\n        <p><b>Dilution</b> : {{card.dilution}}</p>\n        <br>\n        <p><b>Administration</b> : {{card.administration}}</p>\n        <br>\n        <p><b>Remarques</b> : {{card.remarques}}</p>\n        <br>\n      </ion-card-content>\n\n    </ion-card>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\anti-infectieux\anti-infectieux.html"*/,
+            selector: 'page-anti-infectieux',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\anti-infectieux\anti-infectieux.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Anti-infectieux</ion-title>\n  </ion-navbar>\n <ion-card-content color="danger">Les posologies indiquées sont adaptées à la <b>pédiatrie</b> uniquement.\n  </ion-card-content>\n</ion-header>\n\n<ion-content padding>\n  <ion-searchbar\n    [(ngModel)]="searchTerm"\n    (ionChange)="setFilteredItems()"\n  ></ion-searchbar>\n\n\n  <ion-list>\n    <ion-card *ngFor="let card of cards, let i = index" [attr.data-index]="i" padding="5%">\n      <ion-card-title (click)="ToggleCard(card, i)" class="carteATB"><u>{{card.title}}</u>\n        <ion-icon *ngIf="!cards.isShownCard" class="fluidIcon" name="add-circle"  style="zoom:1"></ion-icon>\n        <ion-icon *ngIf="cards.isShownCard" class="fluidIcon" name="close-circle"   style="zoom:1"></ion-icon>\n      </ion-card-title>\n      <ion-card-content *ngIf="cards.isShownCard">\n        <p><b>Posologie</b> : {{card.posologie}}</p>\n        <br>\n        <p><b>Reconstitution</b> : {{card.reconstitution}}</p>\n        <br>\n        <p><b>Dilution</b> : {{card.dilution}}</p>\n        <br>\n        <p><b>Administration</b> : {{card.administration}}</p>\n        <br>\n        <p><b>Remarques</b> : {{card.remarques}}</p>\n        <br>\n      </ion-card-content>\n\n    </ion-card>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\anti-infectieux\anti-infectieux.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
@@ -2126,7 +2126,7 @@ var ServiceDataProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocoRegionalePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__patient_patient__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2343,13 +2343,78 @@ var LocoRegionalePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 212:
+/***/ 208:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExtrophieVesicalePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the ExtrophieVesicalePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ExtrophieVesicalePage = /** @class */ (function () {
+    function ExtrophieVesicalePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.isShownConsultation = false;
+        this.isShownVPA = false;
+        this.isShownPerOp = false;
+        this.isShownPostOp = false;
+    }
+    ExtrophieVesicalePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ExtrophieVesicalePage');
+    };
+    ExtrophieVesicalePage.prototype.ToggleConsultation = function () {
+        this.isShownConsultation = !this.isShownConsultation;
+        this.isShownVPA = this.isShownPerOp = this.isShownPostOp = false;
+    };
+    ExtrophieVesicalePage.prototype.ToggleVPA = function () {
+        this.isShownVPA = !this.isShownVPA;
+        this.isShownConsultation = this.isShownPerOp = this.isShownPostOp = false;
+    };
+    ExtrophieVesicalePage.prototype.TogglePerOp = function () {
+        this.isShownPerOp = !this.isShownPerOp;
+        this.isShownConsultation = this.isShownVPA = this.isShownPostOp = false;
+    };
+    ExtrophieVesicalePage.prototype.TogglePostOp = function () {
+        this.isShownPostOp = !this.isShownPostOp;
+        this.isShownConsultation = this.isShownVPA = this.isShownPerOp = false;
+    };
+    ExtrophieVesicalePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-extrophie-vesicale',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\extrophie-vesicale\extrophie-vesicale.html"*/'<!--\n  Generated template for the ExtrophieVesicalePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Extrophie Vésicale</ion-title>\n  </ion-navbar>\n  <ion-item color="warning">\n    <p class="entete_protocole">Auteurs : Dr. Charlotte FAIT, Pr. Souhayl DAHMANI</p>\n    <p class="entete_protocole">Date de publication : 21/09/2020</p>\n  </ion-item>\n\n</ion-header>\n\n<ion-content padding>\n\n  <ion-card color="secondary">\n    <ion-card-content>  Objectifs : \n      <p> - limiter les jours de réanimation avec intubation prolongée pour le contrôle de l\'analgésie.</p> \n      <p> - réhabilitation précoce avec passage de la première nuit en SSPI puis USC à J1.</p></ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header (click)="ToggleConsultation()">\n      <ion-card-title>Consultation\n      \n      <ion-icon *ngIf="!isShownConsultation" class="urgenceIcon" name="add-circle"  style="zoom:0.8"></ion-icon>\n      <ion-icon *ngIf="isShownConsultation" class="urgenceIcon" name="close-circle" style="zoom:0.8"></ion-icon>\n\n    </ion-card-title>\n    </ion-card-header>\n    <ion-card-content *ngIf="isShownConsultation">\n      <p> - Evaluation de la faisabilité d\'une réhabilitation précoce sans passage en réanimation.</p>\n      <p> - Evaluation des comorbidités du patient.</p>\n      <p> - Anticipation de la période post-opératoire. Appel systématique de la réanimation pour réserver une place <b>((4)3416)</b>.</p>\n      <p> - <b>Stratégie d\'épargne sanguine</b> : prescription de fer, bilan avec NFS, hémostase complète, carte de groupe, ionogramme sanguin.</p>\n      <p> - <b>Stratégie de contrôle des infections</b> : ECBU, dépistage BLSE par écouvillon rectal, cartographie fongique (écouvillon plaque vésicale, peau à la jonction de la plaque vésicale, aisselle, anus).</p>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header (click)="ToggleVPA()">\n      <ion-card-title>Visite pré-opératoire\n      \n      <ion-icon *ngIf="!isShownVPA" class="urgenceIcon" name="add-circle"  style="zoom:0.8"></ion-icon>\n      <ion-icon *ngIf="isShownVPA" class="urgenceIcon" name="close-circle" style="zoom:0.8"></ion-icon>\n\n    </ion-card-title>\n    </ion-card-header>\n    <ion-card-content *ngIf="isShownVPA">\n      <p> - Vérifier les bilans prescrits.</p>\n      <p> - Prescrire RAI et 2e détermination de groupe.</p>\n      <p> - Faire une commande de culots globulaires prévisionnelle.</p>\n      <p> - Perfuser dès le début du jeûne avec du B26.</p>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header (click)="TogglePerOp()">\n      <ion-card-title>Per-opératoire\n      \n      <ion-icon *ngIf="!isShownPerOp" class="urgenceIcon" name="add-circle"  style="zoom:0.8"></ion-icon>\n      <ion-icon *ngIf="isShownPerOp" class="urgenceIcon" name="close-circle" style="zoom:0.8"></ion-icon>\n\n    </ion-card-title>\n    </ion-card-header>\n    <ion-card-content *ngIf="isShownPerOp">\n      <p><b><u>Induction</u></b></p>\n      <p> - Confirmer la place en réanimation.</p>\n      <p> - NIRS à mettre en place avant l\'induction anesthésique.</p>\n      <p> - Antibioprophylaxie par Céfazoline IV 30 minutes avant l\'incision. </p>\n      <p> - Administration d\'Exacyl (ostéotomie) selon le protocole habituel.</p>\n      <p> - Dexaméthasone 0,15 mg/kg.</p>\n      <p> - Curarisation continue en IVSE.</p>\n      <p> - Pose de sonde naso-gastrique.</p>\n      <p> - Pose de cathéter veineux central en jugulaire interne droit (pas en fémoral car ostéotomie). Attention au montage des lignes type réanimation.</p>\n      <p> - Discuter la pose d\'un cathéter artériel pour monitorage hémodynamique, selon le terrain.</p>\n      <p> - Pose d\'un cathéter de péridurale, utiliser en per-opératoire, évaluer l\'efficacité en per-opératoire.</p>\n      <br>\n      <p><b><u>Pendant l\'intervention : </u></b></p>\n      <p> - Surveillance des saignements en per-opératoire et HemoCue réguliers (1 par heure pendant le temps orthopédique). Seuil transfusionnel à 8 g/dL. NFS de contrôle en post-opératoire.</p>\n      <br>\n      <p><b><u>En fin d\'intervention :</u></b></p>\n      <p> - Evaluation des critères d\'admission en réanimation : saignement, hémodynamique, ventilation.</p>\n      <p> - Transfert en réanimation si transfusion massive, support catécholaminergique, impossibilité d\'extubation rapide en SSPI, gestion de l\'analgésie prévue comme difficile (mauvaise efficacité de la péridurale, réinjections fréquentes de sufentanil en per-opératoire).</p>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header (click)="TogglePostOp()">\n      <ion-card-title>Post-opératoire\n      \n      <ion-icon *ngIf="!isShownPostOp" class="urgenceIcon" name="add-circle"  style="zoom:0.8"></ion-icon>\n      <ion-icon *ngIf="isShownPostOp" class="urgenceIcon" name="close-circle" style="zoom:0.8"></ion-icon>\n\n    </ion-card-title>\n    </ion-card-header>\n    <ion-card-content *ngIf="isShownPostOp">\n      <p><b>En l\'absence de critère d\'admission en réanimation :</b> réhabilitation précoce en SSPI.</p>\n      <p> - Extubation précoce en SSPI.</p>\n      <p> - Contrôle de l\'analgésie par péridurale et paracétamol.</p>\n      <p> - Reprise des boissons (liquide clair) dès le soir.</p>\n      <br>\n      <p><b>Sortie de SSPI pour l\'USC à J1</b></p>\n      <p> - NFS à J1 (objectif Hb > 8 g/dL, hémostase normale).</p>\n      <p> - Stabilité hémodynamique et diurèse satisfaisante (> 3mL/kg/h).</p>\n      <p> - Analgésie par APD évaluée et efficace.</p>\n      <p> - Absence de trouble ionique.</p>\n      <p> - Ablation du cathéter artériel avant la sortie de SSPI.</p>   \n    </ion-card-content>\n  </ion-card>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\extrophie-vesicale\extrophie-vesicale.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+    ], ExtrophieVesicalePage);
+    return ExtrophieVesicalePage;
+}());
+
+//# sourceMappingURL=extrophie-vesicale.js.map
+
+/***/ }),
+
+/***/ 213:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(234);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -2357,17 +2422,17 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 233:
+/***/ 234:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(293);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_accueil_accueil__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_patient_patient__ = __webpack_require__(18);
@@ -2380,16 +2445,18 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_urgence_urgence__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(203);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_loco_regionale_loco_regionale__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_status_bar__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_splash_screen__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_service_data_liste_anti_infectieux__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_service_data_liste_anti_infectieux__ = __webpack_require__(205);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -2429,8 +2496,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_14__pages_antalgie_antalgie__["a" /* AntalgiePage */],
                 __WEBPACK_IMPORTED_MODULE_15__pages_urgence_urgence__["a" /* UrgencePage */],
                 __WEBPACK_IMPORTED_MODULE_16__pages_entretien_anesth_entretien_anesth__["a" /* EntretienAnesthPage */],
-                __WEBPACK_IMPORTED_MODULE_20__pages_anti_infectieux_anti_infectieux__["a" /* AntiInfectieuxPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_anti_infectieux_anti_infectieux__["a" /* AntiInfectieuxPage */],
                 __WEBPACK_IMPORTED_MODULE_17__pages_loco_regionale_loco_regionale__["a" /* LocoRegionalePage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_extrophie_vesicale_extrophie_vesicale__["a" /* ExtrophieVesicalePage */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["a" /* HttpClientModule */],
@@ -2457,14 +2525,15 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_14__pages_antalgie_antalgie__["a" /* AntalgiePage */],
                 __WEBPACK_IMPORTED_MODULE_15__pages_urgence_urgence__["a" /* UrgencePage */],
                 __WEBPACK_IMPORTED_MODULE_16__pages_entretien_anesth_entretien_anesth__["a" /* EntretienAnesthPage */],
-                __WEBPACK_IMPORTED_MODULE_20__pages_anti_infectieux_anti_infectieux__["a" /* AntiInfectieuxPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_anti_infectieux_anti_infectieux__["a" /* AntiInfectieuxPage */],
                 __WEBPACK_IMPORTED_MODULE_17__pages_loco_regionale_loco_regionale__["a" /* LocoRegionalePage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_extrophie_vesicale_extrophie_vesicale__["a" /* ExtrophieVesicalePage */],
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_18__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_19__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_21__providers_service_data_liste_anti_infectieux__["a" /* ServiceDataProvider */]
+                __WEBPACK_IMPORTED_MODULE_22__providers_service_data_liste_anti_infectieux__["a" /* ServiceDataProvider */]
             ]
         })
     ], AppModule);
@@ -2475,13 +2544,13 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 276:
+/***/ 277:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_accueil_accueil__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_patient_patient__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_plateau_induction_plateau_induction__ = __webpack_require__(198);
@@ -2489,12 +2558,13 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_plateau_vas_plateau_vas__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_antalgie_antalgie__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_urgence_urgence__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_pre_medication_pre_medication__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_pre_medication_pre_medication__ = __webpack_require__(278);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(203);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_loco_regionale_loco_regionale__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_status_bar__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_splash_screen__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__ = __webpack_require__(212);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2504,6 +2574,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -2543,6 +2614,7 @@ var MyApp = /** @class */ (function () {
             { title: 'Analgésie & NVPO', component: __WEBPACK_IMPORTED_MODULE_7__pages_antalgie_antalgie__["a" /* AntalgiePage */] },
             { title: 'Anti-infectieux', component: __WEBPACK_IMPORTED_MODULE_11__pages_anti_infectieux_anti_infectieux__["a" /* AntiInfectieuxPage */] },
             { title: 'Loco-régionale', component: __WEBPACK_IMPORTED_MODULE_12__pages_loco_regionale_loco_regionale__["a" /* LocoRegionalePage */] },
+            { title: 'Extrophie vésicale', component: __WEBPACK_IMPORTED_MODULE_13__pages_extrophie_vesicale_extrophie_vesicale__["a" /* ExtrophieVesicalePage */] },
         ];
     }
     MyApp.prototype.initializeApp = function () {
@@ -2623,6 +2695,12 @@ var MyApp = /** @class */ (function () {
         this.menu.close();
     };
     ;
+    MyApp.prototype.openExtrophieVesicalePage = function () {
+        console.log("ouverture de page anti infectieux");
+        this.nav.setRoot(__WEBPACK_IMPORTED_MODULE_13__pages_extrophie_vesicale_extrophie_vesicale__["a" /* ExtrophieVesicalePage */]);
+        this.menu.close();
+    };
+    ;
     MyApp.prototype.openAccueilPage = function () {
         console.log("ouverture de page d'accueil");
         this.nav.setRoot(__WEBPACK_IMPORTED_MODULE_2__pages_accueil_accueil__["a" /* AccueilPage */]);
@@ -2634,12 +2712,12 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\app\app.html"*/'<ion-menu [content]="content" type="overlay" side="start" menuId="custom" contentId="main" class="my-custom-menu">\n\n  <ion-header>\n    <ion-toolbar color="tertiary">\n      <ion-title>Menu QuadruPed</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content>\n    <ion-list>\n\n      <ion-item (click)="openAccueilPage()">Accueil </ion-item>\n      <ion-item (click)="openPatientPage()" color="warning">Mon patient</ion-item>\n\n      <ion-item-divider (click)="ToggleCalculs()"> \n        <ion-label>Mes calculs\n          <ion-icon *ngIf="!isShownCalculs" class="menuIcon" name="arrow-down" style="zoom:1.5"></ion-icon>\n          <ion-icon *ngIf="isShownCalculs" class="menuIcon" name="arrow-up"  style="zoom:1.5"></ion-icon>\n        </ion-label>\n      </ion-item-divider> \n     \n      <ion-list *ngIf="isShownCalculs">\n      <ion-item (click)="openInductionPage()"> Induction anesthésique</ion-item>\n      <ion-item (click)="openVASPage()">Gestion des voies aériennes</ion-item>\n      <ion-item (click)="openALRPage()">Anesthésie loco-régionale</ion-item>\n      \n      <ion-item (click)="openEntretienPage()">Entretien anesthésique</ion-item>\n      <ion-item (click)="openFluidesPage()">Gestion des fluides</ion-item>\n      <ion-item (click)="openAntalgiePage()">Analgésie et NVPO</ion-item>\n\n      <ion-item (click)="openUrgencesPage()" color="danger">Urgences</ion-item> \n    </ion-list>\n    \n      <ion-item-divider (click)="ToggleProtocoles()"> \n        <ion-label>Mes protocoles\n          <ion-icon *ngIf="!isShownProtocoles" class="menuIcon" name="arrow-down" style="zoom:1.5"></ion-icon>\n          <ion-icon *ngIf="isShownProtocoles" class="menuIcon" name="arrow-up"  style="zoom:1.5"></ion-icon>\n        </ion-label>\n      </ion-item-divider> \n    \n    <ion-list *ngIf="isShownProtocoles">\n        <ion-item (click)="openAntiInfPage()">Anti-infectieux</ion-item>\n    </ion-list>     \n\n  </ion-list>\n  </ion-content>\n  \n    </ion-menu>\n\n\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\app\app.html"*/'<ion-menu [content]="content" type="overlay" side="start" menuId="custom" contentId="main" class="my-custom-menu">\n\n  <ion-header>\n    <ion-toolbar color="tertiary">\n      <ion-title>Menu QuadruPed</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content>\n    <ion-list>\n\n      <ion-item (click)="openAccueilPage()">Accueil </ion-item>\n      <ion-item (click)="openPatientPage()" color="warning">Mon patient</ion-item>\n\n      <ion-item-divider (click)="ToggleCalculs()"> \n        <ion-label>Mes calculs\n          <ion-icon *ngIf="!isShownCalculs" class="menuIcon" name="arrow-down" style="zoom:1.5"></ion-icon>\n          <ion-icon *ngIf="isShownCalculs" class="menuIcon" name="arrow-up"  style="zoom:1.5"></ion-icon>\n        </ion-label>\n      </ion-item-divider> \n     \n      <ion-list *ngIf="isShownCalculs">\n      <ion-item (click)="openInductionPage()"> Induction anesthésique</ion-item>\n      <ion-item (click)="openVASPage()">Gestion des voies aériennes</ion-item>\n      <ion-item (click)="openALRPage()">Anesthésie loco-régionale</ion-item>\n      \n      <ion-item (click)="openEntretienPage()">Entretien anesthésique</ion-item>\n      <ion-item (click)="openFluidesPage()">Gestion des fluides</ion-item>\n      <ion-item (click)="openAntalgiePage()">Analgésie et NVPO</ion-item>\n\n      <ion-item (click)="openUrgencesPage()" color="danger">Urgences</ion-item> \n    </ion-list>\n    \n      <ion-item-divider (click)="ToggleProtocoles()"> \n        <ion-label>Mes protocoles\n          <ion-icon *ngIf="!isShownProtocoles" class="menuIcon" name="arrow-down" style="zoom:1.5"></ion-icon>\n          <ion-icon *ngIf="isShownProtocoles" class="menuIcon" name="arrow-up"  style="zoom:1.5"></ion-icon>\n        </ion-label>\n      </ion-item-divider> \n    \n    <ion-list *ngIf="isShownProtocoles">\n        <ion-item (click)="openAntiInfPage()">Anti-infectieux</ion-item>\n        <ion-item (click)="openExtrophieVesicalePage()">Extrophie vésicale</ion-item>\n    </ion-list>     \n\n  </ion-list>\n  </ion-content>\n  \n    </ion-menu>\n\n\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */],
-            __WEBPACK_IMPORTED_MODULE_13__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_14__ionic_native_splash_screen__["a" /* SplashScreen */]])
+            __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());
@@ -2649,13 +2727,13 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 277:
+/***/ 278:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreMedicationPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__patient_patient__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2808,7 +2886,7 @@ var PreMedicationPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccueilPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__patient_patient__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2860,7 +2938,7 @@ var AccueilPage = /** @class */ (function () {
     ], AccueilPage.prototype, "nav", void 0);
     AccueilPage = AccueilPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-accueil',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Bienvenue !</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-card class="cardWelcome">\n    <ion-card-title padding="5%" ></ion-card-title>\n    <img class="resize" src="/assets/imgs/sleeping-baby.png"> \n    <ion-card-content class="card"> QuadruPed est une petite application pour se faciliter la vie au bloc opératoire. Pour commencer, cliquez sur le bouton ci-dessous et saisissez les informations relatives à votre patient. \n \n      <ion-item>\n        <ion-label>\n          <button ion-button padding="5%" color="primary" (click)="newPatient()">Nouveau patient</button>\n        </ion-label>\n      </ion-item>\n      <p>Attention : \'Nouveau patient\' efface toutes les données précédentes.</p>\n      <ion-item>\n        <ion-icon name="accessibility-outline"></ion-icon>\n      </ion-item>\n\n    </ion-card-content>\n  </ion-card>\n\n\n</ion-content>\n\n\n  \n  <ion-footer>\n    <ion-toolbar padding="5%">\n      <ion-title>info </ion-title>\n      <br>\n      QuadruPed est une application gratuite, sans publicité, qui ne propose que des <b>suggestions</b> de posologie.\n      En utilisant l\'application, vous acceptez les <a href=""> conditions générales d\'utilisation</a>.  \n      <br><br>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/,
+            selector: 'page-accueil',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Bienvenue !</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-card class="cardWelcome">\n    <ion-card-title padding="5%" ></ion-card-title>\n    <img class="resize" src="/assets/imgs/sleeping-baby.png"> \n    <ion-card-content class="card"> QuadruPed est une petite application pour se faciliter la vie au bloc opératoire. Pour commencer, cliquez sur le bouton ci-dessous et saisissez les informations relatives à votre patient. \n \n      <ion-item>\n        <ion-label>\n          <button ion-button padding="5%" color="primary" (click)="newPatient()">Nouveau patient</button>\n        </ion-label>\n      </ion-item>\n      <p>Attention : \'Nouveau patient\' efface toutes les données précédentes.</p>\n\n    </ion-card-content>\n  </ion-card>\n\n\n</ion-content>\n\n\n  \n  <ion-footer>\n    <ion-toolbar padding="5%">\n      <ion-title>info </ion-title>\n      <br>\n      QuadruPed est une application gratuite, sans publicité, qui ne propose que des <b>suggestions</b> de posologie.\n      En utilisant l\'application, vous acceptez les <a href=""> conditions générales d\'utilisation</a>.  \n      <br><br>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
@@ -2878,5 +2956,5 @@ var AccueilPage = /** @class */ (function () {
 
 /***/ })
 
-},[212]);
+},[213]);
 //# sourceMappingURL=main.js.map

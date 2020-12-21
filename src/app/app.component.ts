@@ -19,6 +19,7 @@ import { PreMedicationPage } from '../pages/pre-medication/pre-medication';
 import { EntretienAnesthPage } from '../pages/entretien-anesth/entretien-anesth';
 import { AntiInfectieuxPage } from '../pages/anti-infectieux/anti-infectieux';
 import { LocoRegionalePage } from '../pages/loco-regionale/loco-regionale';
+import { ExtrophieVesicalePage } from '../pages/extrophie-vesicale/extrophie-vesicale';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -60,6 +61,7 @@ export class MyApp {
       { title : 'Analgésie & NVPO', component: AntalgiePage},
       { title : 'Anti-infectieux', component: AntiInfectieuxPage},
       { title : 'Loco-régionale', component : LocoRegionalePage},
+      { title : 'Extrophie vésicale', component : ExtrophieVesicalePage},
     ];
   }
 
@@ -143,6 +145,12 @@ export class MyApp {
   openAntiInfPage() {
     console.log("ouverture de page anti infectieux");
     this.nav.setRoot(AntiInfectieuxPage); 
+    this.menu.close();
+  };
+
+  openExtrophieVesicalePage(){
+    console.log("ouverture de page anti infectieux");
+    this.nav.setRoot(ExtrophieVesicalePage); 
     this.menu.close();
   };
 

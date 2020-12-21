@@ -14,6 +14,11 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ExtrophieVesicalePage {
 
+  isShownConsultation:boolean=false; 
+  isShownVPA:boolean=false; 
+  isShownPerOp:boolean=false; 
+  isShownPostOp:boolean=false; 
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -21,4 +26,23 @@ export class ExtrophieVesicalePage {
     console.log('ionViewDidLoad ExtrophieVesicalePage');
   }
 
+  ToggleConsultation() {
+    this.isShownConsultation = !this.isShownConsultation; 
+    this.isShownVPA = this.isShownPerOp = this.isShownPostOp = false; 
+  }
+  
+  ToggleVPA() {
+    this.isShownVPA = !this.isShownVPA;
+    this.isShownConsultation = this.isShownPerOp = this.isShownPostOp = false; 
+  }
+
+  TogglePerOp() {
+    this.isShownPerOp = !this.isShownPerOp; 
+    this.isShownConsultation = this.isShownVPA = this.isShownPostOp = false; 
+  }
+
+  TogglePostOp() {
+    this.isShownPostOp = !this.isShownPostOp;
+    this.isShownConsultation = this.isShownVPA = this.isShownPerOp = false;
+  }
 }

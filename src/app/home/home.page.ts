@@ -4,7 +4,6 @@ import { ServiceDataProvider } from "../../providers/service-data/liste_anti_inf
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage 

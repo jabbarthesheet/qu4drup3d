@@ -28,8 +28,8 @@ export class PlateauVasPage {
   PoidsNum:number; 
 
   TailleSIT:number;
-  TailleSITpoids:number;
-  TailleSITage:number; 
+  TailleSITpoids:any;
+  TailleSITage:any; 
   RepereSITenfant:any;
   RepereSITnez:number; 
   RepereSITdents:number;
@@ -131,16 +131,20 @@ export class PlateauVasPage {
           this.RepereSITdents = Math.round((this.PoidsNum+6.5)*10)/10;
             this.RepereSITnez = Math.round((this.PoidsNum+7)*10)/10;
               this.RepereSITenfant = "trop petit"; 
-          }
-    
-      else if (this.PoidsNum > 7) 
+          }   
+      else if (this.PoidsNum > 7)
       {this.TailleSITage = Math.round((this.AgeNum/(12*4)+3.5)*10)/10 ;
-        this.TailleSITpoids = Math.round((this.PoidsNum/10+3)*10)/10;
+        if (this.TailleSITage >= 8){this.TailleSITage = 8;}
+
+        this.TailleSITpoids = Math.round((this.PoidsNum/10+3)*10)/10; 
+        if (this.TailleSITpoids >= 7.5) {this.TailleSITpoids = 7.5;}
+
         this.TailleSIT = Math.round(((this.TailleSITage + this.TailleSITpoids)/2)*10)/10;
         this.RepereSITenfant = Math.round(((this.TailleSITage + this.TailleSITpoids)/2)*3).toString() + " cm" ; 
         this.RepereSITdents = Math.round((this.AgeNum/24 + 12)*10)/10; 
         this.RepereSITnez = Math.round((this.AgeNum/24 + 15)*10)/10;
-      };
+      }
+      ;
 
       this.Volumecourant = Math.round(this.PoidsNum * 6) ; 
 

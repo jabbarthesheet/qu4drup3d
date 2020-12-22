@@ -226,7 +226,8 @@ export class PlateauInductionPage {
      else if (this.AgeNum > 60){this.DiluAtracurium = "10 mg/mL";};
 
      /* DEXA */
-     this.AdminDexa = Math.round(((this.PoidsNum * 0.15)*10)/10); 
+     if (this.PoidsNum <= 80 ) {this.AdminDexa = Math.round(((this.PoidsNum * 0.15)*10)/10);}
+     else {this.AdminDexa = 12 ;} 
      if (this.PoidsNum > 40 ) {this.DiluDexa = "4 mg/mL";}
      else {this.DiluDexa = "1 mg/mL";};
 
@@ -236,8 +237,11 @@ export class PlateauInductionPage {
 
     /* Ephedrine & Atropine*/
 
-    this.AdminEphedrine = Math.round((this.PoidsNum*0.1)*10)/10;
-    this.AdminAtropine = Math.round((this.PoidsNum*0.02)*100)/100;
+    this.AdminEphedrine = Math.round((this.PoidsNum*0.3)*10)/10;
+
+    if (this.PoidsNum <= 50 ){this.AdminAtropine = Math.round((this.PoidsNum*0.02)*100)/100;}
+    else {this.AdminAtropine = 1 ;}
+  
     if (this.PoidsNum < 5){this.DiluEphedrine = "0,5 mg/mL"}
     else if (this.PoidsNum < 10){this.DiluEphedrine = "1 mg/mL"}
     else {this.DiluEphedrine = "3 mg/mL"}; 

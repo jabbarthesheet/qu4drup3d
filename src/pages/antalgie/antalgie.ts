@@ -170,16 +170,30 @@ export class AntalgiePage {
           this.Allergie = allergie; 
 
         /*Palier 1*/
-    this.AdminParacetamol = Math.round((this.PoidsNum * 15)*10)/10;
-    this.AdminKeto = Math.round((this.PoidsNum * 1)*10)/10;
-    this.AdminIbu = Math.round((this.PoidsNum * 10)*10)/10;
 
+    
+    this.AdminParacetamol = Math.round((this.PoidsNum * 15)*10)/10;
+    if (this.AdminParacetamol >= 1000){this.AdminParacetamol = 1000;}
+    
+    this.AdminKeto = Math.round((this.PoidsNum * 1)*10)/10;
+    if (this.AdminKeto >= 100){this.AdminKeto = 100;}
+
+    this.AdminIbu = Math.round((this.PoidsNum * 10)*10)/10;
+    if (this.AdminIbu >= 400){this.AdminIbu = 400;}
 
      /*Palier 2*/
     this.AdminNubain = Math.round((this.PoidsNum * 0.2)*10)/10;
+    if (this.AdminNubain >= 10){this.AdminNubain = 10;}
+
     this.AdminNubainHdJ = Math.round((this.PoidsNum * 0.1)*10)/10;
+    if (this.AdminNubainHdJ >= 10){this.AdminNubainHdJ = 10;}
+
+
     this.AdminAcupan = Math.round((this.PoidsNum * 1)*10)/10;
+    if (this.AdminAcupan >= 120){this.AdminAcupan = 120 ;}
+
     this.AdminTramadol = Math.round((this.PoidsNum * 1)*10)/10;
+    if (this.AdminTramadol >= 100) {this.AdminTramadol = 100;}
 
      /*Palier 3*/
     this.AdminMorphineBO = Math.round((this.PoidsNum * 0.1)*10)/10;
@@ -191,19 +205,28 @@ export class AntalgiePage {
 
      /*Autres antalgiques*/
     this.AdminNeurontin = Math.round((this.PoidsNum * 5)*10)/10;
+    if (this.AdminNeurontin >= 300){this.AdminNeurontin = 300;}
+
     this.AdminSpasfonIV = Math.round((this.PoidsNum * 0.5)*10)/10;
+    if (this.AdminSpasfonIV >= 120){this.AdminSpasfonIV = 120 ;}
+
     this.AdminSpasfonPO = Math.round((this.PoidsNum * 1.5)*10)/10;
+    if (this.AdminSpasfonPO >= 120){this.AdminSpasfonPO = 120 ;}
+
+
     this.AdminLaroxylIV = Math.round((this.PoidsNum * 0.5)*10)/10;
     this.AdminLaroxylPO = Math.round((this.PoidsNum * 0.5)*10)/10;
     this.AdminRivotrilPO = Math.round((this.PoidsNum * 0.01)*10)/10;
     this.GouttesRivotril = Math.round(this.PoidsNum/10);
     this.AdminClonidineIVSE = Math.round((this.PoidsNum * 0.5)*10)/10;
-    this. AdminClonidinePO = Math.round((this.PoidsNum * 5)*10)/10;
+    this.AdminClonidinePO = Math.round((this.PoidsNum * 5)*10)/10;
 
     /* Anti émétiques */
 
     this.AdminZophren = Math.round((this.PoidsNum * 0.1)*10)/10;
+    if (this.AdminZophren >= 8){this.AdminZophren = 8;}
     this.AdminDroleptan = Math.round((this.PoidsNum * 25)*10)/10;
+    if (this.AdminDroleptan >= 1250){this.AdminDroleptan = 1250; }
 
 
   })

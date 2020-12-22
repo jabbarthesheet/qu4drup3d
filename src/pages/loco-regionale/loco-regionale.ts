@@ -29,7 +29,7 @@ export class LocoRegionalePage {
   BolusPIEBRopiSuf:number;
   BolusPCEARopiSuf:number;
   DoseMaxPCEARopiSuf:number; 
-  VolBupi5NN:number; 
+  VolBupi5NN:any; 
 
   VolBAXmin:number;
   VolBAXmax:number;
@@ -152,7 +152,8 @@ export class LocoRegionalePage {
           this.BolusPCEARopiSuf = Math.round((this.PoidsNum*0.15)*10)/10;
           this.DoseMaxPCEARopiSuf = Math.round((this.PoidsNum*1.5)*10)/10; 
 
-          this.VolBupi5NN = Math.round((this.PoidsNum * 0.2)*10)/10; 
+          this.VolBupi5NN = (Math.round((this.PoidsNum * 0.2)*10)/10 + " mL"); 
+          if (this.VolBupi5NN >= 1){this.VolBupi5NN = "NA - poids > 5 kg"}
 
           this.VolBAXmin = Math.round((this.PoidsNum * 0.2)*10)/10; 
           this.VolBAXmax = Math.round((this.PoidsNum * 0.5)*10)/10; 

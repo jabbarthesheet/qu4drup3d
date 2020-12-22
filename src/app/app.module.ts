@@ -20,14 +20,17 @@ import { AntalgiePage } from '../pages/antalgie/antalgie';
 import { UrgencePage } from '../pages/urgence/urgence';
 import { EntretienAnesthPage } from '../pages/entretien-anesth/entretien-anesth';
 import { LocoRegionalePage } from '../pages/loco-regionale/loco-regionale';
-import { ExtrophieVesicalePage } from '../pages/extrophie-vesicale/extrophie-vesicale';
 
+import { ExtrophieVesicalePage } from '../pages/extrophie-vesicale/extrophie-vesicale';
 import { AntiInfectieuxPage } from '../pages/anti-infectieux/anti-infectieux';
+
+import { AnnuairePage } from '../pages/annuaire/annuaire'
 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ServiceDataProvider } from '../providers/service-data/liste_anti_infectieux';
+import { AnnuaireDataProvider } from '../providers/annuaire-data/annuaire-data';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,7 @@ import { ServiceDataProvider } from '../providers/service-data/liste_anti_infect
     AntiInfectieuxPage,
     LocoRegionalePage,
     ExtrophieVesicalePage,
+    AnnuairePage,
   ],
 
   imports: [
@@ -76,13 +80,15 @@ import { ServiceDataProvider } from '../providers/service-data/liste_anti_infect
     AntiInfectieuxPage,
     LocoRegionalePage,
     ExtrophieVesicalePage,
+    AnnuairePage,
   ],
 
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ServiceDataProvider
+    ServiceDataProvider,
+    AnnuaireDataProvider
   ]
 })
 export class AppModule {}

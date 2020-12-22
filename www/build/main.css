@@ -36591,6 +36591,10 @@ ion-row {
   color: #fff;
 }
 
+.nomAnnuaires {
+  font-size: 12 px !important;
+}
+
 .antalgiquesIcon {
   float: right !important;
 }

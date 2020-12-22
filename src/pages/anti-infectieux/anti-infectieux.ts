@@ -40,4 +40,4 @@ export class AntiInfectieuxPage implements OnInit
     ToggleCard(card: any, index: number) : void {
       this.cards.isShownCard = !this.cards.isShownCard;
     }
-  }
+  };

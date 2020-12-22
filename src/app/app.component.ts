@@ -21,6 +21,8 @@ import { AntiInfectieuxPage } from '../pages/anti-infectieux/anti-infectieux';
 import { LocoRegionalePage } from '../pages/loco-regionale/loco-regionale';
 import { ExtrophieVesicalePage } from '../pages/extrophie-vesicale/extrophie-vesicale';
 
+import { AnnuairePage } from '../pages/annuaire/annuaire'
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -62,6 +64,7 @@ export class MyApp {
       { title : 'Anti-infectieux', component: AntiInfectieuxPage},
       { title : 'Loco-régionale', component : LocoRegionalePage},
       { title : 'Extrophie vésicale', component : ExtrophieVesicalePage},
+      {title : 'Annuaire', component : AnnuairePage },
     ];
   }
 
@@ -158,6 +161,13 @@ export class MyApp {
   {
     console.log("ouverture de page d'accueil");
     this.nav.setRoot(AccueilPage); 
+    this.menu.close();
+  };
+
+  openAnnuaire()
+  {
+    console.log("ouverture de page annuaire");
+    this.nav.setRoot(AnnuairePage); 
     this.menu.close();
   };
 

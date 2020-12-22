@@ -1,0 +1,26 @@
+<ion-header translucent>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Annuaire</ion-title>
+  </ion-navbar>
+ <ion-card-content color="danger">Pour appeler directement depuis un mobile, composez ******** puis le numéro de poste.
+  </ion-card-content>
+  <ion-searchbar
+  [(ngModel)]="searchTerm"
+  (ionChange)="setFilteredItems()"
+></ion-searchbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <p class="nomAnnuaire"><b>{{ item.nom }}</b></p>
+      <p> Téléphone {{item.telephone}} </p> 
+      <p>{{item.secteur}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

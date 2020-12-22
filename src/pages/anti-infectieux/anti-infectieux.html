@@ -7,13 +7,14 @@
   </ion-navbar>
  <ion-card-content color="danger">Les posologies indiquées sont adaptées à la <b>pédiatrie</b> uniquement.
   </ion-card-content>
+  <ion-searchbar
+  [(ngModel)]="searchTerm"
+  (ionChange)="setFilteredItems()"
+></ion-searchbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-searchbar
-    [(ngModel)]="searchTerm"
-    (ionChange)="setFilteredItems()"
-  ></ion-searchbar>
+
 
 
   <ion-list>

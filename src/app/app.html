@@ -9,16 +9,16 @@
     <ion-list>
 
       <ion-item (click)="openAccueilPage()">Accueil </ion-item>
-      <ion-item (click)="openPatientPage()" color="warning">Mon patient</ion-item>
 
-      <ion-item-divider (click)="ToggleCalculs()"> 
-        <ion-label>Mes calculs
+      <ion-item (click)="ToggleCalculs()" color="turquoise"> 
+        <ion-label><b>Mes posologies</b>
           <ion-icon *ngIf="!isShownCalculs" class="menuIcon" name="arrow-down" style="zoom:1.5"></ion-icon>
           <ion-icon *ngIf="isShownCalculs" class="menuIcon" name="arrow-up"  style="zoom:1.5"></ion-icon>
         </ion-label>
-      </ion-item-divider> 
+      </ion-item> 
      
       <ion-list *ngIf="isShownCalculs">
+      <ion-item (click)="openPatientPage()" color="warning">Mon patient : renseigner</ion-item>
       <ion-item (click)="openInductionPage()"> Induction anesthésique</ion-item>
       <ion-item (click)="openVASPage()">Gestion des voies aériennes</ion-item>
       <ion-item (click)="openALRPage()">Anesthésie loco-régionale</ion-item>
@@ -30,21 +30,21 @@
       <ion-item (click)="openUrgencesPage()" color="danger">Urgences</ion-item> 
     </ion-list>
     
-      <ion-item-divider (click)="ToggleProtocoles()"> 
-        <ion-label>Mes protocoles
+      <ion-item (click)="ToggleProtocoles()" color="primary-light"> 
+        <ion-label><b>Mes protocoles</b>
           <ion-icon *ngIf="!isShownProtocoles" class="menuIcon" name="arrow-down" style="zoom:1.5"></ion-icon>
           <ion-icon *ngIf="isShownProtocoles" class="menuIcon" name="arrow-up"  style="zoom:1.5"></ion-icon>
         </ion-label>
-      </ion-item-divider> 
+      </ion-item> 
     
     <ion-list *ngIf="isShownProtocoles">
         <ion-item (click)="openAntiInfPage()">Anti-infectieux</ion-item>
         <ion-item (click)="openExtrophieVesicalePage()">Extrophie vésicale</ion-item>
     </ion-list>   
     
-    <ion-item-divider (click)="openAnnuaire()" color="tertiary">
+    <ion-item (click)="openAnnuaire()" color="tertiary">
      Annuaire
-    </ion-item-divider>
+    </ion-item>
 
   </ion-list>
   </ion-content>

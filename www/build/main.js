@@ -2521,10 +2521,13 @@ var AnnuairePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-annuaire',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\annuaire\annuaire.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Annuaire</ion-title>\n  </ion-navbar>\n <ion-card-content color="danger">Pour appeler directement depuis un mobile, composez ******** puis le numéro de poste.\n  </ion-card-content>\n  <ion-searchbar\n  [(ngModel)]="searchTerm"\n  (ionChange)="setFilteredItems()"\n></ion-searchbar>\n</ion-header>\n\n<ion-content padding>\n\n\n  <ion-list>\n    <ion-item *ngFor="let item of items">\n      <p class="nomAnnuaire"><b>{{ item.nom }}</b></p>\n      <p> Téléphone {{item.telephone}} </p> \n      <p>{{item.secteur}}</p>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\annuaire\annuaire.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__providers_annuaire_data_annuaire_data__["a" /* AnnuaireDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_annuaire_data_annuaire_data__["a" /* AnnuaireDataProvider */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_annuaire_data_annuaire_data__["a" /* AnnuaireDataProvider */]])
     ], AnnuairePage);
     return AnnuairePage;
-    var _a, _b, _c, _d, _e;
 }());
 
 ;
@@ -2558,29 +2561,29 @@ var AnnuaireDataProvider = /** @class */ (function () {
     function AnnuaireDataProvider() {
         this.items = [];
         this.items = [
-            { nom: "ABDAT Rachida - Médecin - Anesthésie", telephone: "4 4101", secteur: "" },
-            { nom: "AMIEL Isabelle - Médecin - Anesthésie", telephone: "4 4034", secteur: "" },
-            { nom: "ASSAKER Rita - Médecin - Anesthésie", telephone: "4 3527", secteur: "" },
-            { nom: "AYAN MANESH Fanny - Médecin - Anesthésie", telephone: "4 1619", secteur: "" },
-            { nom: "AZALE Mehdi - Médecin - Anesthésie", telephone: "4 4017", secteur: "" },
-            { nom: "BROUNS Kelly - Médecin - Anesthésie", telephone: "4 1680", secteur: "" },
-            { nom: "BRUNEAU Béatrice - Médecin - Anesthésie", telephone: "4 2282", secteur: "" },
-            { nom: "CHOLET Clémentine - Médecin - Anesthésie", telephone: "4 1702", secteur: "" },
-            { nom: "COLAS Anne-Emmanuelle - Médecin - Anesthésie", telephone: "4 4011", secteur: "" },
-            { nom: "DAHMANI Souhayl - PUPH - Anesthésie", telephone: "4 ", secteur: "" },
-            { nom: "DREYFUS Aliénor - Médecin - Anesthésie", telephone: "4 2593", secteur: "" },
-            { nom: "FAIT Charlotte - Médecin - Anesthésie", telephone: "4 3186", secteur: "" },
-            { nom: "GREFF Bruno - Médecin - Anesthésie", telephone: "4 2183", secteur: "" },
-            { nom: "HADDAD Valéry-Jo - Médecin - Anesthésie", telephone: "4 1675", secteur: "" },
-            { nom: "JULIEN Florence - Médecin - Anesthésie", telephone: "4 2714", secteur: "" },
-            { nom: "LIRA Elsa - Médecin - Anesthésie", telephone: "4 4015", secteur: "" },
-            { nom: "LOISELLE Maud - Médecin - Anesthésie", telephone: "4 1703", secteur: "" },
-            { nom: "MANGALSUREN Nyama - Médecin - Anesthésie", telephone: "4 2591", secteur: "" },
-            { nom: "MARSAC Lucile - Médecin - Anesthésie", telephone: "4 4103", secteur: "" },
-            { nom: "PONTONE Silvia - Médecin - Anesthésie", telephone: "4 4009", secteur: "" },
-            { nom: "TRI Nathalie - Médecin - Anesthésie", telephone: "4 4091", secteur: "" },
-            { nom: "SILINS Vilnis - Médecin - Anesthésie", telephone: "4 4010", secteur: "" },
-            { nom: "VACHER Thomas - Médecin - Anesthésie", telephone: "4 2799", secteur: "" },
+            { nom: "Abdat Rachida - Médecin - Anesthésie", telephone: "4 4101", secteur: "" },
+            { nom: "Amiel Isabelle - Médecin - Anesthésie", telephone: "4 4034", secteur: "" },
+            { nom: "Assaker Rita - Médecin - Anesthésie", telephone: "4 3527", secteur: "" },
+            { nom: "Ayan Manesh Fanny - Médecin - Anesthésie", telephone: "4 1619", secteur: "" },
+            { nom: "Azale Mehdi - Médecin - Anesthésie", telephone: "4 4017", secteur: "" },
+            { nom: "Brouns Kelly - Médecin - Anesthésie", telephone: "4 1680", secteur: "" },
+            { nom: "Bruneau Béatrice - Médecin - Anesthésie", telephone: "4 2282", secteur: "" },
+            { nom: "Cholet Clémentine - Médecin - Anesthésie", telephone: "4 1702", secteur: "" },
+            { nom: "Colas Anne-Emmanuelle - Médecin - Anesthésie", telephone: "4 4011", secteur: "" },
+            { nom: "Dahmani Souhayl - PUPH - Anesthésie", telephone: "4 ", secteur: "" },
+            { nom: "Dreyfus Aliénor - Médecin - Anesthésie", telephone: "4 2593", secteur: "" },
+            { nom: "Fait Charlotte - Médecin - Anesthésie", telephone: "4 3186", secteur: "" },
+            { nom: "Greff Bruno - Médecin - Anesthésie", telephone: "4 2183", secteur: "" },
+            { nom: "Haddad Valéry-Jo - Médecin - Anesthésie", telephone: "4 1675", secteur: "" },
+            { nom: "Julien Florence - Médecin - Anesthésie", telephone: "4 2714", secteur: "" },
+            { nom: "Lira Elsa - Médecin - Anesthésie", telephone: "4 4015", secteur: "" },
+            { nom: "Loiselle Maud - Médecin - Anesthésie", telephone: "4 1703", secteur: "" },
+            { nom: "Mangalsuren Nyama - Médecin - Anesthésie", telephone: "4 2591", secteur: "" },
+            { nom: "Marsac Lucile - Médecin - Anesthésie", telephone: "4 4103", secteur: "" },
+            { nom: "Pontone Silvia - Médecin - Anesthésie", telephone: "4 4009", secteur: "" },
+            { nom: "Tri Nathalie - Médecin - Anesthésie", telephone: "4 4091", secteur: "" },
+            { nom: "Silins Vilnis - Médecin - Anesthésie", telephone: "4 4010", secteur: "" },
+            { nom: "Vacher Thomas - Médecin - Anesthésie", telephone: "4 2799", secteur: "" },
             { nom: "MAR Volant - Médecin - Anesthésie", telephone: "4 1375", secteur: "" },
             { nom: "IADE Polyvalent - IADE - Anesthésie", telephone: "4 3990", secteur: "" },
             { nom: "Consultation - Anesthésie", telephone: "4 2221", secteur: "Bleu, étage -1" },
@@ -2595,12 +2598,12 @@ var AnnuaireDataProvider = /** @class */ (function () {
             { nom: "Réveil bloc GynObst (DECT) - Anesthésie", telephone: "4 3836", secteur: "Rouge, étage +1" },
             { nom: "Réveil IRM - Anesthésie", telephone: "4 8279", secteur: "Bleu, étage -3" },
             { nom: "Bureau IADE bloc commun - Anesthésie", telephone: "4 3325", secteur: "Jaune, étage -3" },
-            { nom: "PAULET Fabienne - Cadre supérieur de bloc", telephone: "4 2280", secteur: "Jaune, étage -3" },
-            { nom: "BUB Isabelle - Cadre SSPI", telephone: "4 2564", secteur: "Jaune, étage -3" },
-            { nom: "BLANCARD Benoit - Cadre IADE", telephone: "4 2269", secteur: "Jaune, étage -3" },
-            { nom: "CHIRON Christophe - Coordination technique", telephone: "4 4164", secteur: "" },
-            { nom: "BERDJI Abdel - IADE - Gestes d'urgence", telephone: "4 4154", secteur: "" },
-            { nom: "MIMOUNI Corinne - Secrétariat - Anesthésie-Réanimation", telephone: "4 2268", secteur: "Rouge, étage 0" },
+            { nom: "Paulet Fabienne - Cadre supérieur de bloc", telephone: "4 2280", secteur: "Jaune, étage -3" },
+            { nom: "Bub Isabelle - Cadre SSPI", telephone: "4 2564", secteur: "Jaune, étage -3" },
+            { nom: "Blancard Benoit - Cadre IADE", telephone: "4 2269", secteur: "Jaune, étage -3" },
+            { nom: "Chiron Christophe - Coordination technique", telephone: "4 4164", secteur: "" },
+            { nom: "Berdji Abdel - IADE - Gestes d'urgence", telephone: "4 4154", secteur: "" },
+            { nom: "Mimouni Corinne - Secrétariat - Anesthésie-Réanimation", telephone: "4 2268", secteur: "Rouge, étage 0" },
             { nom: "Fax bloc commun", telephone: "4 2024", secteur: "Jaune, étage -3" },
             { nom: "Fax consultation anesthésie", telephone: "4 2760", secteur: "Bleu, étage -1" },
             { nom: "Fax secrétariat anesthésie", telephone: "4 2237", secteur: "Bleu, étage -1" },
@@ -2991,7 +2994,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\app\app.html"*/'<ion-menu [content]="content" type="overlay" side="start" menuId="custom" contentId="main" class="my-custom-menu">\n\n  <ion-header>\n    <ion-toolbar color="tertiary">\n      <ion-title>Menu QuadruPed</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content>\n    <ion-list>\n\n      <ion-item (click)="openAccueilPage()">Accueil </ion-item>\n      <ion-item (click)="openPatientPage()" color="warning">Mon patient</ion-item>\n\n      <ion-item-divider (click)="ToggleCalculs()"> \n        <ion-label>Mes calculs\n          <ion-icon *ngIf="!isShownCalculs" class="menuIcon" name="arrow-down" style="zoom:1.5"></ion-icon>\n          <ion-icon *ngIf="isShownCalculs" class="menuIcon" name="arrow-up"  style="zoom:1.5"></ion-icon>\n        </ion-label>\n      </ion-item-divider> \n     \n      <ion-list *ngIf="isShownCalculs">\n      <ion-item (click)="openInductionPage()"> Induction anesthésique</ion-item>\n      <ion-item (click)="openVASPage()">Gestion des voies aériennes</ion-item>\n      <ion-item (click)="openALRPage()">Anesthésie loco-régionale</ion-item>\n      \n      <ion-item (click)="openEntretienPage()">Entretien anesthésique</ion-item>\n      <ion-item (click)="openFluidesPage()">Gestion des fluides</ion-item>\n      <ion-item (click)="openAntalgiePage()">Analgésie et NVPO</ion-item>\n\n      <ion-item (click)="openUrgencesPage()" color="danger">Urgences</ion-item> \n    </ion-list>\n    \n      <ion-item-divider (click)="ToggleProtocoles()"> \n        <ion-label>Mes protocoles\n          <ion-icon *ngIf="!isShownProtocoles" class="menuIcon" name="arrow-down" style="zoom:1.5"></ion-icon>\n          <ion-icon *ngIf="isShownProtocoles" class="menuIcon" name="arrow-up"  style="zoom:1.5"></ion-icon>\n        </ion-label>\n      </ion-item-divider> \n    \n    <ion-list *ngIf="isShownProtocoles">\n        <ion-item (click)="openAntiInfPage()">Anti-infectieux</ion-item>\n        <ion-item (click)="openExtrophieVesicalePage()">Extrophie vésicale</ion-item>\n    </ion-list>   \n    \n    <ion-item-divider (click)="openAnnuaire()" color="tertiary">\n     Annuaire\n    </ion-item-divider>\n\n  </ion-list>\n  </ion-content>\n  \n    </ion-menu>\n\n\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\app\app.html"*/'<ion-menu [content]="content" type="overlay" side="start" menuId="custom" contentId="main" class="my-custom-menu">\n\n  <ion-header>\n    <ion-toolbar color="tertiary">\n      <ion-title>Menu QuadruPed</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content>\n    <ion-list>\n\n      <ion-item (click)="openAccueilPage()">Accueil </ion-item>\n\n      <ion-item (click)="ToggleCalculs()" color="turquoise"> \n        <ion-label><b>Mes posologies</b>\n          <ion-icon *ngIf="!isShownCalculs" class="menuIcon" name="arrow-down" style="zoom:1.5"></ion-icon>\n          <ion-icon *ngIf="isShownCalculs" class="menuIcon" name="arrow-up"  style="zoom:1.5"></ion-icon>\n        </ion-label>\n      </ion-item> \n     \n      <ion-list *ngIf="isShownCalculs">\n      <ion-item (click)="openPatientPage()" color="warning">Mon patient : renseigner</ion-item>\n      <ion-item (click)="openInductionPage()"> Induction anesthésique</ion-item>\n      <ion-item (click)="openVASPage()">Gestion des voies aériennes</ion-item>\n      <ion-item (click)="openALRPage()">Anesthésie loco-régionale</ion-item>\n      \n      <ion-item (click)="openEntretienPage()">Entretien anesthésique</ion-item>\n      <ion-item (click)="openFluidesPage()">Gestion des fluides</ion-item>\n      <ion-item (click)="openAntalgiePage()">Analgésie et NVPO</ion-item>\n\n      <ion-item (click)="openUrgencesPage()" color="danger">Urgences</ion-item> \n    </ion-list>\n    \n      <ion-item (click)="ToggleProtocoles()" color="primary-light"> \n        <ion-label><b>Mes protocoles</b>\n          <ion-icon *ngIf="!isShownProtocoles" class="menuIcon" name="arrow-down" style="zoom:1.5"></ion-icon>\n          <ion-icon *ngIf="isShownProtocoles" class="menuIcon" name="arrow-up"  style="zoom:1.5"></ion-icon>\n        </ion-label>\n      </ion-item> \n    \n    <ion-list *ngIf="isShownProtocoles">\n        <ion-item (click)="openAntiInfPage()">Anti-infectieux</ion-item>\n        <ion-item (click)="openExtrophieVesicalePage()">Extrophie vésicale</ion-item>\n    </ion-list>   \n    \n    <ion-item (click)="openAnnuaire()" color="tertiary">\n     Annuaire\n    </ion-item>\n\n  </ion-list>\n  </ion-content>\n  \n    </ion-menu>\n\n\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */],

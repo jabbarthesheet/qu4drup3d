@@ -7,7 +7,6 @@ import { ServiceDataProvider } from "../providers/service-data/liste_anti_infect
 
 
 import { AccueilPage } from '../pages/accueil/accueil';
-import { PatientPage } from '../pages/patient/patient';
 import { BiometriePage } from '../pages/biometrie/biometrie';
 import { OptionsPage } from '../pages/options/options';
 import { PlateauInductionPage } from '../pages/plateau-induction/plateau-induction';
@@ -20,11 +19,19 @@ import { EntretienAnesthPage } from '../pages/entretien-anesth/entretien-anesth'
 import { AntiInfectieuxPage } from '../pages/anti-infectieux/anti-infectieux';
 import { LocoRegionalePage } from '../pages/loco-regionale/loco-regionale';
 import { ExtrophieVesicalePage } from '../pages/extrophie-vesicale/extrophie-vesicale';
+import { MonitoragePage } from '../pages/monitorage/monitorage';
+import { ProtocolesPage } from '../pages/protocoles/protocoles';
+import { RecommandationsPage } from '../pages/recommandations/recommandations';
 
 import { AnnuairePage } from '../pages/annuaire/annuaire'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+
+
 
 
 @Component({
@@ -53,7 +60,6 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title : 'Accueil', component: AccueilPage },
-      { title : 'Patient' , component: PatientPage },
       { title : 'Premedication', component:PreMedicationPage },
       { title : 'Plateau pour induction', component: PlateauInductionPage },
       { title : 'Voies aériennes', component: PlateauVasPage},
@@ -65,6 +71,9 @@ export class MyApp {
       { title : 'Loco-régionale', component : LocoRegionalePage},
       { title : 'Extrophie vésicale', component : ExtrophieVesicalePage},
       {title : 'Annuaire', component : AnnuairePage },
+      { title : 'Protocoles', component : ProtocolesPage},
+      {title : 'Recommandations' , component : RecommandationsPage},
+      {title: 'Monitorage', component : MonitoragePage},
     ];
   }
 
@@ -72,14 +81,9 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
+      this.statusBar.styleLightContent();
       this.splashScreen.hide();
     });
-  }
-
-  ToggleCalculs(){
-    this.isShownCalculs = !this.isShownCalculs; 
-    this.isShownProtocoles = false;
   }
 
   ToggleProtocoles(){
@@ -95,81 +99,29 @@ export class MyApp {
   }
 */
 
-  openPatientPage() {
-    console.log("ouverture de page patient");
-    this.nav.setRoot(PatientPage); 
-    this.menu.close();
-  };
 
-  openInductionPage() {
-    console.log("ouverture de page induction");
-    this.nav.setRoot(PlateauInductionPage); 
-    this.menu.close();
-  };
+openProtocoles() {
+  this.nav.setRoot(ProtocolesPage); 
+  this.menu.close();
+};
 
-  openVASPage() {
-    console.log("ouverture de page VAS");
-    this.nav.setRoot(PlateauVasPage); 
-    this.menu.close();
-  };
+openRecommandations()
+{
+  this.nav.setRoot(RecommandationsPage); 
+  this.menu.close();
+};
 
-  
-  openALRPage() {
-    console.log("ouverture de page ALR");
-    this.nav.setRoot(LocoRegionalePage); 
-    this.menu.close();
-  };
-  
+openAccueilPage ()
+{
+   this.nav.setRoot(AccueilPage); 
+   this.menu.close();
+};
 
-  openUrgencesPage() {
-    console.log("ouverture de page urgences");
-    this.nav.setRoot(UrgencePage); 
-    this.menu.close();
-  };
-
-  openEntretienPage() {
-    console.log("ouverture de page entrtien");
-    this.nav.setRoot(EntretienAnesthPage); 
-    this.menu.close();
-  };
-
-  openFluidesPage() {
-    console.log("ouverture de page fluides");
-    this.nav.setRoot(GestionFluidesPage); 
-    this.menu.close();
-  };
-
-  openAntalgiePage() {
-    console.log("ouverture de page antalgie NVPO");
-    this.nav.setRoot(AntalgiePage); 
-    this.menu.close();
-  };
-
-  openAntiInfPage() {
-    console.log("ouverture de page anti infectieux");
-    this.nav.setRoot(AntiInfectieuxPage); 
-    this.menu.close();
-  };
-
-  openExtrophieVesicalePage(){
-    console.log("ouverture de page anti infectieux");
-    this.nav.setRoot(ExtrophieVesicalePage); 
-    this.menu.close();
-  };
-
-  openAccueilPage ()
-  {
-    console.log("ouverture de page d'accueil");
-    this.nav.setRoot(AccueilPage); 
-    this.menu.close();
-  };
-
-  openAnnuaire()
-  {
-    console.log("ouverture de page annuaire");
-    this.nav.setRoot(AnnuairePage); 
-    this.menu.close();
-  };
+openAnnuaire()
+ {
+  this.nav.setRoot(AnnuairePage); 
+   this.menu.close();
+   };
 
 
 };

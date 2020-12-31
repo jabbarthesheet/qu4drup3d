@@ -9,7 +9,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Analgésie & NVPO</ion-title>
+    <ion-title>Antalgie & post-op </ion-title>
   </ion-navbar>
   <ion-item color="secondary"> 
     <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg 
@@ -124,7 +124,7 @@
     </ion-card>
 
 
-      <ion-item-divider (click)="ToggleAutres()" color="tertiary">
+      <ion-item-divider (click)="ToggleAutres()" color="light">
         <ion-label >Autres antalgiques
 
           <ion-icon *ngIf="!isShownAutres" class="antalgiquesIcon" name="add-circle"  style="zoom:1.5"></ion-icon>
@@ -174,7 +174,7 @@
       </ion-card>
 
 
-      <ion-item-divider (click)="ToggleAntiEmet()">
+      <ion-item-divider (click)="ToggleAntiEmet()" color="turquoise">
         <ion-label >Anti-émétiques
 
           <ion-icon *ngIf="!isShownAntiEmet" class="antalgiquesIcon" name="add-circle"  style="zoom:1.5"></ion-icon>
@@ -199,7 +199,50 @@
 
       </ion-card>
 
+      <ion-item-divider (click)="ToggleAntiCoag()" color="dark">
+        <ion-label >Anti-coagulants
+
+          <ion-icon *ngIf="!isShownAntiCoag" class="antalgiquesIcon" name="add-circle"  style="zoom:1.5"></ion-icon>
+          <ion-icon *ngIf="isShownAntiCoag" class="antalgiquesIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+
+        </ion-label>
+      </ion-item-divider>
   
+      <ion-card *ngIf="isShownAntiCoag">
+
+      <ion-item>
+        <ion-label><b>Enoxaparine (Lovenox<span>&#174;</span>):</b>
+          <p>Préventive : {{AdminHBPMpreventive}} UI/j </p>
+          <p>- Pour 100 UI/kg/j</p>
+          <p><b>- Administrer en 2 injections avant 1 mois</b></p>
+          <p>Curative : {{AdminHBPMefficace}} UI <b>x2/j</b> </p>
+          <p>- Pour {{PosoHBPMefficace}}</p>
+          <p><b>- Obj aXa [0,5-1] ; 4h après 3e inj.</b></p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label><b>HNF efficace :</b>
+    
+          <p>Bolus : {{AdminHNF50}} à {{AdminHNF100}} UI </p>
+          <p>- Pour 50 à 100 UI/kg</p>
+      
+          <p>Entretien : {{AdminHNFentretien}} UI/h</p>
+          <p>- Pour 20 UI/kg/h</p>
+          <p><b>- Obj aXa [0,3-0,6] à H4.</b></p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label><b>Protamine :</b>
+          <br>
+          <p>1 mg pour 100 UI d'héparine administrées</p>
+          <p>IV <b>lent</b> sans dépasser 50mg/10min.</p>
+        </ion-label>
+      </ion-item>
+
+      </ion-card> 
+
     </ion-item-group>
   </ion-list>
 

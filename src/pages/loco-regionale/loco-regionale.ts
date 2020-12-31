@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
-import { PatientPage } from '../patient/patient';
+import { BiometriePage } from '../biometrie/biometrie';
 
 
 /**
@@ -24,6 +24,8 @@ export class LocoRegionalePage {
   Allergie:number; 
   EstomacPlein:boolean; 
   EstomacOuiNon:string;
+
+  
   Kemura:number;
   Busoni:number;
   BolusPIEBRopiSuf:number;
@@ -87,7 +89,7 @@ export class LocoRegionalePage {
           text: 'Okay',
           handler: () => {
             console.log('Confirm Okay');
-            this.navCtrl.push(PatientPage);
+            this.navCtrl.push(BiometriePage);
           }
         }
       ]

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { AlertController } from 'ionic-angular';
-import { PatientPage } from '../patient/patient';
+import { BiometriePage } from '../biometrie/biometrie';
 
 /**
  * Generated class for the PlateauInductionPage page.
@@ -119,7 +119,7 @@ export class PlateauInductionPage {
           text: 'Okay',
           handler: () => {
             console.log('Confirm Okay');
-            this.navCtrl.push(PatientPage);
+            this.navCtrl.push(BiometriePage);
           }
         }
       ]

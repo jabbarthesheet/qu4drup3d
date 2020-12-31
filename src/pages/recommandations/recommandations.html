@@ -1,0 +1,31 @@
+<!--
+  Generated template for the RecommandationsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header translucent>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Recommandations en anesthésie pédiatrique</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  Choisir parmi les recommandations listées ci-dessous (ouvre une fenêtre dans le navigateur) : 
+
+  <ion-item (click)="openWebpage('https://sfar.org/wp-content/uploads/2019/10/rfe-gestion-des-voies-aeriennes-de-lenfant.pdf')"><ion-label>
+    RFE SFAR 2018 
+    <p>Voies aériennes de l'enfant</p>
+  </ion-label></ion-item>
+
+  <ion-item (click)="openWebpage('https://www.has-sante.fr/upload/docs/application/pdf/2015-02/transfusion_de_globules_rouges_homologues_-_produits_indications_alternatives_-_recommandations.pdf')">
+    <ion-label>HAS ANSM 2014
+    <p> Bonnes pratiques transfusionnelles</p>
+  </ion-label></ion-item>
+
+
+</ion-content>

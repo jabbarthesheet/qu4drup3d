@@ -1,0 +1,29 @@
+<!--
+  Generated template for the ProtocolesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header translucent>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Protocoles</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-divider color="warning">Anti-infectieux</ion-item-divider>
+      <ion-item>Prophylaxie</ion-item>
+      <ion-item (click)="openAntiInfectieuxTraitement()">Traitement</ion-item>
+    <ion-item-divider color="turquoise">Chirurgies pédiatriques spécifiques</ion-item-divider>
+      <ion-item (click)="openExtrophieVesicale()">Extrophie Vésicale</ion-item>
+    <ion-item-divider color="light">Obstétrique</ion-item-divider>
+      <ion-item>Péridurale</ion-item>
+      <ion-item>Péridurale Déambularoire</ion-item>
+      <ion-item>Césarienne</ion-item>
+  </ion-list>
+
+</ion-content>

@@ -3,7 +3,7 @@ import { Alert, AlertController, NavController, NavParams } from 'ionic-angular'
 import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
 import { NumericLiteral } from 'typescript';
-import { PatientPage } from '../patient/patient';
+import { BiometriePage } from '../biometrie/biometrie';
 
 /**
  * Generated class for the AntalgiePage page.
@@ -30,6 +30,7 @@ export class AntalgiePage {
   isShownPal3:boolean=false;
   isShownAutres:boolean=false;
   isShownAntiEmet:boolean=false;
+  isShownAntiCoag:boolean=false; 
 
   AdminParacetamol:number;
   AdminKeto:number;
@@ -55,6 +56,13 @@ export class AntalgiePage {
   AdminClonidinePO:number;
   AdminZophren:number;
   AdminDroleptan:number;
+  AdminHBPMpreventive:number; 
+  AdminHBPMefficace:number; 
+  PosoHBPMefficace:string;
+  AdminHNF50:number;
+  AdminHNF100:number; 
+  AdminHNFentretien:number; 
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController ) {
   }
@@ -77,7 +85,7 @@ export class AntalgiePage {
           text: 'Okay',
           handler: () => {
             console.log('Confirm Okay');
-            this.navCtrl.push(PatientPage);
+            this.navCtrl.push(BiometriePage);
           }
         }
       ]
@@ -92,38 +100,36 @@ export class AntalgiePage {
   };
 
   TogglePalier1() {
-    console.log('toggle');
     this.isShownPal1 = !this.isShownPal1;
-    this.isShownPal2 = this.isShownPal3 = this.isShownAutres = this.isShownAntiEmet =  false; 
+    this.isShownPal2 = this.isShownPal3 = this.isShownAutres = this.isShownAntiEmet = this.isShownAntiCoag = false; 
   };
 
   TogglePalier2() {
-    console.log('toggle');
     this.isShownPal2 = !this.isShownPal2;
-    this.isShownPal1 = this.isShownPal3 = this.isShownAutres = this.isShownAntiEmet = false; 
+    this.isShownPal1 = this.isShownPal3 = this.isShownAutres = this.isShownAntiEmet = this.isShownAntiCoag = false; 
   };
 
   TogglePalier3() {
-    console.log('toggle');
     this.isShownPal3 = !this.isShownPal3;
-    this.isShownPal1 = this.isShownPal2 = this.isShownAutres = this.isShownAntiEmet = false; 
+    this.isShownPal1 = this.isShownPal2 = this.isShownAutres = this.isShownAntiEmet = this.isShownAntiCoag = false; 
   };
 
 
   ToggleAutres() {
 
-    console.log('toggle');
     this.isShownAutres = !this.isShownAutres;
-    this.isShownPal1 = this.isShownPal3 = this.isShownPal2 = this.isShownAntiEmet = false; 
+    this.isShownPal1 = this.isShownPal3 = this.isShownPal2 = this.isShownAntiEmet = this.isShownAntiCoag = false; 
     
   };
 
   ToggleAntiEmet() {
-
-    console.log('toggle');
     this.isShownAntiEmet = !this.isShownAntiEmet;
-    this.isShownPal1 = this.isShownPal3 = this.isShownPal2 = this.isShownAutres = false; 
-    
+    this.isShownPal1 = this.isShownPal3 = this.isShownPal2 = this.isShownAutres = this.isShownAntiCoag = false;
+  };
+
+  ToggleAntiCoag() {
+    this.isShownAntiCoag = !this.isShownAntiCoag;
+    this.isShownPal1 = this.isShownPal3 = this.isShownPal2 = this.isShownAutres = this.isShownAntiEmet = false;
   };
 
   ionViewWillEnter()
@@ -228,6 +234,22 @@ export class AntalgiePage {
     this.AdminDroleptan = Math.round((this.PoidsNum * 25)*10)/10;
     if (this.AdminDroleptan >= 1250){this.AdminDroleptan = 1250; }
 
+    /* Anticoagulation*/
+
+    this.AdminHBPMpreventive = Math.round((this.PoidsNum * 100)*10)/10; 
+    
+    if(this.AgeNum <= 6*12) { 
+      this.AdminHBPMefficace  = Math.round((this.PoidsNum * 130)*10)/10; 
+      this.PosoHBPMefficace = "130 UI/kg x2/j avant 6 ans"
+    }
+    else { 
+      this.AdminHBPMefficace  = Math.round((this.PoidsNum * 100)*10)/10; 
+      this.PosoHBPMefficace = "100 UI/kg x2/j après 6 ans"
+    };
+    
+    this.AdminHNF50 = Math.round((this.PoidsNum * 50)*10)/10;
+    this.AdminHNF100 = Math.round((this.PoidsNum * 100)*10)/10; 
+    this.AdminHNFentretien = Math.round((this.PoidsNum * 20)*10)/10; 
 
   })
       })})

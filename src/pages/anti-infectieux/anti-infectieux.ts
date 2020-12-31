@@ -3,7 +3,6 @@ import { Alert, AlertController, Events, NavController, NavParams } from 'ionic-
 import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
 import { NumericLiteral } from 'typescript';
-import { PatientPage } from '../patient/patient';
 import { ServiceDataProvider } from "../../providers/service-data/liste_anti_infectieux";
 import { FormControl } from "@angular/forms";
 import 'rxjs/add/operator/debounceTime';

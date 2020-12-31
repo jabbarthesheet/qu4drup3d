@@ -1,50 +1,43 @@
-.card {
-
-    font-size: small !important;
-    text-align: justify !important;
+.homePagePatient
+{
+  text-align: center !important;
 }
 
-.footer {
 
-    font-size: small !important;
-    text-align: justify !important;
+figcaption {
+  font-style: bold;
+  padding: 2px;
+  text-align: center;
 };
 
 .resize {
-    width:50% !important;
-    height:50% !important;
+    width:25% !important;
     margin-left: auto;
     margin-right: auto; 
     display: block;  
   }
 
-.cardWelcome
-{
-box-shadow:none !important;
-}
-;
-.card-background-page {
-
-    ion-card {
-      position: relative;
-      text-align: center;
-    }
-  
-    .card-title {
-      position: absolute;
-      top: 36%;
-      font-size: 2.0em;
-      width: 100%;
-      font-weight: bold;
-      color: #fff;
-    }
-  
-    .card-subtitle {
-      font-size: 1.0em;
-      position: absolute;
-      top: 52%;
-      width: 100%;
-      color: #fff;
-    }
-  
+.homeButtons {
+    width:45% !important;
+    padding:auto; 
+    margin:2%;
+    float:center; 
   }
+
+.logoRDB {
+  width:50% !important;
+  float: left;
+}
+
+.logoDAR {
+  width:50% !important;
+  float: right;
+}
+
+
+
+.footerToggleButton
+{
+  height: 50%; 
+  float: right !important;
+}

@@ -7,10 +7,11 @@ import { App, NavController, NavParams } from 'ionic-angular';
 import { ModalController, ViewController } from 'ionic-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from "@angular/forms";
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+
 
 import { AccueilPage } from '../pages/accueil/accueil';
 
-import { PatientPage } from '../pages/patient/patient';
 import { BiometriePage } from '../pages/biometrie/biometrie';
 import { OptionsPage } from '../pages/options/options';
 import { PlateauInductionPage } from '../pages/plateau-induction/plateau-induction';
@@ -31,12 +32,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ServiceDataProvider } from '../providers/service-data/liste_anti_infectieux';
 import { AnnuaireDataProvider } from '../providers/annuaire-data/annuaire-data';
+import { ProtocolesPage } from '../pages/protocoles/protocoles';
+import { RecommandationsPage } from '../pages/recommandations/recommandations';
+import { MonitoragePage } from '../pages/monitorage/monitorage';
 
 @NgModule({
   declarations: [
     MyApp,
     AccueilPage,
-    PatientPage,
     BiometriePage, 
     OptionsPage,
     PlateauInductionPage,
@@ -49,6 +52,9 @@ import { AnnuaireDataProvider } from '../providers/annuaire-data/annuaire-data';
     LocoRegionalePage,
     ExtrophieVesicalePage,
     AnnuairePage,
+    ProtocolesPage,
+    RecommandationsPage,
+    MonitoragePage,
   ],
 
   imports: [
@@ -68,7 +74,6 @@ import { AnnuaireDataProvider } from '../providers/annuaire-data/annuaire-data';
   entryComponents: [
     MyApp,
     AccueilPage,
-    PatientPage,
     BiometriePage, 
     OptionsPage,
     PlateauInductionPage,
@@ -81,6 +86,9 @@ import { AnnuaireDataProvider } from '../providers/annuaire-data/annuaire-data';
     LocoRegionalePage,
     ExtrophieVesicalePage,
     AnnuairePage,
+    ProtocolesPage,
+    RecommandationsPage,
+    MonitoragePage,
   ],
 
   providers: [
@@ -88,7 +96,8 @@ import { AnnuaireDataProvider } from '../providers/annuaire-data/annuaire-data';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ServiceDataProvider,
-    AnnuaireDataProvider
+    AnnuaireDataProvider,
+    InAppBrowser, 
   ]
 })
 export class AppModule {}

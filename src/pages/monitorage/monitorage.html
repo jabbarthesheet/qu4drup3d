@@ -1,0 +1,188 @@
+<ion-header translucent>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Monitorage & dispositifs</ion-title>
+  </ion-navbar>
+  <ion-item color="secondary"> 
+    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg 
+      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+    <p>Allergie : {{Allergie}}</p></ion-label>
+    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> 
+  </ion-item>
+</ion-header>
+
+<ion-content padding>
+
+      <ion-item-divider (click)="ToggleConstantes()" color="light">
+    <ion-label>Paramètres vitaux selon l'âge
+  <ion-icon *ngIf="!isShownConstantes" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
+  <ion-icon *ngIf="isShownConstantes" class="fluidIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+    </ion-label>
+  </ion-item-divider> 
+
+
+  <ion-grid fixed="true" *ngIf="isShownConstantes" class="ionFirstRow">
+    <ion-row >
+      <ion-col>
+      </ion-col>
+      <ion-col class="normale">
+        Normale
+      </ion-col>
+      <ion-col class="trophaut">
+        Trop haut
+      </ion-col>
+      <ion-col class="tropbas">
+        Trop bas
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+          FC (/min)
+      </ion-col>
+      <ion-col class="normale">
+        {{FCnormale}}
+      </ion-col>
+      <ion-col class="trophaut">
+        {{FCdangerHaut}}
+      </ion-col>
+      <ion-col class="tropbas">
+        {{FCdangerBas}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col >
+          FR (/min)
+      </ion-col>
+      <ion-col class="normale"> 
+        {{FRnormale}}
+      </ion-col>
+      <ion-col class="trophaut">
+        {{FRdangerHaut}}
+      </ion-col>
+      <ion-col class="tropbas">
+        {{FRdangerBas}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col >
+          SpO2 (%)
+      </ion-col>
+      <ion-col class="normale">
+        {{SpO2normale}}
+      </ion-col>
+      <ion-col>
+        -
+      </ion-col>
+      <ion-col class="tropbas">
+        {{SpO2dangerBas}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+          PAS (mmHg)
+      </ion-col>
+      <ion-col class="normale">
+        {{PASnormale}}
+      </ion-col>
+      <ion-col class="trophaut">
+        {{PASdangerHaut}}
+      </ion-col>
+      <ion-col class="tropbas">
+        {{PASdangerBas}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+          PAD (mmHg)
+      </ion-col>
+      <ion-col class="normale">
+        {{PADnormale}}
+      </ion-col>
+      <ion-col class="trophaut">
+        {{PADdangerHaut}}
+      </ion-col>
+      <ion-col class="tropbas">
+        {{PADdangerBas}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+          PAM (mmHg)
+      </ion-col>
+      <ion-col class="normale">
+        {{PAMnormale}}
+      </ion-col>
+      <ion-col class="trophaut">
+        {{PAMdangerHaut}}
+      </ion-col>
+      <ion-col class="tropbas">
+        {{PAMdangerBas}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+          Diurèse (mL/h sur 3h)
+      </ion-col>
+      <ion-col class="normale">
+        {{Diuresenormale}}
+      </ion-col>
+      <ion-col class="trophaut">
+        {{DiuresedangerHaut}}
+      </ion-col>      
+      <ion-col class="tropbas">
+        {{DiuresedangerBas}}
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+
+
+    <ion-item-divider (click)="ToggleDispositifs()" color="light">
+      <ion-label>Taille des dispositifs
+    <ion-icon *ngIf="!isShownDispositifs" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
+    <ion-icon *ngIf="isShownDispositifs" class="fluidIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+      </ion-label>
+    </ion-item-divider> 
+
+    <ion-list *ngIf="isShownDispositifs">
+      <ion-item>
+        <ion-label>Doppler Oesophagien
+            <p>Modele de sonde : {{SondeDoppler}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>NIRS - Stable à +/- 20%
+            <p>Capteur : {{CapteurNirs}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>BIS - Objectif 40 à 60
+            <p>Electrodes : {{ElectrodesBIS}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Sonde urinaire
+            <p>Taille de sonde : {{TailleSondeUrinaire}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Sonde gastrique
+            <p>Taille de sonde : {{TailleSondeGastrique}} </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+</ion-content>

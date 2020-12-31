@@ -58,7 +58,46 @@
               <p><b> - Repère nez : {{RepereSITnez}} cm</b></p>
               </ion-item>
         </ion-card>
-           
+          
+
+        <ion-item-divider (click)="ToggleMasqueLarynge()" color="primary">
+          <ion-label>Masque laryngé
+          <ion-icon *ngIf="!isShownMasqueLarynge" class="urgenceIcon" name="add-circle"  style="zoom:1.2"></ion-icon>
+          <ion-icon *ngIf="isShownMasqueLarynge" class="urgenceIcon" name="close-circle"  style="zoom:1.2"></ion-icon>
+        </ion-label>
+        </ion-item-divider> 
+
+        <ion-card *ngIf="isShownMasqueLarynge">
+            <ion-item>Taille de masque : {{TailleMasqueLarynge}}</ion-item>
+        </ion-card>
+
+
+        <ion-item-divider (click)="ToggleIntubationDifficile()" color="danger">
+          <ion-label>Intubation difficile
+          <ion-icon *ngIf="!isShownIntubationDifficile" class="urgenceIcon" name="add-circle"  style="zoom:1.2"></ion-icon>
+          <ion-icon *ngIf="isShownIntubationDifficile" class="urgenceIcon" name="close-circle"  style="zoom:1.2"></ion-icon>
+        </ion-label>
+        </ion-item-divider> 
+
+        <ion-card class="IOTdifficile" *ngIf="isShownIntubationDifficile">
+              <ion-card-title>RFE SFAR 2018</ion-card-title>
+              <ion-card-content>
+                <p><b>- IOT difficile non prévue : </b></p>
+                <br>
+                <p>En cas de ventilation ou d'intubation difficile non prévue, utiliser un dispositif de 
+                 ventilation supra-glottique pour tenter d'assurer la ventilation de l'enfant.</p>
+                 <br>
+               
+                <p><b>- IOT difficile prévue : </b></p>
+                <br>
+                <p>Il est probablement recommandé d’utiliser un vidéolaryngoscope en première
+                intention chez les patients avec intubation difficile prévue et ventilation au masque
+                possible ou après échec de la laryngoscopie directe afin d’augmenter les chances de
+                succès de l’intubation.</p>
+
+              </ion-card-content>
+        </ion-card>
+
 
   </ion-item-group>
 

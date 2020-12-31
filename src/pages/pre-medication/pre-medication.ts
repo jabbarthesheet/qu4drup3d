@@ -3,7 +3,7 @@ import { Alert, AlertController, NavController, NavParams } from 'ionic-angular'
 import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
 import { NumericLiteral } from 'typescript';
-import { PatientPage } from '../patient/patient';
+import { BiometriePage } from '../biometrie/biometrie';
 
 @Component({
   selector: 'page-pre-medication',
@@ -41,7 +41,7 @@ export class PreMedicationPage {
           text: 'Okay',
           handler: () => {
             console.log('Confirm Okay');
-            this.navCtrl.push(PatientPage);
+            this.navCtrl.push(BiometriePage);
           }
         }
       ]

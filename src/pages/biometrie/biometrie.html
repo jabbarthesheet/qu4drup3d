@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  
+  <ion-navbar></ion-navbar>
   <ion-item color="secondary"> 
     <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg 
       <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p> 
@@ -22,7 +22,7 @@
     <ion-list> <ion-item-group>
         <ion-item-divider color="warning">
           <ion-label>Poids 
-            <p><i>(ex 3,5 kg : indiquer 3 puis 500)</i></p></ion-label>
+            <p><i>(ex 3,5 kg : Kilogrammes = 3, Grammes = 500.)</i></p></ion-label>
         </ion-item-divider> 
 
   <ion-item>
@@ -39,7 +39,7 @@
       <ion-item-group>
         <ion-item-divider color="warning">
           <ion-label>Age 
-              <p><i>(ex 1 an et demi : indiquer 1 puis 6)</i></p></ion-label>
+              <p><i>(ex 1 an et demi : Années = 1, Mois = 6.)</i></p></ion-label>
         </ion-item-divider> 
 
   <ion-item>
@@ -50,7 +50,11 @@
     <ion-label position="stacked">Mois</ion-label>
     <ion-input inputmode="numeric" type="number" [(ngModel)]="biometrie.mois" name="mois" placeholder="{{MoisFill}}"></ion-input>
   </ion-item>
-  <button ion-button type="submit" block>Enregistrer les données</button>
+  <ion-item>
+    <ion-label position="stacked">Semaines</ion-label>
+    <ion-input inputmode="numeric" type="number" [(ngModel)]="biometrie.semaines" name="semaines" placeholder="{{SemainesFill}}"></ion-input>
+  </ion-item>
+  <button ion-button type="submit" block>Enregistrer</button>
  
       </ion-item-group>
 </ion-list>

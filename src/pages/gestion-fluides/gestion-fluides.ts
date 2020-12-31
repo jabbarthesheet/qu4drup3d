@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
-import { PatientPage } from '../patient/patient';
+import { BiometriePage } from '../biometrie/biometrie';
+import { OptionsPage } from '../options/options';
 
 /**
  * Generated class for the GestionFluidesPage page.
@@ -93,7 +94,7 @@ export class GestionFluidesPage {
           text: 'Okay',
           handler: (OK) => {
             console.log('Confirm Okay');
-            this.navCtrl.push(PatientPage);
+            this.navCtrl.push(BiometriePage);
           }
         }
       ]
@@ -158,7 +159,7 @@ export class GestionFluidesPage {
               this.DureeJeune = dureejeune;
               console.log('duree du jeune renseignee de', this.DureeJeune, 'heures.');
 
-            if (!this.PoidsNum || !this.AgeNum || !this.DureeJeune) { this.presentAlert(); this.loadcontent()}
+            if (!this.PoidsNum || !this.AgeNum) { this.presentAlert(); this.loadcontent()}
             else {  this.loadcontent()
           };
 
@@ -206,6 +207,10 @@ export class GestionFluidesPage {
     console.log('Diff Hb = ', this.DiffHb);
     if (this.DiffHb <= 1) {this.VolCGR = "Non (diff < 1 g)";}
     else {this.VolCGR = Math.round(this.DiffHb * this.PoidsNum * 4).toString() + " mL CGR";} 
+    };
+
+    displayOptions(): void{
+      this.navCtrl.push(OptionsPage);
     };
 
 }

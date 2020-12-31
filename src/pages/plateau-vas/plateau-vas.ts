@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
-import { PatientPage } from '../patient/patient';
 import { AlertController } from 'ionic-angular';
+import { BiometriePage } from '../biometrie/biometrie';
 
 /**
  * Generated class for the PlateauVasPage page.
@@ -39,9 +39,12 @@ export class PlateauVasPage {
   CouleurCanuleMasque:string; 
   LameIntubation:string; 
   TailleFiltre:string; 
+  TailleMasqueLarynge:any;
 
-  isShownVentilation:boolean;
-  isShownIntubation:boolean;
+  isShownVentilation:boolean=false;
+  isShownIntubation:boolean=false;
+  isShownMasqueLarynge:boolean=false; 
+  isShownIntubationDifficile:boolean=false; 
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController) {
@@ -49,13 +52,23 @@ export class PlateauVasPage {
 
   ToggleIntubation() {
     this.isShownIntubation = !this.isShownIntubation;
-    this.isShownVentilation = false; 
+    this.isShownVentilation = this.isShownMasqueLarynge = this.isShownIntubationDifficile = false; 
   };
 
   ToggleVentilation () {
     this.isShownVentilation = !this.isShownVentilation; 
-    this.isShownIntubation = false; 
+    this.isShownIntubation = this.isShownMasqueLarynge = this.isShownIntubationDifficile = false; 
   };
+
+  ToggleMasqueLarynge() {
+    this.isShownMasqueLarynge = !this.isShownMasqueLarynge; 
+    this.isShownIntubation = this.isShownVentilation = this.isShownIntubationDifficile = false;
+  };
+
+  ToggleIntubationDifficile(){
+    this.isShownIntubationDifficile = !this.isShownIntubationDifficile; 
+    this.isShownIntubation = this.isShownVentilation = this.isShownMasqueLarynge = false;
+  }
   
   async presentAlert() {
     const alert = await this.alertController.create({
@@ -75,7 +88,7 @@ export class PlateauVasPage {
           text: 'Okay',
           handler: () => {
             console.log('Confirm Okay');
-            this.navCtrl.push(PatientPage);
+            this.navCtrl.push(BiometriePage);
           }
         }
       ]
@@ -143,8 +156,7 @@ export class PlateauVasPage {
         this.RepereSITenfant = Math.round(((this.TailleSITage + this.TailleSITpoids)/2)*3).toString() + " cm" ; 
         this.RepereSITdents = Math.round((this.AgeNum/24 + 12)*10)/10; 
         this.RepereSITnez = Math.round((this.AgeNum/24 + 15)*10)/10;
-      }
-      ;
+      };
 
       this.Volumecourant = Math.round(this.PoidsNum * 6) ; 
 
@@ -163,11 +175,14 @@ export class PlateauVasPage {
       else if(this.PoidsNum <= 30){this.LameIntubation = "Macintosh 2"}
       else {this.LameIntubation = "Macintosh 3"};
 
-      
+      if(this.PoidsNum <= 5){ this.TailleMasqueLarynge = 1;}
+      else if(this.PoidsNum <= 10){ this.TailleMasqueLarynge = 1.5;}
+      else if(this.PoidsNum <= 20){ this.TailleMasqueLarynge = 2;}
+      else if(this.PoidsNum <= 30){ this.TailleMasqueLarynge = 2.5;}
+      else if(this.PoidsNum <= 70){ this.TailleMasqueLarynge = 3;}
+      else { this.TailleMasqueLarynge = "4 ou 5";}
 
         console.log('IonViewWillEnter OptionsPage');
-
-
       }); 
       }); 
     })); 

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
-import { PatientPage } from '../patient/patient';
+import { BiometriePage } from '../biometrie/biometrie';
 
 
 /**
@@ -33,24 +33,37 @@ export class EntretienAnesthPage {
   RemiEntretien:number; 
   RocuEntretien:number;
   TracEntretien:number;
+  XyloEntretien:number;
+  KetaEntretien:number; 
+  SufEntretien:number; 
 
   isShownInhalatoire:boolean=false;
-  isShownIntraVeineux:boolean=false;
+  isShownHypnotiquesIntraVeineux:boolean=false;
+  isShownAntalgiques:boolean=false;
+  isShownCurares:boolean=false; 
   
-
-
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController ) {
   }
 
   ToggleInhalatoire() {
     this.isShownInhalatoire = !this.isShownInhalatoire; 
-    this.isShownIntraVeineux = false; 
+    this.isShownHypnotiquesIntraVeineux = this.isShownAntalgiques = this.isShownCurares = false; 
   };
 
-  ToggleIntraVeineux() {
-    this.isShownIntraVeineux = !this.isShownIntraVeineux; 
-    this.isShownInhalatoire = false;
+  ToggleHypnotiquesIntraVeineux() {
+    this.isShownHypnotiquesIntraVeineux = !this.isShownHypnotiquesIntraVeineux; 
+    this.isShownInhalatoire = this.isShownAntalgiques = this.isShownCurares = false;
+  };
+
+  ToggleAntalgiques() {
+    this.isShownAntalgiques = !this.isShownAntalgiques;
+    this.isShownCurares = this.isShownInhalatoire = this.isShownHypnotiquesIntraVeineux = false;
+  };
+
+  ToggleCurares(){
+    this.isShownCurares = !this.isShownCurares;
+    this.isShownAntalgiques = this.isShownInhalatoire = this.isShownHypnotiquesIntraVeineux = false;
   };
 
   async presentAlert() {
@@ -71,7 +84,7 @@ export class EntretienAnesthPage {
           text: 'Okay',
           handler: () => {
             console.log('Confirm Okay');
-            this.navCtrl.push(PatientPage);
+            this.navCtrl.push(BiometriePage);
           }
         }
       ]
@@ -142,6 +155,9 @@ export class EntretienAnesthPage {
         this.RemiEntretien = Math.round((this.PoidsNum * 10)*10)/10;
         this.RocuEntretien = Math.round((this.PoidsNum * 0.6)*10)/10;
         this.TracEntretien = Math.round((this.PoidsNum * 0.5)*10)/10;
+        this.XyloEntretien = Math.round((this.PoidsNum * 1)*10)/10; 
+        this.KetaEntretien = Math.round((this.PoidsNum * 0.15)*10)/10; 
+        this.SufEntretien = Math.round((this.PoidsNum * 0.2)*10)/10; 
 
 
 

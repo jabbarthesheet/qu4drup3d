@@ -43510,49 +43510,43 @@ ion-row {
   font-size: smaller !important;
 }
 
-.card {
-  font-size: small !important;
-  text-align: justify !important;
+.homePagePatient {
+  text-align: center !important;
 }
 
-.footer {
-  font-size: small !important;
-  text-align: justify !important;
+figcaption {
+  font-style: bold;
+  padding: 2px;
+  text-align: center;
 }
 
 .resize {
-  width: 50% !important;
-  height: 50% !important;
+  width: 25% !important;
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
 
-.cardWelcome {
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
+.homeButtons {
+  width: 45% !important;
+  padding: auto;
+  margin: 2%;
+  float: center;
 }
 
-.card-background-page ion-card {
-  position: relative;
-  text-align: center;
+.logoRDB {
+  width: 50% !important;
+  float: left;
 }
 
-.card-background-page .card-title {
-  position: absolute;
-  top: 36%;
-  font-size: 2.0em;
-  width: 100%;
-  font-weight: bold;
-  color: #fff;
+.logoDAR {
+  width: 50% !important;
+  float: right;
 }
 
-.card-background-page .card-subtitle {
-  font-size: 1.0em;
-  position: absolute;
-  top: 52%;
-  width: 100%;
-  color: #fff;
+.footerToggleButton {
+  height: 50%;
+  float: right !important;
 }
 
 .nomAnnuaires {
@@ -43572,8 +43566,18 @@ ion-row {
   font-size: smaller !important;
 }
 
+ion-card {
+  text-align: justify !important;
+}
+
 .fluidIcon {
   float: right !important;
+}
+
+.nb {
+  text-align: left !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .lightbulb {
@@ -43596,6 +43600,18 @@ ion-row {
   vertical-align: middle;
 }
 
+.normale {
+  background-color: #6eb96e !important;
+}
+
+.tropbas {
+  background-color: #9874c0 !important;
+}
+
+.trophaut {
+  background-color: #c76c65 !important;
+}
+
 .MonPatient {
   text-align: center;
 }
@@ -43613,6 +43629,12 @@ ion-row {
 
 .inductionIcon {
   float: right !important;
+}
+
+.IOTdifficile {
+  text-align: justify !important;
+  padding: 2%;
+  font-size: smaller !important;
 }
 
 .urgenceIcon {

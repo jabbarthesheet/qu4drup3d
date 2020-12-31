@@ -3,8 +3,8 @@ import { Alert, AlertController, NavController, NavParams, Nav } from 'ionic-ang
 import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
 import { NumericLiteral } from 'typescript';
-import { PatientPage } from '../patient/patient';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { BiometriePage } from '../biometrie/biometrie';
 
 @Component({
   selector: 'page-urgence',
@@ -22,7 +22,7 @@ export class UrgencePage {
   EstomacPlein:boolean; 
   EstomacOuiNon:string; 
   Allergie:string;
-  pagepatient:PatientPage; 
+  pagepatient:BiometriePage; 
 
   ageAnnees:number;
   PAShypoTA:number; 
@@ -127,7 +127,7 @@ this.PosoIntralipidesIAL = Math.round((this.PoidsNum*3)*10)/10;
           text: 'Okay',
           handler: () => {
             console.log('Confirm Okay');
-            this.navCtrl.push(PatientPage); 
+            this.navCtrl.push(BiometriePage); 
             
           }
         }

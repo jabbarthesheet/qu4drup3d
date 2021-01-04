@@ -3,12 +3,10 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
-import { App, NavController, NavParams } from 'ionic-angular';
-import { ModalController, ViewController } from 'ionic-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from "@angular/forms";
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
-
+import { Chart } from 'chart.js'; 
 
 import { AccueilPage } from '../pages/accueil/accueil';
 
@@ -27,7 +25,6 @@ import { AntiInfectieuxPage } from '../pages/anti-infectieux/anti-infectieux';
 
 import { AnnuairePage } from '../pages/annuaire/annuaire'
 
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ServiceDataProvider } from '../providers/service-data/liste_anti_infectieux';
@@ -35,6 +32,7 @@ import { AnnuaireDataProvider } from '../providers/annuaire-data/annuaire-data';
 import { ProtocolesPage } from '../pages/protocoles/protocoles';
 import { RecommandationsPage } from '../pages/recommandations/recommandations';
 import { MonitoragePage } from '../pages/monitorage/monitorage';
+import { CourbesPage } from '../pages/courbes/courbes';
 
 @NgModule({
   declarations: [
@@ -55,10 +53,10 @@ import { MonitoragePage } from '../pages/monitorage/monitorage';
     ProtocolesPage,
     RecommandationsPage,
     MonitoragePage,
+    CourbesPage,
   ],
 
   imports: [
-
     HttpClientModule,  
     ReactiveFormsModule,
     BrowserModule,
@@ -89,6 +87,7 @@ import { MonitoragePage } from '../pages/monitorage/monitorage';
     ProtocolesPage,
     RecommandationsPage,
     MonitoragePage,
+    CourbesPage,
   ],
 
   providers: [

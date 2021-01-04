@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
-import { NumberValueAccessor } from '@angular/forms/src/directives';
 import { App, NavController, NavParams } from 'ionic-angular';
-import { isNumber } from 'ionic-angular/umd/util/util';
 import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
-import { parseTemplate } from 'ionic-angular/umd/util/datetime-util';
-import { MODE_IOS } from 'ionic-angular/umd/config/mode-registry';
-import { ModalController, ViewController } from 'ionic-angular';
 
 
 /**

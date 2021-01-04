@@ -37,18 +37,24 @@
         </ion-label>
       </ion-item>
   
-      <ion-item >
+      <ion-item class="avecAMM">
         <ion-label><b>Ketoprofene (Profenid<span>&#174;</span>) : {{AdminKeto}} mg IVL</b>
           <p>pour 1 mg/kg, toutes les 8 h</p> 
         </ion-label>
       </ion-item>
+      
+      <div class="AMM">AMM <br> IV 15 ans <br> Sirop 6 mois</div>
 
-      <ion-item >
+      <ion-item class="avecAMM">
         <ion-label><b>Ibuprofene : {{AdminIbu}} mg PO</b>
           <p>pour 10 mg/kg, toutes les 8h</p> 
         </ion-label>
       </ion-item>
+
+      <div class="AMM">AMM <br> > 3 mois</div>
+
     </ion-card>
+
       
   
       <ion-item-divider (click)="TogglePalier2()" color="warning">
@@ -61,25 +67,31 @@
       </ion-item-divider>
 
       <ion-card *ngIf="isShownPal2">
-      <ion-item >
+      <ion-item class="avecAMM">
         <ion-label><b>Nalbuphine (Nubain<span>&#174;</span>) : {{AdminNubain}} mg IVL</b>
           <p>pour 0,2 mg/kg, toutes les 4h</p> 
           <p>en ambulatoire, diviser par 2 : {{AdminNubainHdJ}} mg</p>
           <p>injecter sur 20 minutes avant 1 an</p>
         </ion-label>
       </ion-item>
+
+      <div class="AMM">AMM <br> > 18 mois</div>
       
-      <ion-item >
+      <ion-item class="avecAMM">
         <ion-label><b>Nefopam (Acupan<span>&#174;</span>) : {{AdminAcupan}} mg/j IVSE</b>
           <p>pour 1 mg/kg/j</p> 
         </ion-label>
       </ion-item>
+
+      <div class="AMM">AMM <br> > 15 ans</div>
       
-      <ion-item >
+      <ion-item class="avecAMM" >
         <ion-label><b>Tramadol (Contramal<span>&#174;</span>) : {{AdminTramadol}} mg IVL ou PO</b>
           <p>pour 1 mg/kg, toutes les 6h</p> 
         </ion-label>
       </ion-item>
+
+      <div class="AMM">AMM <br> PO 3 ans <br> IV 15 ans</div>
 
     </ion-card>
   
@@ -114,12 +126,14 @@
         </ion-label>
       </ion-item> 
 
-      <ion-item>
+      <ion-item class="avecAMM">
         <ion-label><b>Morphine per os : </b>
           <p> - {{AdminMorphinePOLP}} mg LP toutes les 12h (1 mg/kg) PO</p> 
           <p>- {{AdminMorphinePOID}} mg toutes les 4h SB (0,1 mg/kg) PO</p> 
         </ion-label>
       </ion-item> 
+
+      <div class="AMM">AMM <br> > 6 mois</div>  
 
     </ion-card>
 
@@ -135,12 +149,14 @@
   
       <ion-card *ngIf="isShownAutres">
 
-      <ion-item>
+      <ion-item class="avecAMM">
         <ion-label><b>Gabapentine (Neurontin<span>&#174;</span>): {{AdminNeurontin}} mg PO</b>
           <p>pour 5 mg/kg, toutes les 8h</p> 
           <p>NB comprimés de 150 ou 300 mg</p>
         </ion-label>
       </ion-item>
+
+      <div class="AMM">AMM <br> > 6 ans</div>
 
       <ion-item>
         <ion-label><b>Phloroglucinol (Spasfon<span>&#174;</span>) : </b>
@@ -149,12 +165,14 @@
         </ion-label>
       </ion-item>
 
-      <ion-item>
+      <ion-item class="avecAMM">
         <ion-label><b>Amitryptiline (Laroxyl<span>&#174;</span>) : </b>
           <p>- <b>{{AdminLaroxylIV}} mg</b> (0,5 mg/kg/j) IVSE sur 6h, 1 fois</p> 
           <p>- <b>{{AdminLaroxylPO}} mg</b> (0,5 mg/kg/j) PO, 1 fois</p> 
         </ion-label>
       </ion-item>
+
+      <div class="AMM">AMM <br> > 6 ans</div>
 
       <ion-item>
         <ion-label><b>Clonazepam (Rivotril<span>&#174;</span>) : {{AdminRivotrilPO}} mg PO</b>

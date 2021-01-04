@@ -3,7 +3,6 @@
   text-align: center !important;
 }
 
-
 figcaption {
   font-style: bold;
   padding: 2px;
@@ -24,20 +23,13 @@ figcaption {
     float:center; 
   }
 
-.logoRDB {
-  width:50% !important;
-  float: left;
-}
 
 .logoDAR {
-  width:50% !important;
-  float: right;
+  width:100% ;
+  float: left ;
 }
 
-
-
-.footerToggleButton
-{
-  height: 50%; 
-  float: right !important;
+.logoContainer {
+  padding: 5% ;
+  bottom: 1px ; 
 }

@@ -16,10 +16,27 @@
     font-size:40%;
 };
 
-
-
 .inductionIcon {
 
     float: right !important;    
 
+}
+
+.AMM {
+    width: 15% !important; 
+    height: auto !important; 
+    float: right !important; 
+    font-size: 90% !important;
+    background-color: transparent !important; 
+    text-align: center !important; 
+    vertical-align: center !important;
+    padding-top: 20px !important; 
+    padding-right : 5px !important; 
+}
+
+.avecAMM {
+    width: 85% !important; 
+    float: left !important; 
+    --border-right-width: 3px !important;
+    border-color: black !important; 
 }

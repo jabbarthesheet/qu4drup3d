@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { Alert, AlertController, NavController, NavParams } from 'ionic-angular';
-import { AccueilPage } from '../accueil/accueil';
+import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { NumericLiteral } from 'typescript';
 import { BiometriePage } from '../biometrie/biometrie';
 
 /**

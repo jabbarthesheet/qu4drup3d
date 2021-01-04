@@ -43534,19 +43534,14 @@ figcaption {
   float: center;
 }
 
-.logoRDB {
-  width: 50% !important;
+.logoDAR {
+  width: 100%;
   float: left;
 }
 
-.logoDAR {
-  width: 50% !important;
-  float: right;
-}
-
-.footerToggleButton {
-  height: 50%;
-  float: right !important;
+.logoContainer {
+  padding: 5%;
+  bottom: 1px;
 }
 
 .nomAnnuaires {
@@ -43557,9 +43552,49 @@ figcaption {
   float: right !important;
 }
 
+.AMM {
+  width: 15% !important;
+  height: auto !important;
+  float: right !important;
+  font-size: 90% !important;
+  background-color: transparent !important;
+  text-align: center !important;
+  vertical-align: center !important;
+  padding-top: 0px !important;
+  padding-right: 5px !important;
+}
+
+.avecAMM {
+  width: 85% !important;
+  float: left !important;
+  --border-right-width: 3px !important;
+  border-color: black !important;
+}
+
 .carteATB {
   font-size: 14px !important;
   text-align: left !important;
+}
+
+.normale {
+  background-color: #6eb96e !important;
+}
+
+.tropbas {
+  background-color: #9874c0 !important;
+}
+
+.trophaut {
+  background-color: #c76c65 !important;
+}
+
+.graphPoids {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.comment {
+  font-size: 10px !important;
 }
 
 .entete_protocole {
@@ -43612,6 +43647,11 @@ ion-card {
   background-color: #c76c65 !important;
 }
 
+.graphPoids {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
 .MonPatient {
   text-align: center;
 }
@@ -43629,6 +43669,25 @@ ion-card {
 
 .inductionIcon {
   float: right !important;
+}
+
+.AMM {
+  width: 15% !important;
+  height: auto !important;
+  float: right !important;
+  font-size: 90% !important;
+  background-color: transparent !important;
+  text-align: center !important;
+  vertical-align: center !important;
+  padding-top: 20px !important;
+  padding-right: 5px !important;
+}
+
+.avecAMM {
+  width: 85% !important;
+  float: left !important;
+  --border-right-width: 3px !important;
+  border-color: black !important;
 }
 
 .IOTdifficile {

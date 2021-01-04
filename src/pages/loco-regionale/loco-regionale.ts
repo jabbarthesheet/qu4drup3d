@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
-import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
 import { BiometriePage } from '../biometrie/biometrie';
 

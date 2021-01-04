@@ -1,0 +1,47 @@
+<ion-header translucent>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Biométrie</ion-title>
+  </ion-navbar>
+  <ion-item color="secondary"> 
+    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg  </ion-label>
+  </ion-item>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label>Surface corporelle : {{SurfaceCorporelle}} m²
+      <p class="comment">(Poidsx4 + 7)/(Poids + 90) </p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item> 
+    <ion-label>Sexe du patient</ion-label>
+    <ion-select #newselect (ionChange)="pickGender(sexeMF)" [(ngModel)]="sexeMF" interface="action-sheet" placeholder="choisir"
+     okText="Yup." cancelText="Retour">
+      <ion-option value="Garçon">Garçon</ion-option>
+      <ion-option value="Fille">Fille</ion-option>
+    </ion-select>
+  </ion-item>
+
+  
+    <ion-card class="graphPoids">
+      <ion-card-header>
+        Poids {{sexeMF}} {{AgeRange}}
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #lineCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-item>
+      <ion-label position="stacked">Taille (cm)</ion-label>
+      <ion-input inputmode ="number" type="number" (ionChange)="addTaille(Taille)" [(ngModel)]="Taille" placeholder="Renseigner"></ion-input>
+    </ion-item>
+
+    <ion-item>BMI : {{BMI}} kg/m²</ion-item>
+
+</ion-content>

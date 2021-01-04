@@ -1,14 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
-import { IonicStorageModule } from '@ionic/storage';
-import { ServiceDataProvider } from "../providers/service-data/liste_anti_infectieux";
 
 
 
 import { AccueilPage } from '../pages/accueil/accueil';
-import { BiometriePage } from '../pages/biometrie/biometrie';
-import { OptionsPage } from '../pages/options/options';
 import { PlateauInductionPage } from '../pages/plateau-induction/plateau-induction';
 import { GestionFluidesPage } from '../pages/gestion-fluides/gestion-fluides';
 import { PlateauVasPage } from '../pages/plateau-vas/plateau-vas';
@@ -27,10 +23,7 @@ import { AnnuairePage } from '../pages/annuaire/annuaire'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
-
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
-
+import { CourbesPage } from '../pages/courbes/courbes';
 
 
 
@@ -74,6 +67,7 @@ export class MyApp {
       { title : 'Protocoles', component : ProtocolesPage},
       {title : 'Recommandations' , component : RecommandationsPage},
       {title: 'Monitorage', component : MonitoragePage},
+      {title : 'Courbes', component : CourbesPage},
     ];
   }
 

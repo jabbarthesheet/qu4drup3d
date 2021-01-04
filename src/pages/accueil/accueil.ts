@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { App, NavController, NavParams } from 'ionic-angular';
 import { ModalController, ViewController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { Platform, MenuController, Nav } from 'ionic-angular';
+import { Nav } from 'ionic-angular';
 import { PlateauInductionPage } from '../plateau-induction/plateau-induction';
 import { PlateauVasPage } from '../plateau-vas/plateau-vas';
 import { EntretienAnesthPage } from '../entretien-anesth/entretien-anesth';
@@ -13,6 +13,9 @@ import { UrgencePage } from '../urgence/urgence';
 import { OptionsPage } from '../options/options';
 import { BiometriePage } from '../biometrie/biometrie';
 import { MonitoragePage } from '../monitorage/monitorage';
+import { CourbesPage } from '../courbes/courbes';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+
 
 @Component({
   selector: 'page-accueil',
@@ -52,7 +55,8 @@ Allergie:string;
     public app : App, 
     public navCtrl: NavController, 
     public navParams: NavParams, 
-    public storage: Storage,) {}
+    public storage: Storage,
+    public InAppBrowser: InAppBrowser) {}
     
 
     ionViewDidLoad ()
@@ -125,7 +129,15 @@ Allergie:string;
 
     displayMonitorage():void{
       this.navCtrl.push(MonitoragePage);
-    }
+    };
+
+    displayCourbes():void{
+      this.navCtrl.push(CourbesPage);
+    };
+
+    openDARwebsite() {
+      const browser = this.InAppBrowser.create("http://www.dar-robertdebre.com", '_system');
+    };
 
 };
 

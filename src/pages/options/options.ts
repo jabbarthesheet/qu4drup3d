@@ -66,7 +66,6 @@ export class OptionsPage {
     };   
     
   addAllergie() {
-    console.log(this.NewAllergie);
     this.Allergie = this.NewAllergie;
     this.storage.set('Allergie' , this.Allergie);
     console.log (this.Allergie, 'a bien été enregistrée')

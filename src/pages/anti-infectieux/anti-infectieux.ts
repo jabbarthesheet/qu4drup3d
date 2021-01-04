@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Alert, AlertController, Events, NavController, NavParams } from 'ionic-angular';
-import { AccueilPage } from '../accueil/accueil';
+import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { NumericLiteral } from 'typescript';
 import { ServiceDataProvider } from "../../providers/service-data/liste_anti_infectieux";
-import { FormControl } from "@angular/forms";
 import 'rxjs/add/operator/debounceTime';
 
 @Component({

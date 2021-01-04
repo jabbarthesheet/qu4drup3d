@@ -3,17 +3,11 @@ import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { BiometriePage } from '../biometrie/biometrie';
 
-/**
- * Generated class for the MonitoragePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @Component({
   selector: 'page-monitorage',
   templateUrl: 'monitorage.html',
 })
+
 export class MonitoragePage {
 
   AgeNum:number; 
@@ -59,8 +53,15 @@ export class MonitoragePage {
   TailleSondeUrinaire:string;
   TailleSondeGastrique:string;
 
+  public lineChart: Chart;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,  public storage: Storage, public alertController: AlertController) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,  
+    public storage: Storage, 
+    public alertController: AlertController, 
+    )
+    {
   }
 
   ToggleConstantes()
@@ -108,7 +109,6 @@ export class MonitoragePage {
 
   ionViewWillEnter()
   {
-
     let promiseList: Promise<any>[] = [];
     promiseList.push(
     this.storage.get('AgeForCalc').then((Age) => {
@@ -125,13 +125,9 @@ export class MonitoragePage {
         this.storage.get('Allergie').then((allergie) => {
           this.Allergie = allergie; 
 
-
           if (!this.PoidsNum || !this.AgeNum) { this.presentAlert();this.calculs();}
-          else { this.calculs() }; 
-        
-        });
-    
-    })}) }) }));}
+          else {this.calculs();};      
+        });  })}) }) }));}
 
 
     calculs () {
@@ -151,6 +147,7 @@ export class MonitoragePage {
           this.Allergie = allergie; 
 
         /*placer les calculs ici*/
+
 
         if (this.PoidsNum <= 3) {this.SondeDoppler = "Non utilisable";}
         else if (this.PoidsNum > 3 && this.PoidsNum <= 60 && this.AgeNum < 180) {this.SondeDoppler = "Sonde pédiatrique (KDP72)";}

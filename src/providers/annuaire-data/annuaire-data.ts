@@ -23,7 +23,7 @@ export class AnnuaireDataProvider {
       { nom: "Bruneau Béatrice - Médecin - Anesthésie", telephone: "4 2282", secteur: "" },
       { nom: "Cholet Clémentine - Médecin - Anesthésie" , telephone: "4 1702", secteur: ""},
       { nom: "Colas Anne-Emmanuelle - Médecin - Anesthésie", telephone: "4 4011", secteur: "" },
-      { nom: "Dahmani Souhayl - PUPH - Anesthésie" , telephone: "4 ", secteur: ""},
+      { nom: "Dahmani Souhayl - PUPH - Anesthésie" , telephone: "4 4183", secteur: ""},
       { nom: "Dreyfus Aliénor - Médecin - Anesthésie", telephone: "4 2593", secteur: "" },
       { nom: "Fait Charlotte - Médecin - Anesthésie" , telephone: "4 3186", secteur: ""},
       { nom: "Greff Bruno - Médecin - Anesthésie", telephone: "4 2183", secteur: "" },

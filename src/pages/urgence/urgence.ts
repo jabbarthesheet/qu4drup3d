@@ -1,9 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { Alert, AlertController, NavController, NavParams, Nav } from 'ionic-angular';
-import { AccueilPage } from '../accueil/accueil';
+import { AlertController, NavController, NavParams, Nav } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { NumericLiteral } from 'typescript';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { BiometriePage } from '../biometrie/biometrie';
 
 @Component({

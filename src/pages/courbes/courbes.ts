@@ -86,7 +86,7 @@ export class CourbesPage {
           this.dataPoids3 = [8, 10, 12, 13.3, 15 , 16.2 , 18 , 20 , 22, 24 , 26 , 28.2 , 31 , 35 , 39.5 , 44 , 46.5 , 48.5] ; 
           this.dataPoids97 = [12 , 15 , 18 , 21.5 , 24.2 , 28 , 32.5 , 37.5 , 43.5 , 49 , 55 , 62 , 70 , 78 , 82.5 , 86 , 90.5 , 96.5] ;
           this.mainColor = "rgba(54, 162, 235, 1)"; 
-          this.AgeCourbe = Math.round((this.AgeNum/12)*10)/10 ; 
+          this.AgeCourbe = Math.round(this.AgeNum/12); 
           this.AgeRange = "1 à 18 ans"
 
         }
@@ -97,7 +97,7 @@ export class CourbesPage {
           this.dataPoids3 = [7.5 , 9.5 , 11.5 , 13 , 14.5 , 16 , 18 , 19.5 , 21.5 , 23.5 , 25.5 , 28.5 , 32 , 36 , 39 , 41 , 42 , 43] ; 
           this.dataPoids97 = [11.5 , 15 , 18 , 21 , 24.5 , 28 , 32.5 , 38 , 42.5 , 48.5 , 55 , 62 , 68 , 72.5 , 74.5 , 77 , 79 , 81] ;
           this.mainColor = "rgb(255,20,147,1)";
-          this.AgeCourbe = Math.round((this.AgeNum/12)*10)/10 ; 
+          this.AgeCourbe = Math.round(this.AgeNum/12) ; 
           this.AgeRange = "1 à 18 ans"
         }
   };

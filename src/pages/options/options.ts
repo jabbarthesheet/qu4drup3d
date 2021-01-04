@@ -38,9 +38,9 @@ export class OptionsPage {
     
     let promiseList: Promise<any>[] = [];
     promiseList.push(
-    this.storage.get('AgeForCalc').then((Age) => {
+    this.storage.get('AgeNum').then((Age) => {
         this.AgeNum = Age; 
-    this.storage.get('PoidsForCalc').then((Poids) => {
+    this.storage.get('PoidsNum').then((Poids) => {
         this.PoidsNum = Poids; console.log(
           'Le patient a', this.AgeNum, "mois au total pour ", this.PoidsNum, " kg.");
           this.storage.get('Allergie').then((allergie) => {

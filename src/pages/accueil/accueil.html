@@ -10,17 +10,19 @@
 <ion-content>
     <ion-card>
       <ion-card-content class="homePagePatient">
-      <img  (click)="displayBiometrie()" class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient">  
+      <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient">  
        {{AgeNum}} mois - {{PoidsNum}} kg 
         <p>Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h - Allergie : {{Allergie}}</p>
-        <button ion-button small color="primary"  (click)="displayBiometrie()">Mon patient </button>
+        <button color="turquoise-fonce" ion-button small (click)="showPickerAge()">Age</button>
+        <button color="turquoise-fonce" ion-button small (click)="showPickerPoids()">Poids</button>
+        <br>
         <button ion-button small color="turquoise"  (click)="displayOptions()"> Options </button>
-        <button ion-button small color="light"  (click)="displayCourbes()">Biométrie</button>
+        <button ion-button small color="turquoise"  (click)="displayCourbes()">Biométrie</button>
 
     </ion-card-content>
     </ion-card>
 
-      <button ion-button full color="danger" (click)="displayUrgences()">Urgences</button>
+      <button ion-button full color="warning" (click)="displayUrgences()">Urgences</button>
 
       <button ion-button color="light" class="homeButtons" (click)="displayMonitorage()"> Monitorage</button>
       <button ion-button color="light" class="homeButtons" (click)="displayInduction()"> Induction </button>
@@ -31,9 +33,9 @@
       <button ion-button color="light" class="homeButtons" (click)="displayALR()"> Loco-régionale</button>
       <button ion-button color="light" class="homeButtons" (click)="displayPostop()">Antalgie & Post-op</button>
 
-      <div class="logoContainer">
+    
       <img class="logoDAR" (click)="openDARwebsite()" src="/assets/imgs/logo_dar.png"> 
-    </div>
+
   
 
 

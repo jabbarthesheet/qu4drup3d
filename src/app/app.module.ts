@@ -10,7 +10,6 @@ import { Chart } from 'chart.js';
 
 import { AccueilPage } from '../pages/accueil/accueil';
 
-import { BiometriePage } from '../pages/biometrie/biometrie';
 import { OptionsPage } from '../pages/options/options';
 import { PlateauInductionPage } from '../pages/plateau-induction/plateau-induction';
 import { PlateauVasPage } from '../pages/plateau-vas/plateau-vas';
@@ -38,7 +37,6 @@ import { CourbesPage } from '../pages/courbes/courbes';
   declarations: [
     MyApp,
     AccueilPage,
-    BiometriePage, 
     OptionsPage,
     PlateauInductionPage,
     PlateauVasPage,
@@ -72,7 +70,6 @@ import { CourbesPage } from '../pages/courbes/courbes';
   entryComponents: [
     MyApp,
     AccueilPage,
-    BiometriePage, 
     OptionsPage,
     PlateauInductionPage,
     PlateauVasPage,

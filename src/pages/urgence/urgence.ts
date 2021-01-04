@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { AlertController, NavController, NavParams, Nav } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { BiometriePage } from '../biometrie/biometrie';
+import { AccueilPage } from '../accueil/accueil';
 
 @Component({
   selector: 'page-urgence',
@@ -19,7 +19,7 @@ export class UrgencePage {
   EstomacPlein:boolean; 
   EstomacOuiNon:string; 
   Allergie:string;
-  pagepatient:BiometriePage; 
+  pagepatient:AccueilPage; 
 
   ageAnnees:number;
   PAShypoTA:number; 
@@ -78,9 +78,9 @@ this.PosoIntralipidesIAL = Math.round((this.PoidsNum*3)*10)/10;
 
         let promiseList: Promise<any>[] = [];
         promiseList.push(
-        this.storage.get('AgeForCalc').then((Age) => {
+        this.storage.get('AgeNum').then((Age) => {
             this.AgeNum = Age;
-        this.storage.get('PoidsForCalc').then((Poids) => {
+        this.storage.get('PoidsNum').then((Poids) => {
             this.PoidsNum = Poids;
         this.storage.get('DureeJeune').then((dureejeune) => {
             this.DureeJeune = dureejeune ;   
@@ -124,7 +124,7 @@ this.PosoIntralipidesIAL = Math.round((this.PoidsNum*3)*10)/10;
           text: 'Okay',
           handler: () => {
             console.log('Confirm Okay');
-            this.navCtrl.push(BiometriePage); 
+            this.navCtrl.push(AccueilPage); 
             
           }
         }

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { BiometriePage } from '../biometrie/biometrie';
 import { OptionsPage } from '../options/options';
+import { AccueilPage } from '../accueil/accueil';
 
 /**
  * Generated class for the GestionFluidesPage page.
@@ -93,7 +93,7 @@ export class GestionFluidesPage {
           text: 'Okay',
           handler: (OK) => {
             console.log('Confirm Okay');
-            this.navCtrl.push(BiometriePage);
+            this.navCtrl.push(AccueilPage);
           }
         }
       ]
@@ -147,9 +147,9 @@ export class GestionFluidesPage {
     
     let promiseList: Promise<any>[] = [];
     promiseList.push(
-    this.storage.get('AgeForCalc').then((Age) => {
+    this.storage.get('AgeNum').then((Age) => {
         this.AgeNum = Age; 
-    this.storage.get('PoidsForCalc').then((Poids) => {
+    this.storage.get('PoidsNum').then((Poids) => {
         this.PoidsNum = Poids; console.log(
           'Le patient a', this.AgeNum, "mois au total pour ", this.PoidsNum, " kg.");
           this.storage.get('Allergie').then((allergie) => {

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { BiometriePage } from '../biometrie/biometrie';
 import { Chart } from 'chart.js'; 
 import { ViewChild, ElementRef } from "@angular/core";
+import { AccueilPage } from '../accueil/accueil';
 
 @Component({
   selector: 'page-courbes',
@@ -196,7 +196,7 @@ export class CourbesPage {
           text: 'Okay',
           handler: () => {
             console.log('Confirm Okay');
-            this.navCtrl.push(BiometriePage);
+            this.navCtrl.push(AccueilPage);
           }
         }
       ]
@@ -213,9 +213,9 @@ export class CourbesPage {
   {
     let promiseList: Promise<any>[] = [];
     promiseList.push(
-    this.storage.get('AgeForCalc').then((Age) => {
+    this.storage.get('AgeNum').then((Age) => {
         this.AgeNum = Age;
-    this.storage.get('PoidsForCalc').then((Poids) => {
+    this.storage.get('PoidsNum').then((Poids) => {
         this.PoidsNum = Poids;
 
           if (!this.PoidsNum || !this.AgeNum) { this.presentAlert();this.calculs();}
@@ -225,9 +225,9 @@ export class CourbesPage {
     calculs () {
       let promiseList: Promise<any>[] = [];
     promiseList.push(
-    this.storage.get('AgeForCalc').then((Age) => {
+    this.storage.get('AgeNum').then((Age) => {
         this.AgeNum = Age;
-    this.storage.get('PoidsForCalc').then((Poids) => {
+    this.storage.get('PoidsNum').then((Poids) => {
         this.PoidsNum = Poids;
         /*placer les calculs ici*/
 

@@ -11,7 +11,7 @@
     </button>
     <ion-title>Gestion des apports</ion-title>
   </ion-navbar>
-  <ion-item color="secondary"> 
+  <ion-item color="turquoise-fonce"> 
     <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg 
       <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
       <p>Allergie : {{Allergie}}</p></ion-label> 
@@ -84,8 +84,8 @@
           </ion-item>
 
           <ion-item >
-             <ion-label color="secondary">Objectif d'hémoglobinémie : <b>{{Hbsouhaitee}} g/dL</b></ion-label>
-            <ion-range  color="secondary" max="16" pin="true" step="1"  
+             <ion-label color="turquoise-fonce">Objectif d'hémoglobinémie : <b>{{Hbsouhaitee}} g/dL</b></ion-label>
+            <ion-range  color="turquoise-fonce" max="16" pin="true" step="1"  
              (ionChange)="SouhaiteeHb()" [(ngModel)]="Hbsouhaitee"> </ion-range>
           </ion-item>
 
@@ -117,7 +117,7 @@
 
         <ion-card class="nb" padding>   Si ce n'est pas déjà fait, renseignez la durée du jeune dans les options afin d'ajuster les apports hydriques en conséquence.
           <br><br>   
-          <button ion-button color="light" class="homeButtons" (click)="displayOptions()"> Options </button></ion-card>
+          <button ion-button color="turquoise" class="homeButtons" (click)="displayOptions()"> Options </button></ion-card>
 
 </ion-content>
 

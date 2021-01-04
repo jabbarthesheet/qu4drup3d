@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { BiometriePage } from '../biometrie/biometrie';
+import { AccueilPage } from '../accueil/accueil';
 
 @Component({
   selector: 'page-pre-medication',
@@ -39,7 +39,7 @@ export class PreMedicationPage {
           text: 'Okay',
           handler: () => {
             console.log('Confirm Okay');
-            this.navCtrl.push(BiometriePage);
+            this.navCtrl.push(AccueilPage);
           }
         }
       ]
@@ -58,9 +58,9 @@ export class PreMedicationPage {
 
     let promiseList: Promise<any>[] = [];
     promiseList.push(
-    this.storage.get('AgeForCalc').then((Age) => {
+    this.storage.get('AgeNum').then((Age) => {
         this.AgeNum = Age;
-    this.storage.get('PoidsForCalc').then((Poids) => {
+    this.storage.get('PoidsNum').then((Poids) => {
         this.PoidsNum = Poids;
     this.storage.get('DureeJeune').then((dureejeune) => {
         this.DureeJeune = dureejeune ;   

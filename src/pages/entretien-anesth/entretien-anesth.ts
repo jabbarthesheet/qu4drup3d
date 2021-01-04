@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
-import { BiometriePage } from '../biometrie/biometrie';
 
 
 /**
@@ -84,7 +83,7 @@ export class EntretienAnesthPage {
           text: 'Okay',
           handler: () => {
             console.log('Confirm Okay');
-            this.navCtrl.push(BiometriePage);
+            this.navCtrl.push(AccueilPage);
           }
         }
       ]
@@ -102,9 +101,9 @@ export class EntretienAnesthPage {
 
     let promiseList: Promise<any>[] = [];
     promiseList.push(
-    this.storage.get('AgeForCalc').then((Age) => {
+    this.storage.get('AgeNum').then((Age) => {
         this.AgeNum = Age;
-    this.storage.get('PoidsForCalc').then((Poids) => {
+    this.storage.get('PoidsNum').then((Poids) => {
         this.PoidsNum = Poids;
     this.storage.get('DureeJeune').then((dureejeune) => {
         this.DureeJeune = dureejeune ;   
@@ -128,9 +127,9 @@ export class EntretienAnesthPage {
     calculs () {
       let promiseList: Promise<any>[] = [];
     promiseList.push(
-    this.storage.get('AgeForCalc').then((Age) => {
+    this.storage.get('AgeNum').then((Age) => {
         this.AgeNum = Age;
-    this.storage.get('PoidsForCalc').then((Poids) => {
+    this.storage.get('PoidsNum').then((Poids) => {
         this.PoidsNum = Poids;
     this.storage.get('DureeJeune').then((dureejeune) => {
         this.DureeJeune = dureejeune ;   

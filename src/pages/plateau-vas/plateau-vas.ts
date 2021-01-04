@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { AlertController } from 'ionic-angular';
-import { BiometriePage } from '../biometrie/biometrie';
+import { AccueilPage } from '../accueil/accueil';
 
 /**
  * Generated class for the PlateauVasPage page.
@@ -87,7 +87,7 @@ export class PlateauVasPage {
           text: 'Okay',
           handler: () => {
             console.log('Confirm Okay');
-            this.navCtrl.push(BiometriePage);
+            this.navCtrl.push(AccueilPage);
           }
         }
       ]
@@ -100,9 +100,9 @@ export class PlateauVasPage {
     
     let promiseList: Promise<any>[] = [];
     promiseList.push(
-    this.storage.get('AgeForCalc').then((Age) => {
+    this.storage.get('AgeNum').then((Age) => {
         this.AgeNum = Age; 
-    this.storage.get('PoidsForCalc').then((Poids) => {
+    this.storage.get('PoidsNum').then((Poids) => {
         this.PoidsNum = Poids; console.log(
           'Le patient a', this.AgeNum, "mois au total pour ", this.PoidsNum, " kg.");
     

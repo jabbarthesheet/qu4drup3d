@@ -2481,6 +2481,13 @@ var CourbesPage = /** @class */ (function () {
         console.log("le BMI est de ", this.BMI, " kg/m2");
     };
     ;
+    CourbesPage.prototype.addTerme = function (Terme) {
+        this.Terme = parseInt(Terme);
+        console.log("le terme est de", this.Terme, " SA");
+        this.APC = this.AgeNum * 4 + this.Terme;
+        console.log("l'APC est de ", this.APC, " Semaines");
+    };
+    ;
     CourbesPage.prototype.pickGender = function (ValeurChoisie) {
         this.sexeMF = ValeurChoisie;
         this.setDataPoids();
@@ -2685,18 +2692,16 @@ var CourbesPage = /** @class */ (function () {
     ;
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])("lineCanvas"),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */])
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */]) === "function" && _a || Object)
     ], CourbesPage.prototype, "lineCanvas", void 0);
     CourbesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-courbes',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\courbes\courbes.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Biométrie</ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg  </ion-label>\n  </ion-item>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-item>\n    <ion-label>Surface corporelle : {{SurfaceCorporelle}} m²\n      <p class="comment">(Poidsx4 + 7)/(Poids + 90) </p>\n    </ion-label>\n  </ion-item>\n\n  <ion-item> \n    <ion-label>Sexe du patient</ion-label>\n    <ion-select #newselect (ionChange)="pickGender(sexeMF)" [(ngModel)]="sexeMF" interface="action-sheet" placeholder="choisir"\n     okText="Yup." cancelText="Retour">\n      <ion-option value="Garçon">Garçon</ion-option>\n      <ion-option value="Fille">Fille</ion-option>\n    </ion-select>\n  </ion-item>\n\n  \n    <ion-card class="graphPoids">\n      <ion-card-header>\n        Poids {{sexeMF}} {{AgeRange}}\n      </ion-card-header>\n      <ion-card-content>\n        <canvas #lineCanvas></canvas>\n      </ion-card-content>\n    </ion-card>\n\n    <ion-item>\n      <ion-label position="stacked">Taille (cm)</ion-label>\n      <ion-input inputmode ="number" type="number" (ionChange)="addTaille(Taille)" [(ngModel)]="Taille" placeholder="Renseigner"></ion-input>\n    </ion-item>\n\n    <ion-item>BMI : {{BMI}} kg/m²</ion-item>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\courbes\courbes.html"*/,
+            selector: 'page-courbes',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\courbes\courbes.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Biométrie</ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg  </ion-label>\n  </ion-item>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-item>\n    <ion-label>Surface corporelle : {{SurfaceCorporelle}} m²\n      <p class="comment">(Poidsx4 + 7)/(Poids + 90) </p>\n    </ion-label>\n  </ion-item>\n\n  <ion-item> \n    <ion-label>Sexe du patient</ion-label>\n    <ion-select #newselect (ionChange)="pickGender(sexeMF)" [(ngModel)]="sexeMF" interface="action-sheet" placeholder="choisir"\n     okText="Yup." cancelText="Retour">\n      <ion-option value="Garçon">Garçon</ion-option>\n      <ion-option value="Fille">Fille</ion-option>\n    </ion-select>\n  </ion-item>\n\n  \n    <ion-card class="graphPoids">\n      <ion-card-header>\n        Poids {{sexeMF}} {{AgeRange}}\n      </ion-card-header>\n      <ion-card-content>\n        <canvas #lineCanvas></canvas>\n      </ion-card-content>\n    </ion-card>\n\n    <ion-item>\n      <ion-label position="stacked">Taille (cm)</ion-label>\n      <ion-input inputmode ="number" type="number" (ionChange)="addTaille(Taille)" [(ngModel)]="Taille" placeholder="Renseigner"></ion-input>\n    </ion-item>\n\n    <ion-item>BMI : {{BMI}} kg/m²</ion-item>\n\n    <ion-item>\n      <ion-label position="stacked">Terme naissance (SA)</ion-label>\n      <ion-input inputmode ="number" type="number" (ionChange)="addTerme(Terme)" [(ngModel)]="Terme" placeholder="Renseigner"></ion-input>\n    </ion-item>\n\n    <ion-item>APC : {{APC}} semaines</ion-item>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\courbes\courbes.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object])
     ], CourbesPage);
     return CourbesPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=courbes.js.map

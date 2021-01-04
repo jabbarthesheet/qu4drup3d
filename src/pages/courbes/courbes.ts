@@ -33,6 +33,8 @@ export class CourbesPage {
   Taille:number;
   BMI:number; 
   SurfaceCorporelle:number; 
+  APC:number; 
+  Terme:number; 
 
   public lineChart: Chart;
 
@@ -50,6 +52,13 @@ export class CourbesPage {
     console.log ("la taille est de ", this.Taille, " cm" );
     this.BMI = Math.round(this.PoidsNum/((this.Taille/100)*(this.Taille/100))*10)/10 ; 
     console.log ("le BMI est de ", this.BMI, " kg/m2" );
+  }; 
+
+  addTerme(Terme:any){
+    this.Terme = parseInt(Terme) ; 
+    console.log ("le terme est de", this.Terme, " SA" );
+    this.APC = this.AgeNum*4 + this.Terme; 
+    console.log ("l'APC est de ", this.APC, " Semaines" );
   }; 
 
   pickGender(ValeurChoisie){
@@ -233,6 +242,8 @@ export class CourbesPage {
 
         this.SurfaceCorporelle = Math.round(((4*this.PoidsNum + 7)/ (this.PoidsNum + 90)) *10)/10;
         console.log ("la surface corporelle est de ", this.SurfaceCorporelle, " m2" );
+
+
 
   })
       }))};

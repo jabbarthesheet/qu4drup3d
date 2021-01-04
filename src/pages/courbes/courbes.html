@@ -44,4 +44,11 @@
 
     <ion-item>BMI : {{BMI}} kg/m²</ion-item>
 
+    <ion-item>
+      <ion-label position="stacked">Terme naissance (SA)</ion-label>
+      <ion-input inputmode ="number" type="number" (ionChange)="addTerme(Terme)" [(ngModel)]="Terme" placeholder="Renseigner"></ion-input>
+    </ion-item>
+
+    <ion-item>APC : {{APC}} semaines</ion-item>
+
 </ion-content>

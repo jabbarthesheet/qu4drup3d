@@ -32,6 +32,7 @@ import { ProtocolesPage } from '../pages/protocoles/protocoles';
 import { RecommandationsPage } from '../pages/recommandations/recommandations';
 import { MonitoragePage } from '../pages/monitorage/monitorage';
 import { CourbesPage } from '../pages/courbes/courbes';
+import { AntibioprophylaxiePage } from '../pages/antibioprophylaxie/antibioprophylaxie';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { CourbesPage } from '../pages/courbes/courbes';
     RecommandationsPage,
     MonitoragePage,
     CourbesPage,
+    AntibioprophylaxiePage,
   ],
 
   imports: [
@@ -85,6 +87,7 @@ import { CourbesPage } from '../pages/courbes/courbes';
     RecommandationsPage,
     MonitoragePage,
     CourbesPage,
+    AntibioprophylaxiePage,
   ],
 
   providers: [

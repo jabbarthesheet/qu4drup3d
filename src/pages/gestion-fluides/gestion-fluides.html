@@ -29,81 +29,91 @@
       <ion-list>
         <ion-item-group>
           
-          <ion-item-divider (click)="ToggleApports()" color="primary">
-            <ion-label>Apports hydriques
-          <ion-icon *ngIf="!isShownApports" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
-          <ion-icon *ngIf="isShownApports" class="fluidIcon" name="close-circle" style="zoom:1.5"></ion-icon>
+          <ion-item-divider (click)="ToggleApports()">
+            <ion-label color="dark-turquoise">Apports hydriques
+          <ion-icon *ngIf="!isShownApports" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownApports" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
             </ion-label>
           </ion-item-divider> 
 
 
-          <ion-card *ngIf="isShownApports">
-          <ion-item>Besoins de base 
-            <p><b>{{Solute}} : {{ApportBaseHoraire}} mL/h</b></p>
+          <ion-card *ngIf="isShownApports" class="drogueContainer">
+          <ion-item>
+            <ion-label class="drogueInduction">Besoins de base : <b>{{ApportBaseHoraire}} mL/h</b>
+            <p class="dilutionDrogueInduction">{{Solute}}</p></ion-label>
           </ion-item>
-          <ion-item>Compensation du jeûne ({{DureeJeune}} heures)
-            <p><b>{{Solute}} : {{CompJeune}} mL</b></p>
-            <p>Passer {{CompJeuneH1}} mL sur 1h</p>
-            <p>Puis passer {{CompJeuneH2}} mL sur 2h</p>
+          <ion-item>
+            <ion-label class="drogueInduction">Compensation du jeûne ({{DureeJeune}} heures) : <b>{{CompJeune}} mL</b>
+            <p class="dilutionDrogueInduction">{{Solute}}</p>
+            <p class="dilutionDrogueInduction">Passer {{CompJeuneH1}} mL sur 1h puis {{CompJeuneH2}} mL sur 2h</p>
+          </ion-label>
           </ion-item>
-          <ion-item> <ion-label>Pertes chirurgicales</ion-label>
-            <ion-select #newselect (ionChange)="SelectPerteChir(chir.pertes)" [(ngModel)]="chir.pertes" interface="action-sheet" placeholder="choisir"
-             okText="Yup." cancelText="Retour">
+
+          <ion-item> <ion-label class="drogueInduction" >Pertes chirurgicales</ion-label>
+            <ion-select class="drogueInduction" #newselect (ionChange)="SelectPerteChir(chir.pertes)" [(ngModel)]="chir.pertes" interface="action-sheet" placeholder="choisir"
+             okText="OK" cancelText="Retour">
               <ion-option checked="true" value="Mineures">Mineures (2 mL/kg/h)</ion-option>
               <ion-option value="Moderees">Modérées (5 mL/kg/h)</ion-option>
               <ion-option value="Importantes">Importantes (10 mL/kg/h)</ion-option>
             </ion-select>
           </ion-item>
-          <ion-item>Pertes insensibles
-            <p><b>{{Solute}} : {{CompPertesChir}} mL/h</b></p>
+
+          <ion-item>
+            <ion-label class="drogueInduction">Pertes insensibles
+            <p class="dilutionDrogueInduction"><b>{{Solute}} : {{CompPertesChir}} mL/h</b></p>
+          </ion-label>
           </ion-item>
-          <ion-item>Apports recommandés : <b>
-            <p> - La 1ere heure {{Solute}} : {{TotalH1}} mL</p>
-            <p> - La 2e et la 3e heure {{Solute}} : {{TotalH2et3}} mL</p>
-            <p> - puis {{Solute}} : {{TotalHoraire}} mL/h</p>
+          <ion-item>
+            <ion-label class="drogueInduction">Apports recommandés : <b>
+            <p class="dilutionDrogueInduction"> - La 1ere heure {{Solute}} : {{TotalH1}} mL</p>
+            <p class="dilutionDrogueInduction"> - La 2e et la 3e heure {{Solute}} : {{TotalH2et3}} mL</p>
+            <p class="dilutionDrogueInduction"> - puis {{Solute}} : {{TotalHoraire}} mL/h</p>
           </b>
+        </ion-label>
           </ion-item>
         </ion-card>
 
           
 
-          <ion-item-divider (click)="ToggleCGR()" color="danger">
-            <ion-label>Transfusion CGR
-          <ion-icon *ngIf="!isShownCGR" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
-          <ion-icon *ngIf="isShownCGR" class="fluidIcon" name="close-circle" style="zoom:1.5"></ion-icon>
+          <ion-item-divider (click)="ToggleCGR()">
+            <ion-label color="danger">Concentré de globules rouges
+          <ion-icon *ngIf="!isShownCGR" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownCGR" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
             </ion-label>
           </ion-item-divider> 
 
-          <ion-card *ngIf="isShownCGR">
-          <ion-item>Masse sanguine estimée (80 mL/kg) : 
-            <p><b>{{MasseSanguine}} mL</b></p></ion-item>
+          <ion-card *ngIf="isShownCGR" class="drogueContainer">
           <ion-item>
-            <ion-label color="danger">Hémogloginémie mesurée : <b>{{Hbmesuree}} g/dL</b></ion-label>
-            <ion-range max="16" step="1"  pin="true" color="danger"
-             (ionChange)="MesureeHb()" [(ngModel)]="Hbmesuree"> </ion-range>
+            <ion-label class="drogueInduction">
+              Masse sanguine estimée : <b>{{MasseSanguine}} mL</b>
+              <p class="dilutionDrogueInduction">(pour 80 mL/kg)</p>
+          </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label color="danger" class="drogueInduction">Hémogloginémie mesurée : <b>{{Hbmesuree}} g/dL</b></ion-label>
+            <ion-range max="16" step="1"  pin="true" color="danger" (ionChange)="MesureeHb()" [(ngModel)]="Hbmesuree"> </ion-range>
           </ion-item>
 
           <ion-item >
-             <ion-label color="turquoise-fonce">Objectif d'hémoglobinémie : <b>{{Hbsouhaitee}} g/dL</b></ion-label>
-            <ion-range  color="turquoise-fonce" max="16" pin="true" step="1"  
-             (ionChange)="SouhaiteeHb()" [(ngModel)]="Hbsouhaitee"> </ion-range>
+             <ion-label color="turquoise-fonce" class="drogueInduction">Objectif d'hémoglobinémie : <b>{{Hbsouhaitee}} g/dL</b></ion-label>
+            <ion-range  color="turquoise-fonce" max="16" pin="true" step="1" (ionChange)="SouhaiteeHb()" [(ngModel)]="Hbsouhaitee"> </ion-range>
           </ion-item>
 
           <ion-item>
-            <ion-label>Transfuser : {{VolCGR}}
-              <p><b>Pour corriger {{DiffHb}} g/dL d'hémoglobine</b></p>
+            <ion-label class="drogueInduction">Transfuser : {{VolCGR}}
+              <p class="dilutionDrogueInduction"><b>Pour corriger {{DiffHb}} g/dL d'hémoglobine</b></p>
             </ion-label>
         </ion-item>
         </ion-card>
 
-        <ion-item-divider (click)="ToggleAutresPSL()" color="warning">
-          <ion-label>Autres PSL
-            <ion-icon *ngIf="!isShownAutresPSL" class="fluidIcon" name="add-circle"  style="zoom:1.5"></ion-icon>
-          <ion-icon *ngIf="isShownAutresPSL" class="fluidIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+        <ion-item-divider (click)="ToggleAutresPSL()">
+          <ion-label  color="warning">Autres PSL
+            <ion-icon *ngIf="!isShownAutresPSL" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownAutresPSL" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
           </ion-label>
         </ion-item-divider> 
 
-          <ion-card *ngIf="isShownAutresPSL">
+          <ion-card *ngIf="isShownAutresPSL" class="drogueContainer">
           <ion-item>Unités plaquettaires
             <p><b>Passer {{UnitesPlaquettaires}} UI Plaquettaires</b></p>
           </ion-item>
@@ -117,7 +127,7 @@
 
         <ion-card class="nb" padding>   Si ce n'est pas déjà fait, renseignez la durée du jeune dans les options afin d'ajuster les apports hydriques en conséquence.
           <br><br>   
-          <button ion-button color="turquoise" class="homeButtons" (click)="displayOptions()"> Options </button></ion-card>
+          <button ion-button color="turquoise-fonce" class="homeButtons" (click)="displayOptions()"> Options </button></ion-card>
 
 </ion-content>
 

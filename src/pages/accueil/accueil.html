@@ -8,30 +8,45 @@
 </ion-header>
 
 <ion-content>
-    <ion-card>
-      <ion-card-content class="homePagePatient">
+    <ion-card class="homePagePatient">
+      <ion-card-content>
+        <ion-toggle end class="SexeToggle" color="turquoise-fonce" (ionChange)="ToggleSexe()"></ion-toggle>
       <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient">  
-       {{AgeNum}} mois - {{PoidsNum}} kg 
-        <p>Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h - Allergie : {{Allergie}}</p>
+        <ion-item>
+          <ion-label>
+          <p class="monPatient"><b>Mon patient</b></p>
+          <hr>
+          <p class="monPatient">{{sexeMF}} - {{AgeNum}} mois - {{PoidsNum}} kg </p>
+          <p class="monPatient">Estomac {{EstomacOuiNon}} - Jeûne {{DureeJeune}} h - Allergie : {{Allergie}}</p>
+          <hr>
+        </ion-label>
+        </ion-item> 
+
         <button color="turquoise-fonce" ion-button small (click)="showPickerAge()">Age</button>
         <button color="turquoise-fonce" ion-button small (click)="showPickerPoids()">Poids</button>
-        <br>
-        <button ion-button small color="turquoise"  (click)="displayOptions()"> Options </button>
-        <button ion-button small color="turquoise"  (click)="displayCourbes()">Biométrie</button>
+        <button ion-button small color="turquoise-fonce"  (click)="displayOptions()">Options </button>
+        <button ion-button  small color="danger"  (click)="effacer()">Effacer</button>
+
 
     </ion-card-content>
     </ion-card>
 
-      <button ion-button full color="warning" (click)="displayUrgences()">Urgences</button>
+      <button ion-button   block small color="turquoise"  (click)="displayCourbes()">Biométrie</button>
+      <button ion-button block small color="warning" (click)="displayUrgences()">Urgences</button>
 
-      <button ion-button color="light" class="homeButtons" (click)="displayMonitorage()"> Monitorage</button>
-      <button ion-button color="light" class="homeButtons" (click)="displayInduction()"> Induction </button>
-      <button ion-button color="light" class="homeButtons" (click)="displayVAS()"> Voies Aériennes </button>
-      <button ion-button color="light" class="homeButtons" (click)="displayEntretien()"> Entretien </button> 
+    
+          <button ion-button small color="light" class="homeButtons" (click)="displayMonitorage()"> Monitorage</button>
+          <button ion-button small color="light" class="homeButtons" (click)="displayInduction()"> Induction </button>
+          <button ion-button small color="light" class="homeButtons" (click)="displayVAS()"> Voies Aériennes </button>
+          <button ion-button small color="dark" class="homeButtons" (click)="displayATBprophylaxie()"> ATB </button>
+          <button ion-button small color="light" class="homeButtons" (click)="displayEntretien()"> Entretien </button> 
+    
+          <button ion-button small color="light" class="homeButtons" (click)="displayGestionFluides()"> Solutés et PSL</button>
+          <button ion-button small color="light" class="homeButtons" (click)="displayALR()"> Loco-régionale</button>
+          <button ion-button small color="light" class="homeButtons" (click)="displayPostop()">Antalgie & Post-op</button>
+ 
 
-      <button ion-button color="light" class="homeButtons" (click)="displayGestionFluides()"> Solutés et PSL</button>
-      <button ion-button color="light" class="homeButtons" (click)="displayALR()"> Loco-régionale</button>
-      <button ion-button color="light" class="homeButtons" (click)="displayPostop()">Antalgie & Post-op</button>
+
 
     
       <img class="logoDAR" (click)="openDARwebsite()" src="/assets/imgs/logo_dar.png"> 

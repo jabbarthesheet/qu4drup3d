@@ -9,16 +9,16 @@
     <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg 
       <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
     <p>Allergie : {{Allergie}}</p></ion-label>
-    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> 
+    <ion-icon slot="end"></ion-icon> 
   </ion-item>
 </ion-header>
 
 <ion-content padding>
 
-      <ion-item-divider (click)="ToggleConstantes()" color="light">
-    <ion-label>Paramètres vitaux selon l'âge
-  <ion-icon *ngIf="!isShownConstantes" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
-  <ion-icon *ngIf="isShownConstantes" class="fluidIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+      <ion-item-divider (click)="ToggleConstantes()">
+    <ion-label color="dark-turquoise">Paramètres vitaux selon l'âge
+  <ion-icon *ngIf="!isShownConstantes" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownConstantes" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
     </ion-label>
   </ion-item-divider> 
 
@@ -40,7 +40,7 @@
     </ion-row>
 
     <ion-row>
-      <ion-col>
+      <ion-col class="intitules">
           FC (/min)
       </ion-col>
       <ion-col class="normale">
@@ -55,7 +55,7 @@
     </ion-row>
 
     <ion-row>
-      <ion-col >
+      <ion-col class="intitules" >
           FR (/min)
       </ion-col>
       <ion-col class="normale"> 
@@ -70,7 +70,7 @@
     </ion-row>
 
     <ion-row>
-      <ion-col >
+      <ion-col class="intitules">
           SpO2 (%)
       </ion-col>
       <ion-col class="normale">
@@ -85,7 +85,7 @@
     </ion-row>
 
     <ion-row>
-      <ion-col>
+      <ion-col class="intitules">
           PAS (mmHg)
       </ion-col>
       <ion-col class="normale">
@@ -100,7 +100,7 @@
     </ion-row>
 
     <ion-row>
-      <ion-col>
+      <ion-col class="intitules">
           PAD (mmHg)
       </ion-col>
       <ion-col class="normale">
@@ -115,7 +115,7 @@
     </ion-row>
 
     <ion-row>
-      <ion-col>
+      <ion-col class="intitules">
           PAM (mmHg)
       </ion-col>
       <ion-col class="normale">
@@ -130,7 +130,7 @@
     </ion-row>
 
     <ion-row>
-      <ion-col>
+      <ion-col class="intitules">
           Diurèse (mL/h sur 3h)
       </ion-col>
       <ion-col class="normale">
@@ -146,10 +146,10 @@
     </ion-grid>
 
 
-    <ion-item-divider (click)="ToggleDispositifs()" color="light">
-      <ion-label>Taille des dispositifs
-    <ion-icon *ngIf="!isShownDispositifs" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
-    <ion-icon *ngIf="isShownDispositifs" class="fluidIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+    <ion-item-divider (click)="ToggleDispositifs()">
+      <ion-label color="dark-turquoise">Taille des dispositifs
+    <ion-icon *ngIf="!isShownDispositifs" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
+    <ion-icon *ngIf="isShownDispositifs" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
       </ion-label>
     </ion-item-divider> 
 

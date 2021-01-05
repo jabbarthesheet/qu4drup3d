@@ -4,38 +4,53 @@
 
 };
 
-.dilution {
-    font-style:italic; 
-    font-size:40%;
-};
-
-.posologie {
-
-    font-style:bold; 
-    font: Times;
-    font-size:40%;
-};
-
-.inductionIcon {
-
-    float: right !important;    
-
+.drogueContainer {
+    box-shadow: none;
+    
 }
 
+.drogueInduction {
+    font-size: 14px !important;
+}
+
+.dilutionDrogueInduction {
+    font-size: 12px !important;
+    font-style:bold; 
+
+};
+
+.posologieDrogueInduction {
+
+    font-style:bold; 
+    font-size:12px !important;
+};
+
+.OpenCloseIcon {
+    float: right !important;    
+    color:  #009c9e;
+    transform: rotate(180deg);
+    margin-right:2px;
+}
+
+
 .AMM {
-    width: 15% !important; 
-    height: auto !important; 
+    width: 17% !important; 
     float: right !important; 
-    font-size: 90% !important;
-    background-color: transparent !important; 
+    font-size: 8px !important;
     text-align: center !important; 
     vertical-align: center !important;
-    padding-top: 20px !important; 
-    padding-right : 5px !important; 
+    margin-top: 15px !important;
+    padding-top: 5px !important;     
+    padding-bottom: 5px !important; 
+    padding-right : 1px !important;
+    padding-left : 1px !important;  
+    background-color: #ff6961 !important;
+    color: white !important; 
+    border-radius: 15px;
 }
 
 .avecAMM {
-    width: 85% !important; 
+    width: 83% !important; 
     float: left !important; 
     --border-right-width: 3px !important;
     border-color: black !important; 

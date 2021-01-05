@@ -1,6 +1,14 @@
 .homePagePatient
 {
   text-align: center !important;
+  box-shadow: none !important; 
+}
+
+.monPatient
+{
+  text-align: center !important;
+  font-size: 12px !important;
+  width: 100% !important;
 }
 
 figcaption {
@@ -11,8 +19,7 @@ figcaption {
 
 .resize {
     width:25% !important;
-    margin-left: auto;
-    margin-right: auto; 
+    margin-left: 37%;
     display: block;  
   }
 
@@ -25,7 +32,40 @@ figcaption {
 
 
 .logoDAR {
-  width:90% ;
-  padding-left:10%;
+  width:80% ;
+  padding-left:20%;
   padding-top:5%;
+}
+
+.SexeToggle {
+  float:right; 
+}
+
+
+.SexeToggle::before {
+  position: absolute;
+
+  top: 12px;
+  left: 19.5px;
+
+  content: "F";
+
+  color:  #bce7e9;
+  font-size: 10px;
+
+  z-index: 1;
+}
+
+.SexeToggle::after {
+  position: absolute;
+
+  top: 12px;
+  right: 18px;
+
+  content: "G";
+
+  color: white;
+  font-size: 10px;
+
+  z-index: 1;
 }

@@ -23,65 +23,78 @@
 
     <ion-list> 
       <ion-item-group>
-        <ion-item-divider (click)="ToggleVentilation()" color="primary">
-          <ion-label>Ventilation
-          <ion-icon *ngIf="!isShownVentilation" class="urgenceIcon" name="add-circle"  style="zoom:1.2"></ion-icon>
-          <ion-icon *ngIf="isShownVentilation" class="urgenceIcon" name="close-circle" style="zoom:1.2"></ion-icon>
+        <ion-item-divider (click)="ToggleVentilation()">
+          <ion-label color="dark-turquoise">Ventilation
+          <ion-icon *ngIf="!isShownVentilation" class= "OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownVentilation"  class= "OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
         </ion-label>
         </ion-item-divider> 
 
-        <ion-card *ngIf="isShownVentilation">
-          <ion-item>Taille du filtre : {{TailleFiltre}}</ion-item>
-          <ion-item>Canule de Guédel & masque : {{CouleurCanuleMasque}}</ion-item>
-          <ion-item>Volume courant : <b>{{Volumecourant}} mL</b>
-            <p>pour 6 mL/kg</p>
+        <ion-card *ngIf="isShownVentilation" class="drogueContainer">
+          <ion-item>
+            <ion-label class="dispositifVentilation">Taille du filtre : {{TailleFiltre}} </ion-label></ion-item>
+          <ion-item>
+            <ion-label class="dispositifVentilation">Canule de Guédel & masque : {{CouleurCanuleMasque}}</ion-label></ion-item>
+          <ion-item>
+            <ion-label class="dispositifVentilation">Volume courant : <b>{{Volumecourant}} mL</b>
+            <p class="dilutionDrogueInduction">pour 6 mL/kg</p></ion-label>
           </ion-item>
         </ion-card>
         
-        <ion-item-divider (click)="ToggleIntubation()" color="primary">
-          <ion-label>Intubation
-          <ion-icon *ngIf="!isShownIntubation" class="urgenceIcon" name="add-circle"  style="zoom:1.2"></ion-icon>
-          <ion-icon *ngIf="isShownIntubation" class="urgenceIcon" name="close-circle"  style="zoom:1.2"></ion-icon>
+        <ion-item-divider (click)="ToggleIntubation()">
+          <ion-label color="dark-turquoise">Intubation
+          <ion-icon *ngIf="!isShownIntubation" class= "OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownIntubation" class= "OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
         </ion-label>
         </ion-item-divider> 
 
-        <ion-card *ngIf="isShownIntubation">
-            <ion-item>Lame intubation : <p>{{LameIntubation}}</p>
+        <ion-card *ngIf="isShownIntubation" class="drogueContainer">
+            <ion-item>
+              <ion-label class="dispositifVentilation">Lame intubation : {{LameIntubation}}</ion-label>
             </ion-item>
-            <ion-item>Taille de la sonde d'intubation : 
-              <p> - Proposée selon l'âge : {{TailleSITage}} mm</p>
-              <p> - Proposée selon le poids : {{TailleSITpoids}} mm</p>
+            <ion-item>
+              <ion-label class="dispositifVentilation">Taille de la sonde d'intubation : 
+              <p class="dilutionDrogueInduction"> - Proposée selon l'âge : {{TailleSITage}} mm</p>
+              <p class="dilutionDrogueInduction"> - Proposée selon le poids : {{TailleSITpoids}} mm</p></ion-label>
             </ion-item>
-            <ion-item>Repère de fixation de la sonde : 
-              <p>Approx. : taille sonde x3 : {{RepereSITenfant}} </p>
-              <p><b> - Repère dents : {{RepereSITdents}} cm</b></p>
-              <p><b> - Repère nez : {{RepereSITnez}} cm</b></p>
+
+
+            <ion-item>
+              <ion-label class="dispositifVentilation">Repère de fixation de la sonde : 
+              <p class="dilutionDrogueInduction">Approx. : taille sonde x3 : {{RepereSITenfant}} </p>
+              <p class="dilutionDrogueInduction"><b> - Repère dents : {{RepereSITdents}} cm</b></p>
+              <p class="dilutionDrogueInduction"><b> - Repère nez : {{RepereSITnez}} cm</b></p>
+            </ion-label>
               </ion-item>
         </ion-card>
           
 
-        <ion-item-divider (click)="ToggleMasqueLarynge()" color="primary">
-          <ion-label>Masque laryngé
-          <ion-icon *ngIf="!isShownMasqueLarynge" class="urgenceIcon" name="add-circle"  style="zoom:1.2"></ion-icon>
-          <ion-icon *ngIf="isShownMasqueLarynge" class="urgenceIcon" name="close-circle"  style="zoom:1.2"></ion-icon>
+        <ion-item-divider (click)="ToggleMasqueLarynge()">
+          <ion-label color="dark-turquoise">Masque laryngé
+          <ion-icon *ngIf="!isShownMasqueLarynge" class= "OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownMasqueLarynge" class= "OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
         </ion-label>
         </ion-item-divider> 
 
-        <ion-card *ngIf="isShownMasqueLarynge">
-            <ion-item>Taille de masque : {{TailleMasqueLarynge}}</ion-item>
+        <ion-card *ngIf="isShownMasqueLarynge" class="drogueContainer">
+            <ion-item>
+              <ion-label class="dispositifVentilation">Taille de masque : {{TailleMasqueLarynge}}
+              </ion-label>
+              </ion-item>
         </ion-card>
 
 
-        <ion-item-divider (click)="ToggleIntubationDifficile()" color="danger">
-          <ion-label>Intubation difficile
-          <ion-icon *ngIf="!isShownIntubationDifficile" class="urgenceIcon" name="add-circle"  style="zoom:1.2"></ion-icon>
-          <ion-icon *ngIf="isShownIntubationDifficile" class="urgenceIcon" name="close-circle"  style="zoom:1.2"></ion-icon>
+        <ion-item-divider (click)="ToggleIntubationDifficile()">
+          <ion-label color="danger">Intubation difficile
+          <ion-icon *ngIf="!isShownIntubationDifficile" class= "OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownIntubationDifficile" class= "OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
         </ion-label>
         </ion-item-divider> 
 
         <ion-card class="IOTdifficile" *ngIf="isShownIntubationDifficile">
-              <ion-card-title>RFE SFAR 2018</ion-card-title>
-              <ion-card-content>
+              
+              <ion-card-content class="dispositifVentilation">
+                <p><b>RFE SFAR 2018</b></p>
                 <p><b>- IOT difficile non prévue : </b></p>
                 <br>
                 <p>En cas de ventilation ou d'intubation difficile non prévue, utiliser un dispositif de 

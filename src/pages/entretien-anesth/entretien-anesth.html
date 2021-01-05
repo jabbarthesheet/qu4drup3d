@@ -17,91 +17,93 @@
 
   
   <ion-item-divider (click)="ToggleInhalatoire()" >
-    <ion-label>Hypnose inhalatoire
-  <ion-icon *ngIf="!isShownInhalatoire" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
-  <ion-icon *ngIf="isShownInhalatoire" class="fluidIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+    <ion-label color="dark-turquoise">Entretien inhalatoire
+  <ion-icon *ngIf="!isShownInhalatoire" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownInhalatoire" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
     </ion-label>
   </ion-item-divider> 
 
-  <ion-card *ngIf="isShownInhalatoire">
+  <ion-card *ngIf="isShownInhalatoire" class="drogueContainer">
 
-      <ion-item><p>
-        Suggestions de concentrations selon l'âge
-      </p>
-      <p>Exprimées en %EtHalogéné</p>
-    </ion-item>
 
-      <ion-item color="warning">         
-        <ion-label >Sevoflurane : <b>{{CAMSevo}} %</b></ion-label>
-        </ion-item>
-  </ion-card>  
+      <ion-item>         
+        <ion-label  color="warning" class="drogueInduction"> Sevoflurane : <b>{{CAMSevo}} %</b>
+      <p class="dilutionDrogueInduction">%EtHalogéné, bas DGF</p>
+    </ion-label>
+  </ion-item>
+
+  </ion-card>
 
   <ion-item-divider (click)="ToggleHypnotiquesIntraVeineux()" >
-    <ion-label>Hypnotiques intraveineux
-  <ion-icon *ngIf="!isShownHypnotiquesIntraVeineux" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
-  <ion-icon *ngIf="isShownHypnotiquesIntraVeineux" class="fluidIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+    <ion-label color="dark-turquoise">Hypnotiques intraveineux
+  <ion-icon *ngIf="!isShownHypnotiquesIntraVeineux" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownHypnotiquesIntraVeineux" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
     </ion-label>
   </ion-item-divider> 
-  <ion-card *ngIf="isShownHypnotiquesIntraVeineux">
-<ion-item color="warning">         
-  <ion-label >Propofol : <b>{{PropoEntretien}} mg/h</b>
-  <p>Pour 10 mg/kg/h </p></ion-label>
+
+  <ion-card *ngIf="isShownHypnotiquesIntraVeineux" class="drogueContainer">
+
+<ion-item>        
+  <ion-label class="drogueInduction" color="warning">Propofol : <b>{{PropoEntretien}} mg/h</b>
+  <p class="dilutionDrogueInduction">Pour 10 mg/kg/h </p></ion-label>
   </ion-item>
-<ion-item color="orange">         
-  <ion-label >Midazolam : <b>{{HypnoEntretien}} mg/h</b>
-  <p>Pour 0,1 mg/kg/h </p></ion-label>
+<ion-item >         
+  <ion-label class="drogueInduction" color="orange">Midazolam : <b>{{HypnoEntretien}} mg/h</b>
+  <p class="dilutionDrogueInduction">Pour 0,1 mg/kg/h </p></ion-label>
   </ion-item>
 </ion-card>  
 
 
 <ion-item-divider (click)="ToggleAntalgiques()" >
-  <ion-label>Antalgiques
-<ion-icon *ngIf="!isShownAntalgiques" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
-<ion-icon *ngIf="isShownAntalgiques" class="fluidIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+  <ion-label color="dark-turquoise">Antalgiques
+<ion-icon *ngIf="!isShownAntalgiques" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
+<ion-icon *ngIf="isShownAntalgiques"class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
   </ion-label>
 </ion-item-divider> 
-<ion-card *ngIf="isShownAntalgiques">
 
-<ion-item color="primary">         
-<ion-label >Remifentanil : <b>{{RemiEntretien}} µg/h</b>
-<p>Pour 10 µg/kg/h </p></ion-label>
+<ion-card *ngIf="isShownAntalgiques" class="drogueContainer">
+
+<ion-item>         
+<ion-label class="drogueInduction" color="primary">Remifentanil : <b>{{RemiEntretien}} µg/h</b>
+<p  class="dilutionDrogueInduction">Pour 10 µg/kg/h </p></ion-label>
 </ion-item>
 
-<ion-item color="primary">         
-<ion-label >Sufentanil : <b>{{SufEntretien}} µg/h</b>
-<p>Pour 0,2 µg/kg/h </p></ion-label>
+<ion-item>         
+<ion-label class="drogueInduction" color="primary">Sufentanil : <b>{{SufEntretien}} µg/h</b>
+<p  class="dilutionDrogueInduction">Pour 0,2 µg/kg/h </p></ion-label>
 </ion-item>
 
-<ion-item color="light">         
-<ion-label >Xylocaïne : <b>{{XyloEntretien}} mg/h</b>
-<p>Pour 1 mg/kg/h </p></ion-label>
+<ion-item>         
+<ion-label class="drogueInduction" color="dark">Xylocaïne : <b>{{XyloEntretien}} mg/h</b>
+<p  class="dilutionDrogueInduction">Pour 1 mg/kg/h </p></ion-label>
 </ion-item>
 
-<ion-item color="warning">         
-<ion-label >Ketamine : <b>{{KetaEntretien}} mg/h</b>
-<p>Pour 0,15 mg/kg/h </p></ion-label>
+<ion-item>         
+<ion-label class="drogueInduction" color="warning">Ketamine : <b>{{KetaEntretien}} mg/h</b>
+<p  class="dilutionDrogueInduction">Pour 0,15 mg/kg/h </p></ion-label>
 </ion-item>
 
 </ion-card>
 
 
 <ion-item-divider (click)="ToggleCurares()" >
-  <ion-label>Curares
-<ion-icon *ngIf="!isShownCurares" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
-<ion-icon *ngIf="isShownCurares" class="fluidIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+  <ion-label color="dark-turquoise">Curares
+<ion-icon *ngIf="!isShownCurares" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
+<ion-icon *ngIf="isShownCurares" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
   </ion-label>
 </ion-item-divider> 
-<ion-card *ngIf="isShownCurares">
 
-<ion-item color="danger">         
-<ion-label >Rocuronium : <b>{{RocuEntretien}} mg/h</b>
-<p>Pour 0,6 mg/kg/h </p></ion-label>
+<ion-card *ngIf="isShownCurares"class="drogueContainer">
+
+<ion-item >         
+<ion-label color="danger" class="drogueInduction">Rocuronium : <b>{{RocuEntretien}} mg/h</b>
+<p class="dilutionDrogueInduction">Pour 0,6 mg/kg/h </p></ion-label>
 </ion-item>
 
 
-<ion-item color="danger">         
-<ion-label >Tracrium : <b>{{TracEntretien}} mg/h</b>
-<p>Pour 0,5 mg/kg/h </p></ion-label>
+<ion-item >         
+<ion-label color="danger" class="drogueInduction">Tracrium : <b>{{TracEntretien}} mg/h</b>
+<p class="dilutionDrogueInduction"  >Pour 0,5 mg/kg/h </p></ion-label>
 </ion-item>
 
 </ion-card>  

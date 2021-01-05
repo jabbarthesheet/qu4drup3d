@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { App, NavController, NavParams, PickerController, PickerOptions } from 'ionic-angular';
+import { App, NavController, NavParams, PickerController, PickerOptions, Toast, ToastController, ToastOptions } from 'ionic-angular';
 import { ModalController, ViewController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Nav } from 'ionic-angular';
@@ -14,6 +14,7 @@ import { OptionsPage } from '../options/options';
 import { MonitoragePage } from '../monitorage/monitorage';
 import { CourbesPage } from '../courbes/courbes';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { AntibioprophylaxiePage } from '../antibioprophylaxie/antibioprophylaxie';
 
 
 @Component({
@@ -42,6 +43,8 @@ agemois:number=0;
 agesemaines:number=0;
 poidskilogrammes:number=0;
 poidsgrammes:number=0; 
+sexeToggle:boolean; 
+sexeMF:string="Fille"; 
 
   constructor(
     public viewCtrl: ViewController, 
@@ -51,21 +54,57 @@ poidsgrammes:number=0;
     public navParams: NavParams, 
     public storage: Storage,
     public InAppBrowser: InAppBrowser,
-    public pickerController: PickerController) {}
+    public pickerController: PickerController,
+    public ToastController: ToastController, ) {}
     
 
     ionViewDidLoad ()
     { 
-      console.log('ionViewDidLoad AccueilPage');
-    
+      this.toastCGU()
     };
+
+    effacer(){
+      this.storage.clear();
+      this.AgeNum=0;
+      this.PoidsNum=0;
+      this.sexeMF="Fille";
+      this.DureeJeune = 0; 
+      this.Allergie = "";
+      this.EstomacOuiNon = "vide";
+    }
+
+    ToggleSexe(){ 
+      this.sexeToggle = !this.sexeToggle; 
+      if (this.sexeToggle == true) {this.sexeMF = "Garçon"}
+      else {this.sexeMF = "Fille"};
+      this.storage.set("sexeMF", this.sexeMF);
+      console.log("sexe enregistré : ", this.sexeMF);
+    };
+    
+
+   async toastCGU() {
+      const toast = await this.ToastController.create({
+        message: "En utilisant l'application, vous acceptez les conditions générales d'utilisation.",
+        position: 'Bottom',
+        showCloseButton: true,
+        closeButtonText: "OK.",
+        duration:5000, 
+        });
+      toast.present();
+    };
+    
+
+    pickGender(ValeurChoisie){
+      this.sexeMF = ValeurChoisie; 
+       };
+
 
     async showPickerAge() {
       let options: PickerOptions = {
           buttons: [
               {
                 text: "Annuler",
-                role: 'cancel'
+                role: 'cancel',
               },
               {
                 text:'Valider',
@@ -379,6 +418,10 @@ poidsgrammes:number=0;
 
     displayCourbes():void{
       this.navCtrl.push(CourbesPage);
+    };
+
+    displayATBprophylaxie():void {
+      this.navCtrl.push(AntibioprophylaxiePage);
     };
 
     openDARwebsite() {

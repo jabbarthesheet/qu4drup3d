@@ -16,76 +16,87 @@
 <ion-content padding>
 
   
-  <ion-item-divider (click)="ToggleAPD()" color="warning">
-    <ion-label>Anesthésie péridurale pédiatrique
-  <ion-icon *ngIf="!isShownAPD" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
-  <ion-icon *ngIf="isShownAPD" class="fluidIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+  <ion-item-divider (click)="ToggleAPD()">
+    <ion-label color="dark-turquoise">Anesthésie péridurale pédiatrique
+  <ion-icon *ngIf="!isShownAPD" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownAPD" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
     </ion-label>
   </ion-item-divider> 
 
-  <ion-card *ngIf="isShownAPD">
+  <ion-card *ngIf="isShownAPD" class="drogueContainer">
 
-      <ion-item> <b>Ponction :</b> 
+      <ion-item> 
+        <ion-label class="drogueInduction">
+        <b>Ponction :</b> 
         <p>Espace L4-L5 (voie de Taylor),</p> 
         <p>Entre les épines iliaques postérieures,</p>
-        <p>Aiguille pédiatrique (graduation/5mm). </p> </ion-item>
+        <p>Aiguille pédiatrique (graduation/5mm). </p> 
+      </ion-label>
+      </ion-item>
 
-      <ion-item><b>Distance</b> de l'espace péridural :
-        <p>Estimation</p> 
-      
+      <ion-item>
+          <ion-label class="drogueInduction">
+        <b>Distance</b> de l'espace péridural :
+        <p>Estimation</p>
+      - Selon Kemura (poids) : <b>{{Kemura}} mm</b> <br>
+      - Selon Busoni (âge, après 2 ans) : <b>{{Busoni}} mm</b> <br>
+      - Cathétériser l'espace sur <b>30 mm</b>
 
-      <ion-item font-size="smaller">- Selon Kemura : <b>{{Kemura}} mm</b> 
-        <p>Formule basée sur le poids.</p> </ion-item> 
-
-      <ion-item>- Selon Busoni <b>{{Busoni}} mm</b> 
-        <p>Formule basée sur l'âge ;</p> 
-        <p>Valable après 2 ans.</p></ion-item>
+      </ion-label>
 
       </ion-item>
 
-      <ion-item>Cathétériser l'EPD sur <b>30 mm</b>.</ion-item>
 
-      <ion-item><b>Cassette de PIEB + PCEA :</b>
-        <p>- Volume total de 50 mL,</p>
-        <p>- Ropi 1 mg/mL + Suf 0,2 µg/mL,</p>
-        <p>- Tubulure et clef sécurité en SSPI.</p>
+      <ion-item>
+        <ion-label class="drogueInduction"><b>Cassette de PIEB + PCEA :</b>
+        <p>- Volume total de 50 mL</p>
+        <p>- Ropi 1 mg/mL + Suf 0,2 µg/mL</p>
+        </ion-label>
         </ion-item>
 
-      <ion-item><b>Posologies</b> (suggestions) :
-      <p> - Bolus horaire : <b>{{BolusPIEBRopiSuf}} mL</b> toutes les heures,</p>
-      <p> - Bolus à demande : <b>{{BolusPCEARopiSuf}} mL</b>, PR 20 min,</p>
-      <p> - Dose max. : <b>{{DoseMaxPCEARopiSuf}} mL</b> toutes les 4 heures.</p>
+      <ion-item>
+        <ion-label class="drogueInduction">
+        <b>Posologies</b> (suggestions) :
+      <p> - Bolus horaire : <b>{{BolusPIEBRopiSuf}} mL</b> toutes les heures</p>
+      <p> - Bolus à demande : <b>{{BolusPCEARopiSuf}} mL</b>, PR 20 min</p>
+      <p> - Dose max. : <b>{{DoseMaxPCEARopiSuf}} mL</b> toutes les 4 heures</p>
+      </ion-label>
       </ion-item>
   
   </ion-card>
 
-  <ion-item-divider (click)="ToggleRachi()" color="danger">
-    <ion-label>Rachi-anesthésie néo-natale
-  <ion-icon *ngIf="!isShownRachi" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
-  <ion-icon *ngIf="isShownRachi" class="fluidIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+  <ion-item-divider (click)="ToggleRachi()">
+    <ion-label color="dark-turquoise">Rachi-anesthésie néo-natale
+  <ion-icon *ngIf="!isShownRachi" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownRachi" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
     </ion-label>
   </ion-item-divider> 
 
-  <ion-card *ngIf="isShownRachi">
+  <ion-card *ngIf="isShownRachi" class="drogueContainer">
 
-      <ion-item><b>Indications</b> :
-        <p>- Chirurgie sous ombilicale,</p>
-        <p>- Nouveau né de moins de 5 kg.</p></ion-item>
+      <ion-item>
+        <ion-label class="drogueInduction"><b>Indications</b> :
+        <p>- Chirurgie sous ombilicale</p>
+        <p>- Nouveau né de moins de 5 kg.</p>
+      </ion-label></ion-item>
 
-      <ion-item> <b>Ponction :</b> 
+      <ion-item> <ion-label class="drogueInduction"><b>Ponction :</b> 
         <p>Espace L4-L5 (voie de Taylor),</p> 
         <p>Entre les épines iliaques postérieures,</p>
-        <p>Aguille 25G courte (bleue).</p> </ion-item>
+        <p>Aguille 25G courte (bleue).</p>  </ion-label> </ion-item>
+    
 
-      <ion-item><b>Bupivacaïne hyperbare</b>
+      <ion-item>
+        <ion-label class="drogueInduction"><b>Bupivacaïne hyperbare</b>
         <p>- 5 mg/mL</p>
         <p>- {{VolBupi5NN}} (pour 0,2 mL/kg)</p>
         <p>- Utiliser une seringue à insuline.</p>
+      </ion-label>
         </ion-item>
 
       <div class="astucediv" padding = "15 px">
         <img class="lightbulb" src="/assets/imgs/light-bulb.png">
-        <p class="astucepara"> 
+        <p class="astuce"> 
         <b>L'astuce de Joëlle</b> : Quelques gouttes de G30% sur les lèvres, avant, pendant et après la rachianesthésie</p>
         
         </div>
@@ -93,35 +104,39 @@
   </ion-card>
 
 
-  <ion-item-divider (click)="ToggleALRP()" color="tertiary">
-    <ion-label>Blocs périphériques
-  <ion-icon *ngIf="!isShownALRP" class="fluidIcon" name="add-circle" style="zoom:1.5"></ion-icon>
-  <ion-icon *ngIf="isShownALRP" class="fluidIcon" name="close-circle"  style="zoom:1.5"></ion-icon>
+  <ion-item-divider (click)="ToggleALRP()">
+    <ion-label color="dark-turquoise">Blocs périphériques
+  <ion-icon *ngIf="!isShownALRP" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownALRP" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
     </ion-label>
   </ion-item-divider> 
 
-  <ion-item *ngIf="isShownALRP">
-    <ion-label>Dilutions suggérées : 
+  <ion-card *ngIf="isShownALRP" class="drogueContainer">
+
+    <ion-card-content>
+
+  <ion-item >
+    <ion-label class="drogueInduction"><b>Dilutions suggérées :</b> 
       <p> - Ropivacaïne : 2 mg/mL</p>
       <p> - Lévobupivacaïne : 2,5 mg/mL</p>
     </ion-label>
   </ion-item>
 
-  <ion-item *ngIf="isShownALRP">
-    <ion-label>Posologies suggérées : 
+  <ion-item>
+    <ion-label class="drogueInduction"> <b>Posologies suggérées :</b> 
       <p>(en injection unique)</p>
     </ion-label>
   </ion-item>
 
-  <ion-grid fixed="true" *ngIf="isShownALRP" >
-    <ion-row class="ionFirstRow">
-      <ion-col>
+  <ion-grid class="tableauALR" fixed="true">
+    <ion-row >
+      <ion-col class="tableauALR">
       Bloc
       </ion-col>
-      <ion-col>
+      <ion-col class="tableauALR">
       Volume/poids
       </ion-col>
-      <ion-col>
+      <ion-col class="tableauALR">
       Mon patient
       </ion-col>
 
@@ -238,7 +253,9 @@
 
 </ion-grid>
 
+</ion-card-content>
 
+</ion-card>
 
 </ion-content>
 

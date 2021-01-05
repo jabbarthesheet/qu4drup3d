@@ -1,7 +1,14 @@
-
-
 .IOTdifficile {
 text-align: justify !important; 
 padding: 2%; 
-font-size: smaller !important; 
+font-size: 12px !important; 
+box-shadow: none;
 };
+
+.OpenCloseIcon {
+    float: right !important;    
+}
+
+.dispositifVentilation {
+    font-size: 14px !important;
+}

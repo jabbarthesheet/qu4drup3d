@@ -28,6 +28,11 @@ export class OptionsPage {
   PoidsNum:number; 
   NewAllergie:string; 
   Allergie:string="Aucune"; 
+  Taille:number;
+  BMI:number; 
+  APC:number; 
+  Terme:number; 
+
   
   /* Fin de déclaration des variables */
 
@@ -63,7 +68,20 @@ export class OptionsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OptionsPage');
-    };   
+    };  
+
+    addTerme(Terme:any){
+      this.Terme = parseInt(Terme) ; 
+      console.log ("le terme est de", this.Terme, " SA" );
+      this.APC = this.AgeNum*4 + this.Terme; 
+      console.log ("l'APC est de ", this.APC, " Semaines" );
+    };
+    
+  addTaille(Taille){
+      this.Taille = parseInt(Taille) ; 
+      this.storage.set("Taille", this.Taille);
+      console.log ("la taille enregistrée est de ", this.Taille, " cm" );
+    }; 
     
   addAllergie() {
     this.Allergie = this.NewAllergie;

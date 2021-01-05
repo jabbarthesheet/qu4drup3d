@@ -113,8 +113,8 @@ export class GestionFluidesPage {
   
           this.storage.get('DureeJeune').then((dureejeune) => {
           this.DureeJeune = dureejeune;console.log('duree du jeune renseignee de', this.DureeJeune, 'heures.');  
-          if(this.AgeNum < 15*12){this.Solute = "B26" ; }
-          else {this.Solute = "Ringer Lactate";};
+          if(this.AgeNum < 15*12){this.Solute = "B26 ou NaCl 0.9%" ; }
+          else {this.Solute = "RL ou NaCl 0.9%";};
   
           if (this.PoidsNum <= 10) {this.ApportBaseHoraire = Math.round(4*this.PoidsNum);} 
           else if (this.PoidsNum <= 20) {this.ApportBaseHoraire = Math.round(40+(this.PoidsNum - 10)*2);}

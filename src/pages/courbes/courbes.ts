@@ -338,8 +338,8 @@ setDataBMI(){
         this.ageLabels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] ;
         this.dataIMCNormBasse = [ 12.5, 13 , 13.5, 14.2 , 14.5, 14.75, 14.9, 15, 15.1, 15.15, 15.1, 15, 14.9  ] ; 
         this.dataIMCNormHaute = [ 16, 16.5, 17, 18.5 , 18.8, 19.1, 19.3, 19.4, 19.5, 19.45, 19.4, 19.3, 19.2  ] ;
-        this.mainColor = "rgb(255,20,147,1)";
-        this.bubbleColor = "rgb(255,20,147,1)"; 
+        this.mainColor = "rgba(255,20,147,1)";
+        this.bubbleColor = "rgba(255,20,147,1)"; 
         this.AgeCourbe = this.AgeNum ; 
         this.AgeRange = "0 à 12 mois"
       }
@@ -503,8 +503,8 @@ async presentAlert() {
         this.Taille = Taille; 
    
     this.storage.get('sexeMF').then((sexe) => {
-          this.sexeMF = sexe; 
-          if(!this.sexeMF){this.sexeMF = "Fille";};
+      if (!sexe){this.sexeMF = "Fille";}    
+      else {this.sexeMF = sexe;}; 
   
         /*placer les calculs ici*/
 

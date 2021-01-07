@@ -1,19 +1,109 @@
-<!--
-  Generated template for the AntibioprophylaxiePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
+<ion-header translucent>
   <ion-navbar>
-    <ion-title>Antibioprophylaxie</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Antibioprohylaxie pour chirurgie</ion-title>
   </ion-navbar>
+  <ion-item color="turquoise-fonce"> 
+    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg 
+      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+    <p>Allergie : {{Allergie}}</p></ion-label>
+    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> 
+  </ion-item>
 </ion-header>
 
 <ion-content padding>
 
-  En développement ! 
-  <br>
-  Revenez plus tard... :)
+  <ion-item-divider (click)="ToggleIndications()" >
+    <ion-label color="dark-turquoise">Indications
+  <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
+    </ion-label>
+  </ion-item-divider> 
+
+  <ion-card *ngIf="isShownIndications" class="drogueContainer">
+    En cours de développement
+    </ion-card>
+
+  <ion-item-divider (click)="TogglePosologies()" >
+    <ion-label color="dark-turquoise">Posologie
+  <ion-icon *ngIf="!isShownPosologies" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownPosologies" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
+    </ion-label>
+  </ion-item-divider> 
+
+  <ion-card *ngIf="isShownPosologies" class="drogueContainer">
+
+  <ion-item class="avecAMM">         
+    <ion-label class="drogueInduction" color="dark"><b>Amoxicilline-Acide Clavulanique (Augmentin®)</b> : 
+      <p class="dilutionDrogueInduction">Première injection : <b> {{AdminAugmentin}} mg IVD</b> </p>
+    <p class="comment">pour 50 mg/kg sans dépasser 2g</p>
+    <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjAugmentin}} mg IVD</b> </p>
+    <p class="comment">pour 25 mg/kg, toutes les <b>2h</b></p>
+  </ion-label>
+    </ion-item>
+    <div class="AMM">Attention : ne pas dépasser 20 mg/kg/j d'acide clavulanique (<b>{{MaxAcideClavulanique}} mg</b>).</div>
+
+    <ion-item>         
+      <ion-label class="drogueInduction" color="dark"><b>Céfamandole</b>: 
+        <p class="dilutionDrogueInduction">Première injection : <b> {{AdminCefamandole}} mg IVD</b> </p>
+      <p class="comment">pour 40 mg/kg sans dépasser 1.5g</p>
+      <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjCefamandole}} mg IVD</b> </p>
+      <p class="comment">pour 20 mg/kg, toutes les <b>2h</b></p>
+    </ion-label>
+      </ion-item> 
+
+      <ion-item>         
+        <ion-label class="drogueInduction" color="dark"><b>Céfazoline</b>: 
+          <p class="dilutionDrogueInduction">Première injection : <b> {{AdminCefazoline}} mg IVD</b> </p>
+        <p class="comment">pour 50 mg/kg sans dépasser 2g</p>
+        <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjCefazoline}} mg IVD</b> </p>
+        <p class="comment">pour 25 mg/kg, toutes les <b>4h</b></p>
+      </ion-label>
+        </ion-item> 
+
+        <ion-item>         
+          <ion-label class="drogueInduction" color="dark"><b>Clindamycine</b>: 
+            <p class="dilutionDrogueInduction">Première injection : <b> {{AdminClindamycine}} mg IVD</b> </p>
+          <p class="comment">pour 15 mg/kg sans dépasser 600 mg</p>
+          <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjClindamycine}} mg IVD</b> </p>
+          <p class="comment">pour 7,5 mg/kg, toutes les <b>4h</b></p>
+        </ion-label>
+          </ion-item> 
+
+          <ion-item>         
+            <ion-label class="drogueInduction" color="dark"><b>Gentamicine</b>: 
+              <p class="dilutionDrogueInduction">Première injection : <b> {{AdminGentamicine}} mg IVL</b> </p>
+            <p class="comment">pour 3 mg/kg sans dépasser 160 mg</p>
+            <p class="comment">Pas plus d'une injection par jour, attention à adapter chez l'insuffisant rénal</p>
+          </ion-label>
+            </ion-item> 
+
+            <ion-item>         
+              <ion-label class="drogueInduction" color="dark"><b>Métronidazole (Flagyl®)</b>: 
+                <p class="dilutionDrogueInduction">Première injection : <b> {{AdminMetronidazole}} mg IVL</b> </p>
+              <p class="comment">pour 20 mg/kg sans dépasser 1000 mg</p>
+              <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjMetronidazole}} mg IVD</b> </p>
+              <p class="comment">pour 10 mg/kg, toutes les <b>8h</b></p>
+            </ion-label>
+              </ion-item> 
+
+              <ion-item>         
+                <ion-label class="drogueInduction" color="dark"><b>Vancomycine</b>: 
+                  <p class="dilutionDrogueInduction">Première injection : <b> {{AdminVancomycine}} mg IVL</b> </p>
+                <p class="comment">IVL sur 30 minutes, pour 15 mg/kg sans dépasser 2000 mg</p>
+                <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjVancomycine}} mg IVD</b> </p>
+                <p class="comment">IVL sur 30 minutes, pour 15 mg/kg, toutes les <b>12h</b></p>
+              </ion-label>
+                </ion-item> 
+
+
+  
+  </ion-card>
+
+
+
+
 
 </ion-content>

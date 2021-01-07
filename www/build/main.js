@@ -3603,7 +3603,7 @@ var AccueilPage = /** @class */ (function () {
                             _this.storage.get('sexeMF').then(function (sexe) {
                                 _this.sexeMF = sexe;
                                 if (!_this.sexeMF) {
-                                    _this.sexeToggle = false;
+                                    _this.sexeMF = "Fille", _this.sexeToggle = false;
                                 }
                                 else if (_this.sexeMF == "Fille") {
                                     _this.sexeToggle = false;
@@ -3700,7 +3700,7 @@ var AccueilPage = /** @class */ (function () {
     ], AccueilPage.prototype, "nav", void 0);
     AccueilPage = AccueilPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-accueil',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>QuadruPed calculs</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n\n  <ion-card class="homePagePatient">\n    <ion-card-content>\n      <ion-toggle end class="SexeToggle" color="turquoise-fonce" [(ngModel)]="sexeToggle" (ionChange)="ToggleSexe()"></ion-toggle>\n    <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient">  \n      <ion-item>\n        <ion-label>\n        <p class="monPatient"><b>Mon patient</b></p>\n        <hr>\n        <p class="monPatient">{{sexeMF}} - {{AgeNum}} mois - {{PoidsNum}} kg </p>\n        <p class="monPatient">Estomac {{EstomacOuiNon}} - Jeûne {{DureeJeune}} h - Allergie : {{Allergie}}</p>\n      </ion-label>\n      </ion-item> \n\n      <ion-toolbar>\n        <ion-buttons>\n          <button color="turquoise-fonce" ion-button small (click)="showPickerAge()">Age</button>\n          <button color="turquoise-fonce" ion-button small (click)="showPickerPoids()">Poids</button>\n          <button ion-button small color="turquoise-fonce"  (click)="displayOptions()">Options </button>\n          <button ion-button  small color="danger"  (click)="effacer()">Effacer</button>\n  \n    </ion-buttons>\n    </ion-toolbar>\n\n  </ion-card-content>\n  </ion-card>\n\n    \n    <button ion-button   block small color="turquoise"  (click)="displayCourbes()">Biométrie</button>\n    <button ion-button   block small color="pastel-green"  (click)="displayScores()">Scores</button>\n    <button ion-button block small color="warning" (click)="displayUrgences()">Urgences</button>\n    \n          <button ion-button small color="light" class="homeButtons" (click)="displayMonitorage()"> Monitorage</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayInduction()"> Induction </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayVAS()"> Voies Aériennes </button>\n          <button ion-button small color="dark" class="homeButtons" (click)="displayATBprophylaxie()"> ATB </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayEntretien()"> Entretien </button> \n    \n          <button ion-button small color="light" class="homeButtons" (click)="displayGestionFluides()"> Solutés et PSL</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayALR()"> Loco-régionale</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayPostop()">Antalgie & Post-op</button>\n\n    \n      <img class="logoDAR" (click)="openDARwebsite()" src="/assets/imgs/logo_dar.png"> \n\n      <!--*\n      <ion-toolbar>\n        <ion-buttons>\n          <button ion-button slot="start" fill="solid">\n            <ion-icon slot="center" name="person-circle"></ion-icon>\n            Contact\n          </button> \n          <button ion-button slot="end" fill="solid" color="dark-green">\n            Aide \n            <ion-icon slot="end" name="help-circle"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-toolbar>\n    *-->\n\n      </ion-content>\n\n  \n\n\n  \n \n\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/,
+            selector: 'page-accueil',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>QuadruPed calculs</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n\n  <ion-card class="homePagePatient">\n    <ion-card-content>\n      <ion-toggle end class="SexeToggle" color="turquoise-fonce" [(ngModel)]="sexeToggle" (ionChange)="ToggleSexe()"></ion-toggle>\n    <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient">  \n      <ion-item>\n        <ion-label>\n        <p class="monPatient"><b>Mon patient</b></p>\n        <hr>\n        <p class="monPatient">{{sexeMF}} - {{AgeNum}} mois - {{PoidsNum}} kg </p>\n        <p class="monPatient">Estomac {{EstomacOuiNon}} - Jeûne {{DureeJeune}} h - Allergie : {{Allergie}}</p>\n      </ion-label>\n      </ion-item> \n\n      <ion-toolbar>\n        <ion-buttons>\n          <button color="turquoise-fonce" ion-button small (click)="showPickerAge()">Age</button>\n          <button color="turquoise-fonce" ion-button small (click)="showPickerPoids()">Poids</button>\n          <button ion-button small color="turquoise-fonce"  (click)="displayOptions()">Options </button>\n          <button ion-button  small color="danger"  (click)="effacer()">Effacer</button>\n  \n    </ion-buttons>\n    </ion-toolbar>\n\n  </ion-card-content>\n  </ion-card>\n\n    \n    <button ion-button   block small color="turquoise"  (click)="displayCourbes()">Biométrie</button>\n    <button ion-button   block small color="pastel-green"  (click)="displayScores()">Scores</button>\n    <button ion-button block small color="warning" (click)="displayUrgences()">Urgences</button>\n    \n          <button ion-button small color="light" class="homeButtons" (click)="displayMonitorage()"> Monitorage</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayInduction()"> Induction </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayVAS()"> Voies Aériennes </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayATBprophylaxie()"> ATB </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayEntretien()"> Entretien </button> \n    \n          <button ion-button small color="light" class="homeButtons" (click)="displayGestionFluides()"> Solutés et PSL</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayALR()"> Loco-régionale</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayPostop()">Antalgie & Post-op</button>\n\n    \n      <img class="logoDAR" (click)="openDARwebsite()" src="/assets/imgs/logo_dar.png"> \n\n      <!--*\n      <ion-toolbar>\n        <ion-buttons>\n          <button ion-button slot="start" fill="solid">\n            <ion-icon slot="center" name="person-circle"></ion-icon>\n            Contact\n          </button> \n          <button ion-button slot="end" fill="solid" color="dark-green">\n            Aide \n            <ion-icon slot="end" name="help-circle"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-toolbar>\n    *-->\n\n      </ion-content>\n\n  \n\n\n  \n \n\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
@@ -3728,6 +3728,8 @@ var AccueilPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntibioprophylaxiePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3737,6 +3739,43 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
 
 
 /**
@@ -3746,20 +3785,181 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var AntibioprophylaxiePage = /** @class */ (function () {
-    function AntibioprophylaxiePage(navCtrl, navParams) {
+    function AntibioprophylaxiePage(navCtrl, navParams, alertController, storage) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.alertController = alertController;
+        this.storage = storage;
     }
     AntibioprophylaxiePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad AntibioprophylaxiePage');
     };
+    AntibioprophylaxiePage.prototype.ToggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+        this.isShownPosologies = false;
+    };
+    ;
+    AntibioprophylaxiePage.prototype.TogglePosologies = function () {
+        this.isShownPosologies = !this.isShownPosologies;
+        this.isShownIndications = false;
+    };
+    ;
+    AntibioprophylaxiePage.prototype.presentAlert = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertController.create({
+                            cssClass: 'alerte',
+                            title: 'Minute papillon !',
+                            message: 'Saisissez un âge et un poids pour le patient.',
+                            buttons: [
+                                {
+                                    text: 'Nan',
+                                    role: 'cancel',
+                                    cssClass: 'secondary',
+                                    handler: function (blah) {
+                                        console.log('Confirm Cancel: Nan');
+                                    }
+                                }, {
+                                    text: 'Okay',
+                                    handler: function () {
+                                        console.log('Confirm Okay');
+                                        _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__accueil_accueil__["a" /* AccueilPage */]);
+                                    }
+                                }
+                            ]
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ;
+    AntibioprophylaxiePage.prototype.ionViewWillEnter = function () {
+        var _this = this;
+        var promiseList = [];
+        promiseList.push(this.storage.get('AgeNum').then(function (Age) {
+            _this.AgeNum = Age;
+            _this.storage.get('PoidsNum').then(function (Poids) {
+                _this.PoidsNum = Poids;
+                _this.storage.get('DureeJeune').then(function (dureejeune) {
+                    _this.DureeJeune = dureejeune;
+                    _this.storage.get('EstomacPlein').then(function (Estomac) {
+                        _this.EstomacPlein = Estomac;
+                        console.log('lestomac est plein ?', _this.EstomacPlein);
+                        if (_this.EstomacPlein == true) {
+                            _this.EstomacOuiNon = "plein";
+                        }
+                        else {
+                            _this.EstomacOuiNon = "vide";
+                        }
+                        ;
+                        _this.storage.get('Allergie').then(function (allergie) {
+                            _this.Allergie = allergie;
+                            if (!_this.PoidsNum || !_this.AgeNum) {
+                                _this.presentAlert();
+                                _this.calculs();
+                            }
+                            else {
+                                _this.calculs();
+                            }
+                            ;
+                        });
+                    });
+                });
+            });
+        }));
+    };
+    AntibioprophylaxiePage.prototype.calculs = function () {
+        var _this = this;
+        var promiseList = [];
+        promiseList.push(this.storage.get('AgeNum').then(function (Age) {
+            _this.AgeNum = Age;
+            _this.storage.get('PoidsNum').then(function (Poids) {
+                _this.PoidsNum = Poids;
+                _this.storage.get('DureeJeune').then(function (dureejeune) {
+                    _this.DureeJeune = dureejeune;
+                    _this.storage.get('EstomacPlein').then(function (Estomac) {
+                        _this.EstomacPlein = Estomac;
+                        console.log('lestomac est plein ?', _this.EstomacPlein);
+                        if (_this.EstomacPlein == true) {
+                            _this.EstomacOuiNon = "plein";
+                        }
+                        else {
+                            _this.EstomacOuiNon = "vide";
+                        }
+                        ;
+                        _this.storage.get('Allergie').then(function (allergie) {
+                            _this.Allergie = allergie;
+                            /*placer les calculs ici*/
+                            _this.AdminAugmentin = Math.round((_this.PoidsNum * 50) * 10) / 10;
+                            if (_this.AdminAugmentin >= 2000) {
+                                _this.AdminAugmentin = 2000;
+                            }
+                            ;
+                            _this.ReInjAugmentin = Math.round((_this.PoidsNum * 25) * 10) / 10;
+                            _this.MaxAcideClavulanique = Math.round((_this.PoidsNum * 20) * 10) / 10;
+                            _this.AdminCefamandole = Math.round((_this.PoidsNum * 40) * 10) / 10;
+                            if (_this.AdminCefamandole >= 1500) {
+                                _this.AdminCefamandole = 1500;
+                            }
+                            ;
+                            _this.ReInjCefamandole = Math.round((_this.PoidsNum * 20) * 10) / 10;
+                            _this.AdminCefazoline = Math.round((_this.PoidsNum * 50) * 10) / 10;
+                            if (_this.AdminCefazoline >= 2000) {
+                                _this.AdminCefazoline = 2000;
+                            }
+                            ;
+                            _this.ReInjCefazoline = Math.round((_this.PoidsNum * 25) * 10) / 10;
+                            _this.AdminClindamycine = Math.round((_this.PoidsNum * 15) * 10) / 10;
+                            if (_this.AdminClindamycine >= 600) {
+                                _this.AdminClindamycine = 600;
+                            }
+                            ;
+                            _this.ReInjClindamycine = Math.round((_this.PoidsNum * 7.5) * 10) / 10;
+                            _this.AdminGentamicine = Math.round((_this.PoidsNum * 3) * 10) / 10;
+                            if (_this.AdminGentamicine >= 160) {
+                                _this.AdminGentamicine = 160;
+                            }
+                            ;
+                            _this.AdminMetronidazole = Math.round((_this.PoidsNum * 20) * 10) / 10;
+                            if (_this.AdminMetronidazole >= 1000) {
+                                _this.AdminMetronidazole = 1000;
+                            }
+                            ;
+                            _this.ReInjMetronidazole = Math.round((_this.PoidsNum * 10) * 10) / 10;
+                            _this.AdminVancomycine = Math.round((_this.PoidsNum * 15) * 10) / 10;
+                            if (_this.AdminVancomycine >= 2000) {
+                                _this.AdminVancomycine = 2000;
+                            }
+                            ;
+                            _this.ReInjVancomycine = Math.round((_this.PoidsNum * 15) * 10) / 10;
+                            if (_this.ReInjVancomycine >= 2000) {
+                                _this.ReInjVancomycine = 2000;
+                            }
+                            ;
+                        });
+                    });
+                });
+            });
+        }));
+    };
+    ;
     AntibioprophylaxiePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-antibioprophylaxie',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\antibioprophylaxie\antibioprophylaxie.html"*/'<!--\n  Generated template for the AntibioprophylaxiePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Antibioprophylaxie</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  En développement ! \n  <br>\n  Revenez plus tard... :)\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\antibioprophylaxie\antibioprophylaxie.html"*/,
+            selector: 'page-antibioprophylaxie',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\antibioprophylaxie\antibioprophylaxie.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Antibioprohylaxie pour chirurgie</ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg \n      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n    <p>Allergie : {{Allergie}}</p></ion-label>\n    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> \n  </ion-item>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-item-divider (click)="ToggleIndications()" >\n    <ion-label color="dark-turquoise">Indications\n  <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider> \n\n  <ion-card *ngIf="isShownIndications" class="drogueContainer">\n    En cours de développement\n    </ion-card>\n\n  <ion-item-divider (click)="TogglePosologies()" >\n    <ion-label color="dark-turquoise">Posologie\n  <ion-icon *ngIf="!isShownPosologies" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownPosologies" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider> \n\n  <ion-card *ngIf="isShownPosologies" class="drogueContainer">\n\n  <ion-item class="avecAMM">         \n    <ion-label class="drogueInduction" color="dark"><b>Amoxicilline-Acide Clavulanique (Augmentin®)</b> : \n      <p class="dilutionDrogueInduction">Première injection : <b> {{AdminAugmentin}} mg IVD</b> </p>\n    <p class="comment">pour 50 mg/kg sans dépasser 2g</p>\n    <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjAugmentin}} mg IVD</b> </p>\n    <p class="comment">pour 25 mg/kg, toutes les <b>2h</b></p>\n  </ion-label>\n    </ion-item>\n    <div class="AMM">Attention : ne pas dépasser 20 mg/kg/j d\'acide clavulanique (<b>{{MaxAcideClavulanique}} mg</b>).</div>\n\n    <ion-item>         \n      <ion-label class="drogueInduction" color="dark"><b>Céfamandole</b>: \n        <p class="dilutionDrogueInduction">Première injection : <b> {{AdminCefamandole}} mg IVD</b> </p>\n      <p class="comment">pour 40 mg/kg sans dépasser 1.5g</p>\n      <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjCefamandole}} mg IVD</b> </p>\n      <p class="comment">pour 20 mg/kg, toutes les <b>2h</b></p>\n    </ion-label>\n      </ion-item> \n\n      <ion-item>         \n        <ion-label class="drogueInduction" color="dark"><b>Céfazoline</b>: \n          <p class="dilutionDrogueInduction">Première injection : <b> {{AdminCefazoline}} mg IVD</b> </p>\n        <p class="comment">pour 50 mg/kg sans dépasser 2g</p>\n        <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjCefazoline}} mg IVD</b> </p>\n        <p class="comment">pour 25 mg/kg, toutes les <b>4h</b></p>\n      </ion-label>\n        </ion-item> \n\n        <ion-item>         \n          <ion-label class="drogueInduction" color="dark"><b>Clindamycine</b>: \n            <p class="dilutionDrogueInduction">Première injection : <b> {{AdminClindamycine}} mg IVD</b> </p>\n          <p class="comment">pour 15 mg/kg sans dépasser 600 mg</p>\n          <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjClindamycine}} mg IVD</b> </p>\n          <p class="comment">pour 7,5 mg/kg, toutes les <b>4h</b></p>\n        </ion-label>\n          </ion-item> \n\n          <ion-item>         \n            <ion-label class="drogueInduction" color="dark"><b>Gentamicine</b>: \n              <p class="dilutionDrogueInduction">Première injection : <b> {{AdminGentamicine}} mg IVL</b> </p>\n            <p class="comment">pour 3 mg/kg sans dépasser 160 mg</p>\n            <p class="comment">Pas plus d\'une injection par jour, attention à adapter chez l\'insuffisant rénal</p>\n          </ion-label>\n            </ion-item> \n\n            <ion-item>         \n              <ion-label class="drogueInduction" color="dark"><b>Métronidazole (Flagyl®)</b>: \n                <p class="dilutionDrogueInduction">Première injection : <b> {{AdminMetronidazole}} mg IVL</b> </p>\n              <p class="comment">pour 20 mg/kg sans dépasser 1000 mg</p>\n              <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjMetronidazole}} mg IVD</b> </p>\n              <p class="comment">pour 10 mg/kg, toutes les <b>8h</b></p>\n            </ion-label>\n              </ion-item> \n\n              <ion-item>         \n                <ion-label class="drogueInduction" color="dark"><b>Vancomycine</b>: \n                  <p class="dilutionDrogueInduction">Première injection : <b> {{AdminVancomycine}} mg IVL</b> </p>\n                <p class="comment">IVL sur 30 minutes, pour 15 mg/kg sans dépasser 2000 mg</p>\n                <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjVancomycine}} mg IVD</b> </p>\n                <p class="comment">IVL sur 30 minutes, pour 15 mg/kg, toutes les <b>12h</b></p>\n              </ion-label>\n                </ion-item> \n\n\n  \n  </ion-card>\n\n\n\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\antibioprophylaxie\antibioprophylaxie.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]) === "function" && _d || Object])
     ], AntibioprophylaxiePage);
     return AntibioprophylaxiePage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=antibioprophylaxie.js.map
@@ -4982,12 +5182,11 @@ var ScoresPage = /** @class */ (function () {
     };
     ScoresPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-scores',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\scores\scores.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Scores</ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg \n      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n    <p>Allergie : {{Allergie}}</p></ion-label>\n    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> \n  </ion-item>\n</ion-header>\n\n<ion-content>\n\n  <!-- SCORE VPOP-->\n\n    <ion-item (click)="toggleVPOP()">\n      <ion-label color="dark-turquoise">VPOP (Risque NVPO)\n        <ion-icon *ngIf="!isShownVPOP" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownVPOP" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item>\n\n    <ion-card class="drogueContainer" *ngIf="isShownVPOP">\n      <ion-card-content>\n        \n        <ion-list>\n          <ion-item *ngFor="let entry of VPOPform">\n            <ion-label class="dilutionDrogueInduction">{{entry.val}}\n              <p class="dilutionDrogueInduction">+ {{entry.count}} point(s)</p>\n            </ion-label>\n            <ion-checkbox (click)="countVPOP()" [(ngModel)]="entry.isChecked"></ion-checkbox>\n          </ion-item>\n\n          <hr>     \n              <ion-item class="drogueInduction">Total : <b>{{totalVPOP}} pts</b> - Risque NVPO : <b>{{risqueVPOP}} %</b></ion-item>\n              <ion-item><ion-label class="drogueInduction">Stratégie proposée :</ion-label></ion-item>\n              <p class="strategie">{{prophylaxieVPOP}}</p>\n       \n        </ion-list>\n\n\n      </ion-card-content>\n\n    </ion-card>\n\n\n\n      <!-- FIN SCORE VPOP-->\n\n\n\n\n    <!-- FIN SCORE ANTICOAG-->\n\n\n\n      <ion-item (click)="toggleScoreAnticoag()">\n        <ion-label color="dark-turquoise">Score anticoagulation (patient > 13 ans)\n          <ion-icon *ngIf="!isShownScoreAnticoag" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownScoreAnticoag" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n        </ion-label>\n      </ion-item>\n  \n      <ion-card class="drogueContainer" *ngIf="isShownScoreAnticoag">\n        <ion-card-content>\n         Envisager chez le patient pubère (+/- âge > 13 ans). Indiquez les facteurs de risque présents. Le total et la stratégie proposée sont indiqués en bas.\n          \n          <ion-list>\n            <ion-item class="dilutionDrogueInduction">Facteurs liés au patient</ion-item>\n            <ion-item *ngFor="let entry1 of Anticoagform1">\n              <ion-label class="dilutionDrogueInduction">{{entry1.val}}\n                <p class="dilutionDrogueInduction">+ {{entry1.count}} point(s)</p>\n              </ion-label>\n              <ion-checkbox (click)="countAnticoag()" [(ngModel)]="entry1.isChecked"></ion-checkbox>\n            </ion-item>\n\n            <ion-item class="dilutionDrogueInduction">Facteurs liés à la chirurgie</ion-item>\n            <ion-item *ngFor="let entry2 of Anticoagform2">\n              <ion-label class="dilutionDrogueInduction">{{entry2.val}}\n                <p class="dilutionDrogueInduction">+ {{entry2.count}} point(s)</p>\n              </ion-label>\n              <ion-checkbox (click)="countAnticoag()" [(ngModel)]="entry2.isChecked"></ion-checkbox>\n            </ion-item>\n\n            <ion-item class="dilutionDrogueInduction">Facteurs liés à l\'hospitalisation</ion-item>\n            <ion-item *ngFor="let entry3 of Anticoagform3">\n              <ion-label class="dilutionDrogueInduction">{{entry3.val}}\n                <p class="dilutionDrogueInduction">+ {{entry3.count}} point(s)</p>\n              </ion-label>\n              <ion-checkbox (click)="countAnticoag()" [(ngModel)]="entry3.isChecked"></ion-checkbox>\n            </ion-item>\n  \n            <hr>\n                <ion-item class="drogueInduction">Total : <b>{{AnticoagTotal}} pts</b> - Risque <b>{{NiveauRisqueThrombose}}</b></ion-item>\n                <ion-item><ion-label class="drogueInduction">Stratégie proposée :</ion-label></ion-item>\n                <p class="strategie">{{prophylaxieAnticoag}}, <b>{{MesuresSupplementairesAnticoag}}</b></p>\n         \n          </ion-list>\n\n        </ion-card-content>\n      \n      </ion-card>\n  \n\n          <ion-item (click)="toggleEVENDOL()">\n            <ion-label color="dark-turquoise">Douleur\n              <ion-icon *ngIf="!isShownEVENDOL" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownEVENDOL" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-label>\n          </ion-item>\n      \n          <ion-card class="drogueContainer" *ngIf="isShownEVENDOL">\n            <ion-card-content>\n\n        <p class="drogueInduction">Préférer l\'auto-évaluation chaque fois que possible. En cas d\'impossibilité liée à l\'âge ou à l\'état du patient, utiliser une échelle d\'hétéro-évaluation. L\'échelle EVENDOL est proposée ci-dessous.</p>    \n            <br>\n        <p class="comment">Renseigner chacun des items de 0 à 3. \n          <br> - 0 = signe absent\n          <br> - 1 = signe faible ou passager\n          <br> - 2 = signe moyen ou environ la moitié du temps\n          <br> - 3 = signe fort ou quasi permanent\n          <br>\n          <br> Pour l\'item Relation, une absence (0) donne 3 points ; un état relationnel normal (3) ne compte aucun point. Seuil de prescription : 4/15.</p>\n\n        <ion-item class="EVENDOLlabel"><ion-label><br>Expression vocale/verbale</ion-label></ion-item>\n\n            <ion-segment [(ngModel)]="EVENDOLVocal" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n              <ion-segment-button value="0">\n                <ion-label>0</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="1">\n                <ion-label>1</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="2">\n                <ion-label>2</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="3">\n                <ion-label>3</ion-label>\n              </ion-segment-button>\n            </ion-segment>\n\n            <ion-item class="EVENDOLlabel"><ion-label><br>Mimique (fronce, grimace)</ion-label></ion-item>\n\n            <ion-segment [(ngModel)]="EVENDOLMimique" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n              <ion-segment-button value="0">\n                <ion-label>0</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="1">\n                <ion-label>1</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="2">\n                <ion-label>2</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="3">\n                <ion-label>3</ion-label>\n              </ion-segment-button>\n            </ion-segment>\n\n            <ion-item class="EVENDOLlabel"><ion-label><br>Mouvements (s\'agite, se crispe)</ion-label></ion-item>\n\n            <ion-segment [(ngModel)]="EVENDOLMouvement" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n              <ion-segment-button value="0">\n                <ion-label>0</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="1">\n                <ion-label>1</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="2">\n                <ion-label>2</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="3">\n                <ion-label>3</ion-label>\n              </ion-segment-button>\n            </ion-segment>\n\n            <ion-item class="EVENDOLlabel"><ion-label><br>Position (attitude antalgique, se protège)</ion-label></ion-item>\n\n            <ion-segment [(ngModel)]="EVENDOLPosition" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n              <ion-segment-button value="0">\n                <ion-label>0</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="1">\n                <ion-label>1</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="2">\n                <ion-label>2</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="3">\n                <ion-label>3</ion-label>\n              </ion-segment-button>\n            </ion-segment>\n\n            <ion-item class="EVENDOLlabel"><ion-label><br>Relation (communique, peut être consolé)</ion-label></ion-item>\n\n            <ion-segment [(ngModel)]="EVENDOLRelation" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n              <ion-segment-button value="3">\n                <ion-label>0</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="2">\n                <ion-label>1</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="1">\n                <ion-label>2</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="0">\n                <ion-label>3</ion-label>\n              </ion-segment-button>\n            </ion-segment>\n\n                    <ion-item class="drogueInduction">Total : <b>{{EVENDOLTotal}} pts</b></ion-item>\n                    <p class="strategie">Seuil de prescription : {{SeuilPrescription}}</p>\n\n\n\n        </ion-card-content>\n  \n      </ion-card>\n    \n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\scores\scores.html"*/,
+            selector: 'page-scores',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\scores\scores.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Scores</ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg \n      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n    <p>Allergie : {{Allergie}}</p></ion-label>\n    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> \n  </ion-item>\n</ion-header>\n\n<ion-content>\n\n  <!-- SCORE VPOP-->\n\n    <ion-item (click)="toggleVPOP()">\n      <ion-label color="dark-turquoise">VPOP (Risque NVPO)\n        <ion-icon *ngIf="!isShownVPOP" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownVPOP" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item>\n\n    <ion-card class="drogueContainer" *ngIf="isShownVPOP">\n      <ion-card-content>\n        \n        <ion-list>\n          <ion-item *ngFor="let entry of VPOPform">\n            <ion-label class="dilutionDrogueInduction">{{entry.val}}\n              <p class="dilutionDrogueInduction">+ {{entry.count}} point(s)</p>\n            </ion-label>\n            <ion-checkbox (click)="countVPOP()" [(ngModel)]="entry.isChecked"></ion-checkbox>\n          </ion-item>\n\n          <hr>     \n              <ion-item class="drogueInduction">Total : <b>{{totalVPOP}} pts</b> - Risque NVPO : <b>{{risqueVPOP}} %</b></ion-item>\n              <ion-item><ion-label class="drogueInduction">Stratégie proposée :</ion-label></ion-item>\n              <p class="strategie">{{prophylaxieVPOP}}</p>\n       \n        </ion-list>\n\n\n      </ion-card-content>\n\n    </ion-card>\n\n\n\n      <!-- FIN SCORE VPOP-->\n\n\n\n\n    <!-- FIN SCORE ANTICOAG-->\n\n\n\n      <ion-item (click)="toggleScoreAnticoag()">\n        <ion-label color="dark-turquoise">Score anticoagulation (patient > 13 ans)\n          <ion-icon *ngIf="!isShownScoreAnticoag" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownScoreAnticoag" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n        </ion-label>\n      </ion-item>\n  \n      <ion-card class="drogueContainer" *ngIf="isShownScoreAnticoag">\n        <ion-card-content>\n         Envisager chez le patient pubère (+/- âge > 13 ans). Indiquez les facteurs de risque présents. Le total et la stratégie proposée sont indiqués en bas.\n          \n          <ion-list>\n            <ion-item class="dilutionDrogueInduction">Facteurs liés au patient</ion-item>\n            <ion-item *ngFor="let entry1 of Anticoagform1">\n              <ion-label class="dilutionDrogueInduction">{{entry1.val}}\n                <p class="dilutionDrogueInduction">+ {{entry1.count}} point(s)</p>\n              </ion-label>\n              <ion-checkbox (click)="countAnticoag()" [(ngModel)]="entry1.isChecked"></ion-checkbox>\n            </ion-item>\n\n            <ion-item class="dilutionDrogueInduction">Facteurs liés à la chirurgie</ion-item>\n            <ion-item *ngFor="let entry2 of Anticoagform2">\n              <ion-label class="dilutionDrogueInduction">{{entry2.val}}\n                <p class="dilutionDrogueInduction">+ {{entry2.count}} point(s)</p>\n              </ion-label>\n              <ion-checkbox (click)="countAnticoag()" [(ngModel)]="entry2.isChecked"></ion-checkbox>\n            </ion-item>\n\n            <ion-item class="dilutionDrogueInduction">Facteurs liés à l\'hospitalisation</ion-item>\n            <ion-item *ngFor="let entry3 of Anticoagform3">\n              <ion-label class="dilutionDrogueInduction">{{entry3.val}}\n                <p class="dilutionDrogueInduction">+ {{entry3.count}} point(s)</p>\n              </ion-label>\n              <ion-checkbox (click)="countAnticoag()" [(ngModel)]="entry3.isChecked"></ion-checkbox>\n            </ion-item>\n  \n            <hr>\n                <ion-item class="drogueInduction">Total : <b>{{AnticoagTotal}} pts</b> - Risque <b>{{NiveauRisqueThrombose}}</b></ion-item>\n                <ion-item><ion-label class="drogueInduction">Stratégie proposée :</ion-label></ion-item>\n                <p class="strategie">{{prophylaxieAnticoag}} <b>{{MesuresSupplementairesAnticoag}}</b></p>\n         \n          </ion-list>\n\n        </ion-card-content>\n      \n      </ion-card>\n  \n\n          <ion-item (click)="toggleEVENDOL()">\n            <ion-label color="dark-turquoise">Douleur\n              <ion-icon *ngIf="!isShownEVENDOL" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownEVENDOL" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-label>\n          </ion-item>\n      \n          <ion-card class="drogueContainer" *ngIf="isShownEVENDOL">\n            <ion-card-content>\n\n        <p class="drogueInduction">Préférer l\'auto-évaluation chaque fois que possible. En cas d\'impossibilité liée à l\'âge ou à l\'état du patient, utiliser une échelle d\'hétéro-évaluation. L\'échelle EVENDOL est proposée ci-dessous.</p>    \n            <br>\n        <p class="comment">Renseigner chacun des items de 0 à 3. \n          <br> - 0 = signe absent\n          <br> - 1 = signe faible ou passager\n          <br> - 2 = signe moyen ou environ la moitié du temps\n          <br> - 3 = signe fort ou quasi permanent\n          <br>\n          <br> Pour l\'item Relation, une absence (0) donne 3 points ; un état relationnel normal (3) ne compte aucun point. Seuil de prescription : 4/15.</p>\n\n        <ion-item class="EVENDOLlabel"><ion-label><br>Expression vocale/verbale</ion-label></ion-item>\n\n            <ion-segment [(ngModel)]="EVENDOLVocal" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n              <ion-segment-button value="0">\n                <ion-label>0</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="1">\n                <ion-label>1</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="2">\n                <ion-label>2</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="3">\n                <ion-label>3</ion-label>\n              </ion-segment-button>\n            </ion-segment>\n\n            <ion-item class="EVENDOLlabel"><ion-label><br>Mimique (fronce, grimace)</ion-label></ion-item>\n\n            <ion-segment [(ngModel)]="EVENDOLMimique" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n              <ion-segment-button value="0">\n                <ion-label>0</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="1">\n                <ion-label>1</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="2">\n                <ion-label>2</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="3">\n                <ion-label>3</ion-label>\n              </ion-segment-button>\n            </ion-segment>\n\n            <ion-item class="EVENDOLlabel"><ion-label><br>Mouvements (s\'agite, se crispe)</ion-label></ion-item>\n\n            <ion-segment [(ngModel)]="EVENDOLMouvement" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n              <ion-segment-button value="0">\n                <ion-label>0</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="1">\n                <ion-label>1</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="2">\n                <ion-label>2</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="3">\n                <ion-label>3</ion-label>\n              </ion-segment-button>\n            </ion-segment>\n\n            <ion-item class="EVENDOLlabel"><ion-label><br>Position (attitude antalgique, se protège)</ion-label></ion-item>\n\n            <ion-segment [(ngModel)]="EVENDOLPosition" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n              <ion-segment-button value="0">\n                <ion-label>0</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="1">\n                <ion-label>1</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="2">\n                <ion-label>2</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="3">\n                <ion-label>3</ion-label>\n              </ion-segment-button>\n            </ion-segment>\n\n            <ion-item class="EVENDOLlabel"><ion-label><br>Relation (communique, peut être consolé)</ion-label></ion-item>\n\n            <ion-segment [(ngModel)]="EVENDOLRelation" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n              <ion-segment-button value="3">\n                <ion-label>0</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="2">\n                <ion-label>1</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="1">\n                <ion-label>2</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="0">\n                <ion-label>3</ion-label>\n              </ion-segment-button>\n            </ion-segment>\n\n                    <ion-item class="drogueInduction">Total : <b>{{EVENDOLTotal}} pts</b></ion-item>\n                    <p class="strategie">Seuil de prescription : {{SeuilPrescription}}</p>\n\n\n\n        </ion-card-content>\n  \n      </ion-card>\n    \n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\scores\scores.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
     ], ScoresPage);
     return ScoresPage;
-    var _a, _b, _c;
 }());
 
 ;

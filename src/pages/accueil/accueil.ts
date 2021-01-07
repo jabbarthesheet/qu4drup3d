@@ -344,7 +344,7 @@ sexeMF:string="Fille";
         this.Allergie = allergie;
       this.storage.get('sexeMF').then((sexe) => {
         this.sexeMF = sexe; 
-        if (!this.sexeMF){this.sexeToggle = false;}
+        if (!this.sexeMF){this.sexeMF = "Fille", this.sexeToggle = false;}
         else if (this.sexeMF == "Fille"){this.sexeToggle = false;}
         else if (this.sexeMF == "Garçon"){this.sexeToggle = true;}
         console.log ("le toggle est ", this.sexeToggle);

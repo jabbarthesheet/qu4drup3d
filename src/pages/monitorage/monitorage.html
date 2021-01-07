@@ -76,7 +76,7 @@
       <ion-col class="normale">
         {{SpO2normale}}
       </ion-col>
-      <ion-col>
+      <ion-col class="trophaut">
         -
       </ion-col>
       <ion-col class="tropbas">
@@ -155,32 +155,32 @@
 
     <ion-list *ngIf="isShownDispositifs">
       <ion-item>
-        <ion-label>Doppler Oesophagien
-            <p>Modele de sonde : {{SondeDoppler}}</p>
+        <ion-label class="drogueInduction">Doppler Oesophagien
+            <p class="dilutionDrogueInduction">Modele de sonde : {{SondeDoppler}}</p>
         </ion-label>
       </ion-item>
 
       <ion-item>
-        <ion-label>NIRS - Stable à +/- 20%
-            <p>Capteur : {{CapteurNirs}}</p>
+        <ion-label class="drogueInduction">NIRS - Stable à +/- 20%
+            <p class="dilutionDrogueInduction">Capteur : {{CapteurNirs}}</p>
         </ion-label>
       </ion-item>
 
       <ion-item>
-        <ion-label>BIS - Objectif 40 à 60
-            <p>Electrodes : {{ElectrodesBIS}}</p>
+        <ion-label class="drogueInduction">BIS - Objectif 40 à 60
+            <p class="dilutionDrogueInduction">Electrodes : {{ElectrodesBIS}}</p>
         </ion-label>
       </ion-item>
 
       <ion-item>
-        <ion-label>Sonde urinaire
-            <p>Taille de sonde : {{TailleSondeUrinaire}}</p>
+        <ion-label class="drogueInduction">Sonde urinaire
+            <p class="dilutionDrogueInduction">Taille de sonde : {{TailleSondeUrinaire}}</p>
         </ion-label>
       </ion-item>
 
       <ion-item>
-        <ion-label>Sonde gastrique
-            <p>Taille de sonde : {{TailleSondeGastrique}} </p>
+        <ion-label class="drogueInduction">Sonde gastrique
+            <p class="dilutionDrogueInduction">Taille de sonde : {{TailleSondeGastrique}} </p>
         </ion-label>
       </ion-item>
     </ion-list>

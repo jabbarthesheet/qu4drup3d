@@ -205,7 +205,7 @@ toggleEVENDOL(){
 CalcEVENDOL() {
   this.EVENDOLTotal = Math.floor(this.EVENDOLVocal) + Math.floor(this.EVENDOLMimique) + Math.floor(this.EVENDOLMouvement) + Math.floor(this.EVENDOLPosition) + Math.floor(this.EVENDOLRelation); 
   console.log(this.EVENDOLTotal);
-  if (this.EVENDOLTotal <= 4) {this.SeuilPrescription = "Non atteint. Pas de traitement recommandé. Réévaluer régulièrement.";}
+  if (this.EVENDOLTotal <= 3) {this.SeuilPrescription = "Non atteint. Pas de traitement recommandé. Réévaluer régulièrement.";}
   else {this.SeuilPrescription = "Atteint : débuter un traitement antalgique ou augmenter d'un pallier.";};
 }
     

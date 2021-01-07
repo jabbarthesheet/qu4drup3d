@@ -504,7 +504,7 @@ async presentAlert() {
    
     this.storage.get('sexeMF').then((sexe) => {
           this.sexeMF = sexe; 
-          if(!this.sexeMF){this.sexeMF = "fille";};
+          if(!this.sexeMF){this.sexeMF = "Fille";};
   
         /*placer les calculs ici*/
 

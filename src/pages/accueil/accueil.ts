@@ -44,7 +44,6 @@ agemois:number=0;
 agesemaines:number=0;
 poidskilogrammes:number=0;
 poidsgrammes:number=0; 
-sexeToggle:boolean=false; 
 sexeMF:string="Fille"; 
 
   constructor(
@@ -344,10 +343,9 @@ sexeMF:string="Fille";
         this.Allergie = allergie;
       this.storage.get('sexeMF').then((sexe) => {
         this.sexeMF = sexe; 
-        if (!this.sexeMF){this.sexeMF = "Fille", this.sexeToggle = false;}
-        else if (this.sexeMF == "Fille"){this.sexeToggle = false;}
-        else if (this.sexeMF == "Garçon"){this.sexeToggle = true;}
-        console.log ("le toggle est ", this.sexeToggle);
+        if (!this.sexeMF){this.sexeMF = "Fille"}
+        else {this.sexeMF == sexe;};
+        this.storage.set('sexeMF', this.sexeMF);
 
       });
 
@@ -357,9 +355,7 @@ sexeMF:string="Fille";
           });
         })) };
 
-  ToggleSexe(){ 
-    if (this.sexeToggle == true) {this.sexeMF = "Garçon"}
-    else {this.sexeMF = "Fille"};
+  SetSexe(){
     this.storage.set("sexeMF", this.sexeMF);
     console.log("sexe enregistré : ", this.sexeMF);
   };
@@ -424,7 +420,6 @@ sexeMF:string="Fille";
       this.DureeJeune = 0; 
       this.Allergie = "";
       this.EstomacOuiNon = "vide";
-      this.sexeToggle = false; 
     }
 
 };

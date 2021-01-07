@@ -70767,26 +70767,8 @@ figcaption {
 
 .SexeToggle {
   float: right;
-}
-
-.SexeToggle::before {
-  position: absolute;
-  top: 12px;
-  left: 19.5px;
-  content: "F";
-  color: #bce7e9;
-  font-size: 10px;
-  z-index: 1;
-}
-
-.SexeToggle::after {
-  position: absolute;
-  top: 12px;
-  right: 18px;
-  content: "G";
-  color: white;
-  font-size: 10px;
-  z-index: 1;
+  width: 20% !important;
+  margin-right: 5% !important;
 }
 
 .nomAnnuaires {
@@ -70889,7 +70871,7 @@ ion-card {
 }
 
 .normale {
-  background-color: #028e2c !important;
+  background-color: #d5e5d7 !important;
   font-size: 12px;
 }
 

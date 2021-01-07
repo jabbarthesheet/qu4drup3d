@@ -8,32 +8,38 @@
 </ion-header>
 
 <ion-content>
-    <ion-card class="homePagePatient">
-      <ion-card-content>
-        <ion-toggle end class="SexeToggle" color="turquoise-fonce" (ionChange)="ToggleSexe()"></ion-toggle>
-      <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient">  
-        <ion-item>
-          <ion-label>
-          <p class="monPatient"><b>Mon patient</b></p>
-          <hr>
-          <p class="monPatient">{{sexeMF}} - {{AgeNum}} mois - {{PoidsNum}} kg </p>
-          <p class="monPatient">Estomac {{EstomacOuiNon}} - Jeûne {{DureeJeune}} h - Allergie : {{Allergie}}</p>
-          <hr>
-        </ion-label>
-        </ion-item> 
-
-        <button color="turquoise-fonce" ion-button small (click)="showPickerAge()">Age</button>
-        <button color="turquoise-fonce" ion-button small (click)="showPickerPoids()">Poids</button>
-        <button ion-button small color="turquoise-fonce"  (click)="displayOptions()">Options </button>
-        <button ion-button  small color="danger"  (click)="effacer()">Effacer</button>
 
 
-    </ion-card-content>
-    </ion-card>
+  <ion-card class="homePagePatient">
+    <ion-card-content>
+      <ion-toggle end class="SexeToggle" color="turquoise-fonce" [(ngModel)]="sexeToggle" (ionChange)="ToggleSexe()"></ion-toggle>
+    <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient">  
+      <ion-item>
+        <ion-label>
+        <p class="monPatient"><b>Mon patient</b></p>
+        <hr>
+        <p class="monPatient">{{sexeMF}} - {{AgeNum}} mois - {{PoidsNum}} kg </p>
+        <p class="monPatient">Estomac {{EstomacOuiNon}} - Jeûne {{DureeJeune}} h - Allergie : {{Allergie}}</p>
+      </ion-label>
+      </ion-item> 
 
-      <button ion-button   block small color="turquoise"  (click)="displayCourbes()">Biométrie</button>
-      <button ion-button block small color="warning" (click)="displayUrgences()">Urgences</button>
+      <ion-toolbar>
+        <ion-buttons>
+          <button color="turquoise-fonce" ion-button small (click)="showPickerAge()">Age</button>
+          <button color="turquoise-fonce" ion-button small (click)="showPickerPoids()">Poids</button>
+          <button ion-button small color="turquoise-fonce"  (click)="displayOptions()">Options </button>
+          <button ion-button  small color="danger"  (click)="effacer()">Effacer</button>
+  
+    </ion-buttons>
+    </ion-toolbar>
 
+  </ion-card-content>
+  </ion-card>
+
+    
+    <button ion-button   block small color="turquoise"  (click)="displayCourbes()">Biométrie</button>
+    <button ion-button   block small color="pastel-green"  (click)="displayScores()">Scores</button>
+    <button ion-button block small color="warning" (click)="displayUrgences()">Urgences</button>
     
           <button ion-button small color="light" class="homeButtons" (click)="displayMonitorage()"> Monitorage</button>
           <button ion-button small color="light" class="homeButtons" (click)="displayInduction()"> Induction </button>
@@ -44,12 +50,26 @@
           <button ion-button small color="light" class="homeButtons" (click)="displayGestionFluides()"> Solutés et PSL</button>
           <button ion-button small color="light" class="homeButtons" (click)="displayALR()"> Loco-régionale</button>
           <button ion-button small color="light" class="homeButtons" (click)="displayPostop()">Antalgie & Post-op</button>
- 
-
-
 
     
       <img class="logoDAR" (click)="openDARwebsite()" src="/assets/imgs/logo_dar.png"> 
+
+      <!--*
+      <ion-toolbar>
+        <ion-buttons>
+          <button ion-button slot="start" fill="solid">
+            <ion-icon slot="center" name="person-circle"></ion-icon>
+            Contact
+          </button> 
+          <button ion-button slot="end" fill="solid" color="dark-green">
+            Aide 
+            <ion-icon slot="end" name="help-circle"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-toolbar>
+    *-->
+
+      </ion-content>
 
   
 

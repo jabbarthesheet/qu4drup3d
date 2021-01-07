@@ -35,6 +35,10 @@ export class EntretienAnesthPage {
   XyloEntretien:number;
   KetaEntretien:number; 
   SufEntretien:number; 
+  DexdorBolusSeul:number;
+  DexdorBolusAvecIVSE:number; 
+  DexdorEntretien:number; 
+  DexdorAgitation:number; 
 
   isShownInhalatoire:boolean=false;
   isShownHypnotiquesIntraVeineux:boolean=false;
@@ -157,6 +161,10 @@ export class EntretienAnesthPage {
         this.XyloEntretien = Math.round((this.PoidsNum * 1)*10)/10; 
         this.KetaEntretien = Math.round((this.PoidsNum * 0.15)*10)/10; 
         this.SufEntretien = Math.round((this.PoidsNum * 0.2)*10)/10; 
+        this.DexdorBolusSeul = Math.round((this.PoidsNum * 0.5)*10)/10; 
+        this.DexdorBolusAvecIVSE = Math.round((this.PoidsNum * 1)*10)/10; 
+        this.DexdorEntretien = Math.round((this.PoidsNum * 0.4)*10)/10; 
+        this.DexdorAgitation = Math.round((this.PoidsNum * 0.3)*10)/10; 
 
 
 

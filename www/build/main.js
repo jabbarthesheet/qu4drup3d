@@ -1,13 +1,13 @@
 webpackJsonp([0],{
 
-/***/ 137:
+/***/ 138:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlateauInductionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -325,6 +325,14 @@ var PlateauInductionPage = /** @class */ (function () {
         ;
         /* EXACYL */
         this.AdminExacyl = Math.round(((this.PoidsNum * 10) * 10) / 10);
+        this.EntretienExacyl = Math.round(((this.PoidsNum * 5) * 10) / 10);
+        if (this.PoidsNum <= 20) {
+            this.DiluExacyl = "50 mg/mL";
+        }
+        else {
+            this.DiluExacyl = "100 mg/mL";
+        }
+        ;
         /* Ephedrine & Atropine*/
         this.AdminEphedrine = Math.round((this.PoidsNum * 0.3) * 10) / 10;
         if (this.PoidsNum <= 50) {
@@ -353,6 +361,22 @@ var PlateauInductionPage = /** @class */ (function () {
             this.DiluAtropine = "500 µg/mL";
         }
         ;
+        /* Xylocaïne et Keta version antalgique */
+        this.AdminXylo = Math.round((this.PoidsNum * 1.5) * 10) / 10;
+        this.AdminKetaAntalgique = Math.round((this.PoidsNum * 0.5) * 10) / 10;
+        if (this.PoidsNum <= 10) {
+            this.DiluKetaAntalgique = "1 mg/mL";
+        }
+        else if (this.PoidsNum <= 30) {
+            this.DiluKetaAntalgique = "5 mg/mL";
+        }
+        else {
+            this.DiluKetaAntalgique = "10 mg/mL";
+        }
+        ;
+        /* Dexdor prémed et bolus */
+        this.DexdorPremed = Math.round((this.PoidsNum * 2) * 10) / 10;
+        this.DexdorBolusSeul = Math.round((this.PoidsNum * 0.5) * 10) / 10;
     };
     ;
     PlateauInductionPage.prototype.ionViewDidLoad = function () {
@@ -361,7 +385,7 @@ var PlateauInductionPage = /** @class */ (function () {
     ;
     PlateauInductionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-plateau-induction',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\plateau-induction\plateau-induction.html"*/'<!--\n  Generated template for the PlateauInductionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<!-- HEADER DE LA PAGE avec menu principal -->  \n  <ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Drogues d\'induction</ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg \n      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n    <p>Allergie : {{Allergie}}</p></ion-label>\n    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> \n  </ion-item>\n</ion-header>\n\n<ion-content padding>\n\n  <!-- ITEM MON PATIENT -->\n\n\n<ion-list>\n  <ion-item-group>\n    <ion-item-divider (click)="ToggleHypno()">\n      <ion-label color="dark-turquoise">Hypnotiques\n        <ion-icon *ngIf="!isShownHypno" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownHypno" class="OpenCloseIcon" name="close"   style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item-divider> \n\n\n    <ion-card *ngIf="isShownHypno" class="drogueContainer">\n\n    <ion-item >\n      <ion-label class="drogueInduction" color="warning"><b>Sevoflurane 6%</b> - Voie inhalée\n        <p class="dilutionDrogueInduction">DGF pour l\'induction : 6-8 L/min</p>\n      </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label class="drogueInduction" color="warning"> \n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoThiopental}}</p>\n        <b>Thiopental {{AdminThiopental}} mg - IVD </b>\n        <p class="dilutionDrogueInduction"> Dilution : {{DiluThiopental}}</p></ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label class="drogueInduction" color="warning">\n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoPropofol}}</p>\n        <b>Propofol {{AdminPropofol}} mg - IVD </b>\n        <p class="dilutionDrogueInduction">Dilution : {{DiluPropofol}}</p></ion-label>\n    </ion-item>\n\n    <ion-item  class="avecAMM">\n      <ion-label class="drogueInduction" color="warning">\n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoEtomidate}}</p>\n        <b>Etomidate {{AdminEtomidate}} mg - IVD</b> \n        <p class="dilutionDrogueInduction">Dilution : {{DiluEtomidate}}</p> \n      </ion-label>\n    </ion-item>\n\n    <div class="AMM">AMM <br> > 2 ans</div>\n\n    <ion-item>\n      <ion-label class="drogueInduction" color="warning"> \n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoKetamine}}</p>\n        <b>Ketamine {{AdminKetamine}} mg - IVD</b>\n        <p class="dilutionDrogueInduction">Dilution : {{DiluKetamine}}</p> </ion-label>\n      <div ></div>\n    </ion-item>\n\n  </ion-card>\n    \n\n    <ion-item-divider (click)="ToggleMorphiniques()">\n      <ion-label color="dark-turquoise">Morphiniques\n        <ion-icon *ngIf="!isShownMorphiniques" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownMorphiniques" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item-divider>\n\n    <ion-card *ngIf="isShownMorphiniques" class="drogueContainer">\n    <ion-item>\n      <ion-label class="drogueInduction" color="primary">\n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoSufentanil}}</p>\n        <b>Sufentanil {{AdminSufentanil}} µg - IVD</b>\n        <p class="dilutionDrogueInduction">Dilution : {{DiluSufentanil}}</p></ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label class="drogueInduction" color="primary">\n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoAlfentanil}}</p>\n        <b>Alfentanil {{AdminAlfentanil}} µg - IVD</b>\n        <p class="dilutionDrogueInduction">Dilution : {{DiluAlfentanil}}</p>\n      </ion-label>\n    </ion-item>\n\n  </ion-card>\n\n    <ion-item-divider (click)="ToggleCurares()">\n      <ion-label color="dark-turquoise">Curares\n        <ion-icon *ngIf="!isShownCurares" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownCurares" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item-divider>\n\n    <ion-card *ngIf="isShownCurares" class="drogueContainer">\n    <ion-item>\n      <ion-label class="drogueInduction" color="danger">\n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoAtracurium}}</p>\n        <b>Atracurium {{AdminAtracurium}} mg - IVD</b>\n        <p class="dilutionDrogueInduction">Dilution : {{DiluAtracurium}}</p></ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label class="drogueInduction" color="danger">\n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoRocuronium}}</p>\n        <b>Rocuronium {{AdminRocuronium}} mg - IVD</b>\n        <p class="dilutionDrogueInduction">Dilution : {{DiluRocuronium}}</p></ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label class="drogueInduction" color="danger">\n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoCelocurine}}</p>\n        <b>Celocurine {{AdminCelocurine}} mg - IVD</b>\n        <p class="dilutionDrogueInduction">Dilution : {{DiluCelocurine}}</p></ion-label>\n    </ion-item>\n  </ion-card>\n\n  <ion-item-divider (click)="ToggleAutres()">\n    <ion-label color="dark-turquoise">Autres\n      <ion-icon *ngIf="!isShownAutres" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownAutres" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider>\n\n    <ion-card *ngIf="isShownAutres" class="drogueContainer">\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="dark">\n          <p class="posologieDrogueInduction">Posologie proposée : 0,15 mg/kg</p>\n          <b>Dexamethasone {{AdminDexa}} mg - IVD</b>\n          <p class="dilution">Dilution : {{DiluDexa}}</p></ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="dark">\n          <p class="posologieDrogueInduction">Posologie proposée : 10 mg/kg</p>\n          <b>Exacyl : {{AdminExacyl}} mg - IVSE sur 30 min</b>\n          <p class="dilution">Dilution : 100 mg/mL</p></ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="dark-pink">\n          <p class="posologieDrogueInduction">Posologie proposée : 100 µg/kg</p>\n          <b>Ephédrine : {{AdminEphedrine}} mg - IVD</b>\n          <p class="dilution">Dilution : {{DiluEphedrine}}</p></ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="dark-green">\n          <p class="posologieDrogueInduction">Posologie proposée : 20 µg/kg</p>\n          <b>Atropine : {{AdminAtropine}} mg - IVD</b>\n          <p class="dilution">Dilution : {{DiluAtropine}}</p></ion-label>\n      </ion-item>\n\n    </ion-card>\n\n  </ion-item-group>\n</ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\plateau-induction\plateau-induction.html"*/,
+            selector: 'page-plateau-induction',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\plateau-induction\plateau-induction.html"*/'<!--\n  Generated template for the PlateauInductionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<!-- HEADER DE LA PAGE avec menu principal -->  \n  <ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Drogues d\'induction</ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg \n      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n    <p>Allergie : {{Allergie}}</p></ion-label>\n    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> \n  </ion-item>\n</ion-header>\n\n<ion-content padding>\n\n  <!-- ITEM MON PATIENT -->\n\n\n<ion-list>\n  <ion-item-group>\n    <ion-item-divider (click)="ToggleHypno()">\n      <ion-label color="dark-turquoise">Hypnotiques\n        <ion-icon *ngIf="!isShownHypno" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownHypno" class="OpenCloseIcon" name="close"   style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item-divider> \n\n\n    <ion-card *ngIf="isShownHypno" class="drogueContainer">\n\n    <ion-item >\n      <ion-label class="drogueInduction" color="warning"><b>Sevoflurane 6%</b> - Voie inhalée\n        <p class="dilutionDrogueInduction">DGF pour l\'induction : 6-8 L/min</p>\n      </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label class="drogueInduction" color="warning"> \n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoThiopental}}</p>\n        <b>Thiopental {{AdminThiopental}} mg - IVD </b>\n        <p class="dilutionDrogueInduction"> Dilution : {{DiluThiopental}}</p></ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label class="drogueInduction" color="warning">\n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoPropofol}}</p>\n        <b>Propofol {{AdminPropofol}} mg - IVD </b>\n        <p class="dilutionDrogueInduction">Dilution : {{DiluPropofol}}</p></ion-label>\n    </ion-item>\n\n    <ion-item  class="avecAMM">\n      <ion-label class="drogueInduction" color="warning">\n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoEtomidate}}</p>\n        <b>Etomidate {{AdminEtomidate}} mg - IVD</b> \n        <p class="dilutionDrogueInduction">Dilution : {{DiluEtomidate}}</p> \n      </ion-label>\n    </ion-item>\n\n    <div class="AMM">AMM <br> > 2 ans</div>\n\n    <ion-item>\n      <ion-label class="drogueInduction" color="warning"> \n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoKetamine}}</p>\n        <b>Ketamine {{AdminKetamine}} mg - IVD</b>\n        <p class="dilutionDrogueInduction">Dilution : {{DiluKetamine}}</p> </ion-label>\n      <div ></div>\n    </ion-item>\n\n\n    <ion-item class="avecAMM">         \n      <ion-label class="drogueInduction" color="dark-blue">Dexmédétomidine : \n        <p class="comment">Posologie proposée : 2 µg/kg</p>\n        <p class="dilutionDrogueInduction">Prémédication : <b> {{DexdorPremed}} µg intranasal</b> </p>\n        <p class="comment">intra-nasal, 20 min avant induction </p>\n        <hr>\n        <p class="comment">Posologie proposée : 0,5 µg/kg</p>\n        <p class="dilutionDrogueInduction">Bolus seul : <b> {{DexdorBolusSeul}} µg IVD</b> </p>\n\n    </ion-label>\n      </ion-item>\n    \n      <div class="AMM">AMM : <br> sédation chez l\'adulte en USI objectif RASS [0 ; -3]</div>\n\n  </ion-card>\n    \n\n    <ion-item-divider (click)="ToggleMorphiniques()">\n      <ion-label color="dark-turquoise">Morphiniques\n        <ion-icon *ngIf="!isShownMorphiniques" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownMorphiniques" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item-divider>\n\n    <ion-card *ngIf="isShownMorphiniques" class="drogueContainer">\n    <ion-item>\n      <ion-label class="drogueInduction" color="primary">\n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoSufentanil}}</p>\n        <b>Sufentanil {{AdminSufentanil}} µg - IVD</b>\n        <p class="dilutionDrogueInduction">Dilution : {{DiluSufentanil}}</p></ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label class="drogueInduction" color="primary">\n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoAlfentanil}}</p>\n        <b>Alfentanil {{AdminAlfentanil}} µg - IVD</b>\n        <p class="dilutionDrogueInduction">Dilution : {{DiluAlfentanil}}</p>\n      </ion-label>\n    </ion-item>\n\n  </ion-card>\n\n    <ion-item-divider (click)="ToggleCurares()">\n      <ion-label color="dark-turquoise">Curares\n        <ion-icon *ngIf="!isShownCurares" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownCurares" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item-divider>\n\n    <ion-card *ngIf="isShownCurares" class="drogueContainer">\n    <ion-item>\n      <ion-label class="drogueInduction" color="danger">\n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoAtracurium}}</p>\n        <b>Atracurium {{AdminAtracurium}} mg - IVD</b>\n        <p class="dilutionDrogueInduction">Dilution : {{DiluAtracurium}}</p></ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label class="drogueInduction" color="danger">\n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoRocuronium}}</p>\n        <b>Rocuronium {{AdminRocuronium}} mg - IVD</b>\n        <p class="dilutionDrogueInduction">Dilution : {{DiluRocuronium}}</p></ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label class="drogueInduction" color="danger">\n        <p class="posologieDrogueInduction">Posologie proposée : {{PosoCelocurine}}</p>\n        <b>Celocurine {{AdminCelocurine}} mg - IVD</b>\n        <p class="dilutionDrogueInduction">Dilution : {{DiluCelocurine}}</p></ion-label>\n    </ion-item>\n  </ion-card>\n\n  <ion-item-divider (click)="ToggleAutres()">\n    <ion-label color="dark-turquoise">Autres\n      <ion-icon *ngIf="!isShownAutres" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownAutres" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider>\n\n    <ion-card *ngIf="isShownAutres" class="drogueContainer">\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="dark">\n          <p class="posologieDrogueInduction">Posologie proposée : 0,15 mg/kg</p>\n          <b>Dexamethasone {{AdminDexa}} mg - IVD</b>\n          <p class="dilutionDrogueInduction">Dilution : {{DiluDexa}}</p></ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="dark">\n          <p class="posologieDrogueInduction">Posologie proposée : 10 mg/kg</p>\n          <b>Exacyl bolus : {{AdminExacyl}} mg - IVSE sur 30 min</b>\n          <p class="dilutionDrogueInduction">Dilution : {{DiluExacyl}}</p></ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="dark">\n          <p class="posologieDrogueInduction">Posologie proposée : 5 mg/kg/h</p>\n          <b>Exacyl entretien : {{EntretienExacyl}} mg/h - IVSE</b>\n          <p class="dilutionDrogueInduction">Dilution : {{DiluExacyl}}</p></ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="dark-pink">\n          <p class="posologieDrogueInduction">Posologie proposée : 100 µg/kg</p>\n          <b>Ephédrine : {{AdminEphedrine}} mg - IVD</b>\n          <p class="dilutionDrogueInduction">Dilution : {{DiluEphedrine}}</p></ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="dark-green">\n          <p class="posologieDrogueInduction">Posologie proposée : 20 µg/kg</p>\n          <b>Atropine : {{AdminAtropine}} mg - IVD</b>\n          <p class="dilutionDrogueInduction">Dilution : {{DiluAtropine}}</p></ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="dark">\n          <p class="posologieDrogueInduction">Posologie proposée : 1.5 mg/kg</p>\n          <b>Xylocaïne : {{AdminXylo}} mg - IVD lent</b>\n          <p class="dilutionDrogueInduction">Dilution : 5 mg/mL</p></ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="warning">\n          <p class="posologieDrogueInduction">Posologie proposée : 0.5 mg/kg</p>\n          <b>Ketamine (antalgique) : {{AdminKetaAntalgique}} mg - IVD</b>\n        <p class="dilutionDrogueInduction">Dilution : {{DiluKetaAntalgique}}</p></ion-label>\n      </ion-item>\n\n    </ion-card>\n\n  </ion-item-group>\n</ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\plateau-induction\plateau-induction.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], PlateauInductionPage);
@@ -372,14 +396,14 @@ var PlateauInductionPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 138:
+/***/ 139:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlateauVasPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -650,15 +674,15 @@ var PlateauVasPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 139:
+/***/ 140:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EntretienAnesthPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -866,6 +890,10 @@ var EntretienAnesthPage = /** @class */ (function () {
                             _this.XyloEntretien = Math.round((_this.PoidsNum * 1) * 10) / 10;
                             _this.KetaEntretien = Math.round((_this.PoidsNum * 0.15) * 10) / 10;
                             _this.SufEntretien = Math.round((_this.PoidsNum * 0.2) * 10) / 10;
+                            _this.DexdorBolusSeul = Math.round((_this.PoidsNum * 0.5) * 10) / 10;
+                            _this.DexdorBolusAvecIVSE = Math.round((_this.PoidsNum * 1) * 10) / 10;
+                            _this.DexdorEntretien = Math.round((_this.PoidsNum * 0.4) * 10) / 10;
+                            _this.DexdorAgitation = Math.round((_this.PoidsNum * 0.3) * 10) / 10;
                         });
                     });
                 });
@@ -875,7 +903,7 @@ var EntretienAnesthPage = /** @class */ (function () {
     ;
     EntretienAnesthPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-entretien-anesth',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\entretien-anesth\entretien-anesth.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Entretien anesthésique</ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg \n      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n    <p>Allergie : {{Allergie}}</p></ion-label>\n    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> \n  </ion-item>\n</ion-header>\n\n<ion-content padding>\n\n  \n  <ion-item-divider (click)="ToggleInhalatoire()" >\n    <ion-label color="dark-turquoise">Entretien inhalatoire\n  <ion-icon *ngIf="!isShownInhalatoire" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownInhalatoire" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider> \n\n  <ion-card *ngIf="isShownInhalatoire" class="drogueContainer">\n\n\n      <ion-item>         \n        <ion-label  color="warning" class="drogueInduction"> Sevoflurane : <b>{{CAMSevo}} %</b>\n      <p class="dilutionDrogueInduction">%EtHalogéné, bas DGF</p>\n    </ion-label>\n  </ion-item>\n\n  </ion-card>\n\n  <ion-item-divider (click)="ToggleHypnotiquesIntraVeineux()" >\n    <ion-label color="dark-turquoise">Hypnotiques intraveineux\n  <ion-icon *ngIf="!isShownHypnotiquesIntraVeineux" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownHypnotiquesIntraVeineux" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider> \n\n  <ion-card *ngIf="isShownHypnotiquesIntraVeineux" class="drogueContainer">\n\n<ion-item>        \n  <ion-label class="drogueInduction" color="warning">Propofol : <b>{{PropoEntretien}} mg/h</b>\n  <p class="dilutionDrogueInduction">Pour 10 mg/kg/h </p></ion-label>\n  </ion-item>\n<ion-item >         \n  <ion-label class="drogueInduction" color="orange">Midazolam : <b>{{HypnoEntretien}} mg/h</b>\n  <p class="dilutionDrogueInduction">Pour 0,1 mg/kg/h </p></ion-label>\n  </ion-item>\n</ion-card>  \n\n\n<ion-item-divider (click)="ToggleAntalgiques()" >\n  <ion-label color="dark-turquoise">Antalgiques\n<ion-icon *ngIf="!isShownAntalgiques" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n<ion-icon *ngIf="isShownAntalgiques"class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label>\n</ion-item-divider> \n\n<ion-card *ngIf="isShownAntalgiques" class="drogueContainer">\n\n<ion-item>         \n<ion-label class="drogueInduction" color="primary">Remifentanil : <b>{{RemiEntretien}} µg/h</b>\n<p  class="dilutionDrogueInduction">Pour 10 µg/kg/h </p></ion-label>\n</ion-item>\n\n<ion-item>         \n<ion-label class="drogueInduction" color="primary">Sufentanil : <b>{{SufEntretien}} µg/h</b>\n<p  class="dilutionDrogueInduction">Pour 0,2 µg/kg/h </p></ion-label>\n</ion-item>\n\n<ion-item>         \n<ion-label class="drogueInduction" color="dark">Xylocaïne : <b>{{XyloEntretien}} mg/h</b>\n<p  class="dilutionDrogueInduction">Pour 1 mg/kg/h </p></ion-label>\n</ion-item>\n\n<ion-item>         \n<ion-label class="drogueInduction" color="warning">Ketamine : <b>{{KetaEntretien}} mg/h</b>\n<p  class="dilutionDrogueInduction">Pour 0,15 mg/kg/h </p></ion-label>\n</ion-item>\n\n</ion-card>\n\n\n<ion-item-divider (click)="ToggleCurares()" >\n  <ion-label color="dark-turquoise">Curares\n<ion-icon *ngIf="!isShownCurares" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n<ion-icon *ngIf="isShownCurares" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label>\n</ion-item-divider> \n\n<ion-card *ngIf="isShownCurares"class="drogueContainer">\n\n<ion-item >         \n<ion-label color="danger" class="drogueInduction">Rocuronium : <b>{{RocuEntretien}} mg/h</b>\n<p class="dilutionDrogueInduction">Pour 0,6 mg/kg/h </p></ion-label>\n</ion-item>\n\n\n<ion-item >         \n<ion-label color="danger" class="drogueInduction">Tracrium : <b>{{TracEntretien}} mg/h</b>\n<p class="dilutionDrogueInduction"  >Pour 0,5 mg/kg/h </p></ion-label>\n</ion-item>\n\n</ion-card>  \n\n\n</ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\entretien-anesth\entretien-anesth.html"*/,
+            selector: 'page-entretien-anesth',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\entretien-anesth\entretien-anesth.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Entretien anesthésique</ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg \n      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n    <p>Allergie : {{Allergie}}</p></ion-label>\n    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> \n  </ion-item>\n</ion-header>\n\n<ion-content padding>\n\n  \n  <ion-item-divider (click)="ToggleInhalatoire()" >\n    <ion-label color="dark-turquoise">Entretien inhalatoire\n  <ion-icon *ngIf="!isShownInhalatoire" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownInhalatoire" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider> \n\n  <ion-card *ngIf="isShownInhalatoire" class="drogueContainer">\n\n\n      <ion-item>         \n        <ion-label  color="warning" class="drogueInduction"> Sevoflurane : <b>{{CAMSevo}} %</b>\n      <p class="dilutionDrogueInduction">%EtHalogéné, bas DGF</p>\n    </ion-label>\n  </ion-item>\n\n  </ion-card>\n\n  <ion-item-divider (click)="ToggleHypnotiquesIntraVeineux()" >\n    <ion-label color="dark-turquoise">Hypnotiques intraveineux\n  <ion-icon *ngIf="!isShownHypnotiquesIntraVeineux" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownHypnotiquesIntraVeineux" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider> \n\n  <ion-card *ngIf="isShownHypnotiquesIntraVeineux" class="drogueContainer">\n\n<ion-item>        \n  <ion-label class="drogueInduction" color="warning">Propofol : <b>{{PropoEntretien}} mg/h</b>\n  <p class="dilutionDrogueInduction">Pour 10 mg/kg/h </p></ion-label>\n  </ion-item>\n<ion-item >         \n  <ion-label class="drogueInduction" color="orange">Midazolam : <b>{{HypnoEntretien}} mg/h</b>\n  <p class="dilutionDrogueInduction">Pour 0,1 mg/kg/h </p></ion-label>\n  </ion-item>\n\n\n<ion-item class="avecAMM">         \n  <ion-label class="drogueInduction" color="dark-blue">Dexmédétomidine : \n  <p class="dilutionDrogueInduction">Bolus seul : <b> {{DexdorBolusSeul}} µg IVD</b> </p>\n  <p class="comment">pour 0,5 µg/kg </p>\n  <p class="dilutionDrogueInduction">IVSE : <b> {{DexdorBolusAvecIVSE}} µg sur 10\' puis {{DexdorEntretien}} µg/h</b> </p>\n  <p class="comment">pour 1 µg/kg sur 10\' puis 0,4 µg/kg/h  </p>\n  <p class="dilutionDrogueInduction">Prévention agitation : <b> {{DexdorAgitation}} µg IVD</b> </p>\n  <p class="comment">pour 0,3 µg/kg, en fin d\'intervention </p>\n\n</ion-label>\n  </ion-item>\n\n  <div class="AMM">AMM : <br> sédation chez l\'adulte en USI objectif RASS [0 ; -3]</div>\n\n</ion-card>  \n\n\n<ion-item-divider (click)="ToggleAntalgiques()" >\n  <ion-label color="dark-turquoise">Antalgiques\n<ion-icon *ngIf="!isShownAntalgiques" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n<ion-icon *ngIf="isShownAntalgiques"class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label>\n</ion-item-divider> \n\n<ion-card *ngIf="isShownAntalgiques" class="drogueContainer">\n\n<ion-item>         \n<ion-label class="drogueInduction" color="primary">Remifentanil : <b>{{RemiEntretien}} µg/h</b>\n<p  class="dilutionDrogueInduction">Pour 10 µg/kg/h </p></ion-label>\n</ion-item>\n\n<ion-item>         \n<ion-label class="drogueInduction" color="primary">Sufentanil : <b>{{SufEntretien}} µg/h</b>\n<p  class="dilutionDrogueInduction">Pour 0,2 µg/kg/h </p></ion-label>\n</ion-item>\n\n<ion-item>         \n<ion-label class="drogueInduction" color="dark">Xylocaïne : <b>{{XyloEntretien}} mg/h</b>\n<p  class="dilutionDrogueInduction">Pour 1 mg/kg/h </p></ion-label>\n</ion-item>\n\n<ion-item>         \n<ion-label class="drogueInduction" color="warning">Ketamine : <b>{{KetaEntretien}} mg/h</b>\n<p  class="dilutionDrogueInduction">Pour 0,15 mg/kg/h </p></ion-label>\n</ion-item>\n\n</ion-card>\n\n\n<ion-item-divider (click)="ToggleCurares()" >\n  <ion-label color="dark-turquoise">Curares\n<ion-icon *ngIf="!isShownCurares" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n<ion-icon *ngIf="isShownCurares" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label>\n</ion-item-divider> \n\n<ion-card *ngIf="isShownCurares"class="drogueContainer">\n\n<ion-item >         \n<ion-label color="danger" class="drogueInduction">Rocuronium : <b>{{RocuEntretien}} mg/h</b>\n<p class="dilutionDrogueInduction">Pour 0,6 mg/kg/h </p></ion-label>\n</ion-item>\n\n\n<ion-item >         \n<ion-label color="danger" class="drogueInduction">Tracrium : <b>{{TracEntretien}} mg/h</b>\n<p class="dilutionDrogueInduction"  >Pour 0,5 mg/kg/h </p></ion-label>\n</ion-item>\n\n</ion-card>  \n\n\n</ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\entretien-anesth\entretien-anesth.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], EntretienAnesthPage);
@@ -886,15 +914,15 @@ var EntretienAnesthPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 140:
+/***/ 141:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GestionFluidesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__options_options__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__options_options__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1155,7 +1183,7 @@ var GestionFluidesPage = /** @class */ (function () {
     ;
     GestionFluidesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-gestion-fluides',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\gestion-fluides\gestion-fluides.html"*/'<!--\n  Generated template for the GestionFluidesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Gestion des apports</ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg \n      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n      <p>Allergie : {{Allergie}}</p></ion-label> \n    </ion-item>\n</ion-header>\n\n<ion-content padding>\n\n\n      <!-- ITEM MON PATIENT -->\n\n  \n      <!-- ITEMS CALCULES-->\n   \n      <ion-list>\n        <ion-item-group>\n          \n          <ion-item-divider (click)="ToggleApports()">\n            <ion-label color="dark-turquoise">Apports hydriques\n          <ion-icon *ngIf="!isShownApports" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownApports" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-label>\n          </ion-item-divider> \n\n\n          <ion-card *ngIf="isShownApports" class="drogueContainer">\n          <ion-item>\n            <ion-label class="drogueInduction">Besoins de base : <b>{{ApportBaseHoraire}} mL/h</b>\n            <p class="dilutionDrogueInduction">{{Solute}}</p></ion-label>\n          </ion-item>\n          <ion-item>\n            <ion-label class="drogueInduction">Compensation du jeûne ({{DureeJeune}} heures) : <b>{{CompJeune}} mL</b>\n            <p class="dilutionDrogueInduction">{{Solute}}</p>\n            <p class="dilutionDrogueInduction">Passer {{CompJeuneH1}} mL sur 1h puis {{CompJeuneH2}} mL sur 2h</p>\n          </ion-label>\n          </ion-item>\n\n          <ion-item> <ion-label class="drogueInduction" >Pertes chirurgicales</ion-label>\n            <ion-select class="drogueInduction" #newselect (ionChange)="SelectPerteChir(chir.pertes)" [(ngModel)]="chir.pertes" interface="action-sheet" placeholder="choisir"\n             okText="OK" cancelText="Retour">\n              <ion-option checked="true" value="Mineures">Mineures (2 mL/kg/h)</ion-option>\n              <ion-option value="Moderees">Modérées (5 mL/kg/h)</ion-option>\n              <ion-option value="Importantes">Importantes (10 mL/kg/h)</ion-option>\n            </ion-select>\n          </ion-item>\n\n          <ion-item>\n            <ion-label class="drogueInduction">Pertes insensibles\n            <p class="dilutionDrogueInduction"><b>{{Solute}} : {{CompPertesChir}} mL/h</b></p>\n          </ion-label>\n          </ion-item>\n          <ion-item>\n            <ion-label class="drogueInduction">Apports recommandés : <b>\n            <p class="dilutionDrogueInduction"> - La 1ere heure {{Solute}} : {{TotalH1}} mL</p>\n            <p class="dilutionDrogueInduction"> - La 2e et la 3e heure {{Solute}} : {{TotalH2et3}} mL</p>\n            <p class="dilutionDrogueInduction"> - puis {{Solute}} : {{TotalHoraire}} mL/h</p>\n          </b>\n        </ion-label>\n          </ion-item>\n        </ion-card>\n\n          \n\n          <ion-item-divider (click)="ToggleCGR()">\n            <ion-label color="danger">Concentré de globules rouges\n          <ion-icon *ngIf="!isShownCGR" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownCGR" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-label>\n          </ion-item-divider> \n\n          <ion-card *ngIf="isShownCGR" class="drogueContainer">\n          <ion-item>\n            <ion-label class="drogueInduction">\n              Masse sanguine estimée : <b>{{MasseSanguine}} mL</b>\n              <p class="dilutionDrogueInduction">(pour 80 mL/kg)</p>\n          </ion-label>\n          </ion-item>\n          <ion-item>\n            <ion-label color="danger" class="drogueInduction">Hémogloginémie mesurée : <b>{{Hbmesuree}} g/dL</b></ion-label>\n            <ion-range max="16" step="1"  pin="true" color="danger" (ionChange)="MesureeHb()" [(ngModel)]="Hbmesuree"> </ion-range>\n          </ion-item>\n\n          <ion-item >\n             <ion-label color="turquoise-fonce" class="drogueInduction">Objectif d\'hémoglobinémie : <b>{{Hbsouhaitee}} g/dL</b></ion-label>\n            <ion-range  color="turquoise-fonce" max="16" pin="true" step="1" (ionChange)="SouhaiteeHb()" [(ngModel)]="Hbsouhaitee"> </ion-range>\n          </ion-item>\n\n          <ion-item>\n            <ion-label class="drogueInduction">Transfuser : {{VolCGR}}\n              <p class="dilutionDrogueInduction"><b>Pour corriger {{DiffHb}} g/dL d\'hémoglobine</b></p>\n            </ion-label>\n        </ion-item>\n        </ion-card>\n\n        <ion-item-divider (click)="ToggleAutresPSL()">\n          <ion-label  color="warning">Autres PSL\n            <ion-icon *ngIf="!isShownAutresPSL" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownAutresPSL" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n          </ion-label>\n        </ion-item-divider> \n\n          <ion-card *ngIf="isShownAutresPSL" class="drogueContainer">\n          <ion-item>Unités plaquettaires\n            <p><b>Passer {{UnitesPlaquettaires}} UI Plaquettaires</b></p>\n          </ion-item>\n          <ion-item>Plasma frais congelé\n            <p><b>Passer {{VolPFC}} mL de PFC</b></p>\n          </ion-item>\n        </ion-card>\n\n        </ion-item-group>\n        </ion-list>\n\n        <ion-card class="nb" padding>   Si ce n\'est pas déjà fait, renseignez la durée du jeune dans les options afin d\'ajuster les apports hydriques en conséquence.\n          <br><br>   \n          <button ion-button color="turquoise-fonce" class="homeButtons" (click)="displayOptions()"> Options </button></ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\gestion-fluides\gestion-fluides.html"*/,
+            selector: 'page-gestion-fluides',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\gestion-fluides\gestion-fluides.html"*/'\n<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Gestion des apports</ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg \n      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n      <p>Allergie : {{Allergie}}</p></ion-label> \n    </ion-item>\n</ion-header>\n\n<ion-content padding>\n\n\n      <!-- ITEM MON PATIENT -->\n\n  \n      <!-- ITEMS CALCULES-->\n   \n      <ion-list>\n        <ion-item-group>\n          \n          <ion-item-divider (click)="ToggleApports()">\n            <ion-label color="dark-turquoise">Apports hydriques\n          <ion-icon *ngIf="!isShownApports" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownApports" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-label>\n          </ion-item-divider> \n\n\n          <ion-card *ngIf="isShownApports" class="drogueContainer">\n          <ion-item>\n            <ion-label class="drogueInduction">Besoins de base : <b>{{ApportBaseHoraire}} mL/h</b>\n            <p class="dilutionDrogueInduction">{{Solute}}</p></ion-label>\n          </ion-item>\n          <ion-item>\n            <ion-label class="drogueInduction">Compensation du jeûne ({{DureeJeune}} heures) : <b>{{CompJeune}} mL</b>\n            <p class="dilutionDrogueInduction">{{Solute}}</p>\n            <p class="dilutionDrogueInduction">Passer {{CompJeuneH1}} mL sur 1h puis {{CompJeuneH2}} mL sur 2h</p>\n          </ion-label>\n          </ion-item>\n\n          <ion-item> <ion-label class="drogueInduction" >Pertes chirurgicales</ion-label>\n            <ion-select class="drogueInduction" #newselect (ionChange)="SelectPerteChir(chir.pertes)" [(ngModel)]="chir.pertes" interface="action-sheet" placeholder="choisir"\n             okText="OK" cancelText="Retour">\n              <ion-option checked="true" value="Mineures">Mineures (2 mL/kg/h)</ion-option>\n              <ion-option value="Moderees">Modérées (5 mL/kg/h)</ion-option>\n              <ion-option value="Importantes">Importantes (10 mL/kg/h)</ion-option>\n            </ion-select>\n          </ion-item>\n\n          <ion-item>\n            <ion-label class="drogueInduction">Pertes insensibles\n            <p class="dilutionDrogueInduction"><b>{{Solute}} : {{CompPertesChir}} mL/h</b></p>\n          </ion-label>\n          </ion-item>\n          <ion-item>\n            <ion-label class="drogueInduction">Apports recommandés : <b>\n            <p class="dilutionDrogueInduction"> - La 1ere heure {{Solute}} : {{TotalH1}} mL</p>\n            <p class="dilutionDrogueInduction"> - La 2e et la 3e heure {{Solute}} : {{TotalH2et3}} mL</p>\n            <p class="dilutionDrogueInduction"> - puis {{Solute}} : {{TotalHoraire}} mL/h</p>\n          </b>\n        </ion-label>\n          </ion-item>\n        </ion-card>\n\n          \n\n          <ion-item-divider (click)="ToggleCGR()">\n            <ion-label color="danger">Concentré de globules rouges\n          <ion-icon *ngIf="!isShownCGR" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownCGR" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-label>\n          </ion-item-divider> \n\n          <ion-card *ngIf="isShownCGR" class="drogueContainer">\n          <ion-item>\n            <ion-label class="drogueInduction">\n              Masse sanguine estimée : <b>{{MasseSanguine}} mL</b>\n              <p class="dilutionDrogueInduction">(pour 80 mL/kg)</p>\n          </ion-label>\n          </ion-item>\n          <ion-item>\n            <ion-label color="danger" class="drogueInduction">Hémogloginémie mesurée : <b>{{Hbmesuree}} g/dL</b></ion-label>\n            <ion-range max="16" step="1"  pin="true" color="danger" (ionChange)="MesureeHb()" [(ngModel)]="Hbmesuree"> </ion-range>\n          </ion-item>\n\n          <ion-item >\n             <ion-label color="turquoise-fonce" class="drogueInduction">Objectif d\'hémoglobinémie : <b>{{Hbsouhaitee}} g/dL</b></ion-label>\n            <ion-range  color="turquoise-fonce" max="16" pin="true" step="1" (ionChange)="SouhaiteeHb()" [(ngModel)]="Hbsouhaitee"> </ion-range>\n          </ion-item>\n\n          <ion-item>\n            <ion-label class="drogueInduction">Transfuser : {{VolCGR}}\n              <p class="dilutionDrogueInduction"><b>Pour corriger {{DiffHb}} g/dL d\'hémoglobine</b></p>\n            </ion-label>\n        </ion-item>\n        </ion-card>\n\n        <ion-item-divider (click)="ToggleAutresPSL()">\n          <ion-label  color="warning">Autres PSL\n            <ion-icon *ngIf="!isShownAutresPSL" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownAutresPSL" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n          </ion-label>\n        </ion-item-divider> \n\n          <ion-card *ngIf="isShownAutresPSL" class="drogueContainer">\n          <ion-item>Unités plaquettaires\n            <p><b>Passer {{UnitesPlaquettaires}} UI Plaquettaires</b></p>\n          </ion-item>\n          <ion-item>Plasma frais congelé\n            <p><b>Passer {{VolPFC}} mL de PFC</b></p>\n          </ion-item>\n        </ion-card>\n\n        </ion-item-group>\n        </ion-list>\n\n        <ion-card class="nb" padding>   Si ce n\'est pas déjà fait, renseignez la durée du jeune dans les options afin d\'ajuster les apports hydriques en conséquence.\n          <br><br>   \n          <button ion-button small color="turquoise-fonce" (click)="displayOptions()"> Options </button></ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\gestion-fluides\gestion-fluides.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], GestionFluidesPage);
@@ -1166,15 +1194,15 @@ var GestionFluidesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 141:
+/***/ 142:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OptionsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1280,7 +1308,7 @@ var OptionsPage = /** @class */ (function () {
     ;
     OptionsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-options',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\options\options.html"*/'\n\n    <ion-header translucent>\n      <ion-navbar>\n        <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>Options</ion-title>\n      </ion-navbar>\n      <ion-item color="turquoise-fonce"> \n        <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg \n          <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n        <p>Allergie : {{Allergie}}</p></ion-label>\n        <ion-icon slot="end"></ion-icon> \n      </ion-item>\n    </ion-header>\n\n\n<ion-content padding>\n\n  <ion-item color="turquoise">Risque anesthésique</ion-item>\n\n\n  <ion-item>\n    <ion-label>Allergies</ion-label>\n    <ion-input  inputmode ="text" type="text" (ionChange)="addAllergie()" [(ngModel)]="NewAllergie" placeholder="Renseigner ici"></ion-input>\n    </ion-item>\n\n    \n<ion-item>\n  <ion-label>Durée du jeune pré-op : <b>{{DureeJeune}} heures</b></ion-label>\n  <ion-range color="turquoise-fonce" max="12" step="1" ticks="true" snaps (ionChange)="FnDureeJeune()" [(ngModel)]="DureeJeune"> </ion-range>\n</ion-item>\n  \n\n  <ion-item>\n    <ion-label>Estomac plein</ion-label>\n    <ion-toggle color="turquoise-fonce" checked="{{estomaclast}}" [(ngModel)]="options.estomacplein" (ionChange)="FnEstomacPlein(options)"></ion-toggle>\n  </ion-item>\n\n<hr>\n\n  <ion-item color="turquoise" >Biométrie</ion-item>\n\n  <ion-item>\n    <ion-label position="stacked">Taille (cm)</ion-label>\n    <ion-input inputmode ="number" type="number" (ionChange)="addTaille(Taille)" [(ngModel)]="Taille" placeholder="Renseigner"></ion-input>\n  </ion-item>\n\n  <hr>\n\n  <ion-item color="turquoise" >Prématurité & APC</ion-item>\n\n  <ion-item>\n    <ion-label position="stacked">Terme naissance (SA)</ion-label>\n    <ion-input inputmode ="number" type="number" (ionChange)="addTerme(Terme)" [(ngModel)]="Terme" placeholder="Renseigner"></ion-input>\n  </ion-item>\n\n  <ion-item>APC : {{APC}} semaines</ion-item>\n\n  <hr>\n\n\n\n \n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\options\options.html"*/,
+            selector: 'page-options',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\options\options.html"*/'\n\n    <ion-header translucent>\n      <ion-navbar>\n        <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>Options</ion-title>\n      </ion-navbar>\n      <ion-item color="turquoise-fonce"> \n        <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg \n          <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n        <p>Allergie : {{Allergie}}</p></ion-label>\n        <ion-icon slot="end"></ion-icon> \n      </ion-item>\n    </ion-header>\n\n\n<ion-content padding>\n\n  <ion-item>\n    <ion-label color="dark-turquoise">Risque anesthésique</ion-label></ion-item>\n\n\n  <ion-item>\n    <ion-label  class="drogueInduction">Allergies</ion-label>\n    <ion-input  class="drogueInduction" inputmode ="text" type="text" (ionChange)="addAllergie()" [(ngModel)]="NewAllergie" placeholder="Renseigner ici"></ion-input>\n    </ion-item>\n\n    \n<ion-item>\n  <ion-label class="drogueInduction">Durée du jeune pré-op : <b>{{DureeJeune}} heures</b></ion-label>\n  <ion-range class="drogueInduction" color="turquoise-fonce" max="12" step="1" ticks="true" snaps (ionChange)="FnDureeJeune()" [(ngModel)]="DureeJeune"> </ion-range>\n</ion-item>\n  \n\n  <ion-item>\n    <ion-label class="drogueInduction">Estomac plein</ion-label>\n    <ion-toggle class="drogueInduction"  color="turquoise-fonce" checked="{{estomaclast}}" [(ngModel)]="options.estomacplein" (ionChange)="FnEstomacPlein(options)"></ion-toggle>\n  </ion-item>\n\n\n  <ion-item>\n    <ion-label color="dark-turquoise">Biométrie\n    </ion-label>\n    </ion-item>\n\n  <ion-item>\n    <ion-label class="drogueInduction" position="stacked">Taille (cm)</ion-label>\n    <ion-input class="drogueInduction" inputmode ="number" type="number" (ionChange)="addTaille(Taille)" [(ngModel)]="Taille" placeholder="Renseigner"></ion-input>\n  </ion-item>\n\n \n\n  <ion-item>\n    <ion-label color="dark-turquoise">Prématurité & APC\n    </ion-label>\n    </ion-item>\n\n  <ion-item>\n    <ion-label class="drogueInduction" position="stacked">Terme naissance (SA)</ion-label>\n    <ion-input class="drogueInduction" inputmode ="number" type="number" (ionChange)="addTerme(Terme)" [(ngModel)]="Terme" placeholder="Renseigner"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label class="drogueInduction">\n    APC : {{APC}} semaines</ion-label></ion-item>\n\n\n\n \n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\options\options.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
     ], OptionsPage);
@@ -1292,14 +1320,14 @@ var OptionsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 142:
+/***/ 143:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocoRegionalePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1498,6 +1526,8 @@ var LocoRegionalePage = /** @class */ (function () {
                             _this.VolBPV = Math.round((_this.PoidsNum * 0.5) * 10) / 10;
                             _this.VolTAPmin = Math.round((_this.PoidsNum * 0.3) * 10) / 10;
                             _this.VolTAPmax = Math.round((_this.PoidsNum * 0.5) * 10) / 10;
+                            _this.VolPudendal = Math.round((_this.PoidsNum * 0.2) * 10) / 10;
+                            _this.VolQL = Math.round((_this.PoidsNum * 0.25) * 10) / 10;
                         });
                     });
                 });
@@ -1507,7 +1537,7 @@ var LocoRegionalePage = /** @class */ (function () {
     ;
     LocoRegionalePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-loco-regionale',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\loco-regionale\loco-regionale.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Anesthésie loco-régionale</ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg \n      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n    <p>Allergie : {{Allergie}}</p></ion-label>\n    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> \n  </ion-item>\n</ion-header>\n\n<ion-content padding>\n\n  \n  <ion-item-divider (click)="ToggleAPD()">\n    <ion-label color="dark-turquoise">Anesthésie péridurale pédiatrique\n  <ion-icon *ngIf="!isShownAPD" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownAPD" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider> \n\n  <ion-card *ngIf="isShownAPD" class="drogueContainer">\n\n      <ion-item> \n        <ion-label class="drogueInduction">\n        <b>Ponction :</b> \n        <p>Espace L4-L5 (voie de Taylor),</p> \n        <p>Entre les épines iliaques postérieures,</p>\n        <p>Aiguille pédiatrique (graduation/5mm). </p> \n      </ion-label>\n      </ion-item>\n\n      <ion-item>\n          <ion-label class="drogueInduction">\n        <b>Distance</b> de l\'espace péridural :\n        <p>Estimation</p>\n      - Selon Kemura (poids) : <b>{{Kemura}} mm</b> <br>\n      - Selon Busoni (âge, après 2 ans) : <b>{{Busoni}} mm</b> <br>\n      - Cathétériser l\'espace sur <b>30 mm</b>\n\n      </ion-label>\n\n      </ion-item>\n\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Cassette de PIEB + PCEA :</b>\n        <p>- Volume total de 50 mL</p>\n        <p>- Ropi 1 mg/mL + Suf 0,2 µg/mL</p>\n        </ion-label>\n        </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction">\n        <b>Posologies</b> (suggestions) :\n      <p> - Bolus horaire : <b>{{BolusPIEBRopiSuf}} mL</b> toutes les heures</p>\n      <p> - Bolus à demande : <b>{{BolusPCEARopiSuf}} mL</b>, PR 20 min</p>\n      <p> - Dose max. : <b>{{DoseMaxPCEARopiSuf}} mL</b> toutes les 4 heures</p>\n      </ion-label>\n      </ion-item>\n  \n  </ion-card>\n\n  <ion-item-divider (click)="ToggleRachi()">\n    <ion-label color="dark-turquoise">Rachi-anesthésie néo-natale\n  <ion-icon *ngIf="!isShownRachi" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownRachi" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider> \n\n  <ion-card *ngIf="isShownRachi" class="drogueContainer">\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Indications</b> :\n        <p>- Chirurgie sous ombilicale</p>\n        <p>- Nouveau né de moins de 5 kg.</p>\n      </ion-label></ion-item>\n\n      <ion-item> <ion-label class="drogueInduction"><b>Ponction :</b> \n        <p>Espace L4-L5 (voie de Taylor),</p> \n        <p>Entre les épines iliaques postérieures,</p>\n        <p>Aguille 25G courte (bleue).</p>  </ion-label> </ion-item>\n    \n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Bupivacaïne hyperbare</b>\n        <p>- 5 mg/mL</p>\n        <p>- {{VolBupi5NN}} (pour 0,2 mL/kg)</p>\n        <p>- Utiliser une seringue à insuline.</p>\n      </ion-label>\n        </ion-item>\n\n      <div class="astucediv" padding = "15 px">\n        <img class="lightbulb" src="/assets/imgs/light-bulb.png">\n        <p class="astuce"> \n        <b>L\'astuce de Joëlle</b> : Quelques gouttes de G30% sur les lèvres, avant, pendant et après la rachianesthésie</p>\n        \n        </div>\n  \n  </ion-card>\n\n\n  <ion-item-divider (click)="ToggleALRP()">\n    <ion-label color="dark-turquoise">Blocs périphériques\n  <ion-icon *ngIf="!isShownALRP" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownALRP" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider> \n\n  <ion-card *ngIf="isShownALRP" class="drogueContainer">\n\n    <ion-card-content>\n\n  <ion-item >\n    <ion-label class="drogueInduction"><b>Dilutions suggérées :</b> \n      <p> - Ropivacaïne : 2 mg/mL</p>\n      <p> - Lévobupivacaïne : 2,5 mg/mL</p>\n    </ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label class="drogueInduction"> <b>Posologies suggérées :</b> \n      <p>(en injection unique)</p>\n    </ion-label>\n  </ion-item>\n\n  <ion-grid class="tableauALR" fixed="true">\n    <ion-row >\n      <ion-col class="tableauALR">\n      Bloc\n      </ion-col>\n      <ion-col class="tableauALR">\n      Volume/poids\n      </ion-col>\n      <ion-col class="tableauALR">\n      Mon patient\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n      <ion-col>\n        Axillaire\n            </ion-col>\n      <ion-col>\n      0,2 à 0,5 mL/kg\n      </ion-col>\n      <ion-col>\n     {{VolBAXmin}} à {{VolBAXmax}} mL\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col>\n        Fémoral\n            </ion-col>\n      <ion-col>\n        0,3 à 1 mL/kg\n      </ion-col>\n      <ion-col>\n      {{VolFEMmin}} à {{VolFEMmax}} mL\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col>\n        Sciatique\n            </ion-col>\n      <ion-col>\n       0,3 à 1 mL/kg\n      </ion-col>\n      <ion-col>\n      {{VolSciatMin}} à {{VolSciatMax}} mL\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col>\n        Ilio-hypogastrique\n            </ion-col>\n      <ion-col>\n       0,5 mL/kg\n      </ion-col>\n      <ion-col>\n        {{VolIH}} mL\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col>\n        Pénien\n            </ion-col>\n      <ion-col>\n       0,1 mL/kg\n      </ion-col>\n      <ion-col>\n    {{VolPenien}} mL\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col>\n        Paravertébral\n            </ion-col>\n      <ion-col>\n       0,5 mL/kg\n      </ion-col>\n      <ion-col>\n        {{VolBPV}} mL\n      </ion-col>\n    </ion-row>\n\n  <ion-row>\n    <ion-col>\n      TAP\n          </ion-col>\n    <ion-col>\n     0,3 à 0,5 mL/kg\n    </ion-col>\n    <ion-col>\n      {{VolTAPmin}} à {{VolTAPmax}} mL\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col>\n      Carré des lombes \n          </ion-col>\n    <ion-col>\n     Volume\n    </ion-col>\n    <ion-col>\n      Volume\n     </ion-col>\n\n  </ion-row>\n\n  <ion-row>\n    <ion-col>\n      Erecteurs du rachis\n    </ion-col>\n    <ion-col>\n     Volume\n    </ion-col>\n    <ion-col>\n      Volume\n    </ion-col>\n  </ion-row>\n\n</ion-grid>\n\n</ion-card-content>\n\n</ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\loco-regionale\loco-regionale.html"*/,
+            selector: 'page-loco-regionale',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\loco-regionale\loco-regionale.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Anesthésie loco-régionale</ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg \n      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n    <p>Allergie : {{Allergie}}</p></ion-label>\n    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> \n  </ion-item>\n</ion-header>\n\n<ion-content padding>\n\n  \n  <ion-item-divider (click)="ToggleAPD()">\n    <ion-label color="dark-turquoise">Anesthésie péridurale pédiatrique\n  <ion-icon *ngIf="!isShownAPD" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownAPD" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider> \n\n  <ion-card *ngIf="isShownAPD" class="drogueContainer">\n\n      <ion-item> \n        <ion-label class="drogueInduction">\n        <b>Ponction :</b> \n        <p>Espace L4-L5 (voie de Taylor),</p> \n        <p>Entre les épines iliaques postérieures,</p>\n        <p>Aiguille pédiatrique (graduation/5mm). </p> \n      </ion-label>\n      </ion-item>\n\n      <ion-item>\n          <ion-label class="drogueInduction">\n        <b>Distance</b> de l\'espace péridural :\n        <p>Estimation</p>\n      - Selon Kemura (poids) : <b>{{Kemura}} mm</b> <br>\n      - Selon Busoni (âge, après 2 ans) : <b>{{Busoni}} mm</b> <br>\n      - Cathétériser l\'espace sur <b>30 mm</b>\n\n      </ion-label>\n\n      </ion-item>\n\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Cassette de PIEB + PCEA :</b>\n        <p>- Volume total de 50 mL</p>\n        <p>- Ropi 1 mg/mL + Suf 0,2 µg/mL</p>\n        </ion-label>\n        </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction">\n        <b>Posologies</b> (suggestions) :\n      <p> - Bolus horaire : <b>{{BolusPIEBRopiSuf}} mL</b> toutes les heures</p>\n      <p> - Bolus à demande : <b>{{BolusPCEARopiSuf}} mL</b>, PR 20 min</p>\n      <p> - Dose max. : <b>{{DoseMaxPCEARopiSuf}} mL</b> toutes les 4 heures</p>\n      </ion-label>\n      </ion-item>\n  \n  </ion-card>\n\n  <ion-item-divider (click)="ToggleRachi()">\n    <ion-label color="dark-turquoise">Rachi-anesthésie néo-natale\n  <ion-icon *ngIf="!isShownRachi" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownRachi" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider> \n\n  <ion-card *ngIf="isShownRachi" class="drogueContainer">\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Indications</b> :\n        <p>- Chirurgie sous ombilicale</p>\n        <p>- Nouveau né de moins de 5 kg.</p>\n      </ion-label></ion-item>\n\n      <ion-item> <ion-label class="drogueInduction"><b>Ponction :</b> \n        <p>Espace L4-L5 (voie de Taylor),</p> \n        <p>Entre les épines iliaques postérieures,</p>\n        <p>Aguille 25G courte (bleue).</p>  </ion-label> </ion-item>\n    \n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Bupivacaïne hyperbare</b>\n        <p>- 5 mg/mL</p>\n        <p>- {{VolBupi5NN}} (pour 0,2 mL/kg)</p>\n        <p>- Utiliser une seringue à insuline.</p>\n      </ion-label>\n        </ion-item>\n\n      <div class="astucediv" padding = "15 px">\n        <img class="lightbulb" src="/assets/imgs/light-bulb.png">\n        <p class="astuce"> \n        <b>L\'astuce de Joëlle</b> : Quelques gouttes de G30% sur les lèvres, avant, pendant et après la rachianesthésie</p>\n        \n        </div>\n  \n  </ion-card>\n\n\n  <ion-item-divider (click)="ToggleALRP()">\n    <ion-label color="dark-turquoise">Blocs périphériques\n  <ion-icon *ngIf="!isShownALRP" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownALRP" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider> \n\n  <ion-card *ngIf="isShownALRP" class="drogueContainer">\n\n    <ion-card-content>\n\n  <ion-item >\n    <ion-label class="drogueInduction"><b>Dilutions suggérées :</b> \n      <p> - Ropivacaïne : 2 mg/mL</p>\n      <p> - Lévobupivacaïne : 2,5 mg/mL</p>\n    </ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label class="drogueInduction"> <b>Posologies suggérées :</b> \n      <p>(en injection unique)</p>\n    </ion-label>\n  </ion-item>\n\n  <ion-grid class="tableauALR" fixed="true">\n    <ion-row >\n      <ion-col class="tableauALR">\n      Bloc\n      </ion-col>\n      <ion-col class="tableauALR">\n      Volume/poids\n      </ion-col>\n      <ion-col class="tableauALR">\n      Mon patient\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n      <ion-col>\n        Axillaire\n            </ion-col>\n      <ion-col>\n      0,2 à 0,5 mL/kg\n      </ion-col>\n      <ion-col>\n     {{VolBAXmin}} à {{VolBAXmax}} mL\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col>\n        Fémoral\n            </ion-col>\n      <ion-col>\n        0,3 à 1 mL/kg\n      </ion-col>\n      <ion-col>\n      {{VolFEMmin}} à {{VolFEMmax}} mL\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col>\n        Sciatique\n            </ion-col>\n      <ion-col>\n       0,3 à 1 mL/kg\n      </ion-col>\n      <ion-col>\n      {{VolSciatMin}} à {{VolSciatMax}} mL\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col>\n        Ilio-hypogastrique\n            </ion-col>\n      <ion-col>\n       0,5 mL/kg\n      </ion-col>\n      <ion-col>\n        {{VolIH}} mL\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col>\n        Pénien\n            </ion-col>\n      <ion-col>\n       0,1 mL/kg\n      </ion-col>\n      <ion-col>\n    {{VolPenien}} mL\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col>\n        Paravertébral\n            </ion-col>\n      <ion-col>\n       0,5 mL/kg\n      </ion-col>\n      <ion-col>\n        {{VolBPV}} mL\n      </ion-col>\n    </ion-row>\n\n  <ion-row>\n    <ion-col>\n      TAP\n          </ion-col>\n    <ion-col>\n     0,3 à 0,5 mL/kg/côté\n    </ion-col>\n    <ion-col>\n      {{VolTAPmin}} à {{VolTAPmax}} mL/côté\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col>\n      Carré des lombes \n          </ion-col>\n    <ion-col>\n     0,25 mL/kg/côté\n    </ion-col>\n    <ion-col>\n      {{VolQL}} mL/côté\n     </ion-col>\n\n  </ion-row>\n\n  <ion-row>\n    <ion-col>\n      Erecteurs du rachis\n    </ion-col>\n    <ion-col>\n      0,25 mL/kg/côté\n    </ion-col>\n    <ion-col>\n      {{VolQL}} mL/côté\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col>\nPudendal    \n</ion-col>\n    <ion-col>\n     0,2 mL/kg/côté\n    </ion-col>\n    <ion-col>\n      {{VolPudendal}} mL/côté\n    </ion-col>\n  </ion-row>\n\n</ion-grid>\n\n</ion-card-content>\n\n</ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\loco-regionale\loco-regionale.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], LocoRegionalePage);
@@ -1518,15 +1548,16 @@ var LocoRegionalePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 143:
+/***/ 144:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntalgiePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__scores_scores__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1571,6 +1602,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+
 
 
 
@@ -1666,6 +1698,9 @@ var AntalgiePage = /** @class */ (function () {
         this.isShownPal1 = this.isShownPal3 = this.isShownPal2 = this.isShownAutres = this.isShownAntiEmet = false;
     };
     ;
+    AntalgiePage.prototype.openScores = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__scores_scores__["a" /* ScoresPage */]);
+    };
     AntalgiePage.prototype.ionViewWillEnter = function () {
         var _this = this;
         var promiseList = [];
@@ -1809,7 +1844,7 @@ var AntalgiePage = /** @class */ (function () {
     };
     AntalgiePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-antalgie',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\antalgie\antalgie.html"*/'<!--\n  Generated template for the AntalgiePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Antalgie & post-op </ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg \n      <p>Allergie : {{Allergie}}</p></ion-label>\n    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> \n  </ion-item>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-item-group>\n      <ion-item-divider (click)="TogglePalier1()"> \n        <ion-label color="dark-turquoise">Palier 1 \n          <ion-icon *ngIf="!isShownPal1" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownPal1" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n        </ion-label>\n      </ion-item-divider> \n  \n      <ion-card *ngIf="isShownPal1" class="drogueContainer">\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Paracétamol : {{AdminParacetamol}} mg</b>\n          <p class="dilutionDrogueInduction">pour 15 mg/kg, IVL ou PO toutes les 6h</p>\n        </ion-label>\n      </ion-item>\n  \n      <ion-item class="avecAMM">\n        <ion-label class="drogueInduction"><b>Ketoprofene (Profenid<span>&#174;</span>) : {{AdminKeto}} mg</b>\n          <p class="dilutionDrogueInduction">pour 1 mg/kg, IVL toutes les 8 h</p> \n        </ion-label>\n      </ion-item>\n      \n      <div class="AMM">AMM <br> IV 15 ans <br> Sirop 6 mois</div>\n\n      <ion-item class="avecAMM">\n        <ion-label class="drogueInduction"><b>Ibuprofene : {{AdminIbu}} mg</b>\n          <p class="dilutionDrogueInduction">pour 10 mg/kg, PO toutes les 8h</p> \n        </ion-label>\n      </ion-item>\n\n      <div class="AMM">AMM <br> > 3 mois</div>\n\n    </ion-card>\n\n      \n  \n      <ion-item-divider (click)="TogglePalier2()">\n        <ion-label color="dark-turquoise">Palier 2\n\n          <ion-icon *ngIf="!isShownPal2" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownPal2" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n\n        </ion-label>\n      </ion-item-divider>\n\n      <ion-card *ngIf="isShownPal2" class="drogueContainer">\n      <ion-item class="avecAMM">\n        <ion-label class="drogueInduction">\n          <b>Nalbuphine (Nubain<span>&#174;</span>) : {{AdminNubain}} mg</b>\n          <p class="dilutionDrogueInduction">pour 0,2 mg/kg, IVL toutes les 4h</p> \n          <p class="dilutionDrogueInduction">en ambulatoire, diviser par 2 : {{AdminNubainHdJ}} mg</p>\n          <p class="dilutionDrogueInduction">injecter sur 20 minutes avant 1 an</p>\n        </ion-label>\n      </ion-item>\n\n      <div class="AMM">AMM <br> > 18 mois</div>\n      \n      <ion-item class="avecAMM">\n        <ion-label class="drogueInduction"><b>Nefopam (Acupan<span>&#174;</span>) : {{AdminAcupan}} mg/j</b>\n          <p class="dilutionDrogueInduction">pour 1 mg/kg/j IVSE continu</p> \n        </ion-label>\n      </ion-item>\n\n      <div class="AMM">AMM <br> > 15 ans</div>\n      \n      <ion-item class="avecAMM" >\n        <ion-label class="drogueInduction"><b>Tramadol (Contramal<span>&#174;</span>) : {{AdminTramadol}} mg</b>\n          <p class="dilutionDrogueInduction">pour 1 mg/kg, IVL ou PO toutes les 6h</p> \n        </ion-label>\n      </ion-item>\n\n      <div class="AMM">AMM <br> PO 3 ans <br> IV 15 ans</div>\n\n    </ion-card>\n  \n      <ion-item-divider (click)="TogglePalier3()">\n        <ion-label color="dark-turquoise">Palier 3\n\n          <ion-icon *ngIf="!isShownPal3" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownPal3" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n\n        </ion-label>\n      </ion-item-divider>\n  \n\n      <ion-card *ngIf="isShownPal3" class="drogueContainer">\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Morphine avant réveil : {{AdminMorphineBO}} mg IVD</b>\n          <p class="dilutionDrogueInduction">pour 100 µg/kg, une seule fois</p> \n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Morphine en titration : {{AdminMorphineTitration}} mg IVD</b>\n          <p class="dilutionDrogueInduction">pour 25 µg/kg, toutes les 3 min</p> \n          <p class="dilutionDrogueInduction">revoir après 4 boli</p> \n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Morphine en PCA : {{AdminMorphinePCA}} mg IVL</b>\n          <p class="dilutionDrogueInduction">pour 20 µg/kg, PR de 5 min</p> \n          <p class="dilutionDrogueInduction">Dose max : {{AdminMorphinePCAMax}} mg (400 µg/kg), pour 4h</p> \n        </ion-label>\n      </ion-item> \n\n      <ion-item class="avecAMM">\n        <ion-label class="drogueInduction"><b>Morphine per os : </b>\n          <p class="dilutionDrogueInduction">- {{AdminMorphinePOLP}} mg LP toutes les 12h (1 mg/kg) PO</p> \n          <p class="dilutionDrogueInduction">- {{AdminMorphinePOID}} mg toutes les 4h SB (0,1 mg/kg) PO</p> \n        </ion-label>\n      </ion-item> \n\n      <div class="AMM">AMM <br> > 6 mois</div>  \n\n    </ion-card>\n\n\n      <ion-item-divider (click)="ToggleAutres()">\n        <ion-label color="dark-turquoise">Autres antalgiques\n\n          <ion-icon *ngIf="!isShownAutres" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownAutres" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n\n        </ion-label>\n      </ion-item-divider>\n  \n      <ion-card *ngIf="isShownAutres" class="drogueContainer">\n\n      <ion-item class="avecAMM">\n        <ion-label class="drogueInduction"><b>Gabapentine (Neurontin<span>&#174;</span>): {{AdminNeurontin}} mg PO</b>\n          <p class="dilutionDrogueInduction">pour 5 mg/kg, toutes les 8h</p> \n          <p class="dilutionDrogueInduction">NB comprimés de 150 ou 300 mg</p>\n        </ion-label>\n      </ion-item>\n\n      <div class="AMM">AMM <br> > 6 ans</div>\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Phloroglucinol (Spasfon<span>&#174;</span>) : </b>\n          <p class="dilutionDrogueInduction">- <b>{{AdminSpasfonIV}} mg</b> (0,5 mg/kg) IVL, toutes les 6h</p> \n          <p class="dilutionDrogueInduction">- <b>{{AdminSpasfonPO}} mg</b> (1,5 mg/kg) PO, toutes les 6h</p> \n        </ion-label>\n      </ion-item>\n\n      <ion-item class="avecAMM">\n        <ion-label class="drogueInduction"><b>Amitryptiline (Laroxyl<span>&#174;</span>) : </b>\n          <p class="dilutionDrogueInduction">- <b>{{AdminLaroxylIV}} mg</b> (0,5 mg/kg/j) IVSE sur 6h, 1 fois</p> \n          <p class="dilutionDrogueInduction">- <b>{{AdminLaroxylPO}} mg</b> (0,5 mg/kg/j) PO, 1 fois</p> \n        </ion-label>\n      </ion-item>\n\n      <div class="AMM">AMM <br> > 6 ans</div>\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Clonazepam (Rivotril<span>&#174;</span>) : {{AdminRivotrilPO}} mg PO</b>\n          <p class="dilutionDrogueInduction">- pour 0,01 mg/kg, toutes les 8h</p> \n          <p class="dilutionDrogueInduction">- soit <b>{{GouttesRivotril}} gouttes</b> (1 gtte/10kg), 3 fois par jour</p> \n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Catapressan (Clonidine <span>&#174;</span>) : </b>\n          <p class="dilutionDrogueInduction">- <b>{{AdminClonidineIVSE}} µg/h</b> (0,5 µg/kg/h) IVSE</p> \n          <p class="dilutionDrogueInduction">> possibilité de doubler si insuffisant</p>\n          <p class="dilutionDrogueInduction">- <b>{{AdminClonidinePO}} mg</b> (5 µg/kg) PO, toutes les 8h</p> \n        </ion-label>\n      </ion-item>\n\n      </ion-card>\n\n\n      <ion-item-divider (click)="ToggleAntiEmet()">\n        <ion-label color="dark-turquoise">Anti-émétiques\n\n          <ion-icon *ngIf="!isShownAntiEmet" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownAntiEmet" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n\n        </ion-label>\n      </ion-item-divider>\n  \n      <ion-card *ngIf="isShownAntiEmet" class="drogueContainer">\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Ondansétron (Zophren<span>&#174;</span>): {{AdminZophren}} mg IVL ou PO</b>\n          <p class="dilutionDrogueInduction">pour 0,1 mg/kg, toutes les 8h</p> \n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Dropéridol (Droleptan<span>&#174;</span>) : {{AdminDroleptan}} µg IVL</b>\n          <p class="dilutionDrogueInduction">pour 25 µg/kg , renouvelable 1 fois</p>\n        </ion-label>\n      </ion-item>\n\n      </ion-card>\n\n      <ion-item-divider (click)="ToggleAntiCoag()">\n        <ion-label color="dark-turquoise">Anti-coagulants\n\n          <ion-icon *ngIf="!isShownAntiCoag" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownAntiCoag" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n\n        </ion-label>\n      </ion-item-divider>\n  \n      <ion-card *ngIf="isShownAntiCoag" class="drogueContainer">\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Enoxaparine (Lovenox<span>&#174;</span>):</b>\n          <p class="dilutionDrogueInduction">Préventive : {{AdminHBPMpreventive}} UI/j </p>\n          <p class="dilutionDrogueInduction">- Pour 100 UI/kg/j</p>\n          <p class="dilutionDrogueInduction"><b>- Administrer en 2 injections avant 1 mois</b></p>\n          <p class="dilutionDrogueInduction">Curative : {{AdminHBPMefficace}} UI <b>x2/j</b> </p>\n          <p class="dilutionDrogueInduction">- Pour {{PosoHBPMefficace}}</p>\n          <p class="dilutionDrogueInduction"><b>- Obj aXa [0,5-1] ; 4h après 3e inj.</b></p>\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>HNF efficace :</b>\n    \n          <p class="dilutionDrogueInduction">Bolus : {{AdminHNF50}} à {{AdminHNF100}} UI </p>\n          <p class="dilutionDrogueInduction">- Pour 50 à 100 UI/kg</p>\n      \n          <p class="dilutionDrogueInduction">Entretien : {{AdminHNFentretien}} UI/h</p>\n          <p class="dilutionDrogueInduction">- Pour 20 UI/kg/h</p>\n          <p class="dilutionDrogueInduction"><b>- Obj aXa [0,3-0,6] à H4.</b></p>\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Protamine :</b>\n          <br>\n          <p class="dilutionDrogueInduction">1 mg pour 100 UI d\'héparine administrées</p>\n          <p class="dilutionDrogueInduction">IV <b>lent</b> sans dépasser 50mg/10min.</p>\n        </ion-label>\n      </ion-item>\n\n      </ion-card> \n\n    </ion-item-group>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\antalgie\antalgie.html"*/,
+            selector: 'page-antalgie',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\antalgie\antalgie.html"*/'<!--\n  Generated template for the AntalgiePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Antalgie & post-op </ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg \n      <p>Allergie : {{Allergie}}</p></ion-label>\n    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> \n  </ion-item>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-item-group>\n      <ion-item-divider (click)="TogglePalier1()"> \n        <ion-label color="dark-turquoise">Palier 1 \n          <ion-icon *ngIf="!isShownPal1" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownPal1" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n        </ion-label>\n      </ion-item-divider> \n  \n      <ion-card *ngIf="isShownPal1" class="drogueContainer">\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Paracétamol : {{AdminParacetamol}} mg</b>\n          <p class="dilutionDrogueInduction">pour 15 mg/kg, IVL ou PO toutes les 6h</p>\n        </ion-label>\n      </ion-item>\n  \n      <ion-item class="avecAMM">\n        <ion-label class="drogueInduction"><b>Ketoprofene (Profenid<span>&#174;</span>) : {{AdminKeto}} mg</b>\n          <p class="dilutionDrogueInduction">pour 1 mg/kg, IVL toutes les 8 h</p> \n        </ion-label>\n      </ion-item>\n      \n      <div class="AMM">AMM <br> IV 15 ans <br> Sirop 6 mois</div>\n\n      <ion-item class="avecAMM">\n        <ion-label class="drogueInduction"><b>Ibuprofene : {{AdminIbu}} mg</b>\n          <p class="dilutionDrogueInduction">pour 10 mg/kg, PO toutes les 8h</p> \n        </ion-label>\n      </ion-item>\n\n      <div class="AMM">AMM <br> > 3 mois</div>\n\n    </ion-card>\n\n      \n  \n      <ion-item-divider (click)="TogglePalier2()">\n        <ion-label color="dark-turquoise">Palier 2\n\n          <ion-icon *ngIf="!isShownPal2" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownPal2" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n\n        </ion-label>\n      </ion-item-divider>\n\n      <ion-card *ngIf="isShownPal2" class="drogueContainer">\n      <ion-item class="avecAMM">\n        <ion-label class="drogueInduction">\n          <b>Nalbuphine (Nubain<span>&#174;</span>) : {{AdminNubain}} mg</b>\n          <p class="dilutionDrogueInduction">pour 0,2 mg/kg, IVL toutes les 4h</p> \n          <p class="dilutionDrogueInduction">en ambulatoire, diviser par 2 : {{AdminNubainHdJ}} mg</p>\n          <p class="dilutionDrogueInduction">injecter sur 20 minutes avant 1 an</p>\n        </ion-label>\n      </ion-item>\n\n      <div class="AMM">AMM <br> > 18 mois</div>\n      \n      <ion-item class="avecAMM">\n        <ion-label class="drogueInduction"><b>Nefopam (Acupan<span>&#174;</span>) : {{AdminAcupan}} mg/j</b>\n          <p class="dilutionDrogueInduction">pour 1 mg/kg/j IVSE continu</p> \n        </ion-label>\n      </ion-item>\n\n      <div class="AMM">AMM <br> > 15 ans</div>\n      \n      <ion-item class="avecAMM" >\n        <ion-label class="drogueInduction"><b>Tramadol (Contramal<span>&#174;</span>) : {{AdminTramadol}} mg</b>\n          <p class="dilutionDrogueInduction">pour 1 mg/kg, IVL ou PO toutes les 6h</p> \n        </ion-label>\n      </ion-item>\n\n      <div class="AMM">AMM <br> PO 3 ans <br> IV 15 ans</div>\n\n    </ion-card>\n  \n      <ion-item-divider (click)="TogglePalier3()">\n        <ion-label color="dark-turquoise">Palier 3\n\n          <ion-icon *ngIf="!isShownPal3" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownPal3" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n\n        </ion-label>\n      </ion-item-divider>\n  \n\n      <ion-card *ngIf="isShownPal3" class="drogueContainer">\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Morphine avant réveil : {{AdminMorphineBO}} mg IVD</b>\n          <p class="dilutionDrogueInduction">pour 100 µg/kg, une seule fois</p> \n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Morphine en titration : {{AdminMorphineTitration}} mg IVD</b>\n          <p class="dilutionDrogueInduction">pour 25 µg/kg, toutes les 3 min</p> \n          <p class="dilutionDrogueInduction">revoir après 4 boli</p> \n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Morphine en PCA : {{AdminMorphinePCA}} mg IVL</b>\n          <p class="dilutionDrogueInduction">pour 20 µg/kg, PR de 5 min</p> \n          <p class="dilutionDrogueInduction">Dose max : {{AdminMorphinePCAMax}} mg (400 µg/kg), pour 4h</p> \n        </ion-label>\n      </ion-item> \n\n      <ion-item class="avecAMM">\n        <ion-label class="drogueInduction"><b>Morphine per os : </b>\n          <p class="dilutionDrogueInduction">- {{AdminMorphinePOLP}} mg LP toutes les 12h (1 mg/kg) PO</p> \n          <p class="dilutionDrogueInduction">- {{AdminMorphinePOID}} mg toutes les 4h SB (0,1 mg/kg) PO</p> \n        </ion-label>\n      </ion-item> \n\n      <div class="AMM">AMM <br> > 6 mois</div>  \n\n    </ion-card>\n\n\n      <ion-item-divider (click)="ToggleAutres()">\n        <ion-label color="dark-turquoise">Autres antalgiques\n\n          <ion-icon *ngIf="!isShownAutres" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownAutres" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n\n        </ion-label>\n      </ion-item-divider>\n  \n      <ion-card *ngIf="isShownAutres" class="drogueContainer">\n\n      <ion-item class="avecAMM">\n        <ion-label class="drogueInduction"><b>Gabapentine (Neurontin<span>&#174;</span>): {{AdminNeurontin}} mg PO</b>\n          <p class="dilutionDrogueInduction">pour 5 mg/kg, toutes les 8h</p> \n          <p class="dilutionDrogueInduction">NB comprimés de 150 ou 300 mg</p>\n        </ion-label>\n      </ion-item>\n\n      <div class="AMM">AMM <br> > 6 ans</div>\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Phloroglucinol (Spasfon<span>&#174;</span>) : </b>\n          <p class="dilutionDrogueInduction">- <b>{{AdminSpasfonIV}} mg</b> (0,5 mg/kg) IVL, toutes les 6h</p> \n          <p class="dilutionDrogueInduction">- <b>{{AdminSpasfonPO}} mg</b> (1,5 mg/kg) PO, toutes les 6h</p> \n        </ion-label>\n      </ion-item>\n\n      <ion-item class="avecAMM">\n        <ion-label class="drogueInduction"><b>Amitryptiline (Laroxyl<span>&#174;</span>) : </b>\n          <p class="dilutionDrogueInduction">- <b>{{AdminLaroxylIV}} mg</b> (0,5 mg/kg/j) IVSE sur 6h, 1 fois</p> \n          <p class="dilutionDrogueInduction">- <b>{{AdminLaroxylPO}} mg</b> (0,5 mg/kg/j) PO, 1 fois</p> \n        </ion-label>\n      </ion-item>\n\n      <div class="AMM">AMM <br> > 6 ans</div>\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Clonazepam (Rivotril<span>&#174;</span>) : {{AdminRivotrilPO}} mg PO</b>\n          <p class="dilutionDrogueInduction">- pour 0,01 mg/kg, toutes les 8h</p> \n          <p class="dilutionDrogueInduction">- soit <b>{{GouttesRivotril}} gouttes</b> (1 gtte/10kg), 3 fois par jour</p> \n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Catapressan (Clonidine <span>&#174;</span>) : </b>\n          <p class="dilutionDrogueInduction">- <b>{{AdminClonidineIVSE}} µg/h</b> (0,5 µg/kg/h) IVSE</p> \n          <p class="dilutionDrogueInduction">> possibilité de doubler si insuffisant</p>\n          <p class="dilutionDrogueInduction">- <b>{{AdminClonidinePO}} mg</b> (5 µg/kg) PO, toutes les 8h</p> \n        </ion-label>\n      </ion-item>\n\n      </ion-card>\n\n\n      <ion-item-divider (click)="ToggleAntiEmet()">\n        <ion-label color="dark-turquoise">Anti-émétiques\n\n          <ion-icon *ngIf="!isShownAntiEmet" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownAntiEmet" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n\n        </ion-label>\n      </ion-item-divider>\n  \n      <ion-card *ngIf="isShownAntiEmet" class="drogueContainer">\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Ondansétron (Zophren<span>&#174;</span>): {{AdminZophren}} mg IVL ou PO</b>\n          <p class="dilutionDrogueInduction">pour 0,1 mg/kg, toutes les 8h</p> \n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Dropéridol (Droleptan<span>&#174;</span>) : {{AdminDroleptan}} µg IVL</b>\n          <p class="dilutionDrogueInduction">pour 25 µg/kg , renouvelable 1 fois</p>\n        </ion-label>\n      </ion-item>\n\n      </ion-card>\n\n      <ion-item-divider (click)="ToggleAntiCoag()">\n        <ion-label color="dark-turquoise">Anti-coagulants\n\n          <ion-icon *ngIf="!isShownAntiCoag" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownAntiCoag" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n\n        </ion-label>\n      </ion-item-divider>\n  \n      <ion-card *ngIf="isShownAntiCoag" class="drogueContainer">\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Enoxaparine (Lovenox<span>&#174;</span>):</b>\n          <p class="dilutionDrogueInduction">Préventive : {{AdminHBPMpreventive}} UI/j </p>\n          <p class="dilutionDrogueInduction">- Pour 100 UI/kg/j</p>\n          <p class="dilutionDrogueInduction"><b>- Administrer en 2 injections avant 1 mois</b></p>\n          <p class="dilutionDrogueInduction">Curative : {{AdminHBPMefficace}} UI <b>x2/j</b> </p>\n          <p class="dilutionDrogueInduction">- Pour {{PosoHBPMefficace}}</p>\n          <p class="dilutionDrogueInduction"><b>- Obj aXa [0,5-1] ; 4h après 3e inj.</b></p>\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>HNF efficace :</b>\n    \n          <p class="dilutionDrogueInduction">Bolus : {{AdminHNF50}} à {{AdminHNF100}} UI </p>\n          <p class="dilutionDrogueInduction">- Pour 50 à 100 UI/kg</p>\n      \n          <p class="dilutionDrogueInduction">Entretien : {{AdminHNFentretien}} UI/h</p>\n          <p class="dilutionDrogueInduction">- Pour 20 UI/kg/h</p>\n          <p class="dilutionDrogueInduction"><b>- Obj aXa [0,3-0,6] à H4.</b></p>\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction"><b>Protamine :</b>\n          <br>\n          <p class="dilutionDrogueInduction">1 mg pour 100 UI d\'héparine administrées</p>\n          <p class="dilutionDrogueInduction">IV <b>lent</b> sans dépasser 50mg/10min.</p>\n        </ion-label>\n      </ion-item>\n\n      </ion-card> \n\n    </ion-item-group>\n  </ion-list>\n\n  <p class="dilutionDrogueInduction">Suggestion : utilisez les scores pour évaluer les besoins en antalgiques, anti-émétiques ou anti-coagulants.</p> \n  <ion-item><button ion-button small (click)="openScores()" color="pastel-green">Scores</button></ion-item>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\antalgie\antalgie.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], AntalgiePage);
@@ -1821,14 +1856,14 @@ var AntalgiePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 144:
+/***/ 145:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UrgencePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2051,14 +2086,14 @@ var UrgencePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 145:
+/***/ 146:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MonitoragePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2418,15 +2453,15 @@ var MonitoragePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 146:
+/***/ 147:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CourbesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__(543);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__(545);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_chart_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2487,9 +2522,10 @@ var CourbesPage = /** @class */ (function () {
         this.alertController = alertController;
         this.sexeMF = "Fille";
     }
+    /* Poids : obtention du set de données et chargement du graph */
     CourbesPage.prototype.setDataPoids = function () {
         if (this.AgeNum <= 12 && this.sexeMF == "Garçon") {
-            this.ageLabels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+            this.ageLabels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
             this.dataPoidsMediane = [3.4, 4.4, 5.4, 6.2, 6.7, 7.4, 7.9, 8.3, 8.7, 9, 9.4, 9.6, 9.9, 10.2];
             this.dataPoids3 = [2.5, 3.4, 4.2, 5, 5.5, 6, 6.4, 6.8, 7.1, 7.4, 7.6, 7.9, 8, 8.2];
             this.dataPoids97 = [4.7, 5.4, 6.5, 7.5, 8.3, 9, 9.6, 10.2, 10.6, 10.8, 11.4, 11.7, 12, 12.3];
@@ -2499,7 +2535,7 @@ var CourbesPage = /** @class */ (function () {
             this.AgeRange = "0 à 12 mois";
         }
         else if (this.AgeNum <= 12 && this.sexeMF == "Fille") {
-            this.ageLabels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+            this.ageLabels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
             this.dataPoidsMediane = [3.4, 4.2, 5, 5.7, 6.4, 6.9, 7.4, 7.7, 8.1, 8.4, 8.8, 9, 9.3, 9.6];
             this.dataPoids3 = [2.5, 3.4, 4, 4.5, 5, 5.5, 5.9, 6.5, 6.7, 6.8, 7.1, 7.4, 7.6, 7.8];
             this.dataPoids97 = [4.5, 5, 6, 6.9, 7.7, 8.4, 9, 9.5, 10, 10.4, 10.7, 11, 11.4, 11.8];
@@ -2611,9 +2647,10 @@ var CourbesPage = /** @class */ (function () {
         console.log(this.AgeCourbe);
     };
     ;
+    /* Taille : obtention du set de données et chargement du graph */
     CourbesPage.prototype.setDataTaille = function () {
         if (this.AgeNum <= 12 && this.sexeMF == "Garçon") {
-            this.ageLabels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+            this.ageLabels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
             this.dataTailleMediane = [50, 54, 58, 61, 63.5, 66, 67.5, 69, 71, 72, 73.5, 74.5, 75.5];
             this.dataTaille3 = [47, 50, 54, 57, 59, 62, 63.5, 65, 66, 67.5, 68.5, 69.5, 71];
             this.dataTaille97 = [54, 58, 62, 65, 68, 70, 72, 74, 75, 77, 78, 79.5, 81];
@@ -2623,7 +2660,7 @@ var CourbesPage = /** @class */ (function () {
             this.AgeRange = "0 à 12 mois";
         }
         else if (this.AgeNum <= 12 && this.sexeMF == "Fille") {
-            this.ageLabels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+            this.ageLabels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
             this.dataTailleMediane = [50, 53, 56.5, 59.5, 62, 64.5, 65.5, 67, 69, 70.5, 72, 73, 74];
             this.dataTaille3 = [47, 49.5, 52.5, 55, 58, 60, 62, 63, 64.5, 66, 67, 68, 69];
             this.dataTaille97 = [54, 57, 60, 63.5, 66, 68, 70, 72, 73, 75, 76.5, 78, 79];
@@ -2690,6 +2727,119 @@ var CourbesPage = /** @class */ (function () {
                             {
                                 x: this.AgeCourbe,
                                 y: this.Taille,
+                            }
+                        ],
+                        borderColor: this.bubbleColor,
+                        backgroundColor: "rgba(0, 0, 0, 0)",
+                        borderWidth: 3,
+                        pointRadius: 2,
+                        type: "bubble",
+                    },
+                ]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    xAxes: [
+                        {
+                            scaleLabel: {
+                                fontSize: 10,
+                                display: false,
+                                labelString: 'Age (mois)'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }
+                    ],
+                    yAxes: [
+                        {
+                            scaleLabel: {
+                                fontSize: 10,
+                                display: false,
+                                labelString: 'kg'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }
+                    ]
+                }
+            }
+        });
+        console.log(this.AgeCourbe);
+    };
+    ;
+    /* IMC : obtention du set de données et chargement du graph */
+    CourbesPage.prototype.setDataBMI = function () {
+        if (this.AgeNum <= 12 && this.sexeMF == "Garçon") {
+            this.ageLabels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+            this.dataIMCNormBasse = [12.2, 13, 13.8, 14.5, 14.8, 15, 15.2, 15.3, 15.4, 15.4, 15.3, 15.25, 15.2];
+            this.dataIMCNormHaute = [16, 17, 18, 19, 19.5, 19.7, 19.8, 19.9, 20, 19.9, 19.75, 19.6, 19.5];
+            this.mainColor = "rgba(54, 162, 235, 1)";
+            this.bubbleColor = "rgba(54, 162, 235, 1)";
+            this.AgeCourbe = this.AgeNum;
+            this.AgeRange = "0 à 12 mois";
+        }
+        else if (this.AgeNum <= 12 && this.sexeMF == "Fille") {
+            this.ageLabels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+            this.dataIMCNormBasse = [12.5, 13, 13.5, 14.2, 14.5, 14.75, 14.9, 15, 15.1, 15.15, 15.1, 15, 14.9];
+            this.dataIMCNormHaute = [16, 16.5, 17, 18.5, 18.8, 19.1, 19.3, 19.4, 19.5, 19.45, 19.4, 19.3, 19.2];
+            this.mainColor = "rgb(255,20,147,1)";
+            this.bubbleColor = "rgb(255,20,147,1)";
+            this.AgeCourbe = this.AgeNum;
+            this.AgeRange = "0 à 12 mois";
+        }
+        else if (this.AgeNum > 12 && this.sexeMF == "Garçon") {
+            this.ageLabels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+            this.dataIMCNormBasse = [15.25, 14.25, 13.95, 13.7, 13.4, 13.2, 13, 13.1, 13.3, 13.5, 13.7, 14.1, 14.5, 15, 15.5, 16.1, 16.6, 17];
+            this.dataIMCNormHaute = [19.7, 18.4, 17.9, 17.5, 17.4, 17.5, 17.9, 18.4, 19, 19.8, 20.5, 21.2, 21.9, 22.6, 23.3, 23.9, 24.5, 25];
+            this.mainColor = "rgba(54, 162, 235, 1)";
+            this.bubbleColor = "rgba(54, 162, 235, 1)";
+            this.AgeCourbe = Math.round(this.AgeNum / 12);
+            this.AgeRange = "1 à 18 ans";
+        }
+        else if (this.AgeNum > 12 && this.sexeMF == "Fille") {
+            this.ageLabels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+            this.dataIMCNormBasse = [15, 14, 13.8, 13.5, 13.2, 13, 12.9, 13, 13.2, 13.5, 13.8, 14.3, 14.9, 15.5, 16, 16.5, 16.7, 17];
+            this.dataIMCNormHaute = [19.2, 18.1, 17.7, 17.3, 17.2, 17.3, 17.7, 18.3, 19, 19.8, 20.7, 21.7, 22.5, 23.2, 23.9, 24.4, 24.7, 25];
+            this.mainColor = "rgb(255,20,147,1)";
+            this.bubbleColor = "rgb(255,20,147,1)";
+            this.AgeCourbe = Math.round(this.AgeNum / 12);
+            this.AgeRange = "1 à 18 ans";
+        }
+    };
+    ;
+    CourbesPage.prototype.graphBMILoad = function () {
+        this.lineChart = new __WEBPACK_IMPORTED_MODULE_3_chart_js__["Chart"](this.BMICanvas.nativeElement, {
+            type: "line",
+            data: {
+                labels: this.ageLabels,
+                datasets: [
+                    {
+                        label: "Norme haute",
+                        data: this.dataIMCNormHaute,
+                        borderColor: "rgba(180, 180, 180, 1)",
+                        backgroundColor: "rgba(180, 180, 180, 0.3)",
+                        borderWidth: 1,
+                        pointRadius: 1,
+                    },
+                    {
+                        label: "Norme basse",
+                        data: this.dataIMCNormBasse,
+                        borderColor: "rgba(180, 180, 180, 1)",
+                        backgroundColor: "rgba(180, 180, 180, 0.3)",
+                        borderWidth: 1,
+                        pointRadius: 1,
+                    },
+                    {
+                        label: "Mon Patient",
+                        data: [
+                            {
+                                x: this.AgeCourbe,
+                                y: this.BMI,
                             }
                         ],
                         borderColor: this.bubbleColor,
@@ -2805,11 +2955,9 @@ var CourbesPage = /** @class */ (function () {
                 _this.storage.get('Taille').then(function (Taille) {
                     _this.Taille = Taille;
                     _this.storage.get('sexeMF').then(function (sexe) {
-                        if (!sexe) {
-                            _this.sexeMF = "Fille";
-                        }
-                        else {
-                            _this.sexeMF = sexe;
+                        _this.sexeMF = sexe;
+                        if (!_this.sexeMF) {
+                            _this.sexeMF = "fille";
                         }
                         ;
                         /*placer les calculs ici*/
@@ -2821,16 +2969,20 @@ var CourbesPage = /** @class */ (function () {
                         else {
                             _this.BMIinfo = "Renseigner une taille dans les options";
                         }
-                        _this.setDataPoids();
-                        _this.graphPoidsLoad();
-                        _this.setDataTaille();
-                        _this.graphTailleLoad();
+                        ;
                         if (_this.Taille > 0) {
                             _this.BMI = Math.round(_this.PoidsNum / ((_this.Taille / 100) * (_this.Taille / 100)) * 10) / 10;
                         }
                         else {
                             _this.BMI = "NA";
                         }
+                        ;
+                        _this.setDataPoids();
+                        _this.graphPoidsLoad();
+                        _this.setDataTaille();
+                        _this.graphTailleLoad();
+                        _this.setDataBMI();
+                        _this.graphBMILoad();
                     });
                 });
             });
@@ -2845,9 +2997,13 @@ var CourbesPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])("TailleCanvas"),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */])
     ], CourbesPage.prototype, "TailleCanvas", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])("BMICanvas"),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */])
+    ], CourbesPage.prototype, "BMICanvas", void 0);
     CourbesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-courbes',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\courbes\courbes.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Biométrie</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-slides pager="true" >\n    <ion-slide>\n      <h1 class="slideTitle">Biométrie {{sexeMF}} {{AgeRange}} </h1>\n        <ion-card class="graphBiometrie">\n          <ion-card-header>\n            Poids\n          </ion-card-header>\n          <ion-card-content>\n            <canvas #PoidsCanvas></canvas>\n          </ion-card-content>\n        </ion-card>\n\n          <ion-item>Sexe : {{sexeMF}} - Age : {{AgeNum}} mois </ion-item> \n          <ion-item>Taille : {{Taille}} cm - Poids : {{PoidsNum}} kg </ion-item>\n\n          <ion-item>\n            <ion-label>BMI : {{BMI}} kg/m²\n            <p class="comment">{{BMIinfo}}</p>\n          </ion-label>\n        </ion-item>\n        \n          <ion-item>\n            <ion-label>Surface corporelle : {{SurfaceCorporelle}} m²\n              <p class="comment">(Poidsx4 + 7)/(Poids + 90) </p>\n            </ion-label>\n          </ion-item>\n\n    \n    \n    </ion-slide>\n    <ion-slide>\n      <h1 class="slideTitle">Biométrie {{sexeMF}} {{AgeRange}} </h1>\n\n    \n        <ion-card class="graphBiometrie">\n          <ion-card-header>\n            Taille\n          </ion-card-header>\n          <ion-card-content>\n            <canvas #TailleCanvas></canvas>\n          </ion-card-content>\n        </ion-card>\n\n        <ion-item>Sexe : {{sexeMF}} - Age : {{AgeNum}} mois </ion-item> \n        <ion-item>Taille : {{Taille}} cm - Poids : {{PoidsNum}} kg </ion-item>\n\n        <ion-item>\n          <ion-label>BMI : {{BMI}} kg/m²\n          <p>{{BMIinfo}}</p>\n        </ion-label>\n      </ion-item>\n      \n        <ion-item>\n          <ion-label>Surface corporelle : {{SurfaceCorporelle}} m²\n            <p class="comment">(Poidsx4 + 7)/(Poids + 90) </p>\n          </ion-label>\n        </ion-item>\n    \n    </ion-slide>\n  </ion-slides>\n\n\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\courbes\courbes.html"*/,
+            selector: 'page-courbes',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\courbes\courbes.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Biométrie</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-slides pager="true">\n\n<!-- 1ere slide -->\n\n    <ion-slide>\n      <h1 class="slideTitle">Biométrie {{sexeMF}} {{AgeRange}} </h1>\n        <ion-card class="graphBiometrie">\n          <ion-card-header>\n            Poids\n          </ion-card-header>\n          <ion-card-content>\n            <canvas #PoidsCanvas></canvas>\n          </ion-card-content>\n        </ion-card>\n\n          <ion-item>Sexe : {{sexeMF}} - Age : {{AgeNum}} mois </ion-item> \n          <ion-item>Taille : {{Taille}} cm - Poids : {{PoidsNum}} kg </ion-item>\n\n          <ion-item>\n            <ion-label>BMI : {{BMI}} kg/m²\n            <p class="comment">{{BMIinfo}}</p>\n          </ion-label>\n        </ion-item>\n        \n          <ion-item>\n            <ion-label>Surface corporelle : {{SurfaceCorporelle}} m²\n              <p class="comment">(Poidsx4 + 7)/(Poids + 90) </p>\n            </ion-label>\n          </ion-item>\n\n    \n    \n    </ion-slide>\n\n\n<!-- 2e slide -->\n\n\n    <ion-slide>\n      <h1 class="slideTitle">Biométrie {{sexeMF}} {{AgeRange}} </h1>\n\n    \n        <ion-card class="graphBiometrie">\n          <ion-card-header>\n            Taille\n          </ion-card-header>\n          <ion-card-content>\n            <canvas #TailleCanvas></canvas>\n          </ion-card-content>\n        </ion-card>\n\n        <ion-item>Sexe : {{sexeMF}} - Age : {{AgeNum}} mois </ion-item> \n        <ion-item>Taille : {{Taille}} cm - Poids : {{PoidsNum}} kg </ion-item>\n\n        <ion-item>\n          <ion-label>BMI : {{BMI}} kg/m²\n          <p class="comment">{{BMIinfo}}</p>\n        </ion-label>\n      </ion-item>\n      \n        <ion-item>\n          <ion-label>Surface corporelle : {{SurfaceCorporelle}} m²\n            <p class="comment">(Poidsx4 + 7)/(Poids + 90) </p>\n          </ion-label>\n        </ion-item>\n    \n    </ion-slide>\n\n<!-- 3e slide -->\n\n\n    <ion-slide>\n      <h1 class="slideTitle">Biométrie {{sexeMF}} {{AgeRange}} </h1>\n\n    \n        <ion-card class="graphBiometrie">\n          <ion-card-header>\n            IMC\n          </ion-card-header>\n          <ion-card-content>\n            <canvas #BMICanvas></canvas>\n          </ion-card-content>\n        </ion-card>\n\n        <ion-item>Sexe : {{sexeMF}} - Age : {{AgeNum}} mois </ion-item> \n        <ion-item>Taille : {{Taille}} cm - Poids : {{PoidsNum}} kg </ion-item>\n\n        <ion-item>\n          <ion-label>BMI : {{BMI}} kg/m²\n          <p class="comment">{{BMIinfo}}</p>\n        </ion-label>\n      </ion-item>\n      \n        <ion-item>\n          <ion-label>Surface corporelle : {{SurfaceCorporelle}} m²\n            <p class="comment">(Poidsx4 + 7)/(Poids + 90) </p>\n          </ion-label>\n        </ion-item>\n    \n    </ion-slide>\n  </ion-slides>\n\n\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\courbes\courbes.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
@@ -2861,16 +3017,16 @@ var CourbesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 165:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntiInfectieuxPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_anti_infectieux__ = __webpack_require__(492);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_anti_infectieux__ = __webpack_require__(494);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__ = __webpack_require__(156);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2923,13 +3079,13 @@ var AntiInfectieuxPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 166:
+/***/ 167:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExtrophieVesicalePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2988,7 +3144,7 @@ var ExtrophieVesicalePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 177:
+/***/ 178:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -3001,11 +3157,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 177;
+webpackEmptyAsyncContext.id = 178;
 
 /***/ }),
 
-/***/ 221:
+/***/ 222:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -3018,7 +3174,7 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 221;
+webpackEmptyAsyncContext.id = 222;
 
 /***/ }),
 
@@ -3028,20 +3184,21 @@ webpackEmptyAsyncContext.id = 221;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccueilPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__plateau_induction_plateau_induction__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__plateau_vas_plateau_vas__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__entretien_anesth_entretien_anesth__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__gestion_fluides_gestion_fluides__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__loco_regionale_loco_regionale__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__antalgie_antalgie__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__urgence_urgence__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__options_options__ = __webpack_require__(141);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__monitorage_monitorage__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__courbes_courbes__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser_ngx__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(831);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__plateau_induction_plateau_induction__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__plateau_vas_plateau_vas__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__entretien_anesth_entretien_anesth__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__gestion_fluides_gestion_fluides__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__loco_regionale_loco_regionale__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__antalgie_antalgie__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__urgence_urgence__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__options_options__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__monitorage_monitorage__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__courbes_courbes__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser_ngx__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(493);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__scores_scores__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3103,6 +3260,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
+
 var AccueilPage = /** @class */ (function () {
     function AccueilPage(viewCtrl, modalCtrl, app, navCtrl, navParams, storage, InAppBrowser, pickerController, ToastController) {
         this.viewCtrl = viewCtrl;
@@ -3125,33 +3283,12 @@ var AccueilPage = /** @class */ (function () {
         this.agesemaines = 0;
         this.poidskilogrammes = 0;
         this.poidsgrammes = 0;
+        this.sexeToggle = false;
         this.sexeMF = "Fille";
     }
     AccueilPage_1 = AccueilPage;
     AccueilPage.prototype.ionViewDidLoad = function () {
         this.toastCGU();
-    };
-    ;
-    AccueilPage.prototype.effacer = function () {
-        this.storage.clear();
-        this.AgeNum = 0;
-        this.PoidsNum = 0;
-        this.sexeMF = "Fille";
-        this.DureeJeune = 0;
-        this.Allergie = "";
-        this.EstomacOuiNon = "vide";
-    };
-    AccueilPage.prototype.ToggleSexe = function () {
-        this.sexeToggle = !this.sexeToggle;
-        if (this.sexeToggle == true) {
-            this.sexeMF = "Garçon";
-        }
-        else {
-            this.sexeMF = "Fille";
-        }
-        ;
-        this.storage.set("sexeMF", this.sexeMF);
-        console.log("sexe enregistré : ", this.sexeMF);
     };
     ;
     AccueilPage.prototype.toastCGU = function () {
@@ -3173,10 +3310,6 @@ var AccueilPage = /** @class */ (function () {
                 }
             });
         });
-    };
-    ;
-    AccueilPage.prototype.pickGender = function (ValeurChoisie) {
-        this.sexeMF = ValeurChoisie;
     };
     ;
     AccueilPage.prototype.showPickerAge = function () {
@@ -3361,10 +3494,6 @@ var AccueilPage = /** @class */ (function () {
                                         { text: '40', value: 40 },
                                         { text: '41', value: 41 },
                                         { text: '42', value: 42 },
-                                        { text: '42', value: 42 },
-                                        { text: '42', value: 42 },
-                                        { text: '42', value: 42 },
-                                        { text: '42', value: 42 },
                                         { text: '43', value: 43 },
                                         { text: '44', value: 44 },
                                         { text: '45', value: 45 },
@@ -3471,6 +3600,19 @@ var AccueilPage = /** @class */ (function () {
                         _this.DureeJeune = dureejeune;
                         _this.storage.get('Allergie').then(function (allergie) {
                             _this.Allergie = allergie;
+                            _this.storage.get('sexeMF').then(function (sexe) {
+                                _this.sexeMF = sexe;
+                                if (!_this.sexeMF) {
+                                    _this.sexeToggle = false;
+                                }
+                                else if (_this.sexeMF == "Fille") {
+                                    _this.sexeToggle = false;
+                                }
+                                else if (_this.sexeMF == "Garçon") {
+                                    _this.sexeToggle = true;
+                                }
+                                console.log("le toggle est ", _this.sexeToggle);
+                            });
                         });
                     });
                 });
@@ -3478,8 +3620,16 @@ var AccueilPage = /** @class */ (function () {
         }));
     };
     ;
-    AccueilPage.prototype.ToggleFooter = function () {
-        this.isShownFooter = !this.isShownFooter;
+    AccueilPage.prototype.ToggleSexe = function () {
+        if (this.sexeToggle == true) {
+            this.sexeMF = "Garçon";
+        }
+        else {
+            this.sexeMF = "Fille";
+        }
+        ;
+        this.storage.set("sexeMF", this.sexeMF);
+        console.log("sexe enregistré : ", this.sexeMF);
     };
     ;
     AccueilPage.prototype.displayInduction = function () {
@@ -3526,17 +3676,31 @@ var AccueilPage = /** @class */ (function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_14__antibioprophylaxie_antibioprophylaxie__["a" /* AntibioprophylaxiePage */]);
     };
     ;
+    AccueilPage.prototype.displayScores = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_15__scores_scores__["a" /* ScoresPage */]);
+    };
+    ;
     AccueilPage.prototype.openDARwebsite = function () {
         this.InAppBrowser.create("http://www.dar-robertdebre.com", '_system');
     };
     ;
+    AccueilPage.prototype.effacer = function () {
+        this.storage.clear();
+        this.AgeNum = 0;
+        this.PoidsNum = 0;
+        this.sexeMF = "Fille";
+        this.DureeJeune = 0;
+        this.Allergie = "";
+        this.EstomacOuiNon = "vide";
+        this.sexeToggle = false;
+    };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
     ], AccueilPage.prototype, "nav", void 0);
     AccueilPage = AccueilPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-accueil',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>QuadruPed calculs</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-card class="homePagePatient">\n      <ion-card-content>\n        <ion-toggle end class="SexeToggle" color="turquoise-fonce" (ionChange)="ToggleSexe()"></ion-toggle>\n      <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient">  \n        <ion-item>\n          <ion-label>\n          <p class="monPatient"><b>Mon patient</b></p>\n          <hr>\n          <p class="monPatient">{{sexeMF}} - {{AgeNum}} mois - {{PoidsNum}} kg </p>\n          <p class="monPatient">Estomac {{EstomacOuiNon}} - Jeûne {{DureeJeune}} h - Allergie : {{Allergie}}</p>\n          <hr>\n        </ion-label>\n        </ion-item> \n\n        <button color="turquoise-fonce" ion-button small (click)="showPickerAge()">Age</button>\n        <button color="turquoise-fonce" ion-button small (click)="showPickerPoids()">Poids</button>\n        <button ion-button small color="turquoise-fonce"  (click)="displayOptions()">Options </button>\n        <button ion-button  small color="danger"  (click)="effacer()">Effacer</button>\n\n\n    </ion-card-content>\n    </ion-card>\n\n      <button ion-button   block small color="turquoise"  (click)="displayCourbes()">Biométrie</button>\n      <button ion-button block small color="warning" (click)="displayUrgences()">Urgences</button>\n\n    \n          <button ion-button small color="light" class="homeButtons" (click)="displayMonitorage()"> Monitorage</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayInduction()"> Induction </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayVAS()"> Voies Aériennes </button>\n          <button ion-button small color="dark" class="homeButtons" (click)="displayATBprophylaxie()"> ATB </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayEntretien()"> Entretien </button> \n    \n          <button ion-button small color="light" class="homeButtons" (click)="displayGestionFluides()"> Solutés et PSL</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayALR()"> Loco-régionale</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayPostop()">Antalgie & Post-op</button>\n \n\n\n\n    \n      <img class="logoDAR" (click)="openDARwebsite()" src="/assets/imgs/logo_dar.png"> \n\n  \n\n\n  \n \n\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/,
+            selector: 'page-accueil',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>QuadruPed calculs</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n\n  <ion-card class="homePagePatient">\n    <ion-card-content>\n      <ion-toggle end class="SexeToggle" color="turquoise-fonce" [(ngModel)]="sexeToggle" (ionChange)="ToggleSexe()"></ion-toggle>\n    <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient">  \n      <ion-item>\n        <ion-label>\n        <p class="monPatient"><b>Mon patient</b></p>\n        <hr>\n        <p class="monPatient">{{sexeMF}} - {{AgeNum}} mois - {{PoidsNum}} kg </p>\n        <p class="monPatient">Estomac {{EstomacOuiNon}} - Jeûne {{DureeJeune}} h - Allergie : {{Allergie}}</p>\n      </ion-label>\n      </ion-item> \n\n      <ion-toolbar>\n        <ion-buttons>\n          <button color="turquoise-fonce" ion-button small (click)="showPickerAge()">Age</button>\n          <button color="turquoise-fonce" ion-button small (click)="showPickerPoids()">Poids</button>\n          <button ion-button small color="turquoise-fonce"  (click)="displayOptions()">Options </button>\n          <button ion-button  small color="danger"  (click)="effacer()">Effacer</button>\n  \n    </ion-buttons>\n    </ion-toolbar>\n\n  </ion-card-content>\n  </ion-card>\n\n    \n    <button ion-button   block small color="turquoise"  (click)="displayCourbes()">Biométrie</button>\n    <button ion-button   block small color="pastel-green"  (click)="displayScores()">Scores</button>\n    <button ion-button block small color="warning" (click)="displayUrgences()">Urgences</button>\n    \n          <button ion-button small color="light" class="homeButtons" (click)="displayMonitorage()"> Monitorage</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayInduction()"> Induction </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayVAS()"> Voies Aériennes </button>\n          <button ion-button small color="dark" class="homeButtons" (click)="displayATBprophylaxie()"> ATB </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayEntretien()"> Entretien </button> \n    \n          <button ion-button small color="light" class="homeButtons" (click)="displayGestionFluides()"> Solutés et PSL</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayALR()"> Loco-régionale</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayPostop()">Antalgie & Post-op</button>\n\n    \n      <img class="logoDAR" (click)="openDARwebsite()" src="/assets/imgs/logo_dar.png"> \n\n      <!--*\n      <ion-toolbar>\n        <ion-buttons>\n          <button ion-button slot="start" fill="solid">\n            <ion-icon slot="center" name="person-circle"></ion-icon>\n            Contact\n          </button> \n          <button ion-button slot="end" fill="solid" color="dark-green">\n            Aide \n            <ion-icon slot="end" name="help-circle"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-toolbar>\n    *-->\n\n      </ion-content>\n\n  \n\n\n  \n \n\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
@@ -3557,7 +3721,52 @@ var AccueilPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 492:
+/***/ 493:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntibioprophylaxiePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the AntibioprophylaxiePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AntibioprophylaxiePage = /** @class */ (function () {
+    function AntibioprophylaxiePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    AntibioprophylaxiePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AntibioprophylaxiePage');
+    };
+    AntibioprophylaxiePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-antibioprophylaxie',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\antibioprophylaxie\antibioprophylaxie.html"*/'<!--\n  Generated template for the AntibioprophylaxiePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Antibioprophylaxie</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  En développement ! \n  <br>\n  Revenez plus tard... :)\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\antibioprophylaxie\antibioprophylaxie.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+    ], AntibioprophylaxiePage);
+    return AntibioprophylaxiePage;
+}());
+
+//# sourceMappingURL=antibioprophylaxie.js.map
+
+/***/ }),
+
+/***/ 494:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3628,15 +3837,15 @@ var ServiceDataProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 493:
+/***/ 495:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProtocolesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__anti_infectieux_anti_infectieux__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__anti_infectieux_anti_infectieux__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(167);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3685,14 +3894,14 @@ var ProtocolesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 494:
+/***/ 496:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecommandationsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser_ngx__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser_ngx__ = __webpack_require__(148);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3736,16 +3945,16 @@ var RecommandationsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 495:
+/***/ 497:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnnuairePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_annuaire_data_annuaire_data__ = __webpack_require__(496);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_annuaire_data_annuaire_data__ = __webpack_require__(498);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__ = __webpack_require__(156);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3807,7 +4016,7 @@ var AnnuairePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 496:
+/***/ 498:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3946,13 +4155,13 @@ var AnnuaireDataProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 499:
+/***/ 501:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(500);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(504);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(502);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(506);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -3960,46 +4169,48 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 504:
+/***/ 506:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(542);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(833);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(544);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(834);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser_ngx__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser_ngx__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_accueil_accueil__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_options_options__ = __webpack_require__(141);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_plateau_induction_plateau_induction__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_plateau_vas_plateau_vas__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_gestion_fluides_gestion_fluides__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_antalgie_antalgie__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_urgence_urgence__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_loco_regionale_loco_regionale__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_annuaire_annuaire__ = __webpack_require__(495);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__ = __webpack_require__(497);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__ = __webpack_require__(498);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_service_data_liste_anti_infectieux__ = __webpack_require__(492);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_annuaire_data_annuaire_data__ = __webpack_require__(496);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_protocoles_protocoles__ = __webpack_require__(493);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_recommandations_recommandations__ = __webpack_require__(494);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_monitorage_monitorage__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_courbes_courbes__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(831);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_options_options__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_plateau_induction_plateau_induction__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_plateau_vas_plateau_vas__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_gestion_fluides_gestion_fluides__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_antalgie_antalgie__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_urgence_urgence__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_loco_regionale_loco_regionale__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_annuaire_annuaire__ = __webpack_require__(497);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__ = __webpack_require__(499);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__ = __webpack_require__(500);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_service_data_liste_anti_infectieux__ = __webpack_require__(494);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_annuaire_data_annuaire_data__ = __webpack_require__(498);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_protocoles_protocoles__ = __webpack_require__(495);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_recommandations_recommandations__ = __webpack_require__(496);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_monitorage_monitorage__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_courbes_courbes__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(493);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_scores_scores__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -4053,6 +4264,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_26__pages_monitorage_monitorage__["a" /* MonitoragePage */],
                 __WEBPACK_IMPORTED_MODULE_27__pages_courbes_courbes__["a" /* CourbesPage */],
                 __WEBPACK_IMPORTED_MODULE_28__pages_antibioprophylaxie_antibioprophylaxie__["a" /* AntibioprophylaxiePage */],
+                __WEBPACK_IMPORTED_MODULE_29__pages_scores_scores__["a" /* ScoresPage */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["a" /* HttpClientModule */],
@@ -4086,6 +4298,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_26__pages_monitorage_monitorage__["a" /* MonitoragePage */],
                 __WEBPACK_IMPORTED_MODULE_27__pages_courbes_courbes__["a" /* CourbesPage */],
                 __WEBPACK_IMPORTED_MODULE_28__pages_antibioprophylaxie_antibioprophylaxie__["a" /* AntibioprophylaxiePage */],
+                __WEBPACK_IMPORTED_MODULE_29__pages_scores_scores__["a" /* ScoresPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__["a" /* StatusBar */],
@@ -4104,31 +4317,32 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 542:
+/***/ 544:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_accueil_accueil__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_plateau_induction_plateau_induction__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_gestion_fluides_gestion_fluides__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_plateau_vas_plateau_vas__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_antalgie_antalgie__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_urgence_urgence__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_pre_medication_pre_medication__ = __webpack_require__(832);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_loco_regionale_loco_regionale__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_monitorage_monitorage__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_protocoles_protocoles__ = __webpack_require__(493);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_recommandations_recommandations__ = __webpack_require__(494);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_annuaire_annuaire__ = __webpack_require__(495);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_status_bar__ = __webpack_require__(497);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_splash_screen__ = __webpack_require__(498);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_courbes_courbes__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_plateau_induction_plateau_induction__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_gestion_fluides_gestion_fluides__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_plateau_vas_plateau_vas__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_antalgie_antalgie__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_urgence_urgence__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_pre_medication_pre_medication__ = __webpack_require__(833);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_loco_regionale_loco_regionale__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_monitorage_monitorage__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_protocoles_protocoles__ = __webpack_require__(495);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_recommandations_recommandations__ = __webpack_require__(496);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_annuaire_annuaire__ = __webpack_require__(497);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_status_bar__ = __webpack_require__(499);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_splash_screen__ = __webpack_require__(500);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_courbes_courbes__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_scores_scores__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4138,6 +4352,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -4187,6 +4402,7 @@ var MyApp = /** @class */ (function () {
             { title: 'Recommandations', component: __WEBPACK_IMPORTED_MODULE_15__pages_recommandations_recommandations__["a" /* RecommandationsPage */] },
             { title: 'Monitorage', component: __WEBPACK_IMPORTED_MODULE_13__pages_monitorage_monitorage__["a" /* MonitoragePage */] },
             { title: 'Courbes', component: __WEBPACK_IMPORTED_MODULE_19__pages_courbes_courbes__["a" /* CourbesPage */] },
+            { title: 'Scores', component: __WEBPACK_IMPORTED_MODULE_20__pages_scores_scores__["a" /* ScoresPage */] },
         ];
     }
     MyApp.prototype.initializeApp = function () {
@@ -4249,280 +4465,280 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 545:
+/***/ 547:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 262,
-	"./af.js": 262,
-	"./ar": 263,
-	"./ar-dz": 264,
-	"./ar-dz.js": 264,
-	"./ar-kw": 265,
-	"./ar-kw.js": 265,
-	"./ar-ly": 266,
-	"./ar-ly.js": 266,
-	"./ar-ma": 267,
-	"./ar-ma.js": 267,
-	"./ar-sa": 268,
-	"./ar-sa.js": 268,
-	"./ar-tn": 269,
-	"./ar-tn.js": 269,
-	"./ar.js": 263,
-	"./az": 270,
-	"./az.js": 270,
-	"./be": 271,
-	"./be.js": 271,
-	"./bg": 272,
-	"./bg.js": 272,
-	"./bm": 273,
-	"./bm.js": 273,
-	"./bn": 274,
-	"./bn-bd": 275,
-	"./bn-bd.js": 275,
-	"./bn.js": 274,
-	"./bo": 276,
-	"./bo.js": 276,
-	"./br": 277,
-	"./br.js": 277,
-	"./bs": 278,
-	"./bs.js": 278,
-	"./ca": 279,
-	"./ca.js": 279,
-	"./cs": 280,
-	"./cs.js": 280,
-	"./cv": 281,
-	"./cv.js": 281,
-	"./cy": 282,
-	"./cy.js": 282,
-	"./da": 283,
-	"./da.js": 283,
-	"./de": 284,
-	"./de-at": 285,
-	"./de-at.js": 285,
-	"./de-ch": 286,
-	"./de-ch.js": 286,
-	"./de.js": 284,
-	"./dv": 287,
-	"./dv.js": 287,
-	"./el": 288,
-	"./el.js": 288,
-	"./en-au": 289,
-	"./en-au.js": 289,
-	"./en-ca": 290,
-	"./en-ca.js": 290,
-	"./en-gb": 291,
-	"./en-gb.js": 291,
-	"./en-ie": 292,
-	"./en-ie.js": 292,
-	"./en-il": 293,
-	"./en-il.js": 293,
-	"./en-in": 294,
-	"./en-in.js": 294,
-	"./en-nz": 295,
-	"./en-nz.js": 295,
-	"./en-sg": 296,
-	"./en-sg.js": 296,
-	"./eo": 297,
-	"./eo.js": 297,
-	"./es": 298,
-	"./es-do": 299,
-	"./es-do.js": 299,
-	"./es-mx": 300,
-	"./es-mx.js": 300,
-	"./es-us": 301,
-	"./es-us.js": 301,
-	"./es.js": 298,
-	"./et": 302,
-	"./et.js": 302,
-	"./eu": 303,
-	"./eu.js": 303,
-	"./fa": 304,
-	"./fa.js": 304,
-	"./fi": 305,
-	"./fi.js": 305,
-	"./fil": 306,
-	"./fil.js": 306,
-	"./fo": 307,
-	"./fo.js": 307,
-	"./fr": 308,
-	"./fr-ca": 309,
-	"./fr-ca.js": 309,
-	"./fr-ch": 310,
-	"./fr-ch.js": 310,
-	"./fr.js": 308,
-	"./fy": 311,
-	"./fy.js": 311,
-	"./ga": 312,
-	"./ga.js": 312,
-	"./gd": 313,
-	"./gd.js": 313,
-	"./gl": 314,
-	"./gl.js": 314,
-	"./gom-deva": 315,
-	"./gom-deva.js": 315,
-	"./gom-latn": 316,
-	"./gom-latn.js": 316,
-	"./gu": 317,
-	"./gu.js": 317,
-	"./he": 318,
-	"./he.js": 318,
-	"./hi": 319,
-	"./hi.js": 319,
-	"./hr": 320,
-	"./hr.js": 320,
-	"./hu": 321,
-	"./hu.js": 321,
-	"./hy-am": 322,
-	"./hy-am.js": 322,
-	"./id": 323,
-	"./id.js": 323,
-	"./is": 324,
-	"./is.js": 324,
-	"./it": 325,
-	"./it-ch": 326,
-	"./it-ch.js": 326,
-	"./it.js": 325,
-	"./ja": 327,
-	"./ja.js": 327,
-	"./jv": 328,
-	"./jv.js": 328,
-	"./ka": 329,
-	"./ka.js": 329,
-	"./kk": 330,
-	"./kk.js": 330,
-	"./km": 331,
-	"./km.js": 331,
-	"./kn": 332,
-	"./kn.js": 332,
-	"./ko": 333,
-	"./ko.js": 333,
-	"./ku": 334,
-	"./ku.js": 334,
-	"./ky": 335,
-	"./ky.js": 335,
-	"./lb": 336,
-	"./lb.js": 336,
-	"./lo": 337,
-	"./lo.js": 337,
-	"./lt": 338,
-	"./lt.js": 338,
-	"./lv": 339,
-	"./lv.js": 339,
-	"./me": 340,
-	"./me.js": 340,
-	"./mi": 341,
-	"./mi.js": 341,
-	"./mk": 342,
-	"./mk.js": 342,
-	"./ml": 343,
-	"./ml.js": 343,
-	"./mn": 344,
-	"./mn.js": 344,
-	"./mr": 345,
-	"./mr.js": 345,
-	"./ms": 346,
-	"./ms-my": 347,
-	"./ms-my.js": 347,
-	"./ms.js": 346,
-	"./mt": 348,
-	"./mt.js": 348,
-	"./my": 349,
-	"./my.js": 349,
-	"./nb": 350,
-	"./nb.js": 350,
-	"./ne": 351,
-	"./ne.js": 351,
-	"./nl": 352,
-	"./nl-be": 353,
-	"./nl-be.js": 353,
-	"./nl.js": 352,
-	"./nn": 354,
-	"./nn.js": 354,
-	"./oc-lnc": 355,
-	"./oc-lnc.js": 355,
-	"./pa-in": 356,
-	"./pa-in.js": 356,
-	"./pl": 357,
-	"./pl.js": 357,
-	"./pt": 358,
-	"./pt-br": 359,
-	"./pt-br.js": 359,
-	"./pt.js": 358,
-	"./ro": 360,
-	"./ro.js": 360,
-	"./ru": 361,
-	"./ru.js": 361,
-	"./sd": 362,
-	"./sd.js": 362,
-	"./se": 363,
-	"./se.js": 363,
-	"./si": 364,
-	"./si.js": 364,
-	"./sk": 365,
-	"./sk.js": 365,
-	"./sl": 366,
-	"./sl.js": 366,
-	"./sq": 367,
-	"./sq.js": 367,
-	"./sr": 368,
-	"./sr-cyrl": 369,
-	"./sr-cyrl.js": 369,
-	"./sr.js": 368,
-	"./ss": 370,
-	"./ss.js": 370,
-	"./sv": 371,
-	"./sv.js": 371,
-	"./sw": 372,
-	"./sw.js": 372,
-	"./ta": 373,
-	"./ta.js": 373,
-	"./te": 374,
-	"./te.js": 374,
-	"./tet": 375,
-	"./tet.js": 375,
-	"./tg": 376,
-	"./tg.js": 376,
-	"./th": 377,
-	"./th.js": 377,
-	"./tk": 378,
-	"./tk.js": 378,
-	"./tl-ph": 379,
-	"./tl-ph.js": 379,
-	"./tlh": 380,
-	"./tlh.js": 380,
-	"./tr": 381,
-	"./tr.js": 381,
-	"./tzl": 382,
-	"./tzl.js": 382,
-	"./tzm": 383,
-	"./tzm-latn": 384,
-	"./tzm-latn.js": 384,
-	"./tzm.js": 383,
-	"./ug-cn": 385,
-	"./ug-cn.js": 385,
-	"./uk": 386,
-	"./uk.js": 386,
-	"./ur": 387,
-	"./ur.js": 387,
-	"./uz": 388,
-	"./uz-latn": 389,
-	"./uz-latn.js": 389,
-	"./uz.js": 388,
-	"./vi": 390,
-	"./vi.js": 390,
-	"./x-pseudo": 391,
-	"./x-pseudo.js": 391,
-	"./yo": 392,
-	"./yo.js": 392,
-	"./zh-cn": 393,
-	"./zh-cn.js": 393,
-	"./zh-hk": 394,
-	"./zh-hk.js": 394,
-	"./zh-mo": 395,
-	"./zh-mo.js": 395,
-	"./zh-tw": 396,
-	"./zh-tw.js": 396
+	"./af": 263,
+	"./af.js": 263,
+	"./ar": 264,
+	"./ar-dz": 265,
+	"./ar-dz.js": 265,
+	"./ar-kw": 266,
+	"./ar-kw.js": 266,
+	"./ar-ly": 267,
+	"./ar-ly.js": 267,
+	"./ar-ma": 268,
+	"./ar-ma.js": 268,
+	"./ar-sa": 269,
+	"./ar-sa.js": 269,
+	"./ar-tn": 270,
+	"./ar-tn.js": 270,
+	"./ar.js": 264,
+	"./az": 271,
+	"./az.js": 271,
+	"./be": 272,
+	"./be.js": 272,
+	"./bg": 273,
+	"./bg.js": 273,
+	"./bm": 274,
+	"./bm.js": 274,
+	"./bn": 275,
+	"./bn-bd": 276,
+	"./bn-bd.js": 276,
+	"./bn.js": 275,
+	"./bo": 277,
+	"./bo.js": 277,
+	"./br": 278,
+	"./br.js": 278,
+	"./bs": 279,
+	"./bs.js": 279,
+	"./ca": 280,
+	"./ca.js": 280,
+	"./cs": 281,
+	"./cs.js": 281,
+	"./cv": 282,
+	"./cv.js": 282,
+	"./cy": 283,
+	"./cy.js": 283,
+	"./da": 284,
+	"./da.js": 284,
+	"./de": 285,
+	"./de-at": 286,
+	"./de-at.js": 286,
+	"./de-ch": 287,
+	"./de-ch.js": 287,
+	"./de.js": 285,
+	"./dv": 288,
+	"./dv.js": 288,
+	"./el": 289,
+	"./el.js": 289,
+	"./en-au": 290,
+	"./en-au.js": 290,
+	"./en-ca": 291,
+	"./en-ca.js": 291,
+	"./en-gb": 292,
+	"./en-gb.js": 292,
+	"./en-ie": 293,
+	"./en-ie.js": 293,
+	"./en-il": 294,
+	"./en-il.js": 294,
+	"./en-in": 295,
+	"./en-in.js": 295,
+	"./en-nz": 296,
+	"./en-nz.js": 296,
+	"./en-sg": 297,
+	"./en-sg.js": 297,
+	"./eo": 298,
+	"./eo.js": 298,
+	"./es": 299,
+	"./es-do": 300,
+	"./es-do.js": 300,
+	"./es-mx": 301,
+	"./es-mx.js": 301,
+	"./es-us": 302,
+	"./es-us.js": 302,
+	"./es.js": 299,
+	"./et": 303,
+	"./et.js": 303,
+	"./eu": 304,
+	"./eu.js": 304,
+	"./fa": 305,
+	"./fa.js": 305,
+	"./fi": 306,
+	"./fi.js": 306,
+	"./fil": 307,
+	"./fil.js": 307,
+	"./fo": 308,
+	"./fo.js": 308,
+	"./fr": 309,
+	"./fr-ca": 310,
+	"./fr-ca.js": 310,
+	"./fr-ch": 311,
+	"./fr-ch.js": 311,
+	"./fr.js": 309,
+	"./fy": 312,
+	"./fy.js": 312,
+	"./ga": 313,
+	"./ga.js": 313,
+	"./gd": 314,
+	"./gd.js": 314,
+	"./gl": 315,
+	"./gl.js": 315,
+	"./gom-deva": 316,
+	"./gom-deva.js": 316,
+	"./gom-latn": 317,
+	"./gom-latn.js": 317,
+	"./gu": 318,
+	"./gu.js": 318,
+	"./he": 319,
+	"./he.js": 319,
+	"./hi": 320,
+	"./hi.js": 320,
+	"./hr": 321,
+	"./hr.js": 321,
+	"./hu": 322,
+	"./hu.js": 322,
+	"./hy-am": 323,
+	"./hy-am.js": 323,
+	"./id": 324,
+	"./id.js": 324,
+	"./is": 325,
+	"./is.js": 325,
+	"./it": 326,
+	"./it-ch": 327,
+	"./it-ch.js": 327,
+	"./it.js": 326,
+	"./ja": 328,
+	"./ja.js": 328,
+	"./jv": 329,
+	"./jv.js": 329,
+	"./ka": 330,
+	"./ka.js": 330,
+	"./kk": 331,
+	"./kk.js": 331,
+	"./km": 332,
+	"./km.js": 332,
+	"./kn": 333,
+	"./kn.js": 333,
+	"./ko": 334,
+	"./ko.js": 334,
+	"./ku": 335,
+	"./ku.js": 335,
+	"./ky": 336,
+	"./ky.js": 336,
+	"./lb": 337,
+	"./lb.js": 337,
+	"./lo": 338,
+	"./lo.js": 338,
+	"./lt": 339,
+	"./lt.js": 339,
+	"./lv": 340,
+	"./lv.js": 340,
+	"./me": 341,
+	"./me.js": 341,
+	"./mi": 342,
+	"./mi.js": 342,
+	"./mk": 343,
+	"./mk.js": 343,
+	"./ml": 344,
+	"./ml.js": 344,
+	"./mn": 345,
+	"./mn.js": 345,
+	"./mr": 346,
+	"./mr.js": 346,
+	"./ms": 347,
+	"./ms-my": 348,
+	"./ms-my.js": 348,
+	"./ms.js": 347,
+	"./mt": 349,
+	"./mt.js": 349,
+	"./my": 350,
+	"./my.js": 350,
+	"./nb": 351,
+	"./nb.js": 351,
+	"./ne": 352,
+	"./ne.js": 352,
+	"./nl": 353,
+	"./nl-be": 354,
+	"./nl-be.js": 354,
+	"./nl.js": 353,
+	"./nn": 355,
+	"./nn.js": 355,
+	"./oc-lnc": 356,
+	"./oc-lnc.js": 356,
+	"./pa-in": 357,
+	"./pa-in.js": 357,
+	"./pl": 358,
+	"./pl.js": 358,
+	"./pt": 359,
+	"./pt-br": 360,
+	"./pt-br.js": 360,
+	"./pt.js": 359,
+	"./ro": 361,
+	"./ro.js": 361,
+	"./ru": 362,
+	"./ru.js": 362,
+	"./sd": 363,
+	"./sd.js": 363,
+	"./se": 364,
+	"./se.js": 364,
+	"./si": 365,
+	"./si.js": 365,
+	"./sk": 366,
+	"./sk.js": 366,
+	"./sl": 367,
+	"./sl.js": 367,
+	"./sq": 368,
+	"./sq.js": 368,
+	"./sr": 369,
+	"./sr-cyrl": 370,
+	"./sr-cyrl.js": 370,
+	"./sr.js": 369,
+	"./ss": 371,
+	"./ss.js": 371,
+	"./sv": 372,
+	"./sv.js": 372,
+	"./sw": 373,
+	"./sw.js": 373,
+	"./ta": 374,
+	"./ta.js": 374,
+	"./te": 375,
+	"./te.js": 375,
+	"./tet": 376,
+	"./tet.js": 376,
+	"./tg": 377,
+	"./tg.js": 377,
+	"./th": 378,
+	"./th.js": 378,
+	"./tk": 379,
+	"./tk.js": 379,
+	"./tl-ph": 380,
+	"./tl-ph.js": 380,
+	"./tlh": 381,
+	"./tlh.js": 381,
+	"./tr": 382,
+	"./tr.js": 382,
+	"./tzl": 383,
+	"./tzl.js": 383,
+	"./tzm": 384,
+	"./tzm-latn": 385,
+	"./tzm-latn.js": 385,
+	"./tzm.js": 384,
+	"./ug-cn": 386,
+	"./ug-cn.js": 386,
+	"./uk": 387,
+	"./uk.js": 387,
+	"./ur": 388,
+	"./ur.js": 388,
+	"./uz": 389,
+	"./uz-latn": 390,
+	"./uz-latn.js": 390,
+	"./uz.js": 389,
+	"./vi": 391,
+	"./vi.js": 391,
+	"./x-pseudo": 392,
+	"./x-pseudo.js": 392,
+	"./yo": 393,
+	"./yo.js": 393,
+	"./zh-cn": 394,
+	"./zh-cn.js": 394,
+	"./zh-hk": 395,
+	"./zh-hk.js": 395,
+	"./zh-mo": 396,
+	"./zh-mo.js": 396,
+	"./zh-tw": 397,
+	"./zh-tw.js": 397
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -4538,17 +4754,18 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 545;
+webpackContext.id = 547;
 
 /***/ }),
 
-/***/ 831:
+/***/ 80:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntibioprophylaxiePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScoresPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4560,41 +4777,232 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
- * Generated class for the AntibioprophylaxiePage page.
+ * Generated class for the ScoresPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var AntibioprophylaxiePage = /** @class */ (function () {
-    function AntibioprophylaxiePage(navCtrl, navParams) {
+var ScoresPage = /** @class */ (function () {
+    function ScoresPage(navCtrl, navParams, storage) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.storage = storage;
+        this.isShownVPOP = false;
+        this.totalVPOP = 0;
+        this.isShownScoreAnticoag = false;
+        this.prophylaxieAnticoag = "Hydratation adéquate, mobilisation précoce, ablation CVC le plus tôt possible (le cas échéant).";
+        this.AnticoagTotal = 0;
+        this.NiveauRisqueThrombose = "faible";
+        this.isShownEVENDOL = false;
+        this.EVENDOLVocal = 0;
+        this.EVENDOLMimique = 0;
+        this.EVENDOLMouvement = 0;
+        this.EVENDOLPosition = 0;
+        this.EVENDOLRelation = 0;
+        this.EVENDOLTotal = 0;
+        this.SeuilPrescription = "Non atteint.";
+        this.VPOPform = [
+            { val: 'Âge inférieur à 3 ans', isChecked: false, count: 0 },
+            { val: 'Âge entre 3 et 6 ans', isChecked: false, count: 1 },
+            { val: 'Âge entre 6 et 13 ans', isChecked: false, count: 2 },
+            { val: 'Âge supérieur à 13 ans', isChecked: false, count: 1 },
+            { val: 'Mal des transports', isChecked: false, count: 1 },
+            { val: 'Chirurgie > 45 minutes', isChecked: false, count: 1 },
+            { val: 'Chirurgie à risque : amygdales, strabisme, tympan', isChecked: false, count: 1 },
+            { val: 'Réinjection de morphiniques', isChecked: false, count: 1 },
+        ];
+        this.Anticoagform1 = [
+            { val: 'ASA 3', isChecked: false, count: 1 },
+            { val: 'BMI > 30', isChecked: false, count: 1 },
+            { val: 'KT veineux central', isChecked: false, count: 1 },
+            { val: 'Pathologie tumorale active', isChecked: false, count: 1 },
+            { val: 'Insuffisance rénale', isChecked: false, count: 1 },
+            { val: 'Déshydratation', isChecked: false, count: 1 },
+            { val: 'Grossesse ou accouchement < 6 semaines', isChecked: false, count: 1 },
+            { val: 'Contraception orale', isChecked: false, count: 1 },
+            { val: 'Cardiopathie congénitale', isChecked: false, count: 1 },
+            { val: 'Maladie métabolique ou inflammatoire', isChecked: false, count: 1 },
+            { val: 'Thrombophilie connue', isChecked: false, count: 1 },
+        ];
+        this.Anticoagform2 = [
+            { val: 'Durée anesth + chir > 4h', isChecked: false, count: 1 },
+            { val: 'Chirurgie de hanche', isChecked: false, count: 1 },
+            { val: 'Arthrodèse vertébrale', isChecked: false, count: 1 },
+            { val: 'Âge supérieur à 13 ans', isChecked: false, count: 1 },
+            { val: 'Chirurgie membre inférieur avec ostéotomie ou plâtre', isChecked: false, count: 1 },
+            { val: 'Chirurgie de FAV', isChecked: false, count: 1 },
+        ];
+        this.Anticoagform3 = [
+            { val: 'Alitement > 3j', isChecked: false, count: 1 },
+            { val: 'Sepsis sévère', isChecked: false, count: 1 },
+            { val: 'Traumatisme sévère ISS>9', isChecked: false, count: 1 },
+            { val: 'Traumatisme médullaire et paraplégie', isChecked: false, count: 1 },
+            { val: 'Brûlures sévères', isChecked: false, count: 1 },
+            { val: 'Intubation et ventilation mécanique', isChecked: false, count: 1 },
+        ];
     }
-    AntibioprophylaxiePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AntibioprophylaxiePage');
+    ScoresPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ScoresPage');
     };
-    AntibioprophylaxiePage = __decorate([
+    ;
+    ScoresPage.prototype.ionViewWillEnter = function () {
+        var _this = this;
+        var promiseList = [];
+        promiseList.push(this.storage.get('AgeNum').then(function (Age) {
+            _this.AgeNum = Age;
+            _this.storage.get('PoidsNum').then(function (Poids) {
+                _this.PoidsNum = Poids;
+                console.log('Le patient a', _this.AgeNum, "mois au total pour ", _this.PoidsNum, " kg.");
+            });
+        }));
+        var promiseOptions = [];
+        promiseOptions.push(this.storage.get('EstomacPlein').then(function (esto) {
+            _this.estomaclast = esto;
+            if (_this.estomaclast == true) {
+                _this.EstomacOuiNon = "plein";
+            }
+            else {
+                _this.EstomacOuiNon = "vide";
+            }
+            _this.storage.get('DureeJeune').then(function (dureejeune) {
+                _this.DureeJeune = dureejeune;
+                console.log('duree du jeune renseignee de', _this.DureeJeune, 'heures.');
+                _this.storage.get('Allergie').then(function (allergie) {
+                    _this.Allergie = allergie;
+                    if (_this.AgeNum <= 36) {
+                        _this.VPOPform[0].isChecked = true;
+                    }
+                    else if (_this.AgeNum > 36 && _this.AgeNum <= 72) {
+                        _this.VPOPform[1].isChecked = true;
+                    }
+                    else if (_this.AgeNum > 72 && _this.AgeNum <= 156) {
+                        _this.VPOPform[2].isChecked = true;
+                    }
+                    else if (_this.AgeNum > 156) {
+                        _this.VPOPform[3].isChecked = true;
+                    }
+                    ;
+                    _this.countVPOP();
+                    _this.setRiskVPOP();
+                });
+            });
+        }));
+    };
+    /* EVALUATION NVPO PAR LE SCORE DE VPOP */
+    ScoresPage.prototype.toggleVPOP = function () {
+        this.isShownVPOP = !this.isShownVPOP;
+        this.isShownScoreAnticoag = this.isShownEVENDOL = false;
+    };
+    ;
+    ScoresPage.prototype.countVPOP = function () {
+        console.log("count");
+        this.totalVPOP = this.VPOPform.filter(function (item) { return item.isChecked === true; }).reduce(function (sum, current) { return sum + current.count; }, 0);
+        this.setRiskVPOP();
+        console.log(this.totalVPOP);
+    };
+    ;
+    ScoresPage.prototype.setRiskVPOP = function () {
+        if (this.totalVPOP == 0) {
+            this.risqueVPOP = 6;
+        }
+        else if (this.totalVPOP == 1) {
+            this.risqueVPOP = 7;
+        }
+        else if (this.totalVPOP == 2) {
+            this.risqueVPOP = 15;
+        }
+        else if (this.totalVPOP == 3) {
+            this.risqueVPOP = 25;
+        }
+        else if (this.totalVPOP == 4) {
+            this.risqueVPOP = 39;
+        }
+        else if (this.totalVPOP == 5) {
+            this.risqueVPOP = 53;
+        }
+        else if (this.totalVPOP == 6) {
+            this.risqueVPOP = 69;
+        }
+        ;
+        if (this.totalVPOP <= 2) {
+            this.prophylaxieVPOP = "Risque faible. Dexaméthasone seule en prophylaxie.";
+        }
+        else if (this.totalVPOP <= 4) {
+            this.prophylaxieVPOP = "Risque Modéré. Déxaméthasone et Dropéridol en prophylaxie. Eviter le protoxyde d'azote. Limiter les opioïdes en post-opératoire.";
+        }
+        else {
+            this.prophylaxieVPOP = "Risque élevé. Déxaméthasone et Dropéridol en prophy  laxie. Considérer Ondansétron en per opératoire. Eviter le protoxyde d'azote. Limiter les opioïdes en post-opératoire.";
+        }
+    };
+    ;
+    /* ANTICOAGULATION */
+    ScoresPage.prototype.toggleScoreAnticoag = function () {
+        this.isShownScoreAnticoag = !this.isShownScoreAnticoag;
+        this.isShownVPOP = this.isShownEVENDOL = false;
+    };
+    ScoresPage.prototype.countAnticoag = function () {
+        this.Anticoag1 = this.Anticoagform1.filter(function (item1) { return item1.isChecked === true; }).reduce(function (sum1, current1) { return sum1 + current1.count; }, 0);
+        this.Anticoag2 = this.Anticoagform2.filter(function (item2) { return item2.isChecked === true; }).reduce(function (sum2, current2) { return sum2 + current2.count; }, 0);
+        this.Anticoag3 = this.Anticoagform3.filter(function (item3) { return item3.isChecked === true; }).reduce(function (sum3, current3) { return sum3 + current3.count; }, 0);
+        this.AnticoagTotal = (this.Anticoag1 + this.Anticoag2 + this.Anticoag3);
+        console.log("count total = ", this.AnticoagTotal);
+        if (this.AnticoagTotal == 0) {
+            this.MesuresSupplementairesAnticoag = "";
+            this.NiveauRisqueThrombose = "faible";
+        }
+        else if (this.AnticoagTotal == 1) {
+            this.MesuresSupplementairesAnticoag = "Bas anti-thrombose (grade 2)";
+            this.NiveauRisqueThrombose = "intermédiaire";
+        }
+        else if (this.AnticoagTotal >= 2) {
+            this.MesuresSupplementairesAnticoag = "Bas anti-thrombose (grade 2) + Lovenox 100 UI/kg/j SC sans dépasser 4000 UI/j.";
+            this.NiveauRisqueThrombose = "élevé";
+        }
+        console.log(this.NiveauRisqueThrombose);
+    };
+    ;
+    /* DOULEUR EVENDOL */
+    ScoresPage.prototype.toggleEVENDOL = function () {
+        this.isShownEVENDOL = !this.isShownEVENDOL;
+        this.isShownVPOP = this.isShownScoreAnticoag = false;
+    };
+    ;
+    ScoresPage.prototype.CalcEVENDOL = function () {
+        this.EVENDOLTotal = Math.floor(this.EVENDOLVocal) + Math.floor(this.EVENDOLMimique) + Math.floor(this.EVENDOLMouvement) + Math.floor(this.EVENDOLPosition) + Math.floor(this.EVENDOLRelation);
+        console.log(this.EVENDOLTotal);
+        if (this.EVENDOLTotal <= 4) {
+            this.SeuilPrescription = "Non atteint. Pas de traitement recommandé. Réévaluer régulièrement.";
+        }
+        else {
+            this.SeuilPrescription = "Atteint : débuter un traitement antalgique ou augmenter d'un pallier.";
+        }
+        ;
+    };
+    ScoresPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-antibioprophylaxie',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\antibioprophylaxie\antibioprophylaxie.html"*/'<!--\n  Generated template for the AntibioprophylaxiePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Antibioprophylaxie</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  En développement ! \n  <br>\n  Revenez plus tard...\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\antibioprophylaxie\antibioprophylaxie.html"*/,
+            selector: 'page-scores',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\scores\scores.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Scores</ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg \n      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n    <p>Allergie : {{Allergie}}</p></ion-label>\n    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> \n  </ion-item>\n</ion-header>\n\n<ion-content>\n\n  <!-- SCORE VPOP-->\n\n    <ion-item (click)="toggleVPOP()">\n      <ion-label color="dark-turquoise">VPOP (Risque NVPO)\n        <ion-icon *ngIf="!isShownVPOP" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownVPOP" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item>\n\n    <ion-card class="drogueContainer" *ngIf="isShownVPOP">\n      <ion-card-content>\n        \n        <ion-list>\n          <ion-item *ngFor="let entry of VPOPform">\n            <ion-label class="dilutionDrogueInduction">{{entry.val}}\n              <p class="dilutionDrogueInduction">+ {{entry.count}} point(s)</p>\n            </ion-label>\n            <ion-checkbox (click)="countVPOP()" [(ngModel)]="entry.isChecked"></ion-checkbox>\n          </ion-item>\n\n          <hr>     \n              <ion-item class="drogueInduction">Total : <b>{{totalVPOP}} pts</b> - Risque NVPO : <b>{{risqueVPOP}} %</b></ion-item>\n              <ion-item><ion-label class="drogueInduction">Stratégie proposée :</ion-label></ion-item>\n              <p class="strategie">{{prophylaxieVPOP}}</p>\n       \n        </ion-list>\n\n\n      </ion-card-content>\n\n    </ion-card>\n\n\n\n      <!-- FIN SCORE VPOP-->\n\n\n\n\n    <!-- FIN SCORE ANTICOAG-->\n\n\n\n      <ion-item (click)="toggleScoreAnticoag()">\n        <ion-label color="dark-turquoise">Score anticoagulation (patient > 13 ans)\n          <ion-icon *ngIf="!isShownScoreAnticoag" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownScoreAnticoag" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n        </ion-label>\n      </ion-item>\n  \n      <ion-card class="drogueContainer" *ngIf="isShownScoreAnticoag">\n        <ion-card-content>\n         Envisager chez le patient pubère (+/- âge > 13 ans). Indiquez les facteurs de risque présents. Le total et la stratégie proposée sont indiqués en bas.\n          \n          <ion-list>\n            <ion-item class="dilutionDrogueInduction">Facteurs liés au patient</ion-item>\n            <ion-item *ngFor="let entry1 of Anticoagform1">\n              <ion-label class="dilutionDrogueInduction">{{entry1.val}}\n                <p class="dilutionDrogueInduction">+ {{entry1.count}} point(s)</p>\n              </ion-label>\n              <ion-checkbox (click)="countAnticoag()" [(ngModel)]="entry1.isChecked"></ion-checkbox>\n            </ion-item>\n\n            <ion-item class="dilutionDrogueInduction">Facteurs liés à la chirurgie</ion-item>\n            <ion-item *ngFor="let entry2 of Anticoagform2">\n              <ion-label class="dilutionDrogueInduction">{{entry2.val}}\n                <p class="dilutionDrogueInduction">+ {{entry2.count}} point(s)</p>\n              </ion-label>\n              <ion-checkbox (click)="countAnticoag()" [(ngModel)]="entry2.isChecked"></ion-checkbox>\n            </ion-item>\n\n            <ion-item class="dilutionDrogueInduction">Facteurs liés à l\'hospitalisation</ion-item>\n            <ion-item *ngFor="let entry3 of Anticoagform3">\n              <ion-label class="dilutionDrogueInduction">{{entry3.val}}\n                <p class="dilutionDrogueInduction">+ {{entry3.count}} point(s)</p>\n              </ion-label>\n              <ion-checkbox (click)="countAnticoag()" [(ngModel)]="entry3.isChecked"></ion-checkbox>\n            </ion-item>\n  \n            <hr>\n                <ion-item class="drogueInduction">Total : <b>{{AnticoagTotal}} pts</b> - Risque <b>{{NiveauRisqueThrombose}}</b></ion-item>\n                <ion-item><ion-label class="drogueInduction">Stratégie proposée :</ion-label></ion-item>\n                <p class="strategie">{{prophylaxieAnticoag}}, <b>{{MesuresSupplementairesAnticoag}}</b></p>\n         \n          </ion-list>\n\n        </ion-card-content>\n      \n      </ion-card>\n  \n\n          <ion-item (click)="toggleEVENDOL()">\n            <ion-label color="dark-turquoise">Douleur\n              <ion-icon *ngIf="!isShownEVENDOL" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownEVENDOL" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-label>\n          </ion-item>\n      \n          <ion-card class="drogueContainer" *ngIf="isShownEVENDOL">\n            <ion-card-content>\n\n        <p class="drogueInduction">Préférer l\'auto-évaluation chaque fois que possible. En cas d\'impossibilité liée à l\'âge ou à l\'état du patient, utiliser une échelle d\'hétéro-évaluation. L\'échelle EVENDOL est proposée ci-dessous.</p>    \n            <br>\n        <p class="comment">Renseigner chacun des items de 0 à 3. \n          <br> - 0 = signe absent\n          <br> - 1 = signe faible ou passager\n          <br> - 2 = signe moyen ou environ la moitié du temps\n          <br> - 3 = signe fort ou quasi permanent\n          <br>\n          <br> Pour l\'item Relation, une absence (0) donne 3 points ; un état relationnel normal (3) ne compte aucun point. Seuil de prescription : 4/15.</p>\n\n        <ion-item class="EVENDOLlabel"><ion-label><br>Expression vocale/verbale</ion-label></ion-item>\n\n            <ion-segment [(ngModel)]="EVENDOLVocal" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n              <ion-segment-button value="0">\n                <ion-label>0</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="1">\n                <ion-label>1</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="2">\n                <ion-label>2</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="3">\n                <ion-label>3</ion-label>\n              </ion-segment-button>\n            </ion-segment>\n\n            <ion-item class="EVENDOLlabel"><ion-label><br>Mimique (fronce, grimace)</ion-label></ion-item>\n\n            <ion-segment [(ngModel)]="EVENDOLMimique" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n              <ion-segment-button value="0">\n                <ion-label>0</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="1">\n                <ion-label>1</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="2">\n                <ion-label>2</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="3">\n                <ion-label>3</ion-label>\n              </ion-segment-button>\n            </ion-segment>\n\n            <ion-item class="EVENDOLlabel"><ion-label><br>Mouvements (s\'agite, se crispe)</ion-label></ion-item>\n\n            <ion-segment [(ngModel)]="EVENDOLMouvement" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n              <ion-segment-button value="0">\n                <ion-label>0</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="1">\n                <ion-label>1</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="2">\n                <ion-label>2</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="3">\n                <ion-label>3</ion-label>\n              </ion-segment-button>\n            </ion-segment>\n\n            <ion-item class="EVENDOLlabel"><ion-label><br>Position (attitude antalgique, se protège)</ion-label></ion-item>\n\n            <ion-segment [(ngModel)]="EVENDOLPosition" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n              <ion-segment-button value="0">\n                <ion-label>0</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="1">\n                <ion-label>1</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="2">\n                <ion-label>2</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="3">\n                <ion-label>3</ion-label>\n              </ion-segment-button>\n            </ion-segment>\n\n            <ion-item class="EVENDOLlabel"><ion-label><br>Relation (communique, peut être consolé)</ion-label></ion-item>\n\n            <ion-segment [(ngModel)]="EVENDOLRelation" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n              <ion-segment-button value="3">\n                <ion-label>0</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="2">\n                <ion-label>1</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="1">\n                <ion-label>2</ion-label>\n              </ion-segment-button>\n              <ion-segment-button value="0">\n                <ion-label>3</ion-label>\n              </ion-segment-button>\n            </ion-segment>\n\n                    <ion-item class="drogueInduction">Total : <b>{{EVENDOLTotal}} pts</b></ion-item>\n                    <p class="strategie">Seuil de prescription : {{SeuilPrescription}}</p>\n\n\n\n        </ion-card-content>\n  \n      </ion-card>\n    \n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\scores\scores.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-    ], AntibioprophylaxiePage);
-    return AntibioprophylaxiePage;
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object])
+    ], ScoresPage);
+    return ScoresPage;
+    var _a, _b, _c;
 }());
 
-//# sourceMappingURL=antibioprophylaxie.js.map
+;
+//# sourceMappingURL=scores.js.map
 
 /***/ }),
 
-/***/ 832:
+/***/ 833:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreMedicationPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4740,5 +5148,5 @@ var PreMedicationPage = /** @class */ (function () {
 
 /***/ })
 
-},[499]);
+},[501]);
 //# sourceMappingURL=main.js.map

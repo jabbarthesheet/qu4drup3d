@@ -1,0 +1,224 @@
+<ion-header translucent>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Scores</ion-title>
+  </ion-navbar>
+  <ion-item color="turquoise-fonce"> 
+    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg 
+      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+    <p>Allergie : {{Allergie}}</p></ion-label>
+    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> 
+  </ion-item>
+</ion-header>
+
+<ion-content>
+
+  <!-- SCORE VPOP-->
+
+    <ion-item (click)="toggleVPOP()">
+      <ion-label color="dark-turquoise">VPOP (Risque NVPO)
+        <ion-icon *ngIf="!isShownVPOP" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+        <ion-icon *ngIf="isShownVPOP" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+      </ion-label>
+    </ion-item>
+
+    <ion-card class="drogueContainer" *ngIf="isShownVPOP">
+      <ion-card-content>
+        
+        <ion-list>
+          <ion-item *ngFor="let entry of VPOPform">
+            <ion-label class="dilutionDrogueInduction">{{entry.val}}
+              <p class="dilutionDrogueInduction">+ {{entry.count}} point(s)</p>
+            </ion-label>
+            <ion-checkbox (click)="countVPOP()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+          </ion-item>
+
+          <hr>     
+              <ion-item class="drogueInduction">Total : <b>{{totalVPOP}} pts</b> - Risque NVPO : <b>{{risqueVPOP}} %</b></ion-item>
+              <ion-item><ion-label class="drogueInduction">Stratégie proposée :</ion-label></ion-item>
+              <p class="strategie">{{prophylaxieVPOP}}</p>
+       
+        </ion-list>
+
+
+      </ion-card-content>
+
+    </ion-card>
+
+
+
+      <!-- FIN SCORE VPOP-->
+
+
+
+
+    <!-- FIN SCORE ANTICOAG-->
+
+
+
+      <ion-item (click)="toggleScoreAnticoag()">
+        <ion-label color="dark-turquoise">Score anticoagulation (patient > 13 ans)
+          <ion-icon *ngIf="!isShownScoreAnticoag" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownScoreAnticoag" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+        </ion-label>
+      </ion-item>
+  
+      <ion-card class="drogueContainer" *ngIf="isShownScoreAnticoag">
+        <ion-card-content>
+         Envisager chez le patient pubère (+/- âge > 13 ans). Indiquez les facteurs de risque présents. Le total et la stratégie proposée sont indiqués en bas.
+          
+          <ion-list>
+            <ion-item class="dilutionDrogueInduction">Facteurs liés au patient</ion-item>
+            <ion-item *ngFor="let entry1 of Anticoagform1">
+              <ion-label class="dilutionDrogueInduction">{{entry1.val}}
+                <p class="dilutionDrogueInduction">+ {{entry1.count}} point(s)</p>
+              </ion-label>
+              <ion-checkbox (click)="countAnticoag()" [(ngModel)]="entry1.isChecked"></ion-checkbox>
+            </ion-item>
+
+            <ion-item class="dilutionDrogueInduction">Facteurs liés à la chirurgie</ion-item>
+            <ion-item *ngFor="let entry2 of Anticoagform2">
+              <ion-label class="dilutionDrogueInduction">{{entry2.val}}
+                <p class="dilutionDrogueInduction">+ {{entry2.count}} point(s)</p>
+              </ion-label>
+              <ion-checkbox (click)="countAnticoag()" [(ngModel)]="entry2.isChecked"></ion-checkbox>
+            </ion-item>
+
+            <ion-item class="dilutionDrogueInduction">Facteurs liés à l'hospitalisation</ion-item>
+            <ion-item *ngFor="let entry3 of Anticoagform3">
+              <ion-label class="dilutionDrogueInduction">{{entry3.val}}
+                <p class="dilutionDrogueInduction">+ {{entry3.count}} point(s)</p>
+              </ion-label>
+              <ion-checkbox (click)="countAnticoag()" [(ngModel)]="entry3.isChecked"></ion-checkbox>
+            </ion-item>
+  
+            <hr>
+                <ion-item class="drogueInduction">Total : <b>{{AnticoagTotal}} pts</b> - Risque <b>{{NiveauRisqueThrombose}}</b></ion-item>
+                <ion-item><ion-label class="drogueInduction">Stratégie proposée :</ion-label></ion-item>
+                <p class="strategie">{{prophylaxieAnticoag}}, <b>{{MesuresSupplementairesAnticoag}}</b></p>
+         
+          </ion-list>
+
+        </ion-card-content>
+      
+      </ion-card>
+  
+
+          <ion-item (click)="toggleEVENDOL()">
+            <ion-label color="dark-turquoise">Douleur
+              <ion-icon *ngIf="!isShownEVENDOL" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownEVENDOL" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-label>
+          </ion-item>
+      
+          <ion-card class="drogueContainer" *ngIf="isShownEVENDOL">
+            <ion-card-content>
+
+        <p class="drogueInduction">Préférer l'auto-évaluation chaque fois que possible. En cas d'impossibilité liée à l'âge ou à l'état du patient, utiliser une échelle d'hétéro-évaluation. L'échelle EVENDOL est proposée ci-dessous.</p>    
+            <br>
+        <p class="comment">Renseigner chacun des items de 0 à 3. 
+          <br> - 0 = signe absent
+          <br> - 1 = signe faible ou passager
+          <br> - 2 = signe moyen ou environ la moitié du temps
+          <br> - 3 = signe fort ou quasi permanent
+          <br>
+          <br> Pour l'item Relation, une absence (0) donne 3 points ; un état relationnel normal (3) ne compte aucun point. Seuil de prescription : 4/15.</p>
+
+        <ion-item class="EVENDOLlabel"><ion-label><br>Expression vocale/verbale</ion-label></ion-item>
+
+            <ion-segment [(ngModel)]="EVENDOLVocal" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">
+              <ion-segment-button value="0">
+                <ion-label>0</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="1">
+                <ion-label>1</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="2">
+                <ion-label>2</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="3">
+                <ion-label>3</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+
+            <ion-item class="EVENDOLlabel"><ion-label><br>Mimique (fronce, grimace)</ion-label></ion-item>
+
+            <ion-segment [(ngModel)]="EVENDOLMimique" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">
+              <ion-segment-button value="0">
+                <ion-label>0</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="1">
+                <ion-label>1</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="2">
+                <ion-label>2</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="3">
+                <ion-label>3</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+
+            <ion-item class="EVENDOLlabel"><ion-label><br>Mouvements (s'agite, se crispe)</ion-label></ion-item>
+
+            <ion-segment [(ngModel)]="EVENDOLMouvement" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">
+              <ion-segment-button value="0">
+                <ion-label>0</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="1">
+                <ion-label>1</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="2">
+                <ion-label>2</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="3">
+                <ion-label>3</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+
+            <ion-item class="EVENDOLlabel"><ion-label><br>Position (attitude antalgique, se protège)</ion-label></ion-item>
+
+            <ion-segment [(ngModel)]="EVENDOLPosition" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">
+              <ion-segment-button value="0">
+                <ion-label>0</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="1">
+                <ion-label>1</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="2">
+                <ion-label>2</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="3">
+                <ion-label>3</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+
+            <ion-item class="EVENDOLlabel"><ion-label><br>Relation (communique, peut être consolé)</ion-label></ion-item>
+
+            <ion-segment [(ngModel)]="EVENDOLRelation" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">
+              <ion-segment-button value="3">
+                <ion-label>0</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="2">
+                <ion-label>1</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="1">
+                <ion-label>2</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="0">
+                <ion-label>3</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+
+                    <ion-item class="drogueInduction">Total : <b>{{EVENDOLTotal}} pts</b></ion-item>
+                    <p class="strategie">Seuil de prescription : {{SeuilPrescription}}</p>
+
+
+
+        </ion-card-content>
+  
+      </ion-card>
+    
+
+</ion-content>

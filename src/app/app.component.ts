@@ -2,8 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
-
-
 import { AccueilPage } from '../pages/accueil/accueil';
 import { PlateauInductionPage } from '../pages/plateau-induction/plateau-induction';
 import { GestionFluidesPage } from '../pages/gestion-fluides/gestion-fluides';
@@ -24,6 +22,7 @@ import { AnnuairePage } from '../pages/annuaire/annuaire'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CourbesPage } from '../pages/courbes/courbes';
+import { ScoresPage } from '../pages/scores/scores';
 
 
 
@@ -33,8 +32,6 @@ import { CourbesPage } from '../pages/courbes/courbes';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   
-
-
   // make AccueilPage the root (or first) page
   rootPage = AccueilPage;
   pages: Array<{title: string, component: any}>;
@@ -68,6 +65,7 @@ export class MyApp {
       {title : 'Recommandations' , component : RecommandationsPage},
       {title: 'Monitorage', component : MonitoragePage},
       {title : 'Courbes', component : CourbesPage},
+      {title : 'Scores' , component: ScoresPage},
     ];
   }
 

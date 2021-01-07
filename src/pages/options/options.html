@@ -18,47 +18,53 @@
 
 <ion-content padding>
 
-  <ion-item color="turquoise">Risque anesthésique</ion-item>
+  <ion-item>
+    <ion-label color="dark-turquoise">Risque anesthésique</ion-label></ion-item>
 
 
   <ion-item>
-    <ion-label>Allergies</ion-label>
-    <ion-input  inputmode ="text" type="text" (ionChange)="addAllergie()" [(ngModel)]="NewAllergie" placeholder="Renseigner ici"></ion-input>
+    <ion-label  class="drogueInduction">Allergies</ion-label>
+    <ion-input  class="drogueInduction" inputmode ="text" type="text" (ionChange)="addAllergie()" [(ngModel)]="NewAllergie" placeholder="Renseigner ici"></ion-input>
     </ion-item>
 
     
 <ion-item>
-  <ion-label>Durée du jeune pré-op : <b>{{DureeJeune}} heures</b></ion-label>
-  <ion-range color="turquoise-fonce" max="12" step="1" ticks="true" snaps (ionChange)="FnDureeJeune()" [(ngModel)]="DureeJeune"> </ion-range>
+  <ion-label class="drogueInduction">Durée du jeune pré-op : <b>{{DureeJeune}} heures</b></ion-label>
+  <ion-range class="drogueInduction" color="turquoise-fonce" max="12" step="1" ticks="true" snaps (ionChange)="FnDureeJeune()" [(ngModel)]="DureeJeune"> </ion-range>
 </ion-item>
   
 
   <ion-item>
-    <ion-label>Estomac plein</ion-label>
-    <ion-toggle color="turquoise-fonce" checked="{{estomaclast}}" [(ngModel)]="options.estomacplein" (ionChange)="FnEstomacPlein(options)"></ion-toggle>
+    <ion-label class="drogueInduction">Estomac plein</ion-label>
+    <ion-toggle class="drogueInduction"  color="turquoise-fonce" checked="{{estomaclast}}" [(ngModel)]="options.estomacplein" (ionChange)="FnEstomacPlein(options)"></ion-toggle>
   </ion-item>
 
-<hr>
-
-  <ion-item color="turquoise" >Biométrie</ion-item>
 
   <ion-item>
-    <ion-label position="stacked">Taille (cm)</ion-label>
-    <ion-input inputmode ="number" type="number" (ionChange)="addTaille(Taille)" [(ngModel)]="Taille" placeholder="Renseigner"></ion-input>
-  </ion-item>
-
-  <hr>
-
-  <ion-item color="turquoise" >Prématurité & APC</ion-item>
+    <ion-label color="dark-turquoise">Biométrie
+    </ion-label>
+    </ion-item>
 
   <ion-item>
-    <ion-label position="stacked">Terme naissance (SA)</ion-label>
-    <ion-input inputmode ="number" type="number" (ionChange)="addTerme(Terme)" [(ngModel)]="Terme" placeholder="Renseigner"></ion-input>
+    <ion-label class="drogueInduction" position="stacked">Taille (cm)</ion-label>
+    <ion-input class="drogueInduction" inputmode ="number" type="number" (ionChange)="addTaille(Taille)" [(ngModel)]="Taille" placeholder="Renseigner"></ion-input>
   </ion-item>
 
-  <ion-item>APC : {{APC}} semaines</ion-item>
+ 
 
-  <hr>
+  <ion-item>
+    <ion-label color="dark-turquoise">Prématurité & APC
+    </ion-label>
+    </ion-item>
+
+  <ion-item>
+    <ion-label class="drogueInduction" position="stacked">Terme naissance (SA)</ion-label>
+    <ion-input class="drogueInduction" inputmode ="number" type="number" (ionChange)="addTerme(Terme)" [(ngModel)]="Terme" placeholder="Renseigner"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="drogueInduction">
+    APC : {{APC}} semaines</ion-label></ion-item>
 
 
 

@@ -64,11 +64,20 @@ export class PlateauInductionPage {
   DiluDexa:string; 
 
   AdminExacyl:number;
+  EntretienExacyl:number; 
+  DiluExacyl:string;
 
   AdminEphedrine:number;
   DiluEphedrine:string; 
   AdminAtropine:number;
   DiluAtropine:string; 
+
+  AdminXylo:number; 
+  AdminKetaAntalgique:number; 
+  DiluKetaAntalgique:string;
+
+  DexdorPremed:number; 
+  DexdorBolusSeul:number;
 
   Allergie:string;
 
@@ -233,6 +242,9 @@ export class PlateauInductionPage {
 
     /* EXACYL */
     this.AdminExacyl = Math.round(((this.PoidsNum * 10)*10)/10); 
+    this.EntretienExacyl = Math.round(((this.PoidsNum * 5)*10)/10);
+    if (this.PoidsNum <= 20) {this.DiluExacyl = "50 mg/mL";}
+    else {this.DiluExacyl = "100 mg/mL";};
     
 
     /* Ephedrine & Atropine*/
@@ -249,6 +261,20 @@ export class PlateauInductionPage {
     if(this.PoidsNum < 5){this.DiluAtropine = "20 µg/mL"}
     else if (this.PoidsNum < 15){this.DiluAtropine = "100 µg/mL"}
     else {this.DiluAtropine = "500 µg/mL"};
+
+    /* Xylocaïne et Keta version antalgique */
+
+    this.AdminXylo = Math.round((this.PoidsNum*1.5)*10)/10;
+    this.AdminKetaAntalgique = Math.round((this.PoidsNum*0.5)*10)/10; 
+    
+    if (this.PoidsNum <= 10) {this.DiluKetaAntalgique = "1 mg/mL";}
+    else if (this.PoidsNum <= 30 ) {this.DiluKetaAntalgique = "5 mg/mL";} 
+    else {this.DiluKetaAntalgique = "10 mg/mL";};
+
+    /* Dexdor prémed et bolus */
+    this.DexdorPremed = Math.round((this.PoidsNum*2)*10)/10;
+    this.DexdorBolusSeul = Math.round((this.PoidsNum*0.5)*10)/10;
+
   }; 
 
 

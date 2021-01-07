@@ -33,6 +33,7 @@ import { RecommandationsPage } from '../pages/recommandations/recommandations';
 import { MonitoragePage } from '../pages/monitorage/monitorage';
 import { CourbesPage } from '../pages/courbes/courbes';
 import { AntibioprophylaxiePage } from '../pages/antibioprophylaxie/antibioprophylaxie';
+import { ScoresPage } from '../pages/scores/scores';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { AntibioprophylaxiePage } from '../pages/antibioprophylaxie/antibioproph
     MonitoragePage,
     CourbesPage,
     AntibioprophylaxiePage,
+    ScoresPage,
   ],
 
   imports: [
@@ -88,6 +90,7 @@ import { AntibioprophylaxiePage } from '../pages/antibioprophylaxie/antibioproph
     MonitoragePage,
     CourbesPage,
     AntibioprophylaxiePage,
+    ScoresPage
   ],
 
   providers: [

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { App, NavController, NavParams, PickerController, PickerOptions, Toast, ToastController, ToastOptions } from 'ionic-angular';
+import { App, NavController, NavParams, PickerController, PickerOptions, ToastController } from 'ionic-angular';
 import { ModalController, ViewController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Nav } from 'ionic-angular';
@@ -15,6 +15,7 @@ import { MonitoragePage } from '../monitorage/monitorage';
 import { CourbesPage } from '../courbes/courbes';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { AntibioprophylaxiePage } from '../antibioprophylaxie/antibioprophylaxie';
+import { ScoresPage } from '../scores/scores';
 
 
 @Component({
@@ -43,7 +44,7 @@ agemois:number=0;
 agesemaines:number=0;
 poidskilogrammes:number=0;
 poidsgrammes:number=0; 
-sexeToggle:boolean; 
+sexeToggle:boolean=false; 
 sexeMF:string="Fille"; 
 
   constructor(
@@ -63,25 +64,6 @@ sexeMF:string="Fille";
       this.toastCGU()
     };
 
-    effacer(){
-      this.storage.clear();
-      this.AgeNum=0;
-      this.PoidsNum=0;
-      this.sexeMF="Fille";
-      this.DureeJeune = 0; 
-      this.Allergie = "";
-      this.EstomacOuiNon = "vide";
-    }
-
-    ToggleSexe(){ 
-      this.sexeToggle = !this.sexeToggle; 
-      if (this.sexeToggle == true) {this.sexeMF = "Garçon"}
-      else {this.sexeMF = "Fille"};
-      this.storage.set("sexeMF", this.sexeMF);
-      console.log("sexe enregistré : ", this.sexeMF);
-    };
-    
-
    async toastCGU() {
       const toast = await this.ToastController.create({
         message: "En utilisant l'application, vous acceptez les conditions générales d'utilisation.",
@@ -92,12 +74,6 @@ sexeMF:string="Fille";
         });
       toast.present();
     };
-    
-
-    pickGender(ValeurChoisie){
-      this.sexeMF = ValeurChoisie; 
-       };
-
 
     async showPickerAge() {
       let options: PickerOptions = {
@@ -266,10 +242,6 @@ sexeMF:string="Fille";
                   { text: '40', value: 40 },
                   { text: '41', value: 41 },
                   { text: '42', value: 42 },
-                  { text: '42', value: 42 },
-                  { text: '42', value: 42 },
-                  { text: '42', value: 42 },
-                  { text: '42', value: 42 },
                   { text: '43', value: 43 },
                   { text: '44', value: 44 },
                   { text: '45', value: 45 },
@@ -369,16 +341,28 @@ sexeMF:string="Fille";
       this.storage.get('DureeJeune').then((dureejeune) => {
         this.DureeJeune = dureejeune; 
       this.storage.get('Allergie').then((allergie) => {
-        this.Allergie = allergie; 
-      })
-        })
+        this.Allergie = allergie;
+      this.storage.get('sexeMF').then((sexe) => {
+        this.sexeMF = sexe; 
+        if (!this.sexeMF){this.sexeToggle = false;}
+        else if (this.sexeMF == "Fille"){this.sexeToggle = false;}
+        else if (this.sexeMF == "Garçon"){this.sexeToggle = true;}
+        console.log ("le toggle est ", this.sexeToggle);
+
+      });
+
+      });
+        });
         }); 
           });
         })) };
 
-    ToggleFooter() {
-      this.isShownFooter = !this.isShownFooter;
-    };
+  ToggleSexe(){ 
+    if (this.sexeToggle == true) {this.sexeMF = "Garçon"}
+    else {this.sexeMF = "Fille"};
+    this.storage.set("sexeMF", this.sexeMF);
+    console.log("sexe enregistré : ", this.sexeMF);
+  };
 
     displayInduction(): void {
       this.navCtrl.push(PlateauInductionPage);
@@ -424,9 +408,24 @@ sexeMF:string="Fille";
       this.navCtrl.push(AntibioprophylaxiePage);
     };
 
+    displayScores():void {
+      this.navCtrl.push(ScoresPage);
+    };
+
     openDARwebsite() {
       this.InAppBrowser.create("http://www.dar-robertdebre.com", '_system');
     };
+
+    effacer(){
+      this.storage.clear();
+      this.AgeNum=0;
+      this.PoidsNum=0;
+      this.sexeMF="Fille";
+      this.DureeJeune = 0; 
+      this.Allergie = "";
+      this.EstomacOuiNon = "vide";
+      this.sexeToggle = false; 
+    }
 
 };
 

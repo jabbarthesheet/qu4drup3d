@@ -76,6 +76,21 @@
       <div ></div>
     </ion-item>
 
+
+    <ion-item class="avecAMM">         
+      <ion-label class="drogueInduction" color="dark-blue">Dexmédétomidine : 
+        <p class="comment">Posologie proposée : 2 µg/kg</p>
+        <p class="dilutionDrogueInduction">Prémédication : <b> {{DexdorPremed}} µg intranasal</b> </p>
+        <p class="comment">intra-nasal, 20 min avant induction </p>
+        <hr>
+        <p class="comment">Posologie proposée : 0,5 µg/kg</p>
+        <p class="dilutionDrogueInduction">Bolus seul : <b> {{DexdorBolusSeul}} µg IVD</b> </p>
+
+    </ion-label>
+      </ion-item>
+    
+      <div class="AMM">AMM : <br> sédation chez l'adulte en USI objectif RASS [0 ; -3]</div>
+
   </ion-card>
     
 
@@ -147,28 +162,49 @@
         <ion-label class="drogueInduction" color="dark">
           <p class="posologieDrogueInduction">Posologie proposée : 0,15 mg/kg</p>
           <b>Dexamethasone {{AdminDexa}} mg - IVD</b>
-          <p class="dilution">Dilution : {{DiluDexa}}</p></ion-label>
+          <p class="dilutionDrogueInduction">Dilution : {{DiluDexa}}</p></ion-label>
       </ion-item>
 
       <ion-item>
         <ion-label class="drogueInduction" color="dark">
           <p class="posologieDrogueInduction">Posologie proposée : 10 mg/kg</p>
-          <b>Exacyl : {{AdminExacyl}} mg - IVSE sur 30 min</b>
-          <p class="dilution">Dilution : 100 mg/mL</p></ion-label>
+          <b>Exacyl bolus : {{AdminExacyl}} mg - IVSE sur 30 min</b>
+          <p class="dilutionDrogueInduction">Dilution : {{DiluExacyl}}</p></ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="drogueInduction" color="dark">
+          <p class="posologieDrogueInduction">Posologie proposée : 5 mg/kg/h</p>
+          <b>Exacyl entretien : {{EntretienExacyl}} mg/h - IVSE</b>
+          <p class="dilutionDrogueInduction">Dilution : {{DiluExacyl}}</p></ion-label>
       </ion-item>
 
       <ion-item>
         <ion-label class="drogueInduction" color="dark-pink">
           <p class="posologieDrogueInduction">Posologie proposée : 100 µg/kg</p>
           <b>Ephédrine : {{AdminEphedrine}} mg - IVD</b>
-          <p class="dilution">Dilution : {{DiluEphedrine}}</p></ion-label>
+          <p class="dilutionDrogueInduction">Dilution : {{DiluEphedrine}}</p></ion-label>
       </ion-item>
 
       <ion-item>
         <ion-label class="drogueInduction" color="dark-green">
           <p class="posologieDrogueInduction">Posologie proposée : 20 µg/kg</p>
           <b>Atropine : {{AdminAtropine}} mg - IVD</b>
-          <p class="dilution">Dilution : {{DiluAtropine}}</p></ion-label>
+          <p class="dilutionDrogueInduction">Dilution : {{DiluAtropine}}</p></ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="drogueInduction" color="dark">
+          <p class="posologieDrogueInduction">Posologie proposée : 1.5 mg/kg</p>
+          <b>Xylocaïne : {{AdminXylo}} mg - IVD lent</b>
+          <p class="dilutionDrogueInduction">Dilution : 5 mg/mL</p></ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="drogueInduction" color="warning">
+          <p class="posologieDrogueInduction">Posologie proposée : 0.5 mg/kg</p>
+          <b>Ketamine (antalgique) : {{AdminKetaAntalgique}} mg - IVD</b>
+        <p class="dilutionDrogueInduction">Dilution : {{DiluKetaAntalgique}}</p></ion-label>
       </ion-item>
 
     </ion-card>

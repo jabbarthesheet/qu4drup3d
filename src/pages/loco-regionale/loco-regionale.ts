@@ -43,6 +43,8 @@ export class LocoRegionalePage {
   VolBPV:number;
   VolTAPmin:number;
   VolTAPmax:number;
+  VolPudendal:number;
+  VolQL:number; 
 
 
   isShownAPD:boolean=false;
@@ -167,6 +169,8 @@ export class LocoRegionalePage {
           this.VolBPV = Math.round((this.PoidsNum * 0.5)*10)/10; 
           this.VolTAPmin = Math.round((this.PoidsNum * 0.3)*10)/10; 
           this.VolTAPmax = Math.round((this.PoidsNum * 0.5)*10)/10; 
+          this.VolPudendal = Math.round((this.PoidsNum * 0.2)*10)/10; 
+          this.VolQL = Math.round((this.PoidsNum * 0.25)*10)/10; 
 
 
 

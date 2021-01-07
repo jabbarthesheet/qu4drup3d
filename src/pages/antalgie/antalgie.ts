@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { AccueilPage } from '../accueil/accueil';
+import { ScoresPage } from '../scores/scores';
 
 /**
  * Generated class for the AntalgiePage page.
@@ -129,6 +130,10 @@ export class AntalgiePage {
     this.isShownAntiCoag = !this.isShownAntiCoag;
     this.isShownPal1 = this.isShownPal3 = this.isShownPal2 = this.isShownAutres = this.isShownAntiEmet = false;
   };
+
+  openScores(){
+    this.navCtrl.push(ScoresPage);
+  }
 
   ionViewWillEnter()
   {

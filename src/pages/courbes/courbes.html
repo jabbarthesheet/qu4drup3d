@@ -24,8 +24,12 @@
           </ion-card-content>
         </ion-card>
 
-          <ion-item>Sexe : {{sexeMF}} - Age : {{AgeNum}} mois </ion-item> 
-          <ion-item>Taille : {{Taille}} cm - Poids : {{PoidsNum}} kg </ion-item>
+        <ion-item color="turquoise-fonce"> 
+          <ion-label>
+            <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
+            <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+            <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
+        </ion-item>
 
           <ion-item>
             <ion-label>BMI : {{BMI}} kg/m²

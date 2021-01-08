@@ -12,26 +12,32 @@
 
   <ion-card class="homePagePatient">
     <ion-card-content>
-      <ion-segment end class="SexeToggle" color="dark-turquoise" [(ngModel)]="sexeMF" (ionChange)="SetSexe()">
-        <ion-segment-button value="Fille"><ion-label class="girlLabel">&#9792;</ion-label></ion-segment-button>
-        <ion-segment-button value="Garçon"><ion-label class="boyLabel">&#9794;</ion-label></ion-segment-button>
-      </ion-segment>
+
     <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient">  
       <ion-item>
         <ion-label>
-        <p class="monPatient"><b>Mon patient</b></p>
         <hr>
-        <p class="monPatient">{{sexeMF}} - {{AgeNum}} mois - {{PoidsNum}} kg </p>
+        <p class="monPatient"><b>{{sexeMF}}</b> - <b>{{ageLecture}} ans</b> (={{AgeNum}} mois) - <b>{{PoidsNum}} kg</b> - {{Taille}} cm</p>
         <p class="monPatient">Estomac {{EstomacOuiNon}} - Jeûne {{DureeJeune}} h - Allergie : {{Allergie}}</p>
       </ion-label>
       </ion-item> 
 
-      <ion-toolbar>
+      <ion-toolbar class="HomeButtonContainer">
         <ion-buttons>
-          <button color="turquoise-fonce" ion-button small (click)="showPickerAge()">Age</button>
-          <button color="turquoise-fonce" ion-button small (click)="showPickerPoids()">Poids</button>
+          <button class="SexeToggle">
+          <ion-segment end  color="dark-turquoise" [(ngModel)]="sexeMF" (ionChange)="SetSexe()">
+            <ion-segment-button value="Fille"><ion-label class="sexLabel">&#9792;</ion-label></ion-segment-button>
+            <ion-segment-button value="Garçon"><ion-label class="sexLabel">&#9794;</ion-label></ion-segment-button>
+          </ion-segment>
+        </button>
+          <button color="dark-turquoise" ion-button small (click)="showPickerAge()">Age</button>
+          <button color="dark-turquoise" ion-button small (click)="showPickerPoids()">Poids</button>
+          <button color="turquoise-fonce" ion-button small (click)="showPickerTaille()">Taille</button>
+          <hr>
           <button ion-button small color="turquoise-fonce"  (click)="displayOptions()">Options </button>
-          <button ion-button  small color="danger"  (click)="effacer()">Effacer</button>
+          <button ion-button  small color="danger"  (click)="effacer()"><ion-icon name="refresh-circle"></ion-icon></button>
+          <button ion-button  small color="dark-green"  (click)="help()"><ion-icon name="help-circle"></ion-icon></button>
+
   
     </ion-buttons>
     </ion-toolbar>
@@ -47,7 +53,7 @@
           <button ion-button small color="light" class="homeButtons" (click)="displayMonitorage()"> Monitorage</button>
           <button ion-button small color="light" class="homeButtons" (click)="displayInduction()"> Induction </button>
           <button ion-button small color="light" class="homeButtons" (click)="displayVAS()"> Voies Aériennes </button>
-          <button ion-button small color="light" class="homeButtons" (click)="displayATBprophylaxie()"> ATB </button>
+          <button ion-button small color="light" class="homeButtons" (click)="displayATBprophylaxie()"> Antibiotiques </button>
           <button ion-button small color="light" class="homeButtons" (click)="displayEntretien()"> Entretien </button> 
     
           <button ion-button small color="light" class="homeButtons" (click)="displayGestionFluides()"> Solutés et PSL</button>

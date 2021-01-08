@@ -6,10 +6,10 @@
     <ion-title>Scores</ion-title>
   </ion-navbar>
   <ion-item color="turquoise-fonce"> 
-    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg 
-      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
-    <p>Allergie : {{Allergie}}</p></ion-label>
-    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> 
+    <ion-label>
+      <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
+      <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+      <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
   </ion-item>
 </ion-header>
 

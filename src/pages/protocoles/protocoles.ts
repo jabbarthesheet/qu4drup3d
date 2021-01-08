@@ -15,7 +15,13 @@ import { ExtrophieVesicalePage } from '../extrophie-vesicale/extrophie-vesicale'
   selector: 'page-protocoles',
   templateUrl: 'protocoles.html',
 })
+
+
 export class ProtocolesPage {
+
+  isShownChirPediatrique:boolean=false; 
+  isShownObstetrique:boolean=false;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -24,14 +30,22 @@ export class ProtocolesPage {
     console.log('ionViewDidLoad ProtocolesPage');
   }
 
+  ToggleChirPediatrique() {
+    this.isShownChirPediatrique = !this.isShownChirPediatrique; 
+    this.isShownObstetrique = false;
+  }
 
-  openAntiInfectieuxTraitement()
-   {
-    this.navCtrl.push (AntiInfectieuxPage); 
-   };
+  ToggleObstetrique () {
+    this.isShownObstetrique = !this.isShownObstetrique;
+    this.isShownChirPediatrique = false; 
+  }
 
    openExtrophieVesicale() {
     this.navCtrl.push (ExtrophieVesicalePage);
+   };
+
+   openScoliose(){
+
    };
 
 

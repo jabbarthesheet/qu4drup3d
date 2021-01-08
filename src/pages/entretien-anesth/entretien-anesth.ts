@@ -23,7 +23,9 @@ export class EntretienAnesthPage {
   Allergie:number; 
   EstomacPlein:boolean; 
   EstomacOuiNon:string;
-
+  Taille:number;
+  sexeMF:string;
+  ageLecture:number;
 
   CAMSevo:number;
 
@@ -100,49 +102,41 @@ export class EntretienAnesthPage {
     console.log('ionViewDidLoad LocoRegionalePage');
   }
 
-  ionViewWillEnter()
-  {
 
-    let promiseList: Promise<any>[] = [];
-    promiseList.push(
-    this.storage.get('AgeNum').then((Age) => {
-        this.AgeNum = Age;
-    this.storage.get('PoidsNum').then((Poids) => {
-        this.PoidsNum = Poids;
-    this.storage.get('DureeJeune').then((dureejeune) => {
-        this.DureeJeune = dureejeune ;   
-    this.storage.get('EstomacPlein').then((Estomac) => {
-        this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
-        if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
-        else {this.EstomacOuiNon = "vide" ; };
-
-        this.storage.get('Allergie').then((allergie) => {
-          this.Allergie = allergie; 
-
-
-          if (!this.PoidsNum || !this.AgeNum) { this.presentAlert();this.calculs();}
-          else { this.calculs() }; 
-        
-        });
-    
-    })}) }) }));}
-
-
-    calculs () {
+ionViewWillEnter(){
       let promiseList: Promise<any>[] = [];
-    promiseList.push(
-    this.storage.get('AgeNum').then((Age) => {
-        this.AgeNum = Age;
-    this.storage.get('PoidsNum').then((Poids) => {
-        this.PoidsNum = Poids;
-    this.storage.get('DureeJeune').then((dureejeune) => {
-        this.DureeJeune = dureejeune ;   
-    this.storage.get('EstomacPlein').then((Estomac) => {
-        this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
-        if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
-        else {this.EstomacOuiNon = "vide" ; };
-        this.storage.get('Allergie').then((allergie) => {
+      promiseList.push(
+      this.storage.get('AgeNum').then((Age) => {
+          this.AgeNum = Age;
+          this.ageLecture = Math.round((this.AgeNum/12)*10)/10; 
+      this.storage.get('PoidsNum').then((Poids) => {
+          this.PoidsNum = Poids;
+      this.storage.get('DureeJeune').then((dureejeune) => {
+          this.DureeJeune = dureejeune ;   
+      this.storage.get('EstomacPlein').then((Estomac) => {
+          this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
+          if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
+          else {this.EstomacOuiNon = "vide" ; };
+      this.storage.get('Allergie').then((allergie) => {
           this.Allergie = allergie; 
+      this.storage.get('sexeMF').then((sexe) => {
+          this.sexeMF = sexe; 
+          if(!sexe){this.sexeMF="Fille"};
+      this.storage.get('Taille').then((Taille) => {
+          this.Taille = Taille; 
+      if (!this.PoidsNum || !this.AgeNum) { this.presentAlert(); this.calculs()}
+      else { this.calculs()
+      };
+      });
+      });
+      });
+      });
+      });
+      });
+      }));};
+
+    calculs () 
+    {
 
         /*placer les calculs ici*/
        
@@ -151,7 +145,6 @@ export class EntretienAnesthPage {
         else if (this.AgeNum <= 12){ this.CAMSevo = 2.7 ;}
         else if (this.AgeNum <= 60){ this.CAMSevo = 2.5 ;}
         else { this.CAMSevo = 1.7 ;};
-
 
         this.PropoEntretien = Math.round((this.PoidsNum * 10)*10)/10;
         this.HypnoEntretien = Math.round((this.PoidsNum * 0.1)*10)/10; 
@@ -165,14 +158,6 @@ export class EntretienAnesthPage {
         this.DexdorBolusAvecIVSE = Math.round((this.PoidsNum * 1)*10)/10; 
         this.DexdorEntretien = Math.round((this.PoidsNum * 0.4)*10)/10; 
         this.DexdorAgitation = Math.round((this.PoidsNum * 0.3)*10)/10; 
-
-
-
-  })
-      })})
-    }) 
-    }));};
-
-
+    };
 
 }

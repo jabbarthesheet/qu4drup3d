@@ -17,14 +17,15 @@ import { AccueilPage } from '../accueil/accueil';
 })
 export class PlateauVasPage {
 
-  estomaclast:boolean;
   EstomacPlein:boolean;
   EstomacOuiNon:string;  
-  AlerteEstomacPlein:string="";
   DureeJeune:number=6; 
   dureejeunelast:number=6;
   AgeNum:number;
   PoidsNum:number; 
+  Taille:number;
+  sexeMF:string;
+  ageLecture:number
 
   TailleSIT:number;
   TailleSITpoids:any;
@@ -92,39 +93,42 @@ export class PlateauVasPage {
         }
       ]
     });
-
     await alert.present();
     };
 
-  ionViewWillEnter() {
-    
-    let promiseList: Promise<any>[] = [];
-    promiseList.push(
-    this.storage.get('AgeNum').then((Age) => {
-        this.AgeNum = Age; 
-    this.storage.get('PoidsNum').then((Poids) => {
-        this.PoidsNum = Poids; console.log(
-          'Le patient a', this.AgeNum, "mois au total pour ", this.PoidsNum, " kg.");
-    
-          if (!this.PoidsNum || !this.AgeNum) { this.presentAlert();}
-          else { return };
-
-        });
-      }))
-
-    let promiseOptions: Promise<any>[] = [];
-    promiseOptions.push(
-    this.storage.get('EstomacPlein').then((esto) => {
-        this.estomaclast = esto;console.log('estomac plein? qqq', this.estomaclast);
-        if (this.estomaclast == true) {this.EstomacOuiNon = "plein"; }
-        else {this.EstomacOuiNon = "vide" ; }
-    this.storage.get('DureeJeune').then((dureejeune) => {
-        this.DureeJeune = dureejeune;console.log('duree du jeune renseignee de', this.DureeJeune, 'heures.');
-    this.storage.get('Allergie').then((allergie) => 
-    {
-      this.Allergie = allergie
-
-   
+    ionViewWillEnter () {
+      let promiseList: Promise<any>[] = [];
+      promiseList.push(
+      this.storage.get('AgeNum').then((Age) => {
+          this.AgeNum = Age;
+          this.ageLecture = Math.round((this.AgeNum/12)*10)/10; 
+      this.storage.get('PoidsNum').then((Poids) => {
+          this.PoidsNum = Poids;
+      this.storage.get('DureeJeune').then((dureejeune) => {
+          this.DureeJeune = dureejeune ;   
+      this.storage.get('EstomacPlein').then((Estomac) => {
+          this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
+          if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
+          else {this.EstomacOuiNon = "vide" ; };
+      this.storage.get('Allergie').then((allergie) => {
+          this.Allergie = allergie; 
+      this.storage.get('sexeMF').then((sexe) => {
+          this.sexeMF = sexe; 
+          if (!sexe){this.sexeMF = "Fille";};
+      this.storage.get('Taille').then((Taille) => {
+          this.Taille = Taille; 
+      if (!this.PoidsNum || !this.AgeNum) { this.presentAlert(); this.calculs()}
+      else { this.calculs()
+      };
+      });
+      });
+      });
+      });
+      });
+      });
+      }));};
+  
+  calculs(){
 
       if(this.PoidsNum <= 2.5)
         {this.TailleSITage = this.TailleSITpoids = 2.5; 
@@ -182,16 +186,10 @@ export class PlateauVasPage {
       else { this.TailleMasqueLarynge = "4 ou 5";}
 
         console.log('IonViewWillEnter OptionsPage');
-      }); 
-      }); 
-    })); 
-  };
+      };
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PlateauVasPage');
-    
-
-
-  }
+         };
 
 }

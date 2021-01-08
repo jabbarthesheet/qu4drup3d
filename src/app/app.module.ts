@@ -6,7 +6,6 @@ import { MyApp } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from "@angular/forms";
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
-import { Chart } from 'chart.js'; 
 
 import { AccueilPage } from '../pages/accueil/accueil';
 
@@ -22,18 +21,17 @@ import { LocoRegionalePage } from '../pages/loco-regionale/loco-regionale';
 import { ExtrophieVesicalePage } from '../pages/extrophie-vesicale/extrophie-vesicale';
 import { AntiInfectieuxPage } from '../pages/anti-infectieux/anti-infectieux';
 
-import { AnnuairePage } from '../pages/annuaire/annuaire'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ServiceDataProvider } from '../providers/service-data/liste_anti_infectieux';
-import { AnnuaireDataProvider } from '../providers/annuaire-data/annuaire-data';
 import { ProtocolesPage } from '../pages/protocoles/protocoles';
 import { RecommandationsPage } from '../pages/recommandations/recommandations';
 import { MonitoragePage } from '../pages/monitorage/monitorage';
 import { CourbesPage } from '../pages/courbes/courbes';
 import { AntibioprophylaxiePage } from '../pages/antibioprophylaxie/antibioprophylaxie';
 import { ScoresPage } from '../pages/scores/scores';
+
 
 @NgModule({
   declarations: [
@@ -49,13 +47,12 @@ import { ScoresPage } from '../pages/scores/scores';
     AntiInfectieuxPage,
     LocoRegionalePage,
     ExtrophieVesicalePage,
-    AnnuairePage,
     ProtocolesPage,
     RecommandationsPage,
     MonitoragePage,
     CourbesPage,
     AntibioprophylaxiePage,
-    ScoresPage,
+    ScoresPage, 
   ],
 
   imports: [
@@ -67,10 +64,12 @@ import { ScoresPage } from '../pages/scores/scores';
       iconMode: 'md'
      }),
     IonicStorageModule.forRoot(),
-    
   ],
 
-  bootstrap: [IonicApp],
+  bootstrap: [
+    IonicApp,
+  ],
+
   entryComponents: [
     MyApp,
     AccueilPage,
@@ -84,13 +83,12 @@ import { ScoresPage } from '../pages/scores/scores';
     AntiInfectieuxPage,
     LocoRegionalePage,
     ExtrophieVesicalePage,
-    AnnuairePage,
     ProtocolesPage,
     RecommandationsPage,
     MonitoragePage,
     CourbesPage,
     AntibioprophylaxiePage,
-    ScoresPage
+    ScoresPage,
   ],
 
   providers: [
@@ -98,8 +96,13 @@ import { ScoresPage } from '../pages/scores/scores';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ServiceDataProvider,
-    AnnuaireDataProvider,
     InAppBrowser, 
-  ]
+  ],
+
+  exports: [ 
+
+   ]
 })
+
+
 export class AppModule {}

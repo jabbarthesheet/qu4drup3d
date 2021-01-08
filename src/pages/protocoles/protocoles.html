@@ -14,16 +14,64 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item-divider color="warning">Anti-infectieux</ion-item-divider>
-      <ion-item>Prophylaxie</ion-item>
-      <ion-item (click)="openAntiInfectieuxTraitement()">Traitement</ion-item>
-    <ion-item-divider color="turquoise">Chirurgies pédiatriques spécifiques</ion-item-divider>
-      <ion-item (click)="openExtrophieVesicale()">Extrophie Vésicale</ion-item>
-    <ion-item-divider color="light">Obstétrique</ion-item-divider>
-      <ion-item>Péridurale</ion-item>
-      <ion-item>Péridurale Déambularoire</ion-item>
-      <ion-item>Césarienne</ion-item>
+  <ion-list> 
+    <ion-item-divider>
+      <ion-label color="dark-turquoise" (click)="ToggleChirPediatrique()">Chirurgies pédiatriques spécifiques
+        <ion-icon *ngIf="!isShownChirPediatrique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownChirPediatrique" class="OpenCloseIcon" name="close"   style="zoom:0.9"></ion-icon>
+      </ion-label></ion-item-divider>
+
+      <ion-card class="drogueContainer">
+      <ion-card-content *ngIf="isShownChirPediatrique">
+      <ion-item (click)="openExtrophieVesicale()"><ion-label>
+        <ion-icon start name="list"></ion-icon>
+        &nbsp;&nbsp; Extrophie Vésicale</ion-label></ion-item>
+
+      <ion-item (click)="openScoliose()"><ion-label>
+        <ion-icon start name="list"></ion-icon>
+        &nbsp;&nbsp; Scoliose</ion-label></ion-item>
+
+      </ion-card-content>
+      </ion-card>
+
+    <ion-item-divider>
+      <ion-label color="dark-turquoise" (click)="ToggleObstetrique()">
+        Obstétrique
+        <ion-icon *ngIf="!isShownObstetrique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownObstetrique" class="OpenCloseIcon" name="close"   style="zoom:0.9"></ion-icon>
+      </ion-label>
+      </ion-item-divider>
+
+      <ion-card class="drogueContainer">
+        <ion-card-content *ngIf=isShownObstetrique>
+
+      <ion-item>
+        <ion-label>
+          <ion-icon start name="list"></ion-icon>
+          &nbsp;&nbsp; Péridurale
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <ion-icon start name="list"></ion-icon>
+          &nbsp;&nbsp; Péridurale déambulatoire
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <ion-icon start name="list"></ion-icon>
+          &nbsp;&nbsp; Césarienne
+        </ion-label>
+      </ion-item>
+
+        </ion-card-content>
+      </ion-card>
+
+
+
+
   </ion-list>
 
 </ion-content>

@@ -3,9 +3,12 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Anti-infectieux</ion-title>
+    <ion-title>Antibiothérapie</ion-title>
   </ion-navbar>
- <ion-card-content color="danger">Les posologies indiquées sont adaptées à la <b>pédiatrie</b> uniquement.
+ <ion-card-content color="danger">
+   Les posologies proposées sont envisagées :
+  <br>- pour la <b>pédiatrie</b> uniquement
+  <br>- en antibio<b>thérapie</b>.
   </ion-card-content>
   <ion-searchbar
   [(ngModel)]="searchTerm"
@@ -15,24 +18,25 @@
 
 <ion-content padding>
 
-
-
   <ion-list>
     <ion-card *ngFor="let card of cards, let i = index" [attr.data-index]="i" padding="5%">
-      <ion-card-title (click)="ToggleCard(card, i)" class="carteATB"><u>{{card.title}}</u>
-        <ion-icon *ngIf="!cards.isShownCard" class="fluidIcon" name="add-circle"  style="zoom:1"></ion-icon>
-        <ion-icon *ngIf="cards.isShownCard" class="fluidIcon" name="close-circle"   style="zoom:1"></ion-icon>
-      </ion-card-title>
-      <ion-card-content *ngIf="cards.isShownCard">
-        <p><b>Posologie</b> : {{card.posologie}}</p>
+
+      <ion-item>
+      <ion-label class="carteATB"><u>{{card.title}}</u>
+          <ion-toggle class="toggleATBCard" [(ngModel)]="card.isShown"></ion-toggle>
+        </ion-label>
+        </ion-item>
+
+      <ion-card-content *ngIf="card.isShown">
+        <p class="dilutionDrogueInduction"><b>Posologie</b> : {{card.posologie}}</p>
         <br>
-        <p><b>Reconstitution</b> : {{card.reconstitution}}</p>
+        <p class="dilutionDrogueInduction"><b>Reconstitution</b> : {{card.reconstitution}}</p>
         <br>
-        <p><b>Dilution</b> : {{card.dilution}}</p>
+        <p class="dilutionDrogueInduction"><b>Dilution</b> : {{card.dilution}}</p>
         <br>
-        <p><b>Administration</b> : {{card.administration}}</p>
+        <p class="dilutionDrogueInduction"><b>Administration</b> : {{card.administration}}</p>
         <br>
-        <p><b>Remarques</b> : {{card.remarques}}</p>
+        <p class="dilutionDrogueInduction"><b>Remarques</b> : {{card.remarques}}</p>
         <br>
       </ion-card-content>
 

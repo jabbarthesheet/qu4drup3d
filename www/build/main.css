@@ -70752,6 +70752,11 @@ figcaption {
   display: block;
 }
 
+.HomeButtonContainer {
+  margin-bottom: -15px !important;
+  margin-top: -5px !important;
+}
+
 .homeButtons {
   width: 45% !important;
   padding: auto;
@@ -70766,13 +70771,17 @@ figcaption {
 }
 
 .SexeToggle {
-  float: right;
-  width: 20% !important;
-  margin-right: 5% !important;
+  position: relative;
+  float: left;
+  width: 25% !important;
+  margin-top: -20px !important;
+  margin-left: 20px !important;
+  margin-right: -20px !important;
+  background-color: transparent;
 }
 
-.nomAnnuaires {
-  font-size: 12 px !important;
+.sexLabel {
+  text-align: center !important;
 }
 
 .antalgiquesIcon {
@@ -70801,6 +70810,10 @@ figcaption {
 .carteATB {
   font-size: 14px !important;
   text-align: left !important;
+}
+
+.toggleATBCard {
+  float: right;
 }
 
 .normale {
@@ -70892,6 +70905,7 @@ ion-card {
 
 .MonPatient {
   text-align: center;
+  font-size: 12px !important;
 }
 
 .drogueContainer {
@@ -70901,6 +70915,7 @@ ion-card {
 
 .drogueInduction {
   font-size: 14px !important;
+  text-align: justify;
 }
 
 .dilutionDrogueInduction {

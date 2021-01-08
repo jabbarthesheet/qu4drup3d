@@ -20,9 +20,12 @@ export class ScoresPage {
   PoidsNum:number; 
   Allergie:string; 
   Sexe:boolean; 
-  estomaclast:boolean;
   EstomacOuiNon:string; 
+  EstomacPlein:boolean;
   DureeJeune:number; 
+  ageLecture:number;
+  Taille:number;
+  sexeMF:string;
   
   isShownVPOP:boolean=false;
   totalVPOP:number=0; 
@@ -95,54 +98,55 @@ public Anticoagform3 =
             {  val: 'Intubation et ventilation mécanique', isChecked: false , count : 1},
         ];
 
-  
-
-
-
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
   }
 
-  ionViewDidLoad() {
+ionViewDidLoad() {
     console.log('ionViewDidLoad ScoresPage');
-    
-  };
+    };
 
-ionViewWillEnter() {
-    
-      let promiseList: Promise<any>[] = [];
-      promiseList.push(
-      this.storage.get('AgeNum').then((Age) => {
-          this.AgeNum = Age; 
-      this.storage.get('PoidsNum').then((Poids) => {
-          this.PoidsNum = Poids; console.log(
-            'Le patient a', this.AgeNum, "mois au total pour ", this.PoidsNum, " kg.");
-          });
-        }))
-  
-      let promiseOptions: Promise<any>[] = [];
-      promiseOptions.push(
-      this.storage.get('EstomacPlein').then((esto) => {
-          this.estomaclast = esto;
-          if (this.estomaclast == true) {this.EstomacOuiNon = "plein"; }
-          else {this.EstomacOuiNon = "vide" ; }
-      this.storage.get('DureeJeune').then((dureejeune:any) => {
-          this.DureeJeune = dureejeune;console.log('duree du jeune renseignee de', this.DureeJeune, 'heures.');
-      this.storage.get('Allergie').then((allergie:any) => 
-      {
+  ionViewWillEnter () {
+    let promiseList: Promise<any>[] = [];
+    promiseList.push(
+    this.storage.get('AgeNum').then((Age) => {
+        this.AgeNum = Age;
+        this.ageLecture = Math.round((this.AgeNum/12)*10)/10; 
+    this.storage.get('PoidsNum').then((Poids) => {
+        this.PoidsNum = Poids;
+    this.storage.get('DureeJeune').then((dureejeune) => {
+        this.DureeJeune = dureejeune ;   
+    this.storage.get('EstomacPlein').then((Estomac) => {
+        this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
+        if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
+        else {this.EstomacOuiNon = "vide" ; };
+    this.storage.get('Allergie').then((allergie) => {
+        this.Allergie = allergie; 
+    this.storage.get('sexeMF').then((sexe) => {
+        this.sexeMF = sexe; 
+        if (!sexe){this.sexeMF = "Fille";};
+    this.storage.get('Taille').then((Taille) => {
+        this.Taille = Taille; 
+    if (!this.PoidsNum || !this.AgeNum) { /* this.presentAlert(); aucune alerte sur cette page */ this.calculs();}
+    else {this.calculs()};
+    });
+    });
+    });
+    });
+    });
+    });
+    }));};
 
-        this.Allergie = allergie;
-        
-        if(this.AgeNum <= 36) {this.VPOPform[0].isChecked = true;}
-        else if (this.AgeNum > 36 && this.AgeNum <= 72) {this.VPOPform[1].isChecked = true;}
-        else if (this.AgeNum > 72 && this.AgeNum <= 156) {this.VPOPform[2].isChecked = true;}
-        else if (this.AgeNum > 156) {this.VPOPform[3].isChecked = true;};
-        
-        this.countVPOP(); 
-        this.setRiskVPOP();
-        }); 
-        }); 
-      })); 
-  }
+    calculs(){
+
+    if(this.AgeNum <= 36) {this.VPOPform[0].isChecked = true;}
+    else if (this.AgeNum > 36 && this.AgeNum <= 72) {this.VPOPform[1].isChecked = true;}
+    else if (this.AgeNum > 72 && this.AgeNum <= 156) {this.VPOPform[2].isChecked = true;}
+    else if (this.AgeNum > 156) {this.VPOPform[3].isChecked = true;};
+    
+    this.countVPOP(); 
+    this.setRiskVPOP();
+    }
+
 
  /* EVALUATION NVPO PAR LE SCORE DE VPOP */
 

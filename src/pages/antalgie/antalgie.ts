@@ -23,6 +23,9 @@ export class AntalgiePage {
   EstomacPlein:boolean; 
   EstomacOuiNon:string; 
   Allergie:string;
+  sexeMF:string;
+  Taille:number; 
+  ageLecture:number; 
 
   isShownPal1:boolean=false;
   isShownPal2:boolean=false;
@@ -135,52 +138,41 @@ export class AntalgiePage {
     this.navCtrl.push(ScoresPage);
   }
 
-  ionViewWillEnter()
-  {
-
-    let promiseList: Promise<any>[] = [];
-    promiseList.push(
-    this.storage.get('AgeNum').then((Age) => {
-        this.AgeNum = Age;
-    this.storage.get('PoidsNum').then((Poids) => {
-        this.PoidsNum = Poids;
-    this.storage.get('DureeJeune').then((dureejeune) => {
-        this.DureeJeune = dureejeune ;   
-    this.storage.get('EstomacPlein').then((Estomac) => {
-        this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
-        if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
-        else {this.EstomacOuiNon = "vide" ; };
-
-        this.storage.get('Allergie').then((allergie) => {
-          this.Allergie = allergie; 
-
-
-          if (!this.PoidsNum || !this.AgeNum) { this.presentAlert();this.calculs();}
-          else { this.calculs() }; 
-        
-        });
-    
-    })}) }) }));}
+  ionViewWillEnter(){
+  let promiseList: Promise<any>[] = [];
+  promiseList.push(
+  this.storage.get('AgeNum').then((Age) => {
+      this.AgeNum = Age;
+      this.ageLecture = Math.round((this.AgeNum/12)*10)/10; 
+  this.storage.get('PoidsNum').then((Poids) => {
+      this.PoidsNum = Poids;
+  this.storage.get('DureeJeune').then((dureejeune) => {
+      this.DureeJeune = dureejeune ;   
+  this.storage.get('EstomacPlein').then((Estomac) => {
+      this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
+      if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
+      else {this.EstomacOuiNon = "vide" ; };
+  this.storage.get('Allergie').then((allergie) => {
+      this.Allergie = allergie; 
+  this.storage.get('sexeMF').then((sexe) => {
+      this.sexeMF = sexe; 
+      if (!this.sexeMF){this.sexeMF = "Fille";};
+  this.storage.get('Taille').then((Taille) => {
+      this.Taille = Taille; 
+  if (!this.PoidsNum || !this.AgeNum) { this.presentAlert(); this.calculs()}
+  else { this.calculs()
+  };
+  });
+  });
+  });
+  });
+  });
+  });
+  }));};
 
     calculs () {
-      let promiseList: Promise<any>[] = [];
-    promiseList.push(
-    this.storage.get('AgeNum').then((Age) => {
-        this.AgeNum = Age;
-    this.storage.get('PoidsNum').then((Poids) => {
-        this.PoidsNum = Poids;
-    this.storage.get('DureeJeune').then((dureejeune) => {
-        this.DureeJeune = dureejeune ;   
-    this.storage.get('EstomacPlein').then((Estomac) => {
-        this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
-        if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
-        else {this.EstomacOuiNon = "vide" ; };
-        this.storage.get('Allergie').then((allergie) => {
-          this.Allergie = allergie; 
 
         /*Palier 1*/
-
-    
     this.AdminParacetamol = Math.round((this.PoidsNum * 15)*10)/10;
     if (this.AdminParacetamol >= 1000){this.AdminParacetamol = 1000;}
     
@@ -254,9 +246,7 @@ export class AntalgiePage {
     this.AdminHNF100 = Math.round((this.PoidsNum * 100)*10)/10; 
     this.AdminHNFentretien = Math.round((this.PoidsNum * 20)*10)/10; 
 
-  })
-      })})
-    }) 
-    }));}
+  };
+ 
 
     };

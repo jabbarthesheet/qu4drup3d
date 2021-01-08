@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
+import { AntiInfectieuxPage } from '../anti-infectieux/anti-infectieux';
 
 
 /**
@@ -23,9 +24,13 @@ export class AntibioprophylaxiePage {
   Allergie:number; 
   EstomacPlein:boolean; 
   EstomacOuiNon:string;
+  ageLecture:number;
+  sexeMF:string;
+  Taille:number;
 
   isShownPosologies:boolean;
   isShownIndications:boolean;  
+  isShownAntibiotherapie:boolean; 
 
   AdminAugmentin:number; 
   ReInjAugmentin:number;
@@ -58,15 +63,19 @@ export class AntibioprophylaxiePage {
   ToggleIndications() {
 
     this.isShownIndications = !this.isShownIndications;
-    this.isShownPosologies = false;
+    this.isShownPosologies = this.isShownAntibiotherapie = false;
 
   }; 
 
   TogglePosologies() {
     this.isShownPosologies = !this.isShownPosologies;
-    this.isShownIndications = false;
-
+    this.isShownIndications = this.isShownAntibiotherapie = false;
   };
+
+  ToggleAntibiotherapie (){
+    this.isShownAntibiotherapie = !this.isShownAntibiotherapie;
+    this.isShownPosologies = this.isShownIndications = false;
+  }; 
 
 
 
@@ -99,49 +108,40 @@ export class AntibioprophylaxiePage {
 
 
 
-    ionViewWillEnter()
-  {
-
-    let promiseList: Promise<any>[] = [];
-    promiseList.push(
-    this.storage.get('AgeNum').then((Age) => {
-        this.AgeNum = Age;
-    this.storage.get('PoidsNum').then((Poids) => {
-        this.PoidsNum = Poids;
-    this.storage.get('DureeJeune').then((dureejeune) => {
-        this.DureeJeune = dureejeune ;   
-    this.storage.get('EstomacPlein').then((Estomac) => {
-        this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
-        if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
-        else {this.EstomacOuiNon = "vide" ; };
-
-        this.storage.get('Allergie').then((allergie) => {
+    ionViewWillEnter(){
+      let promiseList: Promise<any>[] = [];
+      promiseList.push(
+      this.storage.get('AgeNum').then((Age) => {
+          this.AgeNum = Age;
+          this.ageLecture = Math.round((this.AgeNum/12)*10)/10; 
+      this.storage.get('PoidsNum').then((Poids) => {
+          this.PoidsNum = Poids;
+      this.storage.get('DureeJeune').then((dureejeune) => {
+          this.DureeJeune = dureejeune ;   
+      this.storage.get('EstomacPlein').then((Estomac) => {
+          this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
+          if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
+          else {this.EstomacOuiNon = "vide" ; };
+      this.storage.get('Allergie').then((allergie) => {
           this.Allergie = allergie; 
-
-
-          if (!this.PoidsNum || !this.AgeNum) { this.presentAlert();this.calculs();}
-          else { this.calculs() }; 
-        
-        });
-    
-    })}) }) }));}
+      this.storage.get('sexeMF').then((sexe) => {
+          this.sexeMF = sexe; 
+          if (!this.sexeMF){this.sexeMF = "Fille";};
+      this.storage.get('Taille').then((Taille) => {
+          this.Taille = Taille; 
+      if (!this.PoidsNum || !this.AgeNum) { this.presentAlert(); this.calculs()}
+      else { this.calculs()
+      };
+      });
+      });
+      });
+      });
+      });
+      });
+      }));};
 
 
     calculs () {
-      let promiseList: Promise<any>[] = [];
-    promiseList.push(
-    this.storage.get('AgeNum').then((Age) => {
-        this.AgeNum = Age;
-    this.storage.get('PoidsNum').then((Poids) => {
-        this.PoidsNum = Poids;
-    this.storage.get('DureeJeune').then((dureejeune) => {
-        this.DureeJeune = dureejeune ;   
-    this.storage.get('EstomacPlein').then((Estomac) => {
-        this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
-        if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
-        else {this.EstomacOuiNon = "vide" ; };
-        this.storage.get('Allergie').then((allergie) => {
-          this.Allergie = allergie; 
 
         /*placer les calculs ici*/
        
@@ -175,11 +175,10 @@ export class AntibioprophylaxiePage {
         this.ReInjVancomycine = Math.round((this.PoidsNum * 15)*10)/10;
         if (this.ReInjVancomycine >= 2000){this.ReInjVancomycine = 2000;};
   
+  };
 
 
-
-  })
-      })})
-    }) 
-    }));};
+  openAntiInfectieuxPage() {
+    this.navCtrl.push(AntiInfectieuxPage);
+  }
 }

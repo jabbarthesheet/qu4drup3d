@@ -17,13 +17,18 @@ import { AccueilPage } from '../accueil/accueil';
 })
 export class GestionFluidesPage {
 
-  estomaclast:boolean;
+
   EstomacPlein:boolean; 
   EstomacOuiNon:string;
   DureeJeune:number; 
   dureejeunelast:number=6;
   AgeNum:number;
   PoidsNum:number; 
+  Allergie:string;
+  ageLecture:number;
+  sexeMF:string;
+  Taille:number;
+
 
   ApportBaseHoraire:number; 
   CompJeune:number;
@@ -49,8 +54,6 @@ export class GestionFluidesPage {
 
   Hbmesuree:number=8;
   Hbsouhaitee:number=12;
-
-  Allergie:string;
 
   isShownApports:boolean=false; 
   isShownCGR:boolean=false;
@@ -80,7 +83,7 @@ export class GestionFluidesPage {
     const alert = await this.alertController.create({
       cssClass: 'alerte',
       title: 'Minute papillon !',
-      message: 'Saisissez un âge et un poids pour le patient. Pensez aussi à renseigner la durée du jeûne pré-opératoire pour profiter du calcul des apports horaires recommandés',
+      message: 'Saisissez un âge et un poids pour le patient. Pensez aussi à renseigner la durée du jeûne pré-opératoire dans les options  pour profiter du calcul des apports horaires recommandés',
       buttons: [
         {
           text: 'Nan',
@@ -103,16 +106,7 @@ export class GestionFluidesPage {
     };
 
 
-    loadcontent(){
-      let promiseOptions: Promise<any>[] = [];
-      promiseOptions.push(
-      this.storage.get('EstomacPlein').then((esto) => {
-          this.estomaclast = esto;console.log('estomac plein? qqq', this.estomaclast);
-          if (this.estomaclast == true) {this.EstomacOuiNon = "plein"; }
-          else {this.EstomacOuiNon = "vide" ; };
-  
-          this.storage.get('DureeJeune').then((dureejeune) => {
-          this.DureeJeune = dureejeune;console.log('duree du jeune renseignee de', this.DureeJeune, 'heures.');  
+    calculs(){
           if(this.AgeNum < 15*12){this.Solute = "B26 ou NaCl 0.9%" ; }
           else {this.Solute = "RL ou NaCl 0.9%";};
   
@@ -139,37 +133,39 @@ export class GestionFluidesPage {
           this.MasseSanguine = Math.round(this.PoidsNum * 80); 
   
   
-                }); 
-              })); 
-    }
-
-  ionViewWillEnter() {
-    
-    let promiseList: Promise<any>[] = [];
-    promiseList.push(
-    this.storage.get('AgeNum').then((Age) => {
-        this.AgeNum = Age; 
-    this.storage.get('PoidsNum').then((Poids) => {
-        this.PoidsNum = Poids; console.log(
-          'Le patient a', this.AgeNum, "mois au total pour ", this.PoidsNum, " kg.");
-          this.storage.get('Allergie').then((allergie) => {
-            this.Allergie = allergie; 
-            this.storage.get('DureeJeune').then((dureejeune) => {
-              this.DureeJeune = dureejeune;
-              console.log('duree du jeune renseignee de', this.DureeJeune, 'heures.');
-
-            if (!this.PoidsNum || !this.AgeNum) { this.presentAlert(); this.loadcontent()}
-            else {  this.loadcontent()
-          };
-
-
-
-        })
-    })
-    });
-    }))
-
-};
+    };
+              
+    ionViewWillEnter(){
+      let promiseList: Promise<any>[] = [];
+      promiseList.push(
+      this.storage.get('AgeNum').then((Age) => {
+          this.AgeNum = Age;
+          this.ageLecture = Math.round((this.AgeNum/12)*10)/10; 
+      this.storage.get('PoidsNum').then((Poids) => {
+          this.PoidsNum = Poids;
+      this.storage.get('DureeJeune').then((dureejeune) => {
+          this.DureeJeune = dureejeune ;   
+      this.storage.get('EstomacPlein').then((Estomac) => {
+          this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
+          if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
+          else {this.EstomacOuiNon = "vide" ; };
+      this.storage.get('Allergie').then((allergie) => {
+          this.Allergie = allergie; 
+      this.storage.get('sexeMF').then((sexe) => {
+          this.sexeMF = sexe; 
+          if(!sexe){this.sexeMF="Fille"}
+      this.storage.get('Taille').then((Taille) => {
+          this.Taille = Taille; 
+      if (!this.PoidsNum || !this.AgeNum || !this.DureeJeune) { this.presentAlert(); this.calculs()}
+      else { this.calculs()
+      };
+      });
+      });
+      });
+      });
+      });
+      });
+      }));};
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GestionFluidesPage');

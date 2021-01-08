@@ -33,7 +33,7 @@ export class AntiInfectieuxPage implements OnInit
       this.cards = this.dataService.filterItems(this.searchTerm);
     }
 
-    ToggleCard(card: any, index: number) : void {
-      this.cards.isShownCard = !this.cards.isShownCard;
+    ToggleCard() : void {
+      this.cards.isShown = !this.cards.isShown;  
     }
   };

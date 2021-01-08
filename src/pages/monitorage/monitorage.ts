@@ -16,6 +16,9 @@ export class MonitoragePage {
   Allergie:number; 
   EstomacPlein:boolean; 
   EstomacOuiNon:string;
+  sexeMF:string;
+  ageLecture:number;
+  Taille:number;
 
   isShownConstantes:boolean=false;
   isShownDispositifs:boolean=false;
@@ -107,12 +110,12 @@ export class MonitoragePage {
     console.log('ionViewDidLoad LocoRegionalePage');
   }
 
-  ionViewWillEnter()
-  {
+  ionViewWillEnter(){
     let promiseList: Promise<any>[] = [];
     promiseList.push(
     this.storage.get('AgeNum').then((Age) => {
         this.AgeNum = Age;
+        this.ageLecture = Math.round((this.AgeNum/12)*10)/10; 
     this.storage.get('PoidsNum').then((Poids) => {
         this.PoidsNum = Poids;
     this.storage.get('DureeJeune').then((dureejeune) => {
@@ -121,34 +124,27 @@ export class MonitoragePage {
         this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
         if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
         else {this.EstomacOuiNon = "vide" ; };
-
-        this.storage.get('Allergie').then((allergie) => {
-          this.Allergie = allergie; 
-
-          if (!this.PoidsNum || !this.AgeNum) { this.presentAlert();this.calculs();}
-          else {this.calculs();};      
-        });  })}) }) }));}
+    this.storage.get('Allergie').then((allergie) => {
+        this.Allergie = allergie; 
+    this.storage.get('sexeMF').then((sexe) => {
+        this.sexeMF = sexe; 
+        if (!this.sexeMF){this.sexeMF = "Fille";};
+    this.storage.get('Taille').then((Taille) => {
+        this.Taille = Taille; 
+    if (!this.PoidsNum || !this.AgeNum) { this.presentAlert(); this.calculs()}
+    else { this.calculs()
+    };
+    });
+    });
+    });
+    });
+    });
+    });
+    }));};
 
 
     calculs () {
-      let promiseList: Promise<any>[] = [];
-    promiseList.push(
-    this.storage.get('AgeNum').then((Age) => {
-        this.AgeNum = Age;
-    this.storage.get('PoidsNum').then((Poids) => {
-        this.PoidsNum = Poids;
-    this.storage.get('DureeJeune').then((dureejeune) => {
-        this.DureeJeune = dureejeune ;   
-    this.storage.get('EstomacPlein').then((Estomac) => {
-        this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
-        if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
-        else {this.EstomacOuiNon = "vide" ; };
-        this.storage.get('Allergie').then((allergie) => {
-          this.Allergie = allergie; 
-
         /*placer les calculs ici*/
-
-
         if (this.PoidsNum <= 3) {this.SondeDoppler = "Non utilisable";}
         else if (this.PoidsNum > 3 && this.PoidsNum <= 60 && this.AgeNum < 180) {this.SondeDoppler = "Sonde pédiatrique (KDP72)";}
         else {this.SondeDoppler = "Sonde adulte";};
@@ -322,13 +318,5 @@ export class MonitoragePage {
         this.DiuresedangerHaut = "> " + (Math.round((this.PoidsNum * 4)*10)/10 ).toString() ;
         this.DiuresedangerBas = "< " + (Math.round((this.PoidsNum * 1)*10)/10 ).toString();
         ;};
-
-
-  })
-      })})
-    }) 
-    }));};
-
-
-
+      };
 }

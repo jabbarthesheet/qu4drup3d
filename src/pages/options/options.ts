@@ -18,18 +18,18 @@ import { Storage } from '@ionic/storage';
 export class OptionsPage {
 
   /* déclarer ici les variables */
-  options:any = {dureejeune:"", estomacplein:"false"};
-  estomaclast:boolean;
+  options:any = {dureejeune:""};
   EstomacPlein:boolean; 
   EstomacOuiNon:string;
   DureeJeune:number=6; 
   dureejeunelast:number=6;
   AgeNum:number;
   PoidsNum:number; 
+  Taille:number;
+  ageLecture:number;
+  sexeMF:string;
   NewAllergie:string; 
   Allergie:string="Aucune"; 
-  Taille:number;
-  BMI:number; 
   APC:number; 
   Terme:number; 
 
@@ -39,32 +39,41 @@ export class OptionsPage {
   constructor(public app : App, public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
   }
 
-  ionViewWillEnter() {
-    
+  ionViewWillEnter(){
     let promiseList: Promise<any>[] = [];
     promiseList.push(
     this.storage.get('AgeNum').then((Age) => {
-        this.AgeNum = Age; 
+        this.AgeNum = Age;
+        this.ageLecture = Math.round((this.AgeNum/12)*10)/10; 
     this.storage.get('PoidsNum').then((Poids) => {
-        this.PoidsNum = Poids; console.log(
-          'Le patient a', this.AgeNum, "mois au total pour ", this.PoidsNum, " kg.");
-          this.storage.get('Allergie').then((allergie) => {
-            this.Allergie = allergie; 
-          })
-        });
-      }))
-
-    let promiseOptions: Promise<any>[] = [];
-    promiseOptions.push(
-    this.storage.get('EstomacPlein').then((esto) => {
-        this.estomaclast = esto;console.log('estomac plein? qqq', this.estomaclast);
+        this.PoidsNum = Poids;
     this.storage.get('DureeJeune').then((dureejeune) => {
-        this.DureeJeune = dureejeune;console.log('duree du jeune renseignee de', this.DureeJeune, 'heures.')
-    }); 
-      })); 
+        this.DureeJeune = dureejeune ;   
+    this.storage.get('EstomacPlein').then((Estomac) => {
+        this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
+        if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; this.options.estomacplein = true;}
+        else {this.EstomacOuiNon = "vide" ; this.options.estomacplein = false; };
+    this.storage.get('Allergie').then((allergie) => {
+        this.Allergie = allergie; 
+    this.storage.get('sexeMF').then((sexe) => {
+        this.sexeMF = sexe; 
+        if (!this.sexeMF){this.sexeMF = "Fille";};
+    this.storage.get('Taille').then((Taille) => {
+        this.Taille = Taille; 
+    if (!this.PoidsNum || !this.AgeNum) { /*this.presentAlert(); // pas d'alerte sur cette page*/ this.calculs();}
+    else { this.calculs()
+    };
+    });
+    });
+    });
+    });
+    });
+    });
+    }));};
 
-        console.log('IonViewWillEnter OptionsPage');
-  };
+calculs(){
+    /* calculs ici (aucun pr le moment)*/
+};
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OptionsPage');
@@ -77,28 +86,18 @@ export class OptionsPage {
       console.log ("l'APC est de ", this.APC, " Semaines" );
     };
     
-  addTaille(Taille){
-      this.Taille = parseInt(Taille) ; 
-      this.storage.set("Taille", this.Taille);
-      console.log ("la taille enregistrée est de ", this.Taille, " cm" );
-    }; 
-    
   addAllergie() {
     this.Allergie = this.NewAllergie;
     this.storage.set('Allergie' , this.Allergie);
     console.log (this.Allergie, 'a bien été enregistrée')
   };
     
-    FnEstomacPlein() {
-      this.EstomacPlein = !this.EstomacPlein; 
-      console.log("l'estomac est plein ?", this.EstomacPlein);
-      if(this.EstomacPlein == true) {this.EstomacOuiNon = "plein" ; }
-      else{this.EstomacOuiNon = "vide"; } ;
+  SaveEstomac() {
+      if(this.EstomacPlein == true ) {this.EstomacOuiNon = "plein" ; }
+      else {this.EstomacOuiNon = "vide"; }
       this.storage.set('EstomacPlein' , this.EstomacPlein);
+      console.log("lestomac enregistré est : ", this.EstomacOuiNon , " soit en booléen" , this.EstomacPlein);
     };  
-
-  
-  
 
   FnDureeJeune() {
     console.log('dureejeune = ', this.DureeJeune);

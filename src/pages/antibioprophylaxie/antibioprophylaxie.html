@@ -6,17 +6,17 @@
     <ion-title>Antibioprohylaxie pour chirurgie</ion-title>
   </ion-navbar>
   <ion-item color="turquoise-fonce"> 
-    <ion-label class="MonPatient" >Mon patient : {{AgeNum}} mois - {{PoidsNum}} kg 
-      <p class="dilution">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
-    <p>Allergie : {{Allergie}}</p></ion-label>
-    <ion-icon slot="end" icon="accessibility-outline"></ion-icon> 
+    <ion-label>
+      <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
+      <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+      <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
   </ion-item>
 </ion-header>
 
 <ion-content padding>
 
   <ion-item-divider (click)="ToggleIndications()" >
-    <ion-label color="dark-turquoise">Indications
+    <ion-label color="dark-turquoise">Antibioprophylaxie : indications
   <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
   <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
     </ion-label>
@@ -27,7 +27,7 @@
     </ion-card>
 
   <ion-item-divider (click)="TogglePosologies()" >
-    <ion-label color="dark-turquoise">Posologie
+    <ion-label color="dark-turquoise">Antibioprophylaxie : posologies
   <ion-icon *ngIf="!isShownPosologies" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
   <ion-icon *ngIf="isShownPosologies" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
     </ion-label>
@@ -97,13 +97,24 @@
                 <p class="comment">IVL sur 30 minutes, pour 15 mg/kg, toutes les <b>12h</b></p>
               </ion-label>
                 </ion-item> 
+          </ion-card>
 
+<ion-item-divider (click)="ToggleAntibiotherapie()" >
+  <ion-label color="dark-turquoise">Antibiothérapie : posologies & préparation
+<ion-icon *ngIf="!isShownAntibiotherapie" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
+<ion-icon *ngIf="isShownAntibiotherapie" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
+  </ion-label>
+</ion-item-divider> 
 
-  
+<ion-card class="drogueContainer" *ngIf="isShownAntibiotherapie">
+  <p padding class="dilutionDrogueInduction">Pour les posologies d'anti-infectieux en contexte thérapeutique ou pour plus de détail sur la préparation et l'administration des anti-infectieux, consultez les protocoles d'anti-infectieux proposés.</p>
+  <p padding class="dilutionDrogueInduction">NB. Les posologies sont proposées en dose/poids (pas de calculs de posologie).</p>
+  <button padding small color="pastel-green" ion-button (click)="openAntiInfectieuxPage()">Anti-infectieux</button>
   </ion-card>
 
 
 
 
 
+ 
 </ion-content>

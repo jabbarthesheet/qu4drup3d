@@ -23,7 +23,9 @@ export class LocoRegionalePage {
   Allergie:number; 
   EstomacPlein:boolean; 
   EstomacOuiNon:string;
-
+  ageLecture:number;
+  Taille:number;
+  sexeMF:string;
   
   Kemura:number;
   Busoni:number;
@@ -103,13 +105,12 @@ export class LocoRegionalePage {
     console.log('ionViewDidLoad LocoRegionalePage');
   }
 
-  ionViewWillEnter()
-  {
-
+  ionViewWillEnter(){
     let promiseList: Promise<any>[] = [];
     promiseList.push(
     this.storage.get('AgeNum').then((Age) => {
         this.AgeNum = Age;
+        this.ageLecture = Math.round((this.AgeNum/12)*10)/10; 
     this.storage.get('PoidsNum').then((Poids) => {
         this.PoidsNum = Poids;
     this.storage.get('DureeJeune').then((dureejeune) => {
@@ -118,35 +119,26 @@ export class LocoRegionalePage {
         this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
         if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
         else {this.EstomacOuiNon = "vide" ; };
-
-        this.storage.get('Allergie').then((allergie) => {
-          this.Allergie = allergie; 
-
-
-          if (!this.PoidsNum || !this.AgeNum) { this.presentAlert();this.calculs();}
-          else { this.calculs() }; 
-        
-        });
-    
-    })}) }) }));}
+    this.storage.get('Allergie').then((allergie) => {
+        this.Allergie = allergie; 
+    this.storage.get('sexeMF').then((sexe) => {
+        this.sexeMF = sexe; 
+        if(!sexe){this.sexeMF="Fille"}
+    this.storage.get('Taille').then((Taille) => {
+        this.Taille = Taille; 
+    if (!this.PoidsNum || !this.AgeNum) { this.presentAlert(); this.calculs()}
+    else { this.calculs()
+    };
+    });
+    });
+    });
+    });
+    });
+    });
+    }));};
 
 
     calculs () {
-      let promiseList: Promise<any>[] = [];
-    promiseList.push(
-    this.storage.get('AgeNum').then((Age) => {
-        this.AgeNum = Age;
-    this.storage.get('PoidsNum').then((Poids) => {
-        this.PoidsNum = Poids;
-    this.storage.get('DureeJeune').then((dureejeune) => {
-        this.DureeJeune = dureejeune ;   
-    this.storage.get('EstomacPlein').then((Estomac) => {
-        this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
-        if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
-        else {this.EstomacOuiNon = "vide" ; };
-        this.storage.get('Allergie').then((allergie) => {
-          this.Allergie = allergie; 
-
         /*placer les calculs ici*/
           this.Kemura = Math.round(((10+this.PoidsNum)*0.8)*10)/10; 
           this.Busoni = Math.round (((2*(this.AgeNum)/12)+10)*10)/10; 
@@ -171,14 +163,7 @@ export class LocoRegionalePage {
           this.VolTAPmax = Math.round((this.PoidsNum * 0.5)*10)/10; 
           this.VolPudendal = Math.round((this.PoidsNum * 0.2)*10)/10; 
           this.VolQL = Math.round((this.PoidsNum * 0.25)*10)/10; 
-
-
-
-  })
-      })})
-    }) 
-    }));};
-
+          };
 
 
 }

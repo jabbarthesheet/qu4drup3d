@@ -23,6 +23,10 @@ export class PlateauInductionPage {
   EstomacPlein:boolean;
   EstomacOuiNon:string;
   DureeJeune:number;
+  sexeMF:string; 
+  Taille:number; 
+  ageLecture:number; 
+
 
   AdminPropofol:number;
   PosoPropofol:string;
@@ -142,6 +146,7 @@ export class PlateauInductionPage {
     promiseList.push(
     this.storage.get('AgeNum').then((Age) => {
         this.AgeNum = Age;
+        this.ageLecture = Math.round((this.AgeNum/12)*10)/10; 
     this.storage.get('PoidsNum').then((Poids) => {
         this.PoidsNum = Poids;
     this.storage.get('DureeJeune').then((dureejeune) => {
@@ -150,16 +155,22 @@ export class PlateauInductionPage {
         this.EstomacPlein = Estomac; console.log('lestomac est plein ?', this.EstomacPlein);
         if (this.EstomacPlein == true) {this.EstomacOuiNon = "plein"; }
         else {this.EstomacOuiNon = "vide" ; };
-        this.storage.get('Allergie').then((allergie) => {
-            this.Allergie = allergie; 
-     
-    
+    this.storage.get('Allergie').then((allergie) => {
+        this.Allergie = allergie; 
+    this.storage.get('sexeMF').then((sexe) => {
+        this.sexeMF = sexe; 
+        if (!sexe){this.sexeMF = "Fille";};
+    this.storage.get('Taille').then((Taille) => {
+        this.Taille = Taille; 
     if (!this.PoidsNum || !this.AgeNum) { this.presentAlert(); this.calculs()}
-    else {  this.calculs()
+    else { this.calculs()
     };
-    })
-    })})
-    }) 
+    });
+    });
+    });
+    });
+    });
+    });
     }));};
 
     calculs () {

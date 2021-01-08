@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, NgModule } from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
@@ -17,14 +17,10 @@ import { MonitoragePage } from '../pages/monitorage/monitorage';
 import { ProtocolesPage } from '../pages/protocoles/protocoles';
 import { RecommandationsPage } from '../pages/recommandations/recommandations';
 
-import { AnnuairePage } from '../pages/annuaire/annuaire'
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CourbesPage } from '../pages/courbes/courbes';
 import { ScoresPage } from '../pages/scores/scores';
-
-
 
 @Component({
   templateUrl: 'app.html'
@@ -52,20 +48,19 @@ export class MyApp {
       { title : 'Accueil', component: AccueilPage },
       { title : 'Premedication', component:PreMedicationPage },
       { title : 'Plateau pour induction', component: PlateauInductionPage },
-      { title : 'Voies aériennes', component: PlateauVasPage},
-      { title : "Urgences", component : UrgencePage},
-      { title : 'Entretien anesthéique', component: EntretienAnesthPage},
+      { title : 'Voies aériennes', component: PlateauVasPage },
+      { title : "Urgences", component : UrgencePage },
+      { title : 'Entretien anesthéique', component: EntretienAnesthPage },
       { title : 'Gestion des fluides', component: GestionFluidesPage },
-      { title : 'Analgésie & NVPO', component: AntalgiePage},
-      { title : 'Anti-infectieux', component: AntiInfectieuxPage},
-      { title : 'Loco-régionale', component : LocoRegionalePage},
-      { title : 'Extrophie vésicale', component : ExtrophieVesicalePage},
-      {title : 'Annuaire', component : AnnuairePage },
-      { title : 'Protocoles', component : ProtocolesPage},
-      {title : 'Recommandations' , component : RecommandationsPage},
-      {title: 'Monitorage', component : MonitoragePage},
-      {title : 'Courbes', component : CourbesPage},
-      {title : 'Scores' , component: ScoresPage},
+      { title : 'Analgésie & NVPO', component: AntalgiePage },
+      { title : 'Anti-infectieux', component: AntiInfectieuxPage },
+      { title : 'Loco-régionale', component : LocoRegionalePage },
+      { title : 'Extrophie vésicale', component : ExtrophieVesicalePage },
+      { title : 'Protocoles', component : ProtocolesPage },
+      { title : 'Recommandations' , component : RecommandationsPage },
+      { title : 'Monitorage', component : MonitoragePage },
+      { title : 'Courbes', component : CourbesPage },
+      { title : 'Scores' , component: ScoresPage },
     ];
   }
 
@@ -108,13 +103,7 @@ openAccueilPage ()
    this.nav.setRoot(AccueilPage); 
    this.menu.close();
 };
-
-openAnnuaire()
- {
-  this.nav.setRoot(AnnuairePage); 
-   this.menu.close();
-   };
-
+  
 
 };
 

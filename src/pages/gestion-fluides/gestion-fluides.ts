@@ -73,19 +73,16 @@ export class GestionFluidesPage {
 
   ToggleApports() {
     this.isShownApports = !this.isShownApports; 
-    this.isShownCGR = this.isShownAutresPSL = false; 
+    this.isShownCGR = this.isShownAutresPSL = this.isShownHypoTA = false; 
   };
-
   ToggleCGR() {
     this.isShownCGR = !this.isShownCGR; 
-    this.isShownApports = this.isShownAutresPSL = false; 
+    this.isShownApports = this.isShownAutresPSL = this.isShownHypoTA = false; 
   };
-
   ToggleAutresPSL () {
     this.isShownAutresPSL = !this.isShownAutresPSL;
-    this.isShownCGR = this.isShownApports = false; 
+    this.isShownCGR = this.isShownApports = this.isShownHypoTA = false; 
   };
-
   ToggleHypoTA () {
     this.isShownHypoTA = !this.isShownHypoTA; 
     this.isShownCGR = this.isShownApports = this.isShownAutresPSL = false;

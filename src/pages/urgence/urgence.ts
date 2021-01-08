@@ -139,29 +139,24 @@ export class UrgencePage {
     
       ToggleACR () {
         this.isShownACR = !this.isShownACR; 
-        this.isShownChocAna = this.isShownHTM = this.isShownIAL = false;
+        this.isShownChocAna = this.isShownHTM = this.isShownIAL = this.isShownMetabo = false;
     };
-
     ToggleChocAna () {
       this.isShownChocAna = !this.isShownChocAna;
-      this.isShownACR = this.isShownHTM = this.isShownIAL = false; 
-      
-  };
-
+      this.isShownACR = this.isShownHTM = this.isShownIAL = this.isShownMetabo = false; 
+    };
     ToggleHTM () {
       this.isShownHTM = !this.isShownHTM; 
-      this.isShownACR = this.isShownChocAna = this.isShownIAL = false; 
-  };
-
+      this.isShownACR = this.isShownChocAna = this.isShownIAL = this.isShownMetabo = false; 
+    };
     ToggleIAL () {
       this.isShownIAL = !this.isShownIAL; 
-      this.isShownACR = this.isShownChocAna = this.isShownHTM = false;
-  };
-
+      this.isShownACR = this.isShownChocAna = this.isShownHTM = this.isShownMetabo = false;
+    };
     ToggleMetabo () {
       this.isShownMetabo = !this.isShownMetabo; 
       this.isShownACR = this.isShownChocAna = this.isShownHTM = this.isShownIAL = false;
-  };
+    };
 
 
 ionViewDidLoad() {

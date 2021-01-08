@@ -79,7 +79,7 @@
           <ion-card class="drogueContainer"  *ngIf="isShownHypoTA">
           <ion-card-content>
             <p class="dilutionDrogueInduction">Envisager devant une PAM abaissée de 20% ou plus par rapport la valeur mesurée avant induction.</p>
-            <p class="dilutionDrogueInduction">Enfant de <b>{{ageAnnees}} ans : PAS &lt; {{PAShypoTA}} mmHg </b>environ </p>
+            <p class="dilutionDrogueInduction">Enfant de <b>{{ageLecture}} ans : PAS &lt; {{PAShypoTA}} mmHg </b>environ </p>
             <br>
             <p class="drogueInduction">Mesures à envisager :</p>
             <p class="dilutionDrogueInduction"> - Remplissage par cristalloïde : <b>{{VolRemplissage}} mL </b> de <b>{{SoluteRemplissage}}</b>, renouvelable une fois</p>
@@ -129,11 +129,13 @@
         </ion-item-divider> 
 
           <ion-card *ngIf="isShownAutresPSL" class="drogueContainer">
-          <ion-item>Unités plaquettaires
-            <p><b>Passer {{UnitesPlaquettaires}} UI Plaquettaires</b></p>
+          <ion-item>
+            <ion-label class="drogueInduction">Unités plaquettaires</ion-label>
+            <p class="dilutionDrogueInduction"><b>Passer {{UnitesPlaquettaires}} UI Plaquettaires</b></p>
           </ion-item>
-          <ion-item>Plasma frais congelé
-            <p><b>Passer {{VolPFC}} mL de PFC</b></p>
+          <ion-item>
+            <ion-label class="drogueInduction">Plasma frais congelé</ion-label>
+            <p class="dilutionDrogueInduction"><b>Passer {{VolPFC}} mL de PFC</b></p>
           </ion-item>
         </ion-card>
 

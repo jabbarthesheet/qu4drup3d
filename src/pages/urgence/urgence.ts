@@ -42,11 +42,14 @@ export class UrgencePage {
   PosoRivotrilIAL:number;
   PosoIntralipidesIAL:number;
 
-  isShownHypoTA:boolean=false; 
+  AdminG10Initial:number; 
+  AdminG10Suite:number;
+
   isShownACR:boolean=false; 
   isShownChocAna:boolean=false; 
   isShownHTM:boolean=false; 
-  isShownIAL:boolean=false; 
+  isShownIAL:boolean=false;
+  isShownMetabo:boolean=false; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController ) {
   }
@@ -117,14 +120,6 @@ export class UrgencePage {
 
     calculs () {
       console.log("pret pr le calcul", this.PoidsNum);
-      this.ageAnnees = Math.round((this.AgeNum/12)*10)/10; 
-      this.PAShypoTA = Math.round((((this.AgeNum/12)*2)+70)*10)/10; 
-      if(this.AgeNum <= 15*12){this.SoluteRemplissage = "B26";}
-      else{this.SoluteRemplissage = "Ringer Lactate";}
-      this.VolRemplissage = Math.round(((this.PoidsNum)*10)*10)/10;
-      if(this.AgeNum <= 12){this.AdminEphedrine = Math.round((this.PoidsNum*0.3)*10)/10;}
-      else if (this.AgeNum <= 36){this.AdminEphedrine = Math.round((this.PoidsNum*0.2)*10)/10;}
-      else{this.AdminEphedrine = Math.round((this.PoidsNum*0.1)*10)/10;};
       this.CEEACR = Math.round((this.PoidsNum*4)*10)/10;
       this.PosoAdrenalineACR = Math.round((this.PoidsNum*10)*10)/10; 
       this.PosoCordaroneACR = Math.round((this.PoidsNum*5)*10)/10;
@@ -134,36 +129,38 @@ export class UrgencePage {
       this.AdminDantroleneHTM = Math.round((this.PoidsNum*2.5)*10)/10;
       this.PosoRivotrilIAL = Math.round((this.PoidsNum*15)*10)/10;
       this.PosoIntralipidesIAL = Math.round((this.PoidsNum*3)*10)/10;
-      
+      this.AdminG10Initial =  Math.round((this.PoidsNum*2)*10)/10;
+      this.AdminG10Suite =  Math.round((this.PoidsNum*0.4)*10)/10;
       }; 
 
 
   /* Toggle des cartes */
 
-    ToggleHypoTA () {
-        this.isShownHypoTA = !this.isShownHypoTA; 
-        this.isShownACR = this.isShownChocAna = this.isShownHTM = this.isShownIAL = false;
-    };
-
+    
       ToggleACR () {
         this.isShownACR = !this.isShownACR; 
-        this.isShownHypoTA = this.isShownChocAna = this.isShownHTM = this.isShownIAL = false;
+        this.isShownChocAna = this.isShownHTM = this.isShownIAL = false;
     };
 
     ToggleChocAna () {
       this.isShownChocAna = !this.isShownChocAna;
-      this.isShownHypoTA = this.isShownACR = this.isShownHTM = this.isShownIAL = false; 
+      this.isShownACR = this.isShownHTM = this.isShownIAL = false; 
       
   };
 
     ToggleHTM () {
       this.isShownHTM = !this.isShownHTM; 
-      this.isShownHypoTA = this.isShownACR = this.isShownChocAna = this.isShownIAL = false; 
+      this.isShownACR = this.isShownChocAna = this.isShownIAL = false; 
   };
 
     ToggleIAL () {
       this.isShownIAL = !this.isShownIAL; 
-      this.isShownHypoTA = this.isShownACR = this.isShownChocAna = this.isShownHTM = false;
+      this.isShownACR = this.isShownChocAna = this.isShownHTM = false;
+  };
+
+    ToggleMetabo () {
+      this.isShownMetabo = !this.isShownMetabo; 
+      this.isShownACR = this.isShownChocAna = this.isShownHTM = this.isShownIAL = false;
   };
 
 

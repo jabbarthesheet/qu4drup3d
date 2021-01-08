@@ -574,7 +574,7 @@ TailleCentimetre:number;
       
     async help() {
       const toastHelp = await this.ToastController.create({
-        message: "Pour utiliser QuadruPed, renseignez un âge et un poids pour le patient en cliquant sur les boutons. Vous pouvez aussi renseigner la taille et le sexe du patient pour utiliser les données de biométries. Cliquez ensuite sur les différents boutons pour obtenir des suggestions de posologie et de stratégies.",
+        message: "Pour utiliser QuadruPed, renseignez un âge et un poids pour le patient en cliquant sur les boutons. Cliquez ensuite sur les différents boutons pour obtenir des suggestions de posologie et de stratégies. Renseignez la taille et le sexe du patient pour utiliser les données de biométrie.",
         position: 'Bottom',
         showCloseButton: true,
         closeButtonText: "OK.",

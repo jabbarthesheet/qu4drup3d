@@ -55,9 +55,17 @@ export class GestionFluidesPage {
   Hbmesuree:number=8;
   Hbsouhaitee:number=12;
 
+  PAShypoTA:number; 
+  SoluteRemplissage:string; 
+  VolRemplissage:number; 
+  AdminEphedrine:number; 
+  AdminAlbumine:number; 
+
   isShownApports:boolean=false; 
   isShownCGR:boolean=false;
   isShownAutresPSL:boolean=false;
+  isShownHypoTA:boolean=false; 
+
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController : AlertController) {
@@ -77,6 +85,12 @@ export class GestionFluidesPage {
     this.isShownAutresPSL = !this.isShownAutresPSL;
     this.isShownCGR = this.isShownApports = false; 
   };
+
+  ToggleHypoTA () {
+    this.isShownHypoTA = !this.isShownHypoTA; 
+    this.isShownCGR = this.isShownApports = this.isShownAutresPSL = false;
+};
+
 
 
   async presentAlert() {
@@ -131,9 +145,20 @@ export class GestionFluidesPage {
           this.VolCGR = Math.round(this.PoidsNum * 16).toString() + " mL CGR" ; 
           this.DiffHb = 4; 
           this.MasseSanguine = Math.round(this.PoidsNum * 80); 
-  
-  
-    };
+
+          this.PAShypoTA = Math.round((((this.AgeNum/12)*2)+70)*10)/10; 
+          if(this.AgeNum <= 15*12){this.SoluteRemplissage = "NaCl 0,9%";}
+          else{this.SoluteRemplissage = "Ringer Lactate";}
+          this.VolRemplissage = Math.round(((this.PoidsNum)*10)*10)/10;
+          if(this.AgeNum <= 12){this.AdminEphedrine = Math.round((this.PoidsNum*0.3)*10)/10;}
+          else if (this.AgeNum <= 36){this.AdminEphedrine = Math.round((this.PoidsNum*0.2)*10)/10;}
+          else{this.AdminEphedrine = Math.round((this.PoidsNum*0.1)*10)/10;};
+
+          this.AdminAlbumine = Math.round((this.PoidsNum*10)*10)/10;
+        
+        };
+
+    
               
     ionViewWillEnter(){
       let promiseList: Promise<any>[] = [];

@@ -17,7 +17,7 @@
       <ion-item>
         <ion-label>
         <hr>
-        <p class="monPatient"><b>{{sexeMF}}</b> - <b>{{ageLecture}} ans</b> (={{AgeNum}} mois) - <b>{{PoidsNum}} kg</b> - {{Taille}} cm</p>
+        <p class="monPatient"><b>{{sexeMF}}</b> - <b>{{ageLecture}} ans</b> ( = {{AgeNum}} mois) - <b>{{PoidsNum}} kg</b> - {{Taille}} cm</p>
         <p class="monPatient">Estomac {{EstomacOuiNon}} - Jeûne {{DureeJeune}} h - Allergie : {{Allergie}}</p>
       </ion-label>
       </ion-item> 
@@ -25,9 +25,13 @@
       <ion-toolbar class="HomeButtonContainer">
         <ion-buttons>
           <button class="SexeToggle">
-          <ion-segment end  color="dark-turquoise" [(ngModel)]="sexeMF" (ionChange)="SetSexe()">
-            <ion-segment-button value="Fille"><ion-label class="sexLabel">&#9792;</ion-label></ion-segment-button>
-            <ion-segment-button value="Garçon"><ion-label class="sexLabel">&#9794;</ion-label></ion-segment-button>
+          <ion-segment swipeGesture="true" color="dark-turquoise" [(ngModel)]="sexeMF" (ionChange)="SetSexe()">
+            <ion-segment-button value="Fille">
+              <ion-icon class="segmentIcon" name="female"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="Garçon">
+              <ion-icon class="segmentIcon" name="male"></ion-icon>
+            </ion-segment-button>
           </ion-segment>
         </button>
           <button color="dark-turquoise" ion-button small (click)="showPickerAge()">Age</button>
@@ -36,7 +40,7 @@
           <hr>
           <button ion-button small color="turquoise-fonce"  (click)="displayOptions()">Options </button>
           <button ion-button  small color="danger"  (click)="effacer()"><ion-icon name="refresh-circle"></ion-icon></button>
-          <button ion-button  small color="dark-green"  (click)="help()"><ion-icon name="help-circle"></ion-icon></button>
+          <button ion-button  small color="turquoise-fonce"  (click)="help()"><ion-icon name="help-circle"></ion-icon></button>
 
   
     </ion-buttons>

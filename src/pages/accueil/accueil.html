@@ -13,7 +13,26 @@
   <ion-card class="homePagePatient">
     <ion-card-content>
 
+      <ion-toolbar  color="turquoise" class="timerContainer">
+        <ion-buttons >        
+          <p text-center class="comment">
+          {{time}}
+          </p>
+  
+      <button  *ngIf="!running" color="dark-turquoise" ion-button (click)="start()"><ion-icon name="play"></ion-icon></button>
+
+    
+       
+      <button  *ngIf="running" color="dark-turquoise" ion-button (click)="stop()"><ion-icon name="pause"></ion-icon></button>
+         
+       <button ion-button (click)="reset()"><ion-icon color="dark-turquoise" name="refresh-circle"></ion-icon></button>
+    
+    </ion-buttons>
+  </ion-toolbar>
+
     <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient">  
+
+
       <ion-item>
         <ion-label>
         <hr>
@@ -39,7 +58,7 @@
           <button color="turquoise-fonce" ion-button small (click)="showPickerTaille()">Taille</button>
           <hr>
           <button ion-button small color="turquoise-fonce"  (click)="displayOptions()">Options </button>
-          <button ion-button  small color="danger"  (click)="effacer()"><ion-icon name="refresh-circle"></ion-icon></button>
+          <button ion-button  small color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>
           <button ion-button  small color="turquoise-fonce"  (click)="help()"><ion-icon name="help-circle"></ion-icon></button>
 
   

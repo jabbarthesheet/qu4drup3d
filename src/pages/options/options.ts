@@ -4,6 +4,7 @@ import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
 
 
+
 /**
  * Generated class for the OptionsPage page.
  *
@@ -33,11 +34,17 @@ export class OptionsPage {
   APC:number; 
   Terme:number; 
 
-  
   /* Fin de déclaration des variables */
 
-  constructor(public app : App, public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
+  constructor(
+    public app : App, 
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public storage: Storage, 
+    
+    ) {
   }
+
 
   ionViewWillEnter(){
     let promiseList: Promise<any>[] = [];

@@ -76196,6 +76196,12 @@ ion-row {
   box-shadow: none !important;
 }
 
+.timerContainer {
+  width: 20%;
+  float: right;
+  border-radius: 10px;
+}
+
 .monPatient {
   text-align: center !important;
   font-size: 12px !important;

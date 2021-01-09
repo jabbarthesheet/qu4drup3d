@@ -457,8 +457,7 @@ async presentAlert() {
           text: 'Okay',
           handler: () => {
             console.log('Confirm Okay');
-            this.navCtrl.push(AccueilPage);
-          }
+            this.navCtrl.pop();          }
         }
       ]
     });

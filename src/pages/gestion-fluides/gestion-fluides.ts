@@ -107,8 +107,7 @@ export class GestionFluidesPage {
           text: 'Okay',
           handler: (OK) => {
             console.log('Confirm Okay');
-            this.navCtrl.push(AccueilPage);
-          }
+            this.navCtrl.pop();          }
         }
       ]
     });

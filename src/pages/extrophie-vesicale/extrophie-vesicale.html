@@ -22,99 +22,114 @@
 
   <ion-card color="turquoise-fonce">
     <ion-card-content>  Objectifs : 
-      <p> - limiter les jours de réanimation avec intubation prolongée pour le contrôle de l'analgésie.</p> 
-      <p> - réhabilitation précoce avec passage de la première nuit en SSPI puis USC à J1.</p></ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header (click)="ToggleConsultation()">
-      <ion-card-title>Consultation
-      
-      <ion-icon *ngIf="!isShownConsultation" class="urgenceIcon" name="add-circle"  style="zoom:0.8"></ion-icon>
-      <ion-icon *ngIf="isShownConsultation" class="urgenceIcon" name="close-circle" style="zoom:0.8"></ion-icon>
-
-    </ion-card-title>
-    </ion-card-header>
-    <ion-card-content *ngIf="isShownConsultation">
-      <p> - Evaluation de la faisabilité d'une réhabilitation précoce sans passage en réanimation.</p>
-      <p> - Evaluation des comorbidités du patient.</p>
-      <p> - Anticipation de la période post-opératoire. Appel systématique de la réanimation pour réserver une place <b>((4)3416)</b>.</p>
-      <p> - <b>Stratégie d'épargne sanguine</b> : prescription de fer, bilan avec NFS, hémostase complète, carte de groupe, ionogramme sanguin.</p>
-      <p> - <b>Stratégie de contrôle des infections</b> : ECBU, dépistage BLSE par écouvillon rectal, cartographie fongique (écouvillon plaque vésicale, peau à la jonction de la plaque vésicale, aisselle, anus).</p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header (click)="ToggleVPA()">
-      <ion-card-title>Visite pré-opératoire
-      
-      <ion-icon *ngIf="!isShownVPA" class="urgenceIcon" name="add-circle"  style="zoom:0.8"></ion-icon>
-      <ion-icon *ngIf="isShownVPA" class="urgenceIcon" name="close-circle" style="zoom:0.8"></ion-icon>
-
-    </ion-card-title>
-    </ion-card-header>
-    <ion-card-content *ngIf="isShownVPA">
-      <p> - Vérifier les bilans prescrits.</p>
-      <p> - Prescrire RAI et 2e détermination de groupe.</p>
-      <p> - Faire une commande de culots globulaires prévisionnelle.</p>
-      <p> - Perfuser dès le début du jeûne avec du B26.</p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header (click)="TogglePerOp()">
-      <ion-card-title>Per-opératoire
-      
-      <ion-icon *ngIf="!isShownPerOp" class="urgenceIcon" name="add-circle"  style="zoom:0.8"></ion-icon>
-      <ion-icon *ngIf="isShownPerOp" class="urgenceIcon" name="close-circle" style="zoom:0.8"></ion-icon>
-
-    </ion-card-title>
-    </ion-card-header>
-    <ion-card-content *ngIf="isShownPerOp">
-      <p><b><u>Induction</u></b></p>
-      <p> - Confirmer la place en réanimation.</p>
-      <p> - NIRS à mettre en place avant l'induction anesthésique.</p>
-      <p> - Antibioprophylaxie par Céfazoline IV 30 minutes avant l'incision. </p>
-      <p> - Administration d'Exacyl (ostéotomie) selon le protocole habituel.</p>
-      <p> - Dexaméthasone 0,15 mg/kg.</p>
-      <p> - Curarisation continue en IVSE.</p>
-      <p> - Pose de sonde naso-gastrique.</p>
-      <p> - Pose de cathéter veineux central en jugulaire interne droit (pas en fémoral car ostéotomie). Attention au montage des lignes type réanimation.</p>
-      <p> - Discuter la pose d'un cathéter artériel pour monitorage hémodynamique, selon le terrain.</p>
-      <p> - Pose d'un cathéter de péridurale, utiliser en per-opératoire, évaluer l'efficacité en per-opératoire.</p>
-      <br>
-      <p><b><u>Pendant l'intervention : </u></b></p>
-      <p> - Surveillance des saignements en per-opératoire et HemoCue réguliers (1 par heure pendant le temps orthopédique). Seuil transfusionnel à 8 g/dL. NFS de contrôle en post-opératoire.</p>
-      <br>
-      <p><b><u>En fin d'intervention :</u></b></p>
-      <p> - Evaluation des critères d'admission en réanimation : saignement, hémodynamique, ventilation.</p>
-      <p> - Transfert en réanimation si transfusion massive, support catécholaminergique, impossibilité d'extubation rapide en SSPI, gestion de l'analgésie prévue comme difficile (mauvaise efficacité de la péridurale, réinjections fréquentes de sufentanil en per-opératoire).</p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header (click)="TogglePostOp()">
-      <ion-card-title>Post-opératoire
-      
-      <ion-icon *ngIf="!isShownPostOp" class="urgenceIcon" name="add-circle"  style="zoom:0.8"></ion-icon>
-      <ion-icon *ngIf="isShownPostOp" class="urgenceIcon" name="close-circle" style="zoom:0.8"></ion-icon>
-
-    </ion-card-title>
-    </ion-card-header>
-    <ion-card-content *ngIf="isShownPostOp">
-      <p><b>En l'absence de critère d'admission en réanimation :</b> réhabilitation précoce en SSPI.</p>
-      <p> - Extubation précoce en SSPI.</p>
-      <p> - Contrôle de l'analgésie par péridurale et paracétamol.</p>
-      <p> - Reprise des boissons (liquide clair) dès le soir.</p>
-      <br>
-      <p><b>Sortie de SSPI pour l'USC à J1</b></p>
-      <p> - NFS à J1 (objectif Hb > 8 g/dL, hémostase normale).</p>
-      <p> - Stabilité hémodynamique et diurèse satisfaisante (> 3mL/kg/h).</p>
-      <p> - Analgésie par APD évaluée et efficace.</p>
-      <p> - Absence de trouble ionique.</p>
-      <p> - Ablation du cathéter artériel avant la sortie de SSPI.</p>   
-    </ion-card-content>
+      <p class="dilutionDrogueInduction"> - réduction des jours de réanimation avec intubation.</p> 
+      <p class="dilutionDrogueInduction"> - réhabilitation précoce avec passage de la première nuit en SSPI puis USC à J1.</p>
+      <p class="dilutionDrogueInduction"> - optimisation de l'analgésie.</p></ion-card-content>
   </ion-card>
 
 
+  <!-- PARTIE CONSULTATION -->
+
+  <ion-item class="drogueContainer" (click)="ToggleConsultation()">
+      <ion-label class="drogueInduction" color="dark-turquoise">Consultation &nbsp;&nbsp;
+      <ion-icon *ngIf="allCheckedConsultation" name="checkbox"  style="zoom:1"></ion-icon>
+      <ion-icon *ngIf="!isShownConsultation" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+      <ion-icon *ngIf="isShownConsultation" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+      </ion-label>
+      </ion-item>
+
+      <div *ngIf="isShownConsultation">
+      <ion-card *ngFor="let entry of Consultation" class="drogueContainer">
+        <ion-item>
+        <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+        <ion-checkbox color="turquoise-fonce" (click)="checkCS()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+      </ion-item>
+      <ion-card-content *ngIf="!entry.isChecked" class="comment">{{entry.item}}</ion-card-content></ion-card>
+      </div>
+
+
+
+<!-- PARTIE VPA -->
+
+<ion-item class="drogueContainer" (click)="ToggleVPA()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Visite pré-anesthésique &nbsp;&nbsp;
+  <ion-icon *ngIf="allCheckedVPA" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownVPA" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownVPA" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+
+  <div *ngIf="isShownVPA">
+  <ion-card *ngFor="let entry of VPA" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkVPA()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content *ngIf="!entry.isChecked" class="comment">{{entry.item}}</ion-card-content></ion-card>
+  </div>
+
+
+  <!-- PARTIE PRE OP -->
+
+<ion-item class="drogueContainer" (click)="TogglePreOp()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Pré-opératoire &nbsp;&nbsp;
+    <ion-icon *ngIf="allCheckedPreOp" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownPreOp" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownPreOp" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+ 
+  <div *ngIf="isShownPreOp">
+  <ion-card *ngFor="let entry of PreOperatoire" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkPreOperatoire()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content *ngIf="!entry.isChecked" class="comment">{{entry.item}}
+  </ion-card-content></ion-card>
+  </div>
+
+
+<!-- PARTIE PER OP -->
+
+<ion-item class="drogueContainer" (click)="TogglePerOp()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Per-opératoire &nbsp;&nbsp;
+    <ion-icon *ngIf="allCheckedPerOp" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownPerOp" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownPerOp" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+
+  <div *ngIf="isShownPerOp">
+  <ion-card *ngFor="let entry of PerOperatoire" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkPerOperatoire()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content  *ngIf="!entry.isChecked" class="comment"> {{entry.item}}
+  </ion-card-content></ion-card>
+  </div>
+
+
+<!-- PARTIE POST OP -->
+
+<ion-item class="drogueContainer" (click)="TogglePostOp()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Post-opératoire & SSPI &nbsp;&nbsp;
+    <ion-icon *ngIf="allCheckedPostOp" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownPostOp" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownPostOp" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+
+  <div *ngIf="isShownPostOp">
+  <ion-card *ngFor="let entry of PostOperatoire" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkPostOperatoire()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content *ngIf="!entry.isChecked" class="comment"> {{entry.item}}
+  </ion-card-content></ion-card>
+  </div>
+
+ 
 </ion-content>

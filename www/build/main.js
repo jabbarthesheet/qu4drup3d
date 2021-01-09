@@ -6,8 +6,8 @@ webpackJsonp([0],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlateauInductionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -413,8 +413,8 @@ var PlateauInductionPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlateauVasPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -704,9 +704,9 @@ var PlateauVasPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EntretienAnesthPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -931,8 +931,8 @@ var EntretienAnesthPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GestionFluidesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__options_options__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1224,10 +1224,9 @@ var GestionFluidesPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-gestion-fluides',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\gestion-fluides\gestion-fluides.html"*/'\n<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Gestion des apports</ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label>\n      <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> \n      <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n      <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> \n  </ion-item>\n</ion-header>\n\n<ion-content padding>\n\n\n      <!-- ITEM MON PATIENT -->\n\n  \n      <!-- ITEMS CALCULES-->\n   \n      <ion-list>\n        <ion-item-group>\n          \n          <ion-item-divider (click)="ToggleApports()">\n            <ion-label color="dark-turquoise">Apports hydriques\n          <ion-icon *ngIf="!isShownApports" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownApports" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-label>\n          </ion-item-divider> \n\n\n          <ion-card *ngIf="isShownApports" class="drogueContainer">\n          <ion-item>\n            <ion-label class="drogueInduction">Besoins de base : <b>{{ApportBaseHoraire}} mL/h</b>\n            <p class="dilutionDrogueInduction">{{Solute}}</p></ion-label>\n          </ion-item>\n          <ion-item>\n            <ion-label class="drogueInduction">Compensation du jeûne ({{DureeJeune}} heures) : <b>{{CompJeune}} mL</b>\n            <p class="dilutionDrogueInduction">{{Solute}}</p>\n            <p class="dilutionDrogueInduction">Passer {{CompJeuneH1}} mL sur 1h puis {{CompJeuneH2}} mL sur 2h</p>\n          </ion-label>\n          </ion-item>\n\n          <ion-item> <ion-label class="drogueInduction" >Pertes chirurgicales</ion-label>\n            <ion-select class="drogueInduction" #newselect (ionChange)="SelectPerteChir(chir.pertes)" [(ngModel)]="chir.pertes" interface="action-sheet" placeholder="choisir"\n             okText="OK" cancelText="Retour">\n              <ion-option checked="true" value="Mineures">Mineures (2 mL/kg/h)</ion-option>\n              <ion-option value="Moderees">Modérées (5 mL/kg/h)</ion-option>\n              <ion-option value="Importantes">Importantes (10 mL/kg/h)</ion-option>\n            </ion-select>\n          </ion-item>\n\n          <ion-item>\n            <ion-label class="drogueInduction">Pertes insensibles\n            <p class="dilutionDrogueInduction"><b>{{Solute}} : {{CompPertesChir}} mL/h</b></p>\n          </ion-label>\n          </ion-item>\n          <ion-item>\n            <ion-label class="drogueInduction">Apports recommandés : <b>\n            <p class="dilutionDrogueInduction"> - La 1ere heure {{Solute}} : {{TotalH1}} mL</p>\n            <p class="dilutionDrogueInduction"> - La 2e et la 3e heure {{Solute}} : {{TotalH2et3}} mL</p>\n            <p class="dilutionDrogueInduction"> - puis {{Solute}} : {{TotalHoraire}} mL/h</p>\n          </b>\n        </ion-label>\n          </ion-item>\n        </ion-card>\n\n        <ion-item-divider (click)="ToggleHypoTA()">\n          <ion-label color="dark-turquoise">Remplissage vasculaire\n          <ion-icon *ngIf="!isShownHypoTA" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownHypoTA" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n          </ion-label>\n        </ion-item-divider>\n          \n          <ion-card class="drogueContainer"  *ngIf="isShownHypoTA">\n          <ion-card-content>\n            <p class="dilutionDrogueInduction">Envisager devant une PAM abaissée de 20% ou plus par rapport la valeur mesurée avant induction.</p>\n            <p class="dilutionDrogueInduction">Enfant de <b>{{ageLecture}} ans : PAS &lt; {{PAShypoTA}} mmHg </b>environ </p>\n            <br>\n            <p class="drogueInduction">Mesures à envisager :</p>\n            <p class="dilutionDrogueInduction"> - Remplissage par cristalloïde : <b>{{VolRemplissage}} mL </b> de <b>{{SoluteRemplissage}}</b>, renouvelable une fois</p>\n            <p class="dilutionDrogueInduction"> - Ephédrine par bolus IVD de <b>{{AdminEphedrine}} mg</b>, renouvelable</p>\n            <p class="dilutionDrogueInduction"> - En seconde intention, remplissage par colloïde : <b>{{AdminAlbumine}} mL albumine 10% sur 30 minutes</b> (mélange équivolume Albumine 20% & NaCl 0.9%).</p>\n          </ion-card-content>\n        </ion-card>\n\n          \n\n          <ion-item-divider (click)="ToggleCGR()">\n            <ion-label color="danger">Concentré de globules rouges\n          <ion-icon *ngIf="!isShownCGR" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownCGR" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-label>\n          </ion-item-divider> \n\n          <ion-card *ngIf="isShownCGR" class="drogueContainer">\n          <ion-item>\n            <ion-label class="drogueInduction">\n              Masse sanguine estimée : <b>{{MasseSanguine}} mL</b>\n              <p class="dilutionDrogueInduction">(pour 80 mL/kg)</p>\n          </ion-label>\n          </ion-item>\n          <ion-item>\n            <ion-label color="danger" class="drogueInduction">Hémogloginémie mesurée : <b>{{Hbmesuree}} g/dL</b></ion-label>\n            <ion-range max="16" step="1"  pin="true" color="danger" (ionChange)="MesureeHb()" [(ngModel)]="Hbmesuree"> </ion-range>\n          </ion-item>\n\n          <ion-item >\n             <ion-label color="turquoise-fonce" class="drogueInduction">Objectif d\'hémoglobinémie : <b>{{Hbsouhaitee}} g/dL</b></ion-label>\n            <ion-range  color="turquoise-fonce" max="16" pin="true" step="1" (ionChange)="SouhaiteeHb()" [(ngModel)]="Hbsouhaitee"> </ion-range>\n          </ion-item>\n\n          <ion-item>\n            <ion-label class="drogueInduction">Transfuser : {{VolCGR}}\n              <p class="dilutionDrogueInduction"><b>Pour corriger {{DiffHb}} g/dL d\'hémoglobine</b></p>\n            </ion-label>\n        </ion-item>\n        </ion-card>\n\n        <ion-item-divider (click)="ToggleAutresPSL()">\n          <ion-label  color="warning">Autres PSL\n            <ion-icon *ngIf="!isShownAutresPSL" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownAutresPSL" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n          </ion-label>\n        </ion-item-divider> \n\n          <ion-card *ngIf="isShownAutresPSL" class="drogueContainer">\n          <ion-item>\n            <ion-label class="drogueInduction">Unités plaquettaires</ion-label>\n            <p class="dilutionDrogueInduction"><b>Passer {{UnitesPlaquettaires}} UI Plaquettaires</b></p>\n          </ion-item>\n          <ion-item>\n            <ion-label class="drogueInduction">Plasma frais congelé</ion-label>\n            <p class="dilutionDrogueInduction"><b>Passer {{VolPFC}} mL de PFC</b></p>\n          </ion-item>\n        </ion-card>\n\n        </ion-item-group>\n        </ion-list>\n\n        <ion-card class="nb" padding>   Si ce n\'est pas déjà fait, renseignez la durée du jeune dans les options afin d\'ajuster les apports hydriques en conséquence.\n          <br><br>   \n          <button ion-button small color="turquoise-fonce" (click)="displayOptions()"> Options </button></ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\gestion-fluides\gestion-fluides.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], GestionFluidesPage);
     return GestionFluidesPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=gestion-fluides.js.map
@@ -1240,9 +1239,9 @@ var GestionFluidesPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OptionsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1385,8 +1384,8 @@ var OptionsPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocoRegionalePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1599,8 +1598,8 @@ var LocoRegionalePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntalgiePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__scores_scores__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1895,8 +1894,8 @@ var AntalgiePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UrgencePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2064,22 +2063,22 @@ var UrgencePage = /** @class */ (function () {
     /* Toggle des cartes */
     UrgencePage.prototype.ToggleACR = function () {
         this.isShownACR = !this.isShownACR;
-        this.isShownChocAna = this.isShownHTM = this.isShownIAL = false;
+        this.isShownChocAna = this.isShownHTM = this.isShownIAL = this.isShownMetabo = false;
     };
     ;
     UrgencePage.prototype.ToggleChocAna = function () {
         this.isShownChocAna = !this.isShownChocAna;
-        this.isShownACR = this.isShownHTM = this.isShownIAL = false;
+        this.isShownACR = this.isShownHTM = this.isShownIAL = this.isShownMetabo = false;
     };
     ;
     UrgencePage.prototype.ToggleHTM = function () {
         this.isShownHTM = !this.isShownHTM;
-        this.isShownACR = this.isShownChocAna = this.isShownIAL = false;
+        this.isShownACR = this.isShownChocAna = this.isShownIAL = this.isShownMetabo = false;
     };
     ;
     UrgencePage.prototype.ToggleIAL = function () {
         this.isShownIAL = !this.isShownIAL;
-        this.isShownACR = this.isShownChocAna = this.isShownHTM = false;
+        this.isShownACR = this.isShownChocAna = this.isShownHTM = this.isShownMetabo = false;
     };
     ;
     UrgencePage.prototype.ToggleMetabo = function () {
@@ -2114,8 +2113,8 @@ var UrgencePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MonitoragePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2468,9 +2467,9 @@ var MonitoragePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CourbesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__(546);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__(543);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_chart_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3036,16 +3035,16 @@ var CourbesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 167:
+/***/ 165:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntiInfectieuxPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_anti_infectieux__ = __webpack_require__(495);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_anti_infectieux__ = __webpack_require__(494);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__ = __webpack_require__(418);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3098,13 +3097,14 @@ var AntiInfectieuxPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 168:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExtrophieVesicalePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3116,6 +3116,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
  * Generated class for the ExtrophieVesicalePage page.
  *
@@ -3123,47 +3124,207 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var ExtrophieVesicalePage = /** @class */ (function () {
-    function ExtrophieVesicalePage(navCtrl, navParams) {
+    function ExtrophieVesicalePage(navCtrl, navParams, storage, ToastController) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.storage = storage;
+        this.ToastController = ToastController;
+        this.checkedItem = false;
+        this.Consultation = [
+            { title: 'Réhabilitation', item: "Evaluation de la possibilité d'une réhabilitation précoce (sans réanimation).", isChecked: false, count: 1 },
+            { title: 'Comorbidités', item: 'Evaluation des comorbidités du patient.', isChecked: false, count: 1 },
+            { title: 'Post-opératoire', item: 'Anticiper la période post-opératoire : appele systématique de la réanimation pour réserver une place (4 3416)', isChecked: false, count: 1 },
+            { title: 'Epargne sanguine', item: "Stratégie d'épargne sanguine : prescription de fer, bilan avec NFS, hémostase complète, carte de groupe. Associer un ionogramme sanguin systématique.", isChecked: false, count: 1 },
+            { title: 'Infections', item: 'Stratégie de contrôle des infections : ECBU, dépistage BLSE par écouvillon rectal et carte fongique (comportant écouiville plaque vésicale, peau à la jonction de la plaque vésicale, aisselles, anus).', isChecked: false, count: 1 },
+        ];
+        this.VPA = [
+            { title: 'Bilans', item: "Vérifier que les bilans prescrits ont été réalisés, vérifier les résultats. Prescrire les RAI et la 2e détermination de groupe.", isChecked: false, class: this.checkedItem },
+            { title: 'Transfusion', item: 'Faire une commande de culots globulaires prévisionnelle.', isChecked: false, class: this.checkedItem },
+            { title: 'Hydratation', item: 'Perfuser dès le début du jeûne avec du B26.', isChecked: false, class: this.checkedItem },
+        ];
+        this.PreOperatoire = [
+            { title: "Réanimation", item: "Confirmer la place en réanimation.", isChecked: false, },
+            { title: "Monitorage", item: "NIRS en place avant l'induction. TOF pour curarisation continue en IVSE - tracrium - selon le protocole habituel. ", isChecked: false, },
+            { title: "Prévention", item: "Infections : Antibioprophylaxie par Céfazoline IV 30 minutes avant l'incision. Saignement : Exacyl - si ostéotomie - selon le protocole habituel. NVPO : Dexaméthasone selon le protocole habituel. Calculer le VPOP.", isChecked: false, },
+            { title: "Dispostifs", item: "Pose de cathéter veineux central en jugulaire interne droit (pas en fémoral car ostéotomie). Attention au montage des lignes type réanimation. Discuter la pose d'un cathéter artériel pour monitorage hémodynamique, selon le terrain. Pose d'un cathéter de péridurale, utiliser en per-opératoire, évaluer l'efficacité en per-opératoire.", isChecked: false, },
+        ];
+        this.PerOperatoire = [
+            { title: "Pendant l'intervention", item: "Surveillance des saignements en per-opératoire et HemoCue réguliers (1 par heure pendant le temps orthopédique). Seuil transfusionnel à 8 g/dL. NFS de contrôle en post-opératoire.",
+                isChecked: false },
+            { title: "En fin d'intervention", item: "Evaluation des critères d'admission en réanimation : transfert en réanimation si transfusion massive, support catécholaminergique, impossibilité d'extubation rapide en SSPI, gestion de l'analgésie prévue comme difficile (mauvaise efficacité de la péridurale, réinjections fréquentes de sufentanil en per-opératoire).",
+                isChecked: false },
+        ];
+        this.PostOperatoire = [
+            { title: "Réhabilitation précoce", item: "Chaque fois que possible en l'absence de critère d'admission en réanimation. Extubation précoce en SSPI. Contrôle de l'analgésie par péridurale et paracétamol. Reprise des boissons (liquide clair) dès le soir.",
+                isChecked: false },
+            { title: "Clinique", item: "Stabilité hémodynamique et diurèse satisfaisante (> 3mL/kg/h) surveillée toutes les 2 heures." },
+            { title: "Biologie", item: "NFS à J1 (objectif Hb > 8 g/dL et hémostase normale). Absence de trouble ionique. Stabilité hémodynamique et diurèse satisfaisante (> 3mL/kg/h).",
+                isChecked: false },
+            { title: "Dispositifs", item: "Ablation du cathéter artériel avant la sortie de SSPI. Vérification de l'efficacité de l'analgésie péridurale." }
+        ];
         this.isShownConsultation = false;
         this.isShownVPA = false;
         this.isShownPerOp = false;
         this.isShownPostOp = false;
+        this.isShownPreOp = false;
+        this.allCheckedConsultation = false;
+        this.allCheckedVPA = false;
+        this.allCheckedPreOp = false;
+        this.allCheckedPerOp = false;
+        this.allCheckedPostOp = false;
     }
     ExtrophieVesicalePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ExtrophieVesicalePage');
     };
+    ;
+    ExtrophieVesicalePage.prototype.ionViewWillEnter = function () {
+    };
+    ;
     ExtrophieVesicalePage.prototype.ToggleConsultation = function () {
         this.isShownConsultation = !this.isShownConsultation;
-        this.isShownVPA = this.isShownPerOp = this.isShownPostOp = false;
+        this.isShownVPA = this.isShownPerOp = this.isShownPostOp = this.isShownPreOp = false;
     };
+    ;
     ExtrophieVesicalePage.prototype.ToggleVPA = function () {
         this.isShownVPA = !this.isShownVPA;
-        this.isShownConsultation = this.isShownPerOp = this.isShownPostOp = false;
+        this.isShownConsultation = this.isShownPerOp = this.isShownPostOp = this.isShownPreOp = false;
     };
+    ;
+    ExtrophieVesicalePage.prototype.TogglePreOp = function () {
+        this.isShownPreOp = !this.isShownPreOp;
+        this.isShownConsultation = this.isShownVPA = this.isShownPerOp = this.isShownPostOp = false;
+    };
+    ;
     ExtrophieVesicalePage.prototype.TogglePerOp = function () {
         this.isShownPerOp = !this.isShownPerOp;
-        this.isShownConsultation = this.isShownVPA = this.isShownPostOp = false;
+        this.isShownConsultation = this.isShownVPA = this.isShownPostOp = this.isShownPreOp = false;
     };
+    ;
     ExtrophieVesicalePage.prototype.TogglePostOp = function () {
         this.isShownPostOp = !this.isShownPostOp;
-        this.isShownConsultation = this.isShownVPA = this.isShownPerOp = false;
+        this.isShownConsultation = this.isShownVPA = this.isShownPerOp = this.isShownPreOp = false;
     };
+    ;
+    ExtrophieVesicalePage.prototype.checkCS = function () {
+        var checkCS = this.Consultation
+            .filter(function (item) { return item.isChecked === false; })
+            .reduce(function (sum, current) { return sum + current.count; }, 0);
+        if (checkCS == 0) {
+            this.allCheckedConsultation = true;
+            var toastCS = this.ToastController.create({
+                message: "Items spécifiques de consultation tous validés.",
+                position: 'Bottom',
+                showCloseButton: true,
+                closeButtonText: "OK.",
+                duration: 3000,
+            });
+            toastCS.present();
+        }
+        else {
+            this.allCheckedConsultation = false;
+        }
+        ;
+    };
+    ;
+    ExtrophieVesicalePage.prototype.checkVPA = function () {
+        var checkVPA = this.VPA
+            .filter(function (item) { return item.isChecked === false; })
+            .reduce(function (sum, current) { return sum + current.count; }, 0);
+        if (checkVPA == 0) {
+            this.allCheckedVPA = true;
+            var toastVPA = this.ToastController.create({
+                message: "Items spécifiques de VPA tous validés.",
+                position: 'Bottom',
+                showCloseButton: true,
+                closeButtonText: "OK.",
+                duration: 3000,
+            });
+            toastVPA.present();
+        }
+        else {
+            this.allCheckedVPA = false;
+        }
+        ;
+    };
+    ;
+    ExtrophieVesicalePage.prototype.checkPreOperatoire = function () {
+        var checkPreOp = this.PreOperatoire
+            .filter(function (item) { return item.isChecked === false; })
+            .reduce(function (sum, current) { return sum + current.count; }, 0);
+        if (checkPreOp == 0) {
+            this.allCheckedPreOp = true;
+            var toastPreOp = this.ToastController.create({
+                message: "Items spécifiques du pré-opératoire tous validés.",
+                position: 'Bottom',
+                showCloseButton: true,
+                closeButtonText: "OK.",
+                duration: 3000,
+            });
+            toastPreOp.present();
+        }
+        else {
+            this.allCheckedPreOp = false;
+        }
+        ;
+    };
+    ;
+    ExtrophieVesicalePage.prototype.checkPerOperatoire = function () {
+        var checkPerOp = this.PerOperatoire
+            .filter(function (item) { return item.isChecked === false; })
+            .reduce(function (sum, current) { return sum + current.count; }, 0);
+        if (checkPerOp == 0) {
+            this.allCheckedPerOp = true;
+            var toastPerOp = this.ToastController.create({
+                message: "Items spécifiques du per-opératoire tous validés.",
+                position: 'Bottom',
+                showCloseButton: true,
+                closeButtonText: "OK.",
+                duration: 3000,
+            });
+            toastPerOp.present();
+        }
+        else {
+            this.allCheckedPerOp = false;
+        }
+        ;
+    };
+    ;
+    ExtrophieVesicalePage.prototype.checkPostOperatoire = function () {
+        var checkPostOp = this.PostOperatoire
+            .filter(function (item) { return item.isChecked === false; })
+            .reduce(function (sum, current) { return sum + current.count; }, 0);
+        if (checkPostOp == 0) {
+            this.allCheckedPostOp = true;
+            var toastPostOp = this.ToastController.create({
+                message: "Items spécifiques du post-opératoire tous validés.",
+                position: 'Bottom',
+                showCloseButton: true,
+                closeButtonText: "OK.",
+                duration: 3000,
+            });
+            toastPostOp.present();
+        }
+        else {
+            this.allCheckedPostOp = false;
+        }
+        ;
+    };
+    ;
     ExtrophieVesicalePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-extrophie-vesicale',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\extrophie-vesicale\extrophie-vesicale.html"*/'<!--\n  Generated template for the ExtrophieVesicalePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Extrophie Vésicale</ion-title>\n  </ion-navbar>\n  <ion-item color="warning">\n    <p class="entete_protocole">Auteurs : Dr. Charlotte FAIT, Pr. Souhayl DAHMANI</p>\n    <p class="entete_protocole">Date de publication : 21/09/2020</p>\n  </ion-item>\n\n</ion-header>\n\n<ion-content padding>\n\n  <ion-card color="turquoise-fonce">\n    <ion-card-content>  Objectifs : \n      <p> - limiter les jours de réanimation avec intubation prolongée pour le contrôle de l\'analgésie.</p> \n      <p> - réhabilitation précoce avec passage de la première nuit en SSPI puis USC à J1.</p></ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header (click)="ToggleConsultation()">\n      <ion-card-title>Consultation\n      \n      <ion-icon *ngIf="!isShownConsultation" class="urgenceIcon" name="add-circle"  style="zoom:0.8"></ion-icon>\n      <ion-icon *ngIf="isShownConsultation" class="urgenceIcon" name="close-circle" style="zoom:0.8"></ion-icon>\n\n    </ion-card-title>\n    </ion-card-header>\n    <ion-card-content *ngIf="isShownConsultation">\n      <p> - Evaluation de la faisabilité d\'une réhabilitation précoce sans passage en réanimation.</p>\n      <p> - Evaluation des comorbidités du patient.</p>\n      <p> - Anticipation de la période post-opératoire. Appel systématique de la réanimation pour réserver une place <b>((4)3416)</b>.</p>\n      <p> - <b>Stratégie d\'épargne sanguine</b> : prescription de fer, bilan avec NFS, hémostase complète, carte de groupe, ionogramme sanguin.</p>\n      <p> - <b>Stratégie de contrôle des infections</b> : ECBU, dépistage BLSE par écouvillon rectal, cartographie fongique (écouvillon plaque vésicale, peau à la jonction de la plaque vésicale, aisselle, anus).</p>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header (click)="ToggleVPA()">\n      <ion-card-title>Visite pré-opératoire\n      \n      <ion-icon *ngIf="!isShownVPA" class="urgenceIcon" name="add-circle"  style="zoom:0.8"></ion-icon>\n      <ion-icon *ngIf="isShownVPA" class="urgenceIcon" name="close-circle" style="zoom:0.8"></ion-icon>\n\n    </ion-card-title>\n    </ion-card-header>\n    <ion-card-content *ngIf="isShownVPA">\n      <p> - Vérifier les bilans prescrits.</p>\n      <p> - Prescrire RAI et 2e détermination de groupe.</p>\n      <p> - Faire une commande de culots globulaires prévisionnelle.</p>\n      <p> - Perfuser dès le début du jeûne avec du B26.</p>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header (click)="TogglePerOp()">\n      <ion-card-title>Per-opératoire\n      \n      <ion-icon *ngIf="!isShownPerOp" class="urgenceIcon" name="add-circle"  style="zoom:0.8"></ion-icon>\n      <ion-icon *ngIf="isShownPerOp" class="urgenceIcon" name="close-circle" style="zoom:0.8"></ion-icon>\n\n    </ion-card-title>\n    </ion-card-header>\n    <ion-card-content *ngIf="isShownPerOp">\n      <p><b><u>Induction</u></b></p>\n      <p> - Confirmer la place en réanimation.</p>\n      <p> - NIRS à mettre en place avant l\'induction anesthésique.</p>\n      <p> - Antibioprophylaxie par Céfazoline IV 30 minutes avant l\'incision. </p>\n      <p> - Administration d\'Exacyl (ostéotomie) selon le protocole habituel.</p>\n      <p> - Dexaméthasone 0,15 mg/kg.</p>\n      <p> - Curarisation continue en IVSE.</p>\n      <p> - Pose de sonde naso-gastrique.</p>\n      <p> - Pose de cathéter veineux central en jugulaire interne droit (pas en fémoral car ostéotomie). Attention au montage des lignes type réanimation.</p>\n      <p> - Discuter la pose d\'un cathéter artériel pour monitorage hémodynamique, selon le terrain.</p>\n      <p> - Pose d\'un cathéter de péridurale, utiliser en per-opératoire, évaluer l\'efficacité en per-opératoire.</p>\n      <br>\n      <p><b><u>Pendant l\'intervention : </u></b></p>\n      <p> - Surveillance des saignements en per-opératoire et HemoCue réguliers (1 par heure pendant le temps orthopédique). Seuil transfusionnel à 8 g/dL. NFS de contrôle en post-opératoire.</p>\n      <br>\n      <p><b><u>En fin d\'intervention :</u></b></p>\n      <p> - Evaluation des critères d\'admission en réanimation : saignement, hémodynamique, ventilation.</p>\n      <p> - Transfert en réanimation si transfusion massive, support catécholaminergique, impossibilité d\'extubation rapide en SSPI, gestion de l\'analgésie prévue comme difficile (mauvaise efficacité de la péridurale, réinjections fréquentes de sufentanil en per-opératoire).</p>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header (click)="TogglePostOp()">\n      <ion-card-title>Post-opératoire\n      \n      <ion-icon *ngIf="!isShownPostOp" class="urgenceIcon" name="add-circle"  style="zoom:0.8"></ion-icon>\n      <ion-icon *ngIf="isShownPostOp" class="urgenceIcon" name="close-circle" style="zoom:0.8"></ion-icon>\n\n    </ion-card-title>\n    </ion-card-header>\n    <ion-card-content *ngIf="isShownPostOp">\n      <p><b>En l\'absence de critère d\'admission en réanimation :</b> réhabilitation précoce en SSPI.</p>\n      <p> - Extubation précoce en SSPI.</p>\n      <p> - Contrôle de l\'analgésie par péridurale et paracétamol.</p>\n      <p> - Reprise des boissons (liquide clair) dès le soir.</p>\n      <br>\n      <p><b>Sortie de SSPI pour l\'USC à J1</b></p>\n      <p> - NFS à J1 (objectif Hb > 8 g/dL, hémostase normale).</p>\n      <p> - Stabilité hémodynamique et diurèse satisfaisante (> 3mL/kg/h).</p>\n      <p> - Analgésie par APD évaluée et efficace.</p>\n      <p> - Absence de trouble ionique.</p>\n      <p> - Ablation du cathéter artériel avant la sortie de SSPI.</p>   \n    </ion-card-content>\n  </ion-card>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\extrophie-vesicale\extrophie-vesicale.html"*/,
+            selector: 'page-extrophie-vesicale',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\extrophie-vesicale\extrophie-vesicale.html"*/'<!--\n  Generated template for the ExtrophieVesicalePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Extrophie Vésicale</ion-title>\n  </ion-navbar>\n  <ion-item color="warning">\n    <p class="entete_protocole">Auteurs : Dr. Charlotte FAIT, Pr. Souhayl DAHMANI</p>\n    <p class="entete_protocole">Date de publication : 21/09/2020</p>\n  </ion-item>\n\n</ion-header>\n\n<ion-content padding>\n\n  <ion-card color="turquoise-fonce">\n    <ion-card-content>  Objectifs : \n      <p class="dilutionDrogueInduction"> - réduction des jours de réanimation avec intubation.</p> \n      <p class="dilutionDrogueInduction"> - réhabilitation précoce avec passage de la première nuit en SSPI puis USC à J1.</p>\n      <p class="dilutionDrogueInduction"> - optimisation de l\'analgésie.</p></ion-card-content>\n  </ion-card>\n\n\n  <!-- PARTIE CONSULTATION -->\n\n  <ion-item class="drogueContainer" (click)="ToggleConsultation()">\n      <ion-label class="drogueInduction" color="dark-turquoise">Consultation &nbsp;&nbsp;\n      <ion-icon *ngIf="allCheckedConsultation" name="checkbox"  style="zoom:1"></ion-icon>\n      <ion-icon *ngIf="!isShownConsultation" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n      <ion-icon *ngIf="isShownConsultation" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n      </ion-label>\n      </ion-item>\n\n      <div *ngIf="isShownConsultation">\n      <ion-card *ngFor="let entry of Consultation" class="drogueContainer">\n        <ion-item>\n        <ion-label class="drogueInduction">{{entry.title}}</ion-label>\n        <ion-checkbox color="turquoise-fonce" (click)="checkCS()" [(ngModel)]="entry.isChecked"></ion-checkbox>\n      </ion-item>\n      <ion-card-content *ngIf="!entry.isChecked" class="comment">{{entry.item}}</ion-card-content></ion-card>\n      </div>\n\n\n\n<!-- PARTIE VPA -->\n\n<ion-item class="drogueContainer" (click)="ToggleVPA()">\n  <ion-label class="drogueInduction" color="dark-turquoise">Visite pré-anesthésique &nbsp;&nbsp;\n  <ion-icon *ngIf="allCheckedVPA" name="checkbox"  style="zoom:1"></ion-icon>\n  <ion-icon *ngIf="!isShownVPA" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownVPA" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label>\n  </ion-item>\n\n  <div *ngIf="isShownVPA">\n  <ion-card *ngFor="let entry of VPA" class="drogueContainer">\n    <ion-item>\n    <ion-label class="drogueInduction">{{entry.title}}</ion-label>\n    <ion-checkbox color="turquoise-fonce" (click)="checkVPA()" [(ngModel)]="entry.isChecked"></ion-checkbox>\n  </ion-item>\n  <ion-card-content *ngIf="!entry.isChecked" class="comment">{{entry.item}}</ion-card-content></ion-card>\n  </div>\n\n\n  <!-- PARTIE PRE OP -->\n\n<ion-item class="drogueContainer" (click)="TogglePreOp()">\n  <ion-label class="drogueInduction" color="dark-turquoise">Pré-opératoire &nbsp;&nbsp;\n    <ion-icon *ngIf="allCheckedPreOp" name="checkbox"  style="zoom:1"></ion-icon>\n  <ion-icon *ngIf="!isShownPreOp" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownPreOp" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label>\n  </ion-item>\n \n  <div *ngIf="isShownPreOp">\n  <ion-card *ngFor="let entry of PreOperatoire" class="drogueContainer">\n    <ion-item>\n    <ion-label class="drogueInduction">{{entry.title}}</ion-label>\n    <ion-checkbox color="turquoise-fonce" (click)="checkPreOperatoire()" [(ngModel)]="entry.isChecked"></ion-checkbox>\n  </ion-item>\n  <ion-card-content *ngIf="!entry.isChecked" class="comment">{{entry.item}}\n  </ion-card-content></ion-card>\n  </div>\n\n\n<!-- PARTIE PER OP -->\n\n<ion-item class="drogueContainer" (click)="TogglePerOp()">\n  <ion-label class="drogueInduction" color="dark-turquoise">Per-opératoire &nbsp;&nbsp;\n    <ion-icon *ngIf="allCheckedPerOp" name="checkbox"  style="zoom:1"></ion-icon>\n  <ion-icon *ngIf="!isShownPerOp" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownPerOp" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label>\n  </ion-item>\n\n  <div *ngIf="isShownPerOp">\n  <ion-card *ngFor="let entry of PerOperatoire" class="drogueContainer">\n    <ion-item>\n    <ion-label class="drogueInduction">{{entry.title}}</ion-label>\n    <ion-checkbox color="turquoise-fonce" (click)="checkPerOperatoire()" [(ngModel)]="entry.isChecked"></ion-checkbox>\n  </ion-item>\n  <ion-card-content  *ngIf="!entry.isChecked" class="comment"> {{entry.item}}\n  </ion-card-content></ion-card>\n  </div>\n\n\n<!-- PARTIE POST OP -->\n\n<ion-item class="drogueContainer" (click)="TogglePostOp()">\n  <ion-label class="drogueInduction" color="dark-turquoise">Post-opératoire & SSPI &nbsp;&nbsp;\n    <ion-icon *ngIf="allCheckedPostOp" name="checkbox"  style="zoom:1"></ion-icon>\n  <ion-icon *ngIf="!isShownPostOp" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownPostOp" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label>\n  </ion-item>\n\n  <div *ngIf="isShownPostOp">\n  <ion-card *ngFor="let entry of PostOperatoire" class="drogueContainer">\n    <ion-item>\n    <ion-label class="drogueInduction">{{entry.title}}</ion-label>\n    <ion-checkbox color="turquoise-fonce" (click)="checkPostOperatoire()" [(ngModel)]="entry.isChecked"></ion-checkbox>\n  </ion-item>\n  <ion-card-content *ngIf="!entry.isChecked" class="comment"> {{entry.item}}\n  </ion-card-content></ion-card>\n  </div>\n\n \n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\extrophie-vesicale\extrophie-vesicale.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */]) === "function" && _d || Object])
     ], ExtrophieVesicalePage);
     return ExtrophieVesicalePage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=extrophie-vesicale.js.map
 
 /***/ }),
 
-/***/ 179:
+/***/ 177:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -3176,11 +3337,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 179;
+webpackEmptyAsyncContext.id = 177;
 
 /***/ }),
 
-/***/ 223:
+/***/ 221:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -3193,7 +3354,7 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 223;
+webpackEmptyAsyncContext.id = 221;
 
 /***/ }),
 
@@ -3203,8 +3364,8 @@ webpackEmptyAsyncContext.id = 223;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccueilPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__plateau_induction_plateau_induction__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__plateau_vas_plateau_vas__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__entretien_anesth_entretien_anesth__ = __webpack_require__(140);
@@ -3216,7 +3377,7 @@ webpackEmptyAsyncContext.id = 223;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__monitorage_monitorage__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__courbes_courbes__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser_ngx__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(494);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(493);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__scores_scores__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3908,16 +4069,16 @@ var AccueilPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 494:
+/***/ 493:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntibioprophylaxiePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__anti_infectieux_anti_infectieux__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__anti_infectieux_anti_infectieux__ = __webpack_require__(165);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4149,7 +4310,7 @@ var AntibioprophylaxiePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 495:
+/***/ 494:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4220,14 +4381,14 @@ var ServiceDataProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 496:
+/***/ 495:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProtocolesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(166);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4284,13 +4445,13 @@ var ProtocolesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 497:
+/***/ 496:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecommandationsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser_ngx__ = __webpack_require__(148);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4335,13 +4496,13 @@ var RecommandationsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 502:
+/***/ 499:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(503);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(507);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(500);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(504);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -4349,17 +4510,17 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 507:
+/***/ 504:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(545);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(835);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(542);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(832);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser_ngx__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_accueil_accueil__ = __webpack_require__(24);
@@ -4371,16 +4532,16 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_urgence_urgence__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_loco_regionale_loco_regionale__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__ = __webpack_require__(500);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_splash_screen__ = __webpack_require__(501);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_service_data_liste_anti_infectieux__ = __webpack_require__(495);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_protocoles_protocoles__ = __webpack_require__(496);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_recommandations_recommandations__ = __webpack_require__(497);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__ = __webpack_require__(497);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_splash_screen__ = __webpack_require__(498);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_service_data_liste_anti_infectieux__ = __webpack_require__(494);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_protocoles_protocoles__ = __webpack_require__(495);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_recommandations_recommandations__ = __webpack_require__(496);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_monitorage_monitorage__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_courbes_courbes__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(494);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(493);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_scores_scores__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4493,29 +4654,29 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 545:
+/***/ 542:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_accueil_accueil__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_plateau_induction_plateau_induction__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_gestion_fluides_gestion_fluides__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_plateau_vas_plateau_vas__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_antalgie_antalgie__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_urgence_urgence__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_pre_medication_pre_medication__ = __webpack_require__(834);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_pre_medication_pre_medication__ = __webpack_require__(831);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_loco_regionale_loco_regionale__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_monitorage_monitorage__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_protocoles_protocoles__ = __webpack_require__(496);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_recommandations_recommandations__ = __webpack_require__(497);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_status_bar__ = __webpack_require__(500);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_splash_screen__ = __webpack_require__(501);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_protocoles_protocoles__ = __webpack_require__(495);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_recommandations_recommandations__ = __webpack_require__(496);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_status_bar__ = __webpack_require__(497);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_splash_screen__ = __webpack_require__(498);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_courbes_courbes__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_scores_scores__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -4633,280 +4794,280 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 548:
+/***/ 545:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 264,
-	"./af.js": 264,
-	"./ar": 265,
-	"./ar-dz": 266,
-	"./ar-dz.js": 266,
-	"./ar-kw": 267,
-	"./ar-kw.js": 267,
-	"./ar-ly": 268,
-	"./ar-ly.js": 268,
-	"./ar-ma": 269,
-	"./ar-ma.js": 269,
-	"./ar-sa": 270,
-	"./ar-sa.js": 270,
-	"./ar-tn": 271,
-	"./ar-tn.js": 271,
-	"./ar.js": 265,
-	"./az": 272,
-	"./az.js": 272,
-	"./be": 273,
-	"./be.js": 273,
-	"./bg": 274,
-	"./bg.js": 274,
-	"./bm": 275,
-	"./bm.js": 275,
-	"./bn": 276,
-	"./bn-bd": 277,
-	"./bn-bd.js": 277,
-	"./bn.js": 276,
-	"./bo": 278,
-	"./bo.js": 278,
-	"./br": 279,
-	"./br.js": 279,
-	"./bs": 280,
-	"./bs.js": 280,
-	"./ca": 281,
-	"./ca.js": 281,
-	"./cs": 282,
-	"./cs.js": 282,
-	"./cv": 283,
-	"./cv.js": 283,
-	"./cy": 284,
-	"./cy.js": 284,
-	"./da": 285,
-	"./da.js": 285,
-	"./de": 286,
-	"./de-at": 287,
-	"./de-at.js": 287,
-	"./de-ch": 288,
-	"./de-ch.js": 288,
-	"./de.js": 286,
-	"./dv": 289,
-	"./dv.js": 289,
-	"./el": 290,
-	"./el.js": 290,
-	"./en-au": 291,
-	"./en-au.js": 291,
-	"./en-ca": 292,
-	"./en-ca.js": 292,
-	"./en-gb": 293,
-	"./en-gb.js": 293,
-	"./en-ie": 294,
-	"./en-ie.js": 294,
-	"./en-il": 295,
-	"./en-il.js": 295,
-	"./en-in": 296,
-	"./en-in.js": 296,
-	"./en-nz": 297,
-	"./en-nz.js": 297,
-	"./en-sg": 298,
-	"./en-sg.js": 298,
-	"./eo": 299,
-	"./eo.js": 299,
-	"./es": 300,
-	"./es-do": 301,
-	"./es-do.js": 301,
-	"./es-mx": 302,
-	"./es-mx.js": 302,
-	"./es-us": 303,
-	"./es-us.js": 303,
-	"./es.js": 300,
-	"./et": 304,
-	"./et.js": 304,
-	"./eu": 305,
-	"./eu.js": 305,
-	"./fa": 306,
-	"./fa.js": 306,
-	"./fi": 307,
-	"./fi.js": 307,
-	"./fil": 308,
-	"./fil.js": 308,
-	"./fo": 309,
-	"./fo.js": 309,
-	"./fr": 310,
-	"./fr-ca": 311,
-	"./fr-ca.js": 311,
-	"./fr-ch": 312,
-	"./fr-ch.js": 312,
-	"./fr.js": 310,
-	"./fy": 313,
-	"./fy.js": 313,
-	"./ga": 314,
-	"./ga.js": 314,
-	"./gd": 315,
-	"./gd.js": 315,
-	"./gl": 316,
-	"./gl.js": 316,
-	"./gom-deva": 317,
-	"./gom-deva.js": 317,
-	"./gom-latn": 318,
-	"./gom-latn.js": 318,
-	"./gu": 319,
-	"./gu.js": 319,
-	"./he": 320,
-	"./he.js": 320,
-	"./hi": 321,
-	"./hi.js": 321,
-	"./hr": 322,
-	"./hr.js": 322,
-	"./hu": 323,
-	"./hu.js": 323,
-	"./hy-am": 324,
-	"./hy-am.js": 324,
-	"./id": 325,
-	"./id.js": 325,
-	"./is": 326,
-	"./is.js": 326,
-	"./it": 327,
-	"./it-ch": 328,
-	"./it-ch.js": 328,
-	"./it.js": 327,
-	"./ja": 329,
-	"./ja.js": 329,
-	"./jv": 330,
-	"./jv.js": 330,
-	"./ka": 331,
-	"./ka.js": 331,
-	"./kk": 332,
-	"./kk.js": 332,
-	"./km": 333,
-	"./km.js": 333,
-	"./kn": 334,
-	"./kn.js": 334,
-	"./ko": 335,
-	"./ko.js": 335,
-	"./ku": 336,
-	"./ku.js": 336,
-	"./ky": 337,
-	"./ky.js": 337,
-	"./lb": 338,
-	"./lb.js": 338,
-	"./lo": 339,
-	"./lo.js": 339,
-	"./lt": 340,
-	"./lt.js": 340,
-	"./lv": 341,
-	"./lv.js": 341,
-	"./me": 342,
-	"./me.js": 342,
-	"./mi": 343,
-	"./mi.js": 343,
-	"./mk": 344,
-	"./mk.js": 344,
-	"./ml": 345,
-	"./ml.js": 345,
-	"./mn": 346,
-	"./mn.js": 346,
-	"./mr": 347,
-	"./mr.js": 347,
-	"./ms": 348,
-	"./ms-my": 349,
-	"./ms-my.js": 349,
-	"./ms.js": 348,
-	"./mt": 350,
-	"./mt.js": 350,
-	"./my": 351,
-	"./my.js": 351,
-	"./nb": 352,
-	"./nb.js": 352,
-	"./ne": 353,
-	"./ne.js": 353,
-	"./nl": 354,
-	"./nl-be": 355,
-	"./nl-be.js": 355,
-	"./nl.js": 354,
-	"./nn": 356,
-	"./nn.js": 356,
-	"./oc-lnc": 357,
-	"./oc-lnc.js": 357,
-	"./pa-in": 358,
-	"./pa-in.js": 358,
-	"./pl": 359,
-	"./pl.js": 359,
-	"./pt": 360,
-	"./pt-br": 361,
-	"./pt-br.js": 361,
-	"./pt.js": 360,
-	"./ro": 362,
-	"./ro.js": 362,
-	"./ru": 363,
-	"./ru.js": 363,
-	"./sd": 364,
-	"./sd.js": 364,
-	"./se": 365,
-	"./se.js": 365,
-	"./si": 366,
-	"./si.js": 366,
-	"./sk": 367,
-	"./sk.js": 367,
-	"./sl": 368,
-	"./sl.js": 368,
-	"./sq": 369,
-	"./sq.js": 369,
-	"./sr": 370,
-	"./sr-cyrl": 371,
-	"./sr-cyrl.js": 371,
-	"./sr.js": 370,
-	"./ss": 372,
-	"./ss.js": 372,
-	"./sv": 373,
-	"./sv.js": 373,
-	"./sw": 374,
-	"./sw.js": 374,
-	"./ta": 375,
-	"./ta.js": 375,
-	"./te": 376,
-	"./te.js": 376,
-	"./tet": 377,
-	"./tet.js": 377,
-	"./tg": 378,
-	"./tg.js": 378,
-	"./th": 379,
-	"./th.js": 379,
-	"./tk": 380,
-	"./tk.js": 380,
-	"./tl-ph": 381,
-	"./tl-ph.js": 381,
-	"./tlh": 382,
-	"./tlh.js": 382,
-	"./tr": 383,
-	"./tr.js": 383,
-	"./tzl": 384,
-	"./tzl.js": 384,
-	"./tzm": 385,
-	"./tzm-latn": 386,
-	"./tzm-latn.js": 386,
-	"./tzm.js": 385,
-	"./ug-cn": 387,
-	"./ug-cn.js": 387,
-	"./uk": 388,
-	"./uk.js": 388,
-	"./ur": 389,
-	"./ur.js": 389,
-	"./uz": 390,
-	"./uz-latn": 391,
-	"./uz-latn.js": 391,
-	"./uz.js": 390,
-	"./vi": 392,
-	"./vi.js": 392,
-	"./x-pseudo": 393,
-	"./x-pseudo.js": 393,
-	"./yo": 394,
-	"./yo.js": 394,
-	"./zh-cn": 395,
-	"./zh-cn.js": 395,
-	"./zh-hk": 396,
-	"./zh-hk.js": 396,
-	"./zh-mo": 397,
-	"./zh-mo.js": 397,
-	"./zh-tw": 398,
-	"./zh-tw.js": 398
+	"./af": 262,
+	"./af.js": 262,
+	"./ar": 263,
+	"./ar-dz": 264,
+	"./ar-dz.js": 264,
+	"./ar-kw": 265,
+	"./ar-kw.js": 265,
+	"./ar-ly": 266,
+	"./ar-ly.js": 266,
+	"./ar-ma": 267,
+	"./ar-ma.js": 267,
+	"./ar-sa": 268,
+	"./ar-sa.js": 268,
+	"./ar-tn": 269,
+	"./ar-tn.js": 269,
+	"./ar.js": 263,
+	"./az": 270,
+	"./az.js": 270,
+	"./be": 271,
+	"./be.js": 271,
+	"./bg": 272,
+	"./bg.js": 272,
+	"./bm": 273,
+	"./bm.js": 273,
+	"./bn": 274,
+	"./bn-bd": 275,
+	"./bn-bd.js": 275,
+	"./bn.js": 274,
+	"./bo": 276,
+	"./bo.js": 276,
+	"./br": 277,
+	"./br.js": 277,
+	"./bs": 278,
+	"./bs.js": 278,
+	"./ca": 279,
+	"./ca.js": 279,
+	"./cs": 280,
+	"./cs.js": 280,
+	"./cv": 281,
+	"./cv.js": 281,
+	"./cy": 282,
+	"./cy.js": 282,
+	"./da": 283,
+	"./da.js": 283,
+	"./de": 284,
+	"./de-at": 285,
+	"./de-at.js": 285,
+	"./de-ch": 286,
+	"./de-ch.js": 286,
+	"./de.js": 284,
+	"./dv": 287,
+	"./dv.js": 287,
+	"./el": 288,
+	"./el.js": 288,
+	"./en-au": 289,
+	"./en-au.js": 289,
+	"./en-ca": 290,
+	"./en-ca.js": 290,
+	"./en-gb": 291,
+	"./en-gb.js": 291,
+	"./en-ie": 292,
+	"./en-ie.js": 292,
+	"./en-il": 293,
+	"./en-il.js": 293,
+	"./en-in": 294,
+	"./en-in.js": 294,
+	"./en-nz": 295,
+	"./en-nz.js": 295,
+	"./en-sg": 296,
+	"./en-sg.js": 296,
+	"./eo": 297,
+	"./eo.js": 297,
+	"./es": 298,
+	"./es-do": 299,
+	"./es-do.js": 299,
+	"./es-mx": 300,
+	"./es-mx.js": 300,
+	"./es-us": 301,
+	"./es-us.js": 301,
+	"./es.js": 298,
+	"./et": 302,
+	"./et.js": 302,
+	"./eu": 303,
+	"./eu.js": 303,
+	"./fa": 304,
+	"./fa.js": 304,
+	"./fi": 305,
+	"./fi.js": 305,
+	"./fil": 306,
+	"./fil.js": 306,
+	"./fo": 307,
+	"./fo.js": 307,
+	"./fr": 308,
+	"./fr-ca": 309,
+	"./fr-ca.js": 309,
+	"./fr-ch": 310,
+	"./fr-ch.js": 310,
+	"./fr.js": 308,
+	"./fy": 311,
+	"./fy.js": 311,
+	"./ga": 312,
+	"./ga.js": 312,
+	"./gd": 313,
+	"./gd.js": 313,
+	"./gl": 314,
+	"./gl.js": 314,
+	"./gom-deva": 315,
+	"./gom-deva.js": 315,
+	"./gom-latn": 316,
+	"./gom-latn.js": 316,
+	"./gu": 317,
+	"./gu.js": 317,
+	"./he": 318,
+	"./he.js": 318,
+	"./hi": 319,
+	"./hi.js": 319,
+	"./hr": 320,
+	"./hr.js": 320,
+	"./hu": 321,
+	"./hu.js": 321,
+	"./hy-am": 322,
+	"./hy-am.js": 322,
+	"./id": 323,
+	"./id.js": 323,
+	"./is": 324,
+	"./is.js": 324,
+	"./it": 325,
+	"./it-ch": 326,
+	"./it-ch.js": 326,
+	"./it.js": 325,
+	"./ja": 327,
+	"./ja.js": 327,
+	"./jv": 328,
+	"./jv.js": 328,
+	"./ka": 329,
+	"./ka.js": 329,
+	"./kk": 330,
+	"./kk.js": 330,
+	"./km": 331,
+	"./km.js": 331,
+	"./kn": 332,
+	"./kn.js": 332,
+	"./ko": 333,
+	"./ko.js": 333,
+	"./ku": 334,
+	"./ku.js": 334,
+	"./ky": 335,
+	"./ky.js": 335,
+	"./lb": 336,
+	"./lb.js": 336,
+	"./lo": 337,
+	"./lo.js": 337,
+	"./lt": 338,
+	"./lt.js": 338,
+	"./lv": 339,
+	"./lv.js": 339,
+	"./me": 340,
+	"./me.js": 340,
+	"./mi": 341,
+	"./mi.js": 341,
+	"./mk": 342,
+	"./mk.js": 342,
+	"./ml": 343,
+	"./ml.js": 343,
+	"./mn": 344,
+	"./mn.js": 344,
+	"./mr": 345,
+	"./mr.js": 345,
+	"./ms": 346,
+	"./ms-my": 347,
+	"./ms-my.js": 347,
+	"./ms.js": 346,
+	"./mt": 348,
+	"./mt.js": 348,
+	"./my": 349,
+	"./my.js": 349,
+	"./nb": 350,
+	"./nb.js": 350,
+	"./ne": 351,
+	"./ne.js": 351,
+	"./nl": 352,
+	"./nl-be": 353,
+	"./nl-be.js": 353,
+	"./nl.js": 352,
+	"./nn": 354,
+	"./nn.js": 354,
+	"./oc-lnc": 355,
+	"./oc-lnc.js": 355,
+	"./pa-in": 356,
+	"./pa-in.js": 356,
+	"./pl": 357,
+	"./pl.js": 357,
+	"./pt": 358,
+	"./pt-br": 359,
+	"./pt-br.js": 359,
+	"./pt.js": 358,
+	"./ro": 360,
+	"./ro.js": 360,
+	"./ru": 361,
+	"./ru.js": 361,
+	"./sd": 362,
+	"./sd.js": 362,
+	"./se": 363,
+	"./se.js": 363,
+	"./si": 364,
+	"./si.js": 364,
+	"./sk": 365,
+	"./sk.js": 365,
+	"./sl": 366,
+	"./sl.js": 366,
+	"./sq": 367,
+	"./sq.js": 367,
+	"./sr": 368,
+	"./sr-cyrl": 369,
+	"./sr-cyrl.js": 369,
+	"./sr.js": 368,
+	"./ss": 370,
+	"./ss.js": 370,
+	"./sv": 371,
+	"./sv.js": 371,
+	"./sw": 372,
+	"./sw.js": 372,
+	"./ta": 373,
+	"./ta.js": 373,
+	"./te": 374,
+	"./te.js": 374,
+	"./tet": 375,
+	"./tet.js": 375,
+	"./tg": 376,
+	"./tg.js": 376,
+	"./th": 377,
+	"./th.js": 377,
+	"./tk": 378,
+	"./tk.js": 378,
+	"./tl-ph": 379,
+	"./tl-ph.js": 379,
+	"./tlh": 380,
+	"./tlh.js": 380,
+	"./tr": 381,
+	"./tr.js": 381,
+	"./tzl": 382,
+	"./tzl.js": 382,
+	"./tzm": 383,
+	"./tzm-latn": 384,
+	"./tzm-latn.js": 384,
+	"./tzm.js": 383,
+	"./ug-cn": 385,
+	"./ug-cn.js": 385,
+	"./uk": 386,
+	"./uk.js": 386,
+	"./ur": 387,
+	"./ur.js": 387,
+	"./uz": 388,
+	"./uz-latn": 389,
+	"./uz-latn.js": 389,
+	"./uz.js": 388,
+	"./vi": 390,
+	"./vi.js": 390,
+	"./x-pseudo": 391,
+	"./x-pseudo.js": 391,
+	"./yo": 392,
+	"./yo.js": 392,
+	"./zh-cn": 393,
+	"./zh-cn.js": 393,
+	"./zh-hk": 394,
+	"./zh-hk.js": 394,
+	"./zh-mo": 395,
+	"./zh-mo.js": 395,
+	"./zh-tw": 396,
+	"./zh-tw.js": 396
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -4922,7 +5083,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 548;
+webpackContext.id = 545;
 
 /***/ }),
 
@@ -4932,8 +5093,8 @@ webpackContext.id = 548;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScoresPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5182,14 +5343,14 @@ var ScoresPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 834:
+/***/ 831:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreMedicationPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5335,5 +5496,5 @@ var PreMedicationPage = /** @class */ (function () {
 
 /***/ })
 
-},[502]);
+},[499]);
 //# sourceMappingURL=main.js.map

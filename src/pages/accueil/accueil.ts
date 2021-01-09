@@ -18,6 +18,7 @@ import { CourbesPage } from '../courbes/courbes';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { AntibioprophylaxiePage } from '../antibioprophylaxie/antibioprophylaxie';
 import { ScoresPage } from '../scores/scores';
+import { ProtocolesPage } from '../protocoles/protocoles';
 
 
 
@@ -626,6 +627,10 @@ start() {
     displayScores():void {
       this.navCtrl.push(ScoresPage);
     };
+
+    displayProtocoles():void {
+      this.navCtrl.push(ProtocolesPage);
+    }
 
     openDARwebsite() {
       this.InAppBrowser.create("http://www.dar-robertdebre.com", '_system');

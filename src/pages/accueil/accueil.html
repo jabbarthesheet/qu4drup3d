@@ -65,13 +65,23 @@
     </ion-buttons>
     </ion-toolbar>
 
-  </ion-card-content>
-  </ion-card>
+ 
 
-    
-    <button ion-button   block small color="turquoise"  (click)="displayCourbes()">Biométrie</button>
-    <button ion-button   block small color="pastel-green"  (click)="displayScores()">Scores</button>
+ 
+
+
+  </ion-card-content>
+</ion-card>
+
+
     <button ion-button block small color="warning" (click)="displayUrgences()">Urgences</button>
+  <br>
+    <div class="HomePageButtonsContainer">
+    <button class="homeButton" ion-button small color="turquoise"  (click)="displayCourbes()">Biométrie</button>
+    <button class="homeButton" ion-button small color="pastel-green"  (click)="displayScores()">Scores</button>
+    <button class="homeButton" ion-button small color="pastel-brown"  (click)="displayProtocoles()">Protocoles</button>
+    </div>
+  <br>
     
           <button ion-button small color="light" class="homeButtons" (click)="displayMonitorage()"> Monitorage</button>
           <button ion-button small color="light" class="homeButtons" (click)="displayInduction()"> Induction </button>

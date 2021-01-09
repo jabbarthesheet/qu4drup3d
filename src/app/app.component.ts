@@ -21,6 +21,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CourbesPage } from '../pages/courbes/courbes';
 import { ScoresPage } from '../pages/scores/scores';
+import { InfoPage } from '../pages/info/info';
 
 @Component({
   templateUrl: 'app.html'
@@ -86,17 +87,16 @@ export class MyApp {
   }
 */
 
-
-openProtocoles() {
-  this.nav.setRoot(ProtocolesPage); 
-  this.menu.close();
-};
-
 openRecommandations()
 {
   this.nav.setRoot(RecommandationsPage); 
   this.menu.close();
 };
+
+openInfo(){
+  this.nav.setRoot(InfoPage); 
+  this.menu.close();
+}
 
 openAccueilPage ()
 {

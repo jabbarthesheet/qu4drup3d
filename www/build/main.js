@@ -6,8 +6,8 @@ webpackJsonp([0],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlateauInductionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -413,8 +413,8 @@ var PlateauInductionPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlateauVasPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -704,9 +704,9 @@ var PlateauVasPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EntretienAnesthPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(19);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -931,8 +931,8 @@ var EntretienAnesthPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GestionFluidesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__options_options__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1239,9 +1239,9 @@ var GestionFluidesPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OptionsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(19);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1368,10 +1368,12 @@ var OptionsPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-options',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\options\options.html"*/'\n\n  <ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Options</ion-title>\n  </ion-navbar>\n  <ion-item color="turquoise-fonce"> \n    <ion-label>\n      <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> \n      <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n      <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> \n  </ion-item>\n  </ion-header>\n\n\n<ion-content padding>\n\n  <ion-item>\n    <ion-label color="dark-turquoise">Risque anesthésique</ion-label></ion-item>\n\n\n  <ion-item>\n    <ion-label  class="drogueInduction">Allergies</ion-label>\n    <ion-input  class="drogueInduction" inputmode ="text" type="text" (ionChange)="addAllergie()" [(ngModel)]="NewAllergie" placeholder="Renseigner ici"></ion-input>\n    </ion-item>\n\n    \n<ion-item>\n  <ion-label class="drogueInduction">Durée du jeune pré-op : <b>{{DureeJeune}} heures</b></ion-label>\n  <ion-range class="drogueInduction" color="turquoise-fonce" max="12" step="1" ticks="true" snaps (ionChange)="FnDureeJeune()" [(ngModel)]="DureeJeune"> </ion-range>\n</ion-item>\n  \n\n  <ion-item>\n    <ion-label class="drogueInduction">Estomac plein</ion-label>\n    <ion-toggle class="drogueInduction"  color="turquoise-fonce" [(ngModel)]="EstomacPlein" (ionChange)="SaveEstomac()"></ion-toggle>\n  </ion-item>\n\n  <ion-item>\n    <ion-label color="dark-turquoise">Prématurité & APC\n    </ion-label>\n    </ion-item>\n\n  <ion-item>\n    <ion-label class="drogueInduction" position="stacked">Terme naissance (SA)</ion-label>\n    <ion-input class="drogueInduction" inputmode ="number" type="number" (ionChange)="addTerme(Terme)" [(ngModel)]="Terme" placeholder="Renseigner"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label class="drogueInduction">\n    APC : {{APC}} semaines</ion-label></ion-item>\n\n\n\n \n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\options\options.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
     ], OptionsPage);
     return OptionsPage;
-    var _a, _b, _c, _d;
 }());
 
 ;
@@ -1385,8 +1387,8 @@ var OptionsPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocoRegionalePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1599,8 +1601,8 @@ var LocoRegionalePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntalgiePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__scores_scores__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1895,8 +1897,8 @@ var AntalgiePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UrgencePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2114,8 +2116,8 @@ var UrgencePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MonitoragePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2468,9 +2470,9 @@ var MonitoragePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CourbesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__(543);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__(544);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_chart_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3042,10 +3044,10 @@ var CourbesPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntiInfectieuxPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_anti_infectieux__ = __webpack_require__(494);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__ = __webpack_require__(418);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_anti_infectieux__ = __webpack_require__(495);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__ = __webpack_require__(419);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3102,10 +3104,74 @@ var AntiInfectieuxPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProtocolesPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(167);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the ProtocolesPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ProtocolesPage = /** @class */ (function () {
+    function ProtocolesPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.isShownChirPediatrique = false;
+        this.isShownObstetrique = false;
+    }
+    ProtocolesPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ProtocolesPage');
+    };
+    ProtocolesPage.prototype.ToggleChirPediatrique = function () {
+        this.isShownChirPediatrique = !this.isShownChirPediatrique;
+        this.isShownObstetrique = false;
+    };
+    ProtocolesPage.prototype.ToggleObstetrique = function () {
+        this.isShownObstetrique = !this.isShownObstetrique;
+        this.isShownChirPediatrique = false;
+    };
+    ProtocolesPage.prototype.openExtrophieVesicale = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__extrophie_vesicale_extrophie_vesicale__["a" /* ExtrophieVesicalePage */]);
+    };
+    ;
+    ProtocolesPage.prototype.openScoliose = function () {
+    };
+    ;
+    ProtocolesPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-protocoles',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\protocoles\protocoles.html"*/'<!--\n  Generated template for the ProtocolesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Protocoles</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list> \n    <ion-item-divider>\n      <ion-label color="dark-turquoise" (click)="ToggleChirPediatrique()">Chirurgies pédiatriques spécifiques\n        <ion-icon *ngIf="!isShownChirPediatrique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownChirPediatrique" class="OpenCloseIcon" name="close"   style="zoom:0.9"></ion-icon>\n      </ion-label></ion-item-divider>\n\n      <ion-card class="drogueContainer">\n      <ion-card-content *ngIf="isShownChirPediatrique">\n      <ion-item (click)="openExtrophieVesicale()"><ion-label>\n        <ion-icon start name="list"></ion-icon>\n        &nbsp;&nbsp; Extrophie Vésicale</ion-label></ion-item>\n\n      <ion-item (click)="openScoliose()"><ion-label>\n        <ion-icon start name="list"></ion-icon>\n        &nbsp;&nbsp; Scoliose (à venir)</ion-label></ion-item>\n\n      </ion-card-content>\n      </ion-card>\n\n    <ion-item-divider>\n      <ion-label color="dark-turquoise" (click)="ToggleObstetrique()">\n        Obstétrique\n        <ion-icon *ngIf="!isShownObstetrique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownObstetrique" class="OpenCloseIcon" name="close"   style="zoom:0.9"></ion-icon>\n      </ion-label>\n      </ion-item-divider>\n\n      <ion-card class="drogueContainer">\n        <ion-card-content *ngIf=isShownObstetrique>\n\n      <ion-item>\n        <ion-label>\n          <ion-icon start name="list"></ion-icon>\n          &nbsp;&nbsp; Péridurale (à venir)\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>\n          <ion-icon start name="list"></ion-icon>\n          &nbsp;&nbsp; Péridurale déambulatoire (à venir)\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>\n          <ion-icon start name="list"></ion-icon>\n          &nbsp;&nbsp; Césarienne (à venir)\n        </ion-label>\n      </ion-item>\n\n        </ion-card-content>\n      </ion-card>\n\n\n\n\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\protocoles\protocoles.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+    ], ProtocolesPage);
+    return ProtocolesPage;
+}());
+
+//# sourceMappingURL=protocoles.js.map
+
+/***/ }),
+
+/***/ 167:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExtrophieVesicalePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3327,7 +3393,7 @@ var ExtrophieVesicalePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 177:
+/***/ 178:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -3340,11 +3406,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 177;
+webpackEmptyAsyncContext.id = 178;
 
 /***/ }),
 
-/***/ 221:
+/***/ 222:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -3357,7 +3423,7 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 221;
+webpackEmptyAsyncContext.id = 222;
 
 /***/ }),
 
@@ -3367,8 +3433,8 @@ webpackEmptyAsyncContext.id = 221;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccueilPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__plateau_induction_plateau_induction__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__plateau_vas_plateau_vas__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__entretien_anesth_entretien_anesth__ = __webpack_require__(140);
@@ -3380,8 +3446,9 @@ webpackEmptyAsyncContext.id = 221;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__monitorage_monitorage__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__courbes_courbes__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser_ngx__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(493);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(494);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__scores_scores__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__protocoles_protocoles__ = __webpack_require__(166);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3426,6 +3493,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+
 
 
 
@@ -4063,6 +4131,9 @@ var AccueilPage = /** @class */ (function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_15__scores_scores__["a" /* ScoresPage */]);
     };
     ;
+    AccueilPage.prototype.displayProtocoles = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_16__protocoles_protocoles__["a" /* ProtocolesPage */]);
+    };
     AccueilPage.prototype.openDARwebsite = function () {
         this.InAppBrowser.create("http://www.dar-robertdebre.com", '_system');
     };
@@ -4101,16 +4172,25 @@ var AccueilPage = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]) === "function" && _a || Object)
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
     ], AccueilPage.prototype, "nav", void 0);
     AccueilPage = AccueilPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-accueil',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>QuadruPed calculs</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n\n  <ion-card class="homePagePatient">\n    <ion-card-content>\n\n      <ion-toolbar  color="turquoise" class="timerContainer">\n        <ion-buttons >        \n          <p text-center class="comment">\n          {{time}}\n          </p>\n  \n      <button  *ngIf="!running" color="dark-turquoise" ion-button (click)="start()"><ion-icon name="play"></ion-icon></button>\n\n    \n       \n      <button  *ngIf="running" color="dark-turquoise" ion-button (click)="stop()"><ion-icon name="pause"></ion-icon></button>\n         \n       <button ion-button (click)="reset()"><ion-icon color="dark-turquoise" name="refresh-circle"></ion-icon></button>\n    \n    </ion-buttons>\n  </ion-toolbar>\n\n    <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient">  \n\n\n      <ion-item>\n        <ion-label>\n        <hr>\n        <p class="monPatient"><b>{{sexeMF}}</b> - <b>{{ageLecture}} ans</b> ( = {{AgeNum}} mois) - <b>{{PoidsNum}} kg</b> - {{Taille}} cm</p>\n        <p class="monPatient">Estomac {{EstomacOuiNon}} - Jeûne {{DureeJeune}} h - Allergie : {{Allergie}}</p>\n      </ion-label>\n      </ion-item> \n\n      <ion-toolbar class="HomeButtonContainer">\n        <ion-buttons>\n          <button class="SexeToggle">\n          <ion-segment swipeGesture="true" color="dark-turquoise" [(ngModel)]="sexeMF" (ionChange)="SetSexe()">\n            <ion-segment-button value="Fille">\n              <ion-icon class="segmentIcon" name="female"></ion-icon>\n            </ion-segment-button>\n            <ion-segment-button value="Garçon">\n              <ion-icon class="segmentIcon" name="male"></ion-icon>\n            </ion-segment-button>\n          </ion-segment>\n        </button>\n          <button color="dark-turquoise" ion-button small (click)="showPickerAge()">Age</button>\n          <button color="dark-turquoise" ion-button small (click)="showPickerPoids()">Poids</button>\n          <button color="turquoise-fonce" ion-button small (click)="showPickerTaille()">Taille</button>\n          <hr>\n          <button ion-button small color="turquoise-fonce"  (click)="displayOptions()">Options </button>\n          <button ion-button  small color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>\n          <button ion-button  small color="turquoise-fonce"  (click)="help()"><ion-icon name="help-circle"></ion-icon></button>\n\n  \n    </ion-buttons>\n    </ion-toolbar>\n\n  </ion-card-content>\n  </ion-card>\n\n    \n    <button ion-button   block small color="turquoise"  (click)="displayCourbes()">Biométrie</button>\n    <button ion-button   block small color="pastel-green"  (click)="displayScores()">Scores</button>\n    <button ion-button block small color="warning" (click)="displayUrgences()">Urgences</button>\n    \n          <button ion-button small color="light" class="homeButtons" (click)="displayMonitorage()"> Monitorage</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayInduction()"> Induction </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayVAS()"> Voies Aériennes </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayATBprophylaxie()"> Antibiotiques </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayEntretien()"> Entretien </button> \n    \n          <button ion-button small color="light" class="homeButtons" (click)="displayGestionFluides()"> Solutés et PSL</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayALR()"> Loco-régionale</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayPostop()">Antalgie & Post-op</button>\n\n    \n      <img class="logoDAR" (click)="openDARwebsite()" src="/assets/imgs/logo_dar.png"> \n\n      <!--*\n      <ion-toolbar>\n        <ion-buttons>\n          <button ion-button slot="start" fill="solid">\n            <ion-icon slot="center" name="person-circle"></ion-icon>\n            Contact\n          </button> \n          <button ion-button slot="end" fill="solid" color="dark-green">\n            Aide \n            <ion-icon slot="end" name="help-circle"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-toolbar>\n    *-->\n\n      </ion-content>\n\n  \n\n\n  \n \n\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/,
+            selector: 'page-accueil',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/'<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>QuadruPed calculs</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n\n  <ion-card class="homePagePatient">\n    <ion-card-content>\n\n      <ion-toolbar  color="turquoise" class="timerContainer">\n        <ion-buttons >        \n          <p text-center class="comment">\n          {{time}}\n          </p>\n  \n      <button  *ngIf="!running" color="dark-turquoise" ion-button (click)="start()"><ion-icon name="play"></ion-icon></button>\n\n    \n       \n      <button  *ngIf="running" color="dark-turquoise" ion-button (click)="stop()"><ion-icon name="pause"></ion-icon></button>\n         \n       <button ion-button (click)="reset()"><ion-icon color="dark-turquoise" name="refresh-circle"></ion-icon></button>\n    \n    </ion-buttons>\n  </ion-toolbar>\n\n    <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient">  \n\n\n      <ion-item>\n        <ion-label>\n        <hr>\n        <p class="monPatient"><b>{{sexeMF}}</b> - <b>{{ageLecture}} ans</b> ( = {{AgeNum}} mois) - <b>{{PoidsNum}} kg</b> - {{Taille}} cm</p>\n        <p class="monPatient">Estomac {{EstomacOuiNon}} - Jeûne {{DureeJeune}} h - Allergie : {{Allergie}}</p>\n      </ion-label>\n      </ion-item> \n\n      <ion-toolbar class="HomeButtonContainer">\n        <ion-buttons>\n          <button class="SexeToggle">\n          <ion-segment swipeGesture="true" color="dark-turquoise" [(ngModel)]="sexeMF" (ionChange)="SetSexe()">\n            <ion-segment-button value="Fille">\n              <ion-icon class="segmentIcon" name="female"></ion-icon>\n            </ion-segment-button>\n            <ion-segment-button value="Garçon">\n              <ion-icon class="segmentIcon" name="male"></ion-icon>\n            </ion-segment-button>\n          </ion-segment>\n        </button>\n          <button color="dark-turquoise" ion-button small (click)="showPickerAge()">Age</button>\n          <button color="dark-turquoise" ion-button small (click)="showPickerPoids()">Poids</button>\n          <button color="turquoise-fonce" ion-button small (click)="showPickerTaille()">Taille</button>\n          <hr>\n          <button ion-button small color="turquoise-fonce"  (click)="displayOptions()">Options </button>\n          <button ion-button  small color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>\n          <button ion-button  small color="turquoise-fonce"  (click)="help()"><ion-icon name="help-circle"></ion-icon></button>\n\n  \n    </ion-buttons>\n    </ion-toolbar>\n\n \n\n \n\n\n  </ion-card-content>\n</ion-card>\n\n\n    <button ion-button block small color="warning" (click)="displayUrgences()">Urgences</button>\n  <br>\n    <div class="HomePageButtonsContainer">\n    <button class="homeButton" ion-button small color="turquoise"  (click)="displayCourbes()">Biométrie</button>\n    <button class="homeButton" ion-button small color="pastel-green"  (click)="displayScores()">Scores</button>\n    <button class="homeButton" ion-button small color="pastel-brown"  (click)="displayProtocoles()">Protocoles</button>\n    </div>\n  <br>\n    \n          <button ion-button small color="light" class="homeButtons" (click)="displayMonitorage()"> Monitorage</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayInduction()"> Induction </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayVAS()"> Voies Aériennes </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayATBprophylaxie()"> Antibiotiques </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayEntretien()"> Entretien </button> \n    \n          <button ion-button small color="light" class="homeButtons" (click)="displayGestionFluides()"> Solutés et PSL</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayALR()"> Loco-régionale</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayPostop()">Antalgie & Post-op</button>\n\n    \n      <img class="logoDAR" (click)="openDARwebsite()" src="/assets/imgs/logo_dar.png"> \n\n      <!--*\n      <ion-toolbar>\n        <ion-buttons>\n          <button ion-button slot="start" fill="solid">\n            <ion-icon slot="center" name="person-circle"></ion-icon>\n            Contact\n          </button> \n          <button ion-button slot="end" fill="solid" color="dark-green">\n            Aide \n            <ion-icon slot="end" name="help-circle"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-toolbar>\n    *-->\n\n      </ion-content>\n\n  \n\n\n  \n \n\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser_ngx__["a" /* InAppBrowser */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser_ngx__["a" /* InAppBrowser */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* PickerController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* PickerController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* PopoverController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* PopoverController */]) === "function" && _l || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+            __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser_ngx__["a" /* InAppBrowser */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* PickerController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* PopoverController */]])
     ], AccueilPage);
     return AccueilPage;
-    var AccueilPage_1, _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+    var AccueilPage_1;
 }());
 
 ;
@@ -4118,15 +4198,15 @@ var AccueilPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 493:
+/***/ 494:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntibioprophylaxiePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__anti_infectieux_anti_infectieux__ = __webpack_require__(165);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4359,7 +4439,7 @@ var AntibioprophylaxiePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 494:
+/***/ 495:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4430,77 +4510,13 @@ var ServiceDataProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 495:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProtocolesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(166);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the ProtocolesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ProtocolesPage = /** @class */ (function () {
-    function ProtocolesPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.isShownChirPediatrique = false;
-        this.isShownObstetrique = false;
-    }
-    ProtocolesPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ProtocolesPage');
-    };
-    ProtocolesPage.prototype.ToggleChirPediatrique = function () {
-        this.isShownChirPediatrique = !this.isShownChirPediatrique;
-        this.isShownObstetrique = false;
-    };
-    ProtocolesPage.prototype.ToggleObstetrique = function () {
-        this.isShownObstetrique = !this.isShownObstetrique;
-        this.isShownChirPediatrique = false;
-    };
-    ProtocolesPage.prototype.openExtrophieVesicale = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__extrophie_vesicale_extrophie_vesicale__["a" /* ExtrophieVesicalePage */]);
-    };
-    ;
-    ProtocolesPage.prototype.openScoliose = function () {
-    };
-    ;
-    ProtocolesPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-protocoles',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\protocoles\protocoles.html"*/'<!--\n  Generated template for the ProtocolesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Protocoles</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list> \n    <ion-item-divider>\n      <ion-label color="dark-turquoise" (click)="ToggleChirPediatrique()">Chirurgies pédiatriques spécifiques\n        <ion-icon *ngIf="!isShownChirPediatrique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownChirPediatrique" class="OpenCloseIcon" name="close"   style="zoom:0.9"></ion-icon>\n      </ion-label></ion-item-divider>\n\n      <ion-card class="drogueContainer">\n      <ion-card-content *ngIf="isShownChirPediatrique">\n      <ion-item (click)="openExtrophieVesicale()"><ion-label>\n        <ion-icon start name="list"></ion-icon>\n        &nbsp;&nbsp; Extrophie Vésicale</ion-label></ion-item>\n\n      <ion-item (click)="openScoliose()"><ion-label>\n        <ion-icon start name="list"></ion-icon>\n        &nbsp;&nbsp; Scoliose</ion-label></ion-item>\n\n      </ion-card-content>\n      </ion-card>\n\n    <ion-item-divider>\n      <ion-label color="dark-turquoise" (click)="ToggleObstetrique()">\n        Obstétrique\n        <ion-icon *ngIf="!isShownObstetrique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownObstetrique" class="OpenCloseIcon" name="close"   style="zoom:0.9"></ion-icon>\n      </ion-label>\n      </ion-item-divider>\n\n      <ion-card class="drogueContainer">\n        <ion-card-content *ngIf=isShownObstetrique>\n\n      <ion-item>\n        <ion-label>\n          <ion-icon start name="list"></ion-icon>\n          &nbsp;&nbsp; Péridurale\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>\n          <ion-icon start name="list"></ion-icon>\n          &nbsp;&nbsp; Péridurale déambulatoire\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>\n          <ion-icon start name="list"></ion-icon>\n          &nbsp;&nbsp; Césarienne\n        </ion-label>\n      </ion-item>\n\n        </ion-card-content>\n      </ion-card>\n\n\n\n\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\protocoles\protocoles.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-    ], ProtocolesPage);
-    return ProtocolesPage;
-}());
-
-//# sourceMappingURL=protocoles.js.map
-
-/***/ }),
-
 /***/ 496:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecommandationsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser_ngx__ = __webpack_require__(148);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4549,9 +4565,54 @@ var RecommandationsPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the InfoPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var InfoPage = /** @class */ (function () {
+    function InfoPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    InfoPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad InfoPage');
+    };
+    InfoPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-info',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\info\info.html"*/'<!--\n  Generated template for the InfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header translucent>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Informations & CGU</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  Equipe QuadruPed : \n  <br><br>\n  <b>Développement :</b> Pierre Pardessus \n  <br><br>\n  <b>Validation & relecture :</b> Pr. Souhayl Dahmani, Dr. Florence Julien, Dr. Mehdi Azale, Dr. Maud Loiselle.\n  <br>\n\n  <hr>\n  <br>\n  Conditions générales d\'utilisation : \n  <br>\n  (en cours).\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\info\info.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+    ], InfoPage);
+    return InfoPage;
+}());
+
+//# sourceMappingURL=info.js.map
+
+/***/ }),
+
+/***/ 500:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(500);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(504);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(501);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(505);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -4559,17 +4620,17 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 504:
+/***/ 505:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(542);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(832);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(543);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(833);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser_ngx__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_accueil_accueil__ = __webpack_require__(24);
@@ -4581,23 +4642,25 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_urgence_urgence__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_loco_regionale_loco_regionale__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__ = __webpack_require__(497);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_splash_screen__ = __webpack_require__(498);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_service_data_liste_anti_infectieux__ = __webpack_require__(494);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_protocoles_protocoles__ = __webpack_require__(495);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_service_data_liste_anti_infectieux__ = __webpack_require__(495);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_protocoles_protocoles__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_recommandations_recommandations__ = __webpack_require__(496);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_monitorage_monitorage__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_courbes_courbes__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(493);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(494);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_scores_scores__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_info_info__ = __webpack_require__(499);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -4650,6 +4713,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_25__pages_courbes_courbes__["a" /* CourbesPage */],
                 __WEBPACK_IMPORTED_MODULE_26__pages_antibioprophylaxie_antibioprophylaxie__["a" /* AntibioprophylaxiePage */],
                 __WEBPACK_IMPORTED_MODULE_27__pages_scores_scores__["a" /* ScoresPage */],
+                __WEBPACK_IMPORTED_MODULE_28__pages_info_info__["a" /* InfoPage */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["a" /* HttpClientModule */],
@@ -4685,6 +4749,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_25__pages_courbes_courbes__["a" /* CourbesPage */],
                 __WEBPACK_IMPORTED_MODULE_26__pages_antibioprophylaxie_antibioprophylaxie__["a" /* AntibioprophylaxiePage */],
                 __WEBPACK_IMPORTED_MODULE_27__pages_scores_scores__["a" /* ScoresPage */],
+                __WEBPACK_IMPORTED_MODULE_28__pages_info_info__["a" /* InfoPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__["a" /* StatusBar */],
@@ -4703,31 +4768,32 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 542:
+/***/ 543:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_accueil_accueil__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_plateau_induction_plateau_induction__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_gestion_fluides_gestion_fluides__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_plateau_vas_plateau_vas__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_antalgie_antalgie__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_urgence_urgence__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_pre_medication_pre_medication__ = __webpack_require__(831);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_pre_medication_pre_medication__ = __webpack_require__(832);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_loco_regionale_loco_regionale__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_monitorage_monitorage__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_protocoles_protocoles__ = __webpack_require__(495);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_protocoles_protocoles__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_recommandations_recommandations__ = __webpack_require__(496);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_status_bar__ = __webpack_require__(497);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_splash_screen__ = __webpack_require__(498);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_courbes_courbes__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_scores_scores__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_info_info__ = __webpack_require__(499);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4737,6 +4803,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -4808,16 +4875,15 @@ var MyApp = /** @class */ (function () {
       this.nav.setRoot(page.component);
     }
   */
-    MyApp.prototype.openProtocoles = function () {
-        this.nav.setRoot(__WEBPACK_IMPORTED_MODULE_14__pages_protocoles_protocoles__["a" /* ProtocolesPage */]);
-        this.menu.close();
-    };
-    ;
     MyApp.prototype.openRecommandations = function () {
         this.nav.setRoot(__WEBPACK_IMPORTED_MODULE_15__pages_recommandations_recommandations__["a" /* RecommandationsPage */]);
         this.menu.close();
     };
     ;
+    MyApp.prototype.openInfo = function () {
+        this.nav.setRoot(__WEBPACK_IMPORTED_MODULE_20__pages_info_info__["a" /* InfoPage */]);
+        this.menu.close();
+    };
     MyApp.prototype.openAccueilPage = function () {
         this.nav.setRoot(__WEBPACK_IMPORTED_MODULE_2__pages_accueil_accueil__["a" /* AccueilPage */]);
         this.menu.close();
@@ -4828,7 +4894,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\app\app.html"*/'<ion-menu [content]="content" type="overlay" side="start" menuId="custom" contentId="main" class="my-custom-menu">\n\n  <ion-header>\n    <ion-toolbar color="tertiary">\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content>\n    <ion-list>\n\n      <ion-item (click)="openAccueilPage()" color="turquoise">QuadruPed <b>Calculs</b></ion-item>\n    \n      <ion-item (click)="openProtocoles()" color="light">QuadruPed <b>Protocoles</b></ion-item> \n    \n      <ion-item (click)="openRecommandations()" color="light">Recommandations</ion-item> \n\n    </ion-list>\n  </ion-content>\n  \n    </ion-menu>\n\n\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\app\app.html"*/'<ion-menu [content]="content" type="overlay" side="start" menuId="custom" contentId="main" class="my-custom-menu">\n\n  <ion-header>\n    <ion-toolbar color="tertiary">\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content>\n    <ion-list>\n\n      <ion-item (click)="openAccueilPage()" color="light"><b>Accueil QuadruPed</b></ion-item>    \n      <ion-item (click)="openRecommandations()" color="light">Recommandations & références</ion-item> \n      <ion-item (click)="openInfo()" color="light">Informations & CGU</ion-item> \n\n    </ion-list>\n  </ion-content>\n  \n    </ion-menu>\n\n\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */],
@@ -4843,280 +4909,280 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 545:
+/***/ 546:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 262,
-	"./af.js": 262,
-	"./ar": 263,
-	"./ar-dz": 264,
-	"./ar-dz.js": 264,
-	"./ar-kw": 265,
-	"./ar-kw.js": 265,
-	"./ar-ly": 266,
-	"./ar-ly.js": 266,
-	"./ar-ma": 267,
-	"./ar-ma.js": 267,
-	"./ar-sa": 268,
-	"./ar-sa.js": 268,
-	"./ar-tn": 269,
-	"./ar-tn.js": 269,
-	"./ar.js": 263,
-	"./az": 270,
-	"./az.js": 270,
-	"./be": 271,
-	"./be.js": 271,
-	"./bg": 272,
-	"./bg.js": 272,
-	"./bm": 273,
-	"./bm.js": 273,
-	"./bn": 274,
-	"./bn-bd": 275,
-	"./bn-bd.js": 275,
-	"./bn.js": 274,
-	"./bo": 276,
-	"./bo.js": 276,
-	"./br": 277,
-	"./br.js": 277,
-	"./bs": 278,
-	"./bs.js": 278,
-	"./ca": 279,
-	"./ca.js": 279,
-	"./cs": 280,
-	"./cs.js": 280,
-	"./cv": 281,
-	"./cv.js": 281,
-	"./cy": 282,
-	"./cy.js": 282,
-	"./da": 283,
-	"./da.js": 283,
-	"./de": 284,
-	"./de-at": 285,
-	"./de-at.js": 285,
-	"./de-ch": 286,
-	"./de-ch.js": 286,
-	"./de.js": 284,
-	"./dv": 287,
-	"./dv.js": 287,
-	"./el": 288,
-	"./el.js": 288,
-	"./en-au": 289,
-	"./en-au.js": 289,
-	"./en-ca": 290,
-	"./en-ca.js": 290,
-	"./en-gb": 291,
-	"./en-gb.js": 291,
-	"./en-ie": 292,
-	"./en-ie.js": 292,
-	"./en-il": 293,
-	"./en-il.js": 293,
-	"./en-in": 294,
-	"./en-in.js": 294,
-	"./en-nz": 295,
-	"./en-nz.js": 295,
-	"./en-sg": 296,
-	"./en-sg.js": 296,
-	"./eo": 297,
-	"./eo.js": 297,
-	"./es": 298,
-	"./es-do": 299,
-	"./es-do.js": 299,
-	"./es-mx": 300,
-	"./es-mx.js": 300,
-	"./es-us": 301,
-	"./es-us.js": 301,
-	"./es.js": 298,
-	"./et": 302,
-	"./et.js": 302,
-	"./eu": 303,
-	"./eu.js": 303,
-	"./fa": 304,
-	"./fa.js": 304,
-	"./fi": 305,
-	"./fi.js": 305,
-	"./fil": 306,
-	"./fil.js": 306,
-	"./fo": 307,
-	"./fo.js": 307,
-	"./fr": 308,
-	"./fr-ca": 309,
-	"./fr-ca.js": 309,
-	"./fr-ch": 310,
-	"./fr-ch.js": 310,
-	"./fr.js": 308,
-	"./fy": 311,
-	"./fy.js": 311,
-	"./ga": 312,
-	"./ga.js": 312,
-	"./gd": 313,
-	"./gd.js": 313,
-	"./gl": 314,
-	"./gl.js": 314,
-	"./gom-deva": 315,
-	"./gom-deva.js": 315,
-	"./gom-latn": 316,
-	"./gom-latn.js": 316,
-	"./gu": 317,
-	"./gu.js": 317,
-	"./he": 318,
-	"./he.js": 318,
-	"./hi": 319,
-	"./hi.js": 319,
-	"./hr": 320,
-	"./hr.js": 320,
-	"./hu": 321,
-	"./hu.js": 321,
-	"./hy-am": 322,
-	"./hy-am.js": 322,
-	"./id": 323,
-	"./id.js": 323,
-	"./is": 324,
-	"./is.js": 324,
-	"./it": 325,
-	"./it-ch": 326,
-	"./it-ch.js": 326,
-	"./it.js": 325,
-	"./ja": 327,
-	"./ja.js": 327,
-	"./jv": 328,
-	"./jv.js": 328,
-	"./ka": 329,
-	"./ka.js": 329,
-	"./kk": 330,
-	"./kk.js": 330,
-	"./km": 331,
-	"./km.js": 331,
-	"./kn": 332,
-	"./kn.js": 332,
-	"./ko": 333,
-	"./ko.js": 333,
-	"./ku": 334,
-	"./ku.js": 334,
-	"./ky": 335,
-	"./ky.js": 335,
-	"./lb": 336,
-	"./lb.js": 336,
-	"./lo": 337,
-	"./lo.js": 337,
-	"./lt": 338,
-	"./lt.js": 338,
-	"./lv": 339,
-	"./lv.js": 339,
-	"./me": 340,
-	"./me.js": 340,
-	"./mi": 341,
-	"./mi.js": 341,
-	"./mk": 342,
-	"./mk.js": 342,
-	"./ml": 343,
-	"./ml.js": 343,
-	"./mn": 344,
-	"./mn.js": 344,
-	"./mr": 345,
-	"./mr.js": 345,
-	"./ms": 346,
-	"./ms-my": 347,
-	"./ms-my.js": 347,
-	"./ms.js": 346,
-	"./mt": 348,
-	"./mt.js": 348,
-	"./my": 349,
-	"./my.js": 349,
-	"./nb": 350,
-	"./nb.js": 350,
-	"./ne": 351,
-	"./ne.js": 351,
-	"./nl": 352,
-	"./nl-be": 353,
-	"./nl-be.js": 353,
-	"./nl.js": 352,
-	"./nn": 354,
-	"./nn.js": 354,
-	"./oc-lnc": 355,
-	"./oc-lnc.js": 355,
-	"./pa-in": 356,
-	"./pa-in.js": 356,
-	"./pl": 357,
-	"./pl.js": 357,
-	"./pt": 358,
-	"./pt-br": 359,
-	"./pt-br.js": 359,
-	"./pt.js": 358,
-	"./ro": 360,
-	"./ro.js": 360,
-	"./ru": 361,
-	"./ru.js": 361,
-	"./sd": 362,
-	"./sd.js": 362,
-	"./se": 363,
-	"./se.js": 363,
-	"./si": 364,
-	"./si.js": 364,
-	"./sk": 365,
-	"./sk.js": 365,
-	"./sl": 366,
-	"./sl.js": 366,
-	"./sq": 367,
-	"./sq.js": 367,
-	"./sr": 368,
-	"./sr-cyrl": 369,
-	"./sr-cyrl.js": 369,
-	"./sr.js": 368,
-	"./ss": 370,
-	"./ss.js": 370,
-	"./sv": 371,
-	"./sv.js": 371,
-	"./sw": 372,
-	"./sw.js": 372,
-	"./ta": 373,
-	"./ta.js": 373,
-	"./te": 374,
-	"./te.js": 374,
-	"./tet": 375,
-	"./tet.js": 375,
-	"./tg": 376,
-	"./tg.js": 376,
-	"./th": 377,
-	"./th.js": 377,
-	"./tk": 378,
-	"./tk.js": 378,
-	"./tl-ph": 379,
-	"./tl-ph.js": 379,
-	"./tlh": 380,
-	"./tlh.js": 380,
-	"./tr": 381,
-	"./tr.js": 381,
-	"./tzl": 382,
-	"./tzl.js": 382,
-	"./tzm": 383,
-	"./tzm-latn": 384,
-	"./tzm-latn.js": 384,
-	"./tzm.js": 383,
-	"./ug-cn": 385,
-	"./ug-cn.js": 385,
-	"./uk": 386,
-	"./uk.js": 386,
-	"./ur": 387,
-	"./ur.js": 387,
-	"./uz": 388,
-	"./uz-latn": 389,
-	"./uz-latn.js": 389,
-	"./uz.js": 388,
-	"./vi": 390,
-	"./vi.js": 390,
-	"./x-pseudo": 391,
-	"./x-pseudo.js": 391,
-	"./yo": 392,
-	"./yo.js": 392,
-	"./zh-cn": 393,
-	"./zh-cn.js": 393,
-	"./zh-hk": 394,
-	"./zh-hk.js": 394,
-	"./zh-mo": 395,
-	"./zh-mo.js": 395,
-	"./zh-tw": 396,
-	"./zh-tw.js": 396
+	"./af": 263,
+	"./af.js": 263,
+	"./ar": 264,
+	"./ar-dz": 265,
+	"./ar-dz.js": 265,
+	"./ar-kw": 266,
+	"./ar-kw.js": 266,
+	"./ar-ly": 267,
+	"./ar-ly.js": 267,
+	"./ar-ma": 268,
+	"./ar-ma.js": 268,
+	"./ar-sa": 269,
+	"./ar-sa.js": 269,
+	"./ar-tn": 270,
+	"./ar-tn.js": 270,
+	"./ar.js": 264,
+	"./az": 271,
+	"./az.js": 271,
+	"./be": 272,
+	"./be.js": 272,
+	"./bg": 273,
+	"./bg.js": 273,
+	"./bm": 274,
+	"./bm.js": 274,
+	"./bn": 275,
+	"./bn-bd": 276,
+	"./bn-bd.js": 276,
+	"./bn.js": 275,
+	"./bo": 277,
+	"./bo.js": 277,
+	"./br": 278,
+	"./br.js": 278,
+	"./bs": 279,
+	"./bs.js": 279,
+	"./ca": 280,
+	"./ca.js": 280,
+	"./cs": 281,
+	"./cs.js": 281,
+	"./cv": 282,
+	"./cv.js": 282,
+	"./cy": 283,
+	"./cy.js": 283,
+	"./da": 284,
+	"./da.js": 284,
+	"./de": 285,
+	"./de-at": 286,
+	"./de-at.js": 286,
+	"./de-ch": 287,
+	"./de-ch.js": 287,
+	"./de.js": 285,
+	"./dv": 288,
+	"./dv.js": 288,
+	"./el": 289,
+	"./el.js": 289,
+	"./en-au": 290,
+	"./en-au.js": 290,
+	"./en-ca": 291,
+	"./en-ca.js": 291,
+	"./en-gb": 292,
+	"./en-gb.js": 292,
+	"./en-ie": 293,
+	"./en-ie.js": 293,
+	"./en-il": 294,
+	"./en-il.js": 294,
+	"./en-in": 295,
+	"./en-in.js": 295,
+	"./en-nz": 296,
+	"./en-nz.js": 296,
+	"./en-sg": 297,
+	"./en-sg.js": 297,
+	"./eo": 298,
+	"./eo.js": 298,
+	"./es": 299,
+	"./es-do": 300,
+	"./es-do.js": 300,
+	"./es-mx": 301,
+	"./es-mx.js": 301,
+	"./es-us": 302,
+	"./es-us.js": 302,
+	"./es.js": 299,
+	"./et": 303,
+	"./et.js": 303,
+	"./eu": 304,
+	"./eu.js": 304,
+	"./fa": 305,
+	"./fa.js": 305,
+	"./fi": 306,
+	"./fi.js": 306,
+	"./fil": 307,
+	"./fil.js": 307,
+	"./fo": 308,
+	"./fo.js": 308,
+	"./fr": 309,
+	"./fr-ca": 310,
+	"./fr-ca.js": 310,
+	"./fr-ch": 311,
+	"./fr-ch.js": 311,
+	"./fr.js": 309,
+	"./fy": 312,
+	"./fy.js": 312,
+	"./ga": 313,
+	"./ga.js": 313,
+	"./gd": 314,
+	"./gd.js": 314,
+	"./gl": 315,
+	"./gl.js": 315,
+	"./gom-deva": 316,
+	"./gom-deva.js": 316,
+	"./gom-latn": 317,
+	"./gom-latn.js": 317,
+	"./gu": 318,
+	"./gu.js": 318,
+	"./he": 319,
+	"./he.js": 319,
+	"./hi": 320,
+	"./hi.js": 320,
+	"./hr": 321,
+	"./hr.js": 321,
+	"./hu": 322,
+	"./hu.js": 322,
+	"./hy-am": 323,
+	"./hy-am.js": 323,
+	"./id": 324,
+	"./id.js": 324,
+	"./is": 325,
+	"./is.js": 325,
+	"./it": 326,
+	"./it-ch": 327,
+	"./it-ch.js": 327,
+	"./it.js": 326,
+	"./ja": 328,
+	"./ja.js": 328,
+	"./jv": 329,
+	"./jv.js": 329,
+	"./ka": 330,
+	"./ka.js": 330,
+	"./kk": 331,
+	"./kk.js": 331,
+	"./km": 332,
+	"./km.js": 332,
+	"./kn": 333,
+	"./kn.js": 333,
+	"./ko": 334,
+	"./ko.js": 334,
+	"./ku": 335,
+	"./ku.js": 335,
+	"./ky": 336,
+	"./ky.js": 336,
+	"./lb": 337,
+	"./lb.js": 337,
+	"./lo": 338,
+	"./lo.js": 338,
+	"./lt": 339,
+	"./lt.js": 339,
+	"./lv": 340,
+	"./lv.js": 340,
+	"./me": 341,
+	"./me.js": 341,
+	"./mi": 342,
+	"./mi.js": 342,
+	"./mk": 343,
+	"./mk.js": 343,
+	"./ml": 344,
+	"./ml.js": 344,
+	"./mn": 345,
+	"./mn.js": 345,
+	"./mr": 346,
+	"./mr.js": 346,
+	"./ms": 347,
+	"./ms-my": 348,
+	"./ms-my.js": 348,
+	"./ms.js": 347,
+	"./mt": 349,
+	"./mt.js": 349,
+	"./my": 350,
+	"./my.js": 350,
+	"./nb": 351,
+	"./nb.js": 351,
+	"./ne": 352,
+	"./ne.js": 352,
+	"./nl": 353,
+	"./nl-be": 354,
+	"./nl-be.js": 354,
+	"./nl.js": 353,
+	"./nn": 355,
+	"./nn.js": 355,
+	"./oc-lnc": 356,
+	"./oc-lnc.js": 356,
+	"./pa-in": 357,
+	"./pa-in.js": 357,
+	"./pl": 358,
+	"./pl.js": 358,
+	"./pt": 359,
+	"./pt-br": 360,
+	"./pt-br.js": 360,
+	"./pt.js": 359,
+	"./ro": 361,
+	"./ro.js": 361,
+	"./ru": 362,
+	"./ru.js": 362,
+	"./sd": 363,
+	"./sd.js": 363,
+	"./se": 364,
+	"./se.js": 364,
+	"./si": 365,
+	"./si.js": 365,
+	"./sk": 366,
+	"./sk.js": 366,
+	"./sl": 367,
+	"./sl.js": 367,
+	"./sq": 368,
+	"./sq.js": 368,
+	"./sr": 369,
+	"./sr-cyrl": 370,
+	"./sr-cyrl.js": 370,
+	"./sr.js": 369,
+	"./ss": 371,
+	"./ss.js": 371,
+	"./sv": 372,
+	"./sv.js": 372,
+	"./sw": 373,
+	"./sw.js": 373,
+	"./ta": 374,
+	"./ta.js": 374,
+	"./te": 375,
+	"./te.js": 375,
+	"./tet": 376,
+	"./tet.js": 376,
+	"./tg": 377,
+	"./tg.js": 377,
+	"./th": 378,
+	"./th.js": 378,
+	"./tk": 379,
+	"./tk.js": 379,
+	"./tl-ph": 380,
+	"./tl-ph.js": 380,
+	"./tlh": 381,
+	"./tlh.js": 381,
+	"./tr": 382,
+	"./tr.js": 382,
+	"./tzl": 383,
+	"./tzl.js": 383,
+	"./tzm": 384,
+	"./tzm-latn": 385,
+	"./tzm-latn.js": 385,
+	"./tzm.js": 384,
+	"./ug-cn": 386,
+	"./ug-cn.js": 386,
+	"./uk": 387,
+	"./uk.js": 387,
+	"./ur": 388,
+	"./ur.js": 388,
+	"./uz": 389,
+	"./uz-latn": 390,
+	"./uz-latn.js": 390,
+	"./uz.js": 389,
+	"./vi": 391,
+	"./vi.js": 391,
+	"./x-pseudo": 392,
+	"./x-pseudo.js": 392,
+	"./yo": 393,
+	"./yo.js": 393,
+	"./zh-cn": 394,
+	"./zh-cn.js": 394,
+	"./zh-hk": 395,
+	"./zh-hk.js": 395,
+	"./zh-mo": 396,
+	"./zh-mo.js": 396,
+	"./zh-tw": 397,
+	"./zh-tw.js": 397
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -5132,7 +5198,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 545;
+webpackContext.id = 546;
 
 /***/ }),
 
@@ -5142,8 +5208,8 @@ webpackContext.id = 545;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScoresPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5392,14 +5458,14 @@ var ScoresPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 831:
+/***/ 832:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreMedicationPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accueil_accueil__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5545,5 +5611,5 @@ var PreMedicationPage = /** @class */ (function () {
 
 /***/ })
 
-},[499]);
+},[500]);
 //# sourceMappingURL=main.js.map

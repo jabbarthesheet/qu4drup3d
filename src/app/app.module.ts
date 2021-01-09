@@ -31,6 +31,7 @@ import { MonitoragePage } from '../pages/monitorage/monitorage';
 import { CourbesPage } from '../pages/courbes/courbes';
 import { AntibioprophylaxiePage } from '../pages/antibioprophylaxie/antibioprophylaxie';
 import { ScoresPage } from '../pages/scores/scores';
+import { InfoPage } from '../pages/info/info';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { ScoresPage } from '../pages/scores/scores';
     CourbesPage,
     AntibioprophylaxiePage,
     ScoresPage, 
+    InfoPage,
   ],
 
   imports: [
@@ -89,6 +91,7 @@ import { ScoresPage } from '../pages/scores/scores';
     CourbesPage,
     AntibioprophylaxiePage,
     ScoresPage,
+    InfoPage
   ],
 
   providers: [

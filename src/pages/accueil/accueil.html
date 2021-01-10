@@ -1,28 +1,21 @@
 <ion-content>
 
-  <div class="header">  
+  <div class="headerHome">  
   <ion-icon class="menuButton" color="turquoise-fonce" name="menu" (click)="menuToggle()"></ion-icon>
-    MON QUADRUPED</div> 
+    QUADRUPED</div> 
 
     <br>
 
   <ion-card class="homePagePatient">
     <ion-card-content>
-
       <ion-toolbar  color="turquoise" class="timerContainer">
         <ion-buttons >        
           <p text-center class="comment">
           {{time}}
           </p>
-  
       <button  *ngIf="!running" color="dark-turquoise" ion-button (click)="start()"><ion-icon name="play"></ion-icon></button>
-
-    
-       
-      <button  *ngIf="running" color="dark-turquoise" ion-button (click)="stop()"><ion-icon name="pause"></ion-icon></button>
-         
-       <button ion-button (click)="reset()"><ion-icon color="dark-turquoise" name="refresh-circle"></ion-icon></button>
-    
+      <button  *ngIf="running" color="dark-turquoise" ion-button (click)="stop()"><ion-icon name="pause"></ion-icon></button>         
+      <button ion-button (click)="reset()"><ion-icon color="dark-turquoise" name="refresh-circle"></ion-icon></button>
     </ion-buttons>
   </ion-toolbar>
 
@@ -68,6 +61,8 @@
 
   </ion-card-content>
 </ion-card>
+
+
 
 
     <button ion-button block small color="warning" (click)="displayUrgences()">Urgences</button>

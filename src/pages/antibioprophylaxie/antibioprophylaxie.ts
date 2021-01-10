@@ -56,6 +56,10 @@ export class AntibioprophylaxiePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertController: AlertController, public storage : Storage) {
   }
 
+  retourHome() {
+    this.navCtrl.pop();
+  };
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad AntibioprophylaxiePage');
   }
@@ -86,7 +90,7 @@ export class AntibioprophylaxiePage {
       message: 'Saisissez un âge et un poids pour le patient.',
       buttons: [
         {
-          text: 'Nan',
+          text: 'Plus tard.',
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
@@ -94,7 +98,7 @@ export class AntibioprophylaxiePage {
 
           }
         }, {
-          text: 'Okay',
+          text: 'OK.',
           handler: () => {
             console.log('Confirm Okay');
             this.navCtrl.pop();          }

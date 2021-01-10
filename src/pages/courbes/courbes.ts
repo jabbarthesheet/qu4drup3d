@@ -61,6 +61,11 @@ export class CourbesPage {
 
 /* Poids : obtention du set de données et chargement du graph */
 
+  retourHome(){
+    this.navCtrl.pop();
+  };
+
+
   setDataPoids(){
     if (this.AgeNum <=12 && this.sexeMF == "Garçon") 
         {
@@ -120,7 +125,7 @@ export class CourbesPage {
             label: "97%",
             data: this.dataPoids97,
             borderColor:"rgba(180, 180, 180, 1)",
-            backgroundColor : "rgba(0,0,0,0)",
+            backgroundColor : "rgba(180, 180, 180, 0.3)",
             borderWidth: 1,
             pointRadius: 1, 
           }, 
@@ -136,7 +141,7 @@ export class CourbesPage {
             label: "3%",
             data: this.dataPoids3,
             borderColor:"rgba(180, 180, 180, 1)",
-            backgroundColor : "rgba(0,0,0,0)",
+            backgroundColor : "rgba(180, 180, 180, 0.3)",
             borderWidth: 1,
             pointRadius: 1, 
           }, 
@@ -255,7 +260,7 @@ export class CourbesPage {
                       label: "97%",
                       data: this.dataTaille97,
                       borderColor:"rgba(180, 180, 180, 1)",
-                      backgroundColor : "rgba(0,0,0,0)",
+                      backgroundColor : "rgba(180, 180, 180, 0.3)",
                       borderWidth: 1,
                       pointRadius: 1, 
                     }, 
@@ -271,7 +276,7 @@ export class CourbesPage {
                       label: "3%",
                       data: this.dataTaille3,
                       borderColor:"rgba(180, 180, 180, 1)",
-                      backgroundColor : "rgba(0,0,0,0)",
+                      backgroundColor : "rgba(180, 180, 180, 0.3)",
                       borderWidth: 1,
                       pointRadius: 1, 
                     }, 
@@ -446,7 +451,7 @@ async presentAlert() {
       message: 'Saisissez un âge et un poids pour le patient.',
       buttons: [
         {
-          text: 'Nan',
+          text: 'Plus tard.',
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
@@ -454,7 +459,7 @@ async presentAlert() {
 
           }
         }, {
-          text: 'Okay',
+          text: 'OK.',
           handler: () => {
             console.log('Confirm Okay');
             this.navCtrl.pop();          }

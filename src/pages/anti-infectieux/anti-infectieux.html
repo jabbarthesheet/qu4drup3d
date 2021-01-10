@@ -1,22 +1,21 @@
-<ion-header translucent>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Antibiothérapie</ion-title>
-  </ion-navbar>
- <ion-card-content color="danger">
-   Les posologies proposées sont envisagées :
-  <br>- pour la <b>pédiatrie</b> uniquement
-  <br>- en antibio<b>thérapie</b>.
-  </ion-card-content>
-  <ion-searchbar
-  [(ngModel)]="searchTerm"
-  (ionChange)="setFilteredItems()"
-></ion-searchbar>
-</ion-header>
+<ion-content>
 
-<ion-content padding>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div> Antibiothérapie </div>
+      <br>
+
+      <div padding color="danger">   Les posologies proposées sont envisagées :
+        <br>- pour la <b>pédiatrie</b> uniquement
+        <br>- en antibio<b>thérapie</b>.</div>
+
+      <ion-searchbar
+      [(ngModel)]="searchTerm"
+      (ionChange)="setFilteredItems()"
+    ></ion-searchbar>
 
   <ion-list>
     <ion-card *ngFor="let card of cards, let i = index" [attr.data-index]="i" padding="5%">

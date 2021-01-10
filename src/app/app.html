@@ -1,23 +1,21 @@
 <ion-menu [content]="content" type="overlay" side="start" menuId="custom" contentId="main" class="my-custom-menu">
 
-  <ion-header>
-    <ion-toolbar color="tertiary">
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
   <ion-content>
+
     <ion-list>
 
-      <ion-item (click)="openAccueilPage()" color="light"><b>Accueil QuadruPed</b></ion-item>    
-      <ion-item (click)="openRecommandations()" color="light">Recommandations & références</ion-item> 
-      <ion-item (click)="openInfo()" color="light">Informations & CGU</ion-item> 
+      <ion-item>MENU</ion-item>
+
+      <br><br>
+      <ion-item (click)="openAccueilPage()" color="white"><b>Accueil QuadruPed</b></ion-item>    
+      <ion-item (click)="openRecommandations()" color="white">Recommandations & références</ion-item> 
+      <ion-item (click)="openInfo()" color="white">Informations & CGU</ion-item> 
 
     </ion-list>
+
   </ion-content>
-  
-    </ion-menu>
 
-
+</ion-menu>
 
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
 

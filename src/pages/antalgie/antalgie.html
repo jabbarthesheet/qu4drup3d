@@ -1,25 +1,25 @@
-<!--
-  Generated template for the AntalgiePage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header translucent>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Antalgie & post-op </ion-title>
-  </ion-navbar>
-  <ion-item color="turquoise-fonce"> 
-    <ion-label>
-      <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
-      <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
-      <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
-  </ion-item>
-</ion-header>
+<ion-content>
 
-<ion-content padding>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+
+    Antalgie et post-opératoire</div>
+      <br>
+
+      <ion-item color="turquoise-fonce"> 
+        <ion-label>
+          <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
+          <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+          <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
+      </ion-item>
+  
+      <br>
+
 
   <ion-list>
 
@@ -266,7 +266,7 @@
     </ion-item-group>
   </ion-list>
 
-  <p class="dilutionDrogueInduction">Suggestion : utilisez les scores pour évaluer les besoins en antalgiques, anti-émétiques ou anti-coagulants.</p> 
+  <p padding class="dilutionDrogueInduction">Suggestion : utilisez les scores pour évaluer les besoins en antalgiques, anti-émétiques ou anti-coagulants.</p> 
   <ion-item><button ion-button small (click)="openScores()" color="pastel-green">Scores</button></ion-item>
 
 

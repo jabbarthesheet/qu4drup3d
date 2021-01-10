@@ -67,6 +67,10 @@ export class MonitoragePage {
     {
   }
 
+  retourHome(){
+    this.navCtrl.pop();
+  };
+
   ToggleConstantes()
   {
     this.isShownConstantes = !this.isShownConstantes;
@@ -86,7 +90,7 @@ export class MonitoragePage {
       message: 'Saisissez un âge et un poids pour le patient.',
       buttons: [
         {
-          text: 'Nan',
+          text: 'Plus tard.',
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
@@ -94,7 +98,7 @@ export class MonitoragePage {
 
           }
         }, {
-          text: 'Okay',
+          text: 'OK.',
           handler: () => {
             console.log('Confirm Okay');
             this.navCtrl.pop();          }

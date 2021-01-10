@@ -50,6 +50,10 @@ export class PlateauVasPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController) {
   }
 
+  retourHome(){
+    this.navCtrl.pop();
+  };
+
   ToggleIntubation() {
     this.isShownIntubation = !this.isShownIntubation;
     this.isShownVentilation = this.isShownMasqueLarynge = this.isShownIntubationDifficile = false; 
@@ -77,7 +81,7 @@ export class PlateauVasPage {
       message: 'Saisissez un âge et un poids pour le patient.',
       buttons: [
         {
-          text: 'Nan',
+          text: 'Plus tard.',
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
@@ -85,7 +89,7 @@ export class PlateauVasPage {
 
           }
         }, {
-          text: 'Okay',
+          text: 'OK.',
           handler: () => {
             console.log('Confirm Okay');
             this.navCtrl.pop();          }

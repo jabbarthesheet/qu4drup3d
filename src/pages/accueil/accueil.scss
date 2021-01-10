@@ -1,3 +1,22 @@
+.menuButton {
+
+float: left; 
+font-size: 20px !important;   
+};
+
+.header {
+  width: 90%;
+  margin-right:5%; 
+  margin-left:5%; 
+  margin-top: 5%;
+  text-align:center; 
+  background-color:none; 
+  color: #009c9e;
+  font-weight: 250; 
+  font-family: roboto;
+  font-size:16px; 
+}
+
 .homePagePatient
 {
   text-align: center !important;
@@ -36,10 +55,12 @@ figcaption {
 
 .HomePageButtonsContainer
 {
-  margin-bottom: -15px !important;
+  margin-bottom: -5px !important;
   margin-top: -5px !important;
   width: 80% !important;
   margin-left: 10% !important;
+  margin-right: 10% !important; 
+  position: center !important; 
 }
 
 .homeButtons {

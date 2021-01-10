@@ -45,6 +45,10 @@ export class OptionsPage {
     ) {
   }
 
+  retourHome() {
+    this.navCtrl.pop();
+  }
+
 
   ionViewWillEnter(){
     let promiseList: Promise<any>[] = [];

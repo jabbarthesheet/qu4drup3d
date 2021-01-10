@@ -101,6 +101,10 @@ public Anticoagform3 =
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
   }
 
+retourHome(){
+  this.navCtrl.pop(); 
+}
+
 ionViewDidLoad() {
     console.log('ionViewDidLoad ScoresPage');
     };

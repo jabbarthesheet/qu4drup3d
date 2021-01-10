@@ -51,6 +51,10 @@ export class EntretienAnesthPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController ) {
   }
 
+  retourHome(){
+    this.navCtrl.pop();
+  };
+
   ToggleInhalatoire() {
     this.isShownInhalatoire = !this.isShownInhalatoire; 
     this.isShownHypnotiquesIntraVeineux = this.isShownAntalgiques = this.isShownCurares = false; 
@@ -78,7 +82,7 @@ export class EntretienAnesthPage {
       message: 'Saisissez un âge et un poids pour le patient.',
       buttons: [
         {
-          text: 'Nan',
+          text: 'Plus tard.',
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
@@ -86,7 +90,7 @@ export class EntretienAnesthPage {
 
           }
         }, {
-          text: 'Okay',
+          text: 'OK.',
           handler: () => {
             console.log('Confirm Okay');
             this.navCtrl.pop();          }

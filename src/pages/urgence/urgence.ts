@@ -54,6 +54,9 @@ export class UrgencePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController ) {
   }
 
+  retourHome() {
+    this.navCtrl.pop()
+  };
 
 /*Chargement des données du formulaire au chargement de la page, alerte si données manquantes*/
 

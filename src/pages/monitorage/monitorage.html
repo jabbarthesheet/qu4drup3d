@@ -1,19 +1,28 @@
-<ion-header translucent>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Monitorage & dispositifs</ion-title>
-  </ion-navbar>
-  <ion-item color="turquoise-fonce"> 
-    <ion-label>
-      <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
-      <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
-      <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
-  </ion-item>
-</ion-header>
 
-<ion-content padding>
+
+<ion-content>
+
+        <!-- HEADER MENU  -->
+        <div class="header"> 
+
+          <div (click)="retourHome()" class="backButton">
+          <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+          Retour
+          </div>
+Monitorage & dispositifs  </div>
+            <br>
+      
+                  <!-- HEADER MON PATIENT  -->
+  
+            <ion-item color="turquoise-fonce"> 
+              <ion-label>
+                <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
+                <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+                <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
+            </ion-item>
+        
+            <br>
+       <!-- END HEADER -->
 
       <ion-item-divider (click)="ToggleConstantes()">
     <ion-label color="dark-turquoise">Paramètres vitaux selon l'âge

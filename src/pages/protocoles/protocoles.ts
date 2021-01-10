@@ -26,6 +26,10 @@ export class ProtocolesPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  retourHome(){
+    this.navCtrl.pop();
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProtocolesPage');
   }

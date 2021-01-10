@@ -69,6 +69,10 @@ export class AntalgiePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController ) {
   }
 
+  retourHome(){
+    this.navCtrl.pop();
+  };
+
   async presentAlert() {
     const alert = await this.alertController.create({
       cssClass: 'alerte',
@@ -76,7 +80,7 @@ export class AntalgiePage {
       message: 'Saisissez un âge et un poids pour le patient.',
       buttons: [
         {
-          text: 'Nan',
+          text: 'Plus tard.',
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
@@ -84,7 +88,7 @@ export class AntalgiePage {
 
           }
         }, {
-          text: 'Okay',
+          text: 'OK.',
           handler: () => {
             console.log('Confirm Okay');
             this.navCtrl.pop();          }

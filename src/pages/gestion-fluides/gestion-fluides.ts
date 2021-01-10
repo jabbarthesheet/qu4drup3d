@@ -71,6 +71,10 @@ export class GestionFluidesPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController : AlertController) {
   }
 
+  retourHome(){
+    this.navCtrl.pop();
+  };
+
   ToggleApports() {
     this.isShownApports = !this.isShownApports; 
     this.isShownCGR = this.isShownAutresPSL = this.isShownHypoTA = false; 
@@ -97,14 +101,14 @@ export class GestionFluidesPage {
       message: 'Saisissez un âge et un poids pour le patient. Pensez aussi à renseigner la durée du jeûne pré-opératoire dans les options  pour profiter du calcul des apports horaires recommandés',
       buttons: [
         {
-          text: 'Nan',
+          text: 'Plus tard.',
           role: 'cancel',
           cssClass: 'secondary',
           handler: (cancel) => {
             console.log('Confirm Cancel: Nan');
           }
         }, {
-          text: 'Okay',
+          text: 'OK.',
           handler: (OK) => {
             console.log('Confirm Okay');
             this.navCtrl.pop();          }

@@ -77,6 +77,10 @@ export class ExtrophieVesicalePage {
     ) {
   }
 
+  retourHome() {
+    this.navCtrl.pop();
+  };
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad ExtrophieVesicalePage');
   };

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { MenuController, NavController, NavParams } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 
@@ -17,10 +17,19 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 })
 export class RecommandationsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public InAppBrowser: InAppBrowser,) 
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public InAppBrowser: InAppBrowser,
+    public menu: MenuController,) 
   {
   
   }
+
+  menuToggle()
+  {
+    this.menu.open();
+  };
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecommandationsPage');

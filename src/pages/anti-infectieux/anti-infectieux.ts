@@ -25,15 +25,19 @@ export class AntiInfectieuxPage implements OnInit
     {
     }
 
+    retourHome(){
+      this.navCtrl.pop(); 
+    };
+
     ngOnInit() {
       this.setFilteredItems();
-    }
+    };
   
     setFilteredItems() {
       this.cards = this.dataService.filterItems(this.searchTerm);
-    }
+    };
 
     ToggleCard() : void {
       this.cards.isShown = !this.cards.isShown;  
-    }
+    };
   };

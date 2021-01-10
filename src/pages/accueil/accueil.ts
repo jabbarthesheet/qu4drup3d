@@ -1,5 +1,5 @@
 import { Component, ViewChild, NgModule } from '@angular/core';
-import { App, NavController, NavParams, PickerController, PickerOptions, PopoverController, ToastController } from 'ionic-angular';
+import { App, MenuController, NavController, NavParams, PickerController, PickerOptions, PopoverController, ToastController } from 'ionic-angular';
 import { ModalController, ViewController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Nav } from 'ionic-angular';
@@ -78,8 +78,13 @@ public time = "00:00:00";
     public pickerController: PickerController,
     public ToastController: ToastController, 
     public popoverController: PopoverController,
+    public menu: MenuController,
   ) {}
     
+  menuToggle()
+  {
+    this.menu.open();
+  };
 
 
   /*** ----------------------------------------------------------TIMER----------------------------------------------------  */ 

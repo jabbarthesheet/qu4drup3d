@@ -4614,6 +4614,7 @@ var AccueilPage = /** @class */ (function () {
     AccueilPage_1 = AccueilPage;
     AccueilPage.prototype.menuToggle = function () {
         this.menu.open();
+        this.stopMusic();
     };
     ;
     /*** ----------------------------------------------------------MUSIQUE----------------------------------------------------  */

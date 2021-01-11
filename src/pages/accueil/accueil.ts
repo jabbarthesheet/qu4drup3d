@@ -122,10 +122,11 @@ public time = "00:00:00";
           ],
           columns:[
             { name: "morceau", 
-              prefix: "Classiques :",
               options: [
-                { text: 'Les crocodiles', value: 'Crocodiles' },
-                { text: 'Les éléphants', value: 'Elephants' },
+                { text: 'Ha les crocodiles', value: 'Crocodiles' },
+                { text: 'Un éléphant qui se balançait', value: 'Elephants' },
+                { text: 'Une souris verte', value: 'Souris verte' },
+
 
           ]
         },
@@ -159,7 +160,11 @@ public time = "00:00:00";
 
     else if (this.MorceauChoisi == "Crocodiles"){ 
       this.musicPlaying = true; 
-      this.audio.src = "/assets/music/crocodiles.mp3"; };
+      this.audio.src = "/assets/music/crocodiles.mp3"; }
+
+    else if (this.MorceauChoisi == "Souris verte"){ 
+      this.musicPlaying = true; 
+      this.audio.src = "/assets/music/sourisverte.mp3"; };
 
       this.audio.load();
       this.audio.play();

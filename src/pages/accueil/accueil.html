@@ -1,15 +1,28 @@
 <ion-content>
-
-  <div class="headerHome">  
   <ion-icon class="menuButton" color="turquoise-fonce" name="menu" (click)="menuToggle()"></ion-icon>
+  <div class="titleHome">  
     QUADRUPED</div> 
 
     <br>
 
+ 
+ 
   <ion-card class="homePagePatient">
     <ion-card-content>
+
+      <ion-toolbar  color="turquoise" class="musicContainer">
+        <ion-buttons>
+        <ion-icon color="dark-turquoise" name="musical-notes"></ion-icon>    
+        <br>
+          <button (click)="selectMusic()" ion-button class="musicSelector" color="turquoise-fonce">{{MorceauChoisi}}</button>
+          <button  *ngIf="!musicPlaying" color="dark-turquoise" ion-button (click)="playMusic()"><ion-icon name="play"></ion-icon></button>
+        <button  *ngIf="musicPlaying" color="dark-turquoise" ion-button (click)="stopMusic()"><ion-icon name="pause"></ion-icon></button> 
+      </ion-buttons>
+      </ion-toolbar>
+
       <ion-toolbar  color="turquoise" class="timerContainer">
-        <ion-buttons >        
+        <ion-buttons >    
+          <ion-icon color="dark-turquoise" name="clock"></ion-icon>    
           <p text-center class="comment">
           {{time}}
           </p>
@@ -42,9 +55,9 @@
             </ion-segment-button>
           </ion-segment>
         </button>
-          <button color="dark-turquoise" ion-button small (click)="showPickerAge()">Age</button>
-          <button color="dark-turquoise" ion-button small (click)="showPickerPoids()">Poids</button>
-          <button color="turquoise-fonce" ion-button small (click)="showPickerTaille()">Taille</button>
+          <button color="{{ageColor}}" ion-button small (click)="showPickerAge()">Age</button>
+          <button color="{{poidsColor}}" ion-button small (click)="showPickerPoids()">Poids</button>
+          <button color="{{TailleColor}}" ion-button small (click)="showPickerTaille()">Taille</button>
           <hr>
           <button ion-button small color="turquoise-fonce"  (click)="displayOptions()">Options </button>
           <button ion-button  small color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>

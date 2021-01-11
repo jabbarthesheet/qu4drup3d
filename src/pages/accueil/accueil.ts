@@ -24,6 +24,7 @@ import { text } from '@angular/core/src/render3/instructions';
 
 
 
+
 @Component({
   selector: 'page-accueil',
   templateUrl: 'accueil.html',
@@ -52,12 +53,23 @@ ageannees:number=0;
 agemois:number=0;
 agesemaines:number=0;
 ageLecture:number=0; 
+ageColor:string="dark-turquoise";
+
 poidskilogrammes:number=0;
 poidsgrammes:number=0; 
+poidsColor:string="dark-turquoise";
+
 sexeMF:string="Fille"; 
+
 Taille:number; 
 TailleMetre:number; 
 TailleCentimetre:number;
+TailleColor:string="turquoise-fonce";
+
+MorceauChoisi:string="Choisir...";
+musicPlaying:boolean=false;
+audio = new Audio();
+
 
 public timeBegan = null;
 public timeStopped:any = null;
@@ -66,6 +78,7 @@ public started = null;
 public running = false;
 public blankTime = "00:00:00";
 public time = "00:00:00";
+
 
 
   constructor(
@@ -87,6 +100,77 @@ public time = "00:00:00";
   {
     this.menu.open();
   };
+
+  /*** ----------------------------------------------------------MUSIQUE----------------------------------------------------  */ 
+
+  async selectMusic() {
+    let options: PickerOptions = {
+        buttons: [
+            {
+              text: "Annuler",
+              role: 'cancel',
+            },
+            {
+              text:'Valider',
+              handler:(value) => {
+                console.log(value.morceau.value);
+                this.MorceauChoisi = value.morceau.value; 
+                console.log(this.MorceauChoisi);
+              }
+            }
+          ],
+          columns:[
+            { name: "morceau", 
+              prefix: "Classiques :",
+              options: [
+                { text: 'Les crocodiles', value: 'Crocodiles' },
+                { text: 'Les éléphants', value: 'Elephants' },
+
+          ]
+        },
+          ]
+    };
+
+    let picker = await this.pickerController.create(options);
+    picker.present();
+  };
+
+  playMusic (){
+    console.log(this.MorceauChoisi);
+    if (this.MorceauChoisi == "Choisir...") {
+        const musicAlert = this.alertController.create({
+          cssClass: 'alerte',
+          title: 'Choisir une musique',
+          message: 'Choisissez un morceau parmi les classiques intemporels proposés !',
+          buttons: [
+            {
+              text: "OK",
+              handler: () =>  {
+                return; 
+              } } 
+          ],
+        });
+        musicAlert.present();
+        }
+    else if (this.MorceauChoisi == "Elephants"){ 
+      this.musicPlaying = true;   
+      this.audio.src = "/assets/music/elephant.mp3"; }
+
+    else if (this.MorceauChoisi == "Crocodiles"){ 
+      this.musicPlaying = true; 
+      this.audio.src = "/assets/music/crocodiles.mp3"; };
+
+      this.audio.load();
+      this.audio.play();
+  };
+
+  stopMusic (){
+    this.musicPlaying = false; 
+    this.audio.pause(); 
+  };
+
+
+
   /*** ----------------------------------------------------------TIMER----------------------------------------------------  */ 
 
 start() {
@@ -174,6 +258,7 @@ start() {
                   this.ageLecture = Math.round((this.AgeNum/12)*10)/10; 
                   this.storage.set("AgeNum", this.AgeNum); 
                   this.storage.set("ageLecture", this.ageLecture);
+                  this.ageColor = "grisclair";
                 }
               }
             ],
@@ -273,6 +358,7 @@ start() {
                 this.PoidsNum = this.poidskilogrammes + Math.round((this.poidsgrammes/1000)*10)/10;
                 console.log(this.PoidsNum);
                 this.storage.set("PoidsNum", this.PoidsNum);  
+                this.poidsColor = "grisclair";
                 }
               }
             ],
@@ -421,7 +507,8 @@ start() {
                 this.TailleCentimetre = value.centimetre.value; 
                 this.Taille = Math.floor(this.TailleMetre*100) + Math.floor(this.TailleCentimetre);
                 console.log(this.PoidsNum);
-                this.storage.set("Taille", this.Taille);  
+                this.storage.set("Taille", this.Taille); 
+                this.TailleColor = "grisclair";
                 }
               }
             ],
@@ -605,6 +692,9 @@ start() {
       this.DureeJeune = 0; 
       this.Allergie = "";
       this.EstomacOuiNon = "vide";
+      this.TailleColor="turquoise-fonce";
+      this.poidsColor = "dark-turquoise";
+      this.ageColor = "dark-turquoise";
     }
 
 };

@@ -87924,11 +87924,12 @@ ion-row {
   float: left;
   font-size: 20px !important;
   padding-left: 5%;
+  margin-top: 5%;
 }
 
-.headerHome {
-  width: 90%;
-  margin-right: 5%;
+.titleHome {
+  width: 68%;
+  margin-right: 17%;
   margin-left: 5%;
   margin-top: 5%;
   text-align: center;
@@ -87937,6 +87938,7 @@ ion-row {
   font-weight: 250;
   font-family: roboto;
   font-size: 16px;
+  float: right;
 }
 
 .homePagePatient {
@@ -87949,6 +87951,19 @@ ion-row {
   width: 30%;
   float: right;
   border-radius: 10px;
+}
+
+.musicContainer {
+  width: 30%;
+  float: left;
+  border-radius: 10px;
+  height: 77px !important;
+  padding: 5px;
+}
+
+.musicSelector {
+  font-size: 10px !important;
+  height: 12px !important;
 }
 
 .savedContainer {

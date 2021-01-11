@@ -32,6 +32,7 @@ import { CourbesPage } from '../pages/courbes/courbes';
 import { AntibioprophylaxiePage } from '../pages/antibioprophylaxie/antibioprophylaxie';
 import { ScoresPage } from '../pages/scores/scores';
 import { InfoPage } from '../pages/info/info';
+import { NativeAudio } from '@ionic-native/native-audio';
 
 
 @NgModule({

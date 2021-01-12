@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 139:
+/***/ 138:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -409,7 +409,7 @@ var PlateauInductionPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 140:
+/***/ 139:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -702,7 +702,7 @@ var PlateauVasPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 141:
+/***/ 140:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -931,7 +931,7 @@ var EntretienAnesthPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 142:
+/***/ 141:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -939,7 +939,7 @@ var EntretienAnesthPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__options_options__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__options_options__ = __webpack_require__(142);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1241,7 +1241,7 @@ var GestionFluidesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 143:
+/***/ 142:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1392,7 +1392,7 @@ var OptionsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 144:
+/***/ 143:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1608,7 +1608,7 @@ var LocoRegionalePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 145:
+/***/ 144:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1906,7 +1906,7 @@ var AntalgiePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 146:
+/***/ 145:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2129,7 +2129,7 @@ var UrgencePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 147:
+/***/ 146:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2485,7 +2485,7 @@ var MonitoragePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 148:
+/***/ 147:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3047,7 +3047,7 @@ var CourbesPage = /** @class */ (function () {
     ], CourbesPage.prototype, "BMICanvas", void 0);
     CourbesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-courbes',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\courbes\courbes.html"*/'<ion-content>\n\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div> Biométrie {{sexeMF}} {{AgeRange}} </div>\n      <br>\n\n      <ion-item color="turquoise-fonce"> \n        <ion-label>\n          <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> \n          <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n          <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> \n      </ion-item>\n  \n      <br>\n\n      <ion-item>\n        <ion-label>BMI : {{BMI}} kg/m²\n        <p class="comment">{{BMIinfo}}</p>\n      </ion-label>\n    </ion-item>\n    \n      <ion-item>\n        <ion-label>Surface corporelle : {{SurfaceCorporelle}} m²\n          <p class="comment">(Poidsx4 + 7)/(Poids + 90) </p>\n        </ion-label>\n      </ion-item>\n\n\n      <ion-card class="drogueContainer">\n        <ion-card-header>\n          Poids\n        </ion-card-header>\n        <ion-card-content>\n          <canvas #PoidsCanvas></canvas>\n        </ion-card-content>\n      </ion-card>\n\n      <ion-card class="drogueContainer">\n        <ion-card-header>\n          Taille\n        </ion-card-header>\n        <ion-card-content>\n          <canvas #TailleCanvas></canvas>\n        </ion-card-content>\n      </ion-card>\n\n      <ion-card class="drogueContainer">\n        <ion-card-header>\n          IMC\n        </ion-card-header>\n        <ion-card-content>\n          <canvas #BMICanvas></canvas>\n        </ion-card-content>\n      </ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\courbes\courbes.html"*/,
+            selector: 'page-courbes',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\courbes\courbes.html"*/'<ion-content>\n\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div> Biométrie {{sexeMF}} {{AgeRange}} </div>\n      <br>\n\n      <ion-item color="turquoise-fonce"> \n        <ion-label>\n          <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> \n          <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n          <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> \n      </ion-item>\n  \n      <br>\n\n      <ion-item>\n        <ion-label>IMC : {{BMI}} kg/m²\n        <p class="comment">{{BMIinfo}}</p>\n      </ion-label>\n    </ion-item>\n    \n      <ion-item>\n        <ion-label>Surface corporelle : {{SurfaceCorporelle}} m²\n          <p class="comment">(Poidsx4 + 7)/(Poids + 90) </p>\n        </ion-label>\n      </ion-item>\n\n      <br>\n      <div class="courbesTitle">Courbes de croissance <br> {{sexeMF}} de {{AgeRange}}</div>\n\n\n      <ion-card class="drogueContainer">\n        <ion-card-header>\n          Poids (kg)\n        </ion-card-header>\n        <ion-card-content>\n          <canvas #PoidsCanvas></canvas>\n        </ion-card-content>\n      </ion-card>\n\n      <ion-card class="drogueContainer">\n        <ion-card-header>\n          Taille (cm)\n        </ion-card-header>\n        <ion-card-content>\n          <canvas #TailleCanvas></canvas>\n        </ion-card-content>\n      </ion-card>\n\n      <ion-card class="drogueContainer">\n        <ion-card-header>\n          IMC (kg/m²)\n        </ion-card-header>\n        <ion-card-content>\n          <canvas #BMICanvas></canvas>\n        </ion-card-content>\n      </ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\courbes\courbes.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
@@ -3785,7 +3785,7 @@ var ServiceDataProvider = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecommandationsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser_ngx__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser_ngx__ = __webpack_require__(148);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3913,18 +3913,18 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(543);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(834);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(833);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser_ngx__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser_ngx__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_accueil_accueil__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_options_options__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_plateau_induction_plateau_induction__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_plateau_vas_plateau_vas__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_gestion_fluides_gestion_fluides__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_antalgie_antalgie__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_urgence_urgence__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(141);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_loco_regionale_loco_regionale__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_options_options__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_plateau_induction_plateau_induction__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_plateau_vas_plateau_vas__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_gestion_fluides_gestion_fluides__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_antalgie_antalgie__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_urgence_urgence__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_loco_regionale_loco_regionale__ = __webpack_require__(143);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__ = __webpack_require__(497);
@@ -3932,8 +3932,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_service_data_liste_anti_infectieux__ = __webpack_require__(495);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_protocoles_protocoles__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_recommandations_recommandations__ = __webpack_require__(496);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_monitorage_monitorage__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_courbes_courbes__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_monitorage_monitorage__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_courbes_courbes__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(494);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_scores_scores__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_info_info__ = __webpack_require__(499);
@@ -4059,22 +4059,22 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_accueil_accueil__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_plateau_induction_plateau_induction__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_gestion_fluides_gestion_fluides__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_plateau_vas_plateau_vas__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_antalgie_antalgie__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_urgence_urgence__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_pre_medication_pre_medication__ = __webpack_require__(833);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_plateau_induction_plateau_induction__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_gestion_fluides_gestion_fluides__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_plateau_vas_plateau_vas__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_antalgie_antalgie__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_urgence_urgence__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_pre_medication_pre_medication__ = __webpack_require__(832);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_loco_regionale_loco_regionale__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_loco_regionale_loco_regionale__ = __webpack_require__(143);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_monitorage_monitorage__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_monitorage_monitorage__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_protocoles_protocoles__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_recommandations_recommandations__ = __webpack_require__(496);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_status_bar__ = __webpack_require__(497);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_splash_screen__ = __webpack_require__(498);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_courbes_courbes__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_courbes_courbes__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_scores_scores__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_info_info__ = __webpack_require__(499);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -4493,17 +4493,17 @@ webpackContext.id = 546;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__plateau_induction_plateau_induction__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__plateau_vas_plateau_vas__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__entretien_anesth_entretien_anesth__ = __webpack_require__(141);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__gestion_fluides_gestion_fluides__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__loco_regionale_loco_regionale__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__antalgie_antalgie__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__urgence_urgence__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__options_options__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__monitorage_monitorage__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__courbes_courbes__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser_ngx__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__plateau_induction_plateau_induction__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__plateau_vas_plateau_vas__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__entretien_anesth_entretien_anesth__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__gestion_fluides_gestion_fluides__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__loco_regionale_loco_regionale__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__antalgie_antalgie__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__urgence_urgence__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__options_options__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__monitorage_monitorage__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__courbes_courbes__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser_ngx__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(494);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__scores_scores__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__protocoles_protocoles__ = __webpack_require__(166);
@@ -4594,12 +4594,12 @@ var AccueilPage = /** @class */ (function () {
         this.agemois = 0;
         this.agesemaines = 0;
         this.ageLecture = 0;
-        this.ageColor = "dark-turquoise";
+        this.ageColor = "danger";
         this.poidskilogrammes = 0;
         this.poidsgrammes = 0;
-        this.poidsColor = "dark-turquoise";
+        this.poidsColor = "danger";
         this.sexeMF = "Fille";
-        this.TailleColor = "turquoise-fonce";
+        this.TailleColor = "danger";
         this.MorceauChoisi = "Choisir...";
         this.musicPlaying = false;
         this.audio = new Audio();
@@ -4615,6 +4615,41 @@ var AccueilPage = /** @class */ (function () {
     AccueilPage.prototype.menuToggle = function () {
         this.menu.open();
         this.stopMusic();
+    };
+    ;
+    /** ----------------------------  RENSEIGNER AGE ET POIDS ----------------------------------------------------------------- */
+    AccueilPage.prototype.alertAgePoidsTaille = function () {
+        var AgePoidsTailleAlert = this.alertController.create({
+            cssClass: 'alerte',
+            title: 'Données manquantes',
+            message: "Renseignez l'âge, le poids et la taille de votre patient pour accéder aux données de biométrie.",
+            buttons: [
+                {
+                    text: "OK",
+                    handler: function () {
+                        return;
+                    }
+                }
+            ],
+        });
+        AgePoidsTailleAlert.present();
+    };
+    ;
+    AccueilPage.prototype.alertPoidsAge = function () {
+        var AgePoidsAlert = this.alertController.create({
+            cssClass: 'alerte',
+            title: 'Données manquantes',
+            message: "Renseignez l'âge et le poids de votre patient pour accéder à ce module.",
+            buttons: [
+                {
+                    text: "OK",
+                    handler: function () {
+                        return;
+                    }
+                }
+            ],
+        });
+        AgePoidsAlert.present();
     };
     ;
     /*** ----------------------------------------------------------MUSIQUE----------------------------------------------------  */
@@ -4799,7 +4834,7 @@ var AccueilPage = /** @class */ (function () {
                                         _this.ageLecture = Math.round((_this.AgeNum / 12) * 10) / 10;
                                         _this.storage.set("AgeNum", _this.AgeNum);
                                         _this.storage.set("ageLecture", _this.ageLecture);
-                                        _this.ageColor = "grisclair";
+                                        _this.ageColor = "dark-turquoise";
                                     }
                                 }
                             ],
@@ -4903,18 +4938,33 @@ var AccueilPage = /** @class */ (function () {
                                 {
                                     text: 'Valider',
                                     handler: function (value) {
-                                        _this.poidskilogrammes = value.kilogrammes.value;
+                                        _this.poidskilogrammes = value.kilogrammes.value + value.DixKilogrammes.value;
                                         _this.poidsgrammes = value.grammes.value;
                                         _this.PoidsNum = _this.poidskilogrammes + Math.round((_this.poidsgrammes / 1000) * 10) / 10;
                                         console.log(_this.PoidsNum);
                                         _this.storage.set("PoidsNum", _this.PoidsNum);
-                                        _this.poidsColor = "grisclair";
+                                        _this.poidsColor = "dark-turquoise";
                                     }
                                 }
                             ],
                             columns: [
+                                { name: "DixKilogrammes",
+                                    prefix: "Kg.",
+                                    options: [
+                                        { text: '0', value: 0 },
+                                        { text: '10', value: 10 },
+                                        { text: '20', value: 20 },
+                                        { text: '30', value: 30 },
+                                        { text: '40', value: 40 },
+                                        { text: '50', value: 50 },
+                                        { text: '60', value: 60 },
+                                        { text: '70', value: 70 },
+                                        { text: '80', value: 80 },
+                                        { text: '90', value: 90 },
+                                    ]
+                                },
                                 { name: "kilogrammes",
-                                    prefix: "Kg",
+                                    prefix: "Kg.",
                                     options: [
                                         { text: '0', value: 0 },
                                         { text: '1', value: 1 },
@@ -4926,101 +4976,10 @@ var AccueilPage = /** @class */ (function () {
                                         { text: '7', value: 7 },
                                         { text: '8', value: 8 },
                                         { text: '9', value: 9 },
-                                        { text: '10', value: 10 },
-                                        { text: '11', value: 11 },
-                                        { text: '12', value: 12 },
-                                        { text: '13', value: 13 },
-                                        { text: '14', value: 14 },
-                                        { text: '15', value: 15 },
-                                        { text: '16', value: 16 },
-                                        { text: '17', value: 17 },
-                                        { text: '18', value: 18 },
-                                        { text: '19', value: 19 },
-                                        { text: '20', value: 20 },
-                                        { text: '21', value: 21 },
-                                        { text: '22', value: 22 },
-                                        { text: '23', value: 23 },
-                                        { text: '24', value: 24 },
-                                        { text: '25', value: 25 },
-                                        { text: '26', value: 26 },
-                                        { text: '27', value: 27 },
-                                        { text: '28', value: 28 },
-                                        { text: '29', value: 29 },
-                                        { text: '30', value: 30 },
-                                        { text: '31', value: 31 },
-                                        { text: '32', value: 32 },
-                                        { text: '33', value: 33 },
-                                        { text: '34', value: 34 },
-                                        { text: '35', value: 35 },
-                                        { text: '36', value: 36 },
-                                        { text: '37', value: 37 },
-                                        { text: '38', value: 38 },
-                                        { text: '39', value: 39 },
-                                        { text: '40', value: 40 },
-                                        { text: '41', value: 41 },
-                                        { text: '42', value: 42 },
-                                        { text: '43', value: 43 },
-                                        { text: '44', value: 44 },
-                                        { text: '45', value: 45 },
-                                        { text: '46', value: 46 },
-                                        { text: '47', value: 47 },
-                                        { text: '48', value: 48 },
-                                        { text: '49', value: 49 },
-                                        { text: '50', value: 50 },
-                                        { text: '51', value: 51 },
-                                        { text: '52', value: 52 },
-                                        { text: '53', value: 53 },
-                                        { text: '54', value: 54 },
-                                        { text: '55', value: 55 },
-                                        { text: '56', value: 56 },
-                                        { text: '57', value: 57 },
-                                        { text: '58', value: 58 },
-                                        { text: '59', value: 59 },
-                                        { text: '60', value: 60 },
-                                        { text: '61', value: 61 },
-                                        { text: '62', value: 62 },
-                                        { text: '63', value: 63 },
-                                        { text: '64', value: 64 },
-                                        { text: '65', value: 65 },
-                                        { text: '66', value: 66 },
-                                        { text: '67', value: 67 },
-                                        { text: '68', value: 68 },
-                                        { text: '69', value: 69 },
-                                        { text: '70', value: 70 },
-                                        { text: '71', value: 71 },
-                                        { text: '72', value: 72 },
-                                        { text: '73', value: 73 },
-                                        { text: '74', value: 74 },
-                                        { text: '75', value: 75 },
-                                        { text: '76', value: 76 },
-                                        { text: '77', value: 77 },
-                                        { text: '78', value: 78 },
-                                        { text: '79', value: 79 },
-                                        { text: '80', value: 80 },
-                                        { text: '81', value: 81 },
-                                        { text: '82', value: 82 },
-                                        { text: '83', value: 83 },
-                                        { text: '84', value: 84 },
-                                        { text: '85', value: 85 },
-                                        { text: '86', value: 86 },
-                                        { text: '87', value: 87 },
-                                        { text: '88', value: 88 },
-                                        { text: '89', value: 89 },
-                                        { text: '90', value: 90 },
-                                        { text: '91', value: 91 },
-                                        { text: '92', value: 92 },
-                                        { text: '93', value: 93 },
-                                        { text: '94', value: 94 },
-                                        { text: '95', value: 95 },
-                                        { text: '96', value: 96 },
-                                        { text: '97', value: 97 },
-                                        { text: '98', value: 98 },
-                                        { text: '99', value: 99 },
-                                        { text: '100', value: 100 },
                                     ]
                                 },
                                 { name: "grammes",
-                                    prefix: "Grammes",
+                                    prefix: "g.",
                                     options: [
                                         { text: '0', value: 0 },
                                         { text: '100', value: 100 },
@@ -5066,7 +5025,7 @@ var AccueilPage = /** @class */ (function () {
                                         _this.Taille = Math.floor(_this.TailleMetre * 100) + Math.floor(_this.TailleCentimetre);
                                         console.log(_this.PoidsNum);
                                         _this.storage.set("Taille", _this.Taille);
-                                        _this.TailleColor = "grisclair";
+                                        _this.TailleColor = "dark-turquoise";
                                     }
                                 }
                             ],
@@ -5129,10 +5088,23 @@ var AccueilPage = /** @class */ (function () {
         var promiseList = [];
         promiseList.push(this.storage.get('AgeNum').then(function (Age) {
             _this.AgeNum = Age;
+            if (_this.AgeNum) {
+                _this.ageColor = "dark-turquoise";
+            }
+            else {
+                _this.ageColor = "danger";
+            }
+            ;
             _this.ageLecture = Math.round((_this.AgeNum / 12) * 10) / 10;
             _this.storage.get('PoidsNum').then(function (Poids) {
                 _this.PoidsNum = Poids;
-                console.log('Le patient a', _this.AgeNum, "mois au total pour ", _this.PoidsNum, " kg.");
+                if (_this.PoidsNum) {
+                    _this.poidsColor = "dark-turquoise";
+                }
+                else {
+                    _this.poidsColor = "danger";
+                }
+                ;
                 _this.storage.get('EstomacPlein').then(function (estomacplein) {
                     _this.EstomacPlein = estomacplein;
                     if (_this.EstomacPlein == true) {
@@ -5155,6 +5127,16 @@ var AccueilPage = /** @class */ (function () {
                                 }
                                 ;
                                 _this.storage.set('sexeMF', _this.sexeMF);
+                                _this.storage.get('Taille').then(function (Taille) {
+                                    _this.Taille = Taille;
+                                    if (_this.Taille) {
+                                        _this.TailleColor = "dark-turquoise";
+                                    }
+                                    else {
+                                        _this.TailleColor = "danger";
+                                    }
+                                    ;
+                                });
                             });
                         });
                     });
@@ -5265,22 +5247,33 @@ var AccueilPage = /** @class */ (function () {
         this.DureeJeune = 0;
         this.Allergie = "";
         this.EstomacOuiNon = "vide";
-        this.TailleColor = "turquoise-fonce";
-        this.poidsColor = "dark-turquoise";
-        this.ageColor = "dark-turquoise";
+        this.TailleColor = "danger";
+        this.poidsColor = "danger";
+        this.ageColor = "danger";
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]) === "function" && _a || Object)
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
     ], AccueilPage.prototype, "nav", void 0);
     AccueilPage = AccueilPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-accueil',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/'<ion-content>\n  <ion-icon class="menuButton" color="turquoise-fonce" name="menu" (click)="menuToggle()"></ion-icon>\n  <div class="titleHome">  \n    QUADRUPED</div> \n\n    <br>\n\n \n \n  <ion-card class="homePagePatient">\n    <ion-card-content>\n\n      <ion-toolbar  color="turquoise" class="musicContainer">\n        <ion-buttons>\n        <ion-icon color="dark-turquoise" name="musical-notes"></ion-icon>    \n        <br>\n          <button (click)="selectMusic()" ion-button class="musicSelector" color="turquoise-fonce">{{MorceauChoisi}}</button>\n          <button  *ngIf="!musicPlaying" color="dark-turquoise" ion-button (click)="playMusic()"><ion-icon name="play"></ion-icon></button>\n        <button  *ngIf="musicPlaying" color="dark-turquoise" ion-button (click)="stopMusic()"><ion-icon name="pause"></ion-icon></button> \n      </ion-buttons>\n      </ion-toolbar>\n\n      <ion-toolbar  color="turquoise" class="timerContainer">\n        <ion-buttons >    \n          <ion-icon color="dark-turquoise" name="clock"></ion-icon>    \n          <p text-center class="comment">\n          {{time}}\n          </p>\n      <button  *ngIf="!running" color="dark-turquoise" ion-button (click)="start()"><ion-icon name="play"></ion-icon></button>\n      <button  *ngIf="running" color="dark-turquoise" ion-button (click)="stop()"><ion-icon name="pause"></ion-icon></button>         \n      <button ion-button (click)="reset()"><ion-icon color="dark-turquoise" name="refresh-circle"></ion-icon></button>\n    </ion-buttons>\n  </ion-toolbar>\n\n    <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient">  \n\n\n      <ion-item>\n        <ion-label>\n        <hr>\n        <p class="monPatient"><b>{{sexeMF}}</b> - <b>{{ageLecture}} ans</b> ( = {{AgeNum}} mois) - <b>{{PoidsNum}} kg</b> - {{Taille}} cm</p>\n        <p class="monPatient">Estomac {{EstomacOuiNon}} - Jeûne {{DureeJeune}} h - Allergie : {{Allergie}}</p>\n      </ion-label>\n      </ion-item> \n\n      <ion-toolbar class="HomeButtonContainer">\n        <ion-buttons>\n          <button class="SexeToggle">\n          <ion-segment swipeGesture="true" color="dark-turquoise" [(ngModel)]="sexeMF" (ionChange)="SetSexe()">\n            <ion-segment-button value="Fille">\n              <ion-icon class="segmentIcon" name="female"></ion-icon>\n            </ion-segment-button>\n            <ion-segment-button value="Garçon">\n              <ion-icon class="segmentIcon" name="male"></ion-icon>\n            </ion-segment-button>\n          </ion-segment>\n        </button>\n          <button color="{{ageColor}}" ion-button small (click)="showPickerAge()">Age</button>\n          <button color="{{poidsColor}}" ion-button small (click)="showPickerPoids()">Poids</button>\n          <button color="{{TailleColor}}" ion-button small (click)="showPickerTaille()">Taille</button>\n          <hr>\n          <button ion-button small color="turquoise-fonce"  (click)="displayOptions()">Options </button>\n          <button ion-button  small color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>\n          <button ion-button  small color="turquoise-fonce"  (click)="help()"><ion-icon name="help-circle"></ion-icon></button>\n\n  \n    </ion-buttons>\n    </ion-toolbar>\n\n \n\n \n\n\n  </ion-card-content>\n</ion-card>\n\n\n\n\n    <button ion-button block small color="warning" (click)="displayUrgences()">Urgences</button>\n  <br>\n    <div class="HomePageButtonsContainer">\n    <button class="homeButton" ion-button small color="turquoise"  (click)="displayCourbes()">Biométrie</button>\n    <button class="homeButton" ion-button small color="pastel-green"  (click)="displayScores()">Scores</button>\n    <button class="homeButton" ion-button small color="pastel-brown"  (click)="displayProtocoles()">Protocoles</button>\n    </div>\n  <br>\n    \n          <button ion-button small color="light" class="homeButtons" (click)="displayMonitorage()"> Monitorage</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayInduction()"> Induction </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayVAS()"> Voies Aériennes </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayATBprophylaxie()"> Antibiotiques </button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayEntretien()"> Entretien </button> \n    \n          <button ion-button small color="light" class="homeButtons" (click)="displayGestionFluides()"> Solutés et PSL</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayALR()"> Loco-régionale</button>\n          <button ion-button small color="light" class="homeButtons" (click)="displayPostop()">Antalgie & Post-op</button>\n\n    \n      <img class="logoDAR" (click)="openDARwebsite()" src="/assets/imgs/logo_dar.png"> \n\n      <!--*\n      <ion-toolbar>\n        <ion-buttons>\n          <button ion-button slot="start" fill="solid">\n            <ion-icon slot="center" name="person-circle"></ion-icon>\n            Contact\n          </button> \n          <button ion-button slot="end" fill="solid" color="dark-green">\n            Aide \n            <ion-icon slot="end" name="help-circle"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-toolbar>\n    *-->\n\n      </ion-content>\n\n  \n\n\n  \n \n\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/,
+            selector: 'page-accueil',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/'<ion-content>\n  <ion-icon class="menuButton" color="turquoise-fonce" name="menu" (click)="menuToggle()"></ion-icon>\n  <div class="titleHome">  \n    QUADRUPED</div> \n\n    <br>\n    <br>\n    <br>\n    <br>\n \n \n  <ion-card class="homePagePatient">\n    <ion-card-content>\n\n      <ion-toolbar  color="turquoise" class="musicContainer">\n        <ion-buttons>\n        <ion-icon color="dark-turquoise" name="musical-notes"></ion-icon>    \n        <br>\n          <button (click)="selectMusic()" ion-button class="musicSelector" color="turquoise-fonce">{{MorceauChoisi}}</button>\n          <button  *ngIf="!musicPlaying" color="dark-turquoise" ion-button (click)="playMusic()"><ion-icon name="play"></ion-icon></button>\n        <button  *ngIf="musicPlaying" color="dark-turquoise" ion-button (click)="stopMusic()"><ion-icon name="pause"></ion-icon></button> \n      </ion-buttons>\n      </ion-toolbar>\n\n      <ion-toolbar  color="turquoise" class="timerContainer">\n        <ion-buttons >    \n          <ion-icon color="dark-turquoise" name="clock"></ion-icon>    \n          <br>\n          <p text-center class="timerTime">\n          {{time}}\n          </p>\n      <button  *ngIf="!running" color="dark-turquoise" ion-button (click)="start()"><ion-icon name="play"></ion-icon></button>\n      <button  *ngIf="running" color="dark-turquoise" ion-button (click)="stop()"><ion-icon name="pause"></ion-icon></button>         \n      <button ion-button (click)="reset()"><ion-icon color="dark-turquoise" name="refresh-circle"></ion-icon></button>\n    </ion-buttons>\n  </ion-toolbar>\n\n    <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient"> \n    \n    <br>\n\n      <ion-toolbar class="HomeButtonContainer">\n        <ion-buttons><span *ngIf = "!PoidsNum || !AgeNum || !Taille">Renseigner les champs <span color="danger">en rouge :</span><br></span>\n\n          <button color="dark-turquoise" ion-button>{{sexeMF}}</button>\n\n          <button *ngIf = "!this.AgeNum" color="danger" ion-button  (click)="showPickerAge()">Age </button>\n          <button *ngIf = "this.AgeNum > 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{ageLecture}} ans </button>\n          <button *ngIf = "this.AgeNum > 0 && this.AgeNum <= 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{AgeNum}} mois</button>\n\n          <button *ngIf = " !this.PoidsNum " color="danger" ion-button  (click)="showPickerPoids()">Poids</button>\n          <button *ngIf = " this.PoidsNum " color="dark-turquoise" ion-button  (click)="showPickerPoids()">{{PoidsNum}} kg</button>\n\n\n          <button *ngIf = " !Taille " color="danger" ion-button  (click)="showPickerTaille()">Taille</button>\n          <button *ngIf = " Taille " color="dark-turquoise" ion-button  (click)="showPickerTaille()">{{Taille}} cm</button>\n\n          <hr>\n          <button class="SexeToggle">\n            <ion-segment swipeGesture="true" color="dark-turquoise" [(ngModel)]="sexeMF" (ionChange)="SetSexe()">\n              <ion-segment-button value="Fille">\n                <ion-icon class="segmentIcon" name="female"></ion-icon>\n              </ion-segment-button>\n              <ion-segment-button value="Garçon">\n                <ion-icon class="segmentIcon" name="male"></ion-icon>\n              </ion-segment-button>\n            </ion-segment>\n          </button>\n          <button ion-button small color="dark-turquoise"  (click)="displayOptions()">Options </button>\n          <button ion-button  small color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>\n          <button ion-button  small color="dark-turquoise"  (click)="help()"><ion-icon name="help-circle"></ion-icon></button>\n\n  \n    </ion-buttons>\n    </ion-toolbar>\n\n\n\n  </ion-card-content>\n</ion-card>\n\n<div class="monPatient">\n<b>Options : </b> <span *ngIf=" this.EstomacOuiNon">Estomac {{EstomacOuiNon}}</span> <span *ngIf="this.DureeJeune"> - Jeûne {{DureeJeune}} h</span><span *ngIf="this.Allergie"> - Allergie : {{Allergie}}</span>\n</div>\n\n<hr>\n\n    <div class="HomePageButtonsContainer">\n    <button *ngIf = "PoidsNum && AgeNum && Taille" class="homeButton" ion-button small color="turquoise"  (click)="displayCourbes()">Biométrie</button>\n    <button *ngIf = "!PoidsNum || !AgeNum || !Taille" class="homeButton" ion-button small color="grisclair"  (click)="alertAgePoidsTaille()">Biométrie</button>\n    <button class="homeButton" ion-button small color="pastel-green"  (click)="displayScores()">Scores</button>\n    <button class="homeButton" ion-button small color="pastel-brown"  (click)="displayProtocoles()">Protocoles</button>\n    </div>\n  <br>\n  <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button block small color="grisclair" (click)="alertPoidsAge()">Urgences</button>\n  <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button block small color="warning" (click)="displayUrgences()">Urgences</button>\n\n  <br>\n    \n          <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="grisclair" class="homeButtons" (click)="alertPoidsAge()"> Monitorage</button>\n          <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="grisclair" class="homeButtons" (click)="alertPoidsAge()"> Induction </button>\n          <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="grisclair" class="homeButtons" (click)="alertPoidsAge()"> Voies Aériennes </button>\n          <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="grisclair" class="homeButtons" (click)="alertPoidsAge()"> Antibiotiques </button>\n          <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="grisclair" class="homeButtons" (click)="alertPoidsAge()"> Entretien </button> \n    \n          <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="grisclair" class="homeButtons" (click)="alertPoidsAge()"> Solutés et PSL</button>\n          <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="grisclair" class="homeButtons" (click)="alertPoidsAge()"> Loco-régionale</button>\n          <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="grisclair" class="homeButtons" (click)="alertPoidsAge()">Antalgie & Post-op</button>\n\n    \n          <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayMonitorage()"> Monitorage</button>\n          <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayInduction()"> Induction </button>\n          <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayVAS()"> Voies Aériennes </button>\n          <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayATBprophylaxie()"> Antibiotiques </button>\n          <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayEntretien()"> Entretien </button> \n    \n          <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayGestionFluides()"> Solutés et PSL</button>\n          <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayALR()"> Loco-régionale</button>\n          <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayPostop()">Antalgie & Post-op</button>\n\n\n      <img class="logoDAR" (click)="openDARwebsite()" src="/assets/imgs/logo_dar.png"> \n\n      </ion-content>\n\n  \n\n\n  \n \n\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser_ngx__["a" /* InAppBrowser */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser_ngx__["a" /* InAppBrowser */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* PickerController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* PickerController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* PopoverController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* PopoverController */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _o || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+            __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser_ngx__["a" /* InAppBrowser */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* PickerController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* PopoverController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], AccueilPage);
     return AccueilPage;
-    var AccueilPage_1, _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+    var AccueilPage_1;
 }());
 
 ;
@@ -5547,7 +5540,7 @@ var ScoresPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 833:
+/***/ 832:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

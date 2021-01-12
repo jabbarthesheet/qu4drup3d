@@ -87953,6 +87953,12 @@ ion-row {
   border-radius: 10px;
 }
 
+.timerTime {
+  font-size: 10px !important;
+  text-align: center;
+  color: #009c9e !important;
+}
+
 .musicContainer {
   width: 30%;
   float: left;
@@ -87976,6 +87982,7 @@ ion-row {
   text-align: center !important;
   font-size: 12px !important;
   width: 100% !important;
+  color: #009c9e !important;
 }
 
 figcaption {
@@ -88085,6 +88092,12 @@ figcaption {
 
 .slideTitle {
   font-size: 16px !important;
+}
+
+.courbesTitle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .entete_protocole {

@@ -18,7 +18,7 @@
       <br>
 
       <ion-item>
-        <ion-label>BMI : {{BMI}} kg/m²
+        <ion-label>IMC : {{BMI}} kg/m²
         <p class="comment">{{BMIinfo}}</p>
       </ion-label>
     </ion-item>
@@ -29,10 +29,13 @@
         </ion-label>
       </ion-item>
 
+      <br>
+      <div class="courbesTitle">Courbes de croissance <br> {{sexeMF}} de {{AgeRange}}</div>
+
 
       <ion-card class="drogueContainer">
         <ion-card-header>
-          Poids
+          Poids (kg)
         </ion-card-header>
         <ion-card-content>
           <canvas #PoidsCanvas></canvas>
@@ -41,7 +44,7 @@
 
       <ion-card class="drogueContainer">
         <ion-card-header>
-          Taille
+          Taille (cm)
         </ion-card-header>
         <ion-card-content>
           <canvas #TailleCanvas></canvas>
@@ -50,7 +53,7 @@
 
       <ion-card class="drogueContainer">
         <ion-card-header>
-          IMC
+          IMC (kg/m²)
         </ion-card-header>
         <ion-card-content>
           <canvas #BMICanvas></canvas>

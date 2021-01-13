@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { OptionsPage } from '../options/options';
-import { AccueilPage } from '../accueil/accueil';
 
 /**
  * Generated class for the GestionFluidesPage page.
@@ -131,20 +130,15 @@ ToggleApportsJournaliers(){
     const alert = await this.alertController.create({
       cssClass: 'alerte',
       title: 'Minute papillon !',
-      message: 'Saisissez un âge et un poids pour le patient. Pensez aussi à renseigner la durée du jeûne pré-opératoire dans les options  pour profiter du calcul des apports horaires recommandés',
+      message: 'Pensez à renseigner la durée du jeûne pré-opératoire dans les options pour profiter du calcul des apports horaires recommandés.',
       buttons: [
         {
-          text: 'Plus tard.',
+          text: 'Compris.',
           role: 'cancel',
           cssClass: 'secondary',
           handler: (cancel) => {
             console.log('Confirm Cancel: Nan');
           }
-        }, {
-          text: 'OK.',
-          handler: (OK) => {
-            console.log('Confirm Okay');
-            this.navCtrl.pop();          }
         }
       ]
     });

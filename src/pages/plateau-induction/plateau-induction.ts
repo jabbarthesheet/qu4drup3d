@@ -59,6 +59,7 @@ export class PlateauInductionPage {
   AdminRocuronium:number;
   PosoRocuronium:string;
   DiluRocuronium:string;
+  AdminBridion:number;
 
   AdminAtracurium:number;
   PosoAtracurium:string; 
@@ -239,6 +240,8 @@ export class PlateauInductionPage {
      if (this.AgeNum <= 12){this.DiluRocuronium = "1 mg/mL";}
      else if (this.AgeNum <= 60){this.DiluRocuronium = "2,5 mg/mL";}
      else if (this.AgeNum > 60){this.DiluRocuronium = "10 mg/mL";};
+
+     this.AdminBridion = Math.round((this.PoidsNum * 16)*10)/10;
  
      /* TRAC */
      this.AdminAtracurium=Math.round((0.5*this.PoidsNum)*10)/10; 

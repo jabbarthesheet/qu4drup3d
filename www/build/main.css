@@ -88118,6 +88118,11 @@ ion-card {
   box-shadow: none;
 }
 
+.TableApports {
+  font-size: 12px !important;
+  text-align: center;
+}
+
 .lightbulb {
   width: 15% !important;
   margin-right: 10px;

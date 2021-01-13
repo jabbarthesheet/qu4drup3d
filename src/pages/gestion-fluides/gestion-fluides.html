@@ -29,6 +29,145 @@ Apports et produits sanguins
    
       <ion-list>
         <ion-item-group>
+
+          <ion-item-divider (click)="ToggleApportsJournaliers()">
+            <ion-label color="dark-turquoise">Apports journaliers selon l'âge
+            <ion-icon *ngIf="!isShownApportsJournaliers" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+            <ion-icon *ngIf="isShownApportsJournaliers" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-label>
+          </ion-item-divider>
+            
+            <ion-card class="drogueContainer"  *ngIf="isShownApportsJournaliers">
+            <ion-card-content>
+              <p *ngIf="AgeNum >= 24">Pour un {{CategorieAge}} de {{ageLecture}} ans</p>
+              <p *ngIf="AgeNum < 24">Pour un {{CategorieAge}} de {{AgeNum}} mois</p>
+            </ion-card-content>
+          </ion-card>
+ 
+              <ion-grid  fixed="true" *ngIf="isShownApportsJournaliers" class="ionFirstRow">
+                <ion-row class="TableApports" >
+                  <ion-col >
+                    Apports cibles
+                  </ion-col>
+                  <ion-col>
+                    En dose poids (/kg)
+                  </ion-col>
+                  <ion-col>
+                    Pour mon patient
+                  </ion-col>            
+                </ion-row>
+
+                <ion-row class="TableApports">
+                <ion-col>
+                  Calories (KCal/j)
+                </ion-col>
+                <ion-col>
+                  {{StandardKCal}}
+                </ion-col>
+                <ion-col>
+                  {{KCal}}
+                </ion-col>            
+              </ion-row>
+
+              <ion-row class="TableApports">
+              <ion-col>
+                Glucides (g/j)
+              </ion-col>
+              <ion-col>
+                {{StandardGlucides}}
+              </ion-col>
+              <ion-col>
+                {{Glucides}}
+              </ion-col>            
+            </ion-row>
+
+            <ion-row class="TableApports">
+            <ion-col>
+              Acides aminés (g/j)
+            </ion-col>
+            <ion-col>
+              {{StandardAcidesAmines}}
+            </ion-col>
+            <ion-col>
+              {{AcidesAmines}}
+            </ion-col>            
+          </ion-row>
+            
+          <ion-row class="TableApports">
+          <ion-col>
+            Lipides (g/j)
+          </ion-col>
+          <ion-col>
+            {{StandardLipides}}
+          </ion-col>
+          <ion-col>
+            {{Lipides}}
+          </ion-col>            
+        </ion-row>
+
+        <ion-row class="TableApports">
+        <ion-col>
+        Sodium (mEq/j)
+          </ion-col>
+        <ion-col>
+          {{StandardSodium}}
+        </ion-col>
+        <ion-col>
+          {{Sodium}}
+        </ion-col>            
+      </ion-row>
+
+      <ion-row class="TableApports">
+      <ion-col>
+        Potassium (mEq/j)
+          </ion-col>
+        <ion-col>
+          {{StandardPotassium}}
+        </ion-col>
+        <ion-col>
+          {{Potassium}}
+        </ion-col>            
+      </ion-row>
+
+      <ion-row class="TableApports">
+      <ion-col>
+        Calcium (mg/j)
+          </ion-col>
+        <ion-col>
+          {{StandardCalcium}}
+        </ion-col>
+        <ion-col>
+          {{Calcium}}
+        </ion-col>            
+      </ion-row>
+
+      <ion-row class="TableApports">
+      <ion-col>
+        Phosphore (mg/j)
+          </ion-col>
+        <ion-col>
+          {{StandardPhosphore}}
+        </ion-col>
+        <ion-col>
+          {{Phosphore}}
+        </ion-col>            
+      </ion-row>
+
+      <ion-row class="TableApports">
+      <ion-col>
+        Magnesium (mg/j)
+          </ion-col>
+        <ion-col>
+          {{StandardMagnesium}}
+        </ion-col>
+        <ion-col>
+          {{Magnesium}}
+        </ion-col>            
+      </ion-row>
+
+                </ion-grid>
+
+         
           
           <ion-item-divider (click)="ToggleApports()">
             <ion-label color="dark-turquoise">Apports hydriques

@@ -92,8 +92,8 @@
     <button class="homeButton" ion-button small color="pastel-brown"  (click)="displayProtocoles()">Protocoles</button>
     </div>
   <br>
-  <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button block small color="grisclair" (click)="alertPoidsAge()">Urgences</button>
-  <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button block small color="warning" (click)="displayUrgences()">Urgences</button>
+  <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button block small color="grisclair" (click)="alertPoidsAge()">Urgences & Réanimation</button>
+  <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button block small color="warning" (click)="displayUrgences()">Urgences & Réanimation</button>
 
   <br>
     
@@ -103,7 +103,7 @@
           <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="grisclair" class="homeButtons" (click)="alertPoidsAge()"> Antibiotiques </button>
           <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="grisclair" class="homeButtons" (click)="alertPoidsAge()"> Entretien </button> 
     
-          <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="grisclair" class="homeButtons" (click)="alertPoidsAge()"> Solutés et PSL</button>
+          <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="grisclair" class="homeButtons" (click)="alertPoidsAge()"> Apports & PSL</button>
           <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="grisclair" class="homeButtons" (click)="alertPoidsAge()"> Loco-régionale</button>
           <button *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="grisclair" class="homeButtons" (click)="alertPoidsAge()">Antalgie & Post-op</button>
 
@@ -114,7 +114,7 @@
           <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayATBprophylaxie()"> Antibiotiques </button>
           <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayEntretien()"> Entretien </button> 
     
-          <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayGestionFluides()"> Solutés et PSL</button>
+          <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayGestionFluides()">Apports & PSL</button>
           <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayALR()"> Loco-régionale</button>
           <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayPostop()">Antalgie & Post-op</button>
 

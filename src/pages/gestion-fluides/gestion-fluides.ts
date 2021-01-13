@@ -61,10 +61,36 @@ export class GestionFluidesPage {
   AdminEphedrine:number; 
   AdminAlbumine:number; 
 
+
+
+  CategorieAge:string; 
+  
+  StandardKCal:number; 
+  StandardGlucides:number; 
+  StandardAcidesAmines:number; 
+  StandardLipides:number; 
+  StandardSodium:number; 
+  StandardPotassium:number; 
+  StandardCalcium:number; 
+  StandardPhosphore:number; 
+  StandardMagnesium:number; 
+  
+  KCal:number;
+  Glucides:number; 
+  AcidesAmines:number;
+  Lipides:number;
+  Sodium:number;
+  Potassium:number;
+  Calcium:number;
+  Phosphore:number;
+  Magnesium:number;
+
   isShownApports:boolean=false; 
   isShownCGR:boolean=false;
   isShownAutresPSL:boolean=false;
   isShownHypoTA:boolean=false; 
+  isShownApportsJournaliers:boolean=false; 
+  
 
 
 
@@ -77,20 +103,27 @@ export class GestionFluidesPage {
 
   ToggleApports() {
     this.isShownApports = !this.isShownApports; 
-    this.isShownCGR = this.isShownAutresPSL = this.isShownHypoTA = false; 
+    this.isShownCGR = this.isShownAutresPSL = this.isShownHypoTA = this.isShownApportsJournaliers = false; 
   };
   ToggleCGR() {
     this.isShownCGR = !this.isShownCGR; 
-    this.isShownApports = this.isShownAutresPSL = this.isShownHypoTA = false; 
+    this.isShownApports = this.isShownAutresPSL = this.isShownHypoTA = this.isShownApportsJournaliers = false; 
   };
   ToggleAutresPSL () {
     this.isShownAutresPSL = !this.isShownAutresPSL;
-    this.isShownCGR = this.isShownApports = this.isShownHypoTA = false; 
+    this.isShownCGR = this.isShownApports = this.isShownHypoTA = this.isShownApportsJournaliers = false; 
   };
   ToggleHypoTA () {
     this.isShownHypoTA = !this.isShownHypoTA; 
-    this.isShownCGR = this.isShownApports = this.isShownAutresPSL = false;
+    this.isShownCGR = this.isShownApports = this.isShownAutresPSL = this.isShownApportsJournaliers = false;
 };
+
+ToggleApportsJournaliers(){
+  this.isShownApportsJournaliers = !this.isShownApportsJournaliers ;
+  this.isShownCGR = this.isShownApports = this.isShownAutresPSL = this.isShownHypoTA = false;
+};
+
+
 
 
 
@@ -155,7 +188,59 @@ export class GestionFluidesPage {
           else{this.AdminEphedrine = Math.round((this.PoidsNum*0.1)*10)/10;};
 
           this.AdminAlbumine = Math.round((this.PoidsNum*10)*10)/10;
+
+          /** Apports journaliers */
         
+          if (this.AgeNum <= 1){
+            this.CategorieAge = "nouveau-né";
+            this.StandardKCal = 110;
+            this.StandardGlucides = 17;
+            this.StandardAcidesAmines = 3.5; 
+            this.StandardLipides = 6;
+            this.StandardSodium = 5;
+            this.StandardPotassium = 2; 
+            this.StandardCalcium = 45;
+            this.StandardPhosphore = 35;
+            this.StandardMagnesium = 10;
+          }
+
+          else if (this.AgeNum <= 3)
+          {
+            this.CategorieAge = "nourrisson";
+            this.StandardKCal = 100;
+            this.StandardGlucides = 14;
+            this.StandardAcidesAmines = 2.5; 
+            this.StandardLipides = 3;
+            this.StandardSodium = 3.5;
+            this.StandardPotassium = 3.5; 
+            this.StandardCalcium = 25;
+            this.StandardPhosphore = 25;
+            this.StandardMagnesium = 10;
+          }
+
+          else
+          {
+            this.CategorieAge = "enfant";
+            this.StandardKCal = 70;
+            this.StandardGlucides = 12;
+            this.StandardAcidesAmines = 2; 
+            this.StandardLipides = 2;
+            this.StandardSodium = 2.5;
+            this.StandardPotassium = 2.5; 
+            this.StandardCalcium = 10;
+            this.StandardPhosphore = 10;
+            this.StandardMagnesium = 8;
+          }
+
+          this.KCal = Math.round((this.PoidsNum*this.StandardKCal)*10)/10 ;
+          this.Glucides = Math.round((this.PoidsNum*this.StandardGlucides)*10)/10 ; 
+          this.AcidesAmines = Math.round((this.PoidsNum*this.StandardAcidesAmines)*10)/10 ;
+          this.Lipides = Math.round((this.PoidsNum*this.StandardLipides)*10)/10 ;
+          this.Sodium = Math.round((this.PoidsNum*this.StandardSodium)*10)/10 ;
+          this.Potassium = Math.round((this.PoidsNum*this.StandardPotassium)*10)/10 ;
+          this.Calcium = Math.round((this.PoidsNum*this.StandardCalcium)*10)/10 ;
+          this.Phosphore = Math.round((this.PoidsNum*this.StandardPhosphore)*10)/10 ;
+          this.Magnesium = Math.round((this.PoidsNum*this.StandardMagnesium)*10)/10 ;
         };
 
     

@@ -205,11 +205,13 @@
   
       <ion-card *ngIf="isShownAntiEmet" class="drogueContainer">
 
-      <ion-item>
+      <ion-item class="avecAMM">
         <ion-label class="drogueInduction"><b>Ondansétron (Zophren<span>&#174;</span>): {{AdminZophren}} mg IVL ou PO</b>
           <p class="dilutionDrogueInduction">pour 0,1 mg/kg, toutes les 8h</p> 
         </ion-label>
       </ion-item>
+
+      <div class="AMM">AMM <br> > 1 an</div>  
 
       <ion-item>
         <ion-label class="drogueInduction"><b>Dropéridol (Droleptan<span>&#174;</span>) : {{AdminDroleptan}} µg IVL</b>

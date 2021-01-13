@@ -47,13 +47,17 @@
 
   <ion-card *ngIf="isShownHypnotiquesIntraVeineux" class="drogueContainer">
 
-<ion-item>        
-  <ion-label class="drogueInduction" color="warning">Propofol : {{PropoEntretien}} mg/h
-  <p class="dilutionDrogueInduction">Pour 10 mg/kg/h </p></ion-label>
+<ion-item>     
+  <ion-label class="drogueInduction" color="warning">
+  <p class="posologieDrogueInduction">Posologie proposée : 10 mg/kg/h </p>
+  Propofol : {{PropoEntretien}} mg/h IVSE
+</ion-label>
   </ion-item>
 <ion-item >         
-  <ion-label class="drogueInduction" color="orange">Midazolam : {{HypnoEntretien}} mg/h
-  <p class="dilutionDrogueInduction">Pour 0,1 mg/kg/h </p></ion-label>
+  <ion-label class="drogueInduction" color="orange">
+    <p class="dilutionDrogueInduction">Posologie proposée : 0,1 mg/kg/h </p>
+    Midazolam : {{HypnoEntretien}} mg/h IVSE
+ </ion-label>
   </ion-item>
 
 
@@ -84,23 +88,31 @@
 <ion-card *ngIf="isShownAntalgiques" class="drogueContainer">
 
 <ion-item>         
-<ion-label class="drogueInduction" color="primary">Remifentanil : {{RemiEntretien}} µg/h
-<p  class="dilutionDrogueInduction">Pour 10 µg/kg/h </p></ion-label>
+<ion-label class="drogueInduction" color="primary">
+  <p  class="dilutionDrogueInduction">Posologie proposée 10 µg/kg/h </p>
+  Remifentanil : {{RemiEntretien}} µg/h IVSE
+</ion-label>
 </ion-item>
 
 <ion-item>         
-<ion-label class="drogueInduction" color="primary">Sufentanil : {{SufEntretien}} µg/h
-<p  class="dilutionDrogueInduction">Pour 0,2 µg/kg/h </p></ion-label>
+<ion-label class="drogueInduction" color="primary">
+  <p  class="dilutionDrogueInduction">Posologie proposée : 0,2 µg/kg/h </p>
+  Sufentanil : {{SufEntretien}} µg/h IVSE
+</ion-label>
 </ion-item>
 
 <ion-item>         
-<ion-label class="drogueInduction" color="dark">Xylocaïne : {{XyloEntretien}} mg/h
-<p  class="dilutionDrogueInduction">Pour 1 mg/kg/h </p></ion-label>
+<ion-label class="drogueInduction" color="dark">
+  <p  class="dilutionDrogueInduction">Posologie proposée : 1 mg/kg/h </p>
+  Xylocaïne : {{XyloEntretien}} mg/h IVSE
+</ion-label>
 </ion-item>
 
 <ion-item>         
-<ion-label class="drogueInduction" color="warning">Ketamine : {{KetaEntretien}} mg/h
-<p  class="dilutionDrogueInduction">Pour 0,15 mg/kg/h </p></ion-label>
+<ion-label class="drogueInduction" color="warning">
+  <p  class="dilutionDrogueInduction">Posologie proposée : 0,15 mg/kg/h </p>
+  Ketamine : {{KetaEntretien}} mg/h IVSE
+</ion-label>
 </ion-item>
 
 </ion-card>
@@ -116,27 +128,48 @@
 <ion-card *ngIf="isShownCurares"class="drogueContainer">
 
 <ion-item >         
-<ion-label color="danger" class="drogueInduction">Rocuronium (Esméron®) : {{RocuEntretien}} mg/h
-<p class="dilutionDrogueInduction">Pour 0,6 mg/kg/h </p></ion-label>
+<ion-label color="danger" class="drogueInduction">
+  <p class="dilutionDrogueInduction">Posologie proposée : 0,6 mg/kg/h </p>
+  Rocuronium (Esméron®) : {{RocuEntretien}} mg/h IVSE
+</ion-label>
 </ion-item>
 
 <ion-item >         
-<ion-label color="danger" class="drogueInduction">Atracurium (Tracrium®) : {{TracEntretien}} mg/h
-<p class="dilutionDrogueInduction"  >Pour 0,5 mg/kg/h </p></ion-label>
-</ion-item>
-
-<ion-item class="avecAMM">         
-  <ion-label class="drogueInduction">Antagonisation atracurium ou rocuronium
-  <p class="dilutionDrogueInduction">- Atropine {{AdminAtropineAntagonisation}} µg (20 µg/kg)</p>
-  <p class="dilutionDrogueInduction">-Prostigmine {{AdminProstigmineAntagonisation}} µg (40 µg/kg)</p>
+<ion-label color="danger" class="drogueInduction">
+  <p class="dilutionDrogueInduction">Posologie proposée </p>
+  Atracurium (Tracrium®) : {{TracEntretien}} mg/h IVSE
 </ion-label>
 </ion-item>
+
+
+
+ 
+  <ion-item class="avecAMM">
+    <ion-label color="dark-green" class="drogueInduction">
+      <p class="dilutionDrogueInduction">Posologie proposée : 20 µg/kg</p>
+     - Atropine {{AdminAtropineAntagonisation}} µg IVD
+    <p class="dilutionDrogueInduction">
+      Antagonisation curare en association avec prostigmine
+    </p></ion-label>
+  </ion-item>
   <div class="AMM">Vérifier : <br> TOF > 2/4</div>
+
+  <ion-item class="avecAMM">    
+    <ion-label color="primary" class="drogueInduction"> 
+  <p class="dilutionDrogueInduction">Posologie proposée : 40 µg/kg</p>
+  - Prostigmine {{AdminProstigmineAntagonisation}} µg IVD
+  <p class="dilutionDrogueInduction">
+    Antagonisation curare en association avec atropine
+  </p></ion-label>
+  </ion-item>
+  <div class="AMM">Vérifier : <br> TOF > 2/4</div>
+
+  
 
   <ion-item class="avecAMM">         
     <ion-label color="orange" class="drogueInduction">Antagonisation rocuronium   
-   <ion-label color="dark-green" class="dilutionDrogueInduction">- TOF > 2/4 : Suggamadex (Bridion®) {{PosoBridion2reponses}} mg IVD (4 mg/kg)</ion-label>
-    <ion-label color="primary" class="dilutionDrogueInduction">- TOF > 4/4 : Suggamadex (Bridion®) {{PosoBridion4reponses}} mg IVD (2 mg/kg)</ion-label>
+    <p color="dark-green" class="dilutionDrogueInduction">- TOF > 2/4 : Suggamadex (Bridion®) {{PosoBridion2reponses}} mg  (4 mg/kg) IVD</p>
+    <p color="primary" class="dilutionDrogueInduction">- TOF > 4/4 : Suggamadex (Bridion®) {{PosoBridion4reponses}} mg (2 mg/kg) IVD </p>
   </ion-label> 
   </ion-item>
   

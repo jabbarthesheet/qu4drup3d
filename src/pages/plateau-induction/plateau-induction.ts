@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { AlertController } from 'ionic-angular';
-import { AccueilPage } from '../accueil/accueil';
-
 /**
  * Generated class for the PlateauInductionPage page.
  *

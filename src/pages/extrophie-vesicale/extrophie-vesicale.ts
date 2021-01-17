@@ -91,27 +91,22 @@ export class ExtrophieVesicalePage {
 
   ToggleConsultation() {
     this.isShownConsultation = !this.isShownConsultation; 
-    this.isShownVPA = this.isShownPerOp = this.isShownPostOp = this.isShownPreOp = false; 
   };
   
   ToggleVPA() {
     this.isShownVPA = !this.isShownVPA;
-    this.isShownConsultation = this.isShownPerOp = this.isShownPostOp = this.isShownPreOp = false; 
   };
 
   TogglePreOp() {
     this.isShownPreOp = !this.isShownPreOp;
-    this.isShownConsultation = this.isShownVPA = this.isShownPerOp = this.isShownPostOp = false;
   };
 
   TogglePerOp() {
     this.isShownPerOp = !this.isShownPerOp; 
-    this.isShownConsultation = this.isShownVPA = this.isShownPostOp = this.isShownPreOp = false; 
   };
 
   TogglePostOp() {
     this.isShownPostOp = !this.isShownPostOp;
-    this.isShownConsultation = this.isShownVPA = this.isShownPerOp = this.isShownPreOp = false;
   };
 
   checkCS() {

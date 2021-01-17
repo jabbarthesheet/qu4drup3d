@@ -98,22 +98,18 @@ export class PlateauInductionPage {
 
   ToggleHypno() {
     this.isShownHypno = !this.isShownHypno; 
-    this.isShownMorphiniques = this.isShownCurares = this.isShownAutres = false; 
   };
 
   ToggleMorphiniques() {
     this.isShownMorphiniques = !this.isShownMorphiniques; 
-    this.isShownHypno = this.isShownCurares = this.isShownAutres = false; 
   };
 
   ToggleCurares () {
     this.isShownCurares = !this.isShownCurares;
-    this.isShownHypno = this.isShownMorphiniques = this.isShownAutres = false; 
   };
 
   ToggleAutres () {
     this.isShownAutres = !this.isShownAutres; 
-    this.isShownHypno = this.isShownMorphiniques = this.isShownCurares = false; 
   };
 
   async presentAlert() {

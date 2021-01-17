@@ -33,14 +33,40 @@
         </ion-item-divider> 
 
         <ion-card *ngIf="isShownVentilation" class="drogueContainer">
-          <ion-item>
-            <ion-label class="dispositifVentilation">Taille du filtre : {{TailleFiltre}} </ion-label></ion-item>
-          <ion-item>
-            <ion-label class="dispositifVentilation">Canule de Guédel & masque : {{CouleurCanuleMasque}}</ion-label></ion-item>
-          <ion-item>
-            <ion-label class="dispositifVentilation">Volume courant : <b>{{Volumecourant}} mL</b>
-            <p class="dilutionDrogueInduction">pour 6 mL/kg</p></ion-label>
-          </ion-item>
+          <ion-card-content class="dilutionDrogueInduction">
+                - Taille du filtre : {{TailleFiltre}}
+            <br>- Canule de Guédel & masque : {{CouleurCanuleMasque}}
+            <br>- Vm (Vt [6mL/kg] x FR) = {{Volumecourant}} mL x {{FrequenceVentilatoire}}/min = {{VolumeMinute}} L/min
+            <br>- Masque laryngé : {{TailleMasqueLarynge}}
+        </ion-card-content>
+        </ion-card>
+
+        <ion-card *ngIf="isShownVentilation" class="drogueContainer">
+          <ion-card-content class="dilutionDrogueInduction">
+            Pertes insensibles respiratoires  :
+            <p class="comment">Estimations pour une surface corporelle de {{SurfaceCorporelle}} m²</p>
+            <ion-item>
+              <ion-label class="dilutionDrogueInduction">
+                En VS : {{PertesInsensiblesVSheure}} mL/h ({{PertesInsensiblesVSjour}} mL/j)
+                <p class="comment">800 mL/m²/j soit 33 mL/m²/h </p>
+              </ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-label class="dilutionDrogueInduction">
+                Avec SIOT : {{PertesInsensiblesIOTheure}} mL/h ({{PertesInsensiblesIOTjour}} mL/j)
+                <p class="comment">400 mL/m²/j soit 17 mL/m²/h </p>
+              </ion-label>
+            </ion-item>
+            
+            <ion-item>
+              <ion-label class="dilutionDrogueInduction">
+                Sous VNI : {{PertesInsensiblesVNIheure}} mL/h ({{PertesInsensiblesIOTjour}} mL/j)
+                <p class="comment">600 mL/m²/j soit 25 mL/m²/h </p>
+              </ion-label>
+            </ion-item>
+
+        </ion-card-content>
         </ion-card>
         
         <ion-item-divider (click)="ToggleIntubation()">
@@ -50,73 +76,33 @@
         </ion-label>
         </ion-item-divider> 
 
-        <ion-card *ngIf="isShownIntubation" class="drogueContainer">
-            <ion-item>
-              <ion-label class="dispositifVentilation">Lame intubation : {{LameIntubation}}</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label class="dispositifVentilation">Taille de la sonde d'intubation : 
-              <p class="dilutionDrogueInduction"> - Proposée selon l'âge : {{TailleSITage}} mm</p>
-              <p class="dilutionDrogueInduction"> - Proposée selon le poids : {{TailleSITpoids}} mm</p></ion-label>
-            </ion-item>
+        <ion-card *ngIf="isShownIntubation" class="drogueContainer">          
+              <ion-card-content class="dilutionDrogueInduction">
+                En l'absence de critère d'intubation difficile : {{LameIntubation}}. <br> <br> 
+                En cas d'<b>intubation difficile prévisible</b>, prévoir d'emblée un vidéo-laryngoscope :
+                <br>- {{LameMcGrath}} 
+                <br>- {{LameGlideScope}}
+                <br><br>
 
+            <p class="reference">Référence : RFE SFAR 2018. Il est probablement recommandé d’utiliser un vidéolaryngoscope en première intention chez les patients avec intubation difficile prévue et ventilation au masque
+              possible ou après échec de la laryngoscopie directe afin d’augmenter les chances de succès de l’intubation.
+            </p>
+            <br>
 
-            <ion-item>
-              <ion-label class="dispositifVentilation">Repère de fixation de la sonde : 
-              <p class="dilutionDrogueInduction">Approx. : taille sonde x3 : {{RepereSITenfant}} </p>
-              <p class="dilutionDrogueInduction"><b> - Repère dents : {{RepereSITdents}} cm</b></p>
-              <p class="dilutionDrogueInduction"><b> - Repère nez : {{RepereSITnez}} cm</b></p>
-            </ion-label>
-              </ion-item>
-        </ion-card>
-          
-
-        <ion-item-divider (click)="ToggleMasqueLarynge()">
-          <ion-label color="dark-turquoise">Masque laryngé
-          <ion-icon *ngIf="!isShownMasqueLarynge" class= "OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
-          <ion-icon *ngIf="isShownMasqueLarynge" class= "OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
-        </ion-label>
-        </ion-item-divider> 
-
-        <ion-card *ngIf="isShownMasqueLarynge" class="drogueContainer">
-            <ion-item>
-              <ion-label class="dispositifVentilation">Taille de masque : {{TailleMasqueLarynge}}
-              </ion-label>
-              </ion-item>
-        </ion-card>
-
-
-        <ion-item-divider (click)="ToggleIntubationDifficile()">
-          <ion-label color="danger">Intubation difficile
-          <ion-icon *ngIf="!isShownIntubationDifficile" class= "OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
-          <ion-icon *ngIf="isShownIntubationDifficile" class= "OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
-        </ion-label>
-        </ion-item-divider> 
-
-        <ion-card class="IOTdifficile" *ngIf="isShownIntubationDifficile">
-              
-              <ion-card-content class="dispositifVentilation">
-                <p><b>RFE SFAR 2018</b></p>
-                <p><b>- IOT difficile non prévue : </b></p>
-                <br>
-                <p>En cas de ventilation ou d'intubation difficile non prévue, utiliser un dispositif de 
-                 ventilation supra-glottique pour tenter d'assurer la ventilation de l'enfant.</p>
-                 <br>
-               
-                <p><b>- IOT difficile prévue : </b></p>
-                <br>
-                <p>Il est probablement recommandé d’utiliser un vidéolaryngoscope en première
-                intention chez les patients avec intubation difficile prévue et ventilation au masque
-                possible ou après échec de la laryngoscopie directe afin d’augmenter les chances de
-                succès de l’intubation.</p>
-
-              </ion-card-content>
-        </ion-card>
-
+            Taille de la sonde d'intubation : 
+              <br> - Proposée selon l'âge : {{TailleSITage}} mm
+              <br> - Proposée selon le poids : {{TailleSITpoids}} mm
+              <br>
+              <br>  
+           Repère de fixation de la sonde : 
+              <br> - Approximation : taille sonde x3 : {{RepereSITenfant}}
+              <br> - Repère dents : {{RepereSITdents}} cm
+              <br> - Repère nez : {{RepereSITnez}} cm
+            
+            </ion-card-content>
+          </ion-card>
 
   </ion-item-group>
-
   </ion-list>
-
 
 </ion-content>

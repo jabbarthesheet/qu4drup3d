@@ -41,65 +41,60 @@ Traitements anti-infectieux</div>
   <ion-card *ngIf="isShownPosologies" class="drogueContainer">
 
   <ion-item class="avecAMM">         
-    <ion-label class="drogueInduction" color="dark"><b>Amoxicilline-Acide Clavulanique (Augmentin®)</b> : 
-      <p class="dilutionDrogueInduction">Première injection : <b> {{AdminAugmentin}} mg IVD</b> </p>
-    <p class="comment">pour 50 mg/kg sans dépasser 2g</p>
-    <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjAugmentin}} mg IVD</b> </p>
-    <p class="comment">pour 25 mg/kg, toutes les <b>2h</b></p>
+    <ion-label class="drogueInduction" color="dark">
+      <p class="dilutionDrogueInduction">Posologie proposée : 50 mg/kg sans dépasser 2g</p>
+      Amoxicilline-Acide Clavulanique (Augmentin®) : {{AdminAugmentin}} mg IVL
+    <p class="dilutionDrogueInduction">Réinjection demi-dose : {{ReInjAugmentin}} mg IVL toutes les 2h </p>
   </ion-label>
     </ion-item>
     <div class="AMM">Attention : ne pas dépasser 20 mg/kg/j d'acide clavulanique (<b>{{MaxAcideClavulanique}} mg</b>).</div>
 
     <ion-item>         
-      <ion-label class="drogueInduction" color="dark"><b>Céfamandole</b>: 
-        <p class="dilutionDrogueInduction">Première injection : <b> {{AdminCefamandole}} mg IVD</b> </p>
-      <p class="comment">pour 40 mg/kg sans dépasser 1.5g</p>
-      <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjCefamandole}} mg IVD</b> </p>
-      <p class="comment">pour 20 mg/kg, toutes les <b>2h</b></p>
+      <ion-label class="drogueInduction" color="dark"> 
+        <p class="dilutionDrogueInduction">Posologie proposée : 40 mg/kg sans dépasser 1.5g</p>
+          Céfamandole : {{AdminCefamandole}} mg IVL
+      <p class="dilutionDrogueInduction">Réinjection demi-dose : {{ReInjCefamandole}} mg IVL toutes les 2h</p>
     </ion-label>
       </ion-item> 
 
       <ion-item>         
-        <ion-label class="drogueInduction" color="dark"><b>Céfazoline</b>: 
-          <p class="dilutionDrogueInduction">Première injection : <b> {{AdminCefazoline}} mg IVD</b> </p>
-        <p class="comment">pour 50 mg/kg sans dépasser 2g</p>
-        <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjCefazoline}} mg IVD</b> </p>
-        <p class="comment">pour 25 mg/kg, toutes les <b>4h</b></p>
+        <ion-label class="drogueInduction" color="dark">
+         
+          <p class="dilutionDrogueInduction">Posologie proposée : 50 mg/kg sans dépasser 2g</p>
+          Céfazoline : {{AdminCefazoline}} mg IVL
+        <p class="dilutionDrogueInduction">Réinjection demi-dose : {{ReInjCefazoline}} mg IVL toutes les 4h </p>
       </ion-label>
         </ion-item> 
 
         <ion-item>         
-          <ion-label class="drogueInduction" color="dark"><b>Clindamycine</b>: 
-            <p class="dilutionDrogueInduction">Première injection : <b> {{AdminClindamycine}} mg IVD</b> </p>
-          <p class="comment">pour 15 mg/kg sans dépasser 600 mg</p>
-          <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjClindamycine}} mg IVD</b> </p>
-          <p class="comment">pour 7,5 mg/kg, toutes les <b>4h</b></p>
+          <ion-label class="drogueInduction" color="dark">
+            <p class="dilutionDrogueInduction">Posologie proposée : 15 mg/kg sans dépasser 600 mg</p>
+            Clindamycine: {{AdminClindamycine}} mg IVL
+          <p class="dilutionDrogueInduction">Réinjection demi-dose : {{ReInjClindamycine}} mg IVL toutes les 4h</p>
         </ion-label>
           </ion-item> 
 
           <ion-item>         
-            <ion-label class="drogueInduction" color="dark"><b>Gentamicine</b>: 
-              <p class="dilutionDrogueInduction">Première injection : <b> {{AdminGentamicine}} mg IVL</b> </p>
-            <p class="comment">pour 3 mg/kg sans dépasser 160 mg</p>
-            <p class="comment">Pas plus d'une injection par jour, attention à adapter chez l'insuffisant rénal</p>
+            <ion-label class="drogueInduction" color="dark">
+              <p class="dilutionDrogueInduction">Posologie proposée : 3 mg/kg sans dépasser 160 mg</p>
+              Gentamicine : {{AdminGentamicine}} mg IVL
+            <p class="dilutionDrogueInduction">Pas plus d'une injection par jour, attention à adapter chez l'insuffisant rénal</p>
           </ion-label>
             </ion-item> 
 
             <ion-item>         
-              <ion-label class="drogueInduction" color="dark"><b>Métronidazole (Flagyl®)</b>: 
-                <p class="dilutionDrogueInduction">Première injection : <b> {{AdminMetronidazole}} mg IVL</b> </p>
-              <p class="comment">pour 20 mg/kg sans dépasser 1000 mg</p>
-              <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjMetronidazole}} mg IVD</b> </p>
-              <p class="comment">pour 10 mg/kg, toutes les <b>8h</b></p>
+              <ion-label class="drogueInduction" color="dark">
+                <p class="dilutionDrogueInduction">Posologie proposée : 20 mg/kg sans dépasser 1000 mg</p>
+                Métronidazole (Flagyl®) : {{AdminMetronidazole}} mg IVL
+              <p class="dilutionDrogueInduction">Réinjection demi-dose : {{ReInjMetronidazole}} mg IVL toutes les 8h</p>
             </ion-label>
               </ion-item> 
 
               <ion-item>         
-                <ion-label class="drogueInduction" color="dark"><b>Vancomycine</b>: 
-                  <p class="dilutionDrogueInduction">Première injection : <b> {{AdminVancomycine}} mg IVL</b> </p>
-                <p class="comment">IVL sur 30 minutes, pour 15 mg/kg sans dépasser 2000 mg</p>
-                <p class="dilutionDrogueInduction">Réinjection : <b> {{ReInjVancomycine}} mg IVD</b> </p>
-                <p class="comment">IVL sur 30 minutes, pour 15 mg/kg, toutes les <b>12h</b></p>
+                <ion-label class="drogueInduction" color="dark">
+                  <p class="dilutionDrogueInduction">Posologie proposée : pour 15 mg/kg sans dépasser 2000 mg</p>
+                  Vancomycine : {{AdminVancomycine}} mg IVL sur 30 minutes ou IVSE
+                  <p class="dilutionDrogueInduction">Réinjection pleine dose : {{ReInjVancomycine}} mg IVL toutes les 12h</p>
               </ion-label>
                 </ion-item> 
           </ion-card>

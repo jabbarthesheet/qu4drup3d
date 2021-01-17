@@ -48,8 +48,38 @@ export class ScoresPage {
   EVENDOLPosition:number=0;
   EVENDOLRelation:number=0; 
   EVENDOLTotal:number=0; 
-  SeuilPrescription:string="Non atteint.";
+  SeuilPrescriptionEVENDOL:string="Non atteint.";
 
+  isShownEDIN:boolean=false; 
+  EDINVisage:number=0; 
+  EDINCorps:number=0;
+  EDINSommeil:number=0;
+  EDINRelation:number=0;
+  EDINReconfort:number=0; 
+  EDINTotal:number=0; 
+  SeuilPrescriptionEDIN:string="Non atteint.";
+  
+  isShownAldrete:boolean=false;
+  totalAldrete:number=0; 
+  CATAldrete:string="Cocher les items du score correspondant à l'état du patient.";
+
+  isShownPADSS:boolean=false; 
+  totalPADSS:number;
+  CATPADSS:string="Cocher les items du score correspondant à l'état du patient.";
+
+  isShownSHS:boolean=false;
+  cumuleSHS:number; 
+  risqueSHS:string="Répondre aux questions du score."; 
+  SHSQ1:number; 
+  SHSQ2:number; 
+  SHSQ3:number; 
+  SHSQ4:number;
+  SHSQ5:number;
+  SHSQ6:number;
+
+  isShownHEMSTOP:boolean=false;
+  totalHEMSTOP:number;
+  risqueHEMSTOP:string="Répondre aux questions du score."
 
 
   public VPOPform = [
@@ -62,6 +92,63 @@ export class ScoresPage {
     {  val: 'Chirurgie à risque : amygdales, strabisme, tympan', isChecked: false , count : 1},
     {  val: 'Réinjection de morphiniques', isChecked: false , count : 1},
   ];
+
+  public AldreteForm = [
+    { category: "Conscience",  val: 'Réveillé et orienté', isChecked: false , count: 2 },
+    { category:"", val : 'Réveillable par stimulation minime', isChecked: false , count : 1},
+    { category:"", val: 'Non réveillable par stimulation tactile', isChecked: false , count : 0 },
+   
+    { category: "Activité",  val: 'Mobilité normale des extrémités', isChecked: false , count: 2 },
+    { category:"", val : 'Faiblesse à la mobilité', isChecked: false , count : 1},
+    { category:"", val: 'Incapable de bouger les extrémités', isChecked: false , count : 0 },
+   
+    { category: "Respiration",  val: 'Inspiration profonde possible, toux, normopnée', isChecked: false , count: 2 },
+    { category:"", val : 'Tachypnée mais toux préservée', isChecked: false , count : 1},
+    { category:"", val: 'Dyspnée, pas de toux possible', isChecked: false , count : 0 },
+    
+    { category: "Hémodynamique",  val: 'PAS ou PAM +/- 15% des valeurs avant induction', isChecked: false , count: 2 },
+    { category:"", val : 'PAS ou PAM +/- 30% des valeurs avant induction', isChecked: false , count : 1},
+    { category:"", val: 'PAS ou PAM +/- 50% des valeurs avant induction', isChecked: false , count : 0 },
+    
+    { category: "Saturation",  val: 'SpO2 > 92% en air ambiant', isChecked: false , count: 2 },
+    { category:"", val : 'SpO2 > 90% en air ambiant', isChecked: false , count : 1},
+    { category:"", val: 'SpO2 < 90% en air ambiant', isChecked: false , count : 0 },
+   
+    { category: "Douleur",  val: 'Pas de douleur', isChecked: false , count: 2 },
+    { category:"", val : 'Douleur modérée mais contrôlée par les antalgiques', isChecked: false , count : 1},
+    { category:"", val: 'Douleur non contrôlée par les antalgiques', isChecked: false , count : 0 },
+   
+    { category: "NVPO",  val: 'Pas de NVPO', isChecked: false , count: 2 },
+    { category:"", val : 'Un épisode de NVPO isolé', isChecked: false , count : 1},
+    { category:"", val: 'NVPO persistants ', isChecked: false , count : 0 },
+   
+    ];
+
+
+  public PADSSForm =  
+  [
+    { category: "FC & PAS",  val: 'Variation < 20% par rapport au pré-opératoire', isChecked: false , count: 2 , isItem : 1},
+    { category:"", val : 'Variation entre 20 et 40% par rapport au pré-opératoire', isChecked: false , count : 1 , isItem : 1},
+    { category:"", val: 'Variation > 40% par rapport au pré-opératoire', isChecked: false , count : 0 , isItem : 1 },
+   
+    { category: "Marche & activité",  val: 'Marche stable, sans étourdissement', isChecked: false , count: 2 , isItem : 1 },
+    { category:"", val : 'Marche avec aide, activité réduite', isChecked: false , count : 1  , isItem : 1},
+    { category:"", val: 'Marche impossible, hypotonie', isChecked: false , count : 0 ,  isItem : 1},
+   
+    { category: "NVPO",  val: 'Pas de NVPO', isChecked: false , count: 2  , isItem : 1},
+    { category:"", val : 'Un épisode de NVPO', isChecked: false , count : 1  , isItem : 1},
+    { category:"", val: 'NVPO persistants', isChecked: false , count : 0 , isItem : 1 },
+    
+    { category: "Douleur",  val: 'Bien contrôlée', isChecked: false , count: 2 , isItem : 1 },
+    { category:"", val : 'Mal contrôlée', isChecked: false , count : 1 , isItem : 1},
+    
+    { category: "Saignement",  val: 'Minime ou nul (pas de réfection de pansement)', isChecked: false , count: 2, isItem : 1 },
+    { category:"", val : 'Significatif (réfection de pansement)', isChecked: false , count : 1, isItem: 1 },
+  
+  ];
+
+
+
 
   public Anticoagform1 = 
           [ 
@@ -97,6 +184,24 @@ public Anticoagform3 =
             {  val: 'Brûlures sévères', isChecked: false, count : 1 },
             {  val: 'Intubation et ventilation mécanique', isChecked: false , count : 1},
         ];
+
+public SHSform = [
+    { val: "Q1. Besoin de secouer l'enfant :" , count: 0 },
+    {  val : "Q2. Arrêts respiratoires nocturnes :" , count : 0 },
+    {  val: "Q3. Difficultés à respirer la nuit :", count : 0 },
+    {  val: "Q4. Inquiétudes des parents sur le sommeil de l'enfant :", count : 0 },
+    {  val: "Q5. Intensité du bruit de son ronflement (pour cette question, échelle de 0 = faible à 4 = très bruyant) :", count : 0 },
+    {  val: "Q6. Existence de ronflement :", count : 0 },
+  ];
+
+  public HEMSTOPform = [
+    {  val: "Q1. Avez-vous déjà consulté un médecin ou reçu un traitement pour un saignement prolongé ou inhabituel par exemple un saignement de nez ou une petite coupure ?" , count: 0 },
+    {  val: "Q2. Avez-vous tendance à faire des bleus de plus de 2 cm ou des hématomes importants, sans choc ou traumatisme ou bien à un traumatisme minime ?" , count : 0 },
+    {  val: "Q3. Avez-vous reconsulté votre dentiste pour un saignement après une extraction dentaire ?", count : 0 },
+    {  val: "Q4. Avez-vous saigné de manière anormale après une intervention chirurgicale (exemple opératoire des amygdales ou circoncision) ?", count : 0 },
+    {  val: "Q5. Y a-t-il des membres de la famille proche suivis pour une maladie de la coagulation, comme la maladie de Von Willebrand ou l'hémophilie ?", count : 0 },
+    {  val: "Q6. Pour les femmes : avez vous déjà consulté un médecin ou reçu un traitement pour des règles trop abondantes ? Avez vous saigné de façon anormale après un accouchement ?", count : 0 },
+  ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
   }
@@ -156,7 +261,6 @@ ionViewDidLoad() {
 
   toggleVPOP() {
     this.isShownVPOP = !this.isShownVPOP; 
-    this.isShownScoreAnticoag = this.isShownEVENDOL = false; 
   };
 
   countVPOP() {
@@ -187,7 +291,6 @@ ionViewDidLoad() {
 
 toggleScoreAnticoag() {
   this.isShownScoreAnticoag = !this.isShownScoreAnticoag; 
-  this.isShownVPOP = this.isShownEVENDOL = false ;
 }
 
 countAnticoag() { 
@@ -207,15 +310,105 @@ countAnticoag() {
 /* DOULEUR EVENDOL */
 toggleEVENDOL(){
   this.isShownEVENDOL = !this.isShownEVENDOL;
-  this.isShownVPOP = this.isShownScoreAnticoag = false; 
 };
 
 CalcEVENDOL() {
   this.EVENDOLTotal = Math.floor(this.EVENDOLVocal) + Math.floor(this.EVENDOLMimique) + Math.floor(this.EVENDOLMouvement) + Math.floor(this.EVENDOLPosition) + Math.floor(this.EVENDOLRelation); 
   console.log(this.EVENDOLTotal);
-  if (this.EVENDOLTotal <= 3) {this.SeuilPrescription = "Non atteint. Pas de traitement recommandé. Réévaluer régulièrement.";}
-  else {this.SeuilPrescription = "Atteint : débuter un traitement antalgique ou augmenter d'un pallier.";};
+  if (this.EVENDOLTotal <= 3) {this.SeuilPrescriptionEVENDOL = "Non atteint. Pas de traitement recommandé. Réévaluer régulièrement.";}
+  else {this.SeuilPrescriptionEVENDOL = "Atteint : débuter un traitement antalgique ou augmenter d'un pallier.";};
 }
     
+
+
+/* DOULEUR EDIN */
+toggleEDIN(){
+  this.isShownEDIN = !this.isShownEDIN;
+};
+
+CalcEDIN() {
+  this.EDINTotal = Math.floor(this.EDINVisage) + Math.floor(this.EDINCorps) + Math.floor(this.EDINSommeil) + Math.floor(this.EDINRelation) + Math.floor(this.EDINReconfort); 
+  console.log(this.EDINTotal);
+  if (this.EDINTotal <= 3) {this.SeuilPrescriptionEDIN = "Non atteint. Pas de traitement recommandé. Réévaluer régulièrement.";}
+  else {this.SeuilPrescriptionEDIN = "Atteint : débuter un traitement antalgique ou augmenter d'un pallier.";};
+}
+    
+/**Score d'ALDRETE sortie SSPI */
+toggleAldrete()
+{
+  this.isShownAldrete = !this.isShownAldrete; 
+}
+
+countAldrete() {
+  this.totalAldrete = this.AldreteForm.filter(item => item.isChecked === true).reduce((sum, current) => sum + current.count, 0);                                
+  console.log(this.totalAldrete);
+
+  if (this.totalAldrete <= 11){this.CATAldrete = "Réveil insuffisant pour autoriser la sortie de SSPI.";}
+  else {this.CATAldrete = "Sortie de SSPI possible avec accord du MAR référent du patient.";}
+};
+
+/**Score PADSS Sortie ambulatoire */
+togglePADSS()
+{
+  this.isShownPADSS = !this.isShownPADSS; 
+}
+
+countPADSS() {
+  this.totalPADSS = this.PADSSForm.filter(item => item.isChecked === true).reduce((sum, current) => sum + current.count, 0);                                
+  console.log("PADSS = " , this.totalPADSS);
+
+  let IsZeroPADSS = this.PADSSForm.filter(item => item.count == 0 && item.isChecked === true).reduce((sum, current) => sum + current.isItem, 0);  
+  console.log("nombre d'items cotant 0 cochés = ", IsZeroPADSS);
+
+  if (this.totalPADSS <= 8 && IsZeroPADSS ==0 ){this.CATPADSS = "Etat incompatible avec une sortie en ambulatoire (score total insuffisant).";}
+  else if (this.totalPADSS <= 8 && IsZeroPADSS !=0 ){this.CATPADSS = "Etat incompatible avec une sortie en ambulatoire (un item coté 0, score total insuffisant).";}
+  else if (this.totalPADSS > 8 && IsZeroPADSS !=0 ){this.CATPADSS = "Etat incompatible avec une sortie en ambulatoire (un item coté 0).";}
+  else {this.CATPADSS = "Sortie ambulatoire possible avec accord du MAR référent du patient.";};
+};
+
+
+/**Score SHS Risque de SAOS sévère de l'enfant */
+
+toggleSHS(){
+  this.isShownSHS = !this.isShownSHS;
+}
+
+countSHS(){
+this.SHSQ1 = Math.floor(this.SHSform[0].count);
+this.SHSQ2 = Math.floor(this.SHSform[1].count);
+this.SHSQ3 = Math.floor(this.SHSform[2].count);
+this.SHSQ4 = Math.floor(this.SHSform[3].count);
+this.SHSQ5 = Math.floor(this.SHSform[4].count);
+this.SHSQ6 = Math.floor(this.SHSform[5].count);
+console.log(this.SHSQ1, this.SHSQ2, this.SHSQ3);
+
+  this.cumuleSHS = Math.round((((((((( ((this.SHSQ1+this.SHSQ2)/2) + this.SHSQ3)/2) + this.SHSQ4)/2)+this.SHSQ5)/2) + this.SHSQ6)/2)*100)/100 ; 
+  console.log("index cumule = ", this.cumuleSHS); 
+  if (this.cumuleSHS >= 2.72){this.risqueSHS = "Enfant présentant probablement un SAOS sévère et à risque élevé d'apnées post-opératoire. Prévoir une hospitalisation post-opératoire. Prudence avec les morphiniques en post-opératoire.";}
+  else {this.risqueSHS = "Enfant ne présentant probablement pas un SAOS sévère. Pas de contre indication à l'ambulatoire liée à ce paramètre."}
+};
+
+
+/** SCORE HEMSTOP RISQUE DE SAIGNEMENT */
+
+toggleHEMSTOP() {
+  this.isShownHEMSTOP = !this.isShownHEMSTOP; 
+};
+
+countHEMSTOP(){
+  this.totalHEMSTOP =  Math.floor(this.HEMSTOPform[0].count) + 
+                        Math.floor(this.HEMSTOPform[1].count) +
+                        Math.floor(this.HEMSTOPform[2].count) + 
+                        Math.floor(this.HEMSTOPform[3].count) + 
+                        Math.floor(this.HEMSTOPform[4].count) + 
+                        Math.floor(this.HEMSTOPform[5].count) ; 
+  console.log(this.totalHEMSTOP); 
+  
+  if (this.totalHEMSTOP >= 2){this.risqueHEMSTOP = "Forte probabilité de sur-risque hémorragique. Bilan d'hémostase recommandé.";}
+  else if (this.totalHEMSTOP == 1){this.risqueHEMSTOP = "Probabilité intermédiaire de sur-risque hémorragique. Bilan d'hémostase à discuter."}
+  else {this.risqueHEMSTOP = "Probabilité très faible de sur-risque hémorragique. Pas de bilan d'hémostase."}
+
+};
+
 };
 

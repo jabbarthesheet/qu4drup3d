@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
-import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
 
 
@@ -66,22 +65,18 @@ export class EntretienAnesthPage {
 
   ToggleInhalatoire() {
     this.isShownInhalatoire = !this.isShownInhalatoire; 
-    this.isShownHypnotiquesIntraVeineux = this.isShownAntalgiques = this.isShownCurares = false; 
   };
 
   ToggleHypnotiquesIntraVeineux() {
     this.isShownHypnotiquesIntraVeineux = !this.isShownHypnotiquesIntraVeineux; 
-    this.isShownInhalatoire = this.isShownAntalgiques = this.isShownCurares = false;
   };
 
   ToggleAntalgiques() {
     this.isShownAntalgiques = !this.isShownAntalgiques;
-    this.isShownCurares = this.isShownInhalatoire = this.isShownHypnotiquesIntraVeineux = false;
   };
 
   ToggleCurares(){
     this.isShownCurares = !this.isShownCurares;
-    this.isShownAntalgiques = this.isShownInhalatoire = this.isShownHypnotiquesIntraVeineux = false;
   };
 
   async presentAlert() {

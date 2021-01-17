@@ -33,22 +33,28 @@
   
       <ion-card *ngIf="isShownPal1" class="drogueContainer">
       <ion-item>
-        <ion-label class="drogueInduction"><b>Paracétamol : {{AdminParacetamol}} mg</b>
-          <p class="dilutionDrogueInduction">pour 15 mg/kg, IVL ou PO toutes les 6h</p>
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : 15 mg/kg</p>
+          Paracétamol : {{AdminParacetamol}} mg IVL ou PO
+          <p class="dilutionDrogueInduction">Toutes les 6h</p>
         </ion-label>
       </ion-item>
   
       <ion-item class="avecAMM">
-        <ion-label class="drogueInduction"><b>Ketoprofene (Profenid<span>&#174;</span>) : {{AdminKeto}} mg</b>
-          <p class="dilutionDrogueInduction">pour 1 mg/kg, IVL toutes les 8 h</p> 
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : 1 mg/kg</p>
+          Ketoprofene (Profenid<span>&#174;</span>) : {{AdminKeto}} mg IVL
+          <p class="dilutionDrogueInduction">Toutes les 8 h</p> 
         </ion-label>
       </ion-item>
       
       <div class="AMM">AMM <br> IV 15 ans <br> Sirop 6 mois</div>
 
       <ion-item class="avecAMM">
-        <ion-label class="drogueInduction"><b>Ibuprofene : {{AdminIbu}} mg</b>
-          <p class="dilutionDrogueInduction">pour 10 mg/kg, PO toutes les 8h</p> 
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : 10 mg/kg</p>
+          Ibuprofene : {{AdminIbu}} mg PO 
+          <p class="dilutionDrogueInduction">Toutes les 8h</p> 
         </ion-label>
       </ion-item>
 
@@ -70,26 +76,31 @@
       <ion-card *ngIf="isShownPal2" class="drogueContainer">
       <ion-item class="avecAMM">
         <ion-label class="drogueInduction">
-          <b>Nalbuphine (Nubain<span>&#174;</span>) : {{AdminNubain}} mg</b>
-          <p class="dilutionDrogueInduction">pour 0,2 mg/kg, IVL toutes les 4h</p> 
-          <p class="dilutionDrogueInduction">en ambulatoire, diviser par 2 : {{AdminNubainHdJ}} mg</p>
-          <p class="dilutionDrogueInduction">injecter sur 20 minutes avant 1 an</p>
+          <p class="posologieDrogueInduction">Posologie proposée : 0,2 mg/kg</p>
+          Nalbuphine (Nubain<span>&#174;</span>) : {{AdminNubain}} mg PO ou IVL
+          <p class="dilutionDrogueInduction">Toutes les 4h</p> 
+          <p class="comment">En ambulatoire, diviser par 2 : {{AdminNubainHdJ}} mg</p>
+          <p class="comment">injecter sur 20 minutes avant 1 an</p>
         </ion-label>
       </ion-item>
 
       <div class="AMM">AMM <br> > 18 mois</div>
       
       <ion-item class="avecAMM">
-        <ion-label class="drogueInduction"><b>Nefopam (Acupan<span>&#174;</span>) : {{AdminAcupan}} mg/j</b>
-          <p class="dilutionDrogueInduction">pour 1 mg/kg/j IVSE continu</p> 
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée 1 mg/kg/j</p>
+          Nefopam (Acupan<span>&#174;</span>) : {{AdminAcupan}} mg/j IVSE
+          <p class="dilutionDrogueInduction">IVSE continu sur 24h</p> 
         </ion-label>
       </ion-item>
 
       <div class="AMM">AMM <br> > 15 ans</div>
       
       <ion-item class="avecAMM" >
-        <ion-label class="drogueInduction"><b>Tramadol (Contramal<span>&#174;</span>) : {{AdminTramadol}} mg</b>
-          <p class="dilutionDrogueInduction">pour 1 mg/kg, IVL ou PO toutes les 6h</p> 
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : 1 mg/kg</p>
+          Tramadol (Contramal<span>&#174;</span>) : {{AdminTramadol}} mg PO ou IVL
+          <p class="dilutionDrogueInduction">Toutes les 6h</p> 
         </ion-label>
       </ion-item>
 
@@ -109,27 +120,33 @@
 
       <ion-card *ngIf="isShownPal3" class="drogueContainer">
       <ion-item>
-        <ion-label class="drogueInduction"><b>Morphine avant réveil : {{AdminMorphineBO}} mg IVD</b>
-          <p class="dilutionDrogueInduction">pour 100 µg/kg, une seule fois</p> 
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : 100 µg/kg</p>
+          Morphine avant réveil : {{AdminMorphineBO}} mg IVD
+          <p class="dilutionDrogueInduction">Une seule fois</p> 
         </ion-label>
       </ion-item>
 
       <ion-item>
-        <ion-label class="drogueInduction"><b>Morphine en titration : {{AdminMorphineTitration}} mg IVD</b>
-          <p class="dilutionDrogueInduction">pour 25 µg/kg, toutes les 3 min</p> 
-          <p class="dilutionDrogueInduction">revoir après 4 boli</p> 
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : 25 µg/kg</p>
+          Morphine en titration : {{AdminMorphineTitration}} mg IVD
+          <p class="dilutionDrogueInduction">Toutes les 3 min, réévaluer après 4 boli</p> 
         </ion-label>
       </ion-item>
 
       <ion-item>
-        <ion-label class="drogueInduction"><b>Morphine en PCA : {{AdminMorphinePCA}} mg IVL</b>
-          <p class="dilutionDrogueInduction">pour 20 µg/kg, PR de 5 min</p> 
-          <p class="dilutionDrogueInduction">Dose max : {{AdminMorphinePCAMax}} mg (400 µg/kg), pour 4h</p> 
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : 20 µg/kg</p>
+          Morphine en PCA : {{AdminMorphinePCA}} mg IVL
+          <p class="dilutionDrogueInduction">PR de 5 min, dose max : {{AdminMorphinePCAMax}} mg (400 µg/kg) par 4h</p> 
         </ion-label>
       </ion-item> 
 
       <ion-item class="avecAMM">
-        <ion-label class="drogueInduction"><b>Morphine per os : </b>
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : LP 1 mg/kg PO ou standard 0,1 mg/kg</p>
+          Morphine per os :
           <p class="dilutionDrogueInduction">- {{AdminMorphinePOLP}} mg LP toutes les 12h (1 mg/kg) PO</p> 
           <p class="dilutionDrogueInduction">- {{AdminMorphinePOID}} mg toutes les 4h SB (0,1 mg/kg) PO</p> 
         </ion-label>
@@ -152,42 +169,50 @@
       <ion-card *ngIf="isShownAutres" class="drogueContainer">
 
       <ion-item class="avecAMM">
-        <ion-label class="drogueInduction"><b>Gabapentine (Neurontin<span>&#174;</span>): {{AdminNeurontin}} mg PO</b>
-          <p class="dilutionDrogueInduction">pour 5 mg/kg, toutes les 8h</p> 
-          <p class="dilutionDrogueInduction">NB comprimés de 150 ou 300 mg</p>
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : 5 mg/kg</p>
+          Gabapentine (Neurontin<span>&#174;</span>) : {{AdminNeurontin}} mg PO
+          <p class="dilutionDrogueInduction">Toutes les 8h</p> 
+          <p class="comment">NB : comprimés de 150 ou 300 mg</p>
         </ion-label>
       </ion-item>
 
       <div class="AMM">AMM <br> > 6 ans</div>
 
       <ion-item>
-        <ion-label class="drogueInduction"><b>Phloroglucinol (Spasfon<span>&#174;</span>) : </b>
-          <p class="dilutionDrogueInduction">- <b>{{AdminSpasfonIV}} mg</b> (0,5 mg/kg) IVL, toutes les 6h</p> 
-          <p class="dilutionDrogueInduction">- <b>{{AdminSpasfonPO}} mg</b> (1,5 mg/kg) PO, toutes les 6h</p> 
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : IV 0,5 mg/kg, PO 1,5 mg/kg </p>
+          Phloroglucinol (Spasfon<span>&#174;</span>) :
+          <p class="dilutionDrogueInduction">- {{AdminSpasfonIV}} mg IVL, toutes les 6h</p> 
+          <p class="dilutionDrogueInduction">- {{AdminSpasfonPO}} mg PO, toutes les 6h</p> 
         </ion-label>
       </ion-item>
 
       <ion-item class="avecAMM">
-        <ion-label class="drogueInduction"><b>Amitryptiline (Laroxyl<span>&#174;</span>) : </b>
-          <p class="dilutionDrogueInduction">- <b>{{AdminLaroxylIV}} mg</b> (0,5 mg/kg/j) IVSE sur 6h, 1 fois</p> 
-          <p class="dilutionDrogueInduction">- <b>{{AdminLaroxylPO}} mg</b> (0,5 mg/kg/j) PO, 1 fois</p> 
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : 0,5 mg/kg</p>
+          Amitryptiline (Laroxyl<span>&#174;</span>) : {{AdminLaroxylIV}} mg
+          <p class="dilutionDrogueInduction">IVSE sur 6h ou PO, 1 fois par jour</p> 
         </ion-label>
       </ion-item>
 
       <div class="AMM">AMM <br> > 6 ans</div>
 
       <ion-item>
-        <ion-label class="drogueInduction"><b>Clonazepam (Rivotril<span>&#174;</span>) : {{AdminRivotrilPO}} mg PO</b>
-          <p class="dilutionDrogueInduction">- pour 0,01 mg/kg, toutes les 8h</p> 
-          <p class="dilutionDrogueInduction">- soit <b>{{GouttesRivotril}} gouttes</b> (1 gtte/10kg), 3 fois par jour</p> 
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : 0,01 mg/kg</p>
+          Clonazepam (Rivotril<span>&#174;</span>) : {{AdminRivotrilPO}} mg PO
+          <p class="dilutionDrogueInduction">Toutes les 8h</p> 
+          <p class="comment">- soit <b>{{GouttesRivotril}} gouttes</b> (1 gtte/10kg), 3 fois par jour</p> 
         </ion-label>
       </ion-item>
 
       <ion-item>
-        <ion-label class="drogueInduction"><b>Catapressan (Clonidine <span>&#174;</span>) : </b>
-          <p class="dilutionDrogueInduction">- <b>{{AdminClonidineIVSE}} µg/h</b> (0,5 µg/kg/h) IVSE</p> 
-          <p class="dilutionDrogueInduction">> possibilité de doubler si insuffisant</p>
-          <p class="dilutionDrogueInduction">- <b>{{AdminClonidinePO}} mg</b> (5 µg/kg) PO, toutes les 8h</p> 
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : IVSE 0,5 µg/kg/h ou PO 5 µg/kg</p>
+          Catapressan (Clonidine <span>&#174;</span>) : {{AdminClonidineIVSE}} µg/h IVSE 
+          <p class="dilutionDrogueInduction">- {{AdminClonidinePO}} mg (5 µg/kg) PO, toutes les 8h</p>
+          <p class="comment">Possibilité de doubler si insuffisant</p>
         </ion-label>
       </ion-item>
 
@@ -206,16 +231,20 @@
       <ion-card *ngIf="isShownAntiEmet" class="drogueContainer">
 
       <ion-item class="avecAMM">
-        <ion-label class="drogueInduction"><b>Ondansétron (Zophren<span>&#174;</span>): {{AdminZophren}} mg IVL ou PO</b>
-          <p class="dilutionDrogueInduction">pour 0,1 mg/kg, toutes les 8h</p> 
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée 0,1 mg/kg</p>
+          Ondansétron (Zophren<span>&#174;</span>) : {{AdminZophren}} mg IVL ou PO
+          <p class="dilutionDrogueInduction">toutes les 8h</p> 
         </ion-label>
       </ion-item>
 
       <div class="AMM">AMM <br> > 1 an</div>  
 
       <ion-item>
-        <ion-label class="drogueInduction"><b>Dropéridol (Droleptan<span>&#174;</span>) : {{AdminDroleptan}} µg IVL</b>
-          <p class="dilutionDrogueInduction">pour 25 µg/kg , renouvelable 1 fois</p>
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : 25 µg/kg</p>
+          Dropéridol (Droleptan<span>&#174;</span>) : {{AdminDroleptan}} µg IVL
+          <p class="dilutionDrogueInduction">2 fois par jour maximum</p>
         </ion-label>
       </ion-item>
 

@@ -54,7 +54,9 @@ export class UrgencePage {
   AerosolAtroventAAG:number; 
   MgSO4AAG:number;
   SalbutamolIVAAG:number; 
+  AerosolBricanylAAG:number; 
   AdminKClAAG:number; 
+  AdminKClAAGmg:number; 
   ApportBaseHoraire:number; 
   ApportBaseJour:number;
 
@@ -78,6 +80,14 @@ export class UrgencePage {
   AdminInsulineHyperK:number;
   AdminG10HyperK:number;
 
+  AdminNarcan:number;
+  AdminAnexate:number;
+  AdminNAC1:number;
+  AdminNAC2:number;
+  AdminNAC3:number;
+  AdminNAC4:number;
+
+
   isShownACR:boolean=false; 
   isShownChocAna:boolean=false; 
   isShownHTM:boolean=false; 
@@ -86,6 +96,7 @@ export class UrgencePage {
   isShownAAG:boolean=false; 
   isShownHTADiuretiques:boolean=false;
   isShownCriseConvulsive:boolean=false;
+  isShownAntidotes:boolean=false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController ) {
   }
@@ -205,12 +216,15 @@ export class UrgencePage {
       this.MgSO4AAG = Math.round((this.PoidsNum*40)*10)/10;
       if (this.MgSO4AAG >= 2000){this.MgSO4AAG = 2000;};
       this.SalbutamolIVAAG = Math.round((this.PoidsNum*0.5)*10)/10;
-      this.AdminKClAAG = Math.round((this.PoidsNum*3)*10)/10;
+      this.AdminKClAAG = Math.round((this.PoidsNum*2)*10)/10;
+      this.AdminKClAAGmg = Math.round((this.PoidsNum*150)*10)/10;
+      if (this.AdminKClAAGmg >= 4000){this.AdminKClAAGmg = 4000;};
       if (this.PoidsNum <= 10) {this.ApportBaseHoraire = Math.round(4*this.PoidsNum);} 
       else if (this.PoidsNum <= 20) {this.ApportBaseHoraire = Math.round(40+(this.PoidsNum - 10)*2);}
       else if (this.PoidsNum > 20) {this.ApportBaseHoraire = Math.round(60 + (this.PoidsNum - 20));};
       this.ApportBaseJour = Math.round((this.ApportBaseHoraire * 24)*10)/10;
-
+      this.AerosolBricanylAAG = Math.round((this.PoidsNum * 0.2)*10)/10;
+      if (this.AerosolBricanylAAG >= 5) {this.AerosolBricanylAAG = 5;};
       /* HTA & diurétiques  */
 
       this.LoxenIVSE = Math.round((this.PoidsNum * 60)*10)/10;
@@ -238,6 +252,15 @@ export class UrgencePage {
       this.AdminKeppra = Math.round((this.PoidsNum * 30)*10)/10;
       if (this.AdminKeppra >= 2000){this.AdminKeppra = 2000;};
 
+      /** ANTIDOTES */
+
+      this.AdminNarcan = Math.round((this.PoidsNum * 10)*10)/10;
+      this.AdminAnexate = Math.round((this.PoidsNum * 10)*10)/10;
+      this.AdminNAC1 = Math.round((this.PoidsNum * 150)*10)/10;
+      this.AdminNAC2 = Math.round((this.PoidsNum * 50)*10)/10;
+      this.AdminNAC3 = Math.round((this.PoidsNum * 100)*10)/10;
+      this.AdminNAC4 = Math.round((this.PoidsNum * 150)*10)/10; 
+
     };
 
 
@@ -246,41 +269,37 @@ export class UrgencePage {
 
   /* Toggle des cartes */
 
+  ToggleAntidotes() 
+  {
+    this.isShownAntidotes = !this.isShownAntidotes;
+  }
     
     ToggleACR () {
       this.isShownACR = !this.isShownACR; 
-      this.isShownChocAna = this.isShownCriseConvulsive = this.isShownHTM = this.isShownIAL = this.isShownMetabo = this.isShownAAG = this.isShownHTADiuretiques = false;
     };
     ToggleChocAna () {
       this.isShownChocAna = !this.isShownChocAna;
-      this.isShownACR = this.isShownCriseConvulsive = this.isShownHTM = this.isShownIAL = this.isShownMetabo = this.isShownAAG = this.isShownHTADiuretiques = false; 
     };
     ToggleHTM () {
       this.isShownHTM = !this.isShownHTM; 
-      this.isShownACR = this.isShownCriseConvulsive = this.isShownChocAna = this.isShownIAL = this.isShownMetabo = this.isShownAAG = this.isShownHTADiuretiques = false; 
     };
     ToggleIAL () {
       this.isShownIAL = !this.isShownIAL; 
-      this.isShownACR = this.isShownCriseConvulsive = this.isShownChocAna = this.isShownHTM = this.isShownMetabo = this.isShownAAG = this.isShownHTADiuretiques = false;
     };
     ToggleMetabo () {
       this.isShownMetabo = !this.isShownMetabo; 
-      this.isShownACR = this.isShownCriseConvulsive = this.isShownChocAna = this.isShownHTM = this.isShownIAL = this.isShownAAG = this.isShownHTADiuretiques = false;
     };
 
     ToggleAAG () {
       this.isShownAAG = !this.isShownAAG ;
-      this.isShownACR = this.isShownCriseConvulsive = this.isShownChocAna = this.isShownHTM = this.isShownIAL = this.isShownMetabo = this.isShownHTADiuretiques =false;
     }; 
 
     ToggleHTADiuretiques(){
       this.isShownHTADiuretiques = !this.isShownHTADiuretiques ; 
-      this.isShownACR = this.isShownCriseConvulsive = this.isShownChocAna = this.isShownHTM = this.isShownIAL = this.isShownMetabo = this.isShownAAG = false;
     };
 
     ToggleCriseConvulsive () {
       this.isShownCriseConvulsive = !this.isShownCriseConvulsive; 
-      this.isShownACR = this.isShownChocAna = this.isShownHTM = this.isShownIAL = this.isShownMetabo = this.isShownAAG = this.isShownHTADiuretiques =false;
     };
 
 ionViewDidLoad() {

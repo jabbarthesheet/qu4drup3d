@@ -88118,9 +88118,38 @@ ion-card {
   box-shadow: none;
 }
 
-.TableApports {
+.HbItem {
+  float: left;
+  width: 50%;
+  font-size: 10px !important;
+}
+
+.HbRange {
+  width: 45%;
+  float: right;
+}
+
+.TableApportsHeader {
+  font-size: 14px !important;
+  text-align: center;
+  background: #85D0D2;
+  color: #FFF;
+  border: none;
+  padding: 0;
+}
+
+.TableApportsEven {
   font-size: 12px !important;
   text-align: center;
+  background: #FFF;
+  color: black;
+}
+
+.TableApportsOdd {
+  font-size: 12px !important;
+  text-align: center;
+  background: #dbd9d9;
+  color: black;
 }
 
 .lightbulb {
@@ -88170,6 +88199,22 @@ ion-card {
 .graphPoids {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
+}
+
+.imgAideMemoire {
+  width: 25% !important;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+}
+
+.imgANIMoniteur {
+  width: 65% !important;
+  float: right;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
 }
 
 .MonPatient {
@@ -88242,6 +88287,19 @@ ion-card {
 
 .dispositifVentilation {
   font-size: 14px !important;
+}
+
+.scoreSplitter {
+  font-size: 16px !important;
+  text-align: center;
+  color: #009c9e !important;
+}
+
+.reference {
+  font-size: 10px !important;
+  background-color: #c8ceceb6;
+  border-radius: 15px;
+  padding: 8px;
 }
 
 .strategie {

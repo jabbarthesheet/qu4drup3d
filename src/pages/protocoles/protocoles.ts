@@ -34,23 +34,10 @@ export class ProtocolesPage {
     console.log('ionViewDidLoad ProtocolesPage');
   }
 
-  ToggleChirPediatrique() {
-    this.isShownChirPediatrique = !this.isShownChirPediatrique; 
-    this.isShownObstetrique = false;
-  }
-
-  ToggleObstetrique () {
-    this.isShownObstetrique = !this.isShownObstetrique;
-    this.isShownChirPediatrique = false; 
-  }
-
    openExtrophieVesicale() {
     this.navCtrl.push (ExtrophieVesicalePage);
    };
 
-   openScoliose(){
-
-   };
 
 
 }

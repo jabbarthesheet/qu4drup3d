@@ -22,6 +22,7 @@ export class MonitoragePage {
 
   isShownConstantes:boolean=false;
   isShownDispositifs:boolean=false;
+  isShownANI:boolean=false;
 
   FCnormale:any;
   FCdangerHaut:any;
@@ -74,14 +75,16 @@ export class MonitoragePage {
   ToggleConstantes()
   {
     this.isShownConstantes = !this.isShownConstantes;
-    this.isShownDispositifs = false;
   };
 
   ToggleDispositifs()
   {
     this.isShownDispositifs = !this.isShownDispositifs; 
-    this.isShownConstantes = false;
   };
+
+  ToggleANI(){
+    this.isShownANI = !this.isShownANI; 
+  }
 
   async presentAlert() {
     const alert = await this.alertController.create({

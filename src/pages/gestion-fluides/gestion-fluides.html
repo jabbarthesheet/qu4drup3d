@@ -31,21 +31,16 @@ Apports et produits sanguins
         <ion-item-group>
 
           <ion-item-divider (click)="ToggleApportsJournaliers()">
-            <ion-label color="dark-turquoise">Apports journaliers selon l'âge
+            <ion-label color="dark-turquoise">             
+              <span *ngIf="AgeNum >= 24">Apports journaliers - {{CategorieAge}} de {{ageLecture}} ans</span>
+              <span *ngIf="AgeNum < 24">Apports journaliers - {{CategorieAge}} de {{AgeNum}} mois</span>
             <ion-icon *ngIf="!isShownApportsJournaliers" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
             <ion-icon *ngIf="isShownApportsJournaliers" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
             </ion-label>
           </ion-item-divider>
             
-            <ion-card class="drogueContainer"  *ngIf="isShownApportsJournaliers">
-            <ion-card-content>
-              <p *ngIf="AgeNum >= 24">Pour un {{CategorieAge}} de {{ageLecture}} ans</p>
-              <p *ngIf="AgeNum < 24">Pour un {{CategorieAge}} de {{AgeNum}} mois</p>
-            </ion-card-content>
-          </ion-card>
- 
-              <ion-grid  fixed="true" *ngIf="isShownApportsJournaliers" class="ionFirstRow">
-                <ion-row class="TableApports" >
+              <ion-grid  fixed="true" *ngIf="isShownApportsJournaliers" class="TableApportsHeader">
+                <ion-row  >
                   <ion-col >
                     Apports cibles
                   </ion-col>
@@ -57,7 +52,19 @@ Apports et produits sanguins
                   </ion-col>            
                 </ion-row>
 
-                <ion-row class="TableApports">
+                <ion-row class="TableApportsEven">
+                  <ion-col>
+                    Eau (mL/j)
+                  </ion-col>
+                  <ion-col>
+                    {{StandardEau}}
+                  </ion-col>
+                  <ion-col>
+                    {{Eau}}
+                  </ion-col>            
+                </ion-row>
+
+                <ion-row class="TableApportsOdd">
                 <ion-col>
                   Calories (KCal/j)
                 </ion-col>
@@ -69,7 +76,7 @@ Apports et produits sanguins
                 </ion-col>            
               </ion-row>
 
-              <ion-row class="TableApports">
+              <ion-row class="TableApportsEven">
               <ion-col>
                 Glucides (g/j)
               </ion-col>
@@ -81,7 +88,7 @@ Apports et produits sanguins
               </ion-col>            
             </ion-row>
 
-            <ion-row class="TableApports">
+            <ion-row class="TableApportsOdd">
             <ion-col>
               Acides aminés (g/j)
             </ion-col>
@@ -93,7 +100,7 @@ Apports et produits sanguins
             </ion-col>            
           </ion-row>
             
-          <ion-row class="TableApports">
+          <ion-row class="TableApportsEven">
           <ion-col>
             Lipides (g/j)
           </ion-col>
@@ -105,9 +112,9 @@ Apports et produits sanguins
           </ion-col>            
         </ion-row>
 
-        <ion-row class="TableApports">
+        <ion-row class="TableApportsOdd">
         <ion-col>
-        Sodium (mEq/j)
+        Sodium (mg/j)
           </ion-col>
         <ion-col>
           {{StandardSodium}}
@@ -117,9 +124,9 @@ Apports et produits sanguins
         </ion-col>            
       </ion-row>
 
-      <ion-row class="TableApports">
+      <ion-row class="TableApportsEven">
       <ion-col>
-        Potassium (mEq/j)
+        Potassium (mg/j)
           </ion-col>
         <ion-col>
           {{StandardPotassium}}
@@ -129,7 +136,7 @@ Apports et produits sanguins
         </ion-col>            
       </ion-row>
 
-      <ion-row class="TableApports">
+      <ion-row class="TableApportsOdd">
       <ion-col>
         Calcium (mg/j)
           </ion-col>
@@ -141,7 +148,7 @@ Apports et produits sanguins
         </ion-col>            
       </ion-row>
 
-      <ion-row class="TableApports">
+      <ion-row class="TableApportsEven">
       <ion-col>
         Phosphore (mg/j)
           </ion-col>
@@ -153,7 +160,7 @@ Apports et produits sanguins
         </ion-col>            
       </ion-row>
 
-      <ion-row class="TableApports">
+      <ion-row class="TableApportsOdd">
       <ion-col>
         Magnesium (mg/j)
           </ion-col>
@@ -178,43 +185,51 @@ Apports et produits sanguins
 
 
           <ion-card *ngIf="isShownApports" class="drogueContainer">
-          <ion-item>
-            <ion-label class="drogueInduction">Besoins de base : <b>{{ApportBaseHoraire}} mL/h</b>
-            <p class="dilutionDrogueInduction">{{Solute}}</p></ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label class="drogueInduction">Compensation du jeûne ({{DureeJeune}} heures) : <b>{{CompJeune}} mL</b>
-            <p class="dilutionDrogueInduction">{{Solute}}</p>
-            <p class="dilutionDrogueInduction">Passer {{CompJeuneH1}} mL sur 1h puis {{CompJeuneH2}} mL sur 2h</p>
-          </ion-label>
-          </ion-item>
 
-          <ion-item> <ion-label class="drogueInduction" >Pertes chirurgicales</ion-label>
-            <ion-select class="drogueInduction" #newselect (ionChange)="SelectPerteChir(chir.pertes)" [(ngModel)]="chir.pertes" interface="action-sheet" placeholder="choisir"
-             okText="OK" cancelText="Retour">
-              <ion-option checked="true" value="Mineures">Mineures (2 mL/kg/h)</ion-option>
-              <ion-option value="Moderees">Modérées (5 mL/kg/h)</ion-option>
-              <ion-option value="Importantes">Importantes (10 mL/kg/h)</ion-option>
+            <ion-item><ion-label class="drogueInduction">
+              Soluté proposé : {{Solute}}
+            </ion-label></ion-item>
+
+            <ion-item>
+              <ion-label class="drogueInduction">
+                Apports horaires = {{ApportBaseHoraire}} + {{PertesRespiratoires}} + {{CompPertesChir}} = <b>{{TotalHoraire}} mL/h</b>
+                <p class="dilutionDrogueInduction"> - 1. Besoins de base : {{ApportBaseHoraire}} mL/h</p>
+                <p class="dilutionDrogueInduction"> - 2. Compensation respiratoire : {{PertesRespiratoires}} mL/h</p>
+                <p class="comment"> &nbsp; &nbsp; Pertes estimées à 17 mL/m²SC/h, applicable sur SIOT ou ML</p>
+                <p class="dilutionDrogueInduction"> - 3. Compensation chirurgicale : {{CompPertesChir}} mL/h</p>
+                <p class="comment"> &nbsp; &nbsp; Pertes estimées à {{PertesChir}} mL/kg/h</p>
+                </ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="turquoise-fonce" class="drogueInduction">Pertes chirurgicales estimées :</ion-label>
+            <ion-select #newselect (ionChange)="UpdatePerteChir()" [(ngModel)]="PertesChir" interface="action-sheet"
+            okText="OK" cancelText="Retour" class="drogueInduction">
+             <ion-option checked="true" value="2" color="turquoise-fonce">2 mL/kg/h</ion-option>
+             <ion-option value="5" color="turquoise-fonce">5 mL/kg/h</ion-option>
+             <ion-option value="10" color="turquoise-fonce">10 mL/kg/h</ion-option>
             </ion-select>
+            </ion-item>
+
+          <ion-item>
+            <ion-label class="drogueInduction">Compensation jeûne de {{DureeJeune}} heures : <b>{{CompJeune}} mL</b>
+            <p class="dilutionDrogueInduction">- {{CompJeune1}} mL/h pendant 1h</p>
+            <p class="dilutionDrogueInduction">- puis {{CompJeune2}} mLh pendant 2h</p>
+          </ion-label>
           </ion-item>
 
           <ion-item>
-            <ion-label class="drogueInduction">Pertes insensibles
-            <p class="dilutionDrogueInduction"><b>{{Solute}} : {{CompPertesChir}} mL/h</b></p>
+            <ion-label class="drogueInduction">Total : 
+            <p class="dilutionDrogueInduction">- H1 : {{Total1}} mL</p>
+            <p class="dilutionDrogueInduction">- H2, H3 : {{Total2et3}} mL/h</p>
+            <p class="dilutionDrogueInduction">- Heures suivantes : {{TotalHoraire}} mL/h </p>
           </ion-label>
           </ion-item>
-          <ion-item>
-            <ion-label class="drogueInduction">Apports recommandés : <b>
-            <p class="dilutionDrogueInduction"> - La 1ere heure {{Solute}} : {{TotalH1}} mL</p>
-            <p class="dilutionDrogueInduction"> - La 2e et la 3e heure {{Solute}} : {{TotalH2et3}} mL</p>
-            <p class="dilutionDrogueInduction"> - puis {{Solute}} : {{TotalHoraire}} mL/h</p>
-          </b>
-        </ion-label>
-          </ion-item>
+
         </ion-card>
 
         <ion-item-divider (click)="ToggleHypoTA()">
-          <ion-label color="dark-turquoise">Remplissage vasculaire
+          <ion-label color="dark-turquoise">Hypotension artérielle per-opératoire
           <ion-icon *ngIf="!isShownHypoTA" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
           <ion-icon *ngIf="isShownHypoTA" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
           </ion-label>
@@ -222,72 +237,119 @@ Apports et produits sanguins
           
           <ion-card class="drogueContainer"  *ngIf="isShownHypoTA">
           <ion-card-content>
-            <p class="dilutionDrogueInduction">Envisager devant une PAM abaissée de 20% ou plus par rapport la valeur mesurée avant induction.</p>
-            <p class="dilutionDrogueInduction">Enfant de <b>{{ageLecture}} ans : PAS &lt; {{PAShypoTA}} mmHg </b>environ </p>
+            <p class="dilutionDrogueInduction">PAM < 20% de la valeur avant induction.</p>
+            <p class="dilutionDrogueInduction"><i>Enfant de {{ageLecture}} ans, PAS minimale de +/- {{PAShypoTA}} mmHg</i></p>
             <br>
             <p class="drogueInduction">Mesures à envisager :</p>
-            <p class="dilutionDrogueInduction"> - Remplissage par cristalloïde : <b>{{VolRemplissage}} mL </b> de <b>{{SoluteRemplissage}}</b>, renouvelable une fois</p>
-            <p class="dilutionDrogueInduction"> - Ephédrine par bolus IVD de <b>{{AdminEphedrine}} mg</b>, renouvelable</p>
-            <p class="dilutionDrogueInduction"> - En seconde intention, remplissage par colloïde : <b>{{AdminAlbumine}} mL albumine 10% sur 30 minutes</b> (mélange équivolume Albumine 20% & NaCl 0.9%).</p>
+            <p class="dilutionDrogueInduction"> - NaCl 0,9% - 10 mL/kg : 
+              <br> &nbsp; &nbsp; <b> - {{VolRemplissage}} mL </b> de <b>{{SoluteRemplissage}}</b>
+              <br> &nbsp; &nbsp; - renouvelable une fois
+            </p>
+            <p class="dilutionDrogueInduction"> - Ephédrine IVD ({{PosoEphedrine}}) :  <b>{{AdminEphedrine}} mg</b>, renouvelable</p>
+            <p class="dilutionDrogueInduction"> - En seconde intention, Albumine 10%, 10 mL/kg : 
+              <br> &nbsp; &nbsp; <b> - {{AdminAlbumine}} mL sur 30 minutes</b> 
+              <br> &nbsp; &nbsp; - mélange équivolume Albumine 20% & NaCl 0.9%</p>
           </ion-card-content>
         </ion-card>
 
           
 
           <ion-item-divider (click)="ToggleCGR()">
-            <ion-label color="danger">Concentré de globules rouges
+            <ion-label color="danger">Hémorragie aiguë
           <ion-icon *ngIf="!isShownCGR" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
           <ion-icon *ngIf="isShownCGR" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
             </ion-label>
           </ion-item-divider> 
 
           <ion-card *ngIf="isShownCGR" class="drogueContainer">
+          
+          <ion-card class="drogueContainer">
+          <ion-card-header color="danger">Globules rouges </ion-card-header>
           <ion-item>
             <ion-label class="drogueInduction">
               Masse sanguine estimée : <b>{{MasseSanguine}} mL</b>
-              <p class="dilutionDrogueInduction">(pour 80 mL/kg)</p>
+              <p *ngIf="AgeNum <= 24" class="comment">{{MasseSanguineAge}} mL/kg à {{AgeNum}} mois</p>
+              <p *ngIf="AgeNum > 24" class="comment">{{MasseSanguineAge}} mL/kg à {{ageLecture}} ans</p>
           </ion-label>
           </ion-item>
-          <ion-item>
-            <ion-label color="danger" class="drogueInduction">Hémogloginémie mesurée : <b>{{Hbmesuree}} g/dL</b></ion-label>
-            <ion-range max="16" step="1"  pin="true" color="danger" (ionChange)="MesureeHb()" [(ngModel)]="Hbmesuree"> </ion-range>
-          </ion-item>
 
-          <ion-item >
-             <ion-label color="turquoise-fonce" class="drogueInduction">Objectif d'hémoglobinémie : <b>{{Hbsouhaitee}} g/dL</b></ion-label>
-            <ion-range  color="turquoise-fonce" max="16" pin="true" step="1" (ionChange)="SouhaiteeHb()" [(ngModel)]="Hbsouhaitee"> </ion-range>
+          <ion-item class="HbItem">
+            <ion-label color="danger" class="drogueInduction">Hb mesurée : {{Hbmesuree}} g/dL</ion-label>
           </ion-item>
+          <ion-range class="HbRange" max="16" step="0.5" color="danger" (ionChange)="MesureeHb()" [(ngModel)]="Hbmesuree"> </ion-range>
+
+<br><br><br><br>
+
+          <ion-item class="HbItem">
+             <ion-label color="turquoise-fonce" class="drogueInduction">Souhaitée : {{Hbsouhaitee}} g/dL</ion-label>
+          </ion-item>
+          <ion-range class="HbRange" color="turquoise-fonce" max="16" step="0.5" (ionChange)="SouhaiteeHb()" [(ngModel)]="Hbsouhaitee"> </ion-range>
+
 
           <ion-item>
             <ion-label class="drogueInduction">Transfuser : {{VolCGR}}
               <p class="dilutionDrogueInduction"><b>Pour corriger {{DiffHb}} g/dL d'hémoglobine</b></p>
+              <p class="comment">4 mL/kg/g/dL d'Hb à corriger </p>
             </ion-label>
         </ion-item>
-        </ion-card>
-
-        <ion-item-divider (click)="ToggleAutresPSL()">
-          <ion-label  color="warning">Autres PSL
-            <ion-icon *ngIf="!isShownAutresPSL" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
-          <ion-icon *ngIf="isShownAutresPSL" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
-          </ion-label>
-        </ion-item-divider> 
-
-          <ion-card *ngIf="isShownAutresPSL" class="drogueContainer">
+      </ion-card>
+      <hr>
+      <ion-card class="drogueContainer">
+        <ion-card-header color="warning">Autres produits sanguins</ion-card-header>
           <ion-item>
-            <ion-label class="drogueInduction">Unités plaquettaires
-            <p class="dilutionDrogueInduction"><b>Passer {{UnitesPlaquettaires}} UI Plaquettaires</b></p>
-          </ion-label>
+            <ion-label class="drogueInduction">
+              <p *ngIf="AgeNum <= 180" class="posologieDrogueInduction">Posologie proposée : 1 UP/5kg avant 15 ans </p>
+              <p *ngIf="AgeNum > 180" class="posologieDrogueInduction">Posologie proposée : 1 UP/7kg après 15 ans </p>
+              CPA : {{UnitesPlaquettaires}} UI Plaquettaires
+              <p class="comment">1 UP = 5x10^10 Pq</p></ion-label>
           </ion-item>
           <ion-item>
-            <ion-label class="drogueInduction">Plasma frais congelé
-            <p class="dilutionDrogueInduction"><b>Passer {{VolPFC}} mL de PFC</b></p>
-          </ion-label>
+            <ion-label class="drogueInduction">
+              <p class="posologieDrogueInduction">Posologie proposée : 20 mL/kg</p>
+             PFC : {{VolPFC}} mL de PFC
+              <p class="comment">1 poche = +/- 200 mL</p>
+            </ion-label>
           </ion-item>
         </ion-card>
+        <hr>
+
+
+        <ion-card class="drogueContainer">
+          <ion-card-header>Médicaments hémorragie aiguë</ion-card-header>
+          <ion-item>
+            <ion-label class="drogueInduction">
+              <p class="posologieDrogueInduction">Posologie proposée : 20 mg/kg</p>
+             Ac. Tranexamique (Exacyl®) : {{ExacylChocHemorragique}} mg IVL
+             <p class="comment">Présentation : 0,5 mg/mL</p>
+              <p class="comment">Administration : sur 1 min, insuffisant rénal : demi-dose</p>
+            </ion-label>
+          </ion-item>
+
+        <ion-item>
+          <ion-label class="drogueInduction">
+            <p class="posologieDrogueInduction">Posologie proposée : 20 mg/kg</p>
+           Fibrinogène  (Clottafact®) : {{FibrinogengeChocHemorragique}} mg IVL
+           <p class="comment">Présentation : 1,5g/100mL </p>
+            <p class="comment">Administration : 300mg/min soit 20 mL/min de préparation pure</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label class="drogueInduction">
+            <p class="posologieDrogueInduction">Posologie proposée : 90 µg/kg</p>
+           Facteur VIIa  (Novoseven®) : {{NovosevenChocHemorragique}} µg IVL
+           <p class="comment">Présentation : 1,5g/100mL </p>
+            <p class="comment">Administration sur 5 minutes</p>
+          </ion-label>
+        </ion-item>
+      </ion-card>
+
+      </ion-card>
+      
 
         </ion-item-group>
         </ion-list>
-
+<hr>
         <ion-card class="nb" padding>   Si ce n'est pas déjà fait, renseignez la durée du jeune dans les options afin d'ajuster les apports hydriques en conséquence.
           <br><br>   
           <button ion-button small color="turquoise-fonce" (click)="displayOptions()"> Options </button></ion-card>

@@ -34,17 +34,29 @@ export class PlateauVasPage {
   RepereSITnez:number; 
   RepereSITdents:number;
   Volumecourant:number;
+  FrequenceVentilatoire:number;
+  VolumeMinute:number;
   Allergie:string="";
+
+  SurfaceCorporelle:number;
+  PertesInsensiblesVSheure:number;
+  PertesInsensiblesVSjour:number;
+  PertesInsensiblesIOTheure:number;
+  PertesInsensiblesIOTjour:number;
+  PertesInsensiblesVNIheure:number;
+  PertesInsensiblesVNIjour:number;
+
+
 
   CouleurCanuleMasque:string; 
   LameIntubation:string; 
+  LameMcGrath:string; 
+  LameGlideScope:string;
   TailleFiltre:string; 
   TailleMasqueLarynge:any;
 
   isShownVentilation:boolean=false;
   isShownIntubation:boolean=false;
-  isShownMasqueLarynge:boolean=false; 
-  isShownIntubationDifficile:boolean=false; 
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController) {
@@ -56,24 +68,12 @@ export class PlateauVasPage {
 
   ToggleIntubation() {
     this.isShownIntubation = !this.isShownIntubation;
-    this.isShownVentilation = this.isShownMasqueLarynge = this.isShownIntubationDifficile = false; 
   };
 
   ToggleVentilation () {
     this.isShownVentilation = !this.isShownVentilation; 
-    this.isShownIntubation = this.isShownMasqueLarynge = this.isShownIntubationDifficile = false; 
   };
 
-  ToggleMasqueLarynge() {
-    this.isShownMasqueLarynge = !this.isShownMasqueLarynge; 
-    this.isShownIntubation = this.isShownVentilation = this.isShownIntubationDifficile = false;
-  };
-
-  ToggleIntubationDifficile(){
-    this.isShownIntubationDifficile = !this.isShownIntubationDifficile; 
-    this.isShownIntubation = this.isShownVentilation = this.isShownMasqueLarynge = false;
-  }
-  
   async presentAlert() {
     const alert = await this.alertController.create({
       cssClass: 'alerte',
@@ -177,7 +177,8 @@ export class PlateauVasPage {
       else {this.TailleFiltre = "Filtre adulte"};
 
 
-      if(this.PoidsNum <= 15){this.LameIntubation = "Lame d'Oxford ou Miller 1"}
+      if(this.PoidsNum <= 10){this.LameIntubation = "Lame d'Oxford, Miller 1 ou Macinstosh 0"}
+      if(this.PoidsNum <= 15){this.LameIntubation = "Macintosh 1"}
       else if(this.PoidsNum <= 30){this.LameIntubation = "Macintosh 2"}
       else {this.LameIntubation = "Macintosh 3"};
 
@@ -187,6 +188,34 @@ export class PlateauVasPage {
       else if(this.PoidsNum <= 30){ this.TailleMasqueLarynge = 2.5;}
       else if(this.PoidsNum <= 70){ this.TailleMasqueLarynge = 3;}
       else { this.TailleMasqueLarynge = "4 ou 5";}
+
+      if(this.PoidsNum <= 10){ this.LameMcGrath = "MacGrath avec lame 1";}
+      else if (this.PoidsNum <= 30) {this.LameMcGrath = "MacGrath avec lame 2";}
+      else if (this.PoidsNum <= 70) {this.LameMcGrath = "MacGrath avec lame 3";}
+      else {this.LameMcGrath = "MacGrath avec lame 4";};
+
+      if (this.PoidsNum <= 1.5){ this.LameGlideScope = "Glidescope avec bâton vidéo AVL 1-2 avec lame GVL 0";}
+      else if (this.PoidsNum <= 3.8){ this.LameGlideScope = "Glidescope avec bâton vidéo AVL 1-2 avec lame GVL 1";}
+      else if (this.PoidsNum <= 10){ this.LameGlideScope = "Glidescope avec bâton vidéo AVL 1-2 avec lame GVL 2";}
+      else if (this.PoidsNum <= 28){ this.LameGlideScope = "Glidescope avec bâton vidéo AVL 1-2 avec lame GVL 2.5";}
+      else if (this.PoidsNum <= 40 ) { this.LameGlideScope = "Glidescope avec bâton vidéo AVL 3-4 avec lame GVL 3";}
+      else  { this.LameGlideScope = "Glidescope avec bâton vidéo AVL 3-4 avec lame GVL 4";};
+
+      if (this.AgeNum <= 1){this.FrequenceVentilatoire = 35;}
+      else if (this.AgeNum <= 3){this.FrequenceVentilatoire = 30;}
+      else if (this.AgeNum <= 24){this.FrequenceVentilatoire = 25;}
+      else if (this.AgeNum <= 96){this.FrequenceVentilatoire = 20;}
+      else {this.FrequenceVentilatoire = 15;};
+
+      this.VolumeMinute = (this.Volumecourant*this.FrequenceVentilatoire)/1000; 
+
+      this.SurfaceCorporelle = Math.round(((4*this.PoidsNum + 7)/ (this.PoidsNum + 90)) *10)/10;
+      this.PertesInsensiblesVSjour = Math.round(((800*this.SurfaceCorporelle) *10)/10);
+      this.PertesInsensiblesVSheure = Math.round(((this.PertesInsensiblesVSjour/24) *10)/10);
+      this.PertesInsensiblesIOTjour = Math.round(((400*this.SurfaceCorporelle) *10)/10) ;
+      this.PertesInsensiblesIOTheure = Math.round(((this.PertesInsensiblesIOTjour/24) *10)/10);;
+      this.PertesInsensiblesVNIjour = Math.round(((600*this.SurfaceCorporelle) *10)/10) ;
+      this.PertesInsensiblesVNIheure = Math.round(((this.PertesInsensiblesVNIjour/24) *10)/10); ;
 
         console.log('IonViewWillEnter OptionsPage');
       };

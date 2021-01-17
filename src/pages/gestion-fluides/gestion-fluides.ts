@@ -19,7 +19,7 @@ export class GestionFluidesPage {
 
   EstomacPlein:boolean; 
   EstomacOuiNon:string;
-  DureeJeune:number; 
+  DureeJeune:number=0; 
   dureejeunelast:number=6;
   AgeNum:number;
   PoidsNum:number; 
@@ -27,27 +27,35 @@ export class GestionFluidesPage {
   ageLecture:number;
   sexeMF:string;
   Taille:number;
-
+  SurfaceCorporelle:number; 
 
   ApportBaseHoraire:number; 
   CompJeune:number;
-  CompJeuneH1:number;
-  CompJeuneH2:number;
+  CompJeune1:number;
+  CompJeune2:number;
   Solute:string;
 
-  chir:any = {pertes:""};
-  perteschir:string;
+  PertesRespiratoires:number;
+  PertesChir:number=2;
   CompPertesChir:number;
-  PertesChirNum:number=2; 
 
 
   TotalHoraire:number; 
   TotalH1:number; 
   TotalH2et3:number; 
 
+  Total1:number;
+  Total2et3:number;
+
   UnitesPlaquettaires:number; 
   VolPFC:number; 
+  ExacylChocHemorragique:number;
+  FibrinogengeChocHemorragique:number;
+  NovosevenChocHemorragique:number;
+
+
   MasseSanguine:number;
+  MasseSanguineAge:number;
   DiffHb:number; 
   VolCGR:any;
 
@@ -58,12 +66,14 @@ export class GestionFluidesPage {
   SoluteRemplissage:string; 
   VolRemplissage:number; 
   AdminEphedrine:number; 
+  PosoEphedrine:string;
   AdminAlbumine:number; 
 
 
 
   CategorieAge:string; 
   
+  StandardEau:number;
   StandardKCal:number; 
   StandardGlucides:number; 
   StandardAcidesAmines:number; 
@@ -74,6 +84,7 @@ export class GestionFluidesPage {
   StandardPhosphore:number; 
   StandardMagnesium:number; 
   
+  Eau:number;
   KCal:number;
   Glucides:number; 
   AcidesAmines:number;
@@ -102,29 +113,18 @@ export class GestionFluidesPage {
 
   ToggleApports() {
     this.isShownApports = !this.isShownApports; 
-    this.isShownCGR = this.isShownAutresPSL = this.isShownHypoTA = this.isShownApportsJournaliers = false; 
   };
   ToggleCGR() {
     this.isShownCGR = !this.isShownCGR; 
-    this.isShownApports = this.isShownAutresPSL = this.isShownHypoTA = this.isShownApportsJournaliers = false; 
   };
-  ToggleAutresPSL () {
-    this.isShownAutresPSL = !this.isShownAutresPSL;
-    this.isShownCGR = this.isShownApports = this.isShownHypoTA = this.isShownApportsJournaliers = false; 
-  };
+  
   ToggleHypoTA () {
     this.isShownHypoTA = !this.isShownHypoTA; 
-    this.isShownCGR = this.isShownApports = this.isShownAutresPSL = this.isShownApportsJournaliers = false;
 };
 
 ToggleApportsJournaliers(){
   this.isShownApportsJournaliers = !this.isShownApportsJournaliers ;
-  this.isShownCGR = this.isShownApports = this.isShownAutresPSL = this.isShownHypoTA = false;
 };
-
-
-
-
 
   async presentAlert() {
     const alert = await this.alertController.create({
@@ -146,40 +146,61 @@ ToggleApportsJournaliers(){
     await alert.present();
     };
 
+    UpdatePerteChir(){
+      this.CompPertesChir = Math.round(this.PertesChir*this.PoidsNum);
+      this.TotalHoraire = this.ApportBaseHoraire + this.PertesRespiratoires + this.CompPertesChir; 
+      this.Total1 = this.TotalHoraire + this.CompJeune1; 
+      this.Total2et3 = this.TotalHoraire + this.CompJeune2;
+    }
+
 
     calculs(){
+
+          this.SurfaceCorporelle = Math.round(((4*this.PoidsNum + 7)/ (this.PoidsNum + 90)) *10)/10;
+          this.PertesRespiratoires = Math.round(((this.SurfaceCorporelle*17) *10)/10);;
+
+
           if(this.AgeNum < 15*12){this.Solute = "B26 ou NaCl 0.9%" ; }
           else {this.Solute = "RL ou NaCl 0.9%";};
   
           if (this.PoidsNum <= 10) {this.ApportBaseHoraire = Math.round(4*this.PoidsNum);} 
-          else if (this.PoidsNum <= 20) {this.ApportBaseHoraire = Math.round(40+(this.PoidsNum - 10)*2);}
+          else if (this.PoidsNum <= 20) {this.ApportBaseHoraire = Math.round(40 + (this.PoidsNum - 10)*2);}
           else if (this.PoidsNum > 20) {this.ApportBaseHoraire = Math.round(60 + (this.PoidsNum - 20));};
   
           this.CompJeune = Math.round(this.ApportBaseHoraire * this.DureeJeune); 
-          this.CompJeuneH1 = Math.round(this.CompJeuneH2 = this.CompJeune/2);
+          this.CompJeune1 = Math.round(this.CompJeune/2);
+          this.CompJeune2 = Math.round((this.CompJeune - this.CompJeune1)/2) ;
   
-          this.CompPertesChir = Math.round(this.PertesChirNum*this.PoidsNum);
-  
-          this.TotalH1 = Math.round(this.ApportBaseHoraire + this.CompJeuneH1 + this.CompPertesChir); 
-          this.TotalH2et3 = Math.round(this.ApportBaseHoraire + this.CompJeuneH1/2 + this.CompPertesChir);
-          this.TotalHoraire = Math.round(this.ApportBaseHoraire + (this.CompPertesChir));
+          this.CompPertesChir = Math.round(this.PertesChir*this.PoidsNum);
+
+          this.TotalHoraire = this.ApportBaseHoraire + this.PertesRespiratoires + this.CompPertesChir; 
+
+          this.Total1 = this.TotalHoraire + this.CompJeune1; 
+          this.Total2et3 = this.TotalHoraire + this.CompJeune2;
   
           if (this.AgeNum <= 15*12){this.UnitesPlaquettaires = Math.round(this.PoidsNum/5);}
           else {this.UnitesPlaquettaires = Math.round(this.PoidsNum/7);}; 
   
           this.VolPFC = Math.round(this.PoidsNum*20); 
   
-          this.VolCGR = Math.round(this.PoidsNum * 16).toString() + " mL CGR" ; 
+          this.VolCGR = Math.round(this.PoidsNum * 16).toString() + " mL" ; 
           this.DiffHb = 4; 
-          this.MasseSanguine = Math.round(this.PoidsNum * 80); 
+          if(this.AgeNum <= 3){this.MasseSanguineAge = 80; }
+          else if (this.AgeNum <= 12){this.MasseSanguineAge = 75; }
+          else {this.MasseSanguineAge = 70;};
+          this.MasseSanguine = Math.round(this.PoidsNum * this.MasseSanguineAge); 
+
+          this.ExacylChocHemorragique = Math.round((this.PoidsNum*20)*10)/10;
+          this.FibrinogengeChocHemorragique = Math.round((this.PoidsNum*20)*10)/10;
+          this.NovosevenChocHemorragique = Math.round((this.PoidsNum*90)*10)/10;
 
           this.PAShypoTA = Math.round((((this.AgeNum/12)*2)+70)*10)/10; 
           if(this.AgeNum <= 15*12){this.SoluteRemplissage = "NaCl 0,9%";}
           else{this.SoluteRemplissage = "Ringer Lactate";}
           this.VolRemplissage = Math.round(((this.PoidsNum)*10)*10)/10;
-          if(this.AgeNum <= 12){this.AdminEphedrine = Math.round((this.PoidsNum*0.3)*10)/10;}
-          else if (this.AgeNum <= 36){this.AdminEphedrine = Math.round((this.PoidsNum*0.2)*10)/10;}
-          else{this.AdminEphedrine = Math.round((this.PoidsNum*0.1)*10)/10;};
+          if(this.AgeNum <= 12){this.PosoEphedrine = "200 µg/kg" ; this.AdminEphedrine = Math.round((this.PoidsNum*0.3)*10)/10;}
+          else if (this.AgeNum <= 36){this.PosoEphedrine = "200 µg/kg" ; this.AdminEphedrine = Math.round((this.PoidsNum*0.2)*10)/10;}
+          else{this.PosoEphedrine = "100 µg/kg" ;this.AdminEphedrine = Math.round((this.PoidsNum*0.1)*10)/10;};
 
           this.AdminAlbumine = Math.round((this.PoidsNum*10)*10)/10;
 
@@ -187,12 +208,13 @@ ToggleApportsJournaliers(){
         
           if (this.AgeNum <= 1){
             this.CategorieAge = "nouveau-né";
+            this.StandardEau = 160; 
             this.StandardKCal = 110;
             this.StandardGlucides = 17;
             this.StandardAcidesAmines = 3.5; 
             this.StandardLipides = 6;
-            this.StandardSodium = 5;
-            this.StandardPotassium = 2; 
+            this.StandardSodium = 290;
+            this.StandardPotassium = 150; 
             this.StandardCalcium = 45;
             this.StandardPhosphore = 35;
             this.StandardMagnesium = 10;
@@ -201,31 +223,49 @@ ToggleApportsJournaliers(){
           else if (this.AgeNum <= 3)
           {
             this.CategorieAge = "nourrisson";
+            this.StandardEau = 105; 
             this.StandardKCal = 100;
             this.StandardGlucides = 14;
             this.StandardAcidesAmines = 2.5; 
             this.StandardLipides = 3;
-            this.StandardSodium = 3.5;
-            this.StandardPotassium = 3.5; 
+            this.StandardSodium = 203; 
+            this.StandardPotassium = 262.5; 
             this.StandardCalcium = 25;
             this.StandardPhosphore = 25;
             this.StandardMagnesium = 10;
           }
 
-          else
+          else if (this.AgeNum <= 12*12)
           {
             this.CategorieAge = "enfant";
+            this.StandardEau = 70;
             this.StandardKCal = 70;
             this.StandardGlucides = 12;
             this.StandardAcidesAmines = 2; 
             this.StandardLipides = 2;
-            this.StandardSodium = 2.5;
-            this.StandardPotassium = 2.5; 
+            this.StandardSodium = 145;
+            this.StandardPotassium = 187.5; 
             this.StandardCalcium = 10;
             this.StandardPhosphore = 10;
             this.StandardMagnesium = 8;
           }
 
+          else 
+          {
+            this.CategorieAge = "jeune adulte";
+            this.StandardEau = 50;
+            this.StandardKCal = 50;
+            this.StandardGlucides = 10;
+            this.StandardAcidesAmines = 2; 
+            this.StandardLipides = 1.5;
+            this.StandardSodium = 145;
+            this.StandardPotassium = 187.5; 
+            this.StandardCalcium = 10;
+            this.StandardPhosphore = 10;
+            this.StandardMagnesium = 8;
+          }
+
+          this.Eau = Math.round((this.PoidsNum*this.StandardEau)*10)/10 ;
           this.KCal = Math.round((this.PoidsNum*this.StandardKCal)*10)/10 ;
           this.Glucides = Math.round((this.PoidsNum*this.StandardGlucides)*10)/10 ; 
           this.AcidesAmines = Math.round((this.PoidsNum*this.StandardAcidesAmines)*10)/10 ;
@@ -275,19 +315,7 @@ ToggleApportsJournaliers(){
     console.log('ionViewDidLoad GestionFluidesPage');
   }
 
-  SelectPerteChir(ValeurChoisie:string) {
-    this.perteschir = ValeurChoisie ;
-    console.log(this.perteschir);
-    if (this.perteschir == "Mineures") {this.PertesChirNum = 2; }
-    else if (this.perteschir == "Moderees") {this.PertesChirNum = 5 ; }
-    else if (this.perteschir == "Importantes") {this.PertesChirNum = 10 ; }; 
-    console.log('pertes chir =', this.PertesChirNum, 'mL/h');
-    this.CompPertesChir = this.PertesChirNum*this.PoidsNum;
 
-    this.TotalH1 = this.ApportBaseHoraire + this.CompJeuneH1 + this.CompPertesChir; 
-    this.TotalH2et3 = this.ApportBaseHoraire + this.CompJeuneH1/2 + this.CompPertesChir;
-    this.TotalHoraire = this.ApportBaseHoraire + (this.CompPertesChir);
-  };
 
   MesureeHb () 
     { 

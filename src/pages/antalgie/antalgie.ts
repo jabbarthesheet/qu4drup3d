@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { AccueilPage } from '../accueil/accueil';
 import { ScoresPage } from '../scores/scores';
 
 /**
@@ -106,35 +105,27 @@ export class AntalgiePage {
 
   TogglePalier1() {
     this.isShownPal1 = !this.isShownPal1;
-    this.isShownPal2 = this.isShownPal3 = this.isShownAutres = this.isShownAntiEmet = this.isShownAntiCoag = false; 
   };
 
   TogglePalier2() {
     this.isShownPal2 = !this.isShownPal2;
-    this.isShownPal1 = this.isShownPal3 = this.isShownAutres = this.isShownAntiEmet = this.isShownAntiCoag = false; 
   };
 
   TogglePalier3() {
     this.isShownPal3 = !this.isShownPal3;
-    this.isShownPal1 = this.isShownPal2 = this.isShownAutres = this.isShownAntiEmet = this.isShownAntiCoag = false; 
   };
 
 
   ToggleAutres() {
-
     this.isShownAutres = !this.isShownAutres;
-    this.isShownPal1 = this.isShownPal3 = this.isShownPal2 = this.isShownAntiEmet = this.isShownAntiCoag = false; 
-    
   };
 
   ToggleAntiEmet() {
     this.isShownAntiEmet = !this.isShownAntiEmet;
-    this.isShownPal1 = this.isShownPal3 = this.isShownPal2 = this.isShownAutres = this.isShownAntiCoag = false;
   };
 
   ToggleAntiCoag() {
     this.isShownAntiCoag = !this.isShownAntiCoag;
-    this.isShownPal1 = this.isShownPal3 = this.isShownPal2 = this.isShownAutres = this.isShownAntiEmet = false;
   };
 
   openScores(){

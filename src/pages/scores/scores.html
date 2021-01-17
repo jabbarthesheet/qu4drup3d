@@ -22,18 +22,134 @@
               <br>
          <!-- END HEADER -->
 
+        <h3 padding>Consultation</h3>
+
+                     <!-- DEBUT SCORE SHS SAOS-->
+
+
+
+
+                     <ion-item (click)="toggleSHS()">
+                      <ion-label color="dark-turquoise">Score de sévérité SAOS (SHS)
+                        <ion-icon *ngIf="!isShownSHS" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+                        <ion-icon *ngIf="isShownSHS" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+                      </ion-label>
+                    </ion-item>
+            
+                   
+            
+                    <ion-card class="drogueContainer" *ngIf="isShownSHS">
+
+                      <p *ngIf="isShownSHS"  class="reference">Référence : Spruyt & al., Screening of pediatric sleep-disordered breathing. Chest 2012.
+                        <br>
+                      6 questions, 5 choix possibles (dans les 6 derniers mois): 
+                        <br> - 0 : jamais 
+                        <br> - 1 : rarement (une fois par semaine)
+                        <br> - 2 : occasionnelement (deux fois par semaine)
+                        <br> - 3 : fréquemment (3 à 4 fois par semaine)
+                        <br> - 4 : presque toujours (plus de 4 fois par semaine).
+                      </p>
+
+                      <ion-card-content *ngFor="let entry of SHSform">
+
+                        <ion-list>
+                            {{entry.val}}
+                            <br>
+                          
+                           <ion-segment [(ngModel)]="entry.count" color="dark-turquoise" (ionChange)="countSHS()">
+                            <ion-segment-button value="0">
+                              <ion-label>0</ion-label>
+                            </ion-segment-button>
+                            <ion-segment-button value="1">
+                              <ion-label>1</ion-label>
+                            </ion-segment-button>
+                            <ion-segment-button value="2">
+                              <ion-label>2</ion-label>
+                            </ion-segment-button>
+                            <ion-segment-button value="3">
+                              <ion-label>3</ion-label>
+                            </ion-segment-button>
+                            <ion-segment-button value="4">
+                              <ion-label>4</ion-label>
+                            </ion-segment-button>
+                          </ion-segment>            
+                        </ion-list>
+                      </ion-card-content>
+                    </ion-card>
+            
+                    <ion-card *ngIf="isShownSHS" class="drogueContainer">Interprétation : un score cumulé global supérieur à 2.72 prédit un index d'apnée-hypopnée supérieur à 5/h, ce qui correspond à un SAOS sévère de l'enfant. 
+                    <ion-card-content>
+                    <ion-item class="drogueInduction">Score cumulé global : <b>{{cumuleSHS}}</b></ion-item>
+                    <p class="strategie" padding>{{risqueSHS}}</p>
+                    <p *ngIf="isShownSHS" class="comment" padding>Détail du calcul : A = (Q1+Q2)/2, B = (A+Q3)/2, C = (B+Q4)/2, D = (C+Q5)/2, score cumulé global = (D+Q6)/2</p>
+                  </ion-card-content> 
+                  </ion-card>
+                                        <!-- FIN SCORE SHS SAOS-->
+
+        <!-- DEBUT SCORE HEMSTOP SAIGNEMENT-->
+
+        <ion-item (click)="toggleHEMSTOP()">
+          <ion-label color="dark-turquoise">Dépistage des coagulopathies (HEMSTOP)
+            <ion-icon *ngIf="!isShownHEMSTOP" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+            <ion-icon *ngIf="isShownHEMSTOP" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+          </ion-label>
+        </ion-item>
+
+
+
+        <ion-card class="drogueContainer" *ngIf="isShownHEMSTOP">
+
+          <p class="reference">Référence : Bonhomme et al. Preoperative hemostatic assessment: a new and simple bleeding questionnaire. Can J. Anesthesiology 2016.
+            <br><br>Score développé chez l'adulte. Envisager l'utilisation de ce score pour sensibiliser la prescription du bilan d'hémostase chez un enfant ayant acquis la marche. 6 questions, réponse par oui ou par non.
+            </p>
+    
+
+          <ion-card-content *ngFor="let entry of HEMSTOPform">
+            
+            <ion-list>
+                {{entry.val}}
+              
+              
+               <ion-segment [(ngModel)]="entry.count" color="dark-turquoise" (ionChange)="countHEMSTOP()">
+                <ion-segment-button value="0">
+                  <ion-label>Non</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="1">
+                  <ion-label>Oui</ion-label>
+                </ion-segment-button>
+              </ion-segment>            
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card *ngIf="isShownHEMSTOP" class="drogueContainer">Interprétation : un score supérieur à 2 rend hautement probable la présence d'un sur-risque hémorragique périopératoire (Sn 89,5%, Sp 98,6%). 
+        <ion-card-content>
+        <ion-item *ngIf="isShownHEMSTOP" class="drogueInduction">Total : <b>{{totalHEMSTOP}}/6 pts</b></ion-item>
+        <p class="strategie" padding>{{risqueHEMSTOP}}</p>
+        
+        </ion-card-content> 
+        </ion-card>
+
+              <!-- FIN SCORE HEMSTOP SAIGNEMENT-->
+
   <!-- SCORE VPOP-->
 
+
+
     <ion-item (click)="toggleVPOP()">
-      <ion-label color="dark-turquoise">VPOP (Risque NVPO)
+      <ion-label color="dark-turquoise">Risque NVPO (score VPOP)
         <ion-icon *ngIf="!isShownVPOP" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
         <ion-icon *ngIf="isShownVPOP" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
       </ion-label>
     </ion-item>
 
     <ion-card class="drogueContainer" *ngIf="isShownVPOP">
+      <p class="reference">Référence : Bourdaud et al. Development & validation of a risk score to predict probability of p/o vomiting in pediatric patients. Pediatric Anesthesia 2014.
+      </p>
       <ion-card-content>
         
+       
+
         <ion-list>
           <ion-item *ngFor="let entry of VPOPform">
             <ion-label class="dilutionDrogueInduction">{{entry.val}}
@@ -42,7 +158,7 @@
             <ion-checkbox color="turquoise-fonce" (click)="countVPOP()" [(ngModel)]="entry.isChecked"></ion-checkbox>
           </ion-item>
 
-          <hr>     
+        
               <ion-item class="drogueInduction">Total : <b>{{totalVPOP}} pts</b> - Risque NVPO : <b>{{risqueVPOP}} %</b></ion-item>
               <ion-item><ion-label class="drogueInduction">Stratégie proposée :</ion-label></ion-item>
               <p class="strategie">{{prophylaxieVPOP}}</p>
@@ -61,7 +177,7 @@
 
 
 
-    <!-- FIN SCORE ANTICOAG-->
+    <!-- DEBUT SCORE ANTICOAG-->
 
 
 
@@ -101,7 +217,7 @@
               <ion-checkbox  color="turquoise-fonce" (click)="countAnticoag()" [(ngModel)]="entry3.isChecked"></ion-checkbox>
             </ion-item>
   
-            <hr>
+      
                 <ion-item class="drogueInduction">Total : <b>{{AnticoagTotal}} pts</b> - Risque <b>{{NiveauRisqueThrombose}}</b></ion-item>
                 <ion-item><ion-label class="drogueInduction">Stratégie proposée :</ion-label></ion-item>
                 <p class="strategie">{{prophylaxieAnticoag}} <b>{{MesuresSupplementairesAnticoag}}</b></p>
@@ -113,8 +229,15 @@
       </ion-card>
   
 
+      <!-- FIN SCORE ANTICOAG-->
+
+      <h3 padding>Post-opératoire</h3>
+
+
+      <!-- DEBUT SCORE EVENDOL-->
+
           <ion-item (click)="toggleEVENDOL()">
-            <ion-label color="dark-turquoise">Douleur
+            <ion-label color="dark-turquoise">Douleur enfant (EVENDOL)
               <ion-icon *ngIf="!isShownEVENDOL" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
               <ion-icon *ngIf="isShownEVENDOL" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
             </ion-label>
@@ -218,14 +341,226 @@
               </ion-segment-button>
             </ion-segment>
 
-                    <ion-item class="drogueInduction">Total : <b>{{EVENDOLTotal}} pts</b></ion-item>
-                    <p class="strategie">Seuil de prescription : {{SeuilPrescription}}</p>
+                    <ion-item class="drogueInduction">Total : <b>{{EVENDOLTotal}}/15 pts</b></ion-item>
+                    <p class="strategie">Seuil de prescription (3/15) : {{SeuilPrescriptionEVENDOL}}</p>
 
 
 
         </ion-card-content>
   
       </ion-card>
+
+      <!-- FIN SCORE EVENDOL-->
+
+
+<!-- DEBUT SCORE EDIN -->
+
+
+
+      <ion-item (click)="toggleEDIN()">
+        <ion-label color="dark-turquoise">Douleur nourrisson de 0 à 3 mois (EDIN)
+          <ion-icon *ngIf="!isShownEDIN" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownEDIN" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+        </ion-label>
+      </ion-item>
+  
+      <ion-card class="drogueContainer" *ngIf="isShownEDIN">
+        <ion-card-content>
+
+    <p class="drogueInduction">Utiliser chez le nourrisson entre 0 et 3 mois.</p>    
+        <br>
+    <ion-item class="EVENDOLlabel"><ion-label><br>Visage
+    <p class="comment">0 : visage détendu</p>
+    <p class="comment">1 : grimaces passagères</p>
+    <p class="comment">2 : grimaces fréquentes et prolongées</p>
+    <p class="comment">3 : crispation permanente, prostré, figé</p>
+    </ion-label></ion-item>
+
+        <ion-segment [(ngModel)]="EDINVisage" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">
+          <ion-segment-button value="0">
+            <ion-label>0</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="1">
+            <ion-label>1</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="2">
+            <ion-label>2</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="3">
+            <ion-label>3</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+        <ion-item class="EVENDOLlabel"><ion-label><br>Corps
+        <p class="comment">0 : détendu</p>
+        <p class="comment">1 : agitation transitoire</p>
+        <p class="comment">2 : agitation fréquente</p>
+        <p class="comment">3 : agitation permanente, crispation, raideur</p>
+
+        </ion-label></ion-item>
+
+        <ion-segment [(ngModel)]="EDINCorps" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">
+          <ion-segment-button value="0">
+            <ion-label>0</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="1">
+            <ion-label>1</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="2">
+            <ion-label>2</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="3">
+            <ion-label>3</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+        <ion-item class="EVENDOLlabel"><ion-label><br>Sommeil 
+          <p class="comment">0 : s'endort facilement, sommeil prolongé</p>
+          <p class="comment">1 : s'endort difficilement</p>
+          <p class="comment">2 : se réveille spontanément, sommeil agité</p>
+          <p class="comment">3 : pas de sommeil</p>
+  
+        </ion-label></ion-item>
+
+        <ion-segment [(ngModel)]="EDINSommeil" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">
+          <ion-segment-button value="0">
+            <ion-label>0</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="1">
+            <ion-label>1</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="2">
+            <ion-label>2</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="3">
+            <ion-label>3</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+        <ion-item class="EVENDOLlabel"><ion-label><br>
+          Relation
+          <p class="comment">0 : sourire réponse, attentif</p>
+          <p class="comment">1 : appréhension passagère du contact</p>
+          <p class="comment">2 : contact difficile, cri à la moindre stimulation</p>
+          <p class="comment">3 : hurlement ou gémissement spontané</p>
+  
+        </ion-label></ion-item>
+
+        <ion-segment [(ngModel)]="EDINRelation" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">
+          <ion-segment-button value="0">
+            <ion-label>0</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="1">
+            <ion-label>1</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="2">
+            <ion-label>2</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="3">
+            <ion-label>3</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+        <ion-item class="EVENDOLlabel"><ion-label><br>Reconfort
+          <p class="comment">0 : n'a pas besoin de reconfort</p>
+          <p class="comment">1 : se calme rapidement à la caresse/au son de la voix</p>
+          <p class="comment">2 : se calme difficilement</p>
+          <p class="comment">3 : inconsolable, succion désespérée</p>
+  
+        </ion-label></ion-item>
+
+        <ion-segment [(ngModel)]="EDINReconfort" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">
+          <ion-segment-button value="0">
+            <ion-label>0</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="1">
+            <ion-label>1</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="2">
+            <ion-label>2</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="3">
+            <ion-label>3</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+                <ion-item class="drogueInduction">Total : <b>{{EDINTotal}}/15 pts</b></ion-item>
+                <p class="strategie">Seuil de prescription (3/15) : {{SeuilPrescriptionEDIN}}</p>
+
+
+
+    </ion-card-content>
+
+  </ion-card>
+
+    <!-- FIN DOULEUR EDIN -->
+
+
+    <!-- SCORE ALDRETE -->
+    <ion-item (click)="toggleAldrete()">
+      <ion-label color="dark-turquoise">Score d'Aldrete - Sortie de SSPI
+        <ion-icon *ngIf="!isShownAldrete" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+        <ion-icon *ngIf="isShownAldrete" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+      </ion-label>
+    </ion-item>
+
+        <p padding *ngIf="isShownAldrete">Cocher pour chacune des catégories l'item décrivant l'état du patient.</p>
+
+        
+        <ion-list *ngIf="isShownAldrete">
+          <ion-card class="drogueContainer" *ngFor="let entry of AldreteForm">
+            <ion-card-header *ngIf="entry.category">{{entry.category}}</ion-card-header>
+              <ion-item><ion-label class="drogueInduction">
+              {{entry.val}}
+              <p class="dilutionDrogueInduction">+ {{entry.count}} point(s)</p>
+            </ion-label>  
+              <ion-checkbox color="turquoise-fonce" (click)="countAldrete()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+            </ion-item>
+          </ion-card>
+
+          <ion-card padding class="drogueContainer">
+              <ion-item class="drogueInduction">Total : <b>{{totalAldrete}}/14 pts</b></ion-item>
+              <ion-item><ion-label class="drogueInduction">Conduite à tenir proposée (sortie SSPI > 11/14) :</ion-label></ion-item>
+              <p padding class="strategie">{{CATAldrete}}</p>
+            </ion-card>
+        </ion-list>
+
+        <!-- FIN SCORE ALDRETE -->
+
+
+
+ <!-- SCORE PADSS SORTIE AMBULATOIRE  -->
+ <ion-item (click)="togglePADSS()">
+  <ion-label color="dark-turquoise">Score PADSS
+    <ion-icon *ngIf="!isShownPADSS" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+    <ion-icon *ngIf="isShownPADSS" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+</ion-item>
+
+    <p padding *ngIf="isShownPADSS">Cocher pour chacune des catégories l'item décrivant l'état du patient.</p>
+
     
+    <ion-list *ngIf="isShownPADSS">
+      <ion-card class="drogueContainer" *ngFor="let entry of PADSSForm">
+        <ion-card-header *ngIf="entry.category">{{entry.category}}</ion-card-header>
+          <ion-item><ion-label class="drogueInduction">
+          {{entry.val}}
+          <p class="dilutionDrogueInduction">+ {{entry.count}} point(s)</p>
+        </ion-label>  
+          <ion-checkbox color="turquoise-fonce" (click)="countPADSS()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+        </ion-item>
+      </ion-card>
+
+ 
+      <ion-card padding class="drogueContainer">
+          <ion-item class="drogueInduction">Total : <b>{{totalPADSS}}/14 pts</b></ion-item>
+          <ion-item><ion-label class="drogueInduction">Conduite à tenir proposée (sortie ambulatoire > 8/10) :</ion-label></ion-item>
+          <p padding class="strategie">{{CATPADSS}}</p>
+        </ion-card>
+    </ion-list>
+
+
+
+
 
 </ion-content>

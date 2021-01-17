@@ -65,17 +65,14 @@ export class LocoRegionalePage {
 
   ToggleAPD() {
     this.isShownAPD = !this.isShownAPD; 
-    this.isShownRachi = this.isShownALRP = false; 
   };
 
   ToggleRachi() {
     this.isShownRachi = !this.isShownRachi; 
-    this.isShownAPD = this.isShownALRP = false;
   };
 
   ToggleALRP() {
     this.isShownALRP = !this.isShownALRP; 
-    this.isShownAPD = this.isShownRachi = false;
   };
 
   async presentAlert() {

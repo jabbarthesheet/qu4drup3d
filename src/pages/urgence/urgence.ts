@@ -87,7 +87,12 @@ export class UrgencePage {
   AdminNAC3:number;
   AdminNAC4:number;
 
+  QuantiteNADpourPoids:number;
+  DosePoidsNAD:number;
+  DebitNAD:number;
+  QuantiteNADreelle:number;
 
+  isShownNAD:boolean=false; 
   isShownACR:boolean=false; 
   isShownChocAna:boolean=false; 
   isShownHTM:boolean=false; 
@@ -264,7 +269,16 @@ export class UrgencePage {
     };
 
 
+    /**NAD PREPARATION */
 
+    toggleNAD(){
+      this.isShownNAD = !this.isShownNAD;
+     }
+  
+     CalcQuantiteNAD(){
+        this.QuantiteNADpourPoids = (this.DosePoidsNAD * 3)/(this.DebitNAD);
+        this.QuantiteNADreelle = Math.round(this.QuantiteNADpourPoids * this.PoidsNum * 10)/10;
+     }
 
 
   /* Toggle des cartes */

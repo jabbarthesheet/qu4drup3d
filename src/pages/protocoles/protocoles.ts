@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MaxLengthValidator } from '@angular/forms';
 import { NavController, NavParams } from 'ionic-angular';
 import { AntiInfectieuxPage } from '../anti-infectieux/anti-infectieux';
 import { ExtrophieVesicalePage } from '../extrophie-vesicale/extrophie-vesicale';
@@ -19,8 +20,12 @@ import { ExtrophieVesicalePage } from '../extrophie-vesicale/extrophie-vesicale'
 
 export class ProtocolesPage {
 
-  isShownChirPediatrique:boolean=false; 
-  isShownObstetrique:boolean=false;
+  isShownNAD:boolean=false;
+  DosePoids:number; 
+  Debit:number;
+  QuantiteNADpourPoids:number;
+  QuantiteNADreelle:number; 
+  PoidsNum:number=25; 
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -37,7 +42,5 @@ export class ProtocolesPage {
    openExtrophieVesicale() {
     this.navCtrl.push (ExtrophieVesicalePage);
    };
-
-
 
 }

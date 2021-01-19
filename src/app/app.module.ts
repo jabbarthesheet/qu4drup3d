@@ -33,6 +33,7 @@ import { AntibioprophylaxiePage } from '../pages/antibioprophylaxie/antibioproph
 import { ScoresPage } from '../pages/scores/scores';
 import { InfoPage } from '../pages/info/info';
 import { NativeAudio } from '@ionic-native/native-audio';
+import { ScoliosePage } from '../pages/scoliose/scoliose';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { NativeAudio } from '@ionic-native/native-audio';
     AntiInfectieuxPage,
     LocoRegionalePage,
     ExtrophieVesicalePage,
+    ScoliosePage,
     ProtocolesPage,
     RecommandationsPage,
     MonitoragePage,
@@ -73,7 +75,8 @@ import { NativeAudio } from '@ionic-native/native-audio';
     IonicApp,
   ],
 
-  entryComponents: [
+  entryComponents: 
+  [
     MyApp,
     AccueilPage,
     OptionsPage,
@@ -86,13 +89,14 @@ import { NativeAudio } from '@ionic-native/native-audio';
     AntiInfectieuxPage,
     LocoRegionalePage,
     ExtrophieVesicalePage,
+    ScoliosePage, 
     ProtocolesPage,
     RecommandationsPage,
     MonitoragePage,
     CourbesPage,
     AntibioprophylaxiePage,
     ScoresPage,
-    InfoPage
+    InfoPage,
   ],
 
   providers: [

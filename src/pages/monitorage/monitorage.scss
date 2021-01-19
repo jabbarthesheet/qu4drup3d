@@ -22,6 +22,23 @@
     font-size: 12px; 
 }
 
+.TableBilansEven {
+    font-size: 12px !important;
+    text-align:center;
+    background: #FFF;
+    color: rgb(0, 0, 0);
+
+}
+
+.TableBilansOdd
+{
+    font-size: 12px !important;
+    text-align:center;
+    background: #dbd9d9; 
+    color: rgb(0, 0, 0);
+
+};
+
 .graphPoids {
     box-shadow: none !important;
 }

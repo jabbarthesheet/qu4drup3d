@@ -23,6 +23,7 @@ export class MonitoragePage {
   isShownConstantes:boolean=false;
   isShownDispositifs:boolean=false;
   isShownANI:boolean=false;
+  isShownBilans:boolean=false;
 
   FCnormale:any;
   FCdangerHaut:any;
@@ -51,6 +52,15 @@ export class MonitoragePage {
   DiuresedangerHaut:any;
   DiuresedangerBas:any;
 
+  NormeGR:string;
+  NormeHb:string;
+  NormeVGM:string;
+  NormePq:string; 
+  NormeRetic:string;
+  NormeGB:string;
+  NumberPNN:string;
+  NormeLympho:string;
+
   SondeDoppler:string; 
   CapteurNirs:string; 
   ElectrodesBIS:string;
@@ -70,6 +80,10 @@ export class MonitoragePage {
 
   retourHome(){
     this.navCtrl.pop();
+  };
+
+  ToggleBilans(){
+      this.isShownBilans = !this.isShownBilans;
   };
 
   ToggleConstantes()
@@ -324,5 +338,66 @@ export class MonitoragePage {
         this.DiuresedangerHaut = "> " + (Math.round((this.PoidsNum * 4)*10)/10 ).toString() ;
         this.DiuresedangerBas = "< " + (Math.round((this.PoidsNum * 1)*10)/10 ).toString();
         ;};
+
+
+        if (this.AgeNum <= 1) {  
+          this.NormeGR = "3,0 - 5,4";
+          this.NormeHb = "10,0 - 18,0" ;
+          this.NormeVGM = "85 - 123";
+          this.NormePq = "150 - 400"; 
+          this.NormeRetic = "20 - 140";
+          this.NormeGB = "5 - 20";
+          this.NumberPNN = "1 - 9";
+          this.NormeLympho = "2 - 16,5";
+        }
+
+      else if (this.AgeNum <= 6) {  
+        this.NormeGR = "3,1 - 4,5";
+        this.NormeHb = "9,5 - 14,1";
+        this.NormeVGM = "68 - 108";
+        this.NormePq = "200 - 550"; 
+        this.NormeRetic = "40 - 80";
+        this.NormeGB = "6 - 18";
+        this.NumberPNN = "1 - 6";
+        this.NormeLympho = "4 - 12";
+      }
+
+      else if (this.AgeNum <= 24) {  
+        this.NormeGR = "3,7 - 5,5";
+        this.NormeHb = "10,5 - 13,5";
+        this.NormeVGM = "68 - 86";
+        this.NormePq = "200 - 550"; 
+        this.NormeRetic = "40 - 80";
+        this.NormeGB = "6 - 17,5";
+        this.NumberPNN = "1 - 8,5";
+        this.NormeLympho = "3 - 13,5";
+      }
+
+      else if (this.AgeNum <= 144) {  
+        this.NormeGR = "3,9 - 5,2";
+        this.NormeHb = "11,1 - 14,7";
+        this.NormeVGM = "72 - 87";
+        this.NormePq = "166 - 463"; 
+        this.NormeRetic = "40 - 80";
+        this.NormeGB = "4 - 14,5";
+        this.NumberPNN = "1,5 - 8";
+        this.NormeLympho = "1 - 7";
+      }
+
+      else  {  
+        this.NormeGR = "4 - 5,6";
+        this.NormeHb = "11,3 - 16,6";
+        this.NormeVGM = "75 - 102";
+        this.NormePq = "160 - 439"; 
+        this.NormeRetic = "40 - 80";
+        this.NormeGB = "3,75 - 13";
+        this.NumberPNN = "1,5 - 6,3";
+        this.NormeLympho = "1,3 - 4,5";
       };
+
+
+      };
+
+
+    
 }

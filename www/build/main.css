@@ -88196,6 +88196,20 @@ ion-card {
   font-size: 12px;
 }
 
+.TableBilansEven {
+  font-size: 12px !important;
+  text-align: center;
+  background: #FFF;
+  color: black;
+}
+
+.TableBilansOdd {
+  font-size: 12px !important;
+  text-align: center;
+  background: #dbd9d9;
+  color: black;
+}
+
 .graphPoids {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;

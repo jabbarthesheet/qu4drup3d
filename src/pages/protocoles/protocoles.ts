@@ -3,6 +3,7 @@ import { MaxLengthValidator } from '@angular/forms';
 import { NavController, NavParams } from 'ionic-angular';
 import { AntiInfectieuxPage } from '../anti-infectieux/anti-infectieux';
 import { ExtrophieVesicalePage } from '../extrophie-vesicale/extrophie-vesicale';
+import { ScoliosePage } from '../scoliose/scoliose';
 
 
 /**
@@ -41,6 +42,10 @@ export class ProtocolesPage {
 
    openExtrophieVesicale() {
     this.navCtrl.push (ExtrophieVesicalePage);
+   };
+
+   openScoliose() {
+     this.navCtrl.push(ScoliosePage);
    };
 
 }

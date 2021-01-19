@@ -25,51 +25,33 @@ Protocoles & posologies pour les urgences</div>
 <ion-list>
 
   <ion-item (click)="toggleNAD()" ><ion-label color="dark-turquoise">
-    <ion-icon start name="list-box"></ion-icon>
+    <ion-icon start name="flask"></ion-icon>
     &nbsp;&nbsp; Préparation noradrénaline
     <ion-icon *ngIf="!isShownNAD" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
     <ion-icon *ngIf="isShownNAD" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
   </ion-label></ion-item>
 
+
   <ion-card class="drogueContainer" *ngIf="isShownNAD">
     <ion-card-content>
-        <p class="dilutionDrogueInduction">Renseigner (1) la posologie souhaitée en µg/kg/min puis (2) le débit de pousse-seringue souhaité en mL/h.</p>
-        <ion-item>
-            <ion-label class="dilutionDrogueInduction">
-            1. Administration (µg/kg/min)</ion-label>
-            <ion-select class="dilutionDrogueInduction" [(ngModel)]="DosePoidsNAD" interface="action-sheet" okText="OK" cancelText="Retour" placeholder="Choisir">
-              <ion-option checked="true" value="0.5" color="turquoise-fonce">0,5 µg/kg/min</ion-option>
-              <ion-option value="1" color="turquoise-fonce">1</ion-option>
-              <ion-option value="5" color="turquoise-fonce">5</ion-option>
-              <ion-option value="10" color="turquoise-fonce">10</ion-option>
-             </ion-select>
-          </ion-item>
-         
-          <ion-item>
-            <ion-label class="dilutionDrogueInduction">
-              2. Débit seringue (mL/h)</ion-label>
-              <ion-select class="dilutionDrogueInduction" (ionChange)="CalcQuantiteNAD()" [(ngModel)]="DebitNAD" interface="action-sheet"
-              okText="OK" cancelText="Retour" placeholder="Choisir">
-               <ion-option value="1" color="turquoise-fonce">1</ion-option>
-               <ion-option *ngIf="DosePoids != 0.5 && DosePoids != 5" value="2" color="turquoise-fonce">2</ion-option>
-               <ion-option value="5" color="turquoise-fonce">5</ion-option>
-               <ion-option value="10" color="turquoise-fonce">10</ion-option>
-              </ion-select>
-          </ion-item>
- 
-        <ion-item>
-          <ion-label class="dilutionDrogueInduction">  
-            Dose poids : {{QuantiteNADpourPoids}} mg/kg 
-            <br> Diluer : <b>{{QuantiteNADreelle}} mg</b> dans 50mL de NaCl 0,9%
-            <p class="comment">Pour un patient de {{PoidsNum}} kg</p>
-          </ion-label>
-          </ion-item>
+
+
+      <ion-item>
+        <ion-label class="drogueInduction" color="dark">
+          <p class="comment">Patient de {{PoidsNum}} kg</p>
+          <p class="dilutionDrogueInduction">Protocole proposé : {{ProtocoleNAD}}</p>
+          Noradrénaline (8mg/4mL) : <b>{{QuantiteNAD}}mg/50mL</b>
+          <p class="dilutionDrogueInduction">Préparation : </p>
+          <p class="dilutionDrogueInduction">{{VolumeNAD}}mL de NAD (= {{AmpoulesNAD}} ampoules de 4mL)</p>
+          <p class="dilutionDrogueInduction">+ {{VolumeSerumPhyNAD}}mL de NaCl 0,9%</p>
+          <p class="dilutionDrogueInduction"><b>Débuter à {{DebitNADmlh}} mL/h = 1 µg/kg/min (soit {{DebitNADmgh}} mg/h)</b></p>
+        </ion-label>
+      </ion-item>
     </ion-card-content>
   </ion-card>
 
-
     <ion-item  (click)="ToggleACR()">
-        <ion-label color="danger"><ion-icon start name="list-box"></ion-icon>
+        <ion-label color="danger"><ion-icon start name="medkit"></ion-icon>
           &nbsp;&nbsp; Arrêt cardio-respiratoire
         <ion-icon *ngIf="!isShownACR" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
         <ion-icon *ngIf="isShownACR" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
@@ -117,8 +99,30 @@ Protocoles & posologies pour les urgences</div>
     </ion-card>
 
 
+    <ion-item (click)="ToggleHTM()">
+      <ion-label color="warning"><ion-icon start name="alert"></ion-icon>
+        &nbsp;&nbsp; Hyperthermie maligne
+        <ion-icon *ngIf="!isShownHTM" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+        <ion-icon *ngIf="isShownHTM" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
+      </ion-label>
+    </ion-item>
+
+      <ion-card class="drogueContainer" *ngIf="isShownHTM">
+      <ion-card-content>
+        <p  class="drogueInduction">Evoquer devant  :
+          <p class="dilutionDrogueInduction">- augmentation importante et inexpliquée de l'EtCO2, de la FC ou de la température</p>
+          <p class="dilutionDrogueInduction">- apparition d'une rigidité musculaire des masséters, du tronc ou des membres.</p>
+          <br>
+        <p  class="drogueInduction">Conduite à tenir en cas de suspicion :</p>
+        <p class="dilutionDrogueInduction">- Arrêt halogénés, changement des filtres et tuyaux</p>
+        <p class="dilutionDrogueInduction">- Hyperventilation en FiO2 1</p>
+        <p class="dilutionDrogueInduction">- Contre indication absolue celocurine jusqu'à preuve du contraire</p>
+        <p class="dilutionDrogueInduction">- Dantrolène <b>{{AdminDantroleneHTM}} mg IVL</b> (soit 2,5 mg/kg, renouvelable 4 fois max) à diluer dans de l'<b>EPPI</b></p>
+      </ion-card-content>
+    </ion-card>
+
     <ion-item (click)="ToggleChocAna()">
-      <ion-label color="dark-turquoise"><ion-icon start name="list-box"></ion-icon>
+      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>
         &nbsp;&nbsp; Anaphylaxie
         <ion-icon *ngIf="!isShownChocAna" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
           <ion-icon *ngIf="isShownChocAna" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
@@ -141,30 +145,8 @@ Protocoles & posologies pour les urgences</div>
       </ion-card-content>
     </ion-card>
 
-    <ion-item (click)="ToggleHTM()">
-      <ion-label color="warning"><ion-icon start name="list-box"></ion-icon>
-        &nbsp;&nbsp; Hyperthermie maligne
-        <ion-icon *ngIf="!isShownHTM" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
-        <ion-icon *ngIf="isShownHTM" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
-      </ion-label>
-    </ion-item>
-
-      <ion-card class="drogueContainer" *ngIf="isShownHTM">
-      <ion-card-content>
-        <p  class="drogueInduction">Evoquer devant  :
-          <p class="dilutionDrogueInduction">- augmentation importante et inexpliquée de l'EtCO2, de la FC ou de la température</p>
-          <p class="dilutionDrogueInduction">- apparition d'une rigidité musculaire des masséters, du tronc ou des membres.</p>
-          <br>
-        <p  class="drogueInduction">Conduite à tenir en cas de suspicion :</p>
-        <p class="dilutionDrogueInduction">- Arrêt halogénés, changement des filtres et tuyaux</p>
-        <p class="dilutionDrogueInduction">- Hyperventilation en FiO2 1</p>
-        <p class="dilutionDrogueInduction">- Contre indication absolue celocurine jusqu'à preuve du contraire</p>
-        <p class="dilutionDrogueInduction">- Dantrolène <b>{{AdminDantroleneHTM}} mg IVL</b> (soit 2,5 mg/kg, renouvelable 4 fois max) à diluer dans de l'<b>EPPI</b></p>
-      </ion-card-content>
-    </ion-card>
-
     <ion-item (click)="ToggleIAL()">
-      <ion-label color="dark-turquoise"><ion-icon start name="list-box"></ion-icon>
+      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>
         &nbsp;&nbsp; Intoxication aux AL
         <ion-icon *ngIf="!isShownIAL" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
         <ion-icon *ngIf="isShownIAL" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
@@ -180,7 +162,7 @@ Protocoles & posologies pour les urgences</div>
     </ion-card>
 
     <ion-item (click)="ToggleMetabo()">
-      <ion-label color="dark-turquoise"><ion-icon start name="list-box"></ion-icon>
+      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>
         &nbsp;&nbsp; Désordres métaboliques
         <ion-icon *ngIf="!isShownMetabo" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
         <ion-icon *ngIf="isShownMetabo" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
@@ -217,7 +199,7 @@ Protocoles & posologies pour les urgences</div>
     </ion-card> 
 
     <ion-item (click)="ToggleAAG()">
-      <ion-label color="dark-turquoise"><ion-icon start name="list-box"></ion-icon>
+      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>
         &nbsp;&nbsp; Asthme aigu grave
         <ion-icon *ngIf="!isShownAAG" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
         <ion-icon *ngIf="isShownAAG" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
@@ -258,7 +240,7 @@ Protocoles & posologies pour les urgences</div>
     </ion-card> 
 
     <ion-item (click)="ToggleHTADiuretiques()">
-      <ion-label color="dark-turquoise"><ion-icon start name="list-box"></ion-icon>
+      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>
         &nbsp;&nbsp; Hypertension & diurétiques
         <ion-icon *ngIf="!isShownHTADiuretiques" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
         <ion-icon *ngIf="isShownHTADiuretiques" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
@@ -299,7 +281,7 @@ Protocoles & posologies pour les urgences</div>
     </ion-card> 
 
     <ion-item (click)="ToggleCriseConvulsive()">
-      <ion-label color="dark-turquoise"><ion-icon start name="list-box"></ion-icon>
+      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>
         &nbsp;&nbsp; Crises convulsives
         <ion-icon *ngIf="!isShownCriseConvulsive" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
         <ion-icon *ngIf="isShownCriseConvulsive" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
@@ -333,7 +315,7 @@ Protocoles & posologies pour les urgences</div>
     </ion-card> 
 
     <ion-item (click)="ToggleAntidotes()">
-      <ion-label color="dark-turquoise"><ion-icon start name="list-box"></ion-icon>
+      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>
         &nbsp;&nbsp; Intoxications & antidotes
         <ion-icon *ngIf="!isShownAntidotes" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
         <ion-icon *ngIf="isShownAntidotes" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>

@@ -79,7 +79,9 @@ export class ScoresPage {
 
   isShownHEMSTOP:boolean=false;
   totalHEMSTOP:number;
-  risqueHEMSTOP:string="Répondre aux questions du score."
+  risqueHEMSTOP:string="Répondre aux questions du score.";
+
+  isShownBromage:boolean=false;
 
 
   public VPOPform = [
@@ -408,6 +410,12 @@ countHEMSTOP(){
   else if (this.totalHEMSTOP == 1){this.risqueHEMSTOP = "Probabilité intermédiaire de sur-risque hémorragique. Bilan d'hémostase à discuter."}
   else {this.risqueHEMSTOP = "Probabilité très faible de sur-risque hémorragique. Pas de bilan d'hémostase."}
 
+};
+
+/** SCORE DE BROMAGE */
+
+toggleBromage() {
+  this.isShownBromage = !this.isShownBromage;
 };
 
 };

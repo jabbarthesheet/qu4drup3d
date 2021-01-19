@@ -87,10 +87,14 @@ export class UrgencePage {
   AdminNAC3:number;
   AdminNAC4:number;
 
-  QuantiteNADpourPoids:number;
-  DosePoidsNAD:number;
-  DebitNAD:number;
-  QuantiteNADreelle:number;
+  ProtocoleNAD:string; 
+  QuantiteNAD:number;
+  VolumeNAD:number;
+  AmpoulesNAD:number; 
+  VolumeSerumPhyNAD:number; 
+  DebitNADmlh:number; 
+  DebitNADµgkgmin:number;
+  DebitNADmgh:number;
 
   isShownNAD:boolean=false; 
   isShownACR:boolean=false; 
@@ -266,6 +270,41 @@ export class UrgencePage {
       this.AdminNAC3 = Math.round((this.PoidsNum * 100)*10)/10;
       this.AdminNAC4 = Math.round((this.PoidsNum * 150)*10)/10; 
 
+      /** NAD */
+
+      if (this.PoidsNum <= 30){
+      this.ProtocoleNAD = "3 mg/kg dans 50 mL"; 
+      this.QuantiteNAD = Math.round(this.PoidsNum*3*10)/10; 
+      this.VolumeNAD = Math.round(this.QuantiteNAD/2*10)/10;
+      this.AmpoulesNAD = Math.round(this.VolumeNAD/4*10)/10;
+      this.VolumeSerumPhyNAD = Math.round((50 - this.VolumeNAD)*10)/10; 
+      this.DebitNADmlh = 1 ; 
+      this.DebitNADµgkgmin = 1 ;
+      this.DebitNADmgh = Math.round((this.PoidsNum*60/1000)*10)/10 ;
+      }
+
+      else if (this.PoidsNum <= 60){
+        this.ProtocoleNAD = "1,5 mg/kg dans 50 mL"; 
+        this.QuantiteNAD = Math.round(this.PoidsNum*1.5*10)/10; 
+        this.VolumeNAD = Math.round(this.QuantiteNAD/2*10)/10;
+        this.AmpoulesNAD = Math.round(this.VolumeNAD/4*10)/10;
+        this.VolumeSerumPhyNAD = Math.round((50 - this.VolumeNAD)*10)/10; 
+        this.DebitNADmlh = 2 ; 
+        this.DebitNADµgkgmin = 1 ; 
+        this.DebitNADmgh = Math.round((this.PoidsNum*60/1000)*10)/10 ;
+        }
+
+
+        else {
+          this.ProtocoleNAD = "0,6 mg/kg dans 50 mL";; 
+          this.QuantiteNAD = Math.round(this.PoidsNum*0.6*10)/10; 
+          this.VolumeNAD = Math.round(this.QuantiteNAD/2*10)/10;
+          this.AmpoulesNAD = Math.round(this.VolumeNAD/4*10)/10;
+          this.VolumeSerumPhyNAD = Math.round((50 - this.VolumeNAD)*10)/10; 
+          this.DebitNADmlh = 5 ; 
+          this.DebitNADµgkgmin = 1 ; 
+          this.DebitNADmgh = Math.round((this.PoidsNum*60/1000)*10)/10 ;
+          };
     };
 
 
@@ -274,11 +313,7 @@ export class UrgencePage {
     toggleNAD(){
       this.isShownNAD = !this.isShownNAD;
      }
-  
-     CalcQuantiteNAD(){
-        this.QuantiteNADpourPoids = (this.DosePoidsNAD * 3)/(this.DebitNAD);
-        this.QuantiteNADreelle = Math.round(this.QuantiteNADpourPoids * this.PoidsNum * 10)/10;
-     }
+
 
 
   /* Toggle des cartes */

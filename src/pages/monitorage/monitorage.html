@@ -32,7 +32,12 @@ Monitorage & dispositifs  </div>
   </ion-item-divider> 
 
 
-  <ion-grid fixed="true" *ngIf="isShownConstantes" class="ionFirstRow">
+  <ion-grid fixed="true" *ngIf="isShownConstantes">
+    <ion-row class="TableApportsHeader"><ion-col> <span *ngIf="this.AgeNum <= 24">
+      Pour un enfant de {{AgeNum}} mois
+    </span>
+    <span  *ngIf="this.AgeNum > 24 && this.AgeNum > 0">
+      Pour un enfant de {{ageLecture}} ans</span></ion-col></ion-row>
     <ion-row >
       <ion-col>
       </ion-col>
@@ -154,6 +159,107 @@ Monitorage & dispositifs  </div>
     </ion-row>
     </ion-grid>
 
+
+
+    <ion-item-divider (click)="ToggleBilans()">
+      <ion-label color="dark-turquoise">Bilans sanguins
+    <ion-icon *ngIf="!isShownBilans" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
+    <ion-icon *ngIf="isShownBilans" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
+      </ion-label>
+    </ion-item-divider> 
+
+    <ion-card class="drogueContainer" *ngIf="isShownBilans">
+    <p class="reference">Reference : ANAES - lecture critique de l'hémogramme - mise à jour 2007.</p>
+
+    <ion-grid fixed="true">
+
+      <ion-row class="TableApportsHeader">
+        <ion-col>
+          Paramètre (Unité)
+        </ion-col>
+        <ion-col *ngIf="this.AgeNum <= 24">
+          Normes à {{AgeNum}} mois
+        </ion-col>
+        <ion-col  *ngIf="this.AgeNum > 24 && this.AgeNum > 0">
+          Normes à {{ageLecture}} ans
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="TableBilansEven">
+        <ion-col>
+          Hématies
+        </ion-col>
+        <ion-col>
+          {{NormeGR}}.10<sup>12</sup>/L
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="TableBilansOdd">
+        <ion-col>
+         Hémoglobinémie
+        </ion-col>
+        <ion-col>
+          {{NormeHb}} g/dL
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="TableBilansEven">
+        <ion-col>
+          VGM
+        </ion-col>
+        <ion-col>
+          {{NormeVGM}} µm<sup>3</sup>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="TableBilansOdd">
+        <ion-col>
+         Réticulocytes
+        </ion-col>
+        <ion-col>
+          {{NormeRetic}}.10<sup>9</sup>/L
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="TableBilansEven">
+        <ion-col>
+          GB 
+        </ion-col>
+        <ion-col>
+          {{NormeGB}}.10<sup>9</sup>/L
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="TableBilansOdd">
+        <ion-col>
+         Neutrophiles
+        </ion-col>
+        <ion-col>
+          {{NormePNN}}.10<sup>9</sup>/L
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="TableBilansEven">
+        <ion-col>
+          Lymphocytes
+        </ion-col>
+        <ion-col>
+          {{NormeLympho}}.10<sup>9</sup>/L
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="TableBilansOdd">
+        <ion-col>
+         Plaquettes
+        </ion-col>
+        <ion-col>
+          {{NormePq}}.10<sup>9</sup>/L
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+  </ion-card>
 
     <ion-item-divider (click)="ToggleDispositifs()">
       <ion-label color="dark-turquoise">Taille des dispositifs

@@ -30,7 +30,7 @@
 
 
                      <ion-item (click)="toggleSHS()">
-                      <ion-label color="dark-turquoise">Score de sévérité SAOS (SHS)
+                      <ion-label color="dark-turquoise"><ion-icon name="stats"></ion-icon> &nbsp; &nbsp; Sévérité SAOS (SHS)
                         <ion-icon *ngIf="!isShownSHS" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
                         <ion-icon *ngIf="isShownSHS" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
                       </ion-label>
@@ -89,7 +89,7 @@
         <!-- DEBUT SCORE HEMSTOP SAIGNEMENT-->
 
         <ion-item (click)="toggleHEMSTOP()">
-          <ion-label color="dark-turquoise">Dépistage des coagulopathies (HEMSTOP)
+          <ion-label color="dark-turquoise"><ion-icon name="stats"></ion-icon> &nbsp; &nbsp; Coagulopathies (HEMSTOP)
             <ion-icon *ngIf="!isShownHEMSTOP" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
             <ion-icon *ngIf="isShownHEMSTOP" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
           </ion-label>
@@ -137,7 +137,7 @@
 
 
     <ion-item (click)="toggleVPOP()">
-      <ion-label color="dark-turquoise">Risque NVPO (score VPOP)
+      <ion-label color="dark-turquoise"><ion-icon name="stats"></ion-icon> &nbsp; &nbsp; Risque NVPO (score VPOP)
         <ion-icon *ngIf="!isShownVPOP" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
         <ion-icon *ngIf="isShownVPOP" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
       </ion-label>
@@ -182,7 +182,7 @@
 
 
       <ion-item (click)="toggleScoreAnticoag()">
-        <ion-label color="dark-turquoise">Score anticoagulation (patient > 13 ans)
+        <ion-label color="dark-turquoise"><ion-icon name="stats"></ion-icon> &nbsp; &nbsp; Anticoagulation (après 13 ans)
           <ion-icon *ngIf="!isShownScoreAnticoag" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
           <ion-icon *ngIf="isShownScoreAnticoag" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
         </ion-label>
@@ -237,7 +237,7 @@
       <!-- DEBUT SCORE EVENDOL-->
 
           <ion-item (click)="toggleEVENDOL()">
-            <ion-label color="dark-turquoise">Douleur enfant (EVENDOL)
+            <ion-label color="dark-turquoise"><ion-icon name="stats"></ion-icon> &nbsp; &nbsp; Douleur enfant (EVENDOL)
               <ion-icon *ngIf="!isShownEVENDOL" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
               <ion-icon *ngIf="isShownEVENDOL" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
             </ion-label>
@@ -358,8 +358,8 @@
 
 
       <ion-item (click)="toggleEDIN()">
-        <ion-label color="dark-turquoise">Douleur nourrisson de 0 à 3 mois (EDIN)
-          <ion-icon *ngIf="!isShownEDIN" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+        <ion-label color="dark-turquoise"> <ion-icon name="stats"></ion-icon> &nbsp; &nbsp; Douleur nourrisson (0-3 mois - EDIN)
+          <ion-icon *ngIf="!isShownEDIN" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>  
           <ion-icon *ngIf="isShownEDIN" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
         </ion-label>
       </ion-item>
@@ -498,7 +498,7 @@
 
     <!-- SCORE ALDRETE -->
     <ion-item (click)="toggleAldrete()">
-      <ion-label color="dark-turquoise">Score d'Aldrete - Sortie de SSPI
+      <ion-label color="dark-turquoise"><ion-icon name="stats"></ion-icon> &nbsp; &nbsp; Score d'Aldrete - Sortie de SSPI
         <ion-icon *ngIf="!isShownAldrete" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
         <ion-icon *ngIf="isShownAldrete" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
       </ion-label>
@@ -531,7 +531,7 @@
 
  <!-- SCORE PADSS SORTIE AMBULATOIRE  -->
  <ion-item (click)="togglePADSS()">
-  <ion-label color="dark-turquoise">Score PADSS
+  <ion-label color="dark-turquoise"><ion-icon name="stats"></ion-icon> &nbsp; &nbsp; Score PADSS - Sortie ambulatoire
     <ion-icon *ngIf="!isShownPADSS" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
     <ion-icon *ngIf="isShownPADSS" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
   </ion-label>
@@ -557,10 +557,43 @@
           <ion-item><ion-label class="drogueInduction">Conduite à tenir proposée (sortie ambulatoire > 8/10) :</ion-label></ion-item>
           <p padding class="strategie">{{CATPADSS}}</p>
         </ion-card>
-    </ion-list>
+      </ion-list>
 
 
+            <!-- FIN SCORE PADSS-->
 
+
+             <!-- SCORE de BROMAGE RACHIANESTHESIE   -->
+ 
+ 
+  <ion-item (click)="toggleBromage()">
+  <ion-label color="dark-turquoise"><ion-icon name="stats"></ion-icon> &nbsp; &nbsp; Bromage (après rachianesthésie)
+    <ion-icon *ngIf="!isShownBromage" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+    <ion-icon *ngIf="isShownBromage" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+</ion-item>
+
+    <ion-card padding *ngIf="isShownBromage" class="drogueContainer">
+
+    <p  class="reference"> Référence : Bromage PR. A comparison of the hydrochloride and carbon dioxide salts of lidocaine and prilocaine in epidural analgesia. Acta Anaesthesiologica Scandinavica 1965.</p>
+    <br>
+    <p class="comment">Le score proposé est le score de Bromage <i>modifié</i>, utilisable en ambulatoire. Le score original est sur 4 points, le score modifié sur 7. 
+      <br>Examiner le patient et attribuer le score correspondant à la motricité observée aux membres inférieurs.</p>
+    <br>
+  <p class="dilutionDrogueInduction">
+          - 1. Bloc moteur complet.
+      <br>- 2. Bloc moteur presque complet, bouge les pieds.
+      <br>- 3. Bloc moteur partiel, bouge les pieds et les genoux.
+      <br>- 4. Bouge les jambes, faiblesse détectable à la flexion de la hanche.
+      <br>- 5. Pas de faiblesse de la hanche en position couchée.
+      <br>- 6. Flexion des genoux debout avec appui.
+      <br>- 7. Flexion des genoux debout sans appui. 
+  </p>
+      
+          <p class="strategie">Sortie de salle de réveil vers l'hospitalisation conventionnelle envisageable pour un score supérieur ou égal à 4. Sortie en ambulatoire envisageable pour un score supérieur ou égal à 6.</p>
+    
+
+      </ion-card>
 
 
 </ion-content>

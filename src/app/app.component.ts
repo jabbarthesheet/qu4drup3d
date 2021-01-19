@@ -23,6 +23,7 @@ import { CourbesPage } from '../pages/courbes/courbes';
 import { ScoresPage } from '../pages/scores/scores';
 import { InfoPage } from '../pages/info/info';
 
+
 @Component({
   templateUrl: 'app.html'
 })

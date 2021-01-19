@@ -58,7 +58,7 @@ export class MonitoragePage {
   NormePq:string; 
   NormeRetic:string;
   NormeGB:string;
-  NumberPNN:string;
+  NormePNN:string;
   NormeLympho:string;
 
   SondeDoppler:string; 
@@ -347,7 +347,7 @@ export class MonitoragePage {
           this.NormePq = "150 - 400"; 
           this.NormeRetic = "20 - 140";
           this.NormeGB = "5 - 20";
-          this.NumberPNN = "1 - 9";
+          this.NormePNN = "1 - 9";
           this.NormeLympho = "2 - 16,5";
         }
 
@@ -358,7 +358,7 @@ export class MonitoragePage {
         this.NormePq = "200 - 550"; 
         this.NormeRetic = "40 - 80";
         this.NormeGB = "6 - 18";
-        this.NumberPNN = "1 - 6";
+        this.NormePNN = "1 - 6";
         this.NormeLympho = "4 - 12";
       }
 
@@ -369,7 +369,7 @@ export class MonitoragePage {
         this.NormePq = "200 - 550"; 
         this.NormeRetic = "40 - 80";
         this.NormeGB = "6 - 17,5";
-        this.NumberPNN = "1 - 8,5";
+        this.NormePNN = "1 - 8,5";
         this.NormeLympho = "3 - 13,5";
       }
 
@@ -380,7 +380,7 @@ export class MonitoragePage {
         this.NormePq = "166 - 463"; 
         this.NormeRetic = "40 - 80";
         this.NormeGB = "4 - 14,5";
-        this.NumberPNN = "1,5 - 8";
+        this.NormePNN = "1,5 - 8";
         this.NormeLympho = "1 - 7";
       }
 
@@ -391,7 +391,7 @@ export class MonitoragePage {
         this.NormePq = "160 - 439"; 
         this.NormeRetic = "40 - 80";
         this.NormeGB = "3,75 - 13";
-        this.NumberPNN = "1,5 - 6,3";
+        this.NormePNN = "1,5 - 6,3";
         this.NormeLympho = "1,3 - 4,5";
       };
 

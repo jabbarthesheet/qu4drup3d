@@ -1,4 +1,4 @@
-import { Component, ViewChild, NgModule } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AlertController, App, MenuController, NavController, NavParams, PickerController, PickerOptions, PopoverController, ToastController } from 'ionic-angular';
 import { ModalController, ViewController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
@@ -19,7 +19,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { AntibioprophylaxiePage } from '../antibioprophylaxie/antibioprophylaxie';
 import { ScoresPage } from '../scores/scores';
 import { ProtocolesPage } from '../protocoles/protocoles';
-import { text } from '@angular/core/src/render3/instructions';
+import { SauvegardePatientPage } from '../sauvegarde-patient/sauvegarde-patient';
 
 
 
@@ -53,18 +53,20 @@ ageannees:number=0;
 agemois:number=0;
 agesemaines:number=0;
 ageLecture:number=0; 
-ageColor:string="danger";
+
 
 poidskilogrammes:number=0;
 poidsgrammes:number=0; 
-poidsColor:string="danger";
+
 
 sexeMF:string="Fille"; 
 
 Taille:number; 
 TailleMetre:number; 
 TailleCentimetre:number;
-TailleColor:string="danger";
+
+
+Prenom:string="";
 
 MorceauChoisi:string="Choisir...";
 musicPlaying:boolean=false;
@@ -79,6 +81,8 @@ public running = false;
 public blankTime = "00:00:00";
 public time = "00:00:00";
 
+public NewPatient : any [] = []; 
+public PatientsSauvegardes: any =[];
 
 
   constructor(
@@ -101,7 +105,63 @@ public time = "00:00:00";
     this.menu.open();
     this.stopMusic(); 
   };
-  /** ----------------------------  RENSEIGNER AGE ET POIDS ----------------------------------------------------------------- */
+
+
+
+    /** ----------------------------  MODULE ENREGISTREMENT  ----------------------------------------------------------------- */
+
+  enregistrer(){
+
+    const PrenomPatientAlert = this.alertController.create({
+      cssClass: 'alerte',
+      title: 'Prénom ?',
+      message: "Renseignez un prénom pour le patient afin d'enregistrer les données.",
+      inputs: [
+        {
+          name: 'Prenom',
+          type: 'text',
+          placeholder: 'Renseigner...'
+        },
+      ],
+      buttons: [
+        {
+          text: "Enregistrer",
+          handler: (AlertData) =>  {
+                this.Prenom = AlertData.Prenom; 
+                this.NewPatient = [ 
+                  { 
+                  Prenom : AlertData.Prenom , 
+                  Age : this.AgeNum , 
+                  Poids : this.PoidsNum , 
+                  Taille : this.Taille , 
+                  Sexe : this.sexeMF , 
+                  DureeJeune : this.DureeJeune , 
+                  EstomacPlein : this.EstomacOuiNon ,
+                  Allergie : this.Allergie , 
+                } ] 
+              if (!this.PatientsSauvegardes){this.PatientsSauvegardes = this.NewPatient}
+              else {
+              this.PatientsSauvegardes = this.PatientsSauvegardes.concat(this.NewPatient)}; 
+              console.log (this.PatientsSauvegardes); 
+              this.storage.set( 'SavedPatients' , this.PatientsSauvegardes);
+          } } ,
+          {
+            text: "Annuler",
+            handler: () =>  {
+              return; 
+            } } 
+      ],
+    });
+    PrenomPatientAlert.present();
+  }; 
+
+  openSauvegarde() {
+    this.navCtrl.push(SauvegardePatientPage);
+  }
+
+
+
+  /** ----------------------------  RENSEIGNER AGE ET POIDS ou RENSEIGNER TAILLE ----------------------------------------------------------------- */
   alertAgePoidsTaille()
   {
     const AgePoidsTailleAlert = this.alertController.create({
@@ -298,7 +358,6 @@ start() {
                   this.ageLecture = Math.round((this.AgeNum/12)*10)/10; 
                   this.storage.set("AgeNum", this.AgeNum); 
                   this.storage.set("ageLecture", this.ageLecture);
-                  this.ageColor = "dark-turquoise";
                 }
               }
             ],
@@ -398,7 +457,6 @@ start() {
                 this.PoidsNum = this.poidskilogrammes + Math.round((this.poidsgrammes/1000)*10)/10;
                 console.log(this.PoidsNum);
                 this.storage.set("PoidsNum", this.PoidsNum);  
-                this.poidsColor = "dark-turquoise";
                 }
               }
             ],
@@ -471,7 +529,6 @@ start() {
                 this.Taille = Math.floor(this.TailleMetre*100) + Math.floor(this.TailleCentimetre);
                 console.log(this.PoidsNum);
                 this.storage.set("Taille", this.Taille); 
-                this.TailleColor = "dark-turquoise";
                 }
               }
             ],
@@ -528,44 +585,51 @@ start() {
 
 
     ionViewWillEnter() {
-      let promiseList: Promise<any>[] = [];
-      promiseList.push(
       this.storage.get('AgeNum').then((Age) => {
           this.AgeNum = Age; 
-          if (this.AgeNum){this.ageColor = "dark-turquoise"; }
-          else {this.ageColor = "danger";};
-          this.ageLecture = Math.round((this.AgeNum/12)*10)/10; 
+          this.ageLecture = Math.round((this.AgeNum/12)*10)/10;
+          });
+          
       this.storage.get('PoidsNum').then((Poids) => {
           this.PoidsNum = Poids;
-          if (this.PoidsNum){this.poidsColor = "dark-turquoise";}
-          else {this.poidsColor = "danger";};
+          });
 
-            this.storage.get('EstomacPlein').then((estomacplein) => {
+      this.storage.get('EstomacPlein').then((estomacplein) => {
           this.EstomacPlein = estomacplein ; 
           if (this.EstomacPlein == true){this.EstomacOuiNon = "plein"; }
           else {this.EstomacOuiNon = "vide";}
+          });
+
+
       this.storage.get('DureeJeune').then((dureejeune) => {
-        this.DureeJeune = dureejeune; 
+         this.DureeJeune = dureejeune;
+         }); 
+
       this.storage.get('Allergie').then((allergie) => {
         this.Allergie = allergie;
+        });
+
       this.storage.get('sexeMF').then((sexe) => {
         this.sexeMF = sexe; 
         if (!this.sexeMF){this.sexeMF = "Fille"}
         else {this.sexeMF == sexe;};
         this.storage.set('sexeMF', this.sexeMF);
-    this.storage.get('Taille').then((Taille) => {
-        this.Taille = Taille; 
-        if (this.Taille){this.TailleColor = "dark-turquoise";}
-        else {this.TailleColor = "danger";};
-      });
-
-      });
-
-      });
         });
-        }); 
-          });
-        })) };
+
+
+    this.storage.get('Taille').then((Taille) => {
+        this.Taille = Taille;
+         });
+
+    this.storage.get('Prenom').then((Prenom) => {
+        this.Prenom = Prenom; 
+    });
+   
+    this.storage.get('SavedPatients').then((SavedPatients) => {
+        this.PatientsSauvegardes = SavedPatients});
+    console.log("patient chargés = ", this.PatientsSauvegardes);
+    
+  }
 
   SetSexe(){
     this.storage.set("sexeMF", this.sexeMF);
@@ -655,19 +719,41 @@ start() {
 
 
     effacer(){
-      this.storage.clear(); /* ATTTENTION EFFACE TOUT TOTALEMENT TOUT */
-      this.AgeNum=0;
-      this.ageLecture=0;
-      this.PoidsNum=0;
-      this.Taille=0; 
-      this.sexeMF="Fille";
-      this.DureeJeune = 0; 
-      this.Allergie = "";
-      this.EstomacOuiNon = "vide";
-      this.TailleColor="danger";
-      this.poidsColor = "danger";
-      this.ageColor = "danger";
-    }
+
+    
+
+        const EffacerToutAlert = this.alertController.create({
+          cssClass: 'alerte',
+          title: 'Tout supprimer ?',
+          message: "Attention, en appuyant sur 'valider' vous supprimerez l'ensemble des données patient enregistrées.",
+          buttons: [
+            {
+              text: "Valider",
+              handler: () =>  {
+                this.storage.clear(); /* ATTTENTION EFFACE TOUT TOTALEMENT TOUT */
+                this.AgeNum=0;
+                this.ageLecture=0;
+                this.PoidsNum=0;
+                this.Taille=0; 
+                this.sexeMF="Fille";
+                this.DureeJeune = 0; 
+                this.Allergie = "";
+                this.EstomacOuiNon = "vide";
+                this.Prenom=""; 
+             
+              }
+              } ,
+              {
+                text: "Annuler",
+                handler: () =>  {
+                  return; 
+                } 
+              }
+          ],
+        });
+        EffacerToutAlert.present();
+      }; 
+
 
 };
 

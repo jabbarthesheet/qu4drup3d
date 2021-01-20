@@ -2723,7 +2723,7 @@ var MonitoragePage = /** @class */ (function () {
             this.NormePq = "150 - 400";
             this.NormeRetic = "20 - 140";
             this.NormeGB = "5 - 20";
-            this.NumberPNN = "1 - 9";
+            this.NormePNN = "1 - 9";
             this.NormeLympho = "2 - 16,5";
         }
         else if (this.AgeNum <= 6) {
@@ -2733,7 +2733,7 @@ var MonitoragePage = /** @class */ (function () {
             this.NormePq = "200 - 550";
             this.NormeRetic = "40 - 80";
             this.NormeGB = "6 - 18";
-            this.NumberPNN = "1 - 6";
+            this.NormePNN = "1 - 6";
             this.NormeLympho = "4 - 12";
         }
         else if (this.AgeNum <= 24) {
@@ -2743,7 +2743,7 @@ var MonitoragePage = /** @class */ (function () {
             this.NormePq = "200 - 550";
             this.NormeRetic = "40 - 80";
             this.NormeGB = "6 - 17,5";
-            this.NumberPNN = "1 - 8,5";
+            this.NormePNN = "1 - 8,5";
             this.NormeLympho = "3 - 13,5";
         }
         else if (this.AgeNum <= 144) {
@@ -2753,7 +2753,7 @@ var MonitoragePage = /** @class */ (function () {
             this.NormePq = "166 - 463";
             this.NormeRetic = "40 - 80";
             this.NormeGB = "4 - 14,5";
-            this.NumberPNN = "1,5 - 8";
+            this.NormePNN = "1,5 - 8";
             this.NormeLympho = "1 - 7";
         }
         else {
@@ -2763,7 +2763,7 @@ var MonitoragePage = /** @class */ (function () {
             this.NormePq = "160 - 439";
             this.NormeRetic = "40 - 80";
             this.NormeGB = "3,75 - 13";
-            this.NumberPNN = "1,5 - 6,3";
+            this.NormePNN = "1,5 - 6,3";
             this.NormeLympho = "1,3 - 4,5";
         }
         ;
@@ -2771,7 +2771,7 @@ var MonitoragePage = /** @class */ (function () {
     ;
     MonitoragePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-monitorage',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\monitorage\monitorage.html"*/'\n\n<ion-content>\n\n        <!-- HEADER MENU  -->\n        <div class="header"> \n\n          <div (click)="retourHome()" class="backButton">\n          <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n          Retour\n          </div>\nMonitorage & dispositifs  </div>\n            <br>\n      \n                  <!-- HEADER MON PATIENT  -->\n  \n            <ion-item color="turquoise-fonce"> \n              <ion-label>\n                <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> \n                <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n                <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> \n            </ion-item>\n        \n            <br>\n       <!-- END HEADER -->\n\n      <ion-item-divider (click)="ToggleConstantes()">\n    <ion-label color="dark-turquoise">Paramètres vitaux selon l\'âge\n  <ion-icon *ngIf="!isShownConstantes" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownConstantes" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider> \n\n\n  <ion-grid fixed="true" *ngIf="isShownConstantes">\n    <ion-row class="TableApportsHeader"><ion-col> <span *ngIf="this.AgeNum <= 24">\n      Pour un enfant de {{AgeNum}} mois\n    </span>\n    <span  *ngIf="this.AgeNum > 24 && this.AgeNum > 0">\n      Pour un enfant de {{ageLecture}} ans</span></ion-col></ion-row>\n    <ion-row >\n      <ion-col>\n      </ion-col>\n      <ion-col class="normale">\n        Normale\n      </ion-col>\n      <ion-col class="trophaut">\n        Trop haut\n      </ion-col>\n      <ion-col class="tropbas">\n        Trop bas\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="intitules">\n          FC (/min)\n      </ion-col>\n      <ion-col class="normale">\n        {{FCnormale}}\n      </ion-col>\n      <ion-col class="trophaut">\n        {{FCdangerHaut}}\n      </ion-col>\n      <ion-col class="tropbas">\n        {{FCdangerBas}}\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="intitules" >\n          FR (/min)\n      </ion-col>\n      <ion-col class="normale"> \n        {{FRnormale}}\n      </ion-col>\n      <ion-col class="trophaut">\n        {{FRdangerHaut}}\n      </ion-col>\n      <ion-col class="tropbas">\n        {{FRdangerBas}}\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="intitules">\n          SpO2 (%)\n      </ion-col>\n      <ion-col class="normale">\n        {{SpO2normale}}\n      </ion-col>\n      <ion-col class="trophaut">\n        -\n      </ion-col>\n      <ion-col class="tropbas">\n        {{SpO2dangerBas}}\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="intitules">\n          PAS (mmHg)\n      </ion-col>\n      <ion-col class="normale">\n        {{PASnormale}}\n      </ion-col>\n      <ion-col class="trophaut">\n        {{PASdangerHaut}}\n      </ion-col>\n      <ion-col class="tropbas">\n        {{PASdangerBas}}\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="intitules">\n          PAD (mmHg)\n      </ion-col>\n      <ion-col class="normale">\n        {{PADnormale}}\n      </ion-col>\n      <ion-col class="trophaut">\n        {{PADdangerHaut}}\n      </ion-col>\n      <ion-col class="tropbas">\n        {{PADdangerBas}}\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="intitules">\n          PAM (mmHg)\n      </ion-col>\n      <ion-col class="normale">\n        {{PAMnormale}}\n      </ion-col>\n      <ion-col class="trophaut">\n        {{PAMdangerHaut}}\n      </ion-col>\n      <ion-col class="tropbas">\n        {{PAMdangerBas}}\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="intitules">\n          Diurèse (mL/h sur 3h)\n      </ion-col>\n      <ion-col class="normale">\n        {{Diuresenormale}}\n      </ion-col>\n      <ion-col class="trophaut">\n        {{DiuresedangerHaut}}\n      </ion-col>      \n      <ion-col class="tropbas">\n        {{DiuresedangerBas}}\n      </ion-col>\n    </ion-row>\n    </ion-grid>\n\n\n\n    <ion-item-divider (click)="ToggleBilans()">\n      <ion-label color="dark-turquoise">Bilans sanguins\n    <ion-icon *ngIf="!isShownBilans" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShownBilans" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item-divider> \n\n    <ion-card class="drogueContainer" *ngIf="isShownBilans">\n    <p class="reference">Reference : ANAES - lecture critique de l\'hémogramme - mise à jour 2007.</p>\n\n    <ion-grid fixed="true">\n\n      <ion-row class="TableApportsHeader">\n        <ion-col>\n          Paramètre (Unité)\n        </ion-col>\n        <ion-col *ngIf="this.AgeNum <= 24">\n          Normes à {{AgeNum}} mois\n        </ion-col>\n        <ion-col  *ngIf="this.AgeNum > 24 && this.AgeNum > 0">\n          Normes à {{ageLecture}} ans\n        </ion-col>\n      </ion-row>\n\n      <ion-row class="TableBilansEven">\n        <ion-col>\n          Hématies\n        </ion-col>\n        <ion-col>\n          {{NormeGR}}.10<sup>12</sup>/L\n        </ion-col>\n      </ion-row>\n\n      <ion-row class="TableBilansOdd">\n        <ion-col>\n         Hémoglobinémie\n        </ion-col>\n        <ion-col>\n          {{NormeHb}} g/dL\n        </ion-col>\n      </ion-row>\n\n      <ion-row class="TableBilansEven">\n        <ion-col>\n          VGM\n        </ion-col>\n        <ion-col>\n          {{NormeVGM}} µm<sup>3</sup>\n        </ion-col>\n      </ion-row>\n\n      <ion-row class="TableBilansOdd">\n        <ion-col>\n         Réticulocytes\n        </ion-col>\n        <ion-col>\n          {{NormeRetic}}.10<sup>9</sup>/L\n        </ion-col>\n      </ion-row>\n\n      <ion-row class="TableBilansEven">\n        <ion-col>\n          GB \n        </ion-col>\n        <ion-col>\n          {{NormeGB}}.10<sup>9</sup>/L\n        </ion-col>\n      </ion-row>\n\n      <ion-row class="TableBilansOdd">\n        <ion-col>\n         Neutrophiles\n        </ion-col>\n        <ion-col>\n          {{NormePNN}}.10<sup>9</sup>/L\n        </ion-col>\n      </ion-row>\n\n      <ion-row class="TableBilansEven">\n        <ion-col>\n          Lymphocytes\n        </ion-col>\n        <ion-col>\n          {{NormeLympho}}.10<sup>9</sup>/L\n        </ion-col>\n      </ion-row>\n\n      <ion-row class="TableBilansOdd">\n        <ion-col>\n         Plaquettes\n        </ion-col>\n        <ion-col>\n          {{NormePq}}.10<sup>9</sup>/L\n        </ion-col>\n      </ion-row>\n\n    </ion-grid>\n\n  </ion-card>\n\n    <ion-item-divider (click)="ToggleDispositifs()">\n      <ion-label color="dark-turquoise">Taille des dispositifs\n    <ion-icon *ngIf="!isShownDispositifs" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShownDispositifs" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item-divider> \n\n    <ion-list *ngIf="isShownDispositifs">\n      <ion-item>\n        <ion-label class="drogueInduction">Doppler Oesophagien\n            <p class="dilutionDrogueInduction">Modele de sonde : {{SondeDoppler}}</p>\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction">NIRS - Stable à +/- 20%\n            <p class="dilutionDrogueInduction">Capteur : {{CapteurNirs}}</p>\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction">BIS - Objectif 40 à 60\n            <p class="dilutionDrogueInduction">Electrodes : {{ElectrodesBIS}}</p>\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction">Sonde urinaire\n            <p class="dilutionDrogueInduction">Taille de sonde : {{TailleSondeUrinaire}}</p>\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction">Sonde gastrique\n            <p class="dilutionDrogueInduction">Taille de sonde : {{TailleSondeGastrique}} </p>\n        </ion-label>\n      </ion-item>\n    </ion-list>\n\n    <ion-item-divider (click)="ToggleANI()">\n      <ion-label color="dark-turquoise">Analgesia Monitoring Index (ANI)\n    <ion-icon *ngIf="!isShownANI" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShownANI" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item-divider> \n\n\n    <ion-card *ngIf="isShownANI" class="drogueContainer">\n      <ion-card-content>\n        <p class="reference">Fabriquant : MDoloris Medical Systems, Lille, France</p> \n        <br>\n        <p class="aideMemoire"><b>Objectif</b> : faciliter la gestion des drogues antalgiques en per-opératoire</p> \n        <br>\n        <p class="aideMemoire"><b>Principe</b> : propose un index d\'activité parasympathique (p&Sigma;) calculé sur la base des variations de l\'espace RR (ECG) au cours du cycle respiratoire. </p> \n        <br>\n        <p class="aideMemoire">\n          <b>Interprétation</b> : réactivité sympathique à une stimulation nociceptive dans les 10 minutes.\n          <br>- p&Sigma; > 70 :  très improbable, envisager une réduction des doses d\'antalgique ;\n          <br>- 50 < p&Sigma; < 70 : peu probable, fenêtre cible ;\n          <br>- p&Sigma; < 50 : très probable, envisager l\'administration d\'antalgique.\n        </p>\n        <br>\n        <p class="aideMemoire"><b>Limites</b> : \n          <br> - arythmie cardiaque\n          <br> - changement de volume courant dans la dernière minute, respiration irrégulière\n          <br> - fréquence respiratoire < 9/minute ou apnée \n          <br> - modification pharmacologique de la fréquence cardiaque : atropine, éphédrine, catécholamines, etc.\n        </p>\n        <br>\n        <p class="aideMemoire"><b>Electrodes & moniteur</b> :</p>\n        <img class="imgAideMemoire" src="/assets/imgs/ani.jpg">\n        <img class="imgANIMoniteur" src="/assets/imgs/animoniteur.png">\n\n\n\n\n      </ion-card-content>\n\n\n    </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\monitorage\monitorage.html"*/,
+            selector: 'page-monitorage',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\monitorage\monitorage.html"*/'\n\n<ion-content>\n\n        <!-- HEADER MENU  -->\n        <div class="header"> \n\n          <div (click)="retourHome()" class="backButton">\n          <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n          Retour\n          </div>\nMonitorage & dispositifs  </div>\n            <br>\n      \n                  <!-- HEADER MON PATIENT  -->\n  \n            <ion-item color="turquoise-fonce"> \n              <ion-label>\n                <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> \n                <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n                <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> \n            </ion-item>\n        \n            <br>\n       <!-- END HEADER -->\n\n      <ion-item-divider (click)="ToggleConstantes()">\n    <ion-label color="dark-turquoise">Paramètres vitaux selon l\'âge\n  <ion-icon *ngIf="!isShownConstantes" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownConstantes" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider> \n\n\n  <ion-grid fixed="true" *ngIf="isShownConstantes">\n    <ion-row class="TableApportsHeader"><ion-col> <span *ngIf="this.AgeNum <= 24">\n      Pour un enfant de {{AgeNum}} mois\n    </span>\n    <span  *ngIf="this.AgeNum > 24 && this.AgeNum > 0">\n      Pour un enfant de {{ageLecture}} ans</span></ion-col></ion-row>\n    <ion-row >\n      <ion-col>\n      </ion-col>\n      <ion-col class="normale">\n        Normale\n      </ion-col>\n      <ion-col class="trophaut">\n        Trop haut\n      </ion-col>\n      <ion-col class="tropbas">\n        Trop bas\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="intitules">\n          FC (/min)\n      </ion-col>\n      <ion-col class="normale">\n        {{FCnormale}}\n      </ion-col>\n      <ion-col class="trophaut">\n        {{FCdangerHaut}}\n      </ion-col>\n      <ion-col class="tropbas">\n        {{FCdangerBas}}\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="intitules" >\n          FR (/min)\n      </ion-col>\n      <ion-col class="normale"> \n        {{FRnormale}}\n      </ion-col>\n      <ion-col class="trophaut">\n        {{FRdangerHaut}}\n      </ion-col>\n      <ion-col class="tropbas">\n        {{FRdangerBas}}\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="intitules">\n          SpO2 (%)\n      </ion-col>\n      <ion-col class="normale">\n        {{SpO2normale}}\n      </ion-col>\n      <ion-col class="trophaut">\n        -\n      </ion-col>\n      <ion-col class="tropbas">\n        {{SpO2dangerBas}}\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="intitules">\n          PAS (mmHg)\n      </ion-col>\n      <ion-col class="normale">\n        {{PASnormale}}\n      </ion-col>\n      <ion-col class="trophaut">\n        {{PASdangerHaut}}\n      </ion-col>\n      <ion-col class="tropbas">\n        {{PASdangerBas}}\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="intitules">\n          PAD (mmHg)\n      </ion-col>\n      <ion-col class="normale">\n        {{PADnormale}}\n      </ion-col>\n      <ion-col class="trophaut">\n        {{PADdangerHaut}}\n      </ion-col>\n      <ion-col class="tropbas">\n        {{PADdangerBas}}\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="intitules">\n          PAM (mmHg)\n      </ion-col>\n      <ion-col class="normale">\n        {{PAMnormale}}\n      </ion-col>\n      <ion-col class="trophaut">\n        {{PAMdangerHaut}}\n      </ion-col>\n      <ion-col class="tropbas">\n        {{PAMdangerBas}}\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="intitules">\n          Diurèse (mL/h sur 3h)\n      </ion-col>\n      <ion-col class="normale">\n        {{Diuresenormale}}\n      </ion-col>\n      <ion-col class="trophaut">\n        {{DiuresedangerHaut}}\n      </ion-col>      \n      <ion-col class="tropbas">\n        {{DiuresedangerBas}}\n      </ion-col>\n    </ion-row>\n    </ion-grid>\n\n\n\n    <ion-item-divider (click)="ToggleBilans()">\n      <ion-label color="dark-turquoise">Bilans sanguins\n    <ion-icon *ngIf="!isShownBilans" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShownBilans" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item-divider> \n\n    <ion-card class="drogueContainer" *ngIf="isShownBilans">\n    <p class="reference">Reference : ANAES - lecture critique de l\'hémogramme - mise à jour 2007.</p>\n\n    <ion-grid fixed="true">\n\n      <ion-row class="TableApportsHeader">\n        <ion-col>\n          Paramètre\n        </ion-col>\n        <ion-col *ngIf="this.AgeNum <= 24">\n          Normes à {{AgeNum}} mois\n        </ion-col>\n        <ion-col  *ngIf="this.AgeNum > 24 && this.AgeNum > 0">\n          Normes à {{ageLecture}} ans\n        </ion-col>\n      </ion-row>\n\n      <ion-row class="TableBilansEven">\n        <ion-col>\n          Hématies\n        </ion-col>\n        <ion-col>\n          {{NormeGR}}.10<sup>12</sup>/L\n        </ion-col>\n      </ion-row>\n\n      <ion-row class="TableBilansOdd">\n        <ion-col>\n         Hémoglobinémie\n        </ion-col>\n        <ion-col>\n          {{NormeHb}} g/dL\n        </ion-col>\n      </ion-row>\n\n      <ion-row class="TableBilansEven">\n        <ion-col>\n          VGM\n        </ion-col>\n        <ion-col>\n          {{NormeVGM}} µm<sup>3</sup>\n        </ion-col>\n      </ion-row>\n\n      <ion-row class="TableBilansOdd">\n        <ion-col>\n         Réticulocytes\n        </ion-col>\n        <ion-col>\n          {{NormeRetic}}.10<sup>9</sup>/L\n        </ion-col>\n      </ion-row>\n\n      <ion-row class="TableBilansEven">\n        <ion-col>\n          GB \n        </ion-col>\n        <ion-col>\n          {{NormeGB}}.10<sup>9</sup>/L\n        </ion-col>\n      </ion-row>\n\n      <ion-row class="TableBilansOdd">\n        <ion-col>\n         Neutrophiles\n        </ion-col>\n        <ion-col>\n          {{NormePNN}}.10<sup>9</sup>/L\n        </ion-col>\n      </ion-row>\n\n      <ion-row class="TableBilansEven">\n        <ion-col>\n          Lymphocytes\n        </ion-col>\n        <ion-col>\n          {{NormeLympho}}.10<sup>9</sup>/L\n        </ion-col>\n      </ion-row>\n\n      <ion-row class="TableBilansOdd">\n        <ion-col>\n         Plaquettes\n        </ion-col>\n        <ion-col>\n          {{NormePq}}.10<sup>9</sup>/L\n        </ion-col>\n      </ion-row>\n\n    </ion-grid>\n\n  </ion-card>\n\n    <ion-item-divider (click)="ToggleDispositifs()">\n      <ion-label color="dark-turquoise">Taille des dispositifs\n    <ion-icon *ngIf="!isShownDispositifs" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShownDispositifs" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item-divider> \n\n    <ion-list *ngIf="isShownDispositifs">\n      <ion-item>\n        <ion-label class="drogueInduction">Doppler Oesophagien\n            <p class="dilutionDrogueInduction">Modele de sonde : {{SondeDoppler}}</p>\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction">NIRS - Stable à +/- 20%\n            <p class="dilutionDrogueInduction">Capteur : {{CapteurNirs}}</p>\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction">BIS - Objectif 40 à 60\n            <p class="dilutionDrogueInduction">Electrodes : {{ElectrodesBIS}}</p>\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction">Sonde urinaire\n            <p class="dilutionDrogueInduction">Taille de sonde : {{TailleSondeUrinaire}}</p>\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction">Sonde gastrique\n            <p class="dilutionDrogueInduction">Taille de sonde : {{TailleSondeGastrique}} </p>\n        </ion-label>\n      </ion-item>\n    </ion-list>\n\n    <ion-item-divider (click)="ToggleANI()">\n      <ion-label color="dark-turquoise">Analgesia Monitoring Index (ANI)\n    <ion-icon *ngIf="!isShownANI" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShownANI" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item-divider> \n\n\n    <ion-card *ngIf="isShownANI" class="drogueContainer">\n      <ion-card-content>\n        <p class="reference">Fabriquant : MDoloris Medical Systems, Lille, France</p> \n        <br>\n        <p class="aideMemoire"><b>Objectif</b> : faciliter la gestion des drogues antalgiques en per-opératoire</p> \n        <br>\n        <p class="aideMemoire"><b>Principe</b> : propose un index d\'activité parasympathique (p&Sigma;) calculé sur la base des variations de l\'espace RR (ECG) au cours du cycle respiratoire. </p> \n        <br>\n        <p class="aideMemoire">\n          <b>Interprétation</b> : réactivité sympathique à une stimulation nociceptive dans les 10 minutes.\n          <br>- p&Sigma; > 70 :  très improbable, envisager une réduction des doses d\'antalgique ;\n          <br>- 50 < p&Sigma; < 70 : peu probable, fenêtre cible ;\n          <br>- p&Sigma; < 50 : très probable, envisager l\'administration d\'antalgique.\n        </p>\n        <br>\n        <p class="aideMemoire"><b>Limites</b> : \n          <br> - arythmie cardiaque\n          <br> - changement de volume courant dans la dernière minute, respiration irrégulière\n          <br> - fréquence respiratoire < 9/minute ou apnée \n          <br> - modification pharmacologique de la fréquence cardiaque : atropine, éphédrine, catécholamines, etc.\n        </p>\n        <br>\n        <p class="aideMemoire"><b>Electrodes & moniteur</b> :</p>\n        <img class="imgAideMemoire" src="/assets/imgs/ani.jpg">\n        <img class="imgANIMoniteur" src="/assets/imgs/animoniteur.png">\n\n\n\n\n      </ion-card-content>\n\n\n    </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\monitorage\monitorage.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
@@ -2793,7 +2793,7 @@ var MonitoragePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__(545);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__(546);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_chart_js__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4319,6 +4319,121 @@ var ScoliosePage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SauvegardePatientPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(18);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the SauvegardePatientPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var SauvegardePatientPage = /** @class */ (function () {
+    function SauvegardePatientPage(navCtrl, navParams, storage) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.storage = storage;
+        this.PatientsSauvegardes = [];
+        this.ExemplesPatients = [
+            { Prenom: "Garçon 1 mois", Sexe: "Garçon", Age: 1, Poids: 4.2, Taille: 60, EstomacPlein: "vide", DureeJeune: 6, Allergie: "aucune connue" },
+            { Prenom: "Fille 1 mois", Sexe: "Fille", Age: 1, Poids: 4.1, Taille: 60, EstomacPlein: "vide", DureeJeune: 6, Allergie: "aucune connue" },
+            { Prenom: "Garçon 6 mois", Sexe: "Garçon", Age: 6, Poids: 8, Taille: 68, EstomacPlein: "vide", DureeJeune: 6, Allergie: "aucune connue" },
+            { Prenom: "Fille 6 mois", Sexe: "Fille", Age: 6, Poids: 7.8, Taille: 65, EstomacPlein: "vide", DureeJeune: 6, Allergie: "aucune connue" },
+            { Prenom: "Garçon 1 an", Sexe: "Garçon", Age: 12, Poids: 10, Taille: 75, EstomacPlein: "vide", DureeJeune: 6, Allergie: "aucune connue" },
+            { Prenom: "Fille 1 an", Sexe: "Fille", Age: 12, Poids: 9.5, Taille: 75, EstomacPlein: "vide", DureeJeune: 6, Allergie: "aucune connue" },
+            { Prenom: "Garçon 5 ans", Sexe: "Garçon", Age: 60, Poids: 18, Taille: 110, EstomacPlein: "vide", DureeJeune: 6, Allergie: "aucune connue" },
+            { Prenom: "Fille 5 ans", Sexe: "Fille", Age: 60, Poids: 18, Taille: 110, EstomacPlein: "vide", DureeJeune: 6, Allergie: "aucune connue" },
+            { Prenom: "Garçon 10 ans", Sexe: "Garçon", Age: 120, Poids: 33, Taille: 140, EstomacPlein: "vide", DureeJeune: 6, Allergie: "aucune connue" },
+            { Prenom: "Fille 10 ans", Sexe: "Fille", Age: 120, Poids: 33, Taille: 140, EstomacPlein: "vide", DureeJeune: 6, Allergie: "aucune connue" },
+            { Prenom: "Garçon 15 ans", Sexe: "Garçon", Age: 180, Poids: 57, Taille: 165, EstomacPlein: "vide", DureeJeune: 6, Allergie: "aucune connue" },
+            { Prenom: "Fille 15 ans", Sexe: "Fille", Age: 180, Poids: 52, Taille: 161, EstomacPlein: "vide", DureeJeune: 6, Allergie: "aucune connue" },
+        ];
+    }
+    SauvegardePatientPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        console.log('ionViewDidLoad SauvegardePatientPage');
+        var promiseList = [];
+        promiseList.push(this.storage.get('SavedPatients').then(function (SavedPatients) {
+            if (!SavedPatients) {
+                return;
+            }
+            else if (_this.PatientsSauvegardes == SavedPatients) {
+                return;
+            }
+            else {
+                _this.PatientsSauvegardes = _this.PatientsSauvegardes.concat(SavedPatients);
+            }
+            ;
+            console.log("patient chargés = ", _this.PatientsSauvegardes);
+        }));
+    };
+    ;
+    SauvegardePatientPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    SauvegardePatientPage.prototype.loadExemplePatient = function (index) {
+        console.log(this.ExemplesPatients[index].Taille);
+        this.storage.set('sexeMF', this.ExemplesPatients[index].Sexe);
+        this.storage.set('Taille', this.ExemplesPatients[index].Taille);
+        this.storage.set('AgeNum', this.ExemplesPatients[index].Age);
+        this.storage.set('PoidsNum', this.ExemplesPatients[index].Poids);
+        this.storage.set('Allergie', this.ExemplesPatients[index].Allergie);
+        this.storage.set('DureeJeune', this.ExemplesPatients[index].DureeJeune);
+        this.storage.set('EstomacPlein', this.ExemplesPatients[index].EstomacPlein);
+        this.storage.set('Prenom', this.ExemplesPatients[index].Prenom);
+        this.navCtrl.pop();
+    };
+    ;
+    SauvegardePatientPage.prototype.loadMyPatient = function (index) {
+        console.log(this.PatientsSauvegardes[index].Taille);
+        this.storage.set('sexeMF', this.PatientsSauvegardes[index].Sexe);
+        this.storage.set('Taille', this.PatientsSauvegardes[index].Taille);
+        this.storage.set('AgeNum', this.PatientsSauvegardes[index].Age);
+        this.storage.set('PoidsNum', this.PatientsSauvegardes[index].Poids);
+        this.storage.set('Allergie', this.PatientsSauvegardes[index].Allergie);
+        this.storage.set('DureeJeune', this.PatientsSauvegardes[index].DureeJeune);
+        this.storage.set('EstomacPlein', this.PatientsSauvegardes[index].EstomacPlein);
+        this.storage.set('Prenom', this.PatientsSauvegardes[index].Prenom);
+        this.navCtrl.pop();
+    };
+    ;
+    SauvegardePatientPage.prototype.deleteMyPatient = function (index) {
+        var _this = this;
+        this.PatientsSauvegardes = this.PatientsSauvegardes.filter(function (item) { return item !== _this.PatientsSauvegardes[index]; });
+        this.storage.set('SavedPatients', this.PatientsSauvegardes);
+        console.log(this.PatientsSauvegardes);
+    };
+    SauvegardePatientPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-sauvegarde-patient',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\sauvegarde-patient\sauvegarde-patient.html"*/'<ion-content>\n\n\n\n<div class="header"> \n\n  <div (click)="retourHome()" class="backButton">\n  <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n  Retour\n  </div>\n\n  Mes patients</div>\n\n<div class="exemplesPatients">\n  <h2>Standards</h2>\n  <ion-card padding class="fichePatient" *ngFor="let item of ExemplesPatients; let index = index;">\n    <div class="iconPatient">\n      \n      <ion-icon color="primary" name="download" (click)="loadExemplePatient(index)"></ion-icon>\n      <br><br>\n    </div>\n    <span class="prenomPatient">{{item.Prenom}}</span><br>\n    <span class="comment">    \n        {{item.Poids}} kg - {{item.Taille}} cm\n    </span>\n\n  </ion-card>\n  </div>\n\n\n  <div class="mesPatients">\n    <h2>Archivés</h2>\n  <ion-card padding class="fichePatient" *ngFor="let item of PatientsSauvegardes; let index = index;">\n    <div class="iconPatient">\n      <ion-icon color="primary" name="download" (click)="loadMyPatient(index)"></ion-icon>\n      <br><br>\n      <ion-icon color="danger" name="trash" (click)="deleteMyPatient(index)"></ion-icon>\n    </div>  \n    <span class="prenomPatient">{{item.Prenom}}</span>\n    <p class="comment">    \n        {{item.Sexe}} - {{item.Age}} mois \n        <br>{{item.Poids}} kg - {{item.Taille}} cm\n      </p>\n  </ion-card>\n\n</div>\n\n\n\n  </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\sauvegarde-patient\sauvegarde-patient.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object])
+    ], SauvegardePatientPage);
+    return SauvegardePatientPage;
+    var _a, _b, _c;
+}());
+
+//# sourceMappingURL=sauvegarde-patient.js.map
+
+/***/ }),
+
+/***/ 498:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecommandationsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
@@ -4374,7 +4489,7 @@ var RecommandationsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 500:
+/***/ 501:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4426,13 +4541,13 @@ var InfoPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 501:
+/***/ 502:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(502);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(506);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(503);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(507);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -4440,7 +4555,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 506:
+/***/ 507:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4449,8 +4564,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(544);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(834);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(545);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(835);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser_ngx__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_accueil_accueil__ = __webpack_require__(79);
@@ -4464,23 +4579,25 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_loco_regionale_loco_regionale__ = __webpack_require__(143);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__ = __webpack_require__(498);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_splash_screen__ = __webpack_require__(499);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__ = __webpack_require__(499);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_splash_screen__ = __webpack_require__(500);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_service_data_liste_anti_infectieux__ = __webpack_require__(495);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_protocoles_protocoles__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_recommandations_recommandations__ = __webpack_require__(497);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_recommandations_recommandations__ = __webpack_require__(498);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_monitorage_monitorage__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_courbes_courbes__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(494);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_scores_scores__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_info_info__ = __webpack_require__(500);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_info_info__ = __webpack_require__(501);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_scoliose_scoliose__ = __webpack_require__(496);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_sauvegarde_patient_sauvegarde_patient__ = __webpack_require__(497);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -4537,6 +4654,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_26__pages_antibioprophylaxie_antibioprophylaxie__["a" /* AntibioprophylaxiePage */],
                 __WEBPACK_IMPORTED_MODULE_27__pages_scores_scores__["a" /* ScoresPage */],
                 __WEBPACK_IMPORTED_MODULE_28__pages_info_info__["a" /* InfoPage */],
+                __WEBPACK_IMPORTED_MODULE_30__pages_sauvegarde_patient_sauvegarde_patient__["a" /* SauvegardePatientPage */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["a" /* HttpClientModule */],
@@ -4574,6 +4692,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_26__pages_antibioprophylaxie_antibioprophylaxie__["a" /* AntibioprophylaxiePage */],
                 __WEBPACK_IMPORTED_MODULE_27__pages_scores_scores__["a" /* ScoresPage */],
                 __WEBPACK_IMPORTED_MODULE_28__pages_info_info__["a" /* InfoPage */],
+                __WEBPACK_IMPORTED_MODULE_30__pages_sauvegarde_patient_sauvegarde_patient__["a" /* SauvegardePatientPage */],
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__["a" /* StatusBar */],
@@ -4592,7 +4711,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 544:
+/***/ 545:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4605,19 +4724,19 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_plateau_vas_plateau_vas__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_antalgie_antalgie__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_urgence_urgence__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_pre_medication_pre_medication__ = __webpack_require__(833);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_pre_medication_pre_medication__ = __webpack_require__(834);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_anti_infectieux_anti_infectieux__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_loco_regionale_loco_regionale__ = __webpack_require__(143);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_monitorage_monitorage__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_protocoles_protocoles__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_recommandations_recommandations__ = __webpack_require__(497);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_status_bar__ = __webpack_require__(498);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_splash_screen__ = __webpack_require__(499);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_recommandations_recommandations__ = __webpack_require__(498);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_status_bar__ = __webpack_require__(499);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_splash_screen__ = __webpack_require__(500);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_courbes_courbes__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_scores_scores__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_info_info__ = __webpack_require__(500);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_info_info__ = __webpack_require__(501);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4733,7 +4852,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 547:
+/***/ 548:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -5022,7 +5141,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 547;
+webpackContext.id = 548;
 
 /***/ }),
 
@@ -5048,6 +5167,7 @@ webpackContext.id = 547;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(494);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__scores_scores__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__protocoles_protocoles__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__sauvegarde_patient_sauvegarde_patient__ = __webpack_require__(497);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5111,6 +5231,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
+
 var AccueilPage = /** @class */ (function () {
     function AccueilPage(viewCtrl, modalCtrl, app, navCtrl, navParams, storage, InAppBrowser, pickerController, ToastController, popoverController, menu, alertController) {
         this.viewCtrl = viewCtrl;
@@ -5135,12 +5256,10 @@ var AccueilPage = /** @class */ (function () {
         this.agemois = 0;
         this.agesemaines = 0;
         this.ageLecture = 0;
-        this.ageColor = "danger";
         this.poidskilogrammes = 0;
         this.poidsgrammes = 0;
-        this.poidsColor = "danger";
         this.sexeMF = "Fille";
-        this.TailleColor = "danger";
+        this.Prenom = "";
         this.MorceauChoisi = "Choisir...";
         this.musicPlaying = false;
         this.audio = new Audio();
@@ -5151,6 +5270,8 @@ var AccueilPage = /** @class */ (function () {
         this.running = false;
         this.blankTime = "00:00:00";
         this.time = "00:00:00";
+        this.NewPatient = [];
+        this.PatientsSauvegardes = [];
     }
     AccueilPage_1 = AccueilPage;
     AccueilPage.prototype.menuToggle = function () {
@@ -5158,7 +5279,63 @@ var AccueilPage = /** @class */ (function () {
         this.stopMusic();
     };
     ;
-    /** ----------------------------  RENSEIGNER AGE ET POIDS ----------------------------------------------------------------- */
+    /** ----------------------------  MODULE ENREGISTREMENT  ----------------------------------------------------------------- */
+    AccueilPage.prototype.enregistrer = function () {
+        var _this = this;
+        var PrenomPatientAlert = this.alertController.create({
+            cssClass: 'alerte',
+            title: 'Prénom ?',
+            message: "Renseignez un prénom pour le patient afin d'enregistrer les données.",
+            inputs: [
+                {
+                    name: 'Prenom',
+                    type: 'text',
+                    placeholder: 'Renseigner...'
+                },
+            ],
+            buttons: [
+                {
+                    text: "Enregistrer",
+                    handler: function (AlertData) {
+                        _this.Prenom = AlertData.Prenom;
+                        _this.NewPatient = [
+                            {
+                                Prenom: AlertData.Prenom,
+                                Age: _this.AgeNum,
+                                Poids: _this.PoidsNum,
+                                Taille: _this.Taille,
+                                Sexe: _this.sexeMF,
+                                DureeJeune: _this.DureeJeune,
+                                EstomacPlein: _this.EstomacOuiNon,
+                                Allergie: _this.Allergie,
+                            }
+                        ];
+                        if (!_this.PatientsSauvegardes) {
+                            _this.PatientsSauvegardes = _this.NewPatient;
+                        }
+                        else {
+                            _this.PatientsSauvegardes = _this.PatientsSauvegardes.concat(_this.NewPatient);
+                        }
+                        ;
+                        console.log(_this.PatientsSauvegardes);
+                        _this.storage.set('SavedPatients', _this.PatientsSauvegardes);
+                    }
+                },
+                {
+                    text: "Annuler",
+                    handler: function () {
+                        return;
+                    }
+                }
+            ],
+        });
+        PrenomPatientAlert.present();
+    };
+    ;
+    AccueilPage.prototype.openSauvegarde = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_17__sauvegarde_patient_sauvegarde_patient__["a" /* SauvegardePatientPage */]);
+    };
+    /** ----------------------------  RENSEIGNER AGE ET POIDS ou RENSEIGNER TAILLE ----------------------------------------------------------------- */
     AccueilPage.prototype.alertAgePoidsTaille = function () {
         var AgePoidsTailleAlert = this.alertController.create({
             cssClass: 'alerte',
@@ -5375,7 +5552,6 @@ var AccueilPage = /** @class */ (function () {
                                         _this.ageLecture = Math.round((_this.AgeNum / 12) * 10) / 10;
                                         _this.storage.set("AgeNum", _this.AgeNum);
                                         _this.storage.set("ageLecture", _this.ageLecture);
-                                        _this.ageColor = "dark-turquoise";
                                     }
                                 }
                             ],
@@ -5484,7 +5660,6 @@ var AccueilPage = /** @class */ (function () {
                                         _this.PoidsNum = _this.poidskilogrammes + Math.round((_this.poidsgrammes / 1000) * 10) / 10;
                                         console.log(_this.PoidsNum);
                                         _this.storage.set("PoidsNum", _this.PoidsNum);
-                                        _this.poidsColor = "dark-turquoise";
                                     }
                                 }
                             ],
@@ -5566,7 +5741,6 @@ var AccueilPage = /** @class */ (function () {
                                         _this.Taille = Math.floor(_this.TailleMetre * 100) + Math.floor(_this.TailleCentimetre);
                                         console.log(_this.PoidsNum);
                                         _this.storage.set("Taille", _this.Taille);
-                                        _this.TailleColor = "dark-turquoise";
                                     }
                                 }
                             ],
@@ -5626,66 +5800,50 @@ var AccueilPage = /** @class */ (function () {
     /* ----------------------------RECUPERATION DES DONNEES ANTERIEURES LE CAS ECHEANT---------------------------------------------------------------------------- */
     AccueilPage.prototype.ionViewWillEnter = function () {
         var _this = this;
-        var promiseList = [];
-        promiseList.push(this.storage.get('AgeNum').then(function (Age) {
+        this.storage.get('AgeNum').then(function (Age) {
             _this.AgeNum = Age;
-            if (_this.AgeNum) {
-                _this.ageColor = "dark-turquoise";
+            _this.ageLecture = Math.round((_this.AgeNum / 12) * 10) / 10;
+        });
+        this.storage.get('PoidsNum').then(function (Poids) {
+            _this.PoidsNum = Poids;
+        });
+        this.storage.get('EstomacPlein').then(function (estomacplein) {
+            _this.EstomacPlein = estomacplein;
+            if (_this.EstomacPlein == true) {
+                _this.EstomacOuiNon = "plein";
             }
             else {
-                _this.ageColor = "danger";
+                _this.EstomacOuiNon = "vide";
+            }
+        });
+        this.storage.get('DureeJeune').then(function (dureejeune) {
+            _this.DureeJeune = dureejeune;
+        });
+        this.storage.get('Allergie').then(function (allergie) {
+            _this.Allergie = allergie;
+        });
+        this.storage.get('sexeMF').then(function (sexe) {
+            _this.sexeMF = sexe;
+            if (!_this.sexeMF) {
+                _this.sexeMF = "Fille";
+            }
+            else {
+                _this.sexeMF == sexe;
             }
             ;
-            _this.ageLecture = Math.round((_this.AgeNum / 12) * 10) / 10;
-            _this.storage.get('PoidsNum').then(function (Poids) {
-                _this.PoidsNum = Poids;
-                if (_this.PoidsNum) {
-                    _this.poidsColor = "dark-turquoise";
-                }
-                else {
-                    _this.poidsColor = "danger";
-                }
-                ;
-                _this.storage.get('EstomacPlein').then(function (estomacplein) {
-                    _this.EstomacPlein = estomacplein;
-                    if (_this.EstomacPlein == true) {
-                        _this.EstomacOuiNon = "plein";
-                    }
-                    else {
-                        _this.EstomacOuiNon = "vide";
-                    }
-                    _this.storage.get('DureeJeune').then(function (dureejeune) {
-                        _this.DureeJeune = dureejeune;
-                        _this.storage.get('Allergie').then(function (allergie) {
-                            _this.Allergie = allergie;
-                            _this.storage.get('sexeMF').then(function (sexe) {
-                                _this.sexeMF = sexe;
-                                if (!_this.sexeMF) {
-                                    _this.sexeMF = "Fille";
-                                }
-                                else {
-                                    _this.sexeMF == sexe;
-                                }
-                                ;
-                                _this.storage.set('sexeMF', _this.sexeMF);
-                                _this.storage.get('Taille').then(function (Taille) {
-                                    _this.Taille = Taille;
-                                    if (_this.Taille) {
-                                        _this.TailleColor = "dark-turquoise";
-                                    }
-                                    else {
-                                        _this.TailleColor = "danger";
-                                    }
-                                    ;
-                                });
-                            });
-                        });
-                    });
-                });
-            });
-        }));
+            _this.storage.set('sexeMF', _this.sexeMF);
+        });
+        this.storage.get('Taille').then(function (Taille) {
+            _this.Taille = Taille;
+        });
+        this.storage.get('Prenom').then(function (Prenom) {
+            _this.Prenom = Prenom;
+        });
+        this.storage.get('SavedPatients').then(function (SavedPatients) {
+            _this.PatientsSauvegardes = SavedPatients;
+        });
+        console.log("patient chargés = ", this.PatientsSauvegardes);
     };
-    ;
     AccueilPage.prototype.SetSexe = function () {
         this.storage.set("sexeMF", this.sexeMF);
         console.log("sexe enregistré : ", this.sexeMF);
@@ -5779,42 +5937,50 @@ var AccueilPage = /** @class */ (function () {
     ;
     /* ----------------------------BOUTON EFFACER---------------------------------------------------------------------------- */
     AccueilPage.prototype.effacer = function () {
-        this.storage.clear(); /* ATTTENTION EFFACE TOUT TOTALEMENT TOUT */
-        this.AgeNum = 0;
-        this.ageLecture = 0;
-        this.PoidsNum = 0;
-        this.Taille = 0;
-        this.sexeMF = "Fille";
-        this.DureeJeune = 0;
-        this.Allergie = "";
-        this.EstomacOuiNon = "vide";
-        this.TailleColor = "danger";
-        this.poidsColor = "danger";
-        this.ageColor = "danger";
+        var _this = this;
+        var EffacerToutAlert = this.alertController.create({
+            cssClass: 'alerte',
+            title: 'Tout supprimer ?',
+            message: "Attention, en appuyant sur 'valider' vous supprimerez l'ensemble des données patient enregistrées.",
+            buttons: [
+                {
+                    text: "Valider",
+                    handler: function () {
+                        _this.storage.clear(); /* ATTTENTION EFFACE TOUT TOTALEMENT TOUT */
+                        _this.AgeNum = 0;
+                        _this.ageLecture = 0;
+                        _this.PoidsNum = 0;
+                        _this.Taille = 0;
+                        _this.sexeMF = "Fille";
+                        _this.DureeJeune = 0;
+                        _this.Allergie = "";
+                        _this.EstomacOuiNon = "vide";
+                        _this.Prenom = "";
+                    }
+                },
+                {
+                    text: "Annuler",
+                    handler: function () {
+                        return;
+                    }
+                }
+            ],
+        });
+        EffacerToutAlert.present();
     };
+    ;
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]) === "function" && _a || Object)
     ], AccueilPage.prototype, "nav", void 0);
     AccueilPage = AccueilPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-accueil',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/'<ion-content>\n  <ion-icon class="menuButton" color="turquoise-fonce" name="menu" (click)="menuToggle()"></ion-icon>\n  <div class="titleHome">  \n    QUADRUPED</div> \n\n    <br>\n    <br>\n\n \n \n  <ion-card class="homePagePatient">\n    <ion-card-content>\n\n      <ion-toolbar  color="turquoise" class="musicContainer">\n        <ion-buttons>\n        <ion-icon color="dark-turquoise" name="musical-notes"></ion-icon>    \n        <br>\n          <button (click)="selectMusic()" ion-button class="musicSelector" color="turquoise-fonce">{{MorceauChoisi}}</button>\n          <button  *ngIf="!musicPlaying" color="dark-turquoise" ion-button (click)="playMusic()"><ion-icon name="play"></ion-icon></button>\n        <button  *ngIf="musicPlaying" color="dark-turquoise" ion-button (click)="stopMusic()"><ion-icon name="pause"></ion-icon></button> \n      </ion-buttons>\n      </ion-toolbar>\n\n      <ion-toolbar  color="turquoise" class="timerContainer">\n        <ion-buttons >    \n          <ion-icon color="dark-turquoise" name="stopwatch"></ion-icon>    \n          <br>\n          <p text-center class="timerTime">\n          {{time}}\n          </p>\n      <button  *ngIf="!running" color="dark-turquoise" ion-button (click)="start()"><ion-icon name="play"></ion-icon></button>\n      <button  *ngIf="running" color="dark-turquoise" ion-button (click)="stop()"><ion-icon name="pause"></ion-icon></button>         \n      <button ion-button (click)="reset()"><ion-icon color="dark-turquoise" name="refresh-circle"></ion-icon></button>\n    </ion-buttons>\n  </ion-toolbar>\n\n    <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient"> \n    \n    <br>\n\n      <ion-toolbar class="HomeButtonContainer">\n        <ion-buttons>\n          <span class="comment" *ngIf = "!PoidsNum || !AgeNum || !Taille">Renseigner les données relatives au patient :<br></span>\n          <span class="comment" *ngIf = "PoidsNum && AgeNum && Taille">Choisir parmi les modules accessibles<br></span>\n\n          <button class="SexeToggle">\n            <ion-segment swipeGesture="true" color="turquoise-fonce" [(ngModel)]="sexeMF" (ionChange)="SetSexe()">\n              <ion-segment-button value="Fille">\n                <ion-icon class="segmentIcon" name="female"></ion-icon>\n              </ion-segment-button>\n              <ion-segment-button value="Garçon">\n                <ion-icon class="segmentIcon" name="male"></ion-icon>\n              </ion-segment-button>\n            </ion-segment>\n          </button>\n\n          <button solid *ngIf = "!this.AgeNum" color="dark-turquoise" ion-button  (click)="showPickerAge()">Age </button>\n          <button *ngIf = "this.AgeNum > 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{ageLecture}} ans </button>\n          <button *ngIf = "this.AgeNum > 0 && this.AgeNum <= 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{AgeNum}} mois</button>\n\n          <button solid *ngIf = " !this.PoidsNum " color="dark-turquoise" ion-button  (click)="showPickerPoids()">Poids</button>\n          <button *ngIf = " this.PoidsNum " color="dark-turquoise" ion-button  (click)="showPickerPoids()">{{PoidsNum}} kg</button>\n\n\n          <button solid *ngIf = " !Taille " color="turquoise-fonce" ion-button  (click)="showPickerTaille()">Taille</button>\n          <button *ngIf = " Taille " color="turquoise-fonce" ion-button  (click)="showPickerTaille()">{{Taille}} cm</button>\n\n          <hr>\n          <button ion-button small color="dark-turquoise"  (click)="displayOptions()"><ion-icon name="options"></ion-icon> &nbsp; &nbsp;Options </button>\n          <button ion-button  small color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>\n          <button ion-button  small color="dark-turquoise"  (click)="help()"><ion-icon name="information-circle"></ion-icon></button>\n\n  \n    </ion-buttons>\n    </ion-toolbar>\n\n\n\n  </ion-card-content>\n</ion-card>\n\n<div class="monPatient">\n<b>Options : </b> <span *ngIf=" this.EstomacOuiNon">Estomac {{EstomacOuiNon}}</span> <span *ngIf="this.DureeJeune"> - Jeûne {{DureeJeune}} h</span><span *ngIf="this.Allergie"> - Allergie : {{Allergie}}</span>\n</div>\n\n<hr>\n\n   \n    <button class="homeButtons" ion-button small color="pastel-green"  (click)="displayScores()"><ion-icon name="stats"></ion-icon> &nbsp; &nbsp;Scores</button>\n    <button class="homeButtons" ion-button small color="pastel-green"  (click)="displayProtocoles()"><ion-icon name="list-box"></ion-icon> &nbsp; &nbsp;Protocoles</button>\n    \n\n  <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button full small color="light" (click)="alertPoidsAge()"><ion-icon name="clipboard"></ion-icon> &nbsp; &nbsp;Urgences & Réanimation</button>\n  <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button block small color="warning" (click)="displayUrgences()"><ion-icon name="clipboard"></ion-icon> &nbsp; &nbsp;Urgences & Réanimation</button>\n  <button *ngIf = "PoidsNum && AgeNum && Taille"  ion-button block small color="pastel-brown"  (click)="displayCourbes()"><ion-icon name="trending-up"></ion-icon> &nbsp; &nbsp;\n    Biométrie</button>\n  <button outline *ngIf = "!PoidsNum || !AgeNum || !Taille" ion-button full small color="light"  (click)="alertAgePoidsTaille()"><ion-icon name="trending-up"></ion-icon> &nbsp; &nbsp;\n    Biométrie</button>\n\n    \n          <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="pulse"></ion-icon> &nbsp; &nbsp; Monitorage</button>\n          <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="moon"></ion-icon> &nbsp; &nbsp; Induction </button>\n          <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"> <ion-icon name="analytics"></ion-icon> &nbsp; &nbsp; Voies Aériennes </button>\n          <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="umbrella"></ion-icon> &nbsp; &nbsp; Antibiotiques </button>\n          <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="cloudy-night"></ion-icon> &nbsp; &nbsp; Entretien </button> \n    \n          <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="water"></ion-icon> &nbsp; &nbsp; Apports & PSL</button>\n          <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"> <ion-icon name="pin"></ion-icon> &nbsp; &nbsp;Loco-régionale</button>\n          <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="alarm"></ion-icon> &nbsp; &nbsp;Réveil</button>\n\n    \n          <button solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayMonitorage()"><ion-icon color="dark-turquoise" name="pulse"></ion-icon> &nbsp; &nbsp; Monitorage</button>\n          <button solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayInduction()"><ion-icon color="dark-turquoise" name="moon"></ion-icon> &nbsp; &nbsp; Induction </button>\n          <button solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayVAS()"> <ion-icon color="dark-turquoise" name="analytics"></ion-icon> &nbsp; &nbsp; Voies Aériennes </button>\n          <button solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayATBprophylaxie()"><ion-icon color="dark-turquoise"  name="umbrella"></ion-icon> &nbsp; &nbsp; Antibiotiques </button>\n          <button solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayEntretien()"><ion-icon color="dark-turquoise" name="cloudy-night"></ion-icon> &nbsp; &nbsp; Entretien </button> \n    \n          <button solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayGestionFluides()"><ion-icon color="dark-turquoise" name="water"></ion-icon> &nbsp; &nbsp;Apports & PSL</button>\n          <button solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayALR()"> <ion-icon color="dark-turquoise" name="pin"></ion-icon> &nbsp; &nbsp;Loco-régionale</button>\n          <button solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayPostop()"><ion-icon color="dark-turquoise" name="alarm"></ion-icon> &nbsp; &nbsp;Réveil</button>\n\n\n      <img class="logoDAR" (click)="openDARwebsite()" src="/assets/imgs/logo_dar.png"> \n\n      </ion-content>\n\n  \n\n\n  \n \n\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/,
+            selector: 'page-accueil',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/'<ion-content>\n  <ion-icon class="menuButton" color="turquoise-fonce" name="menu" (click)="menuToggle()"></ion-icon>\n  <div *ngIf="!Prenom" class="titleHome">  \n    QUADRUPED</div> \n    <div *ngIf="Prenom" class="titleHome">  \n      {{Prenom}}</div> \n\n    <br>\n    <br>\n\n \n \n  <ion-card class="homePagePatient">\n    <ion-card-content>\n\n      <ion-toolbar  color="turquoise" class="musicContainer">\n        <ion-buttons>\n        <ion-icon color="dark-turquoise" name="musical-notes"></ion-icon>    \n        <br>\n          <button (click)="selectMusic()" ion-button class="musicSelector" color="turquoise-fonce">{{MorceauChoisi}}</button><br>\n          <button  *ngIf="!musicPlaying" color="dark-turquoise" ion-button (click)="playMusic()"><ion-icon name="play"></ion-icon></button>\n        <button  *ngIf="musicPlaying" color="dark-turquoise" ion-button (click)="stopMusic()"><ion-icon name="pause"></ion-icon></button> \n      </ion-buttons>\n      </ion-toolbar>\n\n      <ion-toolbar  color="turquoise" class="timerContainer">\n        <ion-buttons >    \n          <ion-icon color="dark-turquoise" name="stopwatch"></ion-icon>    \n          <br>\n          <p text-center class="timerTime">\n          {{time}}\n          </p>\n      <button  *ngIf="!running" color="dark-turquoise" ion-button (click)="start()"><ion-icon name="play"></ion-icon></button>\n      <button  *ngIf="running" color="dark-turquoise" ion-button (click)="stop()"><ion-icon name="pause"></ion-icon></button>         \n      <button ion-button (click)="reset()"><ion-icon color="dark-turquoise" name="refresh-circle"></ion-icon></button>\n    </ion-buttons>\n  </ion-toolbar>\n\n    <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient"> \n    \n    <br>\n\n      <ion-toolbar class="HomeButtonContainer">\n        <ion-buttons>\n          <span class="comment" *ngIf = "!PoidsNum || !AgeNum || !Taille">Renseigner les données relatives au patient :<br></span>\n          <span class="comment" *ngIf = "PoidsNum && AgeNum && Taille">Choisir parmi les modules accessibles<br></span>\n\n          <button  class="SexeToggle">\n            <ion-segment color="turquoise-fonce" [(ngModel)]="sexeMF" (ionChange)="SetSexe()">\n              <ion-segment-button value="Fille">\n                <ion-icon class="segmentIcon" name="female"></ion-icon>\n              </ion-segment-button>\n              <ion-segment-button value="Garçon">\n                <ion-icon class="segmentIcon" name="male"></ion-icon>\n              </ion-segment-button>\n            </ion-segment>\n          </button>\n          &nbsp;\n          <button solid *ngIf = "!this.AgeNum" color="dark-turquoise" ion-button  (click)="showPickerAge()">Age </button>\n          <button *ngIf = "this.AgeNum > 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{ageLecture}} ans </button>\n          <button *ngIf = "this.AgeNum > 0 && this.AgeNum <= 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{AgeNum}} mois</button>\n         \n          <button solid *ngIf = " !this.PoidsNum " color="dark-turquoise" ion-button  (click)="showPickerPoids()">Poids</button>\n          <button *ngIf = " this.PoidsNum " color="dark-turquoise" ion-button  (click)="showPickerPoids()">{{PoidsNum}} kg</button>\n         \n          <button solid *ngIf = " !Taille " color="turquoise-fonce" ion-button  (click)="showPickerTaille()">Taille</button>\n          <button *ngIf = " Taille " color="turquoise-fonce" ion-button  (click)="showPickerTaille()">{{Taille}} cm</button>\n\n          <hr>\n          <button ion-button small color="dark-turquoise"  (click)="displayOptions()"><ion-icon name="options"></ion-icon> &nbsp; &nbsp;Options </button>\n          &nbsp;\n          <button ion-button  small color="primary"  (click)="enregistrer()"><ion-icon name="archive"></ion-icon></button>\n          &nbsp;\n          <button ion-button  small color="primary"  (click)="openSauvegarde()"><ion-icon name="filing"></ion-icon></button>\n          &nbsp;\n          <button ion-button  small color="dark-turquoise"  (click)="help()"><ion-icon name="information-circle"></ion-icon></button>\n          &nbsp;\n          <button ion-button  small color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>\n\n  \n    </ion-buttons>\n    </ion-toolbar>\n\n\n\n  </ion-card-content>\n</ion-card>\n\n<div class="monPatient">\n<b>Options : </b> <span *ngIf=" this.EstomacOuiNon">Estomac {{EstomacOuiNon}}</span> <span *ngIf="this.DureeJeune"> - Jeûne {{DureeJeune}} h</span><span *ngIf="this.Allergie"> - Allergie : {{Allergie}}</span>\n</div>\n\n<hr>\n\n   \n    <button class="homeButtons" ion-button small color="pastel-green"  (click)="displayScores()"><ion-icon name="stats"></ion-icon> &nbsp; &nbsp;Scores</button>\n    <button class="homeButtons" ion-button small color="pastel-green"  (click)="displayProtocoles()"><ion-icon name="list-box"></ion-icon> &nbsp; &nbsp;Protocoles</button>\n    \n\n  <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button full small color="light" (click)="alertPoidsAge()"><ion-icon name="clipboard"></ion-icon> &nbsp; &nbsp;Urgences & Réanimation</button>\n  <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button block small color="warning" (click)="displayUrgences()"><ion-icon name="clipboard"></ion-icon> &nbsp; &nbsp;Urgences & Réanimation</button>\n  <button *ngIf = "PoidsNum && AgeNum && Taille"  ion-button block small color="pastel-brown"  (click)="displayCourbes()"><ion-icon name="trending-up"></ion-icon> &nbsp; &nbsp;\n    Biométrie</button>\n  <button outline *ngIf = "!PoidsNum || !AgeNum || !Taille" ion-button full small color="light"  (click)="alertAgePoidsTaille()"><ion-icon name="trending-up"></ion-icon> &nbsp; &nbsp;\n    Biométrie</button>\n\n    \n          <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="pulse"></ion-icon> &nbsp; &nbsp; Monitorage</button>\n          <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="moon"></ion-icon> &nbsp; &nbsp; Induction </button>\n          <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"> <ion-icon name="analytics"></ion-icon> &nbsp; &nbsp; Voies Aériennes </button>\n          <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="umbrella"></ion-icon> &nbsp; &nbsp; Antibiotiques </button>\n          <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="cloudy-night"></ion-icon> &nbsp; &nbsp; Entretien </button> \n    \n          <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="water"></ion-icon> &nbsp; &nbsp; Apports & PSL</button>\n          <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"> <ion-icon name="pin"></ion-icon> &nbsp; &nbsp;Loco-régionale</button>\n          <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="alarm"></ion-icon> &nbsp; &nbsp;Réveil</button>\n\n    \n          <button solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayMonitorage()"><ion-icon color="dark-turquoise" name="pulse"></ion-icon> &nbsp; &nbsp; Monitorage</button>\n          <button solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayInduction()"><ion-icon color="dark-turquoise" name="moon"></ion-icon> &nbsp; &nbsp; Induction </button>\n          <button solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayVAS()"> <ion-icon color="dark-turquoise" name="analytics"></ion-icon> &nbsp; &nbsp; Voies Aériennes </button>\n          <button solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayATBprophylaxie()"><ion-icon color="dark-turquoise"  name="umbrella"></ion-icon> &nbsp; &nbsp; Antibiotiques </button>\n          <button solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayEntretien()"><ion-icon color="dark-turquoise" name="cloudy-night"></ion-icon> &nbsp; &nbsp; Entretien </button> \n    \n          <button solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayGestionFluides()"><ion-icon color="dark-turquoise" name="water"></ion-icon> &nbsp; &nbsp;Apports & PSL</button>\n          <button solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayALR()"> <ion-icon color="dark-turquoise" name="pin"></ion-icon> &nbsp; &nbsp;Loco-régionale</button>\n          <button solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayPostop()"><ion-icon color="dark-turquoise" name="alarm"></ion-icon> &nbsp; &nbsp;Réveil</button>\n\n\n      <img class="logoDAR" (click)="openDARwebsite()" src="/assets/imgs/logo_dar.png"> \n\n      </ion-content>\n\n  \n\n\n  \n \n\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
-            __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser_ngx__["a" /* InAppBrowser */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* PickerController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* PopoverController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser_ngx__["a" /* InAppBrowser */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser_ngx__["a" /* InAppBrowser */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* PickerController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* PickerController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* PopoverController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* PopoverController */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _o || Object])
     ], AccueilPage);
     return AccueilPage;
-    var AccueilPage_1;
+    var AccueilPage_1, _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
 }());
 
 ;
@@ -6256,7 +6422,7 @@ var ScoresPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 833:
+/***/ 834:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6407,5 +6573,5 @@ var PreMedicationPage = /** @class */ (function () {
 
 /***/ })
 
-},[501]);
+},[502]);
 //# sourceMappingURL=main.js.map

@@ -34,6 +34,7 @@ import { ScoresPage } from '../pages/scores/scores';
 import { InfoPage } from '../pages/info/info';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { ScoliosePage } from '../pages/scoliose/scoliose';
+import { SauvegardePatientPage } from '../pages/sauvegarde-patient/sauvegarde-patient';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { ScoliosePage } from '../pages/scoliose/scoliose';
     AntibioprophylaxiePage,
     ScoresPage, 
     InfoPage,
+    SauvegardePatientPage, 
   ],
 
   imports: [
@@ -97,6 +99,7 @@ import { ScoliosePage } from '../pages/scoliose/scoliose';
     AntibioprophylaxiePage,
     ScoresPage,
     InfoPage,
+    SauvegardePatientPage, 
   ],
 
   providers: [

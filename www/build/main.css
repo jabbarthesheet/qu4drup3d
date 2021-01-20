@@ -88027,10 +88027,10 @@ figcaption {
 .SexeToggle {
   position: relative;
   float: left;
-  width: 25% !important;
+  width: 20% !important;
   margin-top: -10px !important;
-  margin-left: 20px !important;
-  margin-right: -20px !important;
+  margin-left: 10px !important;
+  margin-right: -10px !important;
   background-color: transparent;
 }
 
@@ -88301,6 +88301,38 @@ ion-card {
 
 .dispositifVentilation {
   font-size: 14px !important;
+}
+
+.mesPatients {
+  text-align: center;
+  width: 50%;
+  float: right;
+}
+
+.exemplesPatients {
+  text-align: center;
+  width: 50%;
+  float: left;
+}
+
+.fichePatient {
+  width: 90%;
+  float: left;
+  padding: 1%;
+  background-color: #bce7e9;
+}
+
+.iconPatient {
+  width: 8%;
+  float: right;
+  padding: 1%;
+  text-align: center;
+}
+
+.prenomPatient {
+  font-weight: bold;
+  font-size: 14px;
+  color: #009c9e;
 }
 
 .scoreSplitter {

@@ -1,0 +1,50 @@
+<ion-content>
+
+
+
+<div class="header"> 
+
+  <div (click)="retourHome()" class="backButton">
+  <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+  Retour
+  </div>
+
+  Mes patients</div>
+
+<div class="exemplesPatients">
+  <h2>Standards</h2>
+  <ion-card padding class="fichePatient" *ngFor="let item of ExemplesPatients; let index = index;">
+    <div class="iconPatient">
+      
+      <ion-icon color="primary" name="download" (click)="loadExemplePatient(index)"></ion-icon>
+      <br><br>
+    </div>
+    <span class="prenomPatient">{{item.Prenom}}</span><br>
+    <span class="comment">    
+        {{item.Poids}} kg - {{item.Taille}} cm
+    </span>
+
+  </ion-card>
+  </div>
+
+
+  <div class="mesPatients">
+    <h2>Archivés</h2>
+  <ion-card padding class="fichePatient" *ngFor="let item of PatientsSauvegardes; let index = index;">
+    <div class="iconPatient">
+      <ion-icon color="primary" name="download" (click)="loadMyPatient(index)"></ion-icon>
+      <br><br>
+      <ion-icon color="danger" name="trash" (click)="deleteMyPatient(index)"></ion-icon>
+    </div>  
+    <span class="prenomPatient">{{item.Prenom}}</span>
+    <p class="comment">    
+        {{item.Sexe}} - {{item.Age}} mois 
+        <br>{{item.Poids}} kg - {{item.Taille}} cm
+      </p>
+  </ion-card>
+
+</div>
+
+
+
+  </ion-content>

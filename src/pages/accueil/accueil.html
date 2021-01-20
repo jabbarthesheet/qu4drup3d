@@ -1,7 +1,9 @@
 <ion-content>
   <ion-icon class="menuButton" color="turquoise-fonce" name="menu" (click)="menuToggle()"></ion-icon>
-  <div class="titleHome">  
+  <div *ngIf="!Prenom" class="titleHome">  
     QUADRUPED</div> 
+    <div *ngIf="Prenom" class="titleHome">  
+      {{Prenom}}</div> 
 
     <br>
     <br>
@@ -15,7 +17,7 @@
         <ion-buttons>
         <ion-icon color="dark-turquoise" name="musical-notes"></ion-icon>    
         <br>
-          <button (click)="selectMusic()" ion-button class="musicSelector" color="turquoise-fonce">{{MorceauChoisi}}</button>
+          <button (click)="selectMusic()" ion-button class="musicSelector" color="turquoise-fonce">{{MorceauChoisi}}</button><br>
           <button  *ngIf="!musicPlaying" color="dark-turquoise" ion-button (click)="playMusic()"><ion-icon name="play"></ion-icon></button>
         <button  *ngIf="musicPlaying" color="dark-turquoise" ion-button (click)="stopMusic()"><ion-icon name="pause"></ion-icon></button> 
       </ion-buttons>
@@ -43,8 +45,8 @@
           <span class="comment" *ngIf = "!PoidsNum || !AgeNum || !Taille">Renseigner les données relatives au patient :<br></span>
           <span class="comment" *ngIf = "PoidsNum && AgeNum && Taille">Choisir parmi les modules accessibles<br></span>
 
-          <button class="SexeToggle">
-            <ion-segment swipeGesture="true" color="turquoise-fonce" [(ngModel)]="sexeMF" (ionChange)="SetSexe()">
+          <button  class="SexeToggle">
+            <ion-segment color="turquoise-fonce" [(ngModel)]="sexeMF" (ionChange)="SetSexe()">
               <ion-segment-button value="Fille">
                 <ion-icon class="segmentIcon" name="female"></ion-icon>
               </ion-segment-button>
@@ -53,22 +55,27 @@
               </ion-segment-button>
             </ion-segment>
           </button>
-
+          &nbsp;
           <button solid *ngIf = "!this.AgeNum" color="dark-turquoise" ion-button  (click)="showPickerAge()">Age </button>
           <button *ngIf = "this.AgeNum > 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{ageLecture}} ans </button>
           <button *ngIf = "this.AgeNum > 0 && this.AgeNum <= 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{AgeNum}} mois</button>
-
+         
           <button solid *ngIf = " !this.PoidsNum " color="dark-turquoise" ion-button  (click)="showPickerPoids()">Poids</button>
           <button *ngIf = " this.PoidsNum " color="dark-turquoise" ion-button  (click)="showPickerPoids()">{{PoidsNum}} kg</button>
-
-
+         
           <button solid *ngIf = " !Taille " color="turquoise-fonce" ion-button  (click)="showPickerTaille()">Taille</button>
           <button *ngIf = " Taille " color="turquoise-fonce" ion-button  (click)="showPickerTaille()">{{Taille}} cm</button>
 
           <hr>
           <button ion-button small color="dark-turquoise"  (click)="displayOptions()"><ion-icon name="options"></ion-icon> &nbsp; &nbsp;Options </button>
-          <button ion-button  small color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>
+          &nbsp;
+          <button ion-button  small color="primary"  (click)="enregistrer()"><ion-icon name="archive"></ion-icon></button>
+          &nbsp;
+          <button ion-button  small color="primary"  (click)="openSauvegarde()"><ion-icon name="filing"></ion-icon></button>
+          &nbsp;
           <button ion-button  small color="dark-turquoise"  (click)="help()"><ion-icon name="information-circle"></ion-icon></button>
+          &nbsp;
+          <button ion-button  small color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>
 
   
     </ion-buttons>

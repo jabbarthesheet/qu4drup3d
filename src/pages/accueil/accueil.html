@@ -100,9 +100,9 @@
   <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button full small color="light" (click)="alertPoidsAge()"><ion-icon name="clipboard"></ion-icon> &nbsp; &nbsp;Urgences & Réanimation</button>
   <button *ngIf = " this.PoidsNum && this.AgeNum " ion-button block small color="warning" (click)="displayUrgences()"><ion-icon name="clipboard"></ion-icon> &nbsp; &nbsp;Urgences & Réanimation</button>
   <button *ngIf = "PoidsNum && AgeNum && Taille"  ion-button block small color="pastel-brown"  (click)="displayCourbes()"><ion-icon name="trending-up"></ion-icon> &nbsp; &nbsp;
-    Biométrie</button>
+    Biométrie & courbes de croissance</button>
   <button outline *ngIf = "!PoidsNum || !AgeNum || !Taille" ion-button full small color="light"  (click)="alertAgePoidsTaille()"><ion-icon name="trending-up"></ion-icon> &nbsp; &nbsp;
-    Biométrie</button>
+    Biométrie & courbes de croissance</button>
 
     
           <button outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="pulse"></ion-icon> &nbsp; &nbsp; Monitorage</button>

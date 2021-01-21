@@ -8,7 +8,7 @@
     Retour
     </div>
 
-    Antalgie et post-opératoire</div>
+    Réveil & SSPI</div>
       <br>
 
       <ion-item color="turquoise-fonce"> 
@@ -24,8 +24,48 @@
   <ion-list>
 
     <ion-item-group>
+      <ion-item-divider (click)="ToggleAntagonistesCurares()"> 
+        <ion-label color="dark-turquoise">Antagonisation des curares 
+          <ion-icon *ngIf="!isShownAntagonistesCurares" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownAntagonistesCurares" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+        </ion-label>
+      </ion-item-divider> 
+
+    <ion-card *ngIf="isShownAntagonistesCurares" class="drogueContainer">
+    <ion-item class="avecAMM">
+      <ion-label color="dark-green" class="drogueInduction">
+        <p class="dilutionDrogueInduction">Posologie proposée : 20 µg/kg</p>
+       - Atropine (0,5mg/mL) : {{AdminAtropineAntagonisation}} µg IVD
+      <p class="dilutionDrogueInduction">
+        Antagonisation curare en association avec prostigmine
+      </p></ion-label>
+    </ion-item>
+    <div class="AMM">Vérifier : <br> TOF > 2/4</div>
+  
+    <ion-item class="avecAMM">    
+      <ion-label color="primary" class="drogueInduction"> 
+    <p class="dilutionDrogueInduction">Posologie proposée : 40 µg/kg</p>
+    - Prostigmine (0,5mg/mL) : {{AdminProstigmineAntagonisation}} µg IVD
+    <p class="dilutionDrogueInduction">
+      Antagonisation curare en association avec atropine
+    </p></ion-label>
+    </ion-item>
+    <div class="AMM">Vérifier : <br> TOF > 2/4</div>
+  
+    <ion-item class="avecAMM">         
+      <ion-label color="orange" class="drogueInduction">Antagonisation rocuronium   
+      <p color="dark-green" class="dilutionDrogueInduction">- TOF > 2/4 : Suggamadex (Bridion® 200mg/2mL) {{PosoBridion2reponses}} mg  (4 mg/kg) IVD</p>
+      <p color="primary" class="dilutionDrogueInduction">- TOF > 4/4 : Suggamadex (Bridion® 200mg/2mL) {{PosoBridion4reponses}} mg (2 mg/kg) IVD </p>
+    </ion-label> 
+    </ion-item>
+    
+      <div class="AMM">Vérifier : <br> TOF > 2/4</div>
+  </ion-card>
+
+
+
       <ion-item-divider (click)="TogglePalier1()"> 
-        <ion-label color="dark-turquoise">Palier 1 
+        <ion-label color="dark-turquoise">Antalgiques palier 1 
           <ion-icon *ngIf="!isShownPal1" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
           <ion-icon *ngIf="isShownPal1" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
         </ion-label>
@@ -65,7 +105,7 @@
       
   
       <ion-item-divider (click)="TogglePalier2()">
-        <ion-label color="dark-turquoise">Palier 2
+        <ion-label color="dark-turquoise">Antalgiques palier 2
 
           <ion-icon *ngIf="!isShownPal2" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
           <ion-icon *ngIf="isShownPal2" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
@@ -109,7 +149,7 @@
     </ion-card>
   
       <ion-item-divider (click)="TogglePalier3()">
-        <ion-label color="dark-turquoise">Palier 3
+        <ion-label color="dark-turquoise">Antalgiques palier 3
 
           <ion-icon *ngIf="!isShownPal3" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
           <ion-icon *ngIf="isShownPal3" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>

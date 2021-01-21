@@ -34,12 +34,6 @@ export class EntretienAnesthPage {
   RocuEntretien:number;
   TracEntretien:number;
 
-  PosoBridion2reponses:number;
-  PosoBridion4reponses:number;
-  AdminAtropineAntagonisation:number;
-  AdminProstigmineAntagonisation:number;
-
-
 
 
   XyloEntretien:number;
@@ -165,11 +159,6 @@ ionViewWillEnter(){
         this.DexdorBolusAvecIVSE = Math.round((this.PoidsNum * 1)*10)/10; 
         this.DexdorEntretien = Math.round((this.PoidsNum * 0.4)*10)/10; 
         this.DexdorAgitation = Math.round((this.PoidsNum * 0.3)*10)/10; 
-
-        this.PosoBridion2reponses = Math.round((this.PoidsNum * 4)*10)/10;
-        this.PosoBridion4reponses = Math.round((this.PoidsNum * 2)*10)/10;
-        this.AdminAtropineAntagonisation = Math.round((this.PoidsNum * 20)*10)/10;
-        this.AdminProstigmineAntagonisation = Math.round((this.PoidsNum * 40)*10)/10;
     };
 
 }

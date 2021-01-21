@@ -93,7 +93,8 @@ export class UrgencePage {
   AmpoulesNAD:number; 
   VolumeSerumPhyNAD:number; 
   DebitNADmlh:number; 
-  DebitNADµgkgmin:number;
+  DebitNADgammakgmin:number;
+  DixiemeDebitNADgammakgmin:number=100;
   DebitNADmgh:number;
 
   isShownNAD:boolean=false; 
@@ -272,38 +273,44 @@ export class UrgencePage {
 
       /** NAD */
 
-      if (this.PoidsNum <= 30){
+      if (this.PoidsNum <= 10){
       this.ProtocoleNAD = "3 mg/kg dans 50 mL"; 
       this.QuantiteNAD = Math.round(this.PoidsNum*3*10)/10; 
       this.VolumeNAD = Math.round(this.QuantiteNAD/2*10)/10;
       this.AmpoulesNAD = Math.round(this.VolumeNAD/4*10)/10;
       this.VolumeSerumPhyNAD = Math.round((50 - this.VolumeNAD)*10)/10; 
       this.DebitNADmlh = 1 ; 
-      this.DebitNADµgkgmin = 1 ;
-      this.DebitNADmgh = Math.round((this.PoidsNum*60/1000)*10)/10 ;
+      this.DebitNADgammakgmin = 1 ;
+      this.DebitNADmgh = Math.round((this.DebitNADgammakgmin*this.PoidsNum*60/1000)*10)/10 ;
+      this.DixiemeDebitNADgammakgmin=100;
+
       }
 
-      else if (this.PoidsNum <= 60){
+      else if (this.PoidsNum <= 30){
         this.ProtocoleNAD = "1,5 mg/kg dans 50 mL"; 
         this.QuantiteNAD = Math.round(this.PoidsNum*1.5*10)/10; 
         this.VolumeNAD = Math.round(this.QuantiteNAD/2*10)/10;
         this.AmpoulesNAD = Math.round(this.VolumeNAD/4*10)/10;
         this.VolumeSerumPhyNAD = Math.round((50 - this.VolumeNAD)*10)/10; 
         this.DebitNADmlh = 2 ; 
-        this.DebitNADµgkgmin = 1 ; 
-        this.DebitNADmgh = Math.round((this.PoidsNum*60/1000)*10)/10 ;
+        this.DebitNADgammakgmin = 1 ; 
+        this.DebitNADmgh = Math.round((this.DebitNADgammakgmin*this.PoidsNum*60/1000)*10)/10 ;
+        this.DixiemeDebitNADgammakgmin=100;
+
         }
 
 
         else {
-          this.ProtocoleNAD = "0,6 mg/kg dans 50 mL";; 
+          this.ProtocoleNAD = "0,6 mg/kg dans 50 mL"; 
           this.QuantiteNAD = Math.round(this.PoidsNum*0.6*10)/10; 
           this.VolumeNAD = Math.round(this.QuantiteNAD/2*10)/10;
           this.AmpoulesNAD = Math.round(this.VolumeNAD/4*10)/10;
           this.VolumeSerumPhyNAD = Math.round((50 - this.VolumeNAD)*10)/10; 
           this.DebitNADmlh = 5 ; 
-          this.DebitNADµgkgmin = 1 ; 
-          this.DebitNADmgh = Math.round((this.PoidsNum*60/1000)*10)/10 ;
+          this.DebitNADgammakgmin = 1 ; 
+          this.DebitNADmgh = Math.round((this.DebitNADgammakgmin*this.PoidsNum*60/1000)*10)/10 ;
+          this.DixiemeDebitNADgammakgmin=100;
+
           };
     };
 
@@ -312,6 +319,14 @@ export class UrgencePage {
 
     toggleNAD(){
       this.isShownNAD = !this.isShownNAD;
+     };
+
+     VariationNAD(){
+      this.DebitNADgammakgmin = this.DixiemeDebitNADgammakgmin/100; 
+      this.DebitNADmgh = Math.round((this.DebitNADgammakgmin*this.PoidsNum*60/1000)*10)/10 ;
+      if (this.ProtocoleNAD == "0,6 mg/kg dans 50 mL"){this.DebitNADmlh = Math.round((this.DebitNADgammakgmin*5)*10)/10; }
+      else if (this.ProtocoleNAD == "1,5 mg/kg dans 50 mL"){this.DebitNADmlh = Math.round((this.DebitNADgammakgmin*2)*10)/10; }
+      else if (this.ProtocoleNAD == "3 mg/kg dans 50 mL"){this.DebitNADmlh = this.DebitNADgammakgmin; };
      }
 
 

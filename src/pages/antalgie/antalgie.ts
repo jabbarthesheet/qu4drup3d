@@ -26,6 +26,7 @@ export class AntalgiePage {
   Taille:number; 
   ageLecture:number; 
 
+  isShownAntagonistesCurares:boolean=false; 
   isShownPal1:boolean=false;
   isShownPal2:boolean=false;
   isShownPal3:boolean=false;
@@ -63,6 +64,11 @@ export class AntalgiePage {
   AdminHNF50:number;
   AdminHNF100:number; 
   AdminHNFentretien:number; 
+
+  PosoBridion2reponses:number;
+  PosoBridion4reponses:number;
+  AdminAtropineAntagonisation:number;
+  AdminProstigmineAntagonisation:number;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController ) {
@@ -102,6 +108,10 @@ export class AntalgiePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AntalgiePage');
   };
+
+  ToggleAntagonistesCurares() {
+    this.isShownAntagonistesCurares = !this.isShownAntagonistesCurares; 
+  }
 
   TogglePalier1() {
     this.isShownPal1 = !this.isShownPal1;
@@ -165,6 +175,13 @@ export class AntalgiePage {
   }));};
 
     calculs () {
+
+      /** Antagonisation curares */
+
+    this.PosoBridion2reponses = Math.round((this.PoidsNum * 4)*10)/10;
+    this.PosoBridion4reponses = Math.round((this.PoidsNum * 2)*10)/10;
+    this.AdminAtropineAntagonisation = Math.round((this.PoidsNum * 20)*10)/10;
+    this.AdminProstigmineAntagonisation = Math.round((this.PoidsNum * 40)*10)/10;
 
         /*Palier 1*/
     this.AdminParacetamol = Math.round((this.PoidsNum * 15)*10)/10;

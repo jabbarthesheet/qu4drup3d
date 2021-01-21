@@ -88152,6 +88152,13 @@ ion-card {
   color: black;
 }
 
+.credits {
+  text-align: center;
+  color: #009c9e;
+  padding: 5px;
+  margin-top: 20px;
+}
+
 .lightbulb {
   width: 15% !important;
   margin-right: 10px;
@@ -88301,6 +88308,33 @@ ion-card {
 
 .dispositifVentilation {
   font-size: 14px !important;
+}
+
+.logoRecosSFAR {
+  float: right;
+  width: 15%;
+  margin: 4px;
+}
+
+.logoRecosHAS {
+  float: right;
+  width: 20%;
+  padding: 2px;
+}
+
+.headerRecos {
+  font-size: 16px;
+  color: #009c9e;
+}
+
+.contentRecos {
+  color: #85D0D2;
+  font-size: 12px;
+}
+
+.cardRecos {
+  background-color: #f4f4f4;
+  border-radius: 3%;
 }
 
 .mesPatients {

@@ -4,22 +4,25 @@
 
   <div class="header">  
     <ion-icon class="menuButton" color="turquoise-fonce" name="menu" (click)="menuToggle()"></ion-icon>
-      Recommandations pour l'anesthésie pédiatrique</div> 
-  
+      Recommandations</div> 
       <br>
       <br>
 
-  Choisir parmi les recommandations listées ci-dessous (ouvre une fenêtre dans le navigateur) : 
-
-  <ion-item (click)="openWebpage('https://sfar.org/wp-content/uploads/2019/10/rfe-gestion-des-voies-aeriennes-de-lenfant.pdf')"><ion-label>
-    RFE SFAR 2018 
-    <p>Voies aériennes de l'enfant</p>
-  </ion-label></ion-item>
-
-  <ion-item (click)="openWebpage('https://www.has-sante.fr/upload/docs/application/pdf/2015-02/transfusion_de_globules_rouges_homologues_-_produits_indications_alternatives_-_recommandations.pdf')">
-    <ion-label>HAS ANSM 2014
-    <p> Bonnes pratiques transfusionnelles</p>
-  </ion-label></ion-item>
-
+<p padding>Choisir une recommandation pour l'ouvrir (dans le navigateur) : </p>
+  <ion-card (click)="openWebpage(index)" class="drogueContainer" *ngFor="let reco of recommandations, let index = index">
+    <ion-card-content  class="cardRecos">
+      <img class="{{reco.class}}" src="{{reco.logo}}">
+    <div class="headerRecos">
+     <b> {{reco.auteur}} {{reco.datepublication}} </b>
+    </div>
+    <div class="contentRecos">
+      <b>{{reco.titre}}</b>
+      <br>
+      {{reco.soustitre}}
+      <br>
+    </div>
+    
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

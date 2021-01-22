@@ -22,6 +22,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { CourbesPage } from '../pages/courbes/courbes';
 import { ScoresPage } from '../pages/scores/scores';
 import { InfoPage } from '../pages/info/info';
+import { MainPage } from '../pages/main/main';
 
 
 @Component({
@@ -31,11 +32,9 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
   
   // make AccueilPage the root (or first) page
-  rootPage = AccueilPage;
+  rootPage = MainPage;
   pages: Array<{title: string, component: any}>;
   navigate : any;
-  isShownCalculs: boolean=false; 
-  isShownProtocoles: boolean=false;
 
   constructor(
     public platform: Platform,
@@ -75,11 +74,6 @@ export class MyApp {
     });
   }
 
-  ToggleProtocoles(){
-    this.isShownProtocoles = !this.isShownProtocoles;
-    this.isShownCalculs = false; 
-  }
-
   /* openPage(page) {
     // close the menu when clicking a link from the menu
     this.menu.close();
@@ -88,23 +82,6 @@ export class MyApp {
   }
 */
 
-openRecommandations()
-{
-  this.nav.setRoot(RecommandationsPage); 
-  this.menu.close();
-};
-
-openInfo(){
-  this.nav.setRoot(InfoPage); 
-  this.menu.close();
-}
-
-openAccueilPage ()
-{
-   this.nav.setRoot(AccueilPage); 
-   this.menu.close();
-};
-  
 
 };
 

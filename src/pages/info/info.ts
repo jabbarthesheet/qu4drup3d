@@ -29,4 +29,9 @@ export class InfoPage {
     console.log('ionViewDidLoad InfoPage');
   }
 
+
+  openDARwebsite() {
+    window.open("http://www.dar-robertdebre.com", '_system');
+  };
+
 }

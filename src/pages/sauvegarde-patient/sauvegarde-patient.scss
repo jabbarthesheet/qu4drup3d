@@ -2,6 +2,10 @@ page-sauvegarde-patient {
 
 }
 
+.switchPatientView {
+    width:100% !important;
+}
+
 .mesPatients{
     text-align:center;
     width: 50%; 
@@ -16,10 +20,10 @@ page-sauvegarde-patient {
 
 
 .fichePatient{
-    width: 90%;
-    float:left;
-    padding:1%; 
+    width: 45%;
     background-color:#bce7e9;
+    margin:2%;
+    float:left;
 }
 
 .iconPatient{

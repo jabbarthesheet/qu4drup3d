@@ -83,6 +83,7 @@ export class ScoresPage {
 
   isShownBromage:boolean=false;
 
+  ScoresView:number=1; 
 
   public VPOPform = [
     { val: 'Âge inférieur à 3 ans', isChecked: false , count: 0 },
@@ -207,10 +208,6 @@ public SHSform = [
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
   }
-
-retourHome(){
-  this.navCtrl.pop(); 
-}
 
 ionViewDidLoad() {
     console.log('ionViewDidLoad ScoresPage');
@@ -419,4 +416,3 @@ toggleBromage() {
 };
 
 };
-

@@ -52,12 +52,25 @@ margin-top:5%;
   height: 12px !important; 
 }
 
+.buttonLabel {
+  text-align:center; 
+  font-size: 8px; 
+}
+
 
 .savedContainer {
   width:30%; 
   float: left; 
   border-radius: 10px;
 }
+
+.actionButtonsContainer
+{
+  text-align: center !important;
+  width: 100% !important;
+}
+
+
 
 .monPatient
 {
@@ -101,13 +114,6 @@ figcaption {
     float:center; 
   }
 
-
-.logoDAR {
-  width: 70% ;
-  padding-left: 30%;
-  padding-top:1%;
-}
-
 .SexeToggle {
   position:relative;
   float:left;
@@ -124,7 +130,7 @@ figcaption {
 }
 
 .segmentIcon {
-  font-size: 16px !important;
+  font-size: 14px !important;
 }
 
 

@@ -87906,12 +87906,11 @@ ion-row {
   width: 22%;
   float: left;
   font-size: 13px;
+  margin-right: -20%;
 }
 
 .header {
   text-align: center;
-  padding-left: 5%;
-  padding-right: 15%;
   margin-top: 5%;
   background-color: none;
   color: #009c9e;
@@ -87972,10 +87971,20 @@ ion-row {
   height: 12px !important;
 }
 
+.buttonLabel {
+  text-align: center;
+  font-size: 8px;
+}
+
 .savedContainer {
   width: 30%;
   float: left;
   border-radius: 10px;
+}
+
+.actionButtonsContainer {
+  text-align: center !important;
+  width: 100% !important;
 }
 
 .monPatient {
@@ -88018,12 +88027,6 @@ figcaption {
   float: center;
 }
 
-.logoDAR {
-  width: 70%;
-  padding-left: 30%;
-  padding-top: 1%;
-}
-
 .SexeToggle {
   position: relative;
   float: left;
@@ -88039,7 +88042,7 @@ figcaption {
 }
 
 .segmentIcon {
-  font-size: 16px !important;
+  font-size: 14px !important;
 }
 
 .antalgiquesIcon {
@@ -88157,6 +88160,11 @@ ion-card {
   color: #009c9e;
   padding: 5px;
   margin-top: 20px;
+}
+
+.logoDAR {
+  width: 90%;
+  padding: 5%;
 }
 
 .lightbulb {
@@ -88337,6 +88345,10 @@ ion-card {
   border-radius: 3%;
 }
 
+.switchPatientView {
+  width: 100% !important;
+}
+
 .mesPatients {
   text-align: center;
   width: 50%;
@@ -88350,10 +88362,10 @@ ion-card {
 }
 
 .fichePatient {
-  width: 90%;
-  float: left;
-  padding: 1%;
+  width: 45%;
   background-color: #bce7e9;
+  margin: 2%;
+  float: left;
 }
 
 .iconPatient {
@@ -88367,45 +88379,6 @@ ion-card {
   font-weight: bold;
   font-size: 14px;
   color: #009c9e;
-}
-
-.scoreSplitter {
-  font-size: 16px !important;
-  text-align: center;
-  color: #009c9e !important;
-}
-
-.reference {
-  font-size: 10px !important;
-  background-color: #c8ceceb6;
-  border-radius: 15px;
-  padding: 8px;
-}
-
-.strategie {
-  width: 95% !important;
-  font-size: 12px !important;
-  text-align: center !important;
-  vertical-align: center !important;
-  margin-top: 15px !important;
-  padding-top: 5px !important;
-  padding-bottom: 5px !important;
-  padding-right: 1px !important;
-  padding-left: 1px !important;
-  border-radius: 15px;
-  color: white !important;
-  background-color: #009c9e !important;
-}
-
-.EVENDOLlabel {
-  font-size: 10px !important;
-  float: left !important;
-  width: 60% !important;
-}
-
-.EVENDOLrange {
-  width: 40% !important;
-  float: right !important;
 }
 
 .AdminNAD {

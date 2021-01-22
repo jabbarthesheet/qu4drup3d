@@ -6,6 +6,9 @@ import { MyApp } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from "@angular/forms";
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { ServiceDataProvider } from '../providers/service-data/liste_anti_infectieux';
 
 import { AccueilPage } from '../pages/accueil/accueil';
 
@@ -22,9 +25,6 @@ import { ExtrophieVesicalePage } from '../pages/extrophie-vesicale/extrophie-ves
 import { AntiInfectieuxPage } from '../pages/anti-infectieux/anti-infectieux';
 
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { ServiceDataProvider } from '../providers/service-data/liste_anti_infectieux';
 import { ProtocolesPage } from '../pages/protocoles/protocoles';
 import { RecommandationsPage } from '../pages/recommandations/recommandations';
 import { MonitoragePage } from '../pages/monitorage/monitorage';
@@ -32,9 +32,9 @@ import { CourbesPage } from '../pages/courbes/courbes';
 import { AntibioprophylaxiePage } from '../pages/antibioprophylaxie/antibioprophylaxie';
 import { ScoresPage } from '../pages/scores/scores';
 import { InfoPage } from '../pages/info/info';
-import { NativeAudio } from '@ionic-native/native-audio';
 import { ScoliosePage } from '../pages/scoliose/scoliose';
 import { SauvegardePatientPage } from '../pages/sauvegarde-patient/sauvegarde-patient';
+import { MainPage } from '../pages/main/main';
 
 
 @NgModule({
@@ -60,6 +60,7 @@ import { SauvegardePatientPage } from '../pages/sauvegarde-patient/sauvegarde-pa
     ScoresPage, 
     InfoPage,
     SauvegardePatientPage, 
+    MainPage, 
   ],
 
   imports: [
@@ -100,6 +101,7 @@ import { SauvegardePatientPage } from '../pages/sauvegarde-patient/sauvegarde-pa
     ScoresPage,
     InfoPage,
     SauvegardePatientPage, 
+    MainPage,
   ],
 
   providers: [

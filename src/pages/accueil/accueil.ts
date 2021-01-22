@@ -692,11 +692,6 @@ start() {
       this.navCtrl.push(ProtocolesPage);
     }
 
-    openDARwebsite() {
-      this.InAppBrowser.create("http://www.dar-robertdebre.com", '_system');
-    };
-
-
 /* ----------------------------BOUTON DAIDE---------------------------------------------------------------------------- */
 
     async help() {

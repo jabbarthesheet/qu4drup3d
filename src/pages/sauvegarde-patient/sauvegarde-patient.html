@@ -9,13 +9,26 @@
   Retour
   </div>
 
-  Mes patients</div>
+  Mes patients
 
-<div class="exemplesPatients">
-  <h2>Standards</h2>
-  <ion-card padding class="fichePatient" *ngFor="let item of ExemplesPatients; let index = index;">
+
+
+ <br>
+ 
+    <ion-segment color="turquoise-fonce" [(ngModel)]="PatientsView">
+      <ion-segment-button value="1">Standards</ion-segment-button>
+      <ion-segment-button value="2">Enregistrés</ion-segment-button>
+    </ion-segment>
+
+
+</div>
+
+  <!-- END HEADER -->
+
+<div *ngIf="PatientsView == 1 ">
+
+  <div padding class="fichePatient" *ngFor="let item of ExemplesPatients; let index = index;">
     <div class="iconPatient">
-      
       <ion-icon color="primary" name="download" (click)="loadExemplePatient(index)"></ion-icon>
       <br><br>
     </div>
@@ -23,14 +36,13 @@
     <span class="comment">    
         {{item.Poids}} kg - {{item.Taille}} cm
     </span>
-
-  </ion-card>
+  </div>
   </div>
 
 
-  <div class="mesPatients">
-    <h2>Archivés</h2>
-  <ion-card padding class="fichePatient" *ngFor="let item of PatientsSauvegardes; let index = index;">
+  <div *ngIf="PatientsView == 2 ">
+  <ion-card><ion-card-content>Les patients enregistrés à partir de l'écran d'accueil sont enregistrés ici.</ion-card-content></ion-card>
+  <div padding class="fichePatient" *ngFor="let item of PatientsSauvegardes; let index = index;">
     <div class="iconPatient">
       <ion-icon color="primary" name="download" (click)="loadMyPatient(index)"></ion-icon>
       <br><br>
@@ -41,7 +53,7 @@
         {{item.Sexe}} - {{item.Age}} mois 
         <br>{{item.Poids}} kg - {{item.Taille}} cm
       </p>
-  </ion-card>
+    </div>
 
 </div>
 

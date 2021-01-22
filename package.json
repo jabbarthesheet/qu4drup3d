@@ -19,6 +19,7 @@
     "@angular/forms": "5.2.11",
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
+    "@angular/router": "^11.1.0",
     "@ionic-native/android-permissions": "^5.30.0",
     "@ionic-native/core": "4.20.0",
     "@ionic-native/in-app-browser": "^5.30.0",

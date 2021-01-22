@@ -16,6 +16,7 @@ import { Storage } from '@ionic/storage';
 })
 export class SauvegardePatientPage {
 
+PatientsView; 
 
 public PatientsSauvegardes = []; 
 
@@ -45,6 +46,7 @@ public ExemplesPatients = [
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SauvegardePatientPage');
+    this.PatientsView = 1; 
     let promiseList: Promise<any>[] = [];
       promiseList.push(
       this.storage.get('SavedPatients').then((SavedPatients) => {
@@ -92,6 +94,6 @@ public ExemplesPatients = [
      this.PatientsSauvegardes = this.PatientsSauvegardes.filter(item => item !== this.PatientsSauvegardes[index]);
      this.storage.set('SavedPatients', this.PatientsSauvegardes); 
      console.log(this.PatientsSauvegardes); 
-   }
+   };
 
 }

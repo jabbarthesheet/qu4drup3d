@@ -88381,6 +88381,13 @@ ion-card {
   color: #009c9e;
 }
 
+.reference {
+  font-size: 10px !important;
+  background-color: #f4f4f4;
+  border-radius: 3%;
+  padding: 2%;
+}
+
 .AdminNAD {
   background-color: #f7918c;
   text-align: center !important;

@@ -631,7 +631,14 @@ start() {
     
   }
 
-  SetSexe(){
+  SetSexeFille(){
+    this.sexeMF = "Fille"; 
+    this.storage.set("sexeMF", this.sexeMF);
+    console.log("sexe enregistré : ", this.sexeMF);
+  };
+
+  SetSexeGarcon(){
+    this.sexeMF = "Garçon"; 
     this.storage.set("sexeMF", this.sexeMF);
     console.log("sexe enregistré : ", this.sexeMF);
   };

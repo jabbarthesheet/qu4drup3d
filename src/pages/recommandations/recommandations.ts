@@ -35,7 +35,7 @@ public recommandations:any =
 
         { auteur : "M. F. Hurtaud-Roux, A. Vincenot, D. Lasne" , logo:"/assets/imgs/logoSFAR.png", datepublication : "2018", titre: "Pub. in Anesthésie & Réanimation", soustitre : "L'hémostase en pédiatrie, ses particularités, les principales pathologies hémorragiques et leur gestion", lien: "https://www.quadruped.app/recommandations/hemostase_pediatrie.pdf", class : "logoRecosSFAR", },
 
-        { auteur : "A. Laffargue" , logo:"/assets/imgs/logoSFAR.png", datepublication : "2018", titre: "Pub. in Anesthésie & Réanimation", soustitre : "Le syndrome d'apnée obstructive du sommeil de l'enfant", lien: "https://www.quadruped.app/recommandations/soas_pediatrie.pdf", class : "logoRecosSFAR", },
+        { auteur : "A. Laffargue" , logo:"/assets/imgs/logoSFAR.png", datepublication : "2018", titre: "Pub. in Anesthésie & Réanimation", soustitre : "Le syndrome d'apnée obstructive du sommeil de l'enfant", lien: "https://www.quadruped.app/recommandations/saos_pediatrie.pdf", class : "logoRecosSFAR", },
 
         { auteur : "S. Dahmani" , logo:"/assets/imgs/logoSFAR.png", datepublication : "2018", titre: "Pub. in Anesthésie & Réanimation", soustitre : "L'enfant enrhumé : je récuse ? j'endors ?", lien: "https://www.quadruped.app/recommandations/strategie_enfant_enrhume.pdf", class : "logoRecosSFAR", },
 

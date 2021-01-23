@@ -43,8 +43,8 @@
         <ion-buttons>
           <span class="comment" *ngIf = "!PoidsNum || !AgeNum || !Taille">Ouvrir un dossier ou les données relatives au patient :<br></span>
           <span class="comment" *ngIf = "PoidsNum && AgeNum && Taille">Choisir parmi les modules accessibles<br></span>
-<br>
-          <button  class="SexeToggle">
+
+         <!-- <button  class="SexeToggle">
             <ion-segment color="turquoise-fonce" [(ngModel)]="sexeMF" (ionChange)="SetSexe()">
               <ion-segment-button value="Fille">
                 <ion-icon class="segmentIcon" name="female"></ion-icon>
@@ -54,7 +54,14 @@
               </ion-segment-button>
             </ion-segment>
           </button>
-          &nbsp;
+          &nbsp;-->
+
+
+          <button *ngIf = "sexeMF == 'Fille'" ion-button small color="dark-turquoise"><ion-icon name="female"></ion-icon></button>
+          <button *ngIf = "sexeMF != 'Fille'" ion-button small color="grisclair"  (click)="SetSexeFille()"><ion-icon name="female"></ion-icon></button>
+          <button *ngIf = "sexeMF == 'Garçon'" ion-button small color="dark-turquoise"  ><ion-icon name="male"></ion-icon></button>
+          <button *ngIf = "sexeMF != 'Garçon'" ion-button small color="grisclair"  (click)="SetSexeGarcon()"><ion-icon name="male"></ion-icon></button>
+
           <button solid *ngIf = "!this.AgeNum" color="dark-turquoise" ion-button  (click)="showPickerAge()">Age </button>
           <button *ngIf = "this.AgeNum > 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{ageLecture}} ans </button>
           <button *ngIf = "this.AgeNum > 0 && this.AgeNum <= 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{AgeNum}} mois</button>
@@ -66,7 +73,7 @@
           <button *ngIf = " Taille " color="turquoise-fonce" ion-button  (click)="showPickerTaille()">{{Taille}} cm</button>
 
           <button ion-button small color="dark-turquoise"  (click)="displayOptions()"><ion-icon name="options"></ion-icon></button>
-          <br> <br>
+          <br> 
     </ion-buttons>
     </ion-toolbar>
 

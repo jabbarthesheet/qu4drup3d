@@ -21,8 +21,8 @@ PatientsView;
 public PatientsSauvegardes = []; 
 
 public ExemplesPatients = [
-  { Prenom : "Garçon 1 mois", Sexe : "Garçon" ,  Age : 1, Poids : 4.2, Taille : 60, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
-  { Prenom : "Fille 1 mois", Sexe : "Fille" ,  Age : 1, Poids : 4.1, Taille : 60, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "Garçon 1 mois", Sexe : "Garçon" ,  Age : 1, Poids : 4.2, Taille : 55, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "Fille 1 mois", Sexe : "Fille" ,  Age : 1, Poids : 4.1, Taille : 55, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
   { Prenom : "Garçon 6 mois", Sexe : "Garçon" ,  Age : 6, Poids : 8, Taille : 68, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
   { Prenom : "Fille 6 mois", Sexe : "Fille" ,  Age : 6, Poids : 7.8, Taille : 65, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
   { Prenom : "Garçon 1 an", Sexe : "Garçon" ,  Age : 12, Poids : 10, Taille : 75, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},

@@ -25,13 +25,20 @@ export class MedicamentsPage implements OnInit
     {
     }
 
+    ionViewDidLoad() {
+      this.setFilteredItems();
+      this.dataService.orderCards(); 
+      console.log('items rangés par ordre alphabétique');
+
+    }
 
     ngOnInit() {
       this.setFilteredItems();
+      this.dataService.orderCards();
     };
   
     setFilteredItems() {
-      this.cards = this.dataService.filterTitles(this.searchTerm); 
+      this.cards = this.dataService.filterTitles(this.searchTerm);
     };
 
 

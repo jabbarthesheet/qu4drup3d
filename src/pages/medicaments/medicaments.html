@@ -1,9 +1,26 @@
-<ion-content>
 
-  <div class="header"> 
 
-    <div (click)="retourHome()" class="backButton">
-    </div> Médicaments </div>
+  <ion-header>
+    Médicaments 
+    <br>
+    <br>
+    <ion-toolbar>
+ 
+ 
+  
+      <ion-searchbar
+      class="medicamentSearchbar"
+      [(ngModel)]="searchTerm"
+      (ionChange)="setFilteredItems()"
+      placeholder="Rechercher..."
+      inputmode="text"
+    ></ion-searchbar>
+
+  </ion-toolbar> 
+    </ion-header>
+
+    <ion-content>
+
       <br>
       <div padding>Les posologies proposées sont envisagées pour la <b>pédiatrie</b> uniquement.</div>
       <div padding>Légende : 
@@ -18,23 +35,15 @@
       </ion-chip> 
       <ion-chip class="AMMChip">
         <ion-label>AMM</ion-label>
-      </ion-chip>
-    
-    </div>
- 
-
-      <ion-searchbar
-      [(ngModel)]="searchTerm"
-      (ionChange)="setFilteredItems()"
-    ></ion-searchbar>
+      </ion-chip></div>
 
   <ion-list>
     <ion-card class="medicamentContainer" *ngFor="let card of cards, let index = index" [attr.data-index]="index">
       
-      <div padding (click)="displayMedicament(index)">
-      <img class="logoVidal" (click)="openVidal(index)" src="/assets/imgs/logo-vidal.png">
-     {{card.title}}
+      <div class="medicamentTitle" padding (click)="displayMedicament(index)"> {{card.title}}
       </div>
+      <img class="logoVidal" (click)="openVidal(index)" src="/assets/imgs/logo-vidal.png">
+    
       
       
 
@@ -45,11 +54,20 @@
           <ion-chip *ngIf="card.indication" class="indicationChip">
             <ion-label>{{card.indication}}</ion-label>
           </ion-chip>
+          <ion-chip *ngIf="card.indication1" class="indicationChip">
+            <ion-label>{{card.indication1}}</ion-label>
+          </ion-chip>
+          <ion-chip *ngIf="card.indication2" class="indicationChip">
+            <ion-label>{{card.indication2}}</ion-label>
+          </ion-chip>
           <ion-chip *ngIf="card.classeMed" class="classeMedicamenteuseChip">
             <ion-label>{{card.classeMed}}</ion-label>
           </ion-chip>
           <ion-chip *ngIf="card.voieAdmin" class="voieAdminChip">
             <ion-label>{{card.voieAdmin}}</ion-label>
+          </ion-chip>
+          <ion-chip *ngIf="card.voieAdmin1" class="voieAdminChip">
+            <ion-label>{{card.voieAdmin1}}</ion-label>
           </ion-chip>
           <ion-chip *ngIf="card.AMM" class="AMMChip">
             <ion-label>{{card.AMM}}</ion-label>
@@ -59,8 +77,8 @@
 
         <div class="presentationMedicament">
           <ul>
-            <li *ngIf="card.presentation">{{card.presentation}}</li>
-            <li *ngIf="card.posologie">{{card.posologie}}</li>
+            <li *ngIf="card.presentation">Présentation : {{card.presentation}}</li>
+            <li *ngIf="card.posologie">Posologie : {{card.posologie}}</li>
     
           </ul>
         </div>

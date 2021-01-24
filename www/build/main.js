@@ -1,4 +1,4 @@
-webpackJsonp([2],{
+webpackJsonp([1],{
 
 /***/ 118:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2383,7 +2383,7 @@ var UrgencePage = /** @class */ (function () {
     ], UrgencePage.prototype, "nav", void 0);
     UrgencePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-urgence',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\urgence\urgence.html"*/'<ion-content>\n\n        <!-- HEADER MENU  -->\n        <div class="header"> \n\n          <div (click)="retourHome()" class="backButton">\n          <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n          Retour\n          </div>\nUrgences</div>\n            <br>\n      \n                  <!-- HEADER MON PATIENT  -->\n  \n            <ion-item color="turquoise-fonce"> \n              <ion-label>\n                <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> \n                <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n                <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> \n            </ion-item>\n        \n            <br>\n       <!-- END HEADER -->\n\n<ion-list>\n\n  <ion-item (click)="toggleNAD()" ><ion-label color="dark-turquoise">\n    <ion-icon start name="flask"></ion-icon>\n    &nbsp;&nbsp; Noradrénaline\n    <ion-icon *ngIf="!isShownNAD" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShownNAD" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label></ion-item>\n\n\n  <ion-card class="drogueContainer" *ngIf="isShownNAD">\n    <ion-card-content>\n\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="dark">\n          <p class="comment">Patient de {{PoidsNum}} kg</p>\n          <p class="dilutionDrogueInduction">Protocole proposé : {{ProtocoleNAD}}</p>\n          Noradrénaline (8mg/4mL) : <b>{{QuantiteNAD}}mg/50mL</b>\n          <p class="dilutionDrogueInduction">Préparation : </p>\n          <p class="dilutionDrogueInduction">{{VolumeNAD}}mL de NAD (= {{AmpoulesNAD}} ampoules de 4mL)</p>\n          <p class="dilutionDrogueInduction">+ {{VolumeSerumPhyNAD}}mL de NaCl 0,9%</p>\n        </ion-label>\n      </ion-item>\n      <ion-item>\n        <ion-label class="drogueInduction">Débit : {{DebitNADgammakgmin}} µg/kg/min \n          <br> Vitesse : {{DebitNADmlh}} mL/h\n          <br> Posologie : {{DebitNADmgh}} mg/h\n        </ion-label>\n        <ion-range color="turquoise-fonce" max="500" step="10" (ngModelChange)="VariationNAD()" [(ngModel)]="DixiemeDebitNADgammakgmin"> </ion-range>\n\n      </ion-item>\n    </ion-card-content>\n  </ion-card>\n\n    <ion-item  (click)="ToggleACR()">\n        <ion-label color="danger"><ion-icon start name="medkit"></ion-icon>\n          &nbsp;&nbsp; Arrêt cardio-respiratoire\n        <ion-icon *ngIf="!isShownACR" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownACR" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n        </ion-label>\n    </ion-item>\n\n        <ion-card class="drogueContainer" *ngIf="isShownACR">\n          <ion-card-content>\n          <p>1. Appel à l\'aide (RDB <b>3535</b>).</p>\n          <p>2. Débuter le massage cardiaque externe.</p>\n          <p>3. Ventiler en FiO2 1.</p>\n          <br>\n          <h4>Posologies ACR : </h4>\n\n        <ion-item>\n          <ion-label class="drogueInduction" color="danger">\n            Adrénaline : <b>{{PosoAdrenalineACR}} µg</b> - IVD/5 minutes\n            <p class="dilutionDrogueInduction">- 10 µg/kg, renouvellable</p>\n            <p>- d\'emblée si asystolie, au 3e choc si TV/FV</p>\n          </ion-label>\n        </ion-item>\n\n        <ion-item>\n          <ion-label class="drogueInduction" color="danger">\n            CEE : <b>{{CEEACR}} J</b> \n            <p class="dilutionDrogueInduction">- 4 J/kg</p>\n          </ion-label>\n        </ion-item>\n\n        <ion-item>\n          <ion-label class="drogueInduction" color="dark">\n            Cordarone : <b>{{PosoCordaroneACR}} mg</b> - IVD \n            <p class="dilutionDrogueInduction">- 5 mg/kg</p>\n            <p class="dilutionDrogueInduction">- renouvelable 1 fois après 5 min</p>\n          </ion-label>\n        </ion-item>\n\n        <ion-item>\n          <ion-label class="drogueInduction" color="dark">\n            Bicar 4,2% : <b>{{PosoBicarACR}} mL</b> - IVL \n            <p class="dilutionDrogueInduction">- 2 mL/kg dès la 15e minute</p>\n          </ion-label>\n        </ion-item>\n      </ion-card-content>\n    </ion-card>\n\n\n    <ion-item (click)="ToggleHTM()">\n      <ion-label color="warning"><ion-icon start name="alert"></ion-icon>\n        &nbsp;&nbsp; Hyperthermie maligne\n        <ion-icon *ngIf="!isShownHTM" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownHTM" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item>\n\n      <ion-card class="drogueContainer" *ngIf="isShownHTM">\n      <ion-card-content>\n        <p  class="drogueInduction">Evoquer devant  :\n          <p class="dilutionDrogueInduction">- augmentation importante et inexpliquée de l\'EtCO2, de la FC ou de la température</p>\n          <p class="dilutionDrogueInduction">- apparition d\'une rigidité musculaire des masséters, du tronc ou des membres.</p>\n          <br>\n        <p  class="drogueInduction">Conduite à tenir en cas de suspicion :</p>\n        <p class="dilutionDrogueInduction">- Arrêt halogénés, changement des filtres et tuyaux</p>\n        <p class="dilutionDrogueInduction">- Hyperventilation en FiO2 1</p>\n        <p class="dilutionDrogueInduction">- Contre indication absolue celocurine jusqu\'à preuve du contraire</p>\n        <p class="dilutionDrogueInduction">- Dantrolène <b>{{AdminDantroleneHTM}} mg IVL</b> (soit 2,5 mg/kg, renouvelable 4 fois max) à diluer dans de l\'<b>EPPI</b></p>\n      </ion-card-content>\n    </ion-card>\n\n    <ion-item (click)="ToggleChocAna()">\n      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>\n        &nbsp;&nbsp; Anaphylaxie\n        <ion-icon *ngIf="!isShownChocAna" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownChocAna" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item>\n\n    <ion-card class="drogueContainer" *ngIf="isShownChocAna">\n      <ion-card-content >\n        <p class="drogueInduction">Réaction anaphylactique de grade 2 ou 3 si : </p>\n            <p class="dilutionDrogueInduction">- Hypotension : -30% PAS référence</p> \n            <p class="dilutionDrogueInduction">- Tachycardie : +30% FC référence</p> \n            <p class="dilutionDrogueInduction">- Oedeme de Quincke ou bronchospasme</p>\n        \n        <br>\n        <p class="drogueInduction">Mesures à mettre en place :</p>\n        <p class="dilutionDrogueInduction">- éviction de tout allergène suspecté,</p>\n        <p class="dilutionDrogueInduction">- adrénaline : <b>{{PosoAdrenalineAnaph}} µg IVD</b>, renouvelable 5 à 10 fois,</p>\n        <p class="dilutionDrogueInduction">- solumédrol : <b>{{PosoSoluAnaph}} mg IVD</b>, renouvelable 1 fois,</p>\n        <p class="dilutionDrogueInduction">- prévoir bilan allergo-immunologique après contrôle de la situation clinique.</p>\n      </ion-card-content>\n    </ion-card>\n\n    <ion-item (click)="ToggleIAL()">\n      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>\n        &nbsp;&nbsp; Intoxication aux AL\n        <ion-icon *ngIf="!isShownIAL" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownIAL" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n      </ion-item>\n\n      <ion-card *ngIf="isShownIAL" class="drogueContainer">\n      <ion-card-content>\n        <p class="drogueInduction">Devant toute suspicion, en présence de signes neurologiques :</p>\n        <p class="dilutionDrogueInduction">- Rivotril : <b>{{PosoRivotrilIAL}} µg IVD</b> (soit 15 µg/kg)</p>\n        <p class="dilutionDrogueInduction">- Intralipides 20% : <b>{{PosoIntralipidesIAL}} mL IVL</b> (soit 3mL/kg), renouvelable</p>\n      </ion-card-content>\n    </ion-card>\n\n    <ion-item (click)="ToggleMetabo()">\n      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>\n        &nbsp;&nbsp; Désordres métaboliques\n        <ion-icon *ngIf="!isShownMetabo" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownMetabo" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n      </ion-item>\n\n      <ion-card *ngIf="isShownMetabo" class="drogueContainer">\n      <ion-card-content>\n\n        <p class="drogueInduction"><b>Hypoglycémie &lt; 3 mmol/L</b> :</p>\n        <p class="dilutionDrogueInduction">- G10% : <b>{{AdminG10Initial}} mL</b> sur 5 minutes (3 mL/kg)</p>\n        <p class="dilutionDrogueInduction">- puis G10% : <b>{{AdminG10Suite}} mL/min</b> IVSE jusqu\'à normalisation (0,4 mL/kg/min).</p>\n        \n        <hr>\n        <p class="drogueInduction"><b>Hyponatrémie &lt; 125 mmol/L & symptomatique </b>:</p>\n        <ion-item>\n          <ion-label class="dilutionDrogueInduction" position="stacked">Natrémie mesurée</ion-label>\n          <ion-input class="dilutionDrogueInduction" inputmode ="number" type="number" (ionChange)="CalculDeltaNa(NatremieMesuree)" [(ngModel)]="NatremieMesuree" placeholder="Renseigner"></ion-input>\n        </ion-item>\n        <p class="dilutionDrogueInduction">- Le delta sodium est de {{DeltaNa}} mM.</p>\n        <p class="dilutionDrogueInduction">- Sodium IVD : <b>{{AdminNa}} mEq</b> IVD jusqu\'à amélioration des symptomes (Delta x Poids x 0,6)</p>\n        <p class="dilutionDrogueInduction">- puis Sodium IVSE : <b>{{AdminNa}} mEq/4h</b> IVSE jusqu\'à normalisation de la natrémie</p>\n        <p class="dilutionDrogueInduction">- Utiliser du SSH (NaCl 20%) pour limiter les apports hydriques.</p>\n       \n        <hr>\n        <p class="drogueInduction"><b>Hyperkaliémie menaçante </b>:</p>\n        <p class="dilutionDrogueInduction">- Arrêt des apports</p>\n        <p class="dilutionDrogueInduction">- Si arythmie cardiaque : gluconate de calcium {{AdminGluconateCa}} mL IVD (2 mL/kg)</p>\n        <p class="dilutionDrogueInduction">- Traitement hypokaliémiant : insuline {{AdminInsulineHyperK}} UI (0,1 UI/kg) + G10 {{AdminG10HyperK}} mL (10 mL/kg) IVL sur 15 minutes</p>\n        \n      \n      \n      </ion-card-content>\n    </ion-card> \n\n    <ion-item (click)="ToggleAAG()">\n      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>\n        &nbsp;&nbsp; Asthme aigu grave\n        <ion-icon *ngIf="!isShownAAG" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownAAG" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n      </ion-item>\n\n      <ion-card *ngIf="isShownAAG" class="drogueContainer">\n      <ion-card-content>\n        <p class="drogueInduction">- <b>Penser à l\'hydratation & au potassium !</b></p>\n        <p class="comment">NaCl 0,9% {{ApportBaseJour}} mL/j + KCl {{AdminKClAAGmg}} mg/j (pour 150 mg/kg/j)</p>\n        <p class="comment">Remplacer après 24h par du B26</p>\n        <br>\n        <p class="drogueInduction">- <b>Salbutamol aérosol (Ventoline®): {{AerosolSalbutamolAAG}} mg</b></p>\n        <p class="comment">Renouvelable après 15 minutes</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 2 mg/kg</p>\n        <p class="drogueInduction">- <b>Solumédrol (20 mg/2mL) : {{AdminSolumedrolAAG}} mg en bolus</b></p>\n        <p class="comment">Puis entretien par {{IVSESolumedrolAAG}} mg/6h IVSE (pour 0,5 mg/kg/6h)</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 1/2 à 1 flacon</p>\n        <p class="drogueInduction">- <b>Ipratropium (Atrovent® 0,5 mg/2mL) : {{AerosolAtroventAAG}} mg en aérosol</b></p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 0,2 mg/kg</p>\n        <p class="drogueInduction">- <b>Terbutaline (Bricanyl® 5mg/2mL) : {{AerosolBricanylAAG}} mg en aérosol </b></p> \n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 40 mg/kg sans dépasser 2g</p>\n        <p class="drogueInduction">- <b>MgSO4 (1,5g/10mL) : {{MgSO4AAG}} mg IVL sur 20 minutes</b></p>\n        <p class="comment">A diluer dans du NaCl 0,9%</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 0,5 µg/kg/min</p>\n        <p class="drogueInduction">- <b>Salbutamol (5 mg/5 mL) : {{SalbutamolIVAAG}} µg/min IVSE</b></p>\n        <p class="comment">Possibilité d\'augmenter de 0,1 µg/kg/min toutes les 10 minutes</p>\n        <p class="comment">Ne s\'envisage qu\'en secteur de réanimation</p>\n        <p class="comment">Ne pas administrer pur, dilution minimale de 1/2</p>\n        <br>\n        \n      </ion-card-content>\n    </ion-card> \n\n    <ion-item (click)="ToggleHTADiuretiques()">\n      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>\n        &nbsp;&nbsp; Hypertension & diurétiques\n        <ion-icon *ngIf="!isShownHTADiuretiques" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownHTADiuretiques" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n      </ion-item>\n\n      <ion-card *ngIf="isShownHTADiuretiques" class="drogueContainer">\n      <ion-card-content>\n        <p class="posologieDrogueInduction">Posologie proposée : 60 µg/kg/h</p>\n        <p class="drogueInduction">- <b>Nicardipine (Loxen® 1 mg/mL) : {{LoxenIVSE}} µg/h IVSE </b></p>\n        <p class="comment">Possibilité de doubler la dose si insuffisant</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 2 mg/kg/j en deux prises</p>\n        <p class="drogueInduction">- <b>Acebutolol (Sectral®) : {{SectralPO}} mg/j PO</b></p>\n        <p class="comment">A répartir sur 2 prises PO</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 0,3 mg/kg/prise</p>\n        <p class="drogueInduction">- <b>Labétolol (Trandate®) : {{TrandateBolus}} mg IVL</b></p>\n        <p class="comment">En IVSE : {{TrandateIVSE}} mg/j (pour 2 mg/kg/j), possibilité d\'augmenter jusqu\'à 24 mg/kg/j </p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 50 µg/kg/j en deux prises</p>\n        <p class="drogueInduction">- <b>Enalapril (Renitec®) : {{AdminRenitec}} µg/j PO</b></p>\n        <p class="comment">Sans dépasser 5 mg/j</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 1 mg/kg/prise</p>\n        <p class="drogueInduction">- <b>Furosémide (Lasilix® 10 mg/mL) : {{AdminLasilix}} mg PO ou IV</b></p>\n        <p class="comment">AMM : 4 mg/kg/j maximum, soit 1 prise/6h maximum</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 10 µg/kg/h</p>\n        <p class="drogueInduction">- <b>Bumétanide (Burinex® 500 µg/mL) : {{AdminBurinexIVSE}} mg/h IVSE</b></p>\n        <p class="comment">Possibilité de doubler la dose si insuffisant</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 1 à 5 mg/kg/j</p>\n        <p class="drogueInduction">- <b>Spironolactone (Aldactone®) : {{AdminAldactoneMin}} - {{AdminAldactoneMax}} mg/j PO</b></p>\n        <br>\n\n      </ion-card-content>\n    </ion-card> \n\n    <ion-item (click)="ToggleCriseConvulsive()">\n      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>\n        &nbsp;&nbsp; Crises convulsives\n        <ion-icon *ngIf="!isShownCriseConvulsive" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownCriseConvulsive" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n      </ion-item>\n\n      <ion-card *ngIf="isShownCriseConvulsive" class="drogueContainer">\n      <ion-card-content>\n        <p class="posologieDrogueInduction">Posologie proposée : 20 µg/kg/prise</p>\n        <p class="drogueInduction">- <b>Clonazépam (Rivotril® 1 mg/mL) : {{AdminRivotrilConvulsion}} µg IVD </b></p>\n        <p class="comment">Répéter une seconde fois si nécessaire</p>\n        <p class="comment">{{AdminRivotrilConvulsion}} mg/6h IVSE si nécessaire</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 15 mg/kg/j prise</p>\n        <p class="drogueInduction">- <b>Phénobarbital (Gardénal® 40 mg/2mL) : {{AdminGardenal}} mg IVL sur 20 minutes </b></p>\n        <p class="comment">Sans dépasser 500 mg/administration</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 20 mg/kg/prise</p>\n        <p class="drogueInduction">- <b>Phénytoïne (Dilantin® 250 µg/5mL) : {{AdminDilantin}} mg IVL sur 20 minutes </b></p>\n        <p class="comment">Sans dépasser 1500 mg/administration</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 0,25 mg/kg/prise</p>\n        <p class="drogueInduction">- <b>Midazolam (Hypnovel® 1 mg/mL) : {{AdminMidazolamConvulsion}} mg IVD</b></p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 30 mg/kg/12h</p>\n        <p class="drogueInduction">- <b>Lévétiracetam (Keppra® 100 mg/mL) : {{AdminKeppra}} mg IVL sur 5 min ou PO</b></p>\n        <p class="comment">Sans dépasser 2g/j</p>\n        <br>\n\n      </ion-card-content>\n    </ion-card> \n\n    <ion-item (click)="ToggleAntidotes()">\n      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>\n        &nbsp;&nbsp; Intoxications & antidotes\n        <ion-icon *ngIf="!isShownAntidotes" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownAntidotes" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n      </ion-item>\n\n      <ion-card *ngIf="isShownAntidotes" class="drogueContainer">\n      <ion-card-content>\n        <p class="dilutionDrogueInduction">Intoxication aux opiacés</p>\n        <p class="posologieDrogueInduction">Posologie proposée : 10 µg/kg dans 10 mL</p>\n        <p class="drogueInduction"><b>Naloxone (Narcan® 0,4mg/mL) : {{AdminNarcan}} mg IVL </b></p>\n        <p class="comment">Injecter 1 mL/30 secondes jusqu\'à efficacité</p>\n        <br>\n        <p class="dilutionDrogueInduction">Intoxication aux benzodiazépines</p>\n        <p class="posologieDrogueInduction">Posologie proposée : 10 µg/kg sur 10 minutes</p>\n        <p class="drogueInduction"><b>Flumazénil (Anexate® 0,1mg/mL) : {{AdminAnexate}} mg IVL </b></p>\n        <p class="comment">Puis entretien 10 µg/kg/h IVSE</p>\n        <br>        \n        <p class="dilutionDrogueInduction">Intoxication au paracétamol</p>\n        <p class="drogueInduction"><b>N-acetyl-cystéine (5g/25mL) : protocole </b></p>\n        <p class="comment">1. 150 mg/kg/15min = {{AdminNAC1}} mg en 15 minutes</p>\n        <p class="comment">2. 50 mg/kg/4h = {{AdminNAC2}} mg en 4 heures</p>\n        <p class="comment">3. 100 mg/kg/20h = {{AdminNAC3}} mg en 20 heures</p>\n        <p class="comment">4. 150 mg/kg/j = {{AdminNAC4}} par jour</p>\n        <br>\n\n      </ion-card-content>\n    </ion-card> \n\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\urgence\urgence.html"*/,
+            selector: 'page-urgence',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\urgence\urgence.html"*/'<ion-content>\n\n        <!-- HEADER MENU  -->\n        <div class="header"> \n\n          <div (click)="retourHome()" class="backButton">\n          <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n          Retour\n          </div>\nUrgences</div>\n            <br>\n      \n                  <!-- HEADER MON PATIENT  -->\n  \n            <ion-item color="turquoise-fonce"> \n              <ion-label>\n                <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> \n                <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n                <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> \n            </ion-item>\n        \n            <br>\n       <!-- END HEADER -->\n\n<ion-list>\n\n  <ion-item (click)="toggleNAD()" ><ion-label color="dark-turquoise">\n    <ion-icon start name="flask"></ion-icon>\n    &nbsp;&nbsp; Noradrénaline\n    <ion-icon *ngIf="!isShownNAD" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShownNAD" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label></ion-item>\n\n\n  <ion-card class="drogueContainer" *ngIf="isShownNAD">\n    <ion-card-content>\n\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="dark">\n          <p class="comment">Patient de {{PoidsNum}} kg</p>\n          <p class="dilutionDrogueInduction">Protocole proposé : {{ProtocoleNAD}}</p>\n          Noradrénaline (8mg/4mL) : <b>{{QuantiteNAD}}mg/50mL</b>\n          <p class="dilutionDrogueInduction">Préparation : </p>\n          <p class="dilutionDrogueInduction">{{VolumeNAD}}mL de NAD (= {{AmpoulesNAD}} ampoules de 4mL)</p>\n          <p class="dilutionDrogueInduction">+ {{VolumeSerumPhyNAD}}mL de NaCl 0,9%</p>\n        </ion-label>\n      </ion-item>\n      <ion-item>\n        <ion-label class="drogueInduction">Débit : {{DebitNADgammakgmin}} µg/kg/min \n          <br> Vitesse : {{DebitNADmlh}} mL/h\n          <br> Posologie : {{DebitNADmgh}} mg/h\n        </ion-label>\n        <ion-range color="turquoise-fonce" max="500" step="10" (ngModelChange)="VariationNAD()" [(ngModel)]="DixiemeDebitNADgammakgmin"> </ion-range>\n\n      </ion-item>\n    </ion-card-content>\n  </ion-card>\n\n    <ion-item  (click)="ToggleACR()">\n        <ion-label color="danger"><ion-icon start name="medkit"></ion-icon>\n          &nbsp;&nbsp; Arrêt cardio-respiratoire\n        <ion-icon *ngIf="!isShownACR" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownACR" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n        </ion-label>\n    </ion-item>\n\n        <ion-card class="drogueContainer" *ngIf="isShownACR">\n          <ion-card-content>\n          <p>1. Appel à l\'aide (RDB <b>3535</b>).</p>\n          <p>2. Débuter le massage cardiaque externe.</p>\n          <p>3. Ventiler en FiO2 1.</p>\n          <br>\n          <h4>Posologies ACR : </h4>\n\n        <ion-item>\n          <ion-label class="drogueInduction" color="danger">\n            Adrénaline : <b>{{PosoAdrenalineACR}} µg</b> - IVD/5 minutes\n            <p class="dilutionDrogueInduction">- 10 µg/kg, renouvellable</p>\n            <p>- d\'emblée si asystolie, au 3e choc si TV/FV</p>\n          </ion-label>\n        </ion-item>\n\n        <ion-item>\n          <ion-label class="drogueInduction" color="danger">\n            CEE : <b>{{CEEACR}} J</b> \n            <p class="dilutionDrogueInduction">- 4 J/kg</p>\n          </ion-label>\n        </ion-item>\n\n        <ion-item>\n          <ion-label class="drogueInduction" color="dark">\n            Cordarone : <b>{{PosoCordaroneACR}} mg</b> - IVD \n            <p class="dilutionDrogueInduction">- 5 mg/kg</p>\n            <p class="dilutionDrogueInduction">- renouvelable 1 fois après 5 min</p>\n          </ion-label>\n        </ion-item>\n\n        <ion-item>\n          <ion-label class="drogueInduction" color="dark">\n            Bicar 4,2% : <b>{{PosoBicarACR}} mL</b> - IVL \n            <p class="dilutionDrogueInduction">- 2 mL/kg dès la 15e minute</p>\n          </ion-label>\n        </ion-item>\n      </ion-card-content>\n    </ion-card>\n\n\n    <ion-item (click)="ToggleHTM()">\n      <ion-label color="warning"><ion-icon start name="alert"></ion-icon>\n        &nbsp;&nbsp; Hyperthermie maligne\n        <ion-icon *ngIf="!isShownHTM" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownHTM" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item>\n\n      <ion-card class="drogueContainer" *ngIf="isShownHTM">\n      <ion-card-content>\n        <p  class="drogueInduction">Evoquer devant  :\n          <p class="dilutionDrogueInduction">- augmentation importante et inexpliquée de l\'EtCO2, de la FC ou de la température</p>\n          <p class="dilutionDrogueInduction">- apparition d\'une rigidité musculaire des masséters, du tronc ou des membres.</p>\n          <br>\n        <p  class="drogueInduction">Conduite à tenir en cas de suspicion :</p>\n        <p class="dilutionDrogueInduction">- Arrêt halogénés, changement des filtres et tuyaux</p>\n        <p class="dilutionDrogueInduction">- Hyperventilation en FiO2 1</p>\n        <p class="dilutionDrogueInduction">- Contre indication absolue celocurine jusqu\'à preuve du contraire</p>\n        <p class="dilutionDrogueInduction">- Dantrolène <b>{{AdminDantroleneHTM}} mg IVL</b> (soit 2,5 mg/kg, renouvelable 4 fois max) à diluer dans de l\'<b>EPPI</b></p>\n      </ion-card-content>\n    </ion-card>\n\n    <ion-item (click)="ToggleChocAna()">\n      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>\n        &nbsp;&nbsp; Anaphylaxie\n        <ion-icon *ngIf="!isShownChocAna" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownChocAna" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n    </ion-item>\n\n    <ion-card class="drogueContainer" *ngIf="isShownChocAna">\n      <ion-card-content >\n        <p class="drogueInduction">Réaction anaphylactique de grade 2 ou 3 si : </p>\n            <p class="dilutionDrogueInduction">- Hypotension : -30% PAS référence</p> \n            <p class="dilutionDrogueInduction">- Tachycardie : +30% FC référence</p> \n            <p class="dilutionDrogueInduction">- Oedeme de Quincke ou bronchospasme</p>\n        \n        <br>\n        <p class="drogueInduction">Mesures à mettre en place :</p>\n        <p class="dilutionDrogueInduction">- éviction de tout allergène suspecté,</p>\n        <p class="dilutionDrogueInduction">- adrénaline : <b>{{PosoAdrenalineAnaph}} µg IVD</b>, renouvelable 5 à 10 fois,</p>\n        <p class="dilutionDrogueInduction">- methylprednisolone (Solumédrol® 20 mg/mL): <b>{{PosoSoluAnaph}} mg IVD</b>, renouvelable 1 fois,</p>\n        <p class="dilutionDrogueInduction">- prévoir bilan allergo-immunologique après contrôle de la situation clinique.</p>\n      </ion-card-content>\n    </ion-card>\n\n    <ion-item (click)="ToggleIAL()">\n      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>\n        &nbsp;&nbsp; Intoxication aux AL\n        <ion-icon *ngIf="!isShownIAL" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownIAL" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n      </ion-item>\n\n      <ion-card *ngIf="isShownIAL" class="drogueContainer">\n      <ion-card-content>\n        <p class="drogueInduction">Devant toute suspicion, en présence de signes neurologiques :</p>\n        <p class="dilutionDrogueInduction">- Rivotril : <b>{{PosoRivotrilIAL}} µg IVD</b> (soit 15 µg/kg)</p>\n        <p class="dilutionDrogueInduction">- Intralipides 20% : <b>{{PosoIntralipidesIAL}} mL IVL</b> (soit 3mL/kg), renouvelable</p>\n      </ion-card-content>\n    </ion-card>\n\n    <ion-item (click)="ToggleMetabo()">\n      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>\n        &nbsp;&nbsp; Désordres métaboliques\n        <ion-icon *ngIf="!isShownMetabo" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownMetabo" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n      </ion-item>\n\n      <ion-card *ngIf="isShownMetabo" class="drogueContainer">\n      <ion-card-content>\n\n        <p class="drogueInduction"><b>Hypoglycémie &lt; 3 mmol/L</b> :</p>\n        <p class="dilutionDrogueInduction">- G10% : <b>{{AdminG10Initial}} mL</b> sur 5 minutes (3 mL/kg)</p>\n        <p class="dilutionDrogueInduction">- puis G10% : <b>{{AdminG10Suite}} mL/min</b> IVSE jusqu\'à normalisation (0,4 mL/kg/min).</p>\n        \n        <hr>\n        <p class="drogueInduction"><b>Hyponatrémie &lt; 125 mmol/L & symptomatique </b>:</p>\n        <ion-item>\n          <ion-label class="dilutionDrogueInduction" position="stacked">Natrémie mesurée</ion-label>\n          <ion-input class="dilutionDrogueInduction" inputmode ="number" type="number" (ionChange)="CalculDeltaNa(NatremieMesuree)" [(ngModel)]="NatremieMesuree" placeholder="Renseigner"></ion-input>\n        </ion-item>\n        <p class="dilutionDrogueInduction">- Le delta sodium est de {{DeltaNa}} mM.</p>\n        <p class="dilutionDrogueInduction">- Sodium IVD : <b>{{AdminNa}} mEq</b> IVD jusqu\'à amélioration des symptomes (Delta x Poids x 0,6)</p>\n        <p class="dilutionDrogueInduction">- puis Sodium IVSE : <b>{{AdminNa}} mEq/4h</b> IVSE jusqu\'à normalisation de la natrémie</p>\n        <p class="dilutionDrogueInduction">- Utiliser du SSH (NaCl 20%) pour limiter les apports hydriques.</p>\n       \n        <hr>\n        <p class="drogueInduction"><b>Hyperkaliémie menaçante </b>:</p>\n        <p class="dilutionDrogueInduction">- Arrêt des apports</p>\n        <p class="dilutionDrogueInduction">- Si arythmie cardiaque : gluconate de calcium {{AdminGluconateCa}} mL IVD (2 mL/kg)</p>\n        <p class="dilutionDrogueInduction">- Traitement hypokaliémiant : insuline {{AdminInsulineHyperK}} UI (0,1 UI/kg) + G10 {{AdminG10HyperK}} mL (10 mL/kg) IVL sur 15 minutes</p>\n        \n      \n      \n      </ion-card-content>\n    </ion-card> \n\n    <ion-item (click)="ToggleAAG()">\n      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>\n        &nbsp;&nbsp; Asthme aigu grave\n        <ion-icon *ngIf="!isShownAAG" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownAAG" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n      </ion-item>\n\n      <ion-card *ngIf="isShownAAG" class="drogueContainer">\n      <ion-card-content>\n        <p class="drogueInduction">- <b>Penser à l\'hydratation & au potassium !</b></p>\n        <p class="comment">NaCl 0,9% {{ApportBaseJour}} mL/j + KCl {{AdminKClAAGmg}} mg/j (pour 150 mg/kg/j)</p>\n        <p class="comment">Remplacer après 24h par du B26</p>\n        <br>\n        <p class="drogueInduction">- <b>Salbutamol aérosol (Ventoline®): {{AerosolSalbutamolAAG}} mg</b></p>\n        <p class="comment">Renouvelable après 15 minutes</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 2 mg/kg</p>\n        <p class="drogueInduction">- <b>Methylprednisolone (Solumédrol® 20 mg/2mL) : {{AdminSolumedrolAAG}} mg en bolus</b></p>\n        <p class="comment">Puis entretien par {{IVSESolumedrolAAG}} mg/6h IVSE (pour 0,5 mg/kg/6h)</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 1/2 à 1 flacon</p>\n        <p class="drogueInduction">- <b>Ipratropium (Atrovent® 0,5 mg/2mL) : {{AerosolAtroventAAG}} mg en aérosol</b></p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 0,2 mg/kg</p>\n        <p class="drogueInduction">- <b>Terbutaline (Bricanyl® 5mg/2mL) : {{AerosolBricanylAAG}} mg en aérosol </b></p> \n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 40 mg/kg sans dépasser 2g</p>\n        <p class="drogueInduction">- <b>MgSO4 (1,5g/10mL) : {{MgSO4AAG}} mg IVL sur 20 minutes</b></p>\n        <p class="comment">A diluer dans du NaCl 0,9%</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 0,5 µg/kg/min</p>\n        <p class="drogueInduction">- <b>Salbutamol (5 mg/5 mL) : {{SalbutamolIVAAG}} µg/min IVSE</b></p>\n        <p class="comment">Possibilité d\'augmenter de 0,1 µg/kg/min toutes les 10 minutes</p>\n        <p class="comment">Ne s\'envisage qu\'en secteur de réanimation</p>\n        <p class="comment">Ne pas administrer pur, dilution minimale de 1/2</p>\n        <br>\n        \n      </ion-card-content>\n    </ion-card> \n\n    <ion-item (click)="ToggleHTADiuretiques()">\n      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>\n        &nbsp;&nbsp; Hypertension & diurétiques\n        <ion-icon *ngIf="!isShownHTADiuretiques" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownHTADiuretiques" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n      </ion-item>\n\n      <ion-card *ngIf="isShownHTADiuretiques" class="drogueContainer">\n      <ion-card-content>\n        <p class="posologieDrogueInduction">Posologie proposée : 60 µg/kg/h</p>\n        <p class="drogueInduction">- <b>Nicardipine (Loxen® 1 mg/mL) : {{LoxenIVSE}} µg/h IVSE </b></p>\n        <p class="comment">Possibilité de doubler la dose si insuffisant</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 2 mg/kg/j en deux prises</p>\n        <p class="drogueInduction">- <b>Acebutolol (Sectral®) : {{SectralPO}} mg/j PO</b></p>\n        <p class="comment">A répartir sur 2 prises PO</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 0,3 mg/kg/prise</p>\n        <p class="drogueInduction">- <b>Labétolol (Trandate®) : {{TrandateBolus}} mg IVL</b></p>\n        <p class="comment">En IVSE : {{TrandateIVSE}} mg/j (pour 2 mg/kg/j), possibilité d\'augmenter jusqu\'à 24 mg/kg/j </p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 50 µg/kg/j en deux prises</p>\n        <p class="drogueInduction">- <b>Enalapril (Renitec®) : {{AdminRenitec}} µg/j PO</b></p>\n        <p class="comment">Sans dépasser 5 mg/j</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 1 mg/kg/prise</p>\n        <p class="drogueInduction">- <b>Furosémide (Lasilix® 10 mg/mL) : {{AdminLasilix}} mg PO ou IV</b></p>\n        <p class="comment">AMM : 4 mg/kg/j maximum, soit 1 prise/6h maximum</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 10 µg/kg/h</p>\n        <p class="drogueInduction">- <b>Bumétanide (Burinex® 500 µg/mL) : {{AdminBurinexIVSE}} mg/h IVSE</b></p>\n        <p class="comment">Possibilité de doubler la dose si insuffisant</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 1 à 5 mg/kg/j</p>\n        <p class="drogueInduction">- <b>Spironolactone (Aldactone®) : {{AdminAldactoneMin}} - {{AdminAldactoneMax}} mg/j PO</b></p>\n        <br>\n\n      </ion-card-content>\n    </ion-card> \n\n    <ion-item (click)="ToggleCriseConvulsive()">\n      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>\n        &nbsp;&nbsp; Crises convulsives\n        <ion-icon *ngIf="!isShownCriseConvulsive" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownCriseConvulsive" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n      </ion-item>\n\n      <ion-card *ngIf="isShownCriseConvulsive" class="drogueContainer">\n      <ion-card-content>\n        <p class="posologieDrogueInduction">Posologie proposée : 20 µg/kg/prise</p>\n        <p class="drogueInduction">- <b>Clonazépam (Rivotril® 1 mg/mL) : {{AdminRivotrilConvulsion}} µg IVD </b></p>\n        <p class="comment">Répéter une seconde fois si nécessaire</p>\n        <p class="comment">{{AdminRivotrilConvulsion}} mg/6h IVSE si nécessaire</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 15 mg/kg/j prise</p>\n        <p class="drogueInduction">- <b>Phénobarbital (Gardénal® 40 mg/2mL) : {{AdminGardenal}} mg IVL sur 20 minutes </b></p>\n        <p class="comment">Sans dépasser 500 mg/administration</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 20 mg/kg/prise</p>\n        <p class="drogueInduction">- <b>Phénytoïne (Dilantin® 250 µg/5mL) : {{AdminDilantin}} mg IVL sur 20 minutes </b></p>\n        <p class="comment">Sans dépasser 1500 mg/administration</p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 0,25 mg/kg/prise</p>\n        <p class="drogueInduction">- <b>Midazolam (Hypnovel® 1 mg/mL) : {{AdminMidazolamConvulsion}} mg IVD</b></p>\n        <br>\n        <p class="posologieDrogueInduction">Posologie proposée : 30 mg/kg/12h</p>\n        <p class="drogueInduction">- <b>Lévétiracetam (Keppra® 100 mg/mL) : {{AdminKeppra}} mg IVL sur 5 min ou PO</b></p>\n        <p class="comment">Sans dépasser 2g/j</p>\n        <br>\n\n      </ion-card-content>\n    </ion-card> \n\n    <ion-item (click)="ToggleAntidotes()">\n      <ion-label color="dark-turquoise"><ion-icon start name="clipboard"></ion-icon>\n        &nbsp;&nbsp; Intoxications & antidotes\n        <ion-icon *ngIf="!isShownAntidotes" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownAntidotes" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n      </ion-label>\n      </ion-item>\n\n      <ion-card *ngIf="isShownAntidotes" class="drogueContainer">\n      <ion-card-content>\n        <p class="dilutionDrogueInduction">Intoxication aux opiacés</p>\n        <p class="posologieDrogueInduction">Posologie proposée : 10 µg/kg dans 10 mL</p>\n        <p class="drogueInduction"><b>Naloxone (Narcan® 0,4mg/mL) : {{AdminNarcan}} mg IVL </b></p>\n        <p class="comment">Injecter 1 mL/30 secondes jusqu\'à efficacité</p>\n        <br>\n        <p class="dilutionDrogueInduction">Intoxication aux benzodiazépines</p>\n        <p class="posologieDrogueInduction">Posologie proposée : 10 µg/kg sur 10 minutes</p>\n        <p class="drogueInduction"><b>Flumazénil (Anexate® 0,1mg/mL) : {{AdminAnexate}} mg IVL </b></p>\n        <p class="comment">Puis entretien 10 µg/kg/h IVSE</p>\n        <br>        \n        <p class="dilutionDrogueInduction">Intoxication au paracétamol</p>\n        <p class="drogueInduction"><b>N-acetyl-cystéine (5g/25mL) : protocole </b></p>\n        <p class="comment">1. 150 mg/kg/15min = {{AdminNAC1}} mg en 15 minutes</p>\n        <p class="comment">2. 50 mg/kg/4h = {{AdminNAC2}} mg en 4 heures</p>\n        <p class="comment">3. 100 mg/kg/20h = {{AdminNAC3}} mg en 20 heures</p>\n        <p class="comment">4. 150 mg/kg/j = {{AdminNAC4}} par jour</p>\n        <br>\n\n      </ion-card-content>\n    </ion-card> \n\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\urgence\urgence.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], UrgencePage);
@@ -3384,7 +3384,7 @@ var CourbesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 146:
+/***/ 145:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3612,7 +3612,7 @@ var ExtrophieVesicalePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 147:
+/***/ 146:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3687,6 +3687,80 @@ var RecommandationsPage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 147:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MedicamentsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_medicaments__ = __webpack_require__(461);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__ = __webpack_require__(382);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var MedicamentsPage = /** @class */ (function () {
+    function MedicamentsPage(navCtrl, navParams, storage, alertController, dataService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.storage = storage;
+        this.alertController = alertController;
+        this.dataService = dataService;
+        this.searchTerm = "";
+        this.isShownCard = false;
+    }
+    MedicamentsPage.prototype.ionViewDidLoad = function () {
+        this.setFilteredItems();
+        this.dataService.orderCards();
+        console.log('items rangés par ordre alphabétique');
+    };
+    MedicamentsPage.prototype.ngOnInit = function () {
+        this.setFilteredItems();
+        this.dataService.orderCards();
+    };
+    ;
+    MedicamentsPage.prototype.setFilteredItems = function () {
+        this.cards = this.dataService.filterTitles(this.searchTerm);
+    };
+    ;
+    MedicamentsPage.prototype.displayMedicament = function (index) {
+        this.cards[index].isShown = !this.cards[index].isShown;
+    };
+    ;
+    MedicamentsPage.prototype.openVidal = function (index) {
+        window.open(this.cards[index].lien, '_system');
+    };
+    MedicamentsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-medicaments',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\medicaments\medicaments.html"*/'\n\n  <ion-header>\n    Médicaments \n    <br>\n    <br>\n    <ion-toolbar>\n \n \n  \n      <ion-searchbar\n      class="medicamentSearchbar"\n      [(ngModel)]="searchTerm"\n      (ionChange)="setFilteredItems()"\n      placeholder="Rechercher..."\n      inputmode="text"\n    ></ion-searchbar>\n\n  </ion-toolbar> \n    </ion-header>\n\n    <ion-content>\n\n      <br>\n      <div padding>Les posologies proposées sont envisagées pour la <b>pédiatrie</b> uniquement.</div>\n      <div padding>Légende : \n      <ion-chip class="indicationChip">\n        <ion-label>Indication</ion-label>\n      </ion-chip>\n      <ion-chip class="classeMedicamenteuseChip">\n        <ion-label>Classe</ion-label>\n      </ion-chip>\n      <ion-chip class="voieAdminChip">\n        <ion-label>Voie</ion-label>\n      </ion-chip> \n      <ion-chip class="AMMChip">\n        <ion-label>AMM</ion-label>\n      </ion-chip></div>\n\n  <ion-list>\n    <ion-card class="medicamentContainer" *ngFor="let card of cards, let index = index" [attr.data-index]="index">\n      \n      <div class="medicamentTitle" padding (click)="displayMedicament(index)"> {{card.title}}\n      </div>\n      <img class="logoVidal" (click)="openVidal(index)" src="/assets/imgs/logo-vidal.png">\n    \n      \n      \n\n      <ion-card-content class="medicamentsubContainer" *ngIf="card.isShown">\n\n        <div class="commentMedicament">\n\n          <ion-chip *ngIf="card.indication" class="indicationChip">\n            <ion-label>{{card.indication}}</ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="card.indication1" class="indicationChip">\n            <ion-label>{{card.indication1}}</ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="card.indication2" class="indicationChip">\n            <ion-label>{{card.indication2}}</ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="card.classeMed" class="classeMedicamenteuseChip">\n            <ion-label>{{card.classeMed}}</ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="card.voieAdmin" class="voieAdminChip">\n            <ion-label>{{card.voieAdmin}}</ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="card.voieAdmin1" class="voieAdminChip">\n            <ion-label>{{card.voieAdmin1}}</ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="card.AMM" class="AMMChip">\n            <ion-label>{{card.AMM}}</ion-label>\n          </ion-chip>\n\n        </div>\n\n        <div class="presentationMedicament">\n          <ul>\n            <li *ngIf="card.presentation">Présentation : {{card.presentation}}</li>\n            <li *ngIf="card.posologie">Posologie : {{card.posologie}}</li>\n    \n          </ul>\n        </div>\n      \n\n        <div class="commentMedicament">\n          <ul>\n            <li *ngIf="card.reconstitution">Reconstitution : {{card.reconstitution}}</li>\n\n            <li *ngIf="card.dilution">Dilution : {{card.dilution}}</li>\n\n            <li *ngIf="card.administration">Administration : {{card.administration}}</li>\n\n            <li *ngIf="card.remarques">Remarques : {{card.remarques}}</li>\n          </ul>\n        </div>\n        \n      </ion-card-content>\n\n    </ion-card>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\medicaments\medicaments.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_medicaments__["a" /* ServiceDataProvider */]])
+    ], MedicamentsPage);
+    return MedicamentsPage;
+}());
+
+;
+//# sourceMappingURL=medicaments.js.map
+
+/***/ }),
+
 /***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3695,11 +3769,11 @@ var RecommandationsPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__info_info__ = __webpack_require__(461);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__info_info__ = __webpack_require__(460);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__protocoles_protocoles__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__recommandations_recommandations__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__recommandations_recommandations__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__scores_scores__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__medicaments_medicaments__ = __webpack_require__(840);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__medicaments_medicaments__ = __webpack_require__(147);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3768,8 +3842,8 @@ webpackEmptyAsyncContext.id = 180;
 
 var map = {
 	"../pages/main/main.module": [
-		838,
-		4
+		837,
+		0
 	]
 };
 function webpackAsyncContext(req) {
@@ -4039,7 +4113,7 @@ var AntibioprophylaxiePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 459:
+/***/ 458:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4269,7 +4343,7 @@ var ScoliosePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 460:
+/***/ 459:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4387,7 +4461,7 @@ var SauvegardePatientPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 461:
+/***/ 460:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4443,6 +4517,745 @@ var InfoPage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 461:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ServiceDataProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+/*
+  Generated class for the ServiceDataProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var ServiceDataProvider = /** @class */ (function () {
+    function ServiceDataProvider() {
+        this.cards = [];
+        this.cards = [
+            {
+                isShown: false,
+                title: "Bumétanide (Burinex®)",
+                AMM: "",
+                indication: "HTA",
+                indication1: "Insuff. card.",
+                classeMed: "Diurétique (anse)",
+                voieAdmin: "PO",
+                voieAdmin1: "IVSE",
+                presentation: "BUMETANIDE 1 mg cp",
+                presentation1: "BUMETANIDE 2 mg/4 ml sol inj",
+                posologie: "10 µg/kg/h",
+                reconstitution: "",
+                dilution: "",
+                administration: "IVSE",
+                remarques: "possibilité  de doubler si insuffisant",
+                lien: "https://www.vidal.fr/medicaments/substances/bumetanide-670.html",
+            },
+            {
+                isShown: false,
+                title: "Furosémide (Lasilix®)",
+                AMM: "max. 4 mg/kg/jg",
+                indication: "HTA",
+                indication1: "Insuff. card.",
+                classeMed: "Diurètique (anse)",
+                voieAdmin: "IV",
+                voieAdmin1: "PO",
+                presentation: "FUROSEMIDE 20 mg cp ou 10 mg/mL sol pr perf",
+                posologie: "1 mg/kg",
+                reconstitution: "",
+                dilution: "Serum physiologique",
+                administration: "PO ou IVL",
+                remarques: "ne pas dépasser 4 prises par jour",
+                lien: "https://www.vidal.fr/medicaments/substances/furosemide-1579.html",
+            },
+            {
+                isShown: false,
+                title: "Enalapril (Renitec®)",
+                AMM: "",
+                indication: "HTA",
+                classeMed: "Inhibiteur ECA",
+                voieAdmin: "PO",
+                presentation: "ENALAPRIL MALEATE 5 mg cp",
+                posologie: "25 µg/kg",
+                reconstitution: "",
+                dilution: "",
+                administration: "PO en 2 prises",
+                remarques: "ne pas dépasser 5 mg/j",
+                lien: "https://www.vidal.fr/medicaments/substances/enalapril-6771.html",
+            },
+            {
+                isShown: false,
+                title: "Labétolol (Trandate®)",
+                AMM: "",
+                indication: "HTA",
+                classeMed: "β-bloquant",
+                voieAdmin: "IV",
+                presentation: "LABETALOL CHLORHYDRATE 5 mg/ml sol inj",
+                posologie: "0,3 mg/kg",
+                reconstitution: "",
+                dilution: "",
+                administration: "IVL",
+                remarques: "Administration IVSE possible 2 mg/kg/j",
+                lien: "https://www.vidal.fr/medicaments/substances/labetalol-6535.html",
+            },
+            {
+                isShown: false,
+                title: "Acebutolol (Sectral®)",
+                AMM: "",
+                indication: "HTA",
+                classeMed: "β-bloquant",
+                voieAdmin: "PO",
+                presentation: "ACEBUTOLOL (chlorhydrate) 200 mg cp",
+                posologie: "1 mg/kg",
+                reconstitution: "",
+                dilution: "",
+                administration: "PO en 2 prises par jour",
+                remarques: "",
+                lien: "https://www.vidal.fr/medicaments/substances/acebutolol-4283.html",
+            },
+            {
+                isShown: false,
+                title: "Nicardipine (Loxen®)",
+                AMM: "",
+                indication: "HTA",
+                classeMed: "Anti-calcique",
+                voieAdmin: "IVSE",
+                presentation: "NICARDIPINE CHLORHYDRATE 1 mg/ml sol p perf",
+                posologie: "60 µg/kg/h",
+                reconstitution: "",
+                dilution: "",
+                administration: "IVSE",
+                remarques: "possibilité d'augmenter jusqu'à 120 µg/kg/h si insuffisant",
+                lien: "https://www.vidal.fr/medicaments/substances/nicardipine-6838.html",
+            },
+            {
+                isShown: false,
+                title: "Lévétiracetam (Keppra®)",
+                AMM: "",
+                indication: "Epilepsie",
+                classeMed: "Anti-épileptique",
+                voieAdmin: "PO",
+                presentation: "LEVETIRACETAM 250 mg cp",
+                posologie: "30 mg/kg",
+                reconstitution: "",
+                dilution: "",
+                administration: "PO toutes les 12h",
+                remarques: "ne pas dépasser 2g/j",
+                lien: "https://www.vidal.fr/medicaments/gammes/levetiracetam-eg-61517.html",
+            },
+            {
+                isShown: false,
+                title: "Phénytoïne (Dilantin®)",
+                AMM: "",
+                indication: "Epilepsie",
+                classeMed: "Anti-épileptique",
+                voieAdmin: "IVL",
+                presentation: "PHENYTOINE SODIQUE 50 mg/ml sol inj (DILANTIN)",
+                posologie: "20 mg/kg/prise",
+                reconstitution: "",
+                dilution: "",
+                administration: "IVL sur 20 minutes",
+                remarques: "ne pas dépasser 1500 mg/administration",
+                lien: "https://www.vidal.fr/medicaments/dilantin-250-mg-5-ml-sol-inj-5235.html",
+            },
+            {
+                isShown: false,
+                title: "Phénobarbital (Gardénal®)",
+                AMM: "",
+                indication: "Epilepsie",
+                classeMed: "Barbiturique",
+                voieAdmin: "IVL",
+                presentation: "PHENOBARBITAL (sodique) 40 mg/2 ml pdre/solv p sol inj",
+                posologie: "15 mg/kg/prise",
+                reconstitution: "",
+                dilution: "",
+                administration: "IVL sur 20 minutes",
+                remarques: "ne pas dépasser 500 mg/administration",
+                lien: "https://www.vidal.fr/medicaments/substances/phenobarbital-2729.html",
+            },
+            {
+                isShown: false,
+                title: "Clonazépam (Rivotril®)",
+                AMM: "",
+                indication: "Epilepsie",
+                indication1: "Intox. AL",
+                classeMed: "Benzodiazépine",
+                voieAdmin: "IVD",
+                presentation: "CLONAZEPAM 1 mg/1 ml sol diluer/solv p sol inj",
+                posologie: "Crise convulsive 20 µg/kg, IAL 15 µg/kg",
+                reconstitution: "",
+                dilution: "",
+                administration: "IVD",
+                remarques: "Renouvelable 2 fois ou administrable IVSE 20 µg/kg/6h",
+                lien: "https://www.vidal.fr/medicaments/substances/clonazepam-4157.html",
+            },
+            {
+                isShown: false,
+                title: "Terbutaline (Bricanyl®)",
+                AMM: "",
+                indication: "Asthme aigu grave",
+                classeMed: "β2-agoniste MD",
+                voieAdmin: "nébulisation",
+                presentation: "BRICANYL 5 mg/2 ml sol p inhal p nébulis en récipient unidose",
+                posologie: "0,2 mg/kg",
+                reconstitution: "",
+                dilution: "",
+                administration: "Aérosol",
+                remarques: "",
+                lien: "https://www.vidal.fr/medicaments/bricanyl-5-mg-2-ml-sol-p-inhal-p-nebulis-en-recipient-unidose-2493.html",
+            },
+            {
+                isShown: false,
+                title: "Ipratropium (Atrovent®) aérosol",
+                AMM: "",
+                indication: "Asthme aigu grave",
+                classeMed: "Anticholinergique",
+                voieAdmin: "Aérosol",
+                presentation: "ATROVENT 0,50 mg/2 ml sol p inhal p nébulis",
+                posologie: "0,25 à 0,5mg",
+                reconstitution: "",
+                dilution: "",
+                administration: "aérosol",
+                remarques: "",
+                lien: "https://www.vidal.fr/medicaments/atrovent-0-50-mg-2-ml-sol-p-inhal-p-nebulis-en-recipient-unidose-adulte-1705.html",
+            },
+            {
+                isShown: false,
+                title: "Methylprednisolone (Solumédrol®)",
+                AMM: "",
+                indication: "Anaphylaxie",
+                indication1: "AAG",
+                classeMed: "Corticoïde",
+                voieAdmin: "IVD",
+                presentation: "SOLUMEDROL 1 g pdre/solv p sol inj",
+                posologie: "Anaphylaxie 1 mg/kg, Asthme aigu grave 2 mg/kg",
+                reconstitution: "Serum physiologique",
+                dilution: "",
+                administration: "IVD",
+                remarques: "Dans l'AAG, entretien 0,5 mg/kg/6h au décours",
+                lien: "https://www.vidal.fr/medicaments/solumedrol-1-g-pdre-solv-p-sol-inj-15189.html",
+            },
+            {
+                isShown: false,
+                title: "Salbutamol aérosol (Ventoline®)",
+                AMM: "",
+                indication: "Asthme aigu",
+                classeMed: "β2-agoniste CD",
+                voieAdmin: "nébulisation",
+                presentation: "2,5 mg/2,5 ml sol p inhal p nébulis",
+                posologie: "2,5 à 5mg",
+                reconstitution: "",
+                dilution: "",
+                administration: "par aérosol en air",
+                remarques: "",
+                lien: "https://www.vidal.fr/medicaments/ventoline-2-5-mg-2-5-ml-sol-p-inhal-p-nebulis-en-recipient-unidose-17379.html",
+            },
+            {
+                isShown: false,
+                title: "Dantrolène (Dantrium®)",
+                AMM: "",
+                indication: "HTM",
+                classeMed: "Myorelaxant",
+                voieAdmin: "IVL",
+                presentation: "DANTROLENE SODIQUE 20 mg pdre p sol inj",
+                posologie: "2,5 mg/kg",
+                reconstitution: "utiliser de l'EPPI",
+                dilution: "1 ampoule dans 60 mL d'EPPI",
+                administration: "IVL",
+                remarques: "Après reconstitution, conserver à l'abri de la lumière et utiliser dans les 6h",
+                lien: "https://www.vidal.fr/medicaments/dantrium-intraveineux-lyoph-p-us-parenter-4780.html",
+            },
+            {
+                isShown: false,
+                title: "Amiodarone (Cordarone®)",
+                AMM: "",
+                indication: "ACR",
+                classeMed: "Anti-arythmique",
+                voieAdmin: "IVD",
+                presentation: "CORDARONE 150 mg/3 ml sol inj en ampoule IV",
+                posologie: "5 mg/kg",
+                reconstitution: "",
+                dilution: "",
+                administration: "IVD",
+                remarques: "Renouvelable après 5 minutes",
+                lien: "https://www.vidal.fr/medicaments/cordarone-150-mg-3-ml-sol-inj-en-ampoule-iv-4468.html",
+            },
+            {
+                isShown: false,
+                title: "Adrénaline",
+                AMM: "",
+                indication: "ACR",
+                indication1: "Anaphylaxie",
+                classeMed: "αβ-agoniste",
+                voieAdmin: "IVD",
+                presentation: "ADRENALINE 1 mg/ml sol inj",
+                posologie: "ACR 10 µg/kg, Anaphylaxie 1 µg/kg",
+                reconstitution: "",
+                dilution: "",
+                administration: "IVD",
+                remarques: "",
+                lien: "https://www.vidal.fr/medicaments/substances/adrenaline-1356.html",
+            },
+            {
+                isShown: false,
+                title: "Noradrenaline",
+                AMM: "",
+                indication: "Vasoplégie",
+                classeMed: "α-agoniste",
+                voieAdmin: "IVSE",
+                presentation: "Noradrénaline ",
+                posologie: "Protocole (cf. Urgences)",
+                reconstitution: "",
+                dilution: "",
+                administration: "IVSE",
+                remarques: "",
+                lien: "https://www.vidal.fr/medicaments/substances/noradrenaline-7019.html",
+            },
+            {
+                isShown: false,
+                title: "Voriconazole (Vfend®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "2 à 12 ans et < 50 kg : 18 mg/kg/j à J1 puis 16 mg/kg/j. Après 12 ans et > 50 kg, 12 mg/kg/j à J1 puis 8 mg/kg/j. En 2 prises.",
+                reconstitution: "EPPI ou NaCl 0,9%, 19 mL pour obtenir 10 mg/mL.",
+                dilution: "G5% ou NaCl 0,9%, 0,5 à 5 mg/mL.",
+                administration: "IVL en 1 à 3h, sans dépasser 3 mg/kg/h.",
+                remarques: "Risque d'accumulation de l'excipient chez l'insuffisant rénal : préférer la forme orale chaque fois que possible. Incompatible avec la nutrition parentérale et les bicarbonates.",
+                lien: "https://www.vidal.fr/medicaments/substances/voriconazole-21915.html",
+            },
+            {
+                isShown: false,
+                title: "Aciclovir (Zovirax®)",
+                AMM: "",
+                indication: "Antiviral",
+                classeMed: "Anti-HHV",
+                voieAdmin: "IVL",
+                presentation: "ZOVIRAX 250 mg pdre p sol inj IV",
+                posologie: "30 à 60 mg/kg/j en 3 prises.",
+                reconstitution: "avec EPPI ou NaCl 0,9%, 25 mg/mL.",
+                dilution: "NaCl 0,9%, max. 7 mg/mL sur VVP, 25 mg/mL sur VVC.",
+                administration: "IVL sur 60 minutes.",
+                remarques: "Incompatible avec la nutrition parentérale et la ceftazidime.",
+                lien: "https://www.vidal.fr/medicaments/gammes/aciclovir-mylan-40986.html",
+            },
+            {
+                isShown: false,
+                title: "Amikacine (Amiklin®)",
+                AMM: "",
+                indication: "Antibiothérapie",
+                classeMed: "Aminoside",
+                voieAdmin: "IVL",
+                presentation: "Amikacine 2,5 à 10 mg/mL sol p perf",
+                posologie: "15 à 30 mg/kg/j en 1 prise.",
+                reconstitution: "",
+                dilution: "si besoin, avec EPPI, 125 mg/mL.",
+                administration: "IV en 30 minutes.",
+                remarques: "Objectif : pic 60 à 80 mg/L ; résiduelle inférieure à 4 mg/L. Utiliser une ligne dédiée, ne pas mélanger avec béta-lactamines, héparines, dexaméthasone.",
+                lien: "https://www.vidal.fr/medicaments/substances/amikacine-6676.html",
+            },
+            {
+                isShown: false,
+                title: "Amoxicilline (Clamoxyl®)",
+                AMM: "",
+                indication: "Antibiothérapie",
+                classeMed: "β-lactamine",
+                voieAdmin: "IVL",
+                presentation: "",
+                posologie: "100 à 200 mg/kg/j en 3 à 4 prises.",
+                reconstitution: "Avec EPPI, 50 mg/mL.",
+                dilution: "NaCl 0,9% (stable 6h) ou G5% (stable 1h), sans dépasser 100 mg/mL",
+                administration: "IVL en 30 à 60 minutes.",
+                remarques: "Ne pas mélanger avec les aminosides. Compatible en Y avec la nutrition parentérale.",
+                lien: "https://www.vidal.fr/medicaments/substances/amoxicilline-310.html",
+            },
+            {
+                isShown: false,
+                title: "Amoxicilline + Acide Clavulanique (Augmentin®)",
+                AMM: "",
+                indication: "Antibiothérapie",
+                classeMed: "β-lactamine",
+                voieAdmin: "IVL",
+                presentation: "",
+                posologie: "Avant 3 mois ou 4kg, 100 mg/kg/j en 2 prises. > 3 mois mais < 40 kg, 150 mg/kg/j en 3 prises. Ensuite, posologies adulte.",
+                reconstitution: "EPPI ou NaCl 0,9%, 50 mg/mL.", dilution: "NaCl 0,9% (stable 1h) ou G5% (stable 30 minutes).",
+                administration: "IVL en 30 à 40 minutes. Jamais en moins de 5 minutes avant 3 mois.",
+                remarques: "Attention, posologies et concentrations exprimées en Amoxicilline, veiller à ne pas dépasser la dose d'acide clavulanique maximale de 20 mg/kg/j. Incompatible avec les aminosides. Compatible en Y avec l'alimentation parentérale.",
+                lien: "https://www.vidal.fr/medicaments/gammes/augmentin-784.html",
+            },
+            {
+                isShown: false,
+                title: "Amphotéricine B liposomale (Ambisome®, Fungizone®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "3 mg/kg/j en 1 prise.",
+                reconstitution: "Flacon de 50 mg avec 12 mL d'EPPI pour obtenir une solution-mère à 4 mg/mL.",
+                dilution: "Dans du G5% - jamais dans du NaCl 0,9%. Entre 0,2 et 2 mg/mL. Utiliser le filtre de 5 µm pour mettre la solution reconstituée dans le G5% de dilution.",
+                administration: "IV en 30 à 60 minutes.",
+                remarques: "Filtre à 5 µm livré dans l'emballage, à utiliser pour rettenir d'éventuels agglomérats de liposomes qui se seraient formés pendant la reconstitution, en cas d'agitation insuffisante. Attention, incompatible avec le NaCl, les électrolytes et la nutrition parentérale.",
+                lien: "https://www.vidal.fr/medicaments/substances/amphotericine-b-314.html",
+            },
+            {
+                isShown: false,
+                title: "Caspofungine (Cancidas®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "70 mg/m²/j à J1, puis 50 mg/m²/j, en 1 prise.",
+                reconstitution: "Flacon de 50 mg avec 10,5 mL d'EPPI pour obtenir une solution mère à 5,2 mg/mL ou flacon de 70 mg avec 10,5 mL d'EPPI pour obtenir une solution-mère à 7,6 mg/mL.",
+                dilution: "NaCl 0,9% (jamais dans du G5%). Max 0,5 mg/mL. Utiliser pur non dilué si restriction hydrique et VVC.",
+                administration: "IVL en 60 minutes",
+                remarques: "Incompatible avec le glucose, la nutrition parentérale et l'héparine.",
+                lien: "https://www.vidal.fr/medicaments/substances/caspofungine-21849.html",
+            },
+            {
+                isShown: false,
+                title: "Céfamandole",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "150 mg/kg/j en 3 à 6 prises, max. 6 g/j",
+                reconstitution: "Flacon de 750 mg avec 10 mL d'EPPI, de G5% ou de NaCl 0,9%.",
+                dilution: "Si besoin dans EPPI, NaCl 0,9% ou G5%, pas de concentration cible.",
+                administration: "IVL en 30 minutes.",
+                remarques: "",
+                lien: "https://www.vidal.fr/medicaments/substances/cefamandole-853.html",
+            },
+            {
+                isShown: false,
+                title: "Céfépime (Axepim®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "150 mg/kg/j en 3 prises, max 6 g/j",
+                reconstitution: "EPPI, G5% ou NaCl 0,9%, 100 à 200 mg/mL.",
+                dilution: "Dans G5% ou NaCl 0,9%.",
+                administration: "IVL en 30 minutes. ",
+                remarques: "",
+                lien: "https://www.vidal.fr/medicaments/substances/cefepime-6916.html",
+            },
+            {
+                isShown: false,
+                title: "Céfotaxime (Claforan®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "100 à 200 mg/kg/j, 300 mg/kg/j dans les infections méningées, en 3 à 4 prises, sans dépasser 24g/j.",
+                reconstitution: "EPPI 10 mL.",
+                dilution: "G5% ou NaCl 0,9%, 10 à 50 mg/mL, ne pas dépasser 150 mg/mL pour l'administration IV.",
+                administration: "IVL en 20 à 60 minutes.",
+                remarques: "Risque d'arythmie cardiaque en cas d'administration intraveineuse rapide sur cathéter veineux central.",
+                lien: "https://www.vidal.fr/medicaments/substances/cefotaxime-861.html",
+            },
+            {
+                isShown: false,
+                title: "Ceftazidime (Fortum®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "50 à 200 mg/kg/j en 3 prises ou en continu, sans dépasser 6 g/j.",
+                reconstitution: "G5% ou NaCl 0,9%, 10mL.",
+                dilution: "G5% ou NaCl 0,9%, stable 18h si concentration < 40 mg/mL, ne pas dépasser 180 mg/mL de concentration en cas de restriction hydrique.",
+                administration: "IVL sur 30 minutes ou IVSE continue.",
+                remarques: "Incompatible avec le bicarbonate, l'aciclovir et le ganciclovir.",
+                lien: "https://www.vidal.fr/medicaments/gammes/fortum-3888.html",
+            },
+            {
+                isShown: false,
+                title: "Ceftriaxone (Rocéphine®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "50 à 100 mg/kg/j en 1 prise, sans dépasser 4g/j.",
+                reconstitution: "EPPI, G5% ou NaCl 0,9%, 100 mg/mL.",
+                dilution: "G5% ou NaCl 0,9%, 10 à 40 mg/mL.",
+                administration: "IVL sur 30 minutes.",
+                remarques: "Incompatible avec le calcium, la vancomycine, le fluconazole, les aminosides, la nutrition parentérale. Contre indiqué avant 28j et en cas d'administration de calcium IV associée. Coloration jaune normale.",
+                lien: "https://www.vidal.fr/medicaments/gammes/rocephine-8900.html",
+            },
+            {
+                isShown: false,
+                title: "Ciprofloxacine (Ciflox®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "20 à 30 mg/kg/j - 45 mg/kg/j chez le drépanocytaire - en 2 à 3 prises, sans dépasser 1,2 g/j.",
+                reconstitution: "",
+                dilution: "",
+                administration: "IVL sur 60 minutes.",
+                remarques: "Incompatible avec la nutrition parentérale, les pénicillines, les héparines, les solutions alcalines. Privilégier la voie orale : la biodisponibilité est identique.",
+                lien: "https://www.vidal.fr/medicaments/gammes/ciflox-1909.html",
+            },
+            {
+                isShown: false,
+                title: "Clindamycine (Dalacine®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "30 à 40 mg/kg/j en 3 à 4 prises, sans dépasser 2,4 g/j.",
+                reconstitution: "NA.",
+                dilution: "G5% ou NaCl 0,9%, max. 18 mg/mL.",
+                administration: "IVL en 30 minutes, ne pas dépasser 20 mg/kg/h ou 30 mg/min.",
+                remarques: "Incompatible avec l'ampicilline, la phénytoïne, les barbituriques, l'aminophylline, le calcium, le magnésium, la ceftriaxone, la ciprofloxacine et la ranitidine.",
+                lien: "https://www.vidal.fr/medicaments/gammes/dalacine-2500.html",
+            },
+            {
+                isShown: false,
+                title: "Cloxacilline (Orbénine®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "100 à 200 mg/kg/j en 4 à 6 prises, max. 12 g/j.",
+                reconstitution: "EPPI, G5% ou NaCl 0,9%, 1g dans 16 mL.",
+                dilution: "G5% ou NaCl 0,9%, 10 mg/mL.",
+                administration: "IVL sur 60 minutes.",
+                remarques: "Incompatible avec la nutrition parentérale.",
+                lien: "https://www.vidal.fr/medicaments/gammes/orbenine-7195.html",
+            },
+            {
+                isShown: false,
+                title: "Fluconazole (Triflucan®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "3 à 12 mg/kg/j en 1 prise.",
+                reconstitution: "NA.",
+                dilution: "NA.",
+                administration: "IVL en 30 minutes, 120 minutes si > 6 mg/kg/j.",
+                remarques: "Inhibiteur enzymatique. Teneur en sodium significative à 0,155 mEq/mL.",
+                lien: "https://www.vidal.fr/medicaments/gammes/triflucan-10578.html",
+            },
+            {
+                isShown: false,
+                title: "Fosfomycine (Fosfocine®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "100 à 200 mg/kg/j en 2 à 4 prises, sans dépasser 16 g/j.",
+                reconstitution: "1g avec 10 mL d'EPPI. 4g avec 15 mL d'EPPI.",
+                dilution: "G5% ou NaCl 0,9%, max. 10 mg/mL.",
+                administration: "IVL en 60 minutes.",
+                remarques: "Apports en sodium significatifs à 14,3 mEq/g.",
+                lien: "https://www.vidal.fr/medicaments/substances/fosfomycine-1547.html",
+            },
+            {
+                isShown: false,
+                title: "Gentamicine (Gentalline®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "5 à 8 mg/kg/j en 1 prise.",
+                reconstitution: "NA.",
+                dilution: "G5% ou NaCl 0,9%, max. 10 mg/mL.",
+                administration: "IVL en 30 minutes.",
+                remarques: "Objectifs : pic 60 à 80 mg/L, résiduelle inférieure à 1 mg/L. Incompatible avec les pénicillines et les héparines > 1 UI/mL.",
+                lien: "https://www.vidal.fr/medicaments/substances/gentamicine-1610.html",
+            },
+            {
+                isShown: false,
+                title: "Imipénème-Cilastine (Tienam®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "60 à 100 mg/kg/j en 4 prises sans dépasser 4 g/j.",
+                reconstitution: "G5% ou NaCl 0,9%, 25 mg/mL.",
+                dilution: "G5% ou NaCl 0,9%, 5 mg/mL, max. 7 mg/mL si restriction hydrique, stable 4h.",
+                administration: "IVL en 30 minutes, 60 minutes au delà de 500 mg.",
+                remarques: "Posologies et concentrations exprimées en dose d'Imipgène. Contre indique chez l'insuffisant rénale. Compatible avec la nutrition parentérale.",
+                lien: "https://www.vidal.fr/medicaments/gammes/tienam-10335.html",
+            },
+            {
+                isShown: false,
+                title: "Lévofloxacine (Tavanic®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "20 mg/kg/j de 6 mois à 5 ans, en 2 prises. 10 mg/kg/j au delà de 5 ans, en 1 prise, sans dépasser 1g/j.",
+                reconstitution: "",
+                dilution: "",
+                administration: "IVL en 60 minutes.",
+                remarques: "Incompatible avec les bicarbonates et les héparines. Privilégier la voie orale : la biodisponibilité est identique.",
+                lien: "https://www.vidal.fr/medicaments/gammes/tavanic-17333.html",
+            },
+            {
+                isShown: false,
+                title: "Méropénème (Meronem®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "60 à 120 mg/kg/j en 3 prises ou en continu, sans dépasser 6 g/j.",
+                reconstitution: "EPPI ou NaCl 0,9%, 50 mg/mL.",
+                dilution: "NaCl 0,9% (stable 8h) ou G5% (stable 2h), 1 à 20 mg/mL.",
+                administration: "IVL en 30 minutes.",
+                remarques: "Compatible avec la nutrition parentérale.",
+                lien: "https://www.vidal.fr/medicaments/meronem-1-g-pdre-p-sol-inj-p-perf-10764.html",
+            },
+            {
+                isShown: false,
+                title: "Métronidazole (Flagyl®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "30 mg/kg/j en 3 à 4 prises, sans dépasser 4 g/j.",
+                reconstitution: "NA.",
+                dilution: "NA.",
+                administration: "IVL en 30 minutes.",
+                remarques: "Compatible avec la nutrition parentérale.",
+                lien: "https://www.vidal.fr/medicaments/gammes/flagyl-3734.html",
+            },
+            {
+                isShown: false,
+                title: "Pipéracilline-Tazobactam (Tazocilline®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "300 mg/kg/j, en 3 à 4 prises ou en continu, sans dépasser 16 g/j.",
+                reconstitution: "EPPI, G5% ou NaCl 0,9%, 200 mg/mL.",
+                dilution: "G5 ou NaCl 0,9%, 20 à 80 mg/mL, stable 24h.",
+                administration: "IVL en 30 minutes.",
+                remarques: "Posologies et concentrations exprimées en pipéracilline. Incompatible avec les aminosides et les bicarbonates. Compatible avec la nutrition parentérale.",
+                lien: "https://www.vidal.fr/medicaments/tazocilline-2-g-0-25-g-pdre-p-sol-p-perf-127614.html",
+            },
+            {
+                isShown: false,
+                title: "Rifampicine (Rifadine®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "10 à 30 mg/kg/j en 1 prise (tuberculose) ou 2 prises (autres indications), sans dépasser 1,2 g/j.",
+                reconstitution: "EPPI 60 mg/mL.",
+                dilution: "G5% ou NaCl 0,9%, usuel 2,4 mg/mL, ne pas dépasser 6 mg/mL, stable 6h.",
+                administration: "IVL en 30 minutes.",
+                remarques: "Incompatible avec la nutrition parentérale. Très agressif en cas d'extravasation. Inducteur enzymatique.",
+                lien: "https://www.vidal.fr/medicaments/gammes/rifadine-8827.html",
+            },
+            {
+                isShown: false,
+                title: "Ticarcilline-Acide Clavulanique (Claventin®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "225 à 300 mg/kg/j en 3 à 4 prises, sans dépasser 18 g/j.",
+                reconstitution: "EPPI ou NaCl 0,9%.",
+                dilution: "G5% ou NaCl 0,9%, 30 à 50 mg/mL, stable 6h.",
+                administration: "IVL sur 30 minutes.",
+                remarques: "Posologies et concentrations exprimées en ticarcilline. Max 5 mg/kg/prise et 20 mg/kg/j d'acide clavulanique. Incompatible avec les aminosideS, bicarbonates et la nutrition parentérale. Teneur en sodium 5,2 mEq/g et teneur en potassium 0,33 mEq/g. ",
+                lien: "https://www.vidal.fr/medicaments/substances/ticarcilline-3998.html",
+            },
+            {
+                isShown: false,
+                title: "Triméthoprime-Sulfaméthoxazole (Bactrim®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "30 à 60 mg/kg/j en 2 prises (curatif pneumocystis carinii : 100 mg/kg/j en 3 prises).",
+                reconstitution: "",
+                dilution: "G5% ou NaCl 0,9% 3,2 mg/mL (stable 6h), max. 8 mg/mL si restriction hydrique (stable 1h).",
+                administration: "IVL sur 60 minutes.",
+                remarques: "Posologies et concentrations exprimées en Sulfaméthoxazole. Peut être administré pur sur VVC. Incompatible avec la nutrition parentérale.",
+                lien: "https://www.vidal.fr/medicaments/gammes/bactrim-897.html",
+            },
+            {
+                isShown: false,
+                title: "Vancomycine (Vancocine®)",
+                AMM: "",
+                indication: "",
+                classeMed: "",
+                voieAdmin: "",
+                presentation: "",
+                posologie: "40 à 60 mg/kg/j en 4 prises ou en continu.",
+                reconstitution: "EPPI 50 mg/mL.",
+                dilution: "G5% ou NaCl 0,9%, ne pas dépasser 10 mg/mL, stable 24h.",
+                administration: "IVL en 60 minutes ou IVSE.",
+                remarques: "Objectif : T0 20-25 mg/mL. Ralentir la perfusion en cas de réaction cutanée (Redman Syndrome). Compatible avec la nutrition parentérale, les lipides IV et l'héparine < 1 UI/mL.",
+                lien: "https://www.vidal.fr/medicaments/substances/vancomycine-6898.html",
+            },
+        ];
+    }
+    ServiceDataProvider.prototype.orderCards = function () {
+        var sorted = this.cards.sort(function (a, b) { return a.title > b.title ? 1 : -1; });
+        var grouped = sorted.reduce(function (groups, card) {
+            var letter = card.title.charAt(0);
+            groups[letter] = groups[letter] || [];
+            groups[letter].push(card);
+            return groups;
+        }, {});
+        var result = Object.keys(grouped).map(function (key) { return ({ key: key, cards: grouped[key] }); });
+    };
+    ;
+    ServiceDataProvider.prototype.filterTitles = function (searchTerm) {
+        return this.cards.filter(function (item) {
+            return item.title
+                .toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+        });
+    };
+    ServiceDataProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], ServiceDataProvider);
+    return ServiceDataProvider;
+}());
+
+;
+//# sourceMappingURL=liste_medicaments.js.map
+
+/***/ }),
+
 /***/ 503:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4472,7 +5285,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser_ngx__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(501);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(502);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_service_data_liste_medicaments__ = __webpack_require__(841);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_service_data_liste_medicaments__ = __webpack_require__(461);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_accueil_accueil__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_options_options__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_plateau_induction_plateau_induction__ = __webpack_require__(118);
@@ -4482,17 +5295,17 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_urgence_urgence__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_loco_regionale_loco_regionale__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_medicaments_medicaments__ = __webpack_require__(840);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_medicaments_medicaments__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_protocoles_protocoles__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_recommandations_recommandations__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_recommandations_recommandations__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_monitorage_monitorage__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_courbes_courbes__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(457);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_scores_scores__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_info_info__ = __webpack_require__(461);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_scoliose_scoliose__ = __webpack_require__(459);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_sauvegarde_patient_sauvegarde_patient__ = __webpack_require__(460);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_info_info__ = __webpack_require__(460);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_scoliose_scoliose__ = __webpack_require__(458);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_sauvegarde_patient_sauvegarde_patient__ = __webpack_require__(459);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_main_main__ = __webpack_require__(169);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4934,7 +5747,7 @@ webpackContext.id = 531;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(457);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__scores_scores__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__protocoles_protocoles__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__sauvegarde_patient_sauvegarde_patient__ = __webpack_require__(460);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__sauvegarde_patient_sauvegarde_patient__ = __webpack_require__(459);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5745,7 +6558,7 @@ var AccueilPage = /** @class */ (function () {
     ], AccueilPage.prototype, "nav", void 0);
     AccueilPage = AccueilPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-accueil',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/'<ion-content>\n  <div *ngIf="!Prenom" class="titleHome">  \n    QUADRUPED</div> \n    <div *ngIf="Prenom" class="titleHome">  \n      {{Prenom}}</div> \n\n    <br>\n    <br>\n\n \n \n  <ion-card class="homePagePatient">\n    <ion-card-content>\n\n      <ion-toolbar  color="turquoise" class="musicContainer">\n        <ion-buttons>\n        <ion-icon color="dark-turquoise" name="musical-notes"></ion-icon>    \n        <br>\n          <button (click)="selectMusic()" ion-button class="musicSelector" color="turquoise-fonce">{{MorceauChoisi}}</button><br>\n          <button  *ngIf="!musicPlaying" color="dark-turquoise" ion-button (click)="playMusic()"><ion-icon name="play"></ion-icon></button>\n        <button  *ngIf="musicPlaying" color="dark-turquoise" ion-button (click)="stopMusic()"><ion-icon name="pause"></ion-icon></button> \n      </ion-buttons>\n      </ion-toolbar>\n\n      <ion-toolbar  color="turquoise" class="timerContainer">\n        <ion-buttons >    \n          <ion-icon color="dark-turquoise" name="stopwatch"></ion-icon>    \n          <br>\n          <p text-center class="timerTime">\n          {{time}}\n          </p>\n      <button  *ngIf="!running" color="dark-turquoise" ion-button (click)="start()"><ion-icon name="play"></ion-icon></button>\n      <button  *ngIf="running" color="dark-turquoise" ion-button (click)="stop()"><ion-icon name="pause"></ion-icon></button>         \n      <button ion-button (click)="reset()"><ion-icon color="dark-turquoise" name="refresh-circle"></ion-icon></button>\n    </ion-buttons>\n  </ion-toolbar>\n\n    <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient"> \n    \n    <br>\n\n      <ion-toolbar class="HomeButtonContainer">\n        <ion-buttons>\n          <span class="comment" *ngIf = "!PoidsNum || !AgeNum || !Taille">Ouvrir un dossier ou les données relatives au patient :<br></span>\n          <span class="comment" *ngIf = "PoidsNum && AgeNum && Taille">Choisir parmi les modules accessibles<br></span>\n\n         <!-- <button  class="SexeToggle">\n            <ion-segment color="turquoise-fonce" [(ngModel)]="sexeMF" (ionChange)="SetSexe()">\n              <ion-segment-button value="Fille">\n                <ion-icon class="segmentIcon" name="female"></ion-icon>\n              </ion-segment-button>\n              <ion-segment-button value="Garçon">\n                <ion-icon class="segmentIcon" name="male"></ion-icon>\n              </ion-segment-button>\n            </ion-segment>\n          </button>\n          &nbsp;-->\n\n\n          <button *ngIf = "sexeMF == \'Fille\'" ion-button small color="dark-turquoise"><ion-icon name="female"></ion-icon></button>\n          <button *ngIf = "sexeMF != \'Fille\'" ion-button small color="grisclair"  (click)="SetSexeFille()"><ion-icon name="female"></ion-icon></button>\n          <button *ngIf = "sexeMF == \'Garçon\'" ion-button small color="dark-turquoise"  ><ion-icon name="male"></ion-icon></button>\n          <button *ngIf = "sexeMF != \'Garçon\'" ion-button small color="grisclair"  (click)="SetSexeGarcon()"><ion-icon name="male"></ion-icon></button>\n\n          <button solid *ngIf = "!this.AgeNum" color="dark-turquoise" ion-button  (click)="showPickerAge()">Age </button>\n          <button *ngIf = "this.AgeNum > 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{ageLecture}} ans </button>\n          <button *ngIf = "this.AgeNum > 0 && this.AgeNum <= 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{AgeNum}} mois</button>\n         \n          <button solid *ngIf = " !this.PoidsNum " color="dark-turquoise" ion-button  (click)="showPickerPoids()">Poids</button>\n          <button *ngIf = " this.PoidsNum " color="dark-turquoise" ion-button  (click)="showPickerPoids()">{{PoidsNum}} kg</button>\n         \n          <button solid *ngIf = " !Taille " color="turquoise-fonce" ion-button  (click)="showPickerTaille()">Taille</button>\n          <button *ngIf = " Taille " color="turquoise-fonce" ion-button  (click)="showPickerTaille()">{{Taille}} cm</button>\n\n          <button ion-button small color="dark-turquoise"  (click)="displayOptions()"><ion-icon name="options"></ion-icon></button>\n          <br> \n    </ion-buttons>\n    </ion-toolbar>\n\n\n\n  </ion-card-content>\n</ion-card>\n\n<div class="monPatient">\n<b>Options : </b> <span *ngIf=" this.EstomacOuiNon">Estomac {{EstomacOuiNon}}</span> <span *ngIf="this.DureeJeune"> - Jeûne {{DureeJeune}} h</span><span *ngIf="this.Allergie"> - Allergie : {{Allergie}}</span>\n</div>\n\n<hr>\n\n<div class="actionButtonsContainer">\n  <button ion-button color="primary"  (click)="openSauvegarde()"> <ion-icon name="filing"></ion-icon></button>\n  &nbsp;  &nbsp;  &nbsp; \n  <button ion-button  small color="primary"  (click)="enregistrer()"><ion-icon name="archive"></ion-icon></button>\n&nbsp;\n\n<button ion-button  small color="dark-turquoise"  (click)="help()"><ion-icon name="information-circle"></ion-icon></button>\n&nbsp;\n<button ion-button   small color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>\n<hr>\n</div>   \n\n  <button class="homeButtons" outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button round  color="light" (click)="alertPoidsAge()"><ion-icon name="clipboard"></ion-icon> &nbsp; &nbsp;Urgences</button>\n  <button class="homeButtons" *ngIf = " this.PoidsNum && this.AgeNum " ion-button round color="warning" (click)="displayUrgences()"><ion-icon name="clipboard"></ion-icon> &nbsp; &nbsp;Urgences</button>\n  <button class="homeButtons"  *ngIf = "PoidsNum && AgeNum && Taille"  ion-button round color="pastel-brown"  (click)="displayCourbes()"><ion-icon name="trending-up"></ion-icon> &nbsp; &nbsp;\n    Croissance</button>\n  <button class="homeButtons" outline *ngIf = "!PoidsNum || !AgeNum || !Taille" ion-button round color="light"  (click)="alertAgePoidsTaille()"><ion-icon name="trending-up"></ion-icon> &nbsp; &nbsp;\n    Croissance</button>\n\n    \n          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="pulse"></ion-icon> &nbsp; &nbsp; Monitorage</button>\n          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="moon"></ion-icon> &nbsp; &nbsp; Induction </button>\n          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"> <ion-icon name="analytics"></ion-icon> &nbsp; &nbsp; Voies Aériennes </button>\n          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="umbrella"></ion-icon> &nbsp; &nbsp; Antibiotiques </button>\n          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="cloudy-night"></ion-icon> &nbsp; &nbsp; Entretien </button> \n    \n          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="water"></ion-icon> &nbsp; &nbsp; Apports & PSL</button>\n          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"> <ion-icon name="pin"></ion-icon> &nbsp; &nbsp;Loco-régionale</button>\n          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="alarm"></ion-icon> &nbsp; &nbsp;Réveil & SSPI</button>\n\n    \n          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayMonitorage()"><ion-icon color="dark-turquoise" name="pulse"></ion-icon> &nbsp; &nbsp; Monitorage</button>\n          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayInduction()"><ion-icon color="dark-turquoise" name="moon"></ion-icon> &nbsp; &nbsp; Induction </button>\n          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayVAS()"> <ion-icon color="dark-turquoise" name="analytics"></ion-icon> &nbsp; &nbsp; Voies Aériennes </button>\n          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayATBprophylaxie()"><ion-icon color="dark-turquoise"  name="umbrella"></ion-icon> &nbsp; &nbsp; Antibiotiques </button>\n          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayEntretien()"><ion-icon color="dark-turquoise" name="cloudy-night"></ion-icon> &nbsp; &nbsp; Entretien </button> \n    \n          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayGestionFluides()"><ion-icon color="dark-turquoise" name="water"></ion-icon> &nbsp; &nbsp;Apports & PSL</button>\n          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayALR()"> <ion-icon color="dark-turquoise" name="pin"></ion-icon> &nbsp; &nbsp;Loco-régionale</button>\n          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayPostop()"><ion-icon color="dark-turquoise" name="alarm"></ion-icon> &nbsp; &nbsp;Réveil & SSPI</button>\n\n      </ion-content>\n\n  \n\n\n  \n \n\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/,
+            selector: 'page-accueil',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/'<ion-content>\n  <div *ngIf="!Prenom" class="titleHome">  \n    QUADRUPED</div> \n    <div *ngIf="Prenom" class="titleHome">  \n      {{Prenom}}</div> \n\n    <br>\n    <br>\n\n \n \n  <ion-card class="homePagePatient">\n    <ion-card-content>\n\n      <ion-toolbar  color="turquoise" class="musicContainer">\n        <ion-buttons>\n        <ion-icon color="dark-turquoise" name="musical-notes"></ion-icon>    \n        <br>\n          <button (click)="selectMusic()" ion-button class="musicSelector" color="turquoise-fonce">{{MorceauChoisi}}</button><br>\n          <button  *ngIf="!musicPlaying" color="dark-turquoise" ion-button (click)="playMusic()"><ion-icon name="play"></ion-icon></button>\n        <button  *ngIf="musicPlaying" color="dark-turquoise" ion-button (click)="stopMusic()"><ion-icon name="pause"></ion-icon></button> \n      </ion-buttons>\n      </ion-toolbar>\n\n      <ion-toolbar  color="turquoise" class="timerContainer">\n        <ion-buttons >    \n          <ion-icon color="dark-turquoise" name="stopwatch"></ion-icon>    \n          <br>\n          <p text-center class="timerTime">\n          {{time}}\n          </p>\n      <button  *ngIf="!running" color="dark-turquoise" ion-button (click)="start()"><ion-icon name="play"></ion-icon></button>\n      <button  *ngIf="running" color="dark-turquoise" ion-button (click)="stop()"><ion-icon name="pause"></ion-icon></button>         \n      <button ion-button (click)="reset()"><ion-icon color="dark-turquoise" name="refresh-circle"></ion-icon></button>\n    </ion-buttons>\n  </ion-toolbar>\n\n    <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient"> \n    \n    <br>\n\n      <ion-toolbar class="HomeButtonContainer">\n        <ion-buttons>\n          <span class="comment" *ngIf = "!PoidsNum || !AgeNum || !Taille">Ouvrir un dossier ou les données relatives au patient :<br></span>\n          <span class="comment" *ngIf = "PoidsNum && AgeNum && Taille">Choisir parmi les modules accessibles<br></span>\n\n         <!-- <button  class="SexeToggle">\n            <ion-segment color="turquoise-fonce" [(ngModel)]="sexeMF" (ionChange)="SetSexe()">\n              <ion-segment-button value="Fille">\n                <ion-icon class="segmentIcon" name="female"></ion-icon>\n              </ion-segment-button>\n              <ion-segment-button value="Garçon">\n                <ion-icon class="segmentIcon" name="male"></ion-icon>\n              </ion-segment-button>\n            </ion-segment>\n          </button>\n          &nbsp;-->\n\n\n          <button *ngIf = "sexeMF == \'Fille\'" ion-button small color="dark-turquoise"><ion-icon name="female"></ion-icon></button>\n          <button *ngIf = "sexeMF != \'Fille\'" ion-button small color="grisclair"  (click)="SetSexeFille()"><ion-icon name="female"></ion-icon></button>\n          <button *ngIf = "sexeMF == \'Garçon\'" ion-button small color="dark-turquoise"  ><ion-icon name="male"></ion-icon></button>\n          <button *ngIf = "sexeMF != \'Garçon\'" ion-button small color="grisclair"  (click)="SetSexeGarcon()"><ion-icon name="male"></ion-icon></button>\n\n          <button solid *ngIf = "!this.AgeNum" color="dark-turquoise" ion-button  (click)="showPickerAge()">Age </button>\n          <button *ngIf = "this.AgeNum > 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{ageLecture}} ans </button>\n          <button *ngIf = "this.AgeNum > 0 && this.AgeNum <= 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{AgeNum}} mois</button>\n         \n          <button solid *ngIf = " !this.PoidsNum " color="dark-turquoise" ion-button  (click)="showPickerPoids()">Poids</button>\n          <button *ngIf = " this.PoidsNum " color="dark-turquoise" ion-button  (click)="showPickerPoids()">{{PoidsNum}} kg</button>\n         \n          <button solid *ngIf = " !Taille " color="turquoise-fonce" ion-button  (click)="showPickerTaille()">Taille</button>\n          <button *ngIf = " Taille " color="turquoise-fonce" ion-button  (click)="showPickerTaille()">{{Taille}} cm</button>\n\n          <button ion-button small color="dark-turquoise"  (click)="displayOptions()"><ion-icon name="options"></ion-icon></button>\n          <br> \n    </ion-buttons>\n    </ion-toolbar>\n\n\n\n  </ion-card-content>\n</ion-card>\n\n<div class="monPatient">\n<b>Options : </b> <span *ngIf=" this.EstomacOuiNon">Estomac {{EstomacOuiNon}}</span> <span *ngIf="this.DureeJeune"> - Jeûne {{DureeJeune}} h</span><span *ngIf="this.Allergie"> - Allergie : {{Allergie}}</span>\n</div>\n\n<hr>\n\n<div class="actionButtonsContainer">\n  <button ion-button color="primary"  (click)="openSauvegarde()"> <ion-icon name="filing"></ion-icon></button>\n  &nbsp;  &nbsp;  &nbsp; \n  <button ion-button  small color="primary"  (click)="enregistrer()"><ion-icon name="archive"></ion-icon></button>\n&nbsp;\n\n<button ion-button  small color="dark-turquoise"  (click)="help()"><ion-icon name="information-circle"></ion-icon></button>\n&nbsp;\n<button ion-button   small color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>\n<hr>\n</div>   \n\n  <button class="homeButtons" outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button round  color="light" (click)="alertPoidsAge()"><ion-icon name="medkit"></ion-icon> &nbsp; &nbsp;Urgences</button>\n  <button class="homeButtons" *ngIf = " this.PoidsNum && this.AgeNum " ion-button round color="warning" (click)="displayUrgences()"><ion-icon name="medkit"></ion-icon> &nbsp; &nbsp;Urgences</button>\n  <button class="homeButtons"  *ngIf = "PoidsNum && AgeNum && Taille"  ion-button round color="pastel-brown"  (click)="displayCourbes()"><ion-icon name="trending-up"></ion-icon> &nbsp; &nbsp;\n    Croissance</button>\n  <button class="homeButtons" outline *ngIf = "!PoidsNum || !AgeNum || !Taille" ion-button round color="light"  (click)="alertAgePoidsTaille()"><ion-icon name="trending-up"></ion-icon> &nbsp; &nbsp;\n    Croissance</button>\n\n    \n          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="pulse"></ion-icon> &nbsp; &nbsp; Monitorage</button>\n          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="moon"></ion-icon> &nbsp; &nbsp; Induction </button>\n          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"> <ion-icon name="analytics"></ion-icon> &nbsp; &nbsp; Voies Aériennes </button>\n          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="clipboard"></ion-icon> &nbsp; &nbsp; Antibiotiques </button>\n          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="cloudy-night"></ion-icon> &nbsp; &nbsp; Entretien </button> \n    \n          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="water"></ion-icon> &nbsp; &nbsp; Apports & PSL</button>\n          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"> <ion-icon name="pin"></ion-icon> &nbsp; &nbsp;Loco-régionale</button>\n          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="alarm"></ion-icon> &nbsp; &nbsp;Réveil & SSPI</button>\n\n    \n          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayMonitorage()"><ion-icon color="dark-turquoise" name="pulse"></ion-icon> &nbsp; &nbsp; Monitorage</button>\n          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayInduction()"><ion-icon color="dark-turquoise" name="moon"></ion-icon> &nbsp; &nbsp; Induction </button>\n          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayVAS()"> <ion-icon color="dark-turquoise" name="analytics"></ion-icon> &nbsp; &nbsp; Voies Aériennes </button>\n          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayATBprophylaxie()"><ion-icon color="dark-turquoise"  name="clipboard"></ion-icon> &nbsp; &nbsp; Antibiotiques </button>\n          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayEntretien()"><ion-icon color="dark-turquoise" name="cloudy-night"></ion-icon> &nbsp; &nbsp; Entretien </button> \n    \n          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayGestionFluides()"><ion-icon color="dark-turquoise" name="water"></ion-icon> &nbsp; &nbsp;Apports & PSL</button>\n          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayALR()"> <ion-icon color="dark-turquoise" name="pin"></ion-icon> &nbsp; &nbsp;Loco-régionale</button>\n          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayPostop()"><ion-icon color="dark-turquoise" name="alarm"></ion-icon> &nbsp; &nbsp;Réveil & SSPI</button>\n\n      </ion-content>\n\n  \n\n\n  \n \n\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */],
@@ -6216,12 +7029,12 @@ var ScoresPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_urgence_urgence__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_pre_medication_pre_medication__ = __webpack_require__(835);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_entretien_anesth_entretien_anesth__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_medicaments_medicaments__ = __webpack_require__(840);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_medicaments_medicaments__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_loco_regionale_loco_regionale__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_monitorage_monitorage__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_protocoles_protocoles__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_recommandations_recommandations__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_recommandations_recommandations__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_status_bar__ = __webpack_require__(501);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_splash_screen__ = __webpack_require__(502);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_courbes_courbes__ = __webpack_require__(127);
@@ -6466,494 +7279,6 @@ var PreMedicationPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 840:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MedicamentsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_medicaments__ = __webpack_require__(841);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__ = __webpack_require__(382);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var MedicamentsPage = /** @class */ (function () {
-    function MedicamentsPage(navCtrl, navParams, storage, alertController, dataService) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.storage = storage;
-        this.alertController = alertController;
-        this.dataService = dataService;
-        this.searchTerm = "";
-        this.isShownCard = false;
-    }
-    MedicamentsPage.prototype.ngOnInit = function () {
-        this.setFilteredItems();
-    };
-    ;
-    MedicamentsPage.prototype.setFilteredItems = function () {
-        this.cards = this.dataService.filterTitles(this.searchTerm);
-    };
-    ;
-    MedicamentsPage.prototype.displayMedicament = function (index) {
-        this.cards[index].isShown = !this.cards[index].isShown;
-    };
-    ;
-    MedicamentsPage.prototype.openVidal = function (index) {
-        window.open(this.cards[index].lien, '_system');
-    };
-    MedicamentsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-medicaments',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\medicaments\medicaments.html"*/'<ion-content>\n\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    </div> Médicaments </div>\n      <br>\n      <div padding>Les posologies proposées sont envisagées pour la <b>pédiatrie</b> uniquement.</div>\n      <div padding>Légende : \n      <ion-chip class="indicationChip">\n        <ion-label>Indication</ion-label>\n      </ion-chip>\n      <ion-chip class="classeMedicamenteuseChip">\n        <ion-label>Classe</ion-label>\n      </ion-chip>\n      <ion-chip class="voieAdminChip">\n        <ion-label>Voie</ion-label>\n      </ion-chip> \n      <ion-chip class="AMMChip">\n        <ion-label>AMM</ion-label>\n      </ion-chip>\n    \n    </div>\n \n\n      <ion-searchbar\n      [(ngModel)]="searchTerm"\n      (ionChange)="setFilteredItems()"\n    ></ion-searchbar>\n\n  <ion-list>\n    <ion-card class="medicamentContainer" *ngFor="let card of cards, let index = index" [attr.data-index]="index">\n      \n      <div padding (click)="displayMedicament(index)">\n      <img class="logoVidal" (click)="openVidal(index)" src="/assets/imgs/logo-vidal.png">\n     {{card.title}}\n      </div>\n      \n      \n\n      <ion-card-content class="medicamentsubContainer" *ngIf="card.isShown">\n\n        <div class="commentMedicament">\n\n          <ion-chip *ngIf="card.indication" class="indicationChip">\n            <ion-label>{{card.indication}}</ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="card.classeMed" class="classeMedicamenteuseChip">\n            <ion-label>{{card.classeMed}}</ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="card.voieAdmin" class="voieAdminChip">\n            <ion-label>{{card.voieAdmin}}</ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="card.AMM" class="AMMChip">\n            <ion-label>{{card.AMM}}</ion-label>\n          </ion-chip>\n\n        </div>\n\n        <div class="presentationMedicament">\n          <ul>\n            <li *ngIf="card.presentation">{{card.presentation}}</li>\n            <li *ngIf="card.posologie">{{card.posologie}}</li>\n    \n          </ul>\n        </div>\n      \n\n        <div class="commentMedicament">\n          <ul>\n            <li *ngIf="card.reconstitution">Reconstitution : {{card.reconstitution}}</li>\n\n            <li *ngIf="card.dilution">Dilution : {{card.dilution}}</li>\n\n            <li *ngIf="card.administration">Administration : {{card.administration}}</li>\n\n            <li *ngIf="card.remarques">Remarques : {{card.remarques}}</li>\n          </ul>\n        </div>\n        \n      </ion-card-content>\n\n    </ion-card>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\medicaments\medicaments.html"*/,
-        }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_medicaments__["a" /* ServiceDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_medicaments__["a" /* ServiceDataProvider */]) === "function" && _e || Object])
-    ], MedicamentsPage);
-    return MedicamentsPage;
-    var _a, _b, _c, _d, _e;
-}());
-
-;
-//# sourceMappingURL=medicaments.js.map
-
-/***/ }),
-
-/***/ 841:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ServiceDataProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-/*
-  Generated class for the ServiceDataProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
-var ServiceDataProvider = /** @class */ (function () {
-    function ServiceDataProvider() {
-        this.cards = [];
-        this.cards = [
-            {
-                isShown: false,
-                title: "Aciclovir (Zovirax®)",
-                AMM: "",
-                indication: "Antiviral",
-                classeMed: "Anti-HHV",
-                voieAdmin: "IVL",
-                presentation: "ZOVIRAX 250 mg pdre p sol inj IV",
-                posologie: "30 à 60 mg/kg/j en 3 prises.",
-                reconstitution: "avec EPPI ou NaCl 0,9%, 25 mg/mL.",
-                dilution: "NaCl 0,9%, max. 7 mg/mL sur VVP, 25 mg/mL sur VVC.",
-                administration: "IVL sur 60 minutes.",
-                remarques: "Incompatible avec la nutrition parentérale et la ceftazidime."
-            },
-            {
-                isShown: false,
-                title: "Amikacine (Amiklin®)",
-                AMM: "",
-                indication: "Antibiothérapie",
-                classeMed: "Aminoside",
-                voieAdmin: "IVL",
-                presentation: "Amikacine 2,5 à 10 mg/mL sol p perf",
-                posologie: "15 à 30 mg/kg/j en 1 prise.",
-                reconstitution: "",
-                dilution: "si besoin, avec EPPI, 125 mg/mL.",
-                administration: "IV en 30 minutes.",
-                remarques: "Objectif : pic 60 à 80 mg/L ; résiduelle inférieure à 4 mg/L. Utiliser une ligne dédiée, ne pas mélanger avec béta-lactamines, héparines, dexaméthasone.",
-                lien: "https://www.vidal.fr/medicaments/substances/amikacine-6676.html",
-            },
-            {
-                isShown: false,
-                title: "Amoxicilline (Clamoxyl®)",
-                AMM: "",
-                indication: "Antibiothérapie",
-                classeMed: "β-lactamine",
-                voieAdmin: "IVL",
-                presentation: "",
-                posologie: "100 à 200 mg/kg/j en 3 à 4 prises.",
-                reconstitution: "Avec EPPI, 50 mg/mL.",
-                dilution: "NaCl 0,9% (stable 6h) ou G5% (stable 1h), sans dépasser 100 mg/mL",
-                administration: "IVL en 30 à 60 minutes.",
-                remarques: "Ne pas mélanger avec les aminosides. Compatible en Y avec la nutrition parentérale."
-            },
-            {
-                isShown: false,
-                title: "Amoxicilline + Acide Clavulanique (Augmentin®)",
-                AMM: "",
-                indication: "Antibiothérapie",
-                classeMed: "β-lactamine",
-                voieAdmin: "IVL",
-                presentation: "",
-                posologie: "Avant 3 mois ou 4kg, 100 mg/kg/j en 2 prises. > 3 mois mais < 40 kg, 150 mg/kg/j en 3 prises. Ensuite, posologies adulte.",
-                reconstitution: "EPPI ou NaCl 0,9%, 50 mg/mL.", dilution: "NaCl 0,9% (stable 1h) ou G5% (stable 30 minutes).",
-                administration: "IVL en 30 à 40 minutes. Jamais en moins de 5 minutes avant 3 mois.",
-                remarques: "Attention, posologies et concentrations exprimées en Amoxicilline, veiller à ne pas dépasser la dose d'acide clavulanique maximale de 20 mg/kg/j. Incompatible avec les aminosides. Compatible en Y avec l'alimentation parentérale."
-            },
-            {
-                isShown: false,
-                title: "Amphotéricine B liposomale (Ambisome®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "3 mg/kg/j en 1 prise.",
-                reconstitution: "Flacon de 50 mg avec 12 mL d'EPPI pour obtenir une solution-mère à 4 mg/mL.",
-                dilution: "Dans du G5% - jamais dans du NaCl 0,9%. Entre 0,2 et 2 mg/mL. Utiliser le filtre de 5 µm pour mettre la solution reconstituée dans le G5% de dilution.",
-                administration: "IV en 30 à 60 minutes.", remarques: "Filtre à 5 µm livré dans l'emballage, à utiliser pour rettenir d'éventuels agglomérats de liposomes qui se seraient formés pendant la reconstitution, en cas d'agitation insuffisante. Attention, incompatible avec le NaCl, les électrolytes et la nutrition parentérale."
-            },
-            {
-                isShown: false,
-                title: "Caspofungine (Cancidas®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "70 mg/m²/j à J1, puis 50 mg/m²/j, en 1 prise.",
-                reconstitution: "Flacon de 50 mg avec 10,5 mL d'EPPI pour obtenir une solution mère à 5,2 mg/mL ou flacon de 70 mg avec 10,5 mL d'EPPI pour obtenir une solution-mère à 7,6 mg/mL.",
-                dilution: "NaCl 0,9% (jamais dans du G5%). Max 0,5 mg/mL. Utiliser pur non dilué si restriction hydrique et VVC.",
-                administration: "IVL en 60 minutes",
-                remarques: "Incompatible avec le glucose, la nutrition parentérale et l'héparine."
-            },
-            {
-                isShown: false,
-                title: "Céfamandole (Céfamandole®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "150 mg/kg/j en 3 à 6 prises, max. 6 g/j",
-                reconstitution: "Flacon de 750 mg avec 10 mL d'EPPI, de G5% ou de NaCl 0,9%.",
-                dilution: "Si besoin dans EPPI, NaCl 0,9% ou G5%, pas de concentration cible.",
-                administration: "IVL en 30 minutes.",
-                remarques: "RAS."
-            },
-            {
-                isShown: false,
-                title: "Céfépime (Axepim®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "150 mg/kg/j en 3 prises, max 6 g/j",
-                reconstitution: "EPPI, G5% ou NaCl 0,9%, 100 à 200 mg/mL.",
-                dilution: "Dans G5% ou NaCl 0,9%.",
-                administration: "IVL en 30 minutes. ",
-                remarques: "RAS."
-            },
-            {
-                isShown: false,
-                title: "Céfotaxime (Claforan®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "100 à 200 mg/kg/j, 300 mg/kg/j dans les infections méningées, en 3 à 4 prises, sans dépasser 24g/j.",
-                reconstitution: "EPPI 10 mL.",
-                dilution: "G5% ou NaCl 0,9%, 10 à 50 mg/mL, ne pas dépasser 150 mg/mL pour l'administration IV.",
-                administration: "IVL en 20 à 60 minutes.",
-                remarques: "Risque d'arythmie cardiaque en cas d'administration intraveineuse rapide sur cathéter veineux central."
-            },
-            {
-                isShown: false,
-                title: "Ceftazidime (Fortum®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "50 à 200 mg/kg/j en 3 prises ou en continu, sans dépasser 6 g/j.",
-                reconstitution: "G5% ou NaCl 0,9%, 10mL.",
-                dilution: "G5% ou NaCl 0,9%, stable 18h si concentration < 40 mg/mL, ne pas dépasser 180 mg/mL de concentration en cas de restriction hydrique.",
-                administration: "IVL sur 30 minutes ou IVSE continue.",
-                remarques: "Incompatible avec le bicarbonate, l'aciclovir et le ganciclovir."
-            },
-            {
-                isShown: false,
-                title: "Ceftriaxone (Rocéphine®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "50 à 100 mg/kg/j en 1 prise, sans dépasser 4g/j.",
-                reconstitution: "EPPI, G5% ou NaCl 0,9%, 100 mg/mL.",
-                dilution: "G5% ou NaCl 0,9%, 10 à 40 mg/mL.",
-                administration: "IVL sur 30 minutes.",
-                remarques: "Incompatible avec le calcium, la vancomycine, le fluconazole, les aminosides, la nutrition parentérale. Contre indiqué avant 28j et en cas d'administration de calcium IV associée. Coloration jaune normale."
-            },
-            {
-                isShown: false,
-                title: "Ciprofloxacine (Ciflox®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "20 à 30 mg/kg/j - 45 mg/kg/j chez le drépanocytaire - en 2 à 3 prises, sans dépasser 1,2 g/j.",
-                reconstitution: "",
-                dilution: "",
-                administration: "IVL sur 60 minutes.",
-                remarques: "Incompatible avec la nutrition parentérale, les pénicillines, les héparines, les solutions alcalines. Privilégier la voie orale : la biodisponibilité est identique."
-            },
-            {
-                isShown: false,
-                title: "Clindamycine (Dalacine®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "30 à 40 mg/kg/j en 3 à 4 prises, sans dépasser 2,4 g/j.",
-                reconstitution: "NA.",
-                dilution: "G5% ou NaCl 0,9%, max. 18 mg/mL.",
-                administration: "IVL en 30 minutes, ne pas dépasser 20 mg/kg/h ou 30 mg/min.",
-                remarques: "Incompatible avec l'ampicilline, la phénytoïne, les barbituriques, l'aminophylline, le calcium, le magnésium, la ceftriaxone, la ciprofloxacine et la ranitidine."
-            },
-            {
-                isShown: false,
-                title: "Cloxacilline (Orbénine®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "100 à 200 mg/kg/j en 4 à 6 prises, max. 12 g/j.",
-                reconstitution: "EPPI, G5% ou NaCl 0,9%, 1g dans 16 mL.",
-                dilution: "G5% ou NaCl 0,9%, 10 mg/mL.",
-                administration: "IVL sur 60 minutes.",
-                remarques: "Incompatible avec la nutrition parentérale."
-            },
-            {
-                isShown: false,
-                title: "Fluconazole (Triflucan®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "3 à 12 mg/kg/j en 1 prise.",
-                reconstitution: "NA.",
-                dilution: "NA.",
-                administration: "IVL en 30 minutes, 120 minutes si > 6 mg/kg/j.",
-                remarques: "Inhibiteur enzymatique. Teneur en sodium significative à 0,155 mEq/mL."
-            },
-            {
-                isShown: false,
-                title: "Fosfomycine (Fosfocine®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "100 à 200 mg/kg/j en 2 à 4 prises, sans dépasser 16 g/j.",
-                reconstitution: "1g avec 10 mL d'EPPI. 4g avec 15 mL d'EPPI.",
-                dilution: "G5% ou NaCl 0,9%, max. 10 mg/mL.",
-                administration: "IVL en 60 minutes.",
-                remarques: "Apports en sodium significatifs à 14,3 mEq/g."
-            },
-            {
-                isShown: false,
-                title: "Gentamicine (Gentalline®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "5 à 8 mg/kg/j en 1 prise.",
-                reconstitution: "NA.",
-                dilution: "G5% ou NaCl 0,9%, max. 10 mg/mL.",
-                administration: "IVL en 30 minutes.",
-                remarques: "Objectifs : pic 60 à 80 mg/L, résiduelle inférieure à 1 mg/L. Incompatible avec les pénicillines et les héparines > 1 UI/mL."
-            },
-            {
-                isShown: false,
-                title: "Imipénème-Cilastine (Tienam®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "60 à 100 mg/kg/j en 4 prises sans dépasser 4 g/j.",
-                reconstitution: "G5% ou NaCl 0,9%, 25 mg/mL.",
-                dilution: "G5% ou NaCl 0,9%, 5 mg/mL, max. 7 mg/mL si restriction hydrique, stable 4h.",
-                administration: "IVL en 30 minutes, 60 minutes au delà de 500 mg.",
-                remarques: "Posologies et concentrations exprimées en dose d'Imipgène. Contre indique chez l'insuffisant rénale. Compatible avec la nutrition parentérale."
-            },
-            {
-                isShown: false,
-                title: "Lévofloxacine (Tavanic®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "20 mg/kg/j de 6 mois à 5 ans, en 2 prises. 10 mg/kg/j au delà de 5 ans, en 1 prise, sans dépasser 1g/j.",
-                reconstitution: "",
-                dilution: "",
-                administration: "IVL en 60 minutes.",
-                remarques: "Incompatible avec les bicarbonates et les héparines. Privilégier la voie orale : la biodisponibilité est identique."
-            },
-            {
-                isShown: false,
-                title: "Méropénème (Meronem®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "60 à 120 mg/kg/j en 3 prises ou en continu, sans dépasser 6 g/j.",
-                reconstitution: "EPPI ou NaCl 0,9%, 50 mg/mL.",
-                dilution: "NaCl 0,9% (stable 8h) ou G5% (stable 2h), 1 à 20 mg/mL.",
-                administration: "IVL en 30 minutes.",
-                remarques: "Compatible avec la nutrition parentérale."
-            },
-            {
-                isShown: false,
-                title: "Métronidazole (Flagyl®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "30 mg/kg/j en 3 à 4 prises, sans dépasser 4 g/j.",
-                reconstitution: "NA.",
-                dilution: "NA.",
-                administration: "IVL en 30 minutes.",
-                remarques: "Compatible avec la nutrition parentérale."
-            },
-            {
-                isShown: false,
-                title: "Pipéracilline-Tazobactam (Tazocilline®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "300 mg/kg/j, en 3 à 4 prises ou en continu, sans dépasser 16 g/j.",
-                reconstitution: "EPPI, G5% ou NaCl 0,9%, 200 mg/mL.",
-                dilution: "G5 ou NaCl 0,9%, 20 à 80 mg/mL, stable 24h.",
-                administration: "IVL en 30 minutes.",
-                remarques: "Posologies et concentrations exprimées en pipéracilline. Incompatible avec les aminosides et les bicarbonates. Compatible avec la nutrition parentérale."
-            },
-            {
-                isShown: false,
-                title: "Rifampicine (Rifadine®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "10 à 30 mg/kg/j en 1 prise (tuberculose) ou 2 prises (autres indications), sans dépasser 1,2 g/j.",
-                reconstitution: "EPPI 60 mg/mL.",
-                dilution: "G5% ou NaCl 0,9%, usuel 2,4 mg/mL, ne pas dépasser 6 mg/mL, stable 6h.",
-                administration: "IVL en 30 minutes.",
-                remarques: "Incompatible avec la nutrition parentérale. Très agressif en cas d'extravasation. Inducteur enzymatique."
-            },
-            {
-                isShown: false,
-                title: "Ticarcilline-Acide Clavulanique (Claventin®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "225 à 300 mg/kg/j en 3 à 4 prises, sans dépasser 18 g/j.",
-                reconstitution: "EPPI ou NaCl 0,9%.",
-                dilution: "G5% ou NaCl 0,9%, 30 à 50 mg/mL, stable 6h.",
-                administration: "IVL sur 30 minutes.",
-                remarques: "Posologies et concentrations exprimées en ticarcilline. Max 5 mg/kg/prise et 20 mg/kg/j d'acide clavulanique. Incompatible avec les aminosideS, bicarbonates et la nutrition parentérale. Teneur en sodium 5,2 mEq/g et teneur en potassium 0,33 mEq/g. "
-            },
-            {
-                isShown: false,
-                title: "Triméthoprime-Sulfaméthoxazole (Bactrim®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "30 à 60 mg/kg/j en 2 prises (curatif pneumocystis carinii : 100 mg/kg/j en 3 prises).",
-                reconstitution: "",
-                dilution: "G5% ou NaCl 0,9% 3,2 mg/mL (stable 6h), max. 8 mg/mL si restriction hydrique (stable 1h).",
-                administration: "IVL sur 60 minutes.",
-                remarques: "Posologies et concentrations exprimées en Sulfaméthoxazole. Peut être administré pur sur VVC. Incompatible avec la nutrition parentérale."
-            },
-            {
-                isShown: false,
-                title: "Vancomycine (Vancocine®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "40 à 60 mg/kg/j en 4 prises ou en continu.",
-                reconstitution: "EPPI 50 mg/mL.",
-                dilution: "G5% ou NaCl 0,9%, ne pas dépasser 10 mg/mL, stable 24h.",
-                administration: "IVL en 60 minutes ou IVSE.",
-                remarques: "Objectif : T0 20-25 mg/mL. Ralentir la perfusion en cas de réaction cutanée (Redman Syndrome). Compatible avec la nutrition parentérale, les lipides IV et l'héparine < 1 UI/mL."
-            },
-            {
-                isShown: false,
-                title: "Voriconazole (Vfend®)",
-                AMM: "",
-                indication: "",
-                classeMed: "",
-                voieAdmin: "",
-                presentation: "",
-                posologie: "2 à 12 ans et < 50 kg : 18 mg/kg/j à J1 puis 16 mg/kg/j. Après 12 ans et > 50 kg, 12 mg/kg/j à J1 puis 8 mg/kg/j. En 2 prises.",
-                reconstitution: "EPPI ou NaCl 0,9%, 19 mL pour obtenir 10 mg/mL.",
-                dilution: "G5% ou NaCl 0,9%, 0,5 à 5 mg/mL.",
-                administration: "IVL en 1 à 3h, sans dépasser 3 mg/kg/h.",
-                remarques: "Risque d'accumulation de l'excipient chez l'insuffisant rénal : préférer la forme orale chaque fois que possible. Incompatible avec la nutrition parentérale et les bicarbonates."
-            },
-        ];
-    }
-    ServiceDataProvider.prototype.filterTitles = function (searchTerm) {
-        return this.cards.filter(function (item) {
-            return item.title
-                .toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
-        });
-    };
-    ServiceDataProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [])
-    ], ServiceDataProvider);
-    return ServiceDataProvider;
-}());
-
-;
-//# sourceMappingURL=liste_medicaments.js.map
-
-/***/ }),
-
 /***/ 85:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -6961,8 +7286,8 @@ var ServiceDataProvider = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProtocolesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__scoliose_scoliose__ = __webpack_require__(459);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__scoliose_scoliose__ = __webpack_require__(458);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

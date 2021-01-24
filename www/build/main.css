@@ -88193,10 +88193,6 @@ ion-card {
   font-size: 12px !important;
 }
 
-.toggleATBCard {
-  float: right;
-}
-
 .medicamentContainer {
   text-align: left !important;
   -webkit-box-shadow: none;
@@ -88216,9 +88212,9 @@ ion-card {
 }
 
 .medicamentTitle {
-  font-size: 18px;
+  font-size: 14px;
   float: left;
-  width: 100%;
+  width: 70%;
   padding: 5px;
 }
 
@@ -88226,7 +88222,8 @@ ion-card {
   float: right;
   width: 20%;
   margin-right: 0;
-  margin-top: -10px;
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 .presentationMedicament {

@@ -15,15 +15,16 @@ export class HomePage
   constructor(public dataService: ServiceDataProvider) {}
 
 
-
+  
 
   ngOnInit() {
-    this.setFilteredItems();
   }
+/**
 
   setFilteredItems() {
     this.items = this.dataService.filterItems(this.searchTerm);
   }
+   */
 
 };
 

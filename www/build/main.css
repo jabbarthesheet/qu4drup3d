@@ -88068,15 +88068,6 @@ figcaption {
   border-color: black !important;
 }
 
-.carteATB {
-  font-size: 14px !important;
-  text-align: left !important;
-}
-
-.toggleATBCard {
-  float: right;
-}
-
 .normale {
   background-color: #6eb96e !important;
 }
@@ -88167,6 +88158,16 @@ ion-card {
   padding: 5%;
 }
 
+.CGU {
+  text-align: justify;
+}
+
+.CGUtitle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
 .lightbulb {
   width: 15% !important;
   margin-right: 10px;
@@ -88190,6 +88191,76 @@ ion-card {
 
 .tableauALR {
   font-size: 12px !important;
+}
+
+.toggleATBCard {
+  float: right;
+}
+
+.medicamentContainer {
+  text-align: left !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 0 !important;
+}
+
+.medicamentsubContainer {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  width: 100%;
+  padding: 0 !important;
+}
+
+.medicamentTitle {
+  font-size: 18px;
+  float: left;
+  width: 100%;
+  padding: 5px;
+}
+
+.logoVidal {
+  float: right;
+  width: 20%;
+  margin-right: 0;
+  margin-top: -10px;
+}
+
+.presentationMedicament {
+  background-color: #85D0D2;
+  padding: 5px;
+  width: 100% !important;
+  color: white !important;
+  font-size: 12px;
+}
+
+.commentMedicament {
+  background-color: #f4f4f4;
+  font-size: 10px;
+  padding: 10px;
+  color: black;
+}
+
+.AMMChip {
+  background-color: #ff6961;
+  font-size: 10px;
+}
+
+.indicationChip {
+  background-color: #e285ff;
+  font-size: 10px;
+}
+
+.classeMedicamenteuseChip {
+  font-size: 10px;
+}
+
+.voieAdminChip {
+  background-color: #85D0D2;
+  font-size: 10px;
 }
 
 .intitules {

@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { ServiceDataProvider } from '../providers/service-data/liste_anti_infectieux';
+import { ServiceDataProvider } from '../providers/service-data/liste_medicaments';
 
 import { AccueilPage } from '../pages/accueil/accueil';
 
@@ -22,7 +22,7 @@ import { EntretienAnesthPage } from '../pages/entretien-anesth/entretien-anesth'
 import { LocoRegionalePage } from '../pages/loco-regionale/loco-regionale';
 
 import { ExtrophieVesicalePage } from '../pages/extrophie-vesicale/extrophie-vesicale';
-import { AntiInfectieuxPage } from '../pages/anti-infectieux/anti-infectieux';
+import { MedicamentsPage } from '../pages/medicaments/medicaments';
 
 
 import { ProtocolesPage } from '../pages/protocoles/protocoles';
@@ -48,7 +48,7 @@ import { MainPage } from '../pages/main/main';
     AntalgiePage,
     UrgencePage,
     EntretienAnesthPage,
-    AntiInfectieuxPage,
+    MedicamentsPage,
     LocoRegionalePage,
     ExtrophieVesicalePage,
     ScoliosePage,
@@ -89,7 +89,7 @@ import { MainPage } from '../pages/main/main';
     AntalgiePage,
     UrgencePage,
     EntretienAnesthPage,
-    AntiInfectieuxPage,
+    MedicamentsPage,
     LocoRegionalePage,
     ExtrophieVesicalePage,
     ScoliosePage, 

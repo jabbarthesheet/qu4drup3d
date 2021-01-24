@@ -98,28 +98,4 @@ Traitements anti-infectieux</div>
               </ion-label>
                 </ion-item> 
           </ion-card>
-
-<ion-item-divider (click)="ToggleAntibiotherapie()" >
-  <ion-label color="dark-turquoise">Antibiothérapie : posologies & préparation
-<ion-icon *ngIf="!isShownAntibiotherapie" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>
-<ion-icon *ngIf="isShownAntibiotherapie" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>
-  </ion-label>
-</ion-item-divider> 
-
-<ion-card class="drogueContainer" *ngIf="isShownAntibiotherapie">
-  <p padding class="dilutionDrogueInduction">Pour les posologies d'anti-infectieux en contexte thérapeutique ou pour plus de détail sur la préparation et l'administration des anti-infectieux, consultez les protocoles d'anti-infectieux proposés.</p>
-  <p padding class="dilutionDrogueInduction">NB. Les posologies sont proposées en dose/poids (pas de calculs de posologie).</p>
-  <p padding class="dilutionDrogueInduction">Considérer un prélèvement avant toute initiation d'antibiothérapie : 
-    <br> - urines : nouveau-né avant un mois, BU +/- ECBU, ECBU d'emblée après un mois ; 
-    <br> - hémocultures ; 
-    <br> - prélèvement respiratoire (PDP) pour toute suspicion de pneumopathie acquise sous ventilation. 
-  </p>
-  <button padding small color="pastel-green" ion-button (click)="openAntiInfectieuxPage()">Anti-infectieux</button>
-  </ion-card>
-
-
-
-
-
- 
 </ion-content>

@@ -5,6 +5,7 @@ import { InfoPage } from '../info/info';
 import { ProtocolesPage } from '../protocoles/protocoles';
 import { RecommandationsPage } from '../recommandations/recommandations';
 import { ScoresPage } from '../scores/scores';
+import { MedicamentsPage } from '../medicaments/medicaments'
 
 /**
  * Generated class for the MainPage tabs.
@@ -20,11 +21,12 @@ import { ScoresPage } from '../scores/scores';
 })
 export class MainPage {
 
+  medicamentsRoot = MedicamentsPage ; 
   anesthesieRoot = AccueilPage ;
   protocolesRoot =  ProtocolesPage ; 
   scoresRoot = ScoresPage ; 
   recommandationsRoot = RecommandationsPage;
-  aProposRoot = InfoPage;
+  infoRoot = InfoPage;
 
 
   constructor(public navCtrl: NavController) {}

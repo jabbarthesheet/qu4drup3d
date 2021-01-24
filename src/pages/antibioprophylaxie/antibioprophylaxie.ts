@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
-import { AntiInfectieuxPage } from '../anti-infectieux/anti-infectieux';
+import { MedicamentsPage } from '../medicaments/medicaments';
 
 
 /**
@@ -30,7 +30,6 @@ export class AntibioprophylaxiePage {
 
   isShownPosologies:boolean;
   isShownIndications:boolean;  
-  isShownAntibiotherapie:boolean; 
 
   AdminAugmentin:number; 
   ReInjAugmentin:number;
@@ -71,10 +70,6 @@ export class AntibioprophylaxiePage {
   TogglePosologies() {
     this.isShownPosologies = !this.isShownPosologies;
   };
-
-  ToggleAntibiotherapie (){
-    this.isShownAntibiotherapie = !this.isShownAntibiotherapie;
-  }; 
 
 
 
@@ -185,8 +180,4 @@ export class AntibioprophylaxiePage {
   
   };
 
-
-  openAntiInfectieuxPage() {
-    this.navCtrl.push(AntiInfectieuxPage);
-  }
 }

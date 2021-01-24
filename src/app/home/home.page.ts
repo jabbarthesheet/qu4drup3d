@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceDataProvider } from "../../providers/service-data/liste_anti_infectieux";
+import { ServiceDataProvider } from "../../providers/service-data/liste_medicaments";
 
 
 @Component({

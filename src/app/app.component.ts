@@ -10,7 +10,7 @@ import { AntalgiePage } from '../pages/antalgie/antalgie';
 import { UrgencePage } from '../pages/urgence/urgence'; 
 import { PreMedicationPage } from '../pages/pre-medication/pre-medication';
 import { EntretienAnesthPage } from '../pages/entretien-anesth/entretien-anesth';
-import { AntiInfectieuxPage } from '../pages/anti-infectieux/anti-infectieux';
+import { MedicamentsPage } from '../pages/medicaments/medicaments';
 import { LocoRegionalePage } from '../pages/loco-regionale/loco-regionale';
 import { ExtrophieVesicalePage } from '../pages/extrophie-vesicale/extrophie-vesicale';
 import { MonitoragePage } from '../pages/monitorage/monitorage';
@@ -54,7 +54,7 @@ export class MyApp {
       { title : 'Entretien anesthéique', component: EntretienAnesthPage },
       { title : 'Gestion des fluides', component: GestionFluidesPage },
       { title : 'Analgésie & NVPO', component: AntalgiePage },
-      { title : 'Anti-infectieux', component: AntiInfectieuxPage },
+      { title : 'Medicaments', component: MedicamentsPage },
       { title : 'Loco-régionale', component : LocoRegionalePage },
       { title : 'Extrophie vésicale', component : ExtrophieVesicalePage },
       { title : 'Protocoles', component : ProtocolesPage },

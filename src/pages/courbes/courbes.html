@@ -1,7 +1,7 @@
-<ion-content>
 
+<ion-header>
   <div class="header"> 
-
+<br>
     <div (click)="retourHome()" class="backButton">
     <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
     Retour
@@ -17,7 +17,9 @@
           <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
       </ion-item>
   
-      <br>
+    </ion-header>
+
+      <ion-content>
 
       <ion-item>
         <ion-label>IMC : {{BMI}} kg/m²

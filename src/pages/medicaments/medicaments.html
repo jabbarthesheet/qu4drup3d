@@ -1,13 +1,23 @@
 
 
   <ion-header>
+    <br>
     Médicaments 
-    <br>
-    <br>
+    <div padding>Les posologies proposées sont envisagées pour la <b>pédiatrie</b> uniquement.
+    <br>Légende : 
+    <ion-chip class="indicationChip">
+      <ion-label>Indication</ion-label>
+    </ion-chip>
+    <ion-chip class="classeMedicamenteuseChip">
+      <ion-label>Classe</ion-label>
+    </ion-chip>
+    <ion-chip class="voieAdminChip">
+      <ion-label>Voie</ion-label>
+    </ion-chip> 
+    <ion-chip class="AMMChip">
+      <ion-label>AMM</ion-label>
+    </ion-chip></div>
     <ion-toolbar>
- 
- 
-  
       <ion-searchbar
       class="medicamentSearchbar"
       [(ngModel)]="searchTerm"
@@ -21,21 +31,7 @@
 
     <ion-content>
 
-      <br>
-      <div padding>Les posologies proposées sont envisagées pour la <b>pédiatrie</b> uniquement.</div>
-      <div padding>Légende : 
-      <ion-chip class="indicationChip">
-        <ion-label>Indication</ion-label>
-      </ion-chip>
-      <ion-chip class="classeMedicamenteuseChip">
-        <ion-label>Classe</ion-label>
-      </ion-chip>
-      <ion-chip class="voieAdminChip">
-        <ion-label>Voie</ion-label>
-      </ion-chip> 
-      <ion-chip class="AMMChip">
-        <ion-label>AMM</ion-label>
-      </ion-chip></div>
+
 
   <ion-list>
     <ion-card class="medicamentContainer" *ngFor="let card of cards, let index = index" [attr.data-index]="index">
@@ -48,9 +44,8 @@
       
 
       <ion-card-content class="medicamentsubContainer" *ngIf="card.isShown">
-
+        <br> <br> <br>
         <div class="commentMedicament">
-
           <ion-chip *ngIf="card.indication" class="indicationChip">
             <ion-label>{{card.indication}}</ion-label>
           </ion-chip>

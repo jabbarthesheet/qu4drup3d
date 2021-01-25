@@ -1,5 +1,6 @@
-<ion-content>
 
+<ion-header>
+  <br>
   <div class="header"> 
 
     <div (click)="retourHome()" class="backButton">
@@ -17,9 +18,9 @@
           <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
       </ion-item>
   
-      <br>
+    </ion-header>
 
-  
+      <ion-content>
   <ion-item-divider (click)="ToggleInhalatoire()" >
     <ion-label color="dark-turquoise">Entretien inhalatoire
   <ion-icon *ngIf="!isShownInhalatoire" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>

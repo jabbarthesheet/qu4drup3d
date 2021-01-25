@@ -87911,7 +87911,6 @@ ion-row {
 
 .header {
   text-align: center;
-  margin-top: 5%;
   background-color: none;
   color: #009c9e;
   font-weight: 250;
@@ -88215,7 +88214,7 @@ ion-card {
   font-size: 14px;
   float: left;
   width: 70%;
-  padding: 5px;
+  padding: 10px;
 }
 
 .logoVidal {
@@ -88384,6 +88383,29 @@ ion-card {
 
 .dispositifVentilation {
   font-size: 14px !important;
+}
+
+.headerProtocoles {
+  font-size: 12px;
+  text-align: left !important;
+}
+
+.contentProtocoles {
+  font-size: 18px;
+  color: #009c9e;
+}
+
+.objectifsProtocoles {
+  font-size: 10px;
+}
+
+.nomDispositif {
+  font-size: 18px;
+  color: #009c9e;
+}
+
+.nomcompletDispositif {
+  font-size: 10px;
 }
 
 .logoRecosSFAR {

@@ -1,5 +1,5 @@
-<ion-content>
-
+<ion-header>
+  <br>
 
         <!-- HEADER MENU  -->
         <div class="header"> 
@@ -21,9 +21,12 @@ Anesthésie Loco-régionale
                 <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
             </ion-item>
         
-            <br>
+       
+
+          </ion-header>
        <!-- END HEADER -->
-  
+       <ion-content>
+
   <ion-item-divider (click)="ToggleAPD()">
     <ion-label color="dark-turquoise">Anesthésie péridurale pédiatrique
   <ion-icon *ngIf="!isShownAPD" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>

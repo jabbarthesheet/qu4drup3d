@@ -1,33 +1,52 @@
-<ion-content >
 
+<ion-header>
+  <br>
   <!-- HEADER MENU  -->
   <div class="header"> 
-Protocoles d'anesthésie</div>
+Protocoles & dispositifs</div>
       <br>
   
-      <br>
+      <ion-segment color="turquoise-fonce" [(ngModel)]="ProtocolesView">
+        <ion-segment-button value="1">Interventions</ion-segment-button>
+        <ion-segment-button value="2">Dispostifs</ion-segment-button>
+      </ion-segment>
  <!-- END HEADER -->
+</ion-header>
 
-<ion-list>
-<ion-item (click)="openExtrophieVesicale()"><ion-label color="dark-turquoise">
-<ion-icon start name="list-box"></ion-icon>
-&nbsp;&nbsp; Extrophie Vésicale</ion-label></ion-item>
+ <ion-content >
 
-<ion-item (click)="openScoliose()"><ion-label color="dark-turquoise">
-<ion-icon start name="list-box"></ion-icon>
-&nbsp;&nbsp; Scoliose</ion-label></ion-item>
+  <div *ngIf="ProtocolesView == 1">
+  <ion-card (click)="openProtocole(index)" class="drogueContainer" *ngFor="let entry of protocoles, let index = index">
+    <ion-card-content  class="cardRecos">
+    <div class="headerProtocoles">
+    Auteurs : {{entry.auteurs}}
+    <br>
+    Publication : {{entry.datepublication}}
+    </div>
+    <div class="contentProtocoles">
+      <ion-icon start name="list-box"></ion-icon> &nbsp; <b>{{entry.titre}}</b>
+    <hr> </div>
+      <div class="objectifsProtocoles">
+      Objectifs :
+        <li *ngIf = "entry.objectif1"> {{entry.objectif1}}</li>
+        <li *ngIf = "entry.objectif2"> {{entry.objectif2}}</li>
+        <li *ngIf = "entry.objectif3"> {{entry.objectif3}}</li>
+        <li *ngIf = "entry.objectif4"> {{entry.objectif4}}</li>
+    </div>
+    </ion-card-content>
+    </ion-card>
+  </div>
 
-<ion-item ><ion-label color="dark-turquoise">
-<ion-icon start name="list-box"></ion-icon>
-&nbsp;&nbsp; Sténose du pylore (à venir)</ion-label></ion-item>
+  <div *ngIf="ProtocolesView == 2">
 
-<ion-item ><ion-label color="dark-turquoise">
-<ion-icon start name="list-box"></ion-icon>
-&nbsp;&nbsp; Greffe rénale (à venir)</ion-label></ion-item>
+    <ion-card (click)="openDispositif(index)" class="drogueContainer" *ngFor="let entry of dispositifs, let index = index">
+      <ion-card-content  class="cardRecos">
+      <div class="nomDispositif">
+        <ion-icon start name="easel"></ion-icon> &nbsp; <b>{{entry.nom}}</b></div>
+      <div class="nomcompletDispostif">{{entry.nomcomplet}}</div>
+      </ion-card-content>
+      </ion-card>
 
-
-
-
-</ion-list>
+  </div>
 
 </ion-content>

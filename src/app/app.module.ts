@@ -35,6 +35,7 @@ import { InfoPage } from '../pages/info/info';
 import { ScoliosePage } from '../pages/scoliose/scoliose';
 import { SauvegardePatientPage } from '../pages/sauvegarde-patient/sauvegarde-patient';
 import { MainPage } from '../pages/main/main';
+import { AniPage } from '../pages/ani/ani';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { MainPage } from '../pages/main/main';
     InfoPage,
     SauvegardePatientPage, 
     MainPage, 
+    AniPage,
   ],
 
   imports: [
@@ -102,6 +104,7 @@ import { MainPage } from '../pages/main/main';
     InfoPage,
     SauvegardePatientPage, 
     MainPage,
+    AniPage,
   ],
 
   providers: [

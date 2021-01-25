@@ -1,11 +1,12 @@
-<ion-content padding>
+<ion-header><br>
 
   <div class="header">  
       Recommandations</div> 
-      <br>
-      <br>
+      <p padding>Cliquer sur une recommandation pour l'ouvrir dans le navigateur.</p>
+    </ion-header>
 
-<p padding>Choisir une recommandation pour l'ouvrir (dans le navigateur) : </p>
+      <ion-content>
+
   <ion-card (click)="openWebpage(index)" class="drogueContainer" *ngFor="let reco of recommandations, let index = index">
     <ion-card-content  class="cardRecos">
       <img class="{{reco.class}}" src="{{reco.logo}}">

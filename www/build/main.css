@@ -88067,6 +88067,16 @@ figcaption {
   border-color: black !important;
 }
 
+.interventionSearchbar {
+  width: 90%;
+  float: left;
+}
+
+.specialiteSearchbar {
+  width: 90%;
+  float: left;
+}
+
 .chirurgieContainer {
   -webkit-box-shadow: none;
   box-shadow: none;

@@ -3746,10 +3746,13 @@ var MedicamentsPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-medicaments',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\medicaments\medicaments.html"*/'\n\n  <ion-header>\n    <br>\n    Médicaments \n    <div padding>Les posologies proposées sont envisagées pour la <b>pédiatrie</b> uniquement.\n    <br>Légende : \n    <ion-chip class="indicationChip">\n      <ion-label>Indication</ion-label>\n    </ion-chip>\n    <ion-chip class="classeMedicamenteuseChip">\n      <ion-label>Classe</ion-label>\n    </ion-chip>\n    <ion-chip class="voieAdminChip">\n      <ion-label>Voie</ion-label>\n    </ion-chip> \n    <ion-chip class="AMMChip">\n      <ion-label>AMM</ion-label>\n    </ion-chip></div>\n    <ion-toolbar>\n      <ion-searchbar\n      class="medicamentSearchbar"\n      [(ngModel)]="searchTerm"\n      (ionChange)="setFilteredItems()"\n      placeholder="Rechercher..."\n      inputmode="text"\n    ></ion-searchbar>\n\n  </ion-toolbar> \n    </ion-header>\n\n    <ion-content>\n\n\n\n  <ion-list>\n    <ion-card class="medicamentContainer" *ngFor="let card of medicaments, let index = index" [attr.data-index]="index">\n      \n      <div class="medicamentTitle" padding (click)="displayMedicament(index)"> {{card.title}}\n      </div>\n      <img class="logoVidal" (click)="openVidal(index)" src="/assets/imgs/logo-vidal.png">\n    \n      \n      \n\n      <ion-card-content class="medicamentsubContainer" *ngIf="card.isShown">\n        <br> <br> <br>\n        <div class="commentMedicament">\n          <ion-chip *ngIf="card.indication" class="indicationChip">\n            <ion-label>{{card.indication}}</ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="card.indication1" class="indicationChip">\n            <ion-label>{{card.indication1}}</ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="card.indication2" class="indicationChip">\n            <ion-label>{{card.indication2}}</ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="card.classeMed" class="classeMedicamenteuseChip">\n            <ion-label>{{card.classeMed}}</ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="card.voieAdmin" class="voieAdminChip">\n            <ion-label>{{card.voieAdmin}}</ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="card.voieAdmin1" class="voieAdminChip">\n            <ion-label>{{card.voieAdmin1}}</ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="card.AMM" class="AMMChip">\n            <ion-label>{{card.AMM}}</ion-label>\n          </ion-chip>\n\n        </div>\n\n        <div class="presentationMedicament">\n          <ul>\n            <li *ngIf="card.presentation">Présentation : {{card.presentation}}</li>\n            <li *ngIf="card.posologie">Posologie : {{card.posologie}}</li>\n    \n          </ul>\n        </div>\n      \n\n        <div class="commentMedicament">\n          <ul>\n            <li *ngIf="card.reconstitution">Reconstitution : {{card.reconstitution}}</li>\n\n            <li *ngIf="card.dilution">Dilution : {{card.dilution}}</li>\n\n            <li *ngIf="card.administration">Administration : {{card.administration}}</li>\n\n            <li *ngIf="card.remarques">Remarques : {{card.remarques}}</li>\n          </ul>\n        </div>\n        \n      </ion-card-content>\n\n    </ion-card>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\medicaments\medicaments.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_medicaments__["a" /* ServiceDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_medicaments__["a" /* ServiceDataProvider */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_medicaments__["a" /* ServiceDataProvider */]])
     ], MedicamentsPage);
     return MedicamentsPage;
-    var _a, _b, _c, _d, _e;
 }());
 
 ;
@@ -3933,11 +3936,15 @@ var AntibioprophylaxiePage = /** @class */ (function () {
         this.dataService = dataService;
         this.searchTerm = "";
         this.searchTermSpecialite = "";
+        this.searchBarType = false;
     }
     AntibioprophylaxiePage.prototype.retourHome = function () {
         this.navCtrl.pop();
     };
     ;
+    AntibioprophylaxiePage.prototype.toggleSearchBars = function () {
+        this.searchBarType = !this.searchBarType;
+    };
     AntibioprophylaxiePage.prototype.ionViewDidLoad = function () {
         this.setFilteredChirurgie();
         this.dataService.orderChirurgie();
@@ -4012,6 +4019,8 @@ var AntibioprophylaxiePage = /** @class */ (function () {
             _this.ageLecture = Math.round((_this.AgeNum / 12) * 10) / 10;
             _this.storage.get('PoidsNum').then(function (Poids) {
                 _this.PoidsNum = Poids;
+                _this.PoidsRound = Math.round(_this.PoidsNum);
+                console.log(_this.PoidsRound);
                 _this.storage.get('DureeJeune').then(function (dureejeune) {
                     _this.DureeJeune = dureejeune;
                     _this.storage.get('EstomacPlein').then(function (Estomac) {
@@ -4035,11 +4044,9 @@ var AntibioprophylaxiePage = /** @class */ (function () {
                                 _this.storage.get('Taille').then(function (Taille) {
                                     _this.Taille = Taille;
                                     if (!_this.PoidsNum || !_this.AgeNum) {
-                                        _this.presentAlert();
-                                        _this.calculs();
+                                        _this.presentAlert(); /* this.calculs() */
                                     }
                                     else {
-                                        _this.calculs();
                                     }
                                     ;
                                 });
@@ -4051,79 +4058,9 @@ var AntibioprophylaxiePage = /** @class */ (function () {
         }));
     };
     ;
-    AntibioprophylaxiePage.prototype.calculs = function () {
-        /*placer les calculs ici*/
-        this.AdminAugmentin = Math.round((this.PoidsNum * 50) * 10) / 10;
-        if (this.AdminAugmentin >= 2000) {
-            this.AdminAugmentin = 2000;
-        }
-        ;
-        this.ReInjAugmentin = Math.round((this.PoidsNum * 25) * 10) / 10;
-        if (this.ReInjAugmentin >= 1000) {
-            this.ReInjAugmentin = 1000;
-        }
-        ;
-        this.MaxAcideClavulanique = Math.round((this.PoidsNum * 20) * 10) / 10;
-        this.AdminCefamandole = Math.round((this.PoidsNum * 40) * 10) / 10;
-        if (this.AdminCefamandole >= 1500) {
-            this.AdminCefamandole = 1500;
-        }
-        ;
-        this.ReInjCefamandole = Math.round((this.PoidsNum * 20) * 10) / 10;
-        if (this.ReInjCefamandole >= 750) {
-            this.ReInjCefamandole = 750;
-        }
-        ;
-        this.AdminCefazoline = Math.round((this.PoidsNum * 50) * 10) / 10;
-        if (this.AdminCefazoline >= 2000) {
-            this.AdminCefazoline = 2000;
-        }
-        ;
-        this.ReInjCefazoline = Math.round((this.PoidsNum * 25) * 10) / 10;
-        if (this.ReInjCefazoline >= 1000) {
-            this.ReInjCefazoline = 1000;
-        }
-        ;
-        this.AdminClindamycine = Math.round((this.PoidsNum * 15) * 10) / 10;
-        if (this.AdminClindamycine >= 600) {
-            this.AdminClindamycine = 600;
-        }
-        ;
-        this.ReInjClindamycine = Math.round((this.PoidsNum * 7.5) * 10) / 10;
-        if (this.ReInjClindamycine >= 600) {
-            this.ReInjClindamycine = 600;
-        }
-        ;
-        this.AdminGentamicine = Math.round((this.PoidsNum * 3) * 10) / 10;
-        if (this.AdminGentamicine >= 160) {
-            this.AdminGentamicine = 160;
-        }
-        ;
-        this.AdminMetronidazole = Math.round((this.PoidsNum * 20) * 10) / 10;
-        if (this.AdminMetronidazole >= 1000) {
-            this.AdminMetronidazole = 1000;
-        }
-        ;
-        this.ReInjMetronidazole = Math.round((this.PoidsNum * 10) * 10) / 10;
-        if (this.ReInjMetronidazole >= 500) {
-            this.ReInjMetronidazole = 500;
-        }
-        ;
-        this.AdminVancomycine = Math.round((this.PoidsNum * 15) * 10) / 10;
-        if (this.AdminVancomycine >= 2000) {
-            this.AdminVancomycine = 2000;
-        }
-        ;
-        this.ReInjVancomycine = Math.round((this.PoidsNum * 15) * 10) / 10;
-        if (this.ReInjVancomycine >= 2000) {
-            this.ReInjVancomycine = 2000;
-        }
-        ;
-    };
-    ;
     AntibioprophylaxiePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-antibioprophylaxie',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\antibioprophylaxie\antibioprophylaxie.html"*/'\n<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\nTraitements anti-infectieux</div>\n      <br>\n\n      <ion-item color="turquoise-fonce"> \n        <ion-label>\n          <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> \n          <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>\n          <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> \n      </ion-item>\n\n      <ion-toolbar>\n      <ion-searchbar\n      class="interventionSearchbar"\n      [(ngModel)]="searchTerm"\n      (ionChange)="setFilteredChirurgie()"\n      placeholder="Intervention..."\n      inputmode="text"\n    ></ion-searchbar>\n\n    <ion-searchbar\n    class="specialiteSearchbar"\n    [(ngModel)]="searchTermSpecialite"\n    (ionChange)="setFilteredSpecialite()"\n    placeholder="Specialite..."\n    inputmode="text"\n  ></ion-searchbar>\n</ion-toolbar>\n    </ion-header>\n\n\n\n      <ion-content>\n\n  <ion-list>\n    <ion-card class="chirurgieContainer" (click)="displayChirurgie(index)" *ngFor="let chir of chirurgie, let index = index" [attr.data-index]="index">\n      <ion-card-header>\n        <ion-card-title class="intituleChirurgie">\n          {{chir.intitule}}     \n          <br><br>\n          <ion-chip *ngIf="chir.recommandation == \'Non recommandée\'" class="indicationantibioprophylaxieChirurgie">\n            <ion-label>Antibioprophylaxie : {{chir.recommandation}}\n            </ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="chir.recommandation == \'Recommandée\'" class="voieAntibioChip">\n            <ion-label>Antibioprophylaxie : {{chir.recommandation}}</ion-label>\n          </ion-chip>\n        \n        </ion-card-title>\n        <span *ngIf="chir.specialite" class="specialiteChirurgie">{{chir.specialite}}</span> - <span *ngIf="chir.classeConta" class="classeContaminationChirurgie">Classe Altemeier : {{chir.classeConta}}</span>\n      </ion-card-header>\n\n\n      <ion-card-content class="chirurgiesubContainer" *ngIf="chir.isShown && chir.ATB1">\n        <hr>\n          <div *ngIf = "chir.ATB1"> \n            <div class="intentionATB" *ngIf="chir.ATBAllergie1">Première intention</div>\n          <ion-chip *ngIf = "chir.ATB1" class="ATBchip">\n            <ion-label *ngIf = "PoidsNum * chir.posologieNumATB1 <= chir.doseMaxATB1 || !chir.posologieNumATB1" >{{chir.ATB1}} : <span *ngIf="chir.posologieNumATB1"> {{PoidsNum * chir.posologieNumATB1}} mg</span> {{chir.administrationATB1}}</ion-label>\n            <ion-label *ngIf = "PoidsNum * chir.posologieNumATB1 > chir.doseMaxATB1" >{{chir.ATB1}} : {{chir.doseMaxATB1}} mg {{chir.administrationATB1}}</ion-label>\n          </ion-chip>\n         \n          <ul class="infoAntibioChirurgie">\n            <li *ngIf="chir.posologieATB1">Posologie/poids : {{chir.posologieATB1}} (max. : {{chir.doseMaxATB1}} mg)</li>\n            <li *ngIf="chir.dilutionATB1">Dilution : {{chir.dilutionATB1}} </li>\n            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATB1 <= chir.doseMaxReinjectionATB1">Réinjection : {{chir.posologiereinjectionNumATB1 * PoidsNum}} mg/{{chir.delaiReinjectionATB1}} </li>\n            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATB1 > chir.doseMaxReinjectionATB1">Réinjection : {{chir.doseMaxReinjectionATB1}} mg/{{chir.delaiReinjectionATB1}} </li>\n          </ul>\n\n          <ion-chip *ngIf = "chir.ATB2" class="ATBchip">\n            <ion-label *ngIf = "PoidsNum * chir.posologieNumATB2 <= chir.doseMaxATB2" >+ {{chir.ATB2}} : {{PoidsNum * chir.posologieNumATB2}} mg {{chir.administrationATB2}}</ion-label>\n            <ion-label *ngIf = "PoidsNum * chir.posologieNumATB2 > chir.doseMaxATB2" >+ {{chir.ATB2}} : {{chir.doseMaxATB2}} mg {{chir.administrationATB2}}</ion-label>\n          </ion-chip>\n          <ul *ngIf = "chir.ATB2" class="infoAntibioChirurgie">\n            <li *ngIf="chir.posologieATB2">Posologie/poids : {{chir.posologieATB2}} (max. : {{chir.doseMaxATB2}} mg)</li>\n            <li *ngIf="chir.dilutionATB2">Dilution : {{chir.dilutionATB2}} </li>\n            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATB2 <= chir.doseMaxReinjectionATB2">Réinjection : {{chir.posologiereinjectionNumATB2 * PoidsNum}} mg/{{chir.delaiReinjectionATB2}} </li>\n            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATB2 > chir.doseMaxReinjectionATB2">Réinjection : {{chir.doseMaxReinjectionATB2}} mg/{{chir.delaiReinjectionATB2}} </li>\n          </ul>\n        </div>\n\n        <hr>\n        <div *ngIf= "chir.ATBAllergie1">\n          <div class="intentionATB">Seconde intention (allergie)</div>\n          <ion-chip class="ATBchip">\n            <ion-label *ngIf = "PoidsNum * chir.posologieNumATBAllergie1 <= chir.doseMaxATBAllergie1">{{chir.ATBAllergie1}} : {{PoidsNum * chir.posologieNumATBAllergie1}} mg {{chir.administrationATBAllergie1}}</ion-label>\n            <ion-label *ngIf = "PoidsNum * chir.posologieNumATBAllergie1 > chir.doseMaxATBAllergie1">{{chir.ATBAllergie1}} : {{chir.doseMaxATBAllergie1}} mg {{chir.administrationATBAllergie1}}</ion-label>\n          </ion-chip>\n\n          <ul class="infoAntibioChirurgie">\n            <li *ngIf="chir.posologieATBAllergie1">Posologie/poids : {{chir.posologieATBAllergie1}} (max. : {{chir.doseMaxATBAllergie1}} mg)</li>\n            <li *ngIf="chir.dilutionATBAllergie1">Dilution : {{chir.dilutionATBAllergie1}}</li>\n            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATBAllergie1 <= chir.doseMaxReinjectionATBAllergie1">Réinjection : {{chir.posologiereinjectionNumATBAllergie1 * PoidsNum}} mg/{{chir.delaiReinjectionATBAllergie1}} </li>\n            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATBAllergie1 > chir.doseMaxReinjectionATBAllergie1">Réinjection : {{chir.doseMaxReinjectionATBAllergie1}} mg/{{chir.delaiReinjectionATBAllergie1}} </li>\n          </ul> \n\n     \n          <ion-chip *ngIf = "chir.ATBAllergie2" class="ATBchip">\n            <ion-label *ngIf = "PoidsNum * chir.posologieNumATBAllergie2 <= chir.doseMaxATBAllergie2" >+ {{chir.ATBAllergie2}} : {{PoidsNum * chir.posologieNumATBAllergie2}} mg {{chir.administrationATBAllergie2}}</ion-label>\n            <ion-label *ngIf = "PoidsNum * chir.posologieNumATBAllergie2 > chir.doseMaxATBAllergie2" >+ {{chir.ATBAllergie2}} : {{chir.doseMaxATBAllergie2}} mg {{chir.administrationATBAllergie2}}</ion-label>\n          </ion-chip>\n\n          <ul *ngIf="chir.ATBAllergie2" class="infoAntibioChirurgie"><b>{{chir.ATBAllergie2}}</b>\n            <li *ngIf="chir.posologieATBAllergie2">Posologie/poids : {{chir.posologieATBAllergie2}} (max. : {{chir.doseMaxATBAllergie2}} mg)</li>\n            <li *ngIf="chir.dilutionATBAllergie2">Dilution : {{chir.dilutionATBAllergie2}}</li>\n            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATBAllergie2 <= chir.doseMaxReinjectionATBAllergie2">Réinjection : {{chir.posologiereinjectionNumATBAllergie2 * PoidsNum}} mg/{{chir.delaiReinjectionATBAllergie2}} </li>\n            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATBAllergie2 > chir.doseMaxReinjectionATBAllergie2">Réinjection : {{chir.doseMaxReinjectionATBAllergie2}} mg/{{chir.delaiReinjectionATBAllergie2}} </li>\n          </ul> \n        </div>\n      </ion-card-content>\n\n    </ion-card>\n  </ion-list>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  <ion-item-divider (click)="TogglePosologies()" >\n    <ion-label color="dark-turquoise">Antibioprophylaxie : posologies\n  <ion-icon *ngIf="!isShownPosologies" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownPosologies" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider> \n\n  <ion-card *ngIf="isShownPosologies" class="drogueContainer">\n\n  <ion-item class="avecAMM">         \n    <ion-label class="drogueInduction" color="dark">\n      <p class="dilutionDrogueInduction">Posologie proposée : 50 mg/kg sans dépasser 2g</p>\n      Amoxicilline-Acide Clavulanique (Augmentin®) : {{AdminAugmentin}} mg IVL\n    <p class="dilutionDrogueInduction">Réinjection demi-dose : {{ReInjAugmentin}} mg IVL toutes les 2h </p>\n  </ion-label>\n    </ion-item>\n    <div class="AMM">Attention : ne pas dépasser 20 mg/kg/j d\'acide clavulanique (<b>{{MaxAcideClavulanique}} mg</b>).</div>\n\n    <ion-item>         \n      <ion-label class="drogueInduction" color="dark"> \n        <p class="dilutionDrogueInduction">Posologie proposée : 40 mg/kg sans dépasser 1.5g</p>\n          Céfamandole : {{AdminCefamandole}} mg IVL\n      <p class="dilutionDrogueInduction">Réinjection demi-dose : {{ReInjCefamandole}} mg IVL toutes les 2h</p>\n    </ion-label>\n      </ion-item> \n\n      <ion-item>         \n        <ion-label class="drogueInduction" color="dark">\n         \n          <p class="dilutionDrogueInduction">Posologie proposée : 50 mg/kg sans dépasser 2g</p>\n          Céfazoline : {{AdminCefazoline}} mg IVL\n        <p class="dilutionDrogueInduction">Réinjection demi-dose : {{ReInjCefazoline}} mg IVL toutes les 4h </p>\n      </ion-label>\n        </ion-item> \n\n        <ion-item>         \n          <ion-label class="drogueInduction" color="dark">\n            <p class="dilutionDrogueInduction">Posologie proposée : 15 mg/kg sans dépasser 600 mg</p>\n            Clindamycine: {{AdminClindamycine}} mg IVL\n          <p class="dilutionDrogueInduction">Réinjection demi-dose : {{ReInjClindamycine}} mg IVL toutes les 4h</p>\n        </ion-label>\n          </ion-item> \n\n          <ion-item>         \n            <ion-label class="drogueInduction" color="dark">\n              <p class="dilutionDrogueInduction">Posologie proposée : 3 mg/kg sans dépasser 160 mg</p>\n              Gentamicine : {{AdminGentamicine}} mg IVL\n            <p class="dilutionDrogueInduction">Pas plus d\'une injection par jour, attention à adapter chez l\'insuffisant rénal</p>\n          </ion-label>\n            </ion-item> \n\n            <ion-item>         \n              <ion-label class="drogueInduction" color="dark">\n                <p class="dilutionDrogueInduction">Posologie proposée : 20 mg/kg sans dépasser 1000 mg</p>\n                Métronidazole (Flagyl®) : {{AdminMetronidazole}} mg IVL\n              <p class="dilutionDrogueInduction">Réinjection demi-dose : {{ReInjMetronidazole}} mg IVL toutes les 8h</p>\n            </ion-label>\n              </ion-item> \n\n              <ion-item>         \n                <ion-label class="drogueInduction" color="dark">\n                  <p class="dilutionDrogueInduction">Posologie proposée : pour 15 mg/kg sans dépasser 2000 mg</p>\n                  Vancomycine : {{AdminVancomycine}} mg IVL sur 30 minutes ou IVSE\n                  <p class="dilutionDrogueInduction">Réinjection pleine dose : {{ReInjVancomycine}} mg IVL toutes les 12h</p>\n              </ion-label>\n                </ion-item> \n          </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\antibioprophylaxie\antibioprophylaxie.html"*/,
+            selector: 'page-antibioprophylaxie',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\antibioprophylaxie\antibioprophylaxie.html"*/'\n<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\nTraitements anti-infectieux</div>\n      <br>\n\n      <ion-item color="turquoise-fonce"> \n        <ion-label>\n          <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> \n          <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> \n      </ion-item>\n\n      <ion-toolbar>\n      <ion-searchbar *ngIf = "!this.searchBarType"\n      class="interventionSearchbar"\n      [(ngModel)]="searchTerm"\n      (ionChange)="setFilteredChirurgie()"\n      placeholder="Intervention..."\n      inputmode="text"\n    ></ion-searchbar><br *ngIf = "!this.searchBarType"><ion-icon *ngIf = "!this.searchBarType" zoom:1.5 name="repeat" (click)="toggleSearchBars()"></ion-icon>\n\n    <ion-searchbar *ngIf = "this.searchBarType"\n    class="specialiteSearchbar"\n    [(ngModel)]="searchTermSpecialite"\n    (ionChange)="setFilteredSpecialite()"\n    placeholder="Specialite..."\n    inputmode="text"\n  ></ion-searchbar><br *ngIf = "this.searchBarType"><ion-icon *ngIf = "this.searchBarType" zoom:1.5 name="repeat" (click)="toggleSearchBars()"></ion-icon>\n</ion-toolbar>\n    </ion-header>\n\n\n\n      <ion-content>\n\n  <ion-list>\n    <ion-card class="chirurgieContainer" (click)="displayChirurgie(index)" *ngFor="let chir of chirurgie, let index = index" [attr.data-index]="index">\n      <ion-card-header>\n        <ion-card-title class="intituleChirurgie">\n          {{chir.intitule}}     \n          <br><br>\n          <ion-chip *ngIf="chir.recommandation == \'Non recommandée\'" class="indicationantibioprophylaxieChirurgie">\n            <ion-label>Antibioprophylaxie : {{chir.recommandation}}\n            </ion-label>\n          </ion-chip>\n          <ion-chip *ngIf="chir.recommandation == \'Recommandée\'" class="voieAntibioChip">\n            <ion-label>Antibioprophylaxie : {{chir.recommandation}}</ion-label>\n          </ion-chip>\n        \n        </ion-card-title>\n        <span *ngIf="chir.specialite" class="specialiteChirurgie">{{chir.specialite}}</span> - <span *ngIf="chir.classeConta" class="classeContaminationChirurgie">Classe Altemeier : {{chir.classeConta}}</span>\n      </ion-card-header>\n\n\n      <ion-card-content class="chirurgiesubContainer" *ngIf="chir.isShown && chir.ATB1">\n        <hr>\n          <div *ngIf = "chir.ATB1"> \n            <div class="intentionATB" *ngIf="chir.ATBAllergie1">Première intention</div>\n          <ion-chip *ngIf = "chir.ATB1" class="ATBchip">\n            <ion-label *ngIf = "PoidsNum * chir.posologieNumATB1 <= chir.doseMaxATB1 || !chir.posologieNumATB1" >{{chir.ATB1}} : <span *ngIf="chir.posologieNumATB1"> {{PoidsRound * chir.posologieNumATB1}} mg</span> {{chir.administrationATB1}}</ion-label>\n            <ion-label *ngIf = "PoidsNum * chir.posologieNumATB1 > chir.doseMaxATB1" >{{chir.ATB1}} : {{chir.doseMaxATB1}} mg {{chir.administrationATB1}}</ion-label>\n          </ion-chip>\n         \n          <ul class="infoAntibioChirurgie">\n            <li *ngIf="chir.posologieATB1">Posologie/poids : {{chir.posologieATB1}} (max. : {{chir.doseMaxATB1}} mg)</li>\n            <li *ngIf="chir.dilutionATB1">Dilution : {{chir.dilutionATB1}} </li>\n            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATB1 <= chir.doseMaxReinjectionATB1">Réinjection : {{chir.posologiereinjectionNumATB1 * PoidsRound}} mg/{{chir.delaiReinjectionATB1}} </li>\n            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATB1 > chir.doseMaxReinjectionATB1">Réinjection : {{chir.doseMaxReinjectionATB1}} mg/{{chir.delaiReinjectionATB1}} </li>\n          </ul>\n\n          <ion-chip *ngIf = "chir.ATB2" class="ATBchip">\n            <ion-label *ngIf = "PoidsNum * chir.posologieNumATB2 <= chir.doseMaxATB2" >+ {{chir.ATB2}} : {{PoidsRound * chir.posologieNumATB2}} mg {{chir.administrationATB2}}</ion-label>\n            <ion-label *ngIf = "PoidsNum * chir.posologieNumATB2 > chir.doseMaxATB2" >+ {{chir.ATB2}} : {{chir.doseMaxATB2}} mg {{chir.administrationATB2}}</ion-label>\n          </ion-chip>\n          <ul *ngIf = "chir.ATB2" class="infoAntibioChirurgie">\n            <li *ngIf="chir.posologieATB2">Posologie/poids : {{chir.posologieATB2}} (max. : {{chir.doseMaxATB2}} mg)</li>\n            <li *ngIf="chir.dilutionATB2">Dilution : {{chir.dilutionATB2}} </li>\n            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATB2 <= chir.doseMaxReinjectionATB2">Réinjection : {{chir.posologiereinjectionNumATB2 * PoidsRound}} mg/{{chir.delaiReinjectionATB2}} </li>\n            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATB2 > chir.doseMaxReinjectionATB2">Réinjection : {{chir.doseMaxReinjectionATB2}} mg/{{chir.delaiReinjectionATB2}} </li>\n          </ul>\n        </div>\n\n        <hr>\n        <div *ngIf= "chir.ATBAllergie1">\n          <div class="intentionATB">Seconde intention (allergie)</div>\n          <ion-chip class="ATBchip">\n            <ion-label *ngIf = "PoidsNum * chir.posologieNumATBAllergie1 <= chir.doseMaxATBAllergie1">{{chir.ATBAllergie1}} : {{PoidsRound * chir.posologieNumATBAllergie1}} mg {{chir.administrationATBAllergie1}}</ion-label>\n            <ion-label *ngIf = "PoidsNum * chir.posologieNumATBAllergie1 > chir.doseMaxATBAllergie1">{{chir.ATBAllergie1}} : {{chir.doseMaxATBAllergie1}} mg {{chir.administrationATBAllergie1}}</ion-label>\n          </ion-chip>\n\n          <ul class="infoAntibioChirurgie">\n            <li *ngIf="chir.posologieATBAllergie1">Posologie/poids : {{chir.posologieATBAllergie1}} (max. : {{chir.doseMaxATBAllergie1}} mg)</li>\n            <li *ngIf="chir.dilutionATBAllergie1">Dilution : {{chir.dilutionATBAllergie1}}</li>\n            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATBAllergie1 <= chir.doseMaxReinjectionATBAllergie1">Réinjection : {{chir.posologiereinjectionNumATBAllergie1 * PoidsRound}} mg/{{chir.delaiReinjectionATBAllergie1}} </li>\n            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATBAllergie1 > chir.doseMaxReinjectionATBAllergie1">Réinjection : {{chir.doseMaxReinjectionATBAllergie1}} mg/{{chir.delaiReinjectionATBAllergie1}} </li>\n          </ul> \n\n     \n          <ion-chip *ngIf = "chir.ATBAllergie2" class="ATBchip">\n            <ion-label *ngIf = "PoidsNum * chir.posologieNumATBAllergie2 <= chir.doseMaxATBAllergie2" >+ {{chir.ATBAllergie2}} : {{PoidsRound * chir.posologieNumATBAllergie2}} mg {{chir.administrationATBAllergie2}}</ion-label>\n            <ion-label *ngIf = "PoidsNum * chir.posologieNumATBAllergie2 > chir.doseMaxATBAllergie2" >+ {{chir.ATBAllergie2}} : {{chir.doseMaxATBAllergie2}} mg {{chir.administrationATBAllergie2}}</ion-label>\n          </ion-chip>\n\n          <ul *ngIf="chir.ATBAllergie2" class="infoAntibioChirurgie"><b>{{chir.ATBAllergie2}}</b>\n            <li *ngIf="chir.posologieATBAllergie2">Posologie/poids : {{chir.posologieATBAllergie2}} (max. : {{chir.doseMaxATBAllergie2}} mg)</li>\n            <li *ngIf="chir.dilutionATBAllergie2">Dilution : {{chir.dilutionATBAllergie2}}</li>\n            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATBAllergie2 <= chir.doseMaxReinjectionATBAllergie2">Réinjection : {{chir.posologiereinjectionNumATBAllergie2 * PoidsRound}} mg/{{chir.delaiReinjectionATBAllergie2}} </li>\n            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATBAllergie2 > chir.doseMaxReinjectionATBAllergie2">Réinjection : {{chir.doseMaxReinjectionATBAllergie2}} mg/{{chir.delaiReinjectionATBAllergie2}} </li>\n          </ul> \n        </div>\n      </ion-card-content>\n\n    </ion-card>\n  </ion-list>\n\n<!-- \n\n  <ion-item-divider (click)="TogglePosologies()" >\n    <ion-label color="dark-turquoise">Antibioprophylaxie : posologies\n  <ion-icon *ngIf="!isShownPosologies" class="OpenCloseIcon" name="open" style="zoom:0.9"></ion-icon>\n  <ion-icon *ngIf="isShownPosologies" class="OpenCloseIcon" name="close"  style="zoom:0.9"></ion-icon>\n    </ion-label>\n  </ion-item-divider> \n\n  <ion-card *ngIf="isShownPosologies" class="drogueContainer">\n\n  <ion-item class="avecAMM">         \n    <ion-label class="drogueInduction" color="dark">\n      <p class="dilutionDrogueInduction">Posologie proposée : 50 mg/kg sans dépasser 2g</p>\n      Amoxicilline-Acide Clavulanique (Augmentin®) : {{AdminAugmentin}} mg IVL\n    <p class="dilutionDrogueInduction">Réinjection demi-dose : {{ReInjAugmentin}} mg IVL toutes les 2h </p>\n  </ion-label>\n    </ion-item>\n    <div class="AMM">Attention : ne pas dépasser 20 mg/kg/j d\'acide clavulanique (<b>{{MaxAcideClavulanique}} mg</b>).</div>\n\n    <ion-item>         \n      <ion-label class="drogueInduction" color="dark"> \n        <p class="dilutionDrogueInduction">Posologie proposée : 40 mg/kg sans dépasser 1.5g</p>\n          Céfamandole : {{AdminCefamandole}} mg IVL\n      <p class="dilutionDrogueInduction">Réinjection demi-dose : {{ReInjCefamandole}} mg IVL toutes les 2h</p>\n    </ion-label>\n      </ion-item> \n\n      <ion-item>         \n        <ion-label class="drogueInduction" color="dark">\n         \n          <p class="dilutionDrogueInduction">Posologie proposée : 50 mg/kg sans dépasser 2g</p>\n          Céfazoline : {{AdminCefazoline}} mg IVL\n        <p class="dilutionDrogueInduction">Réinjection demi-dose : {{ReInjCefazoline}} mg IVL toutes les 4h </p>\n      </ion-label>\n        </ion-item> \n\n        <ion-item>         \n          <ion-label class="drogueInduction" color="dark">\n            <p class="dilutionDrogueInduction">Posologie proposée : 15 mg/kg sans dépasser 600 mg</p>\n            Clindamycine: {{AdminClindamycine}} mg IVL\n          <p class="dilutionDrogueInduction">Réinjection demi-dose : {{ReInjClindamycine}} mg IVL toutes les 4h</p>\n        </ion-label>\n          </ion-item> \n\n          <ion-item>         \n            <ion-label class="drogueInduction" color="dark">\n              <p class="dilutionDrogueInduction">Posologie proposée : 3 mg/kg sans dépasser 160 mg</p>\n              Gentamicine : {{AdminGentamicine}} mg IVL\n            <p class="dilutionDrogueInduction">Pas plus d\'une injection par jour, attention à adapter chez l\'insuffisant rénal</p>\n          </ion-label>\n            </ion-item> \n\n            <ion-item>         \n              <ion-label class="drogueInduction" color="dark">\n                <p class="dilutionDrogueInduction">Posologie proposée : 20 mg/kg sans dépasser 1000 mg</p>\n                Métronidazole (Flagyl®) : {{AdminMetronidazole}} mg IVL\n              <p class="dilutionDrogueInduction">Réinjection demi-dose : {{ReInjMetronidazole}} mg IVL toutes les 8h</p>\n            </ion-label>\n              </ion-item> \n\n              <ion-item>         \n                <ion-label class="drogueInduction" color="dark">\n                  <p class="dilutionDrogueInduction">Posologie proposée : pour 15 mg/kg sans dépasser 2000 mg</p>\n                  Vancomycine : {{AdminVancomycine}} mg IVL sur 30 minutes ou IVSE\n                  <p class="dilutionDrogueInduction">Réinjection pleine dose : {{ReInjVancomycine}} mg IVL toutes les 12h</p>\n              </ion-label>\n                </ion-item> \n          </ion-card>\n        \n        -->\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\antibioprophylaxie\antibioprophylaxie.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_medicaments__["a" /* ServiceDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_medicaments__["a" /* ServiceDataProvider */]) === "function" && _e || Object])
     ], AntibioprophylaxiePage);
@@ -5299,50 +5236,6 @@ var ServiceDataProvider = /** @class */ (function () {
             },
         ];
         this.chirurgie = [
-            {
-                isShown: false,
-                intitule: "",
-                specialite: "Chir. ",
-                classeConta: "",
-                voieATB: "",
-                recommandation: "",
-                ATB1: "",
-                posologieATB1: "",
-                posologieNumATB1: 0,
-                administrationATB1: "",
-                doseMaxATB1: 0,
-                delaiReinjectionATB1: "",
-                posologiereinjectionATB1: "",
-                posologiereinjectionNumATB1: 0,
-                doseMaxReinjectionATB1: 0,
-                ATB2: "",
-                posologieATB2: "",
-                posologieNumATB2: 0,
-                administrationATB2: "",
-                doseMaxATB2: 0,
-                delaiReinjectionATB2: "",
-                posologiereinjectionATB2: "",
-                posologiereinjectionNumATB2: 0,
-                doseMaxReinjectionATB2: 0,
-                ATBAllergie1: "",
-                posologieATBAllergie1: "",
-                posologieNumATBAllergie1: 0,
-                administrationATBAllergie1: "",
-                doseMaxATBAllergie1: 0,
-                delaiReinjectionATBAllergie1: "",
-                posologiereinjectionATBAllergie1: "",
-                posologiereinjectionNumATBAllergie1: 0,
-                doseMaxReinjectionATBAllergie1: 0,
-                ATBAllergie2: "",
-                posologieATBAllergie2: "",
-                posologieNumATBAllergie2: 0,
-                administrationATBAllergie2: "",
-                doseMaxATBAllergie2: 0,
-                delaiReinjectionATBAllergie2: "",
-                posologiereinjectionATBAllergie2: "",
-                posologiereinjectionNumATBAllergie2: 0,
-                doseMaxReinjectionATBAllergie2: 0,
-            },
             {
                 isShown: false,
                 intitule: "Dilatation anale",

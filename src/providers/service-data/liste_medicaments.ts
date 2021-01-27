@@ -749,58 +749,7 @@ export class ServiceDataProvider {
     ];
 
     this.chirurgie = [
-        {
-          isShown: false, 
-          intitule: "",
-          specialite : "Chir. ",
-          classeConta : "",
-          voieATB : "",  
-          recommandation : "",
-          
-          ATB1 : "",
-          posologieATB1 : "", 
-          posologieNumATB1 : 0, 
-          administrationATB1 : "",
-          doseMaxATB1 : 0,
-          delaiReinjectionATB1 : "",
-          posologiereinjectionATB1 : "",
-          posologiereinjectionNumATB1 : 0,
-          doseMaxReinjectionATB1 : 0, 
-      
-      
-          ATB2 : "",
-          posologieATB2 : "", 
-          posologieNumATB2 : 0, 
-          administrationATB2 : "",
-          doseMaxATB2 : 0,
-          delaiReinjectionATB2 : "",
-          posologiereinjectionATB2 : "",
-          posologiereinjectionNumATB2 : 0,
-          doseMaxReinjectionATB2 : 0, 
-      
-          
-          ATBAllergie1 : "",
-          posologieATBAllergie1 : "", 
-          posologieNumATBAllergie1: 0,
-          administrationATBAllergie1 : "",
-          doseMaxATBAllergie1 : 0,
-          delaiReinjectionATBAllergie1 : "",
-          posologiereinjectionATBAllergie1 : "",
-          posologiereinjectionNumATBAllergie1 : 0,
-          doseMaxReinjectionATBAllergie1 : 0, 
-      
-      
-          ATBAllergie2 : "",
-          posologieATBAllergie2 : "", 
-          posologieNumATBAllergie2: 0,
-          administrationATBAllergie2 : "",
-          doseMaxATBAllergie2 : 0,
-          delaiReinjectionATBAllergie2 : "",
-          posologiereinjectionATBAllergie2 : "",
-          posologiereinjectionNumATBAllergie2 : 0,
-          doseMaxReinjectionATBAllergie2 : 0, 
-        },  
-      
+        
         {
           isShown: false, 
           intitule: "Dilatation anale",

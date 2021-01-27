@@ -25,6 +25,7 @@ export class AntibioprophylaxiePage implements OnInit
 
 AgeNum:number; 
 PoidsNum:number;
+PoidsRound:number;
 DureeJeune:number; 
 Allergie:number; 
 EstomacPlein:boolean; 
@@ -58,6 +59,8 @@ Taille:number;
   AdminVancomycine:number;
   ReInjVancomycine:number;   
 
+  searchBarType:boolean=false; 
+
   constructor(
     
     public navCtrl: NavController, 
@@ -71,6 +74,10 @@ Taille:number;
   retourHome() {
     this.navCtrl.pop();
   };
+
+  toggleSearchBars (){
+    this.searchBarType = !this.searchBarType; 
+  }
 
   ionViewDidLoad() {
     this.setFilteredChirurgie();
@@ -142,6 +149,8 @@ Taille:number;
           this.ageLecture = Math.round((this.AgeNum/12)*10)/10; 
       this.storage.get('PoidsNum').then((Poids) => {
           this.PoidsNum = Poids;
+          this.PoidsRound = Math.round(this.PoidsNum);
+          console.log (this.PoidsRound);
       this.storage.get('DureeJeune').then((dureejeune) => {
           this.DureeJeune = dureejeune ;   
       this.storage.get('EstomacPlein').then((Estomac) => {
@@ -155,8 +164,8 @@ Taille:number;
           if (!this.sexeMF){this.sexeMF = "Fille";};
       this.storage.get('Taille').then((Taille) => {
           this.Taille = Taille; 
-      if (!this.PoidsNum || !this.AgeNum) { this.presentAlert(); this.calculs()}
-      else { this.calculs()
+      if (!this.PoidsNum || !this.AgeNum) { this.presentAlert(); /* this.calculs() */}
+      else { /* this.calculs() */
       };
       });
       });
@@ -166,10 +175,10 @@ Taille:number;
       });
       }));};
 
-
+/*
     calculs () {
 
-        /*placer les calculs ici*/
+        placer les calculs ici
        
 
         this.AdminAugmentin = Math.round((this.PoidsNum * 50)*10)/10;
@@ -211,6 +220,6 @@ Taille:number;
         this.ReInjVancomycine = Math.round((this.PoidsNum * 15)*10)/10;
         if (this.ReInjVancomycine >= 2000){this.ReInjVancomycine = 2000;};
   
-  };
+  };*/
 
 }

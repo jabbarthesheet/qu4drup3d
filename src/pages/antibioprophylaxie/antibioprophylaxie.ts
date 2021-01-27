@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
-import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
-import { MedicamentsPage } from '../medicaments/medicaments';
+import { ServiceDataProvider } from "../../providers/service-data/liste_medicaments";
+import 'rxjs/add/operator/debounceTime';
 
 
 /**
@@ -16,17 +16,23 @@ import { MedicamentsPage } from '../medicaments/medicaments';
   selector: 'page-antibioprophylaxie',
   templateUrl: 'antibioprophylaxie.html',
 })
-export class AntibioprophylaxiePage {
+export class AntibioprophylaxiePage implements OnInit 
 
-  AgeNum:number; 
-  PoidsNum:number;
-  DureeJeune:number; 
-  Allergie:number; 
-  EstomacPlein:boolean; 
-  EstomacOuiNon:string;
-  ageLecture:number;
-  sexeMF:string;
-  Taille:number;
+{
+  public searchTerm: string = "";
+  public searchTermSpecialite : string = "";
+  public chirurgie : any ; 
+
+AgeNum:number; 
+PoidsNum:number;
+DureeJeune:number; 
+Allergie:number; 
+EstomacPlein:boolean; 
+EstomacOuiNon:string;
+ageLecture:number;
+sexeMF:string;
+Taille:number;
+
 
   isShownPosologies:boolean;
   isShownIndications:boolean;  
@@ -52,7 +58,14 @@ export class AntibioprophylaxiePage {
   AdminVancomycine:number;
   ReInjVancomycine:number;   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertController: AlertController, public storage : Storage) {
+  constructor(
+    
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public alertController: AlertController, 
+    public storage : Storage,
+    public dataService: ServiceDataProvider, 
+    ) {
   }
 
   retourHome() {
@@ -60,7 +73,27 @@ export class AntibioprophylaxiePage {
   };
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AntibioprophylaxiePage');
+    this.setFilteredChirurgie();
+    this.dataService.orderChirurgie(); 
+    console.log('chirurgies rangées par ordre alphabétique');
+  }
+
+  ngOnInit() {
+    this.setFilteredChirurgie();
+    this.dataService.orderChirurgie();
+  };
+
+  setFilteredChirurgie() {
+    this.chirurgie = this.dataService.filterChirurgie(this.searchTerm);
+  };
+
+  setFilteredSpecialite() {
+    this.chirurgie = this.dataService.filterSpecialite(this.searchTermSpecialite);
+  }
+
+
+  displayChirurgie(index) {
+    this.chirurgie[index].isShown = !this.chirurgie[index].isShown; 
   }
 
   ToggleIndications() {

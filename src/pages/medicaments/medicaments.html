@@ -34,7 +34,7 @@
 
 
   <ion-list>
-    <ion-card class="medicamentContainer" *ngFor="let card of cards, let index = index" [attr.data-index]="index">
+    <ion-card class="medicamentContainer" *ngFor="let card of medicaments, let index = index" [attr.data-index]="index">
       
       <div class="medicamentTitle" padding (click)="displayMedicament(index)"> {{card.title}}
       </div>

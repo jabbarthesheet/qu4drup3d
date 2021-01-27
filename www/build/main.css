@@ -88067,6 +88067,49 @@ figcaption {
   border-color: black !important;
 }
 
+.chirurgieContainer {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+.intituleChirurgie {
+  font-size: 16px !important;
+}
+
+.specialiteChirurgie {
+  font-size: 12px !important;
+}
+
+.classeContaminationChirurgie {
+  font-size: 12px !important;
+  font-weight: bold;
+}
+
+.indicationantibioprophylaxieChirurgie {
+  background-color: #bce7e9;
+}
+
+.voieAntibioChip {
+  background-color: #ff6961;
+}
+
+.ATBchip {
+  background-color: #f5d104;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.ATBAllergiechip {
+  background-color: #f5d104;
+  margin: auto;
+}
+
+.infoAntibioChirurgie {
+  font-size: 10px !important;
+}
+
 .normale {
   background-color: #6eb96e !important;
 }

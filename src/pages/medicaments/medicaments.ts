@@ -13,8 +13,7 @@ export class MedicamentsPage implements OnInit
 
    {
     public searchTerm: string = "";
-    public cards: any;
-    isShownCard:boolean=false;
+    public medicaments: any;
 
   constructor(
     public navCtrl: NavController, 
@@ -23,31 +22,29 @@ export class MedicamentsPage implements OnInit
     public alertController: AlertController,
     public dataService: ServiceDataProvider, ) 
     {
-    }
+    } 
 
     ionViewDidLoad() {
       this.setFilteredItems();
-      this.dataService.orderCards(); 
-      console.log('items rangés par ordre alphabétique');
+      this.dataService.orderMedicaments(); 
+      console.log('medicaments rangés par ordre alphabétique');
 
     }
 
     ngOnInit() {
       this.setFilteredItems();
-      this.dataService.orderCards();
+      this.dataService.orderMedicaments();
     };
   
     setFilteredItems() {
-      this.cards = this.dataService.filterTitles(this.searchTerm);
+      this.medicaments = this.dataService.filterMedicaments(this.searchTerm);
     };
 
-
-
     displayMedicament(index) {
-      this.cards[index].isShown = !this.cards[index].isShown;  
+      this.medicaments[index].isShown = !this.medicaments[index].isShown;  
     };
 
     openVidal(index){
-      window.open(this.cards[index].lien, '_system');
+      window.open(this.medicaments[index].lien, '_system');
     }
   };

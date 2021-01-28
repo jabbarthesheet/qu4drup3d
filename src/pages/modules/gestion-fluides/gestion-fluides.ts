@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { OptionsPage } from '../options/options';
-
 /**
  * Generated class for the GestionFluidesPage page.
  *

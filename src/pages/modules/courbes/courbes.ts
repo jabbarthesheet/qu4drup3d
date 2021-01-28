@@ -3,7 +3,6 @@ import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Chart } from 'chart.js'; 
 import { ViewChild, ElementRef } from "@angular/core";
-import { AccueilPage } from '../../accueil/accueil';
 
 @Component({
   selector: 'page-courbes',

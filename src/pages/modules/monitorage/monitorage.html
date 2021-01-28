@@ -45,121 +45,130 @@ Monitorage & dispositifs  </div>
     <ion-row >
       <ion-col>
       </ion-col>
-      <ion-col class="normale">
+      <ion-col>
+        Trop bas
+      </ion-col>
+      <ion-col>
         Normale
       </ion-col>
-      <ion-col class="trophaut">
+      <ion-col>
         Trop haut
-      </ion-col>
-      <ion-col class="tropbas">
-        Trop bas
       </ion-col>
 
     </ion-row>
 
     <ion-row>
       <ion-col class="intitules">
-          FC (/min)
+          FC <br> (/min)
       </ion-col>
-      <ion-col class="normale">
-        {{FCnormale}}
+      <ion-col>
+        <ion-chip color="primary">&nbsp;&nbsp;&nbsp;{{FCdangerBas}}<ion-label></ion-label></ion-chip>
       </ion-col>
-      <ion-col class="trophaut">
-        {{FCdangerHaut}}
+      <ion-col>
+        <ion-chip color="pastel-green">&nbsp;&nbsp;&nbsp;{{FCnormale}}<ion-label></ion-label></ion-chip>
       </ion-col>
-      <ion-col class="tropbas">
-        {{FCdangerBas}}
+      <ion-col>
+        <ion-chip color="danger">&nbsp;&nbsp;&nbsp;{{FCdangerHaut}}<ion-label></ion-label></ion-chip>
       </ion-col>
+
     </ion-row>
 
     <ion-row>
       <ion-col class="intitules" >
-          FR (/min)
+          FR <br>(/min)
       </ion-col>
-      <ion-col class="normale"> 
-        {{FRnormale}}
+      <ion-col>
+        <ion-chip color="primary">&nbsp;&nbsp;&nbsp;{{FRdangerBas}}<ion-label></ion-label></ion-chip>
+
       </ion-col>
-      <ion-col class="trophaut">
-        {{FRdangerHaut}}
+      <ion-col> 
+        <ion-chip color="pastel-green">&nbsp;&nbsp;&nbsp;{{FRnormale}}<ion-label></ion-label></ion-chip>
       </ion-col>
-      <ion-col class="tropbas">
-        {{FRdangerBas}}
+      <ion-col>
+        <ion-chip color="danger">&nbsp;&nbsp;&nbsp;{{FRdangerHaut}}<ion-label></ion-label></ion-chip>
+
       </ion-col>
+
     </ion-row>
 
     <ion-row>
       <ion-col class="intitules">
-          SpO2 (%)
+          SpO2 <br>(%)
       </ion-col>
-      <ion-col class="normale">
-        {{SpO2normale}}
+      <ion-col>
+        <ion-chip color="primary">&nbsp;&nbsp;&nbsp;{{SpO2dangerBas}}<ion-label></ion-label></ion-chip>
+   
       </ion-col>
-      <ion-col class="trophaut">
+      <ion-col>
+        <ion-chip color="pastel-green">&nbsp;&nbsp;&nbsp;{{SpO2normale}}<ion-label></ion-label></ion-chip>
+      </ion-col>
+      <ion-col>
         -
       </ion-col>
-      <ion-col class="tropbas">
-        {{SpO2dangerBas}}
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="intitules">
+          PAS <br>(mmHg)
+      </ion-col>
+      <ion-col>
+        <ion-chip color="primary">&nbsp;&nbsp;&nbsp;{{PASdangerBas}}<ion-label></ion-label></ion-chip>
+      </ion-col>
+      <ion-col>
+        <ion-chip color="pastel-green">&nbsp;&nbsp;&nbsp;{{PASnormale}}<ion-label></ion-label></ion-chip>
+      </ion-col>
+      <ion-col >
+        <ion-chip color="danger">&nbsp;&nbsp;&nbsp;{{PASdangerHaut}}<ion-label></ion-label></ion-chip>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col class="intitules">
-          PAS (mmHg)
+          PAM <br>(mmHg)
       </ion-col>
-      <ion-col class="normale">
-        {{PASnormale}}
+      <ion-col>
+        <ion-chip color="primary">&nbsp;&nbsp;&nbsp;{{PAMdangerBas}}<ion-label></ion-label></ion-chip>
       </ion-col>
-      <ion-col class="trophaut">
-        {{PASdangerHaut}}
+      <ion-col>
+        <ion-chip color="pastel-green">&nbsp;&nbsp;&nbsp;{{PAMnormale}}<ion-label></ion-label></ion-chip>
       </ion-col>
-      <ion-col class="tropbas">
-        {{PASdangerBas}}
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col class="intitules">
-          PAD (mmHg)
-      </ion-col>
-      <ion-col class="normale">
-        {{PADnormale}}
-      </ion-col>
-      <ion-col class="trophaut">
-        {{PADdangerHaut}}
-      </ion-col>
-      <ion-col class="tropbas">
-        {{PADdangerBas}}
+      <ion-col>
+        <ion-chip color="danger">&nbsp;&nbsp;&nbsp;{{PAMdangerHaut}}<ion-label></ion-label></ion-chip>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col class="intitules">
-          PAM (mmHg)
+          PAD <br>(mmHg)
       </ion-col>
-      <ion-col class="normale">
-        {{PAMnormale}}
+      <ion-col>
+        <ion-chip color="primary">&nbsp;&nbsp;&nbsp;{{PADdangerBas}}<ion-label></ion-label></ion-chip>
       </ion-col>
-      <ion-col class="trophaut">
-        {{PAMdangerHaut}}
+      <ion-col>
+        <ion-chip color="pastel-green">&nbsp;&nbsp;&nbsp;{{PADnormale}}<ion-label></ion-label></ion-chip>
       </ion-col>
-      <ion-col class="tropbas">
-        {{PAMdangerBas}}
+      <ion-col>
+        <ion-chip color="danger">&nbsp;&nbsp;&nbsp;{{PADdangerHaut}}<ion-label></ion-label></ion-chip>
       </ion-col>
     </ion-row>
 
+
     <ion-row>
       <ion-col class="intitules">
-          Diurèse (mL/h sur 3h)
+          Diurèse <br>(mL/h sur 3h)
       </ion-col>
-      <ion-col class="normale">
-        {{Diuresenormale}}
+      <ion-col>
+        <ion-chip color="primary">&nbsp;&nbsp;&nbsp;{{DiuresedangerBas}}<ion-label></ion-label></ion-chip>
+        
       </ion-col>
-      <ion-col class="trophaut">
-        {{DiuresedangerHaut}}
+      <ion-col>
+        <ion-chip color="pastel-green">&nbsp;&nbsp;&nbsp;{{Diuresenormale}}<ion-label></ion-label></ion-chip>
+      </ion-col>
+      <ion-col>
+        <ion-chip color="danger">&nbsp;&nbsp;&nbsp;{{DiuresedangerHaut}}<ion-label></ion-label></ion-chip>
       </ion-col>      
-      <ion-col class="tropbas">
-        {{DiuresedangerBas}}
-      </ion-col>
+
     </ion-row>
     </ion-grid>
 

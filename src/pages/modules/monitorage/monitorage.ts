@@ -169,27 +169,27 @@ export class MonitoragePage {
         if (this.AgeNum <= 1) {
 
           this.FCnormale = "90-180";
-          this. FCdangerHaut = "> 190";
-          this.FCdangerBas = "< 90";
+          this. FCdangerHaut = " > 190";
+          this.FCdangerBas = " < 90";
           
           this.FRnormale = "40" ;
-          this.FRdangerHaut = "> 60" ;
-          this.FRdangerBas =  "< 20";
+          this.FRdangerHaut = " > 60" ;
+          this.FRdangerBas =  " < 20";
         
           this.SpO2normale = 100 ;
-          this.SpO2dangerBas = "< 90";
+          this.SpO2dangerBas = " < 90";
         
           this.PASnormale = "70-90";
-          this.PASdangerHaut = "> 100";
-          this.PASdangerBas = "< 60";
+          this.PASdangerHaut = " > 100";
+          this.PASdangerBas = " < 60";
         
           this.PADnormale = "40-50";
-          this.PADdangerHaut = "> 50";
-          this.PADdangerBas = "< 30";
+          this.PADdangerHaut = " > 50";
+          this.PADdangerBas = " < 30";
         
           this.PAMnormale = "45-55";
-          this.PAMdangerHaut = "> 55";
-          this.PAMdangerBas = "< 45";
+          this.PAMdangerHaut = " > 55";
+          this.PAMdangerBas = " < 45";
         
           this.Diuresenormale = Math.round((this.PoidsNum * 2.5)*10)/10;
           this.DiuresedangerHaut = "> " + (Math.round((this.PoidsNum * 4)*10)/10 ).toString() ;
@@ -199,123 +199,123 @@ export class MonitoragePage {
         else if (this.AgeNum <= 24) {
 
           this.FCnormale = "80-155" ;
-          this. FCdangerHaut = "> 170";
-          this.FCdangerBas = "< 80";
+          this. FCdangerHaut = " > 170";
+          this.FCdangerBas = " < 80";
           
           this.FRnormale = 30 ;
-          this.FRdangerHaut = "> 60";
-          this.FRdangerBas =  "< 20";
+          this.FRdangerHaut = " > 60";
+          this.FRdangerBas =  " < 20";
         
           this.SpO2normale = 100;
-          this.SpO2dangerBas = "< 90";
+          this.SpO2dangerBas = " < 90";
         
           this.PASnormale = "85-105";
-          this.PASdangerHaut = "> 110";
-          this.PASdangerBas = "< 75";
+          this.PASdangerHaut = " > 110";
+          this.PASdangerBas = " < 75";
         
           this.PADnormale = "50-65";
-          this.PADdangerHaut = "> 65";
-          this.PADdangerBas = "< 50" ;
+          this.PADdangerHaut = " > 65";
+          this.PADdangerBas = " < 50" ;
         
           this.PAMnormale = "65-80";
-          this.PAMdangerHaut = "> 80";
-          this.PAMdangerBas = "< 60";
+          this.PAMdangerHaut = " > 80";
+          this.PAMdangerBas = " < 60";
         
           this.Diuresenormale = Math.round((this.PoidsNum * 2.5)*10)/10;
-          this.DiuresedangerHaut = "> " + (Math.round((this.PoidsNum * 4)*10)/10 ).toString();
-          this.DiuresedangerBas = "< " + (Math.round((this.PoidsNum * 1)*10)/10 ).toString();
+          this.DiuresedangerHaut = " > " + (Math.round((this.PoidsNum * 4)*10)/10 ).toString();
+          this.DiuresedangerBas = " < " + (Math.round((this.PoidsNum * 1)*10)/10 ).toString();
           ;}
 
         else if (this.AgeNum <= 48) {
 
             this.FCnormale = "70-140";
-            this. FCdangerHaut = "> 160" ;
-            this.FCdangerBas = "< 70";
+            this. FCdangerHaut = " > 160" ;
+            this.FCdangerBas = " < 70";
             
             this.FRnormale = 20 ;
-            this.FRdangerHaut = "> 40";
-            this.FRdangerBas =  "< 15";
+            this.FRdangerHaut = " > 40";
+            this.FRdangerBas =  " < 15";
           
             this.SpO2normale = 100 ;
             this.SpO2dangerBas = 92 ;
           
-            this.PASnormale = "90-110";
-            this.PASdangerHaut = "> 130";
-            this.PASdangerBas = "< 80";
+            this.PASnormale = " 90-110";
+            this.PASdangerHaut = " > 130";
+            this.PASdangerBas = " < 80";
           
             this.PADnormale = "50-65";
-            this.PADdangerHaut = "> 65";
-            this.PADdangerBas = "< 35";
+            this.PADdangerHaut = " > 65";
+            this.PADdangerBas = " < 35";
           
             this.PAMnormale = "65 - 80";
-            this.PAMdangerHaut = "> 80" ;
-            this.PAMdangerBas = "< 65";
+            this.PAMdangerHaut = " > 80" ;
+            this.PAMdangerBas = " < 65";
           
             this.Diuresenormale = Math.round((this.PoidsNum * 2)*10)/10;
-            this.DiuresedangerHaut = "> " + (Math.round((this.PoidsNum * 4)*10)/10 ).toString();
-            this.DiuresedangerBas = "< " + (Math.round((this.PoidsNum * 1)*10)/10 ).toString();
+            this.DiuresedangerHaut = " > " + (Math.round((this.PoidsNum * 4)*10)/10 ).toString();
+            this.DiuresedangerBas = " < " + (Math.round((this.PoidsNum * 1)*10)/10 ).toString();
             ;}
 
             
     else if (this.AgeNum <= 120) {
 
       this.FCnormale = "65-125";
-      this. FCdangerHaut = "> 140" ;
-      this.FCdangerBas = "< 60";
+      this. FCdangerHaut = " > 140" ;
+      this.FCdangerBas = " < 60";
       
       this.FRnormale = 18 ;
-      this.FRdangerHaut = "> 30";
-      this.FRdangerBas =  "< 15";
+      this.FRdangerHaut = " > 30";
+      this.FRdangerBas =  " < 15";
     
       this.SpO2normale = 100 ;
       this.SpO2dangerBas = 92 ;
     
       this.PASnormale = "95-115";
-      this.PASdangerHaut = "> 140";
-      this.PASdangerBas = "< 85";
+      this.PASdangerHaut = " > 140";
+      this.PASdangerBas = " < 85";
     
       this.PADnormale = "55-70";
-      this.PADdangerHaut = "> 75";
-      this.PADdangerBas = "< 35";
+      this.PADdangerHaut = " > 75";
+      this.PADdangerBas =  " < 35";
     
       this.PAMnormale = "70-85";
-      this.PAMdangerHaut = "> 90";
-      this.PAMdangerBas = "< 70";
+      this.PAMdangerHaut = " > 90";
+      this.PAMdangerBas = " < 70";
     
       this.Diuresenormale = Math.round((this.PoidsNum * 1.5)*10)/10;
-      this.DiuresedangerHaut = "> " + (Math.round((this.PoidsNum * 4)*10)/10 ).toString();
-      this.DiuresedangerBas = "< " + (Math.round((this.PoidsNum * 1)*10)/10 ).toString();
+      this.DiuresedangerHaut = " > " + (Math.round((this.PoidsNum * 4)*10)/10 ).toString();
+      this.DiuresedangerBas = " < " + (Math.round((this.PoidsNum * 1)*10)/10 ).toString();
       ;}
 
 
       else {
 
         this.FCnormale = "55-105";
-        this. FCdangerHaut = "> 130";
-        this.FCdangerBas = "< 50";
+        this. FCdangerHaut = " > 130";
+        this.FCdangerBas = " < 50";
         
         this.FRnormale = 15;
-        this.FRdangerHaut = "> 30" ;
-        this.FRdangerBas =  "< 10";
+        this.FRdangerHaut = " > 30" ;
+        this.FRdangerBas =  " < 10";
       
         this.SpO2normale = 100 ;
         this.SpO2dangerBas = 94 ;
       
         this.PASnormale = "110-130";
-        this.PASdangerHaut = "< 90" ;
-        this.PASdangerBas = "> 160";
+        this.PASdangerHaut = " < 90" ;
+        this.PASdangerBas = " > 160";
       
         this.PADnormale = "65 - 80";
-        this.PADdangerHaut = "> 85";
-        this.PADdangerBas = "< 40" ;
+        this.PADdangerHaut = " > 85";
+        this.PADdangerBas = " < 40" ;
       
         this.PAMnormale = "80-95";
-        this.PAMdangerHaut = "> 100";
-        this.PAMdangerBas = "< 80";
+        this.PAMdangerHaut = " > 100";
+        this.PAMdangerBas = " < 80";
       
         this.Diuresenormale = Math.round((this.PoidsNum * 1)*10)/10;
-        this.DiuresedangerHaut = "> " + (Math.round((this.PoidsNum * 4)*10)/10 ).toString() ;
-        this.DiuresedangerBas = "< " + (Math.round((this.PoidsNum * 1)*10)/10 ).toString();
+        this.DiuresedangerHaut = " > " + (Math.round((this.PoidsNum * 4)*10)/10 ).toString() ;
+        this.DiuresedangerBas = " < " + (Math.round((this.PoidsNum * 1)*10)/10 ).toString();
         ;};
 
 

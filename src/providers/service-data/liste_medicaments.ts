@@ -4088,7 +4088,7 @@ export class ServiceDataProvider {
 
         {
           isShown: false, 
-          intitule: "YOung Dees",
+          intitule: "Young Dees",
           specialite : "Urologie",
           classeConta : "Contaminée",
           recommandation : "Recommandée",
@@ -4134,6 +4134,253 @@ export class ServiceDataProvider {
           posologiereinjectionNumATBAllergie2 : 10,
           doseMaxReinjectionATBAllergie2 : 500, 
         },
+
+        {
+          isShown: false, 
+          intitule: "Laparoschisis",
+          specialite : "Viscerale néonatale première",
+          classeConta : "Contaminée",
+          voieATB : "IV",  
+          recommandation : "Recommandée",
+          
+          ATB1 : "Cefotaxime",
+          presentationATB1 : "500 mg pdr inj", 
+          posologieATB1 : "100 mg/kg", 
+          posologieNumATB1 : 100, 
+          administrationATB1 : "IVL",
+          doseMaxATB1 : 2000,
+          delaiReinjectionATB1 : "Réinjection selon bactériologie",
+
+          
+          ATB2 : "Gentamicine",
+          posologieATB2 : "3 mg/kg", 
+          posologieNumATB2 : 3, 
+          administrationATB2 : "IVL",
+          doseMaxATB2 : 1000,
+          delaiReinjectionATB2 : "Pas de réinjection",
+
+          ATB3 : "Métronidazole",
+          posologieATB3 : "20 mg/kg", 
+          posologieNumATB3 : 20, 
+          administrationATB3 : "IVL : si IMF ou ouverture du tube digestif",
+          doseMaxATB3 : 1000,
+          delaiReinjectionATB3 : "Réinjection selon bactériologie",
+        },  
+
+        {
+          isShown: false, 
+          intitule: "Omphalocele avec Schuster",
+          specialite : "Viscerale néonatale première",
+          classeConta : "Contaminée",
+          voieATB : "IV",  
+          recommandation : "Recommandée",
+          
+          ATB1 : "Cefotaxime",
+          presentationATB1 : "500 mg pdr inj", 
+          posologieATB1 : "100 mg/kg", 
+          posologieNumATB1 : 100, 
+          administrationATB1 : "IVL",
+          doseMaxATB1 : 2000,
+          delaiReinjectionATB1 : "Réinjection selon bactériologie",
+
+          
+          ATB2 : "Gentamicine",
+          posologieATB2 : "3 mg/kg", 
+          posologieNumATB2 : 3, 
+          administrationATB2 : "IVL",
+          doseMaxATB2 : 1000,
+          delaiReinjectionATB2 : "Pas de réinjection",
+
+          ATB3 : "Métronidazole",
+          posologieATB3 : "20 mg/kg", 
+          posologieNumATB3 : 20, 
+          administrationATB3 : "IVL : si IMF ou ouverture du tube digestif",
+          doseMaxATB3 : 1000,
+          delaiReinjectionATB3 : "Réinjection selon bactériologie",
+        },  
+
+        {
+          isShown: false, 
+          intitule: "Occlusion néonatale",
+          specialite : "Viscerale néonatale première",
+          classeConta : "Contaminée",
+          voieATB : "IV",  
+          recommandation : "Recommandée",
+          
+          ATB1 : "Augmentin",
+          presentationATB1 : "500 mg pdr inj", 
+          posologieATB1 : "50 mg/kg", 
+          posologieNumATB1 : 50, 
+          administrationATB1 : "IVL",
+          doseMaxATB1 : 2000,
+          delaiReinjectionATB1 : "Réinjection selon bactériologie",
+
+          
+          ATB2 : "Gentamicine",
+          posologieATB2 : "3 mg/kg", 
+          posologieNumATB2 : 3, 
+          administrationATB2 : "IVL",
+          doseMaxATB2 : 1000,
+          delaiReinjectionATB2 : "Pas de réinjection",
+
+          ATB3 : "Métronidazole",
+          posologieATB3 : "20 mg/kg", 
+          posologieNumATB3 : 20, 
+          administrationATB3 : "IVL : si suspicion IMF",
+          doseMaxATB3 : 1000,
+          delaiReinjectionATB3 : "Réinjection selon bactériologie",
+        },  
+
+        {
+          isShown: false, 
+          intitule: "Entérostomie",
+          specialite : "Viscerale néonatale première",
+          classeConta : "Contaminée",
+          voieATB : "IV",  
+          recommandation : "Recommandée",
+          
+          ATB1 : "Augmentin",
+          presentationATB1 : "500 mg pdr inj", 
+          posologieATB1 : "50 mg/kg", 
+          posologieNumATB1 : 50, 
+          administrationATB1 : "IVL",
+          doseMaxATB1 : 2000,
+          delaiReinjectionATB1 : "Réinjection selon bactériologie",
+
+          
+          ATB2 : "Gentamicine",
+          posologieATB2 : "3 mg/kg", 
+          posologieNumATB2 : 3, 
+          administrationATB2 : "IVL",
+          doseMaxATB2 : 1000,
+          delaiReinjectionATB2 : "Pas de réinjection",
+
+          ATB3 : "Métronidazole",
+          posologieATB3 : "20 mg/kg", 
+          posologieNumATB3 : 20, 
+          administrationATB3 : "IVL : si suspicion IMF",
+          doseMaxATB3 : 1000,
+          delaiReinjectionATB3 : "Réinjection selon bactériologie",
+        },  
+
+        {
+          isShown: false, 
+          intitule: "Hernie du cordon",
+          specialite : "Viscerale néonatale première",
+          classeConta : "Propre",
+          voieATB : "",  
+          recommandation : "Non recommandée",
+        },  
+
+        {
+          isShown: false, 
+          intitule: "Omphalocele sans Schuster",
+          specialite : "Viscerale néonatale première",
+          classeConta : "Propre",
+          voieATB : "",  
+          recommandation : "Non recommandée",
+        },  
+
+        {
+          isShown: false, 
+          intitule: "Hernie diaphragmatique",
+          specialite : "Viscerale néonatale différée",
+          classeConta : "Propre",
+          voieATB : "",  
+          recommandation : "Non recommandée",
+        },  
+
+        {
+          isShown: false, 
+          intitule: "Fermeture du canal artériel",
+          specialite : "Viscerale néonatale différée",
+          classeConta : "Propre",
+          voieATB : "",  
+          recommandation : "Non recommandée",
+        },  
+
+        {
+          isShown: false, 
+          intitule: "Hernie inguinale",
+          specialite : "Viscerale néonatale différée",
+          classeConta : "Propre",
+          voieATB : "",  
+          recommandation : "Non recommandée",
+        }, 
+        
+        {
+          isShown: false, 
+          intitule: "Hernie de l'ovaire",
+          specialite : "Viscerale néonatale différée",
+          classeConta : "Propre",
+          voieATB : "",  
+          recommandation : "Non recommandée",
+        }, 
+
+        {
+          isShown: false, 
+          intitule: "Anoplastie",
+          specialite : "Viscerale néonatale",
+          classeConta : "Contaminée",
+          voieATB : "",  
+          recommandation : "Recommandée",
+
+          ATB1 : "Augmentin",
+          presentationATB1 : "500 mg pdr inj", 
+          posologieATB1 : "50 mg/kg", 
+          posologieNumATB1 : 50, 
+          administrationATB1 : "IVL",
+          doseMaxATB1 : 2000,
+          delaiReinjectionATB1 : "2h",
+        },  
+
+        {
+          isShown: false, 
+          intitule: "Transposition anale",
+          specialite : "Viscerale néonatale",
+          classeConta : "Contaminée",
+          voieATB : "",  
+          recommandation : "Recommandée",
+
+          ATB1 : "Augmentin",
+          presentationATB1 : "500 mg pdr inj", 
+          posologieATB1 : "50 mg/kg", 
+          posologieNumATB1 : 50, 
+          administrationATB1 : "IVL",
+          doseMaxATB1 : 2000,
+          delaiReinjectionATB1 : "2h",
+        },  
+
+        {
+          isShown: false, 
+          intitule: "Fermeture de Schuster (omphalocele)",
+          specialite : "Viscerale néonatale",
+          classeConta : "Contaminée",
+          voieATB : "",  
+          recommandation : "Recommandée",
+
+          ATB1 : "Ceftazidime",
+          presentationATB1 : "250 mg pdr inj", 
+          posologieATB1 : "50 mg/kg", 
+          posologieNumATB1 : 50, 
+          administrationATB1 : "IVL sur 30 minutes",
+          doseMaxATB1 : 2000,
+          delaiReinjectionATB1 : "Selon résultats de bactériologie, toutes les 8h",
+
+          ATB2 : "Gentamicine",
+          posologieATB2 : "3 mg/kg", 
+          posologieNumATB2 : 3, 
+          administrationATB2 : "IVL",
+          doseMaxATB2 : 1000,
+          delaiReinjectionATB2 : "Pas de réinjection",
+
+          ATB3 : "Vancomycine",
+          posologieATB3 : "15 mg/kg", 
+          posologieNumATB3 : 20, 
+          administrationATB3 : "IVSE sur 1h",
+          doseMaxATB3 : 2000,
+          delaiReinjectionATB3 : "Réinjection selon bactériologie, toutes les 12h",
+        },  
 
     ];
 

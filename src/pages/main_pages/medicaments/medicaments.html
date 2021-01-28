@@ -1,5 +1,3 @@
-
-
   <ion-header>
     <br>
     Médicaments 
@@ -23,8 +21,8 @@
       [(ngModel)]="searchTerm"
       (ionChange)="setFilteredItems()"
       placeholder="Nom..."
-      inputmode="text"
-    ></ion-searchbar><br *ngIf = "!this.searchBarType"><ion-icon *ngIf = "!this.searchBarType" zoom:1.5 name="repeat" (click)="toggleSearchBars()"></ion-icon>
+      inputmode="text">
+    </ion-searchbar><br *ngIf = "!this.searchBarType"><ion-icon *ngIf = "!this.searchBarType" zoom:1.5 name="repeat" (click)="toggleSearchBars()"></ion-icon>
 
     <ion-searchbar *ngIf = "this.searchBarType"
     class="specialiteSearchbar"

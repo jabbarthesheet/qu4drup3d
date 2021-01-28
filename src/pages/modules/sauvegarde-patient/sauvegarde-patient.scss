@@ -8,14 +8,28 @@ page-sauvegarde-patient {
 
 .mesPatients{
     text-align:center;
-    width: 50%; 
+    width: 40%; 
     float:right; 
 }
 
-.exemplesPatients{
+.Garçon{
     text-align:center;
-    width: 50%; 
+    width: 20%; 
     float:left; 
+    background-color:#75a4f5 ;
+    border-radius: 15px;
+    margin:2%; 
+    }
+
+.Fille 
+{
+    text-align:center;
+    width: 20%; 
+    float:left; 
+    background-color: #ffd1dc; 
+    border-radius: 15px;
+    margin:2%; 
+
 }
 
 
@@ -24,6 +38,7 @@ page-sauvegarde-patient {
     background-color:#bce7e9;
     margin:2%;
     float:left;
+    border-radius: 15px;
 }
 
 .iconPatient{

@@ -3,7 +3,7 @@
 
 
 <div class="header"> 
-
+<br>
   <div (click)="retourHome()" class="backButton">
   <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
   Retour
@@ -27,21 +27,15 @@
 
 <div *ngIf="PatientsView == 1 ">
 
-  <div padding class="fichePatient" *ngFor="let item of ExemplesPatients; let index = index;">
-    <div class="iconPatient">
-      <ion-icon color="primary" name="download" (click)="loadExemplePatient(index)"></ion-icon>
-      <br><br>
-    </div>
-    <span class="prenomPatient">{{item.Prenom}}</span><br>
-    <span class="comment">    
-        {{item.Poids}} kg - {{item.Taille}} cm
-    </span>
-  </div>
+  <ion-card><ion-card-content><ion-icon color="dark-turquoise" name="information-circle"></ion-icon>&nbsp; &nbsp; Appuyer sur une vignette pour charger les données types correspondant à l'âge et au sexe choisi.</ion-card-content></ion-card>
+
+    <ion-chip *ngFor="let item of ExemplesPatients; let index = index;" (click)="loadExemplePatient(index)" class="{{item.Sexe}}"><ion-label><ion-icon *ngIf = "item.Sexe == 'Garçon' " name="male"></ion-icon><ion-icon *ngIf = "item.Sexe == 'Fille' " name="female"></ion-icon><br>{{item.Prenom}}</ion-label></ion-chip>
+ 
   </div>
 
 
   <div *ngIf="PatientsView == 2 ">
-  <ion-card><ion-card-content>Les patients enregistrés à partir de l'écran d'accueil sont enregistrés ici.</ion-card-content></ion-card>
+  <ion-card><ion-card-content><ion-icon color="dark-turquoise" name="information-circle"></ion-icon>&nbsp; &nbsp; Les patients enregistrés à partir de l'écran d'accueil sont enregistrés ici.</ion-card-content></ion-card>
   <div padding class="fichePatient" *ngFor="let item of PatientsSauvegardes; let index = index;">
     <div class="iconPatient">
       <ion-icon color="primary" name="download" (click)="loadMyPatient(index)"></ion-icon>

@@ -22,7 +22,7 @@ Traitements anti-infectieux</div>
   (ionChange)="setFilteredChirurgie()"
   placeholder="Intervention..."
   inputmode="text"
-></ion-searchbar><br *ngIf = "!this.searchBarType"><ion-icon *ngIf = "!this.searchBarType" zoom:1.5 name="repeat" (click)="toggleSearchBars()"></ion-icon>
+></ion-searchbar><br *ngIf = "!this.searchBarType"><ion-icon *ngIf = "!this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>
 
 <ion-searchbar *ngIf = "this.searchBarType"
 class="specialiteSearchbar"
@@ -30,7 +30,7 @@ class="specialiteSearchbar"
 (ionChange)="setFilteredSpecialite()"
 placeholder="Specialite..."
 inputmode="text"
-></ion-searchbar><br *ngIf = "this.searchBarType"><ion-icon *ngIf = "this.searchBarType" zoom:1.5 name="repeat" (click)="toggleSearchBars()"></ion-icon>
+></ion-searchbar><br *ngIf = "this.searchBarType"><ion-icon *ngIf = "this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>
 
 
 

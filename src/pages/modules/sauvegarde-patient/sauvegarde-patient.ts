@@ -20,19 +20,38 @@ PatientsView;
 
 public PatientsSauvegardes = []; 
 
+
 public ExemplesPatients = [
-  { Prenom : "Garçon 1 mois", Sexe : "Garçon" ,  Age : 1, Poids : 4.2, Taille : 55, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
-  { Prenom : "Fille 1 mois", Sexe : "Fille" ,  Age : 1, Poids : 4.1, Taille : 55, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
-  { Prenom : "Garçon 6 mois", Sexe : "Garçon" ,  Age : 6, Poids : 8, Taille : 68, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
-  { Prenom : "Fille 6 mois", Sexe : "Fille" ,  Age : 6, Poids : 7.8, Taille : 65, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
-  { Prenom : "Garçon 1 an", Sexe : "Garçon" ,  Age : 12, Poids : 10, Taille : 75, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
-  { Prenom : "Fille 1 an", Sexe : "Fille" ,  Age : 12, Poids : 9.5, Taille : 75, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
-  { Prenom : "Garçon 5 ans", Sexe : "Garçon" ,  Age : 60, Poids : 18, Taille : 110, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
-  { Prenom : "Fille 5 ans", Sexe : "Fille" ,  Age : 60, Poids : 18, Taille : 110, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
-  { Prenom : "Garçon 10 ans", Sexe : "Garçon" ,  Age : 120, Poids : 33, Taille : 140, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
-  { Prenom : "Fille 10 ans", Sexe : "Fille" ,  Age : 120, Poids : 33, Taille : 140, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
-  { Prenom : "Garçon 15 ans", Sexe : "Garçon" ,  Age : 180, Poids : 57, Taille : 165, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
-  { Prenom : "Fille 15 ans", Sexe : "Fille" ,  Age : 180, Poids : 52, Taille : 161, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "1 mois", Sexe : "Garçon" ,  Age : 1, Poids : 4.4, Taille : 54, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "1 mois", Sexe : "Fille" ,  Age : 1, Poids : 4.2, Taille : 53, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+
+  { Prenom : "2 mois", Sexe : "Garçon" ,  Age : 2, Poids : 5.4, Taille : 58, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "2 mois", Sexe : "Fille" ,  Age : 2, Poids : 5, Taille : 56.5, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+
+  { Prenom : "3 mois", Sexe : "Garçon" ,  Age : 3, Poids : 6.2, Taille : 61, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "3 mois", Sexe : "Fille" ,  Age : 3, Poids : 5.7, Taille : 59.5, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+
+  { Prenom : "4 mois", Sexe : "Garçon" ,  Age : 4, Poids : 6.7, Taille : 63.5, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "4 mois", Sexe : "Fille" ,  Age : 4, Poids : 6.4, Taille : 62, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+
+  { Prenom : "5 mois", Sexe : "Garçon" ,  Age : 5, Poids : 7.4, Taille : 66, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "5 mois", Sexe : "Fille" ,  Age : 5, Poids : 6.9, Taille : 64.5, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  
+  { Prenom : "6 mois", Sexe : "Garçon" ,  Age : 6, Poids : 7.9, Taille : 67.5, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "6 mois", Sexe : "Fille" ,  Age : 6, Poids : 7.4, Taille : 65.5, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  
+  { Prenom : "9 mois", Sexe : "Garçon" ,  Age : 9, Poids : 9, Taille : 72, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "9 mois", Sexe : "Fille" ,  Age : 9, Poids : 8.4, Taille : 70.5, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  
+  
+  { Prenom : "1 an", Sexe : "Garçon" ,  Age : 12, Poids : 10, Taille : 75, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "1 an", Sexe : "Fille" ,  Age : 12, Poids : 9.5, Taille : 75, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "5 ans", Sexe : "Garçon" ,  Age : 60, Poids : 18, Taille : 110, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "5 ans", Sexe : "Fille" ,  Age : 60, Poids : 18, Taille : 110, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "10 ans", Sexe : "Garçon" ,  Age : 120, Poids : 33, Taille : 140, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "10 ans", Sexe : "Fille" ,  Age : 120, Poids : 33, Taille : 140, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "15 ans", Sexe : "Garçon" ,  Age : 180, Poids : 57, Taille : 165, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
+  { Prenom : "15 ans", Sexe : "Fille" ,  Age : 180, Poids : 52, Taille : 161, EstomacPlein : "vide" , DureeJeune : 6, Allergie : "aucune connue"},
 ]; 
 
   constructor(

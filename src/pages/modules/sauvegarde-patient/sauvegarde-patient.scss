@@ -1,0 +1,42 @@
+page-sauvegarde-patient {
+
+}
+
+.switchPatientView {
+    width:100% !important;
+}
+
+.mesPatients{
+    text-align:center;
+    width: 50%; 
+    float:right; 
+}
+
+.exemplesPatients{
+    text-align:center;
+    width: 50%; 
+    float:left; 
+}
+
+
+.fichePatient{
+    width: 45%;
+    background-color:#bce7e9;
+    margin:2%;
+    float:left;
+}
+
+.iconPatient{
+    width: 8%;
+    float:right; 
+    padding:1%; 
+    text-align:center; 
+}
+
+
+.prenomPatient{
+
+    font-weight: bold;
+    font-size:14px;
+    color:#009c9e ;
+}

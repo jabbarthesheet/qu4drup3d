@@ -1,0 +1,125 @@
+
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+
+Traitements anti-infectieux</div>
+      <br>
+      <ion-item color="turquoise-fonce"> 
+        <ion-label>
+          <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
+          <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
+      </ion-item>
+      <ion-toolbar>
+
+  <ion-searchbar *ngIf = "!this.searchBarType"
+  class="interventionSearchbar"
+  [(ngModel)]="searchTerm"
+  (ionChange)="setFilteredChirurgie()"
+  placeholder="Intervention..."
+  inputmode="text"
+></ion-searchbar><br *ngIf = "!this.searchBarType"><ion-icon *ngIf = "!this.searchBarType" zoom:1.5 name="repeat" (click)="toggleSearchBars()"></ion-icon>
+
+<ion-searchbar *ngIf = "this.searchBarType"
+class="specialiteSearchbar"
+[(ngModel)]="searchTermSpecialite"
+(ionChange)="setFilteredSpecialite()"
+placeholder="Specialite..."
+inputmode="text"
+></ion-searchbar><br *ngIf = "this.searchBarType"><ion-icon *ngIf = "this.searchBarType" zoom:1.5 name="repeat" (click)="toggleSearchBars()"></ion-icon>
+
+
+
+</ion-toolbar>
+    </ion-header>
+
+
+
+    <ion-content>
+
+
+    <ion-card class="chirurgieContainer" (click)="displayChirurgie(index)" *ngFor="let chir of chirurgie, let index = index" [attr.data-index]="index">
+      <ion-card-header>
+        <ion-card-title class="intituleChirurgie">
+          {{chir.intitule}}     
+          <br><br>
+          <ion-chip *ngIf="chir.recommandation == 'Non recommandée'" class="indicationantibioprophylaxieChirurgie">
+            <ion-label>Antibioprophylaxie : {{chir.recommandation}}
+            </ion-label>
+          </ion-chip>
+          <ion-chip *ngIf="chir.recommandation == 'Recommandée'" class="voieAntibioChip">
+            <ion-label>Antibioprophylaxie : {{chir.recommandation}}</ion-label>
+          </ion-chip>
+        
+        </ion-card-title>
+        <span *ngIf="chir.specialite" class="specialiteChirurgie">{{chir.specialite}}</span> - <span *ngIf="chir.classeConta" class="classeContaminationChirurgie">Classe Altemeier : {{chir.classeConta}}</span>
+      </ion-card-header>
+
+
+      <ion-card-content class="chirurgiesubContainer" *ngIf="chir.isShown && chir.ATB1">
+        <hr>
+          <div *ngIf = "chir.ATB1"> 
+            <div class="intentionATB" *ngIf="chir.ATBAllergie1">Première intention</div>
+          <ion-chip *ngIf = "chir.ATB1" class="ATBchip">
+            <ion-label *ngIf = "PoidsNum * chir.posologieNumATB1 <= chir.doseMaxATB1 || !chir.posologieNumATB1" >{{chir.ATB1}} : <span *ngIf="chir.posologieNumATB1"> {{PoidsRound * chir.posologieNumATB1}} mg</span> {{chir.administrationATB1}}</ion-label>
+            <ion-label *ngIf = "PoidsNum * chir.posologieNumATB1 > chir.doseMaxATB1" >{{chir.ATB1}} : {{chir.doseMaxATB1}} mg {{chir.administrationATB1}}</ion-label>
+          </ion-chip>
+         
+          <ul class="infoAntibioChirurgie">
+            <li *ngIf="chir.posologieATB1">Posologie/poids : {{chir.posologieATB1}} (max. : {{chir.doseMaxATB1}} mg)</li>
+            <li *ngIf="chir.dilutionATB1">Dilution : {{chir.dilutionATB1}} </li>
+            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATB1 <= chir.doseMaxReinjectionATB1">Réinjection : {{chir.posologiereinjectionNumATB1 * PoidsRound}} mg/{{chir.delaiReinjectionATB1}} </li>
+            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATB1 > chir.doseMaxReinjectionATB1">Réinjection : {{chir.doseMaxReinjectionATB1}} mg/{{chir.delaiReinjectionATB1}} </li>
+          </ul>
+
+          <ion-chip *ngIf = "chir.ATB2" class="ATBchip">
+            <ion-label *ngIf = "PoidsNum * chir.posologieNumATB2 <= chir.doseMaxATB2" >+ {{chir.ATB2}} : {{PoidsRound * chir.posologieNumATB2}} mg {{chir.administrationATB2}}</ion-label>
+            <ion-label *ngIf = "PoidsNum * chir.posologieNumATB2 > chir.doseMaxATB2" >+ {{chir.ATB2}} : {{chir.doseMaxATB2}} mg {{chir.administrationATB2}}</ion-label>
+          </ion-chip>
+          <ul *ngIf = "chir.ATB2" class="infoAntibioChirurgie">
+            <li *ngIf="chir.posologieATB2">Posologie/poids : {{chir.posologieATB2}} (max. : {{chir.doseMaxATB2}} mg)</li>
+            <li *ngIf="chir.dilutionATB2">Dilution : {{chir.dilutionATB2}} </li>
+            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATB2 <= chir.doseMaxReinjectionATB2">Réinjection : {{chir.posologiereinjectionNumATB2 * PoidsRound}} mg/{{chir.delaiReinjectionATB2}} </li>
+            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATB2 > chir.doseMaxReinjectionATB2">Réinjection : {{chir.doseMaxReinjectionATB2}} mg/{{chir.delaiReinjectionATB2}} </li>
+          </ul>
+        </div>
+
+        <hr>
+        <div *ngIf= "chir.ATBAllergie1">
+          <div class="intentionATB">Seconde intention (allergie)</div>
+          <ion-chip class="ATBchip">
+            <ion-label *ngIf = "PoidsNum * chir.posologieNumATBAllergie1 <= chir.doseMaxATBAllergie1">{{chir.ATBAllergie1}} : {{PoidsRound * chir.posologieNumATBAllergie1}} mg {{chir.administrationATBAllergie1}}</ion-label>
+            <ion-label *ngIf = "PoidsNum * chir.posologieNumATBAllergie1 > chir.doseMaxATBAllergie1">{{chir.ATBAllergie1}} : {{chir.doseMaxATBAllergie1}} mg {{chir.administrationATBAllergie1}}</ion-label>
+          </ion-chip>
+
+          <ul class="infoAntibioChirurgie">
+            <li *ngIf="chir.posologieATBAllergie1">Posologie/poids : {{chir.posologieATBAllergie1}} (max. : {{chir.doseMaxATBAllergie1}} mg)</li>
+            <li *ngIf="chir.dilutionATBAllergie1">Dilution : {{chir.dilutionATBAllergie1}}</li>
+            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATBAllergie1 <= chir.doseMaxReinjectionATBAllergie1">Réinjection : {{chir.posologiereinjectionNumATBAllergie1 * PoidsRound}} mg/{{chir.delaiReinjectionATBAllergie1}} </li>
+            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATBAllergie1 > chir.doseMaxReinjectionATBAllergie1">Réinjection : {{chir.doseMaxReinjectionATBAllergie1}} mg/{{chir.delaiReinjectionATBAllergie1}} </li>
+          </ul> 
+
+     
+          <ion-chip *ngIf = "chir.ATBAllergie2" class="ATBchip">
+            <ion-label *ngIf = "PoidsNum * chir.posologieNumATBAllergie2 <= chir.doseMaxATBAllergie2" >+ {{chir.ATBAllergie2}} : {{PoidsRound * chir.posologieNumATBAllergie2}} mg {{chir.administrationATBAllergie2}}</ion-label>
+            <ion-label *ngIf = "PoidsNum * chir.posologieNumATBAllergie2 > chir.doseMaxATBAllergie2" >+ {{chir.ATBAllergie2}} : {{chir.doseMaxATBAllergie2}} mg {{chir.administrationATBAllergie2}}</ion-label>
+          </ion-chip>
+
+          <ul *ngIf="chir.ATBAllergie2" class="infoAntibioChirurgie"><b>{{chir.ATBAllergie2}}</b>
+            <li *ngIf="chir.posologieATBAllergie2">Posologie/poids : {{chir.posologieATBAllergie2}} (max. : {{chir.doseMaxATBAllergie2}} mg)</li>
+            <li *ngIf="chir.dilutionATBAllergie2">Dilution : {{chir.dilutionATBAllergie2}}</li>
+            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATBAllergie2 <= chir.doseMaxReinjectionATBAllergie2">Réinjection : {{chir.posologiereinjectionNumATBAllergie2 * PoidsRound}} mg/{{chir.delaiReinjectionATBAllergie2}} </li>
+            <li *ngIf="PoidsNum * chir.posologiereinjectionNumATBAllergie2 > chir.doseMaxReinjectionATBAllergie2">Réinjection : {{chir.doseMaxReinjectionATBAllergie2}} mg/{{chir.delaiReinjectionATBAllergie2}} </li>
+          </ul> 
+        </div>
+      </ion-card-content>
+
+    </ion-card>
+
+
+      
+</ion-content>

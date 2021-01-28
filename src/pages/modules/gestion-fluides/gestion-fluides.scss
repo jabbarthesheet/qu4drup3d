@@ -1,0 +1,54 @@
+
+.fluidIcon {
+
+    float: right !important;    
+
+};
+
+.nb{
+    text-align: left !important;
+    box-shadow:none; 
+}
+
+.HbItem{
+    float:left; 
+    width:50%;
+    font-size: 10px !important; 
+};
+
+.HbRange{
+    width:45%;
+    float: right; 
+};
+
+.TableApportsHeader
+{
+    font-size: 14px !important;
+    text-align:center;
+    background: #85D0D2;
+    color: #FFF;
+    border: none; 
+    padding: 0;
+}
+
+.saignement {
+    color : #ff6961 !important;
+}
+
+
+.TableApportsEven {
+    font-size: 12px !important;
+    text-align:center;
+    background: #FFF;
+    color: rgb(0, 0, 0);
+
+}
+
+.TableApportsOdd
+{
+    font-size: 12px !important;
+    text-align:center;
+    background: #dbd9d9; 
+    color: rgb(0, 0, 0);
+
+};

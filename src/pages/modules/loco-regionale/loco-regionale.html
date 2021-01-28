@@ -1,0 +1,421 @@
+<ion-header>
+  <br>
+
+        <!-- HEADER MENU  -->
+        <div class="header"> 
+
+          <div (click)="retourHome()" class="backButton">
+          <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+          Retour
+          </div>
+Anesthésie Loco-régionale
+            </div>
+            <br>
+      
+                  <!-- HEADER MON PATIENT  -->
+  
+            <ion-item color="turquoise-fonce"> 
+              <ion-label>
+                <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
+                <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+                <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
+            </ion-item>
+        
+
+            <ion-segment color="turquoise-fonce" [(ngModel)]="ALRView" >
+              <ion-segment-button value="1">
+            Péridurale
+              </ion-segment-button>
+              <ion-segment-button value="2">
+            Rachianesthésie
+              </ion-segment-button>
+              <ion-segment-button value="3">
+                Blocs
+                  </ion-segment-button>
+            </ion-segment>
+       
+
+          </ion-header>
+       <!-- END HEADER -->
+       <ion-content>
+
+    <ion-grid *ngIf="ALRView ==1">
+
+      <ion-row class="subHeaderRow">
+        <ion-col>
+          Réalisation
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Ponction
+        </ion-col>
+        <ion-col>
+         <ion-chip color="primary"><ion-label>L4-L5</ion-label></ion-chip>  </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Aiguille
+        </ion-col>
+        <ion-col>
+         <ion-chip color="primary"><ion-label>Pédiatrique</ion-label></ion-chip> (graduation/5mm)
+         </ion-col>
+      </ion-row>
+
+
+      <ion-row class="subHeaderRow">
+        <ion-col>
+          Mesures
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Estimation EPD Kemura 
+          <p class="comment">(Poids+10)/0,8</p>
+        </ion-col>
+        <ion-col>
+          <ion-chip color="turquoise"><ion-label>{{Kemura}} mm</ion-label></ion-chip>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Estimation EPD Busoni 
+          <p class="comment">Agex2 + 10</p>
+        </ion-col>
+        <ion-col>
+          <ion-chip color="turquoise"><ion-label>{{Busoni}} mm</ion-label></ion-chip>
+          </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Cathétérisation 
+        </ion-col>
+        <ion-col>
+          <ion-chip color="turquoise"><ion-label>30 mm</ion-label></ion-chip>
+       </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Insertion
+          <p class="comment">Distance espace + Cathétérisation</p> 
+        </ion-col>
+        <ion-col>
+          <ion-chip color="warning"><ion-label>{{(Busoni+Kemura)/2 + 30}} mm</ion-label></ion-chip>
+       </ion-col>
+      </ion-row>
+
+      <ion-row class="subHeaderRow">
+        <ion-col>
+          Cassette PIEB & PCEA
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Volume total
+        </ion-col>
+        <ion-col>
+          <ion-chip color="light"><ion-label>50 mL</ion-label></ion-chip>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Mélange
+        </ion-col>
+        <ion-col>
+          <ion-chip color="grisclair"><ion-label>Ropi 1 mg/mL</ion-label></ion-chip>
+          + <ion-chip color="primary"><ion-label>Suf 0,2 µg/mL</ion-label></ion-chip>  
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="subHeaderRow">
+        <ion-col>
+        Posologies
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Bolus horaire
+          <p class="comment">0,2 mL/kg/h</p>
+
+        </ion-col>
+        <ion-col>
+          <ion-chip color="warning"><ion-label>{{BolusPIEBRopiSuf}} mL </ion-label></ion-chip>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Bolus demande
+          <p class="comment">0,15 mL/kg/bolus</p>
+        </ion-col>
+        <ion-col>
+          <ion-chip color="warning"><ion-label>{{BolusPCEARopiSuf}} mL</ion-label></ion-chip>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Période réfractaire
+        </ion-col>
+        <ion-col>
+          <ion-chip color="warning"><ion-label>20 minutes</ion-label></ion-chip>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Dose max. /4h
+          <p class="comment">1,5 mL/kg/4h</p>
+        </ion-col>
+        <ion-col>
+          <ion-chip color="danger"><ion-label>{{DoseMaxPCEARopiSuf}} mL</ion-label></ion-chip>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+
+
+    <ion-card *ngIf="ALRView == 2 && PoidsNum > 5" class="drogueContainer">
+    <ion-card-content>
+      Non applicable au delà de 5 kg.
+    </ion-card-content>
+    </ion-card>
+
+ 
+
+    <ion-grid *ngIf="ALRView == 2 && PoidsNum <= 5">
+
+      <ion-row class="subHeaderRow">
+        <ion-col>
+          Critères
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Nouveau né de moins de 5 kg
+        </ion-col>
+      </ion-row> 
+      
+      <ion-row>
+        <ion-col>
+          Chirurgie sous ombilicale
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="subHeaderRow">
+        <ion-col>
+          Réalisation
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Ponction
+        </ion-col>
+        <ion-col>
+         <ion-chip color="primary"><ion-label>L4-L5</ion-label></ion-chip>  </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Aiguille
+        </ion-col>
+        <ion-col>
+         <ion-chip color="primary"><ion-label>25G - 25mm</ion-label></ion-chip>  </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Seringue
+        </ion-col>
+        <ion-col>
+         <ion-chip color="primary"><ion-label>1 mL - 10 graduations</ion-label></ion-chip> (type insuline)  </ion-col>
+      </ion-row>
+
+      <ion-row class="subHeaderRow">
+        <ion-col>
+          Posologie
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          Bupivacaïne 5 mg/mL
+          <p class="comment">0,2 mL/kg</p>
+        </ion-col>
+        <ion-col>
+         <ion-chip color="warning"><ion-label>{{VolBupi5NN}}</ion-label></ion-chip>  </ion-col>
+      </ion-row>
+      </ion-grid>
+
+      <div *ngIf="ALRView == 2 && PoidsNum <= 5" class="astucediv" padding = "15 px">
+        <img class="lightbulb" src="/assets/imgs/light-bulb.png">
+        <p class="astuce"> 
+        <b>L'astuce de Joëlle</b> : Quelques gouttes de G30% sur les lèvres, avant, pendant et après la rachianesthésie</p>
+        </div>
+
+
+  <ion-grid *ngIf="ALRView ==3">
+
+    <ion-row class="subHeaderRow">
+      <ion-col>
+        Produits
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Ropivacaïne
+      </ion-col>
+      <ion-col>
+        2 mg/mL
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Injection
+      </ion-col>
+      <ion-col>
+        Unique
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="subHeaderRow">
+      <ion-col>
+      Bloc
+      <p class="comment">Posologie</p>
+      </ion-col>
+      <ion-col>
+      Volume
+      </ion-col>
+
+    </ion-row>
+
+
+
+    <ion-row>
+      <ion-col>
+        Axillaire
+        <p class="comment">0,2 à 0,5 mL/kg</p>
+            </ion-col>
+      <ion-col>
+        <ion-chip color="light"><ion-label>{{VolBAXmin}} à {{VolBAXmax}} mL</ion-label></ion-chip>
+     
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Fémoral
+        <p class="comment">0,3 à 1 mL/kg</p>
+            </ion-col>
+      <ion-col>
+        <ion-chip color="light"><ion-label>{{VolFEMmin}} à {{VolFEMmax}} mL</ion-label></ion-chip>
+      
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Sciatique
+        <p class="comment">0,3 à 1 mL/kg</p>
+      </ion-col>
+      <ion-col>
+        <ion-chip color="light"><ion-label>{{VolSciatMin}} à {{VolSciatMax}} mL</ion-label></ion-chip>
+      
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Ilio-hypogastrique
+        <p class="comment">0,5 mL/kg</p>
+       </ion-col>
+      <ion-col>
+        <ion-chip color="light"><ion-label>{{VolIH}} mL</ion-label></ion-chip>
+        
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Pénien
+        <p class="comment"> 0,1 mL/kg</p>
+       </ion-col>
+      <ion-col>
+        <ion-chip color="light"><ion-label>{{VolPenien}} mL</ion-label></ion-chip>
+    
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Paravertébral
+        <p class="comment">0,5 mL/kg</p>
+      </ion-col>
+      <ion-col>
+        <ion-chip color="light"><ion-label>{{VolBPV}} mL</ion-label></ion-chip>
+        
+      </ion-col>
+    </ion-row>
+
+  <ion-row>
+    <ion-col>
+      TAP
+      <p class="comment">0,3 à 0,5 mL/kg/côté</p>
+   </ion-col>
+    <ion-col>
+      <ion-chip color="light"><ion-label>{{VolTAPmin}} à {{VolTAPmax}} mL/côté</ion-label></ion-chip>
+      
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      Carré des lombes 
+      <p class="comment"> 0,25 mL/kg/côté</p>
+       </ion-col>
+    <ion-col>
+      <ion-chip color="light"><ion-label>{{VolQL}} mL/côté</ion-label></ion-chip>
+      
+     </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      Erecteurs du rachis
+      <p class="comment">0,25 mL/kg/côté</p>
+    </ion-col>
+    <ion-col>
+      <ion-chip color="light"><ion-label>{{VolQL}} mL/côté</ion-label></ion-chip>
+      
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+    Pudendal    
+    <p class="comment">0,2 mL/kg/côté
+    </p>
+    </ion-col>
+    <ion-col>
+      <ion-chip color="light"><ion-label>{{VolPudendal}} mL/côté</ion-label></ion-chip>
+      
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-content>
+

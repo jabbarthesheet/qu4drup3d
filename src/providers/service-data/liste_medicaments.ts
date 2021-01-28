@@ -18,6 +18,435 @@ export class ServiceDataProvider {
     this.medicaments = [
       { 
         isShown:false, 
+        title: "Thiopental (Pentothal®)", 
+        AMM:"", 
+        indication: "Hypnotique", 
+        classeMed: "Barbiturique", 
+        voieAdmin: "IV", 
+        presentation: "PENTOTHAL 0,5 g Pdr sol inj",
+        posologie: "7 mg/kg", 
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVD", 
+        remarques:"",
+        lien: "https://www.vidal.fr/medicaments/substances/thiopental-sodique-7736.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Propofol (Diprivan®)", 
+        AMM:"", 
+        indication: "Hypnotique", 
+        classeMed: "GABA inhibiteur", 
+        voieAdmin: "IV", 
+        presentation: "PROPOFOL 200mg/20mL sol inj",
+        posologie: "3 à 5 mg/kg en induction seule", 
+        posologie1: "1 à 2 mg/kg en co-induction avec agent inhalé",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVD", 
+        remarques:"",
+        lien: "https://www.vidal.fr/medicaments/substances/propofol-2939.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Etomidate (Hypnomidate®)", 
+        AMM:"Âge > 2 ans", 
+        indication: "Hypnotique", 
+        classeMed: "Hypnotique", 
+        voieAdmin: "IV", 
+        presentation: "ETOMIDATE 2 mg/ml émuls inj ",
+        posologie: "0,5 mg/kg", 
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVD", 
+        remarques:"",
+        lien: "https://www.vidal.fr/medicaments/substances/etomidate-1431.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Ketamine (Ketalar®)", 
+        AMM:"", 
+        indication: "Hypnotique",
+        indication1: "Antalgique", 
+        classeMed: "Hypnotique", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "IM",
+        presentation: "KETAMINE 50 mg/5 ml sol inj",
+        posologie: "3 mg/kg (hypnotique)", 
+        posologie1: "0,5 mg/kg (antalgique)",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVD", 
+        remarques:"Utilisation en entretien IVSE : 0,15 mg/kg/h",
+        lien: "https://www.vidal.fr/medicaments/substances/ketamine-6970.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Dexmédétomidine (Dexdor®)", 
+        AMM:"Sédation chez l'adulte en USI", 
+        indication: "Hypnotique",
+        indication1: "Antalgique", 
+        classeMed: "α2-agoniste sélectif", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "intra-nasale",
+        presentation: "DEXMEDETOMIDINE 100 µg/ml sol diluer p perf",
+        posologie: "2 µg/kg (sédatif intra-nasal)", 
+        posologie1: "0,5 µg/kg (antalgique IVL à l'induction)",
+        reconstitution: "", 
+        dilution: "4 µg/mL", 
+        administration:"IVL, IVSE ou intra-nasale", 
+        remarques:"Utilisation en entretien IVSE : 1 µg/kg sur 10 minutes puis 0,4 µg/kg/h. Prévention de l'agitation au réveil : 0,3 µg/kg sur 10 minutes.",
+        lien: "https://www.vidal.fr/medicaments/substances/dexmedetomidine-23522.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Sufentanil (Sufenta®)", 
+        AMM:"", 
+        indication: "Antalgique",
+        indication1: "", 
+        classeMed: "Opioïde de synthèse", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "Péridurale ou intrathécale",
+        presentation: "SUFENTANIL 50µg/10mL sol inj",
+        posologie: "0,2 µg/kg", 
+        posologie1: "0,2 µg/kg/h en entretien IVSE",
+        reconstitution: "", 
+        dilution: "Adapter selon le poids", 
+        administration:"IVD, IVSE péridurale ou intrathécale", 
+        remarques:"Attention à la demi-vie contextuelle (accumulation)",
+        lien: "https://www.vidal.fr/medicaments/substances/sufentanil-3378.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Alfentanil (Rapifen®)", 
+        AMM:"", 
+        indication: "Antalgique",
+        indication1: "", 
+        classeMed: "Opioïde de synthèse", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "",
+        presentation: "ALFENTANIL 1mg/2mL sol inj",
+        posologie: "20 µg/kg", 
+        posologie1: "",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVD", 
+        remarques:"",
+        lien: "https://www.vidal.fr/medicaments/substances/alfentanil-222.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Atracurium (Tracrium®)", 
+        AMM:"", 
+        indication: "Curarisation",
+        indication1: "", 
+        classeMed: "Curare non dépolarisant, benzylisoquinoline", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "",
+        presentation: "ATRACURIUM 25mg/2,5mL ou 50mg/5mL sol inj",
+        posologie: "0,5 mg/kg", 
+        posologie1: "",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVD", 
+        remarques:"0,5 mg/kg/h en entretien",
+        lien: "https://www.vidal.fr/medicaments/substances/atracurium-besilate-5748.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Rocuronium (Esmeron®)", 
+        AMM:"", 
+        indication: "Curarisation",
+        indication1: "", 
+        classeMed: "Curare non dépolarisant, stéroidien", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "",
+        presentation: "ROCURONIUM 50mg/5mL sol inj",
+        posologie: "0,6 mg/kg", 
+        posologie1: "1 à 1,2 mg/kg pour ISR",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVD", 
+        remarques:"0,6 mg/kg/h en entretien",
+        lien: "https://www.vidal.fr/medicaments/substances/rocuronium-bromure-6322.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Suxamethonium (Celocurine®)", 
+        AMM:"", 
+        indication: "Curarisation",
+        indication1: "", 
+        classeMed: "Curare dépolarisant", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "",
+        presentation: "CELOCURINE 100mg/2mL sol inj",
+        posologie: "1 mg/kg", 
+        posologie1: "2 mg/kg avant 2 ans",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVD", 
+        remarques:"",
+        lien: "https://www.vidal.fr/medicaments/substances/suxamethonium-15608.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Suggamadex (Bridion®)", 
+        AMM:"", 
+        indication: "Décurarisation",
+        indication1: "", 
+        classeMed: "Gamma cyclodextrine", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "",
+        presentation: "BRIDION 200mg/2mL sol inj",
+        posologie: "2 mg/kg (TOF 4 réponses)", 
+        posologie1: "4 mg/kg (TOF 2 réponses)",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVD", 
+        remarques:"16 mg/kg pour réversion immédiate après administration de rocuronium.",
+        lien: "https://www.vidal.fr/medicaments/substances/suxamethonium-15608.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Dexaméthasone", 
+        AMM:"", 
+        indication: "Prevention NVPO",
+        indication1: "", 
+        classeMed: "Glucocorticoïde", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "",
+        presentation: "DEXAMETHASONE 4mg/1mL ou 20mg/5mL sol inj",
+        posologie: "1,5 mg/kg", 
+        posologie1: "",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVD", 
+        remarques:"",
+        lien: "https://www.vidal.fr/medicaments/substances/dexamethasone-1201.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Acide tranexamique (Exacyl®)", 
+        AMM:"", 
+        indication: "Prevention saignement",
+        indication1: "", 
+        classeMed: "Inhibiteur de la fibrinolyse", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "",
+        presentation: "Acide tranexamique 500mg/5mL sol inj",
+        posologie: "10 mg/kg IVL", 
+        posologie1: "5 mg/kg/h IVSE ne pas dépasser 4g/j",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVL ou IVSE", 
+        remarques:"",
+        lien: "https://www.vidal.fr/medicaments/substances/acide-tranexamique-127.html#:~:text=L'acide%20tranexamique%20d%C3%A9veloppe%20une,de%20sa%20transformation%20en%20plasmine.",
+      },
+
+      { 
+        isShown:false, 
+        title: "Lidocaine (Xylocaine®, Xylocard®)", 
+        AMM:"", 
+        indication: "Antalgique",
+        indication1: "", 
+        classeMed: "Anesthesique local", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "",
+        presentation: "LIDOCAINE 100mg/20mL, 200mg/20mL, 400mg/20mL",
+        posologie: "1,5 mg/kg IVD lent", 
+        posologie1: "1 mg/kg/h IVSE en entretien",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVD ou IVSE", 
+        remarques:"",
+        lien: "https://www.vidal.fr/medicaments/substances/lidocaine-2097.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Ondansetron (Zophren®)", 
+        AMM:"Âge > 1 an", 
+        indication: "Anti-emetique",
+        indication1: "", 
+        classeMed: "Inhibiteur 5HT3", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "Orale (sublinguale)",
+        presentation: "ONDANSETRON 8mg/2mL sol inj - ONDANSETRON 4mg ou 8mg cp orodisp",
+        posologie: "0,1 mg/kg", 
+        posologie1: "",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVD", 
+        remarques:"",
+        lien: "https://www.vidal.fr/medicaments/substances/ondansetron-6843.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Dropéridol (Droleptan®)", 
+        AMM:"", 
+        indication: "Anti-emetique",
+        indication1: "Sedatif", 
+        classeMed: "Neuroleptique", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "",
+        presentation: "",
+        posologie: "25 µg/kg", 
+        posologie1: "",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVL", 
+        remarques:"",
+        lien: "https://www.vidal.fr/medicaments/substances/droperidol-1321.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Paracétamol (Doliprane®, Perfalgan®)", 
+        AMM:"", 
+        indication: "Antalgique Palier 1",
+        indication1: "", 
+        classeMed: "Antalgique central", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "PO",
+        presentation: "",
+        posologie: "15 mg/kg/6h", 
+        posologie1: "",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVL ou PO", 
+        remarques:"",
+        lien: "https://www.vidal.fr/medicaments/substances/paracetamol-2649.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Nalbuphine (Nubain®)", 
+        AMM:"", 
+        indication: "Antalgique Palier 2",
+        indication1: "", 
+        classeMed: "Phenantrène (agoniste/antagoniste morphinique)", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "",
+        presentation: "NALBUPHINE CHLORHYDRATE 10 mg/ml sol inj",
+        posologie: "0,2 mg/kg/4h", 
+        posologie1: "0,1 mg/kg/4h en contexte ambulatoire",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVL", 
+        remarques:"",
+        lien: "https://www.vidal.fr/medicaments/substances/nalbuphine-6317.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Ketoprofene (Profenid®)", 
+        AMM:"IV 15 ans, sirop 6 mois", 
+        indication: "Antalgique Palier 1",
+        indication1: "", 
+        classeMed: "AINS", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "PO",
+        presentation: "KETOPROFENE 100mg/4mL sol inj",
+        posologie: "1 mg/kg/8h", 
+        posologie1: "",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVL ou PO", 
+        remarques:"Utilisation hors AMM fréquente",
+        lien: "https://www.vidal.fr/medicaments/substances/ketoprofene-1957.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Ibuprofene (Advil®, Nurofen®)", 
+        AMM:"Âge > 3 mois", 
+        indication: "Antalgique Palier 1",
+        indication1: "", 
+        classeMed: "AINS", 
+        voieAdmin: "PO", 
+        voieAdmin1 : "",
+        presentation: "IBUPROFENE 200mg ou 400mg cp",
+        posologie: "10 mg/kg/8h", 
+        posologie1: "",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"PO", 
+        remarques:"",
+        lien: "https://www.vidal.fr/medicaments/substances/ibuprofene-1844.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Nefopam (Acupan®)", 
+        AMM:"Âge > 15 ans", 
+        indication: "Antalgique Palier 2",
+        indication1: "", 
+        classeMed: "Analgésique central non morphinique", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "PO",
+        presentation: "NEFOPAM 20mg/2mL sol inj",
+        posologie: "1 mg/kg/j IVSE", 
+        posologie1: "",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVSE ou PO", 
+        remarques:"Préférer l'administration IVSE en pédiatrie",
+        lien: "https://www.vidal.fr/medicaments/substances/nefopam-11988.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Tramadol (Contramal®)", 
+        AMM:"Âge > 15 ans IV, âge > 3 ans PO", 
+        indication: "Antalgique Palier 2",
+        indication1: "", 
+        classeMed: "Agoniste récepteur µ", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "PO",
+        presentation: "CONTRAMAL 100mg/2mL sol inj",
+        posologie: "1 mg/kg/6h", 
+        posologie1: "",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVL ou PO", 
+        remarques:"",
+        lien: "https://www.vidal.fr/medicaments/substances/tramadol-15308.html",
+      },
+
+      { 
+        isShown:false, 
+        title: "Phloroglucinol (Spasfon®)", 
+        AMM:"", 
+        indication: "Antalgique (autres)",
+        indication1: "Antispasmodique", 
+        classeMed: "", 
+        voieAdmin: "IV", 
+        voieAdmin1 : "PO",
+        presentation: "PHLOROGLUCINOL 80mg/2mL sol inj - 80mg cp",
+        posologie: "0,5 mg/kg/6h IV", 
+        posologie1: "1,5 mg/kg/6h PO",
+        reconstitution: "", 
+        dilution: "", 
+        administration:"IVL ou PO", 
+        remarques:"",
+        lien: "https://www.vidal.fr/medicaments/substances/phloroglucinol-3760.html",
+      },
+
+      { 
+        isShown:false, 
         title: "Bumétanide (Burinex®)", 
         AMM:"", 
         indication: "HTA", 
@@ -283,7 +712,7 @@ export class ServiceDataProvider {
 
       { 
         isShown:false, 
-        title: "Adrénaline", 
+        title: "Adrenaline", 
         AMM:"", 
         indication: "ACR",
         indication1: "Anaphylaxie", 
@@ -305,7 +734,7 @@ export class ServiceDataProvider {
         indication: "Vasoplégie", 
         classeMed: "α-agoniste", 
         voieAdmin: "IV",       
-        presentation: "Noradrénaline ",
+        presentation: "NorAdrenaline ",
         posologie: "Protocole (cf. Urgences)", 
         reconstitution: "", 
         dilution: "", 
@@ -393,6 +822,97 @@ export class ServiceDataProvider {
       lien: "https://www.vidal.fr/medicaments/gammes/augmentin-784.html", 
     },
 
+    { 
+      isShown:false, 
+      title: "Amoxicilline + Acide Clavulanique (Augmentin®) prophylactique", 
+      AMM:"", 
+      indication: "Antibioprohylaxie", 
+      classeMed: "β-lactamine", 
+      voieAdmin: "IV",       
+      presentation: "",
+      posologie: "50 mg/kg, sans dépasser 2g",  
+      remarques:"Réinjection toutes les 2h, 25 mg/kg",
+      lien: "https://www.vidal.fr/medicaments/gammes/augmentin-784.html", 
+    },
+
+    { 
+      isShown:false, 
+      title: "Cefazoline prophylactique", 
+      AMM:"", 
+      indication: "Antibioprohylaxie", 
+      classeMed: "β-lactamine (C2G)", 
+      voieAdmin: "IV",       
+      presentation: "",
+      posologie: "50 mg/kg, sans dépasser 2g",  
+      remarques:"Réinjection toutes les 4h, 25 mg/kg",
+      lien: "https://www.vidal.fr/medicaments/substances/cefazoline-856.html", 
+    },
+
+    { 
+      isShown:false, 
+      title: "Cefamandole prophylactique", 
+      AMM:"", 
+      indication: "Antibioprohylaxie", 
+      classeMed: "β-lactamine (C2G)", 
+      voieAdmin: "IV",       
+      presentation: "",
+      posologie: "40 mg/kg, sans dépasser 2g",  
+      remarques:"Réinjection toutes les 2h, 20 mg/kg",
+      lien: "https://www.vidal.fr/medicaments/substances/cefamandole-853.html", 
+    },
+
+    { 
+      isShown:false, 
+      title: "Clindamycine prophylactique", 
+      AMM:"", 
+      indication: "Antibioprohylaxie", 
+      classeMed: "Lincosamide", 
+      voieAdmin: "SE sur 30 minutes",       
+      presentation: "",
+      posologie: "15 mg/kg, sans dépasser 600mg",  
+      remarques:"Réinjection toutes les 4h, 15 mg/kg",
+      lien: "https://www.vidal.fr/medicaments/substances/clindamycine-6742.html", 
+    },
+
+    { 
+      isShown:false, 
+      title: "Gentamicine prophylactique", 
+      AMM:"", 
+      indication: "Antibioprohylaxie", 
+      classeMed: "Aminoside", 
+      voieAdmin: "SE sur 30 minutes",       
+      presentation: "",
+      posologie: "3 mg/kg, sans dépasser 160mg",  
+      remarques:"Pas de réinjection",
+      lien: "https://www.vidal.fr/medicaments/substances/gentamicine-1610.html", 
+    },
+
+    { 
+      isShown:false, 
+      title: "Metronidazole prophylactique", 
+      AMM:"", 
+      indication: "Antibioprohylaxie", 
+      classeMed: "Nitro-5-imidazolé", 
+      voieAdmin: "SE sur 30 minutes",       
+      presentation: "",
+      posologie: "20 mg/kg, sans dépasser 1g",  
+      remarques:"Réinjection toutes les 8h, 10 mg/kg",
+      lien: "https://www.vidal.fr/medicaments/substances/metronidazole-2370.html", 
+    },
+
+    { 
+      isShown:false, 
+      title: "Vancomycine prophylactique", 
+      AMM:"", 
+      indication: "Antibioprohylaxie", 
+      classeMed: "Glycopeptide", 
+      voieAdmin: "SE sur 1 heure",       
+      presentation: "",
+      posologie: "15 mg/kg, sans dépasser 2g",  
+      remarques:"Réinjection toutes les 12h, 15mg/kg. Surveiller les dosages.",
+      lien: "https://www.vidal.fr/medicaments/substances/vancomycine-6898.html", 
+    },
+
       { 
         isShown:false, 
         title: "Amphotéricine B liposomale (Ambisome®, Fungizone®)", 
@@ -428,7 +948,7 @@ export class ServiceDataProvider {
     
         { 
         isShown:false, 
-        title: "Céfamandole", 
+        title: "Cefamandole", 
         AMM:"", 
         indication: "Antibiothérapie", 
         classeMed: "C2G", 
@@ -444,7 +964,7 @@ export class ServiceDataProvider {
      
         { 
         isShown:false, 
-        title: "Céfépime (Axepim®)", 
+        title: "Cefepime (Axepim®)", 
         AMM:"", 
         indication: "Antibiothérapie", 
         classeMed: "C4G", 
@@ -460,7 +980,7 @@ export class ServiceDataProvider {
      
         { 
         isShown:false, 
-        title: "Céfotaxime (Claforan®)", 
+        title: "Cefotaxime (Claforan®)", 
         AMM:"", 
         indication: "Antibiothérapie", 
         classeMed: "C3G", 
@@ -810,12 +1330,12 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Fermeture de stomie",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Contaminée",
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -860,12 +1380,12 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Abaissement colique",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Contaminée",
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -910,12 +1430,12 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Colostomie",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Contaminée",
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -960,12 +1480,12 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Colectomie",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Contaminée",
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -1010,12 +1530,12 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Iléostomie",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Contaminée",
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -1060,12 +1580,12 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Jéjunostomie",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Contaminée",
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -1110,12 +1630,12 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Résection de grêle",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Contaminée",
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -1160,12 +1680,12 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Anastomose bilio-digestive",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Contaminée",
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -1210,12 +1730,12 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Pancréatectomie céphalique",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Contaminée",
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -1260,12 +1780,12 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Oeso-coloplastie",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Contaminée",
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -1310,12 +1830,12 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Pancréatectomie caudale",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Propre",
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -1350,12 +1870,12 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Kyste du cholédoque",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Contaminée",
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -1390,12 +1910,12 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Cholecystectomie",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Contaminée",
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -1435,7 +1955,7 @@ export class ServiceDataProvider {
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -1475,7 +1995,7 @@ export class ServiceDataProvider {
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -1510,12 +2030,12 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Gastrostomie chirurgicale",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Contaminée",
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -1550,12 +2070,12 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Duplication oesophagienne",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Contaminée",
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -1590,7 +2110,7 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Appendicectomie simple",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Contaminée",
           voieATB : "IV",  
           recommandation : "Recommandée",
@@ -1629,12 +2149,12 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Splénectomie",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Propre",
           voieATB : "IV",  
           recommandation : "Recommandée",
           
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -1649,7 +2169,7 @@ export class ServiceDataProvider {
         {
             isShown: false, 
             intitule: "Hernie inguinale",
-            specialite : "Viscérale",
+            specialite : "Viscerale",
             classeConta : "Propre",
             VoieATB : "IV",  
             recommandation : "Non recommandée",
@@ -1658,7 +2178,7 @@ export class ServiceDataProvider {
         {
             isShown: false, 
             intitule: "Hernie ombilicale",
-            specialite : "Viscérale",
+            specialite : "Viscerale",
             classeConta : "Propre",
             VoieATB : "IV",  
             recommandation : "Non recommandée",
@@ -1667,7 +2187,7 @@ export class ServiceDataProvider {
         {
             isShown: false, 
             intitule: "Eventration",
-            specialite : "Viscérale",
+            specialite : "Viscerale",
             classeConta : "Propre",
             VoieATB : "IV",  
             recommandation : "Non recommandée",
@@ -1676,7 +2196,7 @@ export class ServiceDataProvider {
         {
             isShown: false, 
             intitule: "Coelioscopie exploratrice",
-            specialite : "Viscérale",
+            specialite : "Viscerale",
             classeConta : "Propre",
             VoieATB : "IV",  
             recommandation : "Non recommandée",
@@ -1685,7 +2205,7 @@ export class ServiceDataProvider {
         {
             isShown: false, 
             intitule: "Nissen",
-            specialite : "Viscérale",
+            specialite : "Viscerale",
             classeConta : "Propre",
             VoieATB : "IV",  
             recommandation : "Non recommandée",
@@ -1694,7 +2214,7 @@ export class ServiceDataProvider {
         {
           isShown: false, 
           intitule: "Sténose du pylore",
-          specialite : "Viscérale",
+          specialite : "Viscerale",
           classeConta : "Propre",
           VoieATB : "IV",  
           recommandation : "Non recommandée",
@@ -1857,7 +2377,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfuroxime",
+          ATB1 : "Cefuroxime",
           administrationATB1 : "Intra-oculaire",
         },
       
@@ -1869,7 +2389,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfuroxime",
+          ATB1 : "Cefuroxime",
           administrationATB1 : "Intra-oculaire",
         },
 
@@ -1881,7 +2401,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfuroxime",
+          ATB1 : "Cefuroxime",
           administrationATB1 : "Intra-oculaire",
         },
 
@@ -1893,7 +2413,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfuroxime",
+          ATB1 : "Cefuroxime",
           administrationATB1 : "Intra-oculaire",
         },
 
@@ -1905,7 +2425,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfuroxime",
+          ATB1 : "Cefuroxime",
           administrationATB1 : "Intra-oculaire",
         },
 
@@ -1917,7 +2437,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfuroxime",
+          ATB1 : "Cefuroxime",
           administrationATB1 : "Intra-oculaire",
         },
         
@@ -2073,7 +2593,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           presentationATB1 : "500 mg, 1g ou 2g", 
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
@@ -2240,7 +2760,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -2355,7 +2875,7 @@ export class ServiceDataProvider {
           remarque : "",
       
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -2395,7 +2915,7 @@ export class ServiceDataProvider {
           remarque : "",
       
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -2435,7 +2955,7 @@ export class ServiceDataProvider {
           remarque : "",
       
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -2475,7 +2995,7 @@ export class ServiceDataProvider {
           remarque : "",
       
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -2515,7 +3035,7 @@ export class ServiceDataProvider {
           remarque : "",
       
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -2555,7 +3075,7 @@ export class ServiceDataProvider {
           remarque : "",
       
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -2595,7 +3115,7 @@ export class ServiceDataProvider {
           remarque : "",
       
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -2635,7 +3155,7 @@ export class ServiceDataProvider {
           remarque : "",
       
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -2917,7 +3437,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -2946,7 +3466,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -2975,7 +3495,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -3032,7 +3552,7 @@ export class ServiceDataProvider {
           remarque : "",
       
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -3072,7 +3592,7 @@ export class ServiceDataProvider {
           remarque : "",
       
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -3112,7 +3632,7 @@ export class ServiceDataProvider {
           remarque : "",
       
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -3152,7 +3672,7 @@ export class ServiceDataProvider {
           remarque : "",
       
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -3254,7 +3774,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -3283,7 +3803,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -3312,7 +3832,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -3341,7 +3861,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -3370,7 +3890,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -3399,7 +3919,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -3428,7 +3948,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -3457,7 +3977,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfuroxime",
+          ATB1 : "Cefuroxime",
           posologieATB1 : "", 
           posologieNumATB1 : 0, 
           administrationATB1 : "IVL",
@@ -3476,7 +3996,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -3525,7 +4045,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -3574,7 +4094,7 @@ export class ServiceDataProvider {
           recommandation : "Recommandée",
           remarque : "",
 
-          ATB1 : "Céfazoline",
+          ATB1 : "Cefazoline",
           posologieATB1 : "50 mg/kg", 
           posologieNumATB1 : 50, 
           administrationATB1 : "IVL",
@@ -3665,7 +4185,14 @@ filterChirurgie(searchTerm) {
       return item.title
        .toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 ;
     });
-  } 
+  } ;
+
+  filterIndication(searchTerm){
+    return  this.medicaments.filter(item => {
+       return item.indication
+        .toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 ;
+     });
+   } ;
 
 
 };

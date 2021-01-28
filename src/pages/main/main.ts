@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { AccueilPage } from '../accueil/accueil';
-import { InfoPage } from '../info/info';
-import { ProtocolesPage } from '../protocoles/protocoles';
-import { RecommandationsPage } from '../recommandations/recommandations';
-import { ScoresPage } from '../scores/scores';
-import { MedicamentsPage } from '../medicaments/medicaments'
+import { InfoPage } from '../main_pages/info/info';
+import { ProtocolesPage } from '../main_pages/protocoles/protocoles';
+import { RecommandationsPage } from '../main_pages/recommandations/recommandations';
+import { ScoresPage } from '../main_pages/scores/scores';
+import { MedicamentsPage } from '../main_pages/medicaments/medicaments'
 
 /**
  * Generated class for the MainPage tabs.

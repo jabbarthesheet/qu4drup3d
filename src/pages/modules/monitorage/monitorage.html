@@ -1,0 +1,295 @@
+
+
+
+<ion-header>
+  <br>
+
+        <!-- HEADER MENU  -->
+        <div class="header"> 
+
+          <div (click)="retourHome()" class="backButton">
+          <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+          Retour
+          </div>
+Monitorage & dispositifs  </div>
+            <br>
+      
+                  <!-- HEADER MON PATIENT  -->
+  
+            <ion-item color="turquoise-fonce"> 
+              <ion-label>
+                <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
+                <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+                <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
+            </ion-item>
+
+
+            <ion-segment color="turquoise-fonce" [(ngModel)]="MonitorageView">
+              <ion-segment-button  value="1">Vitals</ion-segment-button>
+              <ion-segment-button  value="2">Bilans</ion-segment-button>
+              <ion-segment-button  value="3">Dispositifs</ion-segment-button>
+   
+            </ion-segment>
+          </ion-header>
+       <!-- END HEADER -->
+
+
+       <ion-content>
+
+  <ion-grid fixed="true" *ngIf="MonitorageView ==1">
+    <ion-row class="TableApportsHeader"><ion-col> <span *ngIf="this.AgeNum <= 24">
+      Pour un enfant de {{AgeNum}} mois
+    </span>
+    <span  *ngIf="this.AgeNum > 24 && this.AgeNum > 0">
+      Pour un enfant de {{ageLecture}} ans</span></ion-col></ion-row>
+    <ion-row >
+      <ion-col>
+      </ion-col>
+      <ion-col class="normale">
+        Normale
+      </ion-col>
+      <ion-col class="trophaut">
+        Trop haut
+      </ion-col>
+      <ion-col class="tropbas">
+        Trop bas
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="intitules">
+          FC (/min)
+      </ion-col>
+      <ion-col class="normale">
+        {{FCnormale}}
+      </ion-col>
+      <ion-col class="trophaut">
+        {{FCdangerHaut}}
+      </ion-col>
+      <ion-col class="tropbas">
+        {{FCdangerBas}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="intitules" >
+          FR (/min)
+      </ion-col>
+      <ion-col class="normale"> 
+        {{FRnormale}}
+      </ion-col>
+      <ion-col class="trophaut">
+        {{FRdangerHaut}}
+      </ion-col>
+      <ion-col class="tropbas">
+        {{FRdangerBas}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="intitules">
+          SpO2 (%)
+      </ion-col>
+      <ion-col class="normale">
+        {{SpO2normale}}
+      </ion-col>
+      <ion-col class="trophaut">
+        -
+      </ion-col>
+      <ion-col class="tropbas">
+        {{SpO2dangerBas}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="intitules">
+          PAS (mmHg)
+      </ion-col>
+      <ion-col class="normale">
+        {{PASnormale}}
+      </ion-col>
+      <ion-col class="trophaut">
+        {{PASdangerHaut}}
+      </ion-col>
+      <ion-col class="tropbas">
+        {{PASdangerBas}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="intitules">
+          PAD (mmHg)
+      </ion-col>
+      <ion-col class="normale">
+        {{PADnormale}}
+      </ion-col>
+      <ion-col class="trophaut">
+        {{PADdangerHaut}}
+      </ion-col>
+      <ion-col class="tropbas">
+        {{PADdangerBas}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="intitules">
+          PAM (mmHg)
+      </ion-col>
+      <ion-col class="normale">
+        {{PAMnormale}}
+      </ion-col>
+      <ion-col class="trophaut">
+        {{PAMdangerHaut}}
+      </ion-col>
+      <ion-col class="tropbas">
+        {{PAMdangerBas}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="intitules">
+          Diurèse (mL/h sur 3h)
+      </ion-col>
+      <ion-col class="normale">
+        {{Diuresenormale}}
+      </ion-col>
+      <ion-col class="trophaut">
+        {{DiuresedangerHaut}}
+      </ion-col>      
+      <ion-col class="tropbas">
+        {{DiuresedangerBas}}
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+
+
+
+    <ion-card class="drogueContainer" *ngIf="MonitorageView ==2">
+    <p class="reference">Reference : ANAES - lecture critique de l'hémogramme - mise à jour 2007.</p>
+
+    <ion-grid fixed="true">
+
+      <ion-row class="TableApportsHeader">
+        <ion-col>
+          Paramètre
+        </ion-col>
+        <ion-col *ngIf="this.AgeNum <= 24">
+          Normes à {{AgeNum}} mois
+        </ion-col>
+        <ion-col  *ngIf="this.AgeNum > 24 && this.AgeNum > 0">
+          Normes à {{ageLecture}} ans
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="TableBilansEven">
+        <ion-col>
+          Hématies
+        </ion-col>
+        <ion-col>
+          {{NormeGR}}.10<sup>12</sup>/L
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="TableBilansOdd">
+        <ion-col>
+         Hémoglobinémie
+        </ion-col>
+        <ion-col>
+          {{NormeHb}} g/dL
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="TableBilansEven">
+        <ion-col>
+          VGM
+        </ion-col>
+        <ion-col>
+          {{NormeVGM}} µm<sup>3</sup>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="TableBilansOdd">
+        <ion-col>
+         Réticulocytes
+        </ion-col>
+        <ion-col>
+          {{NormeRetic}}.10<sup>9</sup>/L
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="TableBilansEven">
+        <ion-col>
+          GB 
+        </ion-col>
+        <ion-col>
+          {{NormeGB}}.10<sup>9</sup>/L
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="TableBilansOdd">
+        <ion-col>
+         Neutrophiles
+        </ion-col>
+        <ion-col>
+          {{NormePNN}}.10<sup>9</sup>/L
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="TableBilansEven">
+        <ion-col>
+          Lymphocytes
+        </ion-col>
+        <ion-col>
+          {{NormeLympho}}.10<sup>9</sup>/L
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="TableBilansOdd">
+        <ion-col>
+         Plaquettes
+        </ion-col>
+        <ion-col>
+          {{NormePq}}.10<sup>9</sup>/L
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+  </ion-card>
+
+
+    <ion-list *ngIf="MonitorageView ==3">
+      <ion-item>
+        <ion-label class="drogueInduction">Doppler Oesophagien
+            <p class="dilutionDrogueInduction">Modele de sonde : {{SondeDoppler}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="drogueInduction">NIRS - Stable à +/- 20%
+            <p class="dilutionDrogueInduction">Capteur : {{CapteurNirs}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="drogueInduction">BIS - Objectif 40 à 60
+            <p class="dilutionDrogueInduction">Electrodes : {{ElectrodesBIS}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="drogueInduction">Sonde urinaire
+            <p class="dilutionDrogueInduction">Taille de sonde : {{TailleSondeUrinaire}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="drogueInduction">Sonde gastrique
+            <p class="dilutionDrogueInduction">Taille de sonde : {{TailleSondeGastrique}} </p>
+        </ion-label>
+      </ion-item>
+
+
+</ion-list>
+</ion-content>

@@ -1,0 +1,142 @@
+
+<ion-header>
+  <br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+    Entretien anesthésique
+  </div>
+      <br>
+
+      <ion-item color="turquoise-fonce"> 
+        <ion-label>
+          <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
+          <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+          <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
+      </ion-item>
+
+      <ion-segment color="turquoise-fonce" [(ngModel)]="EntretienView" >
+        <ion-segment-button value="1">
+      Hypnotiques
+        </ion-segment-button>
+        <ion-segment-button value="2">
+      Antalgiques
+        </ion-segment-button>
+        <ion-segment-button value="3">
+          Curares
+            </ion-segment-button>
+      </ion-segment>
+      
+  
+    </ion-header>
+
+      <ion-content>
+
+
+  <ion-card *ngIf="EntretienView == 1" class="drogueContainer">
+      <ion-item>         
+        <ion-label class="drogueInduction"> 
+          <ion-chip color="warning"><ion-label>Sevoflurane : {{CAMSevo}} %</ion-label></ion-chip>
+      <p class="dilutionDrogueInduction"> Sevorane® - %EtHalogéné, bas DGF</p>
+    </ion-label>
+  </ion-item>
+
+<ion-item>     
+  <ion-label class="drogueInduction" color="warning">
+  <p class="posologieDrogueInduction">Posologie proposée : 10 mg/kg/h </p>
+  <ion-chip color="warning"><ion-label>Propofol : {{PropoEntretien}} mg/h IVSE</ion-label></ion-chip>
+  <p class="dilutionDrogueInduction">Présentation : Diprivan® 200mg/20mL</p>
+</ion-label>
+  </ion-item>
+<ion-item >         
+  <ion-label class="drogueInduction" color="orange">
+    <p class="dilutionDrogueInduction">Posologie proposée : 0,1 mg/kg/h </p>
+    <ion-chip color="warning"><ion-label>Midazolam : {{HypnoEntretien}} mg/h IVSE</ion-label></ion-chip>
+    <p class="dilutionDrogueInduction">Présentation : Hypnovel® 5mg/5mL</p>
+ </ion-label>
+  </ion-item>
+
+
+<ion-item class="avecAMM">         
+  <ion-label class="drogueInduction">Dexmédétomidine 
+    <p class="dilutionDrogueInduction">Présentation : Dexdor® 200µg/2mL</p>
+    <hr>
+    <p class="dilutionDrogueInduction">Posologie proposée : 1 µg/kg sur 10' puis 0,4 µg/kg/h  </p>
+    <ion-chip color="dark-blue"><ion-label>Entretien : {{DexdorBolusAvecIVSE}} µg sur 10' puis {{DexdorEntretien}} µg/h</ion-label></ion-chip>
+    <hr>
+    <p class="dilutionDrogueInduction">pour 0,3 µg/kg, en fin d'intervention </p>
+    <ion-chip color="dark-blue"><ion-label>Prévention agitation : {{DexdorAgitation}} µg IVD</ion-label></ion-chip>
+</ion-label>
+
+  </ion-item>
+
+  <div class="AMM">AMM : <br> sédation chez l'adulte en USI objectif RASS [0 ; -3]</div>
+
+</ion-card>  
+
+
+
+
+<ion-card *ngIf="EntretienView == 2" class="drogueContainer">
+
+<ion-item>         
+<ion-label class="drogueInduction" color="primary">
+  <p  class="dilutionDrogueInduction">Posologie proposée 10 µg/kg/h </p>
+  <ion-chip color="primary"><ion-label>Remifentanil : {{RemiEntretien}} µg/h IVSE</ion-label></ion-chip>
+  <p class="dilutionDrogueInduction">Présentation : 2 mg pdr</p>
+
+</ion-label>
+</ion-item>
+
+<ion-item>         
+<ion-label class="drogueInduction" color="primary">
+  <p  class="dilutionDrogueInduction">Posologie proposée : 0,2 µg/kg/h </p>
+  <ion-chip color="primary"><ion-label>Sufentanil : {{SufEntretien}} µg/h IVSE</ion-label></ion-chip>
+  <p class="dilutionDrogueInduction">Présentation : 50µg/10mL ou 10µg/2mL</p>
+</ion-label>
+</ion-item>
+
+<ion-item>         
+<ion-label class="drogueInduction" color="dark">
+  <p  class="dilutionDrogueInduction">Posologie proposée : 1 mg/kg/h </p>
+  <ion-chip color="grisclair"><ion-label> Xylocaïne : {{XyloEntretien}} mg/h IVSE</ion-label></ion-chip>
+  <p class="dilutionDrogueInduction">Présentation : 100mg/20mL</p>
+
+</ion-label>
+</ion-item>
+
+<ion-item>         
+<ion-label class="drogueInduction" color="warning">
+  <p  class="dilutionDrogueInduction">Posologie proposée : 0,15 mg/kg/h </p>
+  <ion-chip color="warning"><ion-label>  Ketamine : {{KetaEntretien}} mg/h IVSE</ion-label></ion-chip>
+  <p class="dilutionDrogueInduction">Présentation : Ketalar® 50mg/5mL</p>
+</ion-label>
+</ion-item>
+
+</ion-card>
+
+<ion-card *ngIf="EntretienView == 3" class="drogueContainer">
+
+<ion-item >         
+<ion-label color="danger" class="drogueInduction">
+  <p class="dilutionDrogueInduction">Posologie proposée : 0,6 mg/kg/h </p>
+  <ion-chip color="danger"><ion-label>Rocuronium : {{RocuEntretien}} mg/h IVSE</ion-label></ion-chip>
+    <p class="dilutionDrogueInduction">Présentation : Esméron® 50mg/5mL</p>
+</ion-label>
+</ion-item>
+
+<ion-item >         
+<ion-label color="danger" class="drogueInduction">
+  <p class="dilutionDrogueInduction">Posologie proposée </p>
+  <ion-chip color="danger"><ion-label> Atracurium : {{TracEntretien}} mg/h IVSE</ion-label></ion-chip>
+  <p class="dilutionDrogueInduction">Présentation : Tracrium® 25mg/2,5mL</p>
+</ion-label>
+</ion-item>  
+
+</ion-card>  
+
+
+</ion-content>

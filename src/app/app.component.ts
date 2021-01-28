@@ -2,26 +2,10 @@ import { Component, ViewChild, NgModule } from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
-import { AccueilPage } from '../pages/accueil/accueil';
-import { PlateauInductionPage } from '../pages/plateau-induction/plateau-induction';
-import { GestionFluidesPage } from '../pages/gestion-fluides/gestion-fluides';
-import { PlateauVasPage } from '../pages/plateau-vas/plateau-vas';
-import { AntalgiePage } from '../pages/antalgie/antalgie';
-import { UrgencePage } from '../pages/urgence/urgence'; 
-import { PreMedicationPage } from '../pages/pre-medication/pre-medication';
-import { EntretienAnesthPage } from '../pages/entretien-anesth/entretien-anesth';
-import { MedicamentsPage } from '../pages/medicaments/medicaments';
-import { LocoRegionalePage } from '../pages/loco-regionale/loco-regionale';
-import { ExtrophieVesicalePage } from '../pages/extrophie-vesicale/extrophie-vesicale';
-import { MonitoragePage } from '../pages/monitorage/monitorage';
-import { ProtocolesPage } from '../pages/protocoles/protocoles';
-import { RecommandationsPage } from '../pages/recommandations/recommandations';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { CourbesPage } from '../pages/courbes/courbes';
-import { ScoresPage } from '../pages/scores/scores';
-import { InfoPage } from '../pages/info/info';
 import { MainPage } from '../pages/main/main';
 
 
@@ -46,22 +30,7 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title : 'Accueil', component: AccueilPage },
-      { title : 'Premedication', component:PreMedicationPage },
-      { title : 'Plateau pour induction', component: PlateauInductionPage },
-      { title : 'Voies aériennes', component: PlateauVasPage },
-      { title : "Urgences", component : UrgencePage },
-      { title : 'Entretien anesthéique', component: EntretienAnesthPage },
-      { title : 'Gestion des fluides', component: GestionFluidesPage },
-      { title : 'Analgésie & NVPO', component: AntalgiePage },
-      { title : 'Medicaments', component: MedicamentsPage },
-      { title : 'Loco-régionale', component : LocoRegionalePage },
-      { title : 'Extrophie vésicale', component : ExtrophieVesicalePage },
-      { title : 'Protocoles', component : ProtocolesPage },
-      { title : 'Recommandations' , component : RecommandationsPage },
-      { title : 'Monitorage', component : MonitoragePage },
-      { title : 'Courbes', component : CourbesPage },
-      { title : 'Scores' , component: ScoresPage },
+
     ];
   }
 

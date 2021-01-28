@@ -1,0 +1,63 @@
+.MonPatient {
+    
+    text-align: center;
+    font-size: 12px !important; 
+
+};
+
+.inductionViewer {
+    font-size: 10px !important;
+}
+
+.drogueContainer {
+    box-shadow: none;
+    
+}
+
+.drogueInduction {
+    font-size: 14px !important;
+    text-align: justify; 
+}
+
+.dilutionDrogueInduction {
+    font-size: 12px !important;
+    font-style:bold; 
+
+};
+
+.posologieDrogueInduction {
+
+    font-style:bold; 
+    font-size:12px !important;
+};
+
+.OpenCloseIcon {
+    float: right !important;    
+    color:  #009c9e;
+    transform: rotate(180deg);
+    margin-right:2px;
+}
+
+
+.AMM {
+    width: 17% !important; 
+    float: right !important; 
+    font-size: 8px !important;
+    text-align: center !important; 
+    vertical-align: center !important;
+    margin-top: 15px !important;
+    padding-top: 5px !important;     
+    padding-bottom: 5px !important; 
+    padding-right : 1px !important;
+    padding-left : 1px !important;  
+    background-color: #ff6961 !important;
+    color: white !important; 
+    border-radius: 15px;
+}
+
+.avecAMM {
+    width: 83% !important; 
+    float: left !important; 
+    --border-right-width: 3px !important;
+    border-color: black !important; 
+}

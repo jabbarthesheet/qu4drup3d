@@ -1,0 +1,257 @@
+<ion-header>
+  <br>
+          <!-- HEADER MENU  -->
+          <div class="header"> 
+
+            <div (click)="retourHome()" class="backButton">
+            <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+            Retour
+            </div>
+  Gestion des voies aériennes</div>
+              <br>
+        
+                    <!-- HEADER MON PATIENT  -->
+    
+              <ion-item color="turquoise-fonce"> 
+                <ion-label>
+                  <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
+                  <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+                  <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
+              </ion-item>
+       
+         <!-- END HEADER -->
+         <ion-segment color="turquoise-fonce" [(ngModel)]="VASView">
+          <ion-segment-button value="1">Matériel</ion-segment-button>
+          <ion-segment-button value="2">Réglages</ion-segment-button>
+        </ion-segment>
+
+        </ion-header> 
+
+         <ion-content>
+
+          <p *ngIf="VASView ==1" class="reference">Référence : RFE SFAR 2018. Il est probablement recommandé d’utiliser un vidéolaryngoscope en première intention chez les patients avec intubation difficile prévue et ventilation au masque
+            possible ou après échec de la laryngoscopie directe afin d’augmenter les chances de succès de l’intubation.
+          </p>
+
+            <ion-grid *ngIf="VASView ==1">
+              <ion-row>
+                <ion-col>
+                  Dispositif
+                </ion-col>
+                <ion-col>
+                  Taille
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  Filtre
+                </ion-col>
+                <ion-col>
+                  <ion-chip color="primary"><ion-label>{{TailleFiltre}}</ion-label></ion-chip>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  Guédel & masque
+                </ion-col>
+                <ion-col>
+                  <ion-chip outline color="{{CouleurCanuleMasque}}"><ion-label> {{CouleurCanuleMasque}}</ion-label></ion-chip>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  Masque laryngé
+                </ion-col>
+                <ion-col>
+                  <ion-chip outline color="light"><ion-label> #{{TailleMasqueLarynge}}</ion-label></ion-chip>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  IOT standard
+                </ion-col>
+                <ion-col>
+                  <ion-chip outline color="light"><ion-label> {{LameIntubation}}</ion-label></ion-chip>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  McGrath
+                </ion-col>
+                <ion-col>
+                  <ion-chip outline color="danger"><ion-label>{{LameMcGrath}}</ion-label></ion-chip>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  GlideScope
+                </ion-col>
+                <ion-col>
+                <ion-chip outline color="danger"><ion-label>{{LameGlideScope}}</ion-label></ion-chip>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  &#10061; sonde (poids)
+                  <p class="comment">Poids/10 + 3</p>
+                </ion-col>
+                <ion-col>
+                <ion-chip outline color="primary"><ion-label>{{TailleSITage}} mm</ion-label></ion-chip>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  &#10061; sonde (age)
+                  <p class="comment">Age/4 + 3,5</p>
+                </ion-col>
+                <ion-col>
+                <ion-chip outline color="primary"><ion-label>{{TailleSITpoids}} mm</ion-label></ion-chip>
+                </ion-col>
+              </ion-row>
+
+            </ion-grid>
+
+            
+            <ion-grid *ngIf="VASView ==2">
+              <ion-row>
+                <ion-col>
+                  Paramètre
+                </ion-col>
+                <ion-col>
+                  Formule
+                </ion-col>
+                <ion-col>
+                  Résultat
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  Fixation (standard)
+                </ion-col>
+                <ion-col>
+                  &#10061; sonde x3
+                </ion-col>
+                <ion-col>
+                  <ion-chip color="turquoise"><ion-label>
+                    {{RepereSITenfant}}
+                  </ion-label></ion-chip>
+                 
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  Fixation (bouche)
+                </ion-col>
+                <ion-col>
+                Age/2 + 12
+                </ion-col>
+                <ion-col>
+                  <ion-chip color="turquoise"><ion-label>
+                    {{RepereSITdents}} cm (AD)
+                  </ion-label></ion-chip>
+                  
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  Fixation (nez)
+                </ion-col>
+                <ion-col>
+                Age/2 + 15
+                </ion-col>
+                <ion-col>
+                  <ion-chip color="turquoise"><ion-label>
+                    {{RepereSITnez}} cm
+                  </ion-label></ion-chip>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  Volume courant (Vt)
+                </ion-col>
+                <ion-col>
+                6 mL/kg
+                </ion-col>
+                <ion-col>
+                  <ion-chip color="primary"><ion-label>
+                    Vt = {{Volumecourant}} mL
+                  </ion-label></ion-chip>
+        
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                Fréquence respiratoire (FR)
+                </ion-col>
+                <ion-col>
+                -
+                </ion-col>
+                <ion-col>
+                  <ion-chip color="primary"><ion-label>
+                    FR = {{FrequenceVentilatoire}}/min 
+                  </ion-label></ion-chip>              
+                 </ion-col>
+              </ion-row>
+
+
+              <ion-row>
+                <ion-col>
+                  Volume minute (Vm)
+                </ion-col>
+                <ion-col>
+                Vt*FR
+                </ion-col>
+                <ion-col>
+                  <ion-chip color="warning"><ion-label>
+                    Vm = {{VolumeMinute}} L/min
+                  </ion-label></ion-chip>     
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                Pertes insensibles en VS (PIVS)
+                <p class="comment">Estimations pour SC = {{SurfaceCorporelle}} m²</p>
+                </ion-col>
+                <ion-col>
+                  800 mL/m²/j <br>
+                  soit 33 mL/m²/h
+                  </ion-col>
+                <ion-col>
+                PIVS = {{PertesInsensiblesVSjour}} mL/j 
+                <br> soit {{PertesInsensiblesVSheure}} mL/h
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                Pertes insensibles en VM (PIVM)
+                <p class="comment">Estimations pour SC = {{SurfaceCorporelle}} m²</p>
+                </ion-col>
+                <ion-col>
+                  400 mL/m²/j <br>
+                  soit 17 mL/m²/h
+                  </ion-col>
+                <ion-col>
+                PIVM = {{PertesInsensiblesIOTjour}} mL/j 
+                <br> soit {{PertesInsensiblesIOTheure}} mL/h
+                </ion-col>
+              </ion-row>
+
+              
+            </ion-grid>
+
+</ion-content>

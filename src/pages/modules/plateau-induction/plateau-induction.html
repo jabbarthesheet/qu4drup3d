@@ -1,0 +1,219 @@
+
+<ion-header>
+  <br>
+        <!-- HEADER MENU  -->
+        <div class="header"> 
+
+          <div (click)="retourHome()" class="backButton">
+          <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+          Retour
+          </div>
+Induction anesthésique  </div>
+            <br>
+      
+                  <!-- HEADER MON PATIENT  -->
+            <ion-item color="turquoise-fonce"> 
+              <ion-label>
+                <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
+                <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
+                <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
+            </ion-item>
+        <!-- ITEM MON PATIENT -->
+         <ion-segment color="turquoise-fonce" [(ngModel)]="InductionView">
+           <ion-segment-button class="inductionViewer"  value="1">Hypnotiques</ion-segment-button>
+           <ion-segment-button class="inductionViewer" value="2">Antalgiques</ion-segment-button>
+           <ion-segment-button class="inductionViewer" value="3">Curares</ion-segment-button>
+           <ion-segment-button class="inductionViewer" value="4">Autres</ion-segment-button>
+
+         </ion-segment>
+       <!-- END HEADER -->
+</ion-header>
+  
+  <ion-content>
+
+<ion-list>
+  <ion-item-group>
+
+    <ion-card *ngIf="InductionView ==1" class="drogueContainer">
+
+    <ion-item >
+      <ion-label class="drogueInduction" >
+        <ion-chip color="warning"><ion-label>Sevoflurane : 6% - Voie inhalée</ion-label></ion-chip> 
+        <p class="dilutionDrogueInduction">Présentation : Sevorane®</p>
+        <p class="dilutionDrogueInduction">DGF pour l'induction : 6-8 L/min</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="drogueInduction"> 
+        <p class="posologieDrogueInduction">Posologie proposée : {{PosoThiopental}}</p>
+        <ion-chip color="warning">
+          <ion-label>Thiopental : {{AdminThiopental}} mg - IVD </ion-label>
+        </ion-chip>
+        <p class="dilutionDrogueInduction"> Présentation : Pentotal® 500mg pdr</p>
+        <p class="dilutionDrogueInduction"> Dilution : {{DiluThiopental}}</p></ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="drogueInduction">
+        <p class="posologieDrogueInduction">Posologie proposée : {{PosoPropofol}}</p>
+        <ion-chip color="warning"><ion-label>Propofol : {{AdminPropofol}} mg - IVD</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : Diprivan® 200mg/20mL</p>
+        <p class="dilutionDrogueInduction">Dilution : {{DiluPropofol}}</p></ion-label>
+    </ion-item>
+
+    <ion-item  class="avecAMM">
+      <ion-label class="drogueInduction">
+        <p class="posologieDrogueInduction">Posologie proposée : {{PosoEtomidate}}</p>
+        <ion-chip color="warning"><ion-label>Etomidate : {{AdminEtomidate}} mg - IVD</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : Hypnomidate® 20mg/10mL</p> 
+        <p class="dilutionDrogueInduction">Dilution : {{DiluEtomidate}}</p> 
+      </ion-label>
+    </ion-item>
+
+    <div class="AMM">AMM <br> > 2 ans</div>
+
+    <ion-item>
+      <ion-label class="drogueInduction"> 
+        <p class="posologieDrogueInduction">Posologie proposée : {{PosoKetamine}}</p>
+        <ion-chip color="warning"><ion-label>Ketamine : {{AdminKetamine}} mg - IVD</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : Ketalar® 50mg/5mL</p>
+        <p class="dilutionDrogueInduction">Dilution : {{DiluKetamine}}</p> </ion-label>
+      <div ></div>
+    </ion-item>
+
+
+    <ion-item class="avecAMM">         
+      <ion-label class="drogueInduction" >Dexmédétomidine : 
+        <p class="dilutionDrogueInduction">Présentation : Dexdor® 200µg/2mL</p>
+        <hr>
+        <p class="dilutionDrogueInduction">Posologie proposée : 2 µg/kg</p>
+          <ion-chip color="dark-blue"><ion-label>Prémédication :  {{DexdorPremed}} µg intranasal</ion-label></ion-chip>
+          <p class="dilutionDrogueInduction">intra-nasal, 20 min avant induction </p>
+        <hr>
+        <p class="dilutionDrogueInduction">Posologie proposée : 0,5 µg/kg</p>
+        <ion-chip color="dark-blue"><ion-label>Induction :  {{DexdorBolusSeul}} µg IVD</ion-label></ion-chip>
+    </ion-label>
+      </ion-item>
+    
+      <div class="AMM">AMM : <br> sédation chez l'adulte en USI objectif RASS [0 ; -3]</div>
+
+  </ion-card>
+    
+
+
+
+  <ion-card *ngIf="InductionView ==2" class="drogueContainer">
+    <ion-item>
+      <ion-label class="drogueInduction">
+        <p class="posologieDrogueInduction">Posologie proposée : {{PosoSufentanil}}</p>
+        <ion-chip color="primary"><ion-label>Sufentanil : {{AdminSufentanil}} µg - IVD</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : 50µg/10mL ou 10µg/2mL</p>
+        <p class="dilutionDrogueInduction">Dilution : {{DiluSufentanil}}</p></ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="drogueInduction" color="primary">
+        <p class="posologieDrogueInduction">Posologie proposée : {{PosoAlfentanil}}</p>
+        <ion-chip color="primary"><ion-label>Alfentanil : {{AdminAlfentanil}} µg - IVD</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : 1mg/2mL</p>
+        <p class="dilutionDrogueInduction">Dilution : {{DiluAlfentanil}}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="drogueInduction">
+        <p class="posologieDrogueInduction">Posologie proposée : 1.5 mg/kg</p>
+        <ion-chip color="grisclair"><ion-label>Xylocaïne : {{AdminXylo}} mg - IVD</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation 100mg/20mL</p>
+        <p class="dilutionDrogueInduction">Dilution : 5 mg/mL</p></ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="drogueInduction" color="warning">
+        <p class="posologieDrogueInduction">Posologie proposée : 0.5 mg/kg</p>
+        <ion-chip color="warning"><ion-label> Ketamine antalgique : {{AdminKetaAntalgique}} mg - IVD</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : Ketalar® 50mg/5mL</p>
+      <p class="dilutionDrogueInduction">Dilution : {{DiluKetaAntalgique}}</p></ion-label>
+    </ion-item>
+  </ion-card>
+
+    <ion-card *ngIf="InductionView ==3" class="drogueContainer">
+    <ion-item>
+      <ion-label class="drogueInduction">
+        <p class="posologieDrogueInduction">Posologie proposée : {{PosoAtracurium}}</p>
+        <ion-chip color="danger"><ion-label>Atracurium : {{AdminAtracurium}} mg - IVD</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : Tracrium® 25mg/2,5mL ou 50mg/5mL</p>
+        <p class="dilutionDrogueInduction">Dilution : {{DiluAtracurium}}</p></ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="drogueInduction" color="danger">
+        <p class="posologieDrogueInduction">Posologie proposée : {{PosoRocuronium}}</p>
+        <ion-chip color="danger"><ion-label> Rocuronium : {{AdminRocuronium}} mg - IVD</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : Esméron® 50mg/5mL</p>
+        <p class="dilutionDrogueInduction">Dilution : {{DiluRocuronium}}</p></ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="drogueInduction">
+        <p class="posologieDrogueInduction">Posologie proposée : 16 mg/kg</p>
+        <ion-chip color="orange"><ion-label> Suggamadex : {{AdminBridion}} mg - IVD</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : Bridion® 200mg/2mL</p>
+        <p class="dilutionDrogueInduction"><b>Pour réversion immédiate en cas d'urgence après curarisation par rocuronium</b></p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="drogueInduction" color="danger">
+        <p class="posologieDrogueInduction">Posologie proposée : {{PosoCelocurine}}</p>
+        <ion-chip color="danger"><ion-label> Suxaméthonium : {{AdminCelocurine}} mg - IVD</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : Celocurine® 100mg/2mL</p>
+        <p class="dilutionDrogueInduction">Dilution : {{DiluCelocurine}}</p></ion-label>
+    </ion-item>
+  </ion-card>
+
+    <ion-card *ngIf="InductionView ==4"  class="drogueContainer">
+
+      <ion-item>  
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : 0,15 mg/kg</p>
+          <ion-chip outline color="light"><ion-label> Dexamethasone : {{AdminDexa}} mg - IVD</ion-label></ion-chip>
+          <p class="dilutionDrogueInduction">Présentation : 4mg/1mL ou 20mg/5mL</p> 
+          <p class="dilutionDrogueInduction">Dilution : {{DiluDexa}}</p></ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="drogueInduction">Acide tranexamique
+          <p class="dilutionDrogueInduction">Présentation : Exacyl® 500mg/5mL</p>
+          <hr>
+          <p class="posologieDrogueInduction">Posologie proposée : bolus 10 mg/kg</p>
+          <ion-chip outline color="light"><ion-label>Bolus : {{AdminExacyl}} mg - IVSE sur 30 min</ion-label></ion-chip>
+          <p class="dilutionDrogueInduction">Dilution : {{DiluExacyl}}</p>
+          <hr>
+          <p class="posologieDrogueInduction">Posologie proposée : 5 mg/kg/h</p>
+          <ion-chip outline color="light"><ion-label>Entretien : {{EntretienExacyl}} mg/h - IVSE</ion-label></ion-chip>
+          <p class="dilutionDrogueInduction">Dilution : {{DiluExacyl}}</p></ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : 100 µg/kg</p>
+          <ion-chip color="dark-pink"><ion-label>Ephédrine : {{AdminEphedrine}} mg - IVD</ion-label></ion-chip>
+          <p class="dilutionDrogueInduction">Présentation : seringue pré-remplie 30mg/10mL</p>
+          <p class="dilutionDrogueInduction">Dilution : {{DiluEphedrine}}</p></ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="drogueInduction">
+          <p class="posologieDrogueInduction">Posologie proposée : 20 µg/kg</p>
+          
+          <ion-chip color="dark-green"><ion-label>Atropine : {{AdminAtropine}} mg - IVD</ion-label></ion-chip>
+          <p class="dilutionDrogueInduction">Présentation : 0,5mg/1mL ou seringue pré-remplie 1mg/5mL</p>
+          <p class="dilutionDrogueInduction">Dilution : {{DiluAtropine}}</p></ion-label>
+      </ion-item>
+    </ion-card>
+
+  </ion-item-group>
+</ion-list>
+</ion-content>

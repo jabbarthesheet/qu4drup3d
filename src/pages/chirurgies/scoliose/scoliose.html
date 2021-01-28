@@ -1,0 +1,130 @@
+
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+    Scoliose</div>
+    <br>
+      <ion-item color="warning">
+        <p class="entete_protocole">Auteurs : Dr. Florence Julien-Marsollier, Pr. Souhayl DAHMANI</p>
+        <p class="entete_protocole">Date de publication : 15/11/2018</p>
+      </ion-item>
+    </ion-header>
+
+    <ion-content>
+  <ion-card color="turquoise-fonce">
+    <ion-card-content>  Objectifs : 
+      <p class="dilutionDrogueInduction"> - anticiper les risques.</p> 
+      <p class="dilutionDrogueInduction"> - favoriser réhabilitation accélérée après chirurgie : raccourcir les séjours en SSPI & USC</p>
+      </ion-card-content>
+      </ion-card>
+
+  
+  <!-- PARTIE CONSULTATION -->
+
+  <ion-item class="drogueContainer" (click)="ToggleConsultation()">
+      <ion-label class="drogueInduction" color="dark-turquoise">Consultation &nbsp;&nbsp;
+      <ion-icon *ngIf="allCheckedConsultation" name="checkbox"  style="zoom:1"></ion-icon>
+      <ion-icon *ngIf="!isShownConsultation" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+      <ion-icon *ngIf="isShownConsultation" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+      </ion-label>
+      </ion-item>
+
+      <div *ngIf="isShownConsultation">
+      <ion-card *ngFor="let entry of Consultation" class="drogueContainer">
+        <ion-item>
+        <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+        <ion-checkbox color="turquoise-fonce" (click)="checkCS()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+      </ion-item>
+      <ion-card-content *ngIf="!entry.isChecked" class="comment">{{entry.item}}</ion-card-content></ion-card>
+      </div>
+
+
+
+<!-- PARTIE VPA -->
+
+<ion-item class="drogueContainer" (click)="ToggleVPA()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Visite pré-anesthésique &nbsp;&nbsp;
+  <ion-icon *ngIf="allCheckedVPA" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownVPA" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownVPA" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+
+  <div *ngIf="isShownVPA">
+  <ion-card *ngFor="let entry of VPA" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkVPA()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content *ngIf="!entry.isChecked" class="comment">{{entry.item}}</ion-card-content></ion-card>
+  </div>
+
+
+  <!-- PARTIE PRE OP -->
+
+<ion-item class="drogueContainer" (click)="TogglePreOp()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Pré-opératoire &nbsp;&nbsp;
+    <ion-icon *ngIf="allCheckedPreOp" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownPreOp" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownPreOp" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+ 
+  <div *ngIf="isShownPreOp">
+  <ion-card *ngFor="let entry of PreOperatoire" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkPreOperatoire()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content *ngIf="!entry.isChecked" class="comment">{{entry.item}}
+  </ion-card-content></ion-card>
+  </div>
+
+
+<!-- PARTIE PER OP -->
+
+<ion-item class="drogueContainer" (click)="TogglePerOp()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Per-opératoire &nbsp;&nbsp;
+    <ion-icon *ngIf="allCheckedPerOp" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownPerOp" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownPerOp" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+
+  <div *ngIf="isShownPerOp">
+  <ion-card *ngFor="let entry of PerOperatoire" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkPerOperatoire()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content  *ngIf="!entry.isChecked" class="comment"> {{entry.item}}
+  </ion-card-content></ion-card>
+  </div>
+
+
+<!-- PARTIE POST OP -->
+
+<ion-item class="drogueContainer" (click)="TogglePostOp()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Post-opératoire & SSPI &nbsp;&nbsp;
+    <ion-icon *ngIf="allCheckedPostOp" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownPostOp" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownPostOp" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+
+  <div *ngIf="isShownPostOp">
+  <ion-card *ngFor="let entry of PostOperatoire" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkPostOperatoire()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content *ngIf="!entry.isChecked" class="comment"> {{entry.item}}
+  </ion-card-content></ion-card>
+  </div>
+
+ 
+</ion-content>

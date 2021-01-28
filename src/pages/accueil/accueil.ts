@@ -5,21 +5,21 @@ import { Storage } from '@ionic/storage';
 import { Nav } from 'ionic-angular';
 
 
-import { PlateauInductionPage } from '../plateau-induction/plateau-induction';
-import { PlateauVasPage } from '../plateau-vas/plateau-vas';
-import { EntretienAnesthPage } from '../entretien-anesth/entretien-anesth';
-import { GestionFluidesPage } from '../gestion-fluides/gestion-fluides';
-import { LocoRegionalePage } from '../loco-regionale/loco-regionale';
-import { AntalgiePage } from '../antalgie/antalgie';
-import { UrgencePage } from '../urgence/urgence';
-import { OptionsPage } from '../options/options';
-import { MonitoragePage } from '../monitorage/monitorage';
-import { CourbesPage } from '../courbes/courbes';
+import { PlateauInductionPage } from '../modules/plateau-induction/plateau-induction';
+import { PlateauVasPage } from '../modules/plateau-vas/plateau-vas';
+import { EntretienAnesthPage } from '../modules/entretien-anesth/entretien-anesth';
+import { GestionFluidesPage } from '../modules/gestion-fluides/gestion-fluides';
+import { LocoRegionalePage } from '../modules/loco-regionale/loco-regionale';
+import { AntalgiePage } from '../modules/antalgie/antalgie';
+import { UrgencePage } from '../modules/urgence/urgence';
+import { OptionsPage } from '../modules/options/options';
+import { MonitoragePage } from '../modules/monitorage/monitorage';
+import { CourbesPage } from '../modules/courbes/courbes';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
-import { AntibioprophylaxiePage } from '../antibioprophylaxie/antibioprophylaxie';
-import { ScoresPage } from '../scores/scores';
-import { ProtocolesPage } from '../protocoles/protocoles';
-import { SauvegardePatientPage } from '../sauvegarde-patient/sauvegarde-patient';
+import { AntibioprophylaxiePage } from '../modules/antibioprophylaxie/antibioprophylaxie';
+import { ScoresPage } from '../main_pages/scores/scores';
+import { ProtocolesPage } from '../main_pages/protocoles/protocoles';
+import { SauvegardePatientPage } from '../modules/sauvegarde-patient/sauvegarde-patient';
 
 
 

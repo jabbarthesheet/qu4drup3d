@@ -7,7 +7,16 @@ float:left;
     width:90% ;
     float:left; 
     }
-    
+
+.patientMemo {
+    background-color:  #f4f4f4;
+    border-radius: 15px;
+    margin:auto; 
+    margin-top: 10px; 
+    width:70%; 
+    padding:1px; 
+    font-size:12px; 
+}
 
 .chirurgieContainer {
     box-shadow: none;
@@ -15,11 +24,6 @@ float:left;
     border-radius: 10px; 
 }
 
-
-
-.intituleChirurgie {
-    font-size:16px !important; 
-}
 
 .specialiteChirurgie {
     font-size:12px !important; 
@@ -31,12 +35,19 @@ float:left;
     font-weight: bold;
 }
 
-.indicationantibioprophylaxieChirurgie {
+.nonRecommandee {
     background-color: #bce7e9;
+    font-size:16px; 
 }
 
-.voieAntibioChip {
+.Recommandee {
     background-color: #ff6961;
+    font-size:16px; 
+}
+
+.openIcon{
+    width:10%;
+    float:right; 
 }
 
 .chirurgiesubContainer {

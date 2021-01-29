@@ -38,3 +38,15 @@
     margin-right: auto;
     padding: 5px; 
 }
+
+.patientHighlight {
+    font-size: 14px !important;
+    text-align:center;
+    background: #85D0D2;
+    color: #FFF;
+    border: none; 
+    padding: 0;
+    position:sticky;
+    top:0; 
+    z-index: +10;
+}

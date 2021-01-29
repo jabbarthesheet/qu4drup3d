@@ -107,7 +107,7 @@ export class GestionFluidesPage {
 
 
 
-  async presentAlert() {
+  /* async presentAlert() {
     const alert = await this.alertController.create({
       cssClass: 'alerte',
       title: 'Minute papillon !',
@@ -125,7 +125,7 @@ export class GestionFluidesPage {
     });
 
     await alert.present();
-    };
+    };*/
 
     UpdatePerteChir(){
       this.CompPertesChir = Math.round(this.PertesChir*this.PoidsNum);
@@ -281,7 +281,7 @@ export class GestionFluidesPage {
           if(!sexe){this.sexeMF="Fille"}
       this.storage.get('Taille').then((Taille) => {
           this.Taille = Taille; 
-      if (!this.PoidsNum || !this.AgeNum || !this.DureeJeune) { this.presentAlert(); this.calculs()}
+      if (!this.PoidsNum || !this.AgeNum || !this.DureeJeune) { /*this.presentAlert();*/ this.calculs()}
       else { this.calculs()
       };
       });

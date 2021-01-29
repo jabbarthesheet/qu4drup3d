@@ -9,16 +9,7 @@
             </div>
   Gestion des voies aériennes</div>
               <br>
-        
-                    <!-- HEADER MON PATIENT  -->
-    
-              <ion-item color="turquoise-fonce"> 
-                <ion-label>
-                  <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
-                  <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
-                  <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
-              </ion-item>
-       
+               
          <!-- END HEADER -->
          <ion-segment color="turquoise-fonce" [(ngModel)]="VASView">
           <ion-segment-button value="1">Matériel</ion-segment-button>
@@ -28,6 +19,10 @@
         </ion-header> 
 
          <ion-content>
+
+          <div padding class="patientHighlight">
+            Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
+          </div>
 
           <p *ngIf="VASView ==1" class="reference">Référence : RFE SFAR 2018. Il est probablement recommandé d’utiliser un vidéolaryngoscope en première intention chez les patients avec intubation difficile prévue et ventilation au masque
             possible ou après échec de la laryngoscopie directe afin d’augmenter les chances de succès de l’intubation.
@@ -103,7 +98,7 @@
                   <p class="comment">Poids/10 + 3</p>
                 </ion-col>
                 <ion-col>
-                <ion-chip outline color="primary"><ion-label>{{TailleSITage}} mm</ion-label></ion-chip>
+                <ion-chip outline color="primary"><ion-label>{{TailleSITpoids}} mm</ion-label></ion-chip>
                 </ion-col>
               </ion-row>
 
@@ -113,7 +108,7 @@
                   <p class="comment">Age/4 + 3,5</p>
                 </ion-col>
                 <ion-col>
-                <ion-chip outline color="primary"><ion-label>{{TailleSITpoids}} mm</ion-label></ion-chip>
+                <ion-chip outline color="primary"><ion-label>{{TailleSITage}} mm</ion-label></ion-chip>
                 </ion-col>
               </ion-row>
 

@@ -14,14 +14,6 @@ Apports et produits sanguins
     
                 <!-- HEADER MON PATIENT  -->
 
-          <ion-item color="turquoise-fonce"> 
-            <ion-label>
-              <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
-              <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
-              <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
-          </ion-item>
-      
-
           <ion-segment color="turquoise-fonce" [(ngModel)]="GestionFluidesView">
             <ion-segment-button value="1">Besoins</ion-segment-button>
             <ion-segment-button value="2">Apports IV</ion-segment-button>
@@ -29,19 +21,20 @@ Apports et produits sanguins
             <ion-segment-button value="4"><span class="saignement">Hémorragie</span></ion-segment-button>
           </ion-segment>
         </ion-header>
-     <!-- END HEADER -->
+     <!-- END HEADER --> 
      <ion-content>
   
+      <div padding class="patientHighlight">
+      Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
+      <br>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>
+    </div>
       <!-- ITEMS CALCULES-->
 
             
               <ion-grid  fixed="true" *ngIf="GestionFluidesView == 1">
-                <ion-row *ngIf="AgeNum >= 24">
-                  <ion-col>Apports journaliers - {{CategorieAge}} de {{ageLecture}} ans</ion-col>
+                <ion-row>
+                  <ion-col>Apports journaliers</ion-col>
               </ion-row>
-              <ion-row *ngIf="AgeNum < 24">
-                <ion-col>Apports journaliers - {{CategorieAge}} de {{AgeNum}} mois</ion-col>
-                </ion-row>
                 <ion-row class="subHeaderRow">
                   <ion-col >
                     Apports cibles

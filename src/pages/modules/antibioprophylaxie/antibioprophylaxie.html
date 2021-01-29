@@ -7,13 +7,8 @@
     Retour
     </div>
 
-Traitements anti-infectieux</div>
-      <br>
-      <ion-item color="turquoise-fonce"> 
-        <ion-label>
-          <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
-          <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
-      </ion-item>
+Protocoles d'antibioprophylaxie</div>
+
       <ion-toolbar>
 
   <ion-searchbar *ngIf = "!this.searchBarType"
@@ -41,23 +36,59 @@ inputmode="text"
 
     <ion-content>
 
+      <ion-card *ngIf="!searchTerm && !searchTermSpecialite" class="drogueContainer">
+      <div  padding><ion-icon name="information-circle" color="dark-turquoise"></ion-icon>
+        &nbsp; 
+        Utilisez la barre de recherche par nom pour trouver une intervention ou appuyez sur <ion-icon name="swap" color="dark-turquoise"></ion-icon> pour effectuer une recherche par spécialité chirurgicale. 
+        <br><br>
+        Les posologies proposées sont envisagées pour la pédiatrie uniquement.
+        Les doses présentées sont calculées pour le patient suivant : 
+        <div class="patientMemo">
+        <ul>
+          <li>{{sexeMF}} de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span>
+          <li>{{PoidsNum}} kg </li>
+          <li>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span></li>
+        </ul>
+      </div>
+      
+        <br>
+        <b>Légende :</b> 
+        <ul>
+          <li>  Recommandée : 
+            <ion-chip color="danger">
+                <ion-label>Intervention</ion-label>
+              </ion-chip></li>
+          <li>Non recommandée :
+            <ion-chip color="turquoise">
+              <ion-label>Intervention</ion-label>
+            </ion-chip></li>
+          <li>Molécule(s) : 
+            <ion-chip color="warning">
+              <ion-label>Antibiotique</ion-label>
+            </ion-chip></li>
+        </ul>
+      </div>
+    </ion-card>
 
+
+    <div *ngIf="searchTerm || searchTermSpecialite">
     <ion-card class="chirurgieContainer" (click)="displayChirurgie(index)" *ngFor="let chir of chirurgie, let index = index" [attr.data-index]="index">
       <ion-card-header>
-        <ion-card-title class="intituleChirurgie">
-          {{chir.intitule}}     
-          <br><br>
-          <ion-chip *ngIf="chir.recommandation == 'Non recommandée'" class="indicationantibioprophylaxieChirurgie">
-            <ion-label>Antibioprophylaxie : {{chir.recommandation}}
-            </ion-label>
-          </ion-chip>
-          <ion-chip *ngIf="chir.recommandation == 'Recommandée'" class="voieAntibioChip">
-            <ion-label>Antibioprophylaxie : {{chir.recommandation}}</ion-label>
-          </ion-chip>
-        
-        </ion-card-title>
+          <div class="comment" *ngIf="chir.recommandation == 'Non recommandée'">
+          <ion-chip class="nonRecommandee">
+            <ion-label>{{chir.intitule}} </ion-label>
+          </ion-chip> - prophylaxie non recommandée</div>
+
+          <div class="comment" *ngIf="chir.recommandation == 'Recommandée'">
+          <ion-chip class="Recommandee">
+            <ion-label>{{chir.intitule}}</ion-label>
+          </ion-chip> - prophylaxie recommandée</div>
         <span *ngIf="chir.specialite" class="specialiteChirurgie">{{chir.specialite}}</span> - <span *ngIf="chir.classeConta" class="classeContaminationChirurgie">Classe Altemeier : {{chir.classeConta}}</span>
-      </ion-card-header>
+     
+        <div class="openIcon"><ion-icon *ngIf="chir.recommandation == 'Recommandée' && !chir.isShown" name="add" color="grisclair" end></ion-icon></div>
+        <div class="openIcon"><ion-icon *ngIf="chir.recommandation == 'Recommandée' && chir.isShown" name="close" color="grisclair" end></ion-icon></div>
+
+      </ion-card-header> 
 
 
       <ion-card-content class="chirurgiesubContainer" *ngIf="chir.isShown && chir.ATB1">
@@ -142,7 +173,7 @@ inputmode="text"
       </ion-card-content>
 
     </ion-card>
-
+  </div>
 
       
 </ion-content>

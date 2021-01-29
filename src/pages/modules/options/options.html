@@ -14,9 +14,9 @@
     
               <ion-item color="turquoise-fonce"> 
                 <ion-label>
-                  <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
-                  <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
-                  <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
+                  <p class="MonPatient">{{sexeMF}} - <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> - {{PoidsNum}} kg - {{Taille}} cm</p> 
+                  <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune : <span *ngIf="!DureeJeune">non renseigné</span> <span *ngIf="DureeJeune">{{DureeJeune}}h</span></p>
+                  <p class="MonPatient">Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span></p></ion-label> 
               </ion-item>
           
               <br>

@@ -15,14 +15,6 @@ Monitorage & dispositifs  </div>
             <br>
       
                   <!-- HEADER MON PATIENT  -->
-  
-            <ion-item color="turquoise-fonce"> 
-              <ion-label>
-                <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
-                <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
-                <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
-            </ion-item>
-
 
             <ion-segment color="turquoise-fonce" [(ngModel)]="MonitorageView">
               <ion-segment-button  value="1">Vitals</ion-segment-button>
@@ -36,12 +28,12 @@ Monitorage & dispositifs  </div>
 
        <ion-content>
 
+        <div padding class="patientHighlight">
+          Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
+        </div>
+
   <ion-grid fixed="true" *ngIf="MonitorageView ==1">
-    <ion-row class="TableApportsHeader"><ion-col> <span *ngIf="this.AgeNum <= 24">
-      Pour un enfant de {{AgeNum}} mois
-    </span>
-    <span  *ngIf="this.AgeNum > 24 && this.AgeNum > 0">
-      Pour un enfant de {{ageLecture}} ans</span></ion-col></ion-row>
+ 
     <ion-row >
       <ion-col>
       </ion-col>
@@ -183,12 +175,13 @@ Monitorage & dispositifs  </div>
         <ion-col>
           Paramètre
         </ion-col>
-        <ion-col *ngIf="this.AgeNum <= 24">
-          Normes à {{AgeNum}} mois
+        <ion-col>
+          Normes pour l'âge
         </ion-col>
-        <ion-col  *ngIf="this.AgeNum > 24 && this.AgeNum > 0">
-          Normes à {{ageLecture}} ans
-        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>NFS</ion-col>
       </ion-row>
 
       <ion-row class="TableBilansEven">

@@ -11,13 +11,6 @@
 Induction anesthésique  </div>
             <br>
       
-                  <!-- HEADER MON PATIENT  -->
-            <ion-item color="turquoise-fonce"> 
-              <ion-label>
-                <p class="MonPatient">{{sexeMF}} - {{ageLecture}} ans ( = {{AgeNum}} mois) - {{PoidsNum}} kg - {{Taille}} cm</p> 
-                <p class="MonPatient">Estomac {{EstomacOuiNon}} - Jeune {{DureeJeune}} h</p>
-                <p class="MonPatient">Allergie : {{Allergie}}</p></ion-label> 
-            </ion-item>
         <!-- ITEM MON PATIENT -->
          <ion-segment color="turquoise-fonce" [(ngModel)]="InductionView">
            <ion-segment-button class="inductionViewer"  value="1">Hypnotiques</ion-segment-button>
@@ -29,7 +22,14 @@ Induction anesthésique  </div>
        <!-- END HEADER -->
 </ion-header>
   
-  <ion-content>
+  <ion-content>        
+    <div padding class="patientHighlight">
+    Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
+    <br>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>
+    <br>Estomac {{EstomacOuiNon}}
+  </div>
+
+
 
 <ion-list>
   <ion-item-group>

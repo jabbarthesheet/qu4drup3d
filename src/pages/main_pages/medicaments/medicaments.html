@@ -1,50 +1,67 @@
   <ion-header>
     <br>
-    Médicaments 
-    <div padding>Les posologies proposées sont envisagées pour la <b>pédiatrie</b> uniquement.
-    <br>Légende : 
-    <ion-chip class="indicationChip">
-      <ion-label>Indication</ion-label>
-    </ion-chip>
-    <ion-chip class="classeMedicamenteuseChip">
-      <ion-label>Classe</ion-label>
-    </ion-chip>
-    <ion-chip class="voieAdminChip">
-      <ion-label>Voie</ion-label>
-    </ion-chip> 
-    <ion-chip class="AMMChip">
-      <ion-label>AMM</ion-label>
-    </ion-chip></div>
-    <ion-toolbar>
+    Médicaments
+    <br>
+
+    
       <ion-searchbar *ngIf = "!this.searchBarType"
-      class="specialiteSearchbar"
+      class="lightSearchBar"
       [(ngModel)]="searchTerm"
       (ionChange)="setFilteredItems()"
       placeholder="Nom..."
-      inputmode="text">
+      inputmode="text"
+      debounce="500">
     </ion-searchbar><br *ngIf = "!this.searchBarType"><ion-icon *ngIf = "!this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>
-
+ 
     <ion-searchbar *ngIf = "this.searchBarType"
-    class="specialiteSearchbar"
+    class="lightSearchBar"
     [(ngModel)]="searchTermIndication"
     (ionChange)="setFilteredIndication()"
     placeholder="Indication..."
     inputmode="text"
     ></ion-searchbar><br *ngIf = "this.searchBarType"><ion-icon *ngIf = "this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>
-
-  </ion-toolbar> 
+ 
     </ion-header>
 
     <ion-content>
 
+    <ion-card *ngIf="!searchTerm && !searchTermIndication" class="drogueContainer">
+      <ion-card-content>
+         
+        <div  padding><ion-icon name="information-circle" color="dark-turquoise"></ion-icon>
+          &nbsp; 
+          Utilisez la barre de recherche par nom pour trouver un produit ou appuyez sur <ion-icon name="swap" color="dark-turquoise"></ion-icon> pour effectuer une recherche par indication. 
+          <br><br>
+          Les posologies proposées sont envisagées pour la pédiatrie uniquement.
+        
+          <br><br>
+          Légende : 
+        <ion-chip class="indicationChip">
+            <ion-label>Indication</ion-label>
+          </ion-chip>
+          <ion-chip class="classeMedicamenteuseChip">
+            <ion-label>Classe</ion-label>
+          </ion-chip>
+          <ion-chip class="voieAdminChip">
+            <ion-label>Voie</ion-label>
+          </ion-chip> 
+          <ion-chip class="AMMChip">
+            <ion-label>AMM</ion-label>
+          </ion-chip></div>
+        </ion-card-content>
+      </ion-card>
 
 
-  <ion-list>
+
+  <ion-list *ngIf="searchTerm || searchTermIndication">
     <ion-card class="medicamentContainer" *ngFor="let card of medicaments, let index = index" [attr.data-index]="index">
       
       <div class="medicamentTitle" padding (click)="displayMedicament(index)"> {{card.title}}
       </div>
       <img class="logoVidal" (click)="openVidal(index)" src="/assets/imgs/logo-vidal.png">
+      <br>
+      <div class="openIcon"><ion-icon (click)="displayMedicament(index)" *ngIf="!card.isShown" name="add" color="grisclair" end></ion-icon></div>
+      <div class="openIcon"><ion-icon (click)="displayMedicament(index)" *ngIf="card.isShown" name="close" color="grisclair" end></ion-icon></div>
     
       
       

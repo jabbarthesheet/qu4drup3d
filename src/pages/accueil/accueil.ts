@@ -218,8 +218,8 @@ public PatientsSauvegardes: any =[];
             { name: "morceau", 
               options: [
                 { text: 'Ha les crocodiles', value: 'Crocodiles' },
-                { text: 'Un éléphant qui se balançait', value: 'Elephants' },
-                { text: 'Une souris verte', value: 'Souris verte' },
+              /*  { text: 'Un éléphant qui se balançait', value: 'Elephants' },
+                { text: 'Une souris verte', value: 'Souris verte' },*/
 
 
           ]

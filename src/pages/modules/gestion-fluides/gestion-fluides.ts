@@ -67,34 +67,9 @@ export class GestionFluidesPage {
   PosoEphedrine:string;
   AdminAlbumine:number; 
 
-
-
-  CategorieAge:string; 
-  
-  StandardEau:number;
-  StandardKCal:number; 
-  StandardGlucides:number; 
-  StandardAcidesAmines:number; 
-  StandardLipides:number; 
-  StandardSodium:number; 
-  StandardPotassium:number; 
-  StandardCalcium:number; 
-  StandardPhosphore:number; 
-  StandardMagnesium:number; 
-  
-  Eau:number;
-  KCal:number;
-  Glucides:number; 
-  AcidesAmines:number;
-  Lipides:number;
-  Sodium:number;
-  Potassium:number;
-  Calcium:number;
-  Phosphore:number;
-  Magnesium:number;
-
   GestionFluidesView:number=1;
   
+  CategorieAge:string; 
 
 
 
@@ -104,28 +79,6 @@ export class GestionFluidesPage {
   retourHome(){
     this.navCtrl.pop();
   };
-
-
-
-  /* async presentAlert() {
-    const alert = await this.alertController.create({
-      cssClass: 'alerte',
-      title: 'Minute papillon !',
-      message: 'Pensez à renseigner la durée du jeûne pré-opératoire dans les options pour profiter du calcul des apports horaires recommandés.',
-      buttons: [
-        {
-          text: 'Compris.',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (cancel) => {
-            console.log('Confirm Cancel: Nan');
-          }
-        }
-      ]
-    });
-
-    await alert.present();
-    };*/
 
     UpdatePerteChir(){
       this.CompPertesChir = Math.round(this.PertesChir*this.PoidsNum);
@@ -184,78 +137,6 @@ export class GestionFluidesPage {
           else{this.PosoEphedrine = "100 µg/kg" ;this.AdminEphedrine = Math.round((this.PoidsNum*0.1)*10)/10;};
 
           this.AdminAlbumine = Math.round((this.PoidsNum*10)*10)/10;
-
-          /** Apports journaliers */
-        
-          if (this.AgeNum <= 1){
-            this.CategorieAge = "nouveau-né";
-            this.StandardEau = 160; 
-            this.StandardKCal = 110;
-            this.StandardGlucides = 17;
-            this.StandardAcidesAmines = 3.5; 
-            this.StandardLipides = 6;
-            this.StandardSodium = 290;
-            this.StandardPotassium = 150; 
-            this.StandardCalcium = 45;
-            this.StandardPhosphore = 35;
-            this.StandardMagnesium = 10;
-          }
-
-          else if (this.AgeNum <= 3)
-          {
-            this.CategorieAge = "nourrisson";
-            this.StandardEau = 105; 
-            this.StandardKCal = 100;
-            this.StandardGlucides = 14;
-            this.StandardAcidesAmines = 2.5; 
-            this.StandardLipides = 3;
-            this.StandardSodium = 203; 
-            this.StandardPotassium = 262.5; 
-            this.StandardCalcium = 25;
-            this.StandardPhosphore = 25;
-            this.StandardMagnesium = 10;
-          }
-
-          else if (this.AgeNum <= 12*12)
-          {
-            this.CategorieAge = "enfant";
-            this.StandardEau = 70;
-            this.StandardKCal = 70;
-            this.StandardGlucides = 12;
-            this.StandardAcidesAmines = 2; 
-            this.StandardLipides = 2;
-            this.StandardSodium = 145;
-            this.StandardPotassium = 187.5; 
-            this.StandardCalcium = 10;
-            this.StandardPhosphore = 10;
-            this.StandardMagnesium = 8;
-          }
-
-          else 
-          {
-            this.CategorieAge = "jeune adulte";
-            this.StandardEau = 50;
-            this.StandardKCal = 50;
-            this.StandardGlucides = 10;
-            this.StandardAcidesAmines = 2; 
-            this.StandardLipides = 1.5;
-            this.StandardSodium = 145;
-            this.StandardPotassium = 187.5; 
-            this.StandardCalcium = 10;
-            this.StandardPhosphore = 10;
-            this.StandardMagnesium = 8;
-          }
-
-          this.Eau = Math.round((this.PoidsNum*this.StandardEau)*10)/10 ;
-          this.KCal = Math.round((this.PoidsNum*this.StandardKCal)*10)/10 ;
-          this.Glucides = Math.round((this.PoidsNum*this.StandardGlucides)*10)/10 ; 
-          this.AcidesAmines = Math.round((this.PoidsNum*this.StandardAcidesAmines)*10)/10 ;
-          this.Lipides = Math.round((this.PoidsNum*this.StandardLipides)*10)/10 ;
-          this.Sodium = Math.round((this.PoidsNum*this.StandardSodium)*10)/10 ;
-          this.Potassium = Math.round((this.PoidsNum*this.StandardPotassium)*10)/10 ;
-          this.Calcium = Math.round((this.PoidsNum*this.StandardCalcium)*10)/10 ;
-          this.Phosphore = Math.round((this.PoidsNum*this.StandardPhosphore)*10)/10 ;
-          this.Magnesium = Math.round((this.PoidsNum*this.StandardMagnesium)*10)/10 ;
         };
 
     

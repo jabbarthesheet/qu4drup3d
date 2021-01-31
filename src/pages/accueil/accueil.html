@@ -62,62 +62,99 @@
           <button *ngIf = " Taille " color="turquoise-fonce" ion-button  (click)="showPickerTaille()">{{Taille}} cm</button>
 
           <button ion-button small color="dark-turquoise"  (click)="displayOptions()"><ion-icon name="options"></ion-icon></button>
-          <br> 
     </ion-buttons>
     </ion-toolbar>
-
-
-
   </ion-card-content>
 </ion-card>
-
-<div class="monPatient">
-<b>Options : </b> <span *ngIf=" this.EstomacOuiNon">Estomac {{EstomacOuiNon}}</span> <span *ngIf="this.DureeJeune"> - Jeûne {{DureeJeune}} h</span><span *ngIf="this.Allergie"> - Allergie : {{Allergie}}</span>
-</div>
 
 <hr>
 
 <div class="actionButtonsContainer">
-  <button ion-button color="primary"  (click)="openSauvegarde()"> <ion-icon name="filing"></ion-icon></button>
-  &nbsp;  &nbsp;  &nbsp; 
-  <button ion-button  small color="primary"  (click)="enregistrer()"><ion-icon name="archive"></ion-icon></button>
-&nbsp;
+  <button class="homeActionsLarge" style="zoom:1.5" ion-button color="primary"  (click)="openSauvegarde()"> <ion-icon name="filing"></ion-icon></button>
+  &nbsp;  &nbsp;  &nbsp; &nbsp; 
+  <button class="homeActions"  *ngIf = "PoidsNum && AgeNum && Taille"  ion-button color="dark-green"  (click)="displayCourbes()"><ion-icon name="trending-up"></ion-icon>
+  </button>
+  <button class="homeActions" outline *ngIf = "!PoidsNum || !AgeNum || !Taille" ion-button color="light"  (click)="alertAgePoidsTaille()"><ion-icon name="trending-up"></ion-icon>
+  </button>
+  <button class="homeActions" ion-button color="primary"  (click)="enregistrer()"><ion-icon name="archive"></ion-icon></button>
+<button class="homeActions" ion-button color="dark-turquoise"  (click)="help()"><ion-icon name="information-circle"></ion-icon></button>
+<button class="homeActions" ion-button color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>
 
-<button ion-button  small color="dark-turquoise"  (click)="help()"><ion-icon name="information-circle"></ion-icon></button>
-&nbsp;
-<button ion-button   small color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>
-<hr>
 </div>   
+<hr>
 
-  <button class="homeButtons" outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button round  color="light" (click)="alertPoidsAge()"><ion-icon name="medkit"></ion-icon> &nbsp; &nbsp;Urgences</button>
-  <button class="homeButtons" *ngIf = " this.PoidsNum && this.AgeNum " ion-button round color="warning" (click)="displayUrgences()"><ion-icon name="medkit"></ion-icon> &nbsp; &nbsp;Urgences</button>
-  <button class="homeButtons"  *ngIf = "PoidsNum && AgeNum && Taille"  ion-button round color="pastel-brown"  (click)="displayCourbes()"><ion-icon name="trending-up"></ion-icon> &nbsp; &nbsp;
-    Croissance</button>
-  <button class="homeButtons" outline *ngIf = "!PoidsNum || !AgeNum || !Taille" ion-button round color="light"  (click)="alertAgePoidsTaille()"><ion-icon name="trending-up"></ion-icon> &nbsp; &nbsp;
-    Croissance</button>
+<!-- BOUTONS ANESTHESIE SI DONNEES PRESENTES -->
+<div class="anesthesieContainer" *ngIf = "this.PoidsNum && this.AgeNum">
+  ANESTHESIE
+  <br>
+    <div *ngFor="let page of AnesthesiePages, let index = index" class="anesthesieName">
+  <button  (click)="displayAnesthesiePage(index)" class="urgenceButton" ion-button color="{{page.color}}"><ion-icon name="{{page.icon}}"></ion-icon></button>
+  <br>{{page.titre}}
+  </div>
+ 
+  </div>
 
-    
-          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="pulse"></ion-icon> &nbsp; &nbsp; Monitorage</button>
-          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="moon"></ion-icon> &nbsp; &nbsp; Induction </button>
-          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"> <ion-icon name="analytics"></ion-icon> &nbsp; &nbsp; Voies Aériennes </button>
-          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="checkmark-circle-outline"></ion-icon> &nbsp;  Atbprophylaxie </button>
-          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="cloudy-night"></ion-icon> &nbsp; &nbsp; Entretien </button> 
-    
-          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="water"></ion-icon> &nbsp; &nbsp; Apports & PSL</button>
-          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"> <ion-icon name="pin"></ion-icon> &nbsp; &nbsp;Loco-régionale</button>
-          <button round outline *ngIf = " !this.PoidsNum || !this.AgeNum " ion-button small color="light" class="homeButtons" (click)="alertPoidsAge()"><ion-icon name="alarm"></ion-icon> &nbsp; &nbsp;Réveil & SSPI</button>
 
-    
-          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayMonitorage()"><ion-icon color="dark-turquoise" name="pulse"></ion-icon> &nbsp; &nbsp; Monitorage</button>
-          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayInduction()"><ion-icon color="dark-turquoise" name="moon"></ion-icon> &nbsp; &nbsp; Induction </button>
-          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayVAS()"> <ion-icon color="dark-turquoise" name="analytics"></ion-icon> &nbsp; &nbsp; Voies Aériennes </button>
-          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayATBprophylaxie()"><ion-icon color="dark-turquoise"  name="checkmark-circle-outline"></ion-icon> &nbsp;  Atbprophylaxie </button>
-          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayEntretien()"><ion-icon color="dark-turquoise" name="cloudy-night"></ion-icon> &nbsp; &nbsp; Entretien </button> 
-    
-          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayGestionFluides()"><ion-icon color="dark-turquoise" name="water"></ion-icon> &nbsp; &nbsp;Apports & PSL</button>
-          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayALR()"> <ion-icon color="dark-turquoise" name="pin"></ion-icon> &nbsp; &nbsp;Loco-régionale</button>
-          <button round solid *ngIf = " this.PoidsNum && this.AgeNum " ion-button small color="turquoise" class="homeButtons" (click)="displayPostop()"><ion-icon color="dark-turquoise" name="alarm"></ion-icon> &nbsp; &nbsp;Réveil & SSPI</button>
+  <!-- BOUTONS ANESTHESIE SI DONNEES ABSENTES -->
+  
+  <div class="urgenceContainer" *ngIf = "!this.PoidsNum || !this.AgeNum">
+    ANESTHESIE
+    <br>
+  <div *ngFor="let page of AnesthesiePages, let index = index" class="anesthesieName">
+<button  (click)="alertPoidsAge()" class="urgenceButton" ion-button color="light"><ion-icon name="{{page.icon}}"></ion-icon></button>
+<br>{{page.titre}}
+</div>
 
+</div> 
+
+
+<!-- BOUTONS URGENCE & REA SI DONNEES PRESENTES -->
+<ion-toolbar class="urgenceContainer" *ngIf = "this.PoidsNum && this.AgeNum">
+  <ion-buttons>
+
+  REANIMATION
+  <br>
+    <div *ngFor="let page of UrgenceBlocPages, let index = index" class="urgenceBlocName">
+  <button  (click)="displayUrgenceBlocPage(index)" outline class="urgenceButton" ion-button color="{{page.color}}"><ion-icon name="{{page.icon}}"></ion-icon></button>
+  <br>{{page.titre}}
+  </div>
+</ion-buttons>
+</ion-toolbar>
+  
+  <ion-toolbar class="urgenceContainer" *ngIf = "this.PoidsNum && this.AgeNum">
+    <ion-buttons>
+  <div *ngFor="let page of UrgenceReaPages, let index = index" class="urgenceReaName">
+<button  (click)="displayUrgenceReaPage(index)" outline class="urgenceButton" ion-button color="{{page.color}}"><ion-icon name="{{page.icon}}"></ion-icon></button>
+<br>{{page.titre}}
+</div>
+</ion-buttons>
+</ion-toolbar>
+
+
+<!-- BOUTONS URGENCE & REA SI DONNEES ABSENTES -->
+
+<ion-toolbar class="urgenceContainer" *ngIf = "!this.PoidsNum || !this.AgeNum">
+
+  REANIMATION
+  <br>
+  <ion-buttons>
+      <div *ngFor="let page of UrgenceBlocPages, let index = index" class="urgenceBlocName">
+    <button  (click)="alertPoidsAge()" outline class="urgenceButton" ion-button color="light"><ion-icon name="{{page.icon}}"></ion-icon></button>
+    <br>{{page.titre}}
+    </div>
+    </ion-buttons></ion-toolbar>
+    
+    <ion-toolbar class="urgenceContainer" *ngIf = "!this.PoidsNum || !this.AgeNum">
+      <ion-buttons>
+    <div *ngFor="let page of UrgenceReaPages, let index = index" class="urgenceReaName">
+  <button  (click)="alertPoidsAge()" outline class="urgenceButton" ion-button color="light"><ion-icon name="{{page.icon}}"></ion-icon></button>
+  <br>{{page.titre}}
+  </div>
+  </ion-buttons>
+  </ion-toolbar>
+
+
+ 
       </ion-content>
 
   

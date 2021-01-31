@@ -1,13 +1,8 @@
 import { Component, ViewChild, NgModule } from '@angular/core';
-
 import { Platform, MenuController, Nav } from 'ionic-angular';
-
-
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MainPage } from '../pages/main/main';
-
 
 @Component({
   templateUrl: 'app.html'

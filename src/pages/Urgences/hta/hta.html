@@ -1,0 +1,54 @@
+<ion-header>
+  <!-- HEADER MENU  -->
+  <div class="header"> 
+<br>
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+Hypertension artérielle</div>
+      <br>
+
+      </ion-header>
+
+<ion-content>
+  <div padding class="patientHighlight">
+    Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
+    <br>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>
+  </div>
+
+
+
+      <ion-card class="drogueContainer">
+      <ion-card-content>
+        <p class="posologieDrogueInduction">Posologie proposée : 60 µg/kg/h</p>
+        <p class="drogueInduction">- <b>Nicardipine (Loxen® 1 mg/mL) : {{LoxenIVSE}} µg/h IVSE </b></p>
+        <p class="comment">Possibilité de doubler la dose si insuffisant</p>
+        <br>
+        <p class="posologieDrogueInduction">Posologie proposée : 2 mg/kg/j en deux prises</p>
+        <p class="drogueInduction">- <b>Acebutolol (Sectral®) : {{SectralPO}} mg/j PO</b></p>
+        <p class="comment">A répartir sur 2 prises PO</p>
+        <br>
+        <p class="posologieDrogueInduction">Posologie proposée : 0,3 mg/kg/prise</p>
+        <p class="drogueInduction">- <b>Labétolol (Trandate®) : {{TrandateBolus}} mg IVL</b></p>
+        <p class="comment">En IVSE : {{TrandateIVSE}} mg/j (pour 2 mg/kg/j), possibilité d'augmenter jusqu'à 24 mg/kg/j </p>
+        <br>
+        <p class="posologieDrogueInduction">Posologie proposée : 50 µg/kg/j en deux prises</p>
+        <p class="drogueInduction">- <b>Enalapril (Renitec®) : {{AdminRenitec}} µg/j PO</b></p>
+        <p class="comment">Sans dépasser 5 mg/j</p>
+        <br>
+        <p class="posologieDrogueInduction">Posologie proposée : 1 mg/kg/prise</p>
+        <p class="drogueInduction">- <b>Furosémide (Lasilix® 10 mg/mL) : {{AdminLasilix}} mg PO ou IV</b></p>
+        <p class="comment">AMM : 4 mg/kg/j maximum, soit 1 prise/6h maximum</p>
+        <br>
+        <p class="posologieDrogueInduction">Posologie proposée : 10 µg/kg/h</p>
+        <p class="drogueInduction">- <b>Bumétanide (Burinex® 500 µg/mL) : {{AdminBurinexIVSE}} mg/h IVSE</b></p>
+        <p class="comment">Possibilité de doubler la dose si insuffisant</p>
+        <br>
+        <p class="posologieDrogueInduction">Posologie proposée : 1 à 5 mg/kg/j</p>
+        <p class="drogueInduction">- <b>Spironolactone (Aldactone®) : {{AdminAldactoneMin}} - {{AdminAldactoneMax}} mg/j PO</b></p>
+        <br>
+
+      </ion-card-content>
+    </ion-card> 
+</ion-content>

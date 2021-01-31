@@ -1,0 +1,54 @@
+<ion-header>
+  <!-- HEADER MENU  -->
+  <div class="header"> 
+<br>
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+Asthme</div>
+      <br>
+</ion-header>
+
+<ion-content>
+  <div padding class="patientHighlight">
+    Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
+    <br>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>
+  </div>
+
+
+
+    <ion-card class="drogueContainer">
+    <ion-card-content>
+      <p class="drogueInduction">- <b>Penser à l'hydratation & au potassium !</b></p>
+      <p class="comment">NaCl 0,9% {{ApportBaseJour}} mL/j + KCl {{AdminKClAAGmg}} mg/j (pour 150 mg/kg/j)</p>
+      <p class="comment">Remplacer après 24h par du B26</p>
+      <br>
+      <p class="drogueInduction">- <b>Salbutamol aérosol (Ventoline®): {{AerosolSalbutamolAAG}} mg</b></p>
+      <p class="comment">Renouvelable après 15 minutes</p>
+      <br>
+      <p class="posologieDrogueInduction">Posologie proposée : 2 mg/kg</p>
+      <p class="drogueInduction">- <b>Methylprednisolone (Solumédrol® 20 mg/2mL) : {{AdminSolumedrolAAG}} mg en bolus</b></p>
+      <p class="comment">Puis entretien par {{IVSESolumedrolAAG}} mg/6h IVSE (pour 0,5 mg/kg/6h)</p>
+      <br>
+      <p class="posologieDrogueInduction">Posologie proposée : 1/2 à 1 flacon</p>
+      <p class="drogueInduction">- <b>Ipratropium (Atrovent® 0,5 mg/2mL) : {{AerosolAtroventAAG}} mg en aérosol</b></p>
+      <br>
+      <p class="posologieDrogueInduction">Posologie proposée : 0,2 mg/kg</p>
+      <p class="drogueInduction">- <b>Terbutaline (Bricanyl® 5mg/2mL) : {{AerosolBricanylAAG}} mg en aérosol </b></p> 
+      <br>
+      <p class="posologieDrogueInduction">Posologie proposée : 40 mg/kg sans dépasser 2g</p>
+      <p class="drogueInduction">- <b>MgSO4 (1,5g/10mL) : {{MgSO4AAG}} mg IVL sur 20 minutes</b></p>
+      <p class="comment">A diluer dans du NaCl 0,9%</p>
+      <br>
+      <p class="posologieDrogueInduction">Posologie proposée : 0,5 µg/kg/min</p>
+      <p class="drogueInduction">- <b>Salbutamol (5 mg/5 mL) : {{SalbutamolIVAAG}} µg/min IVSE</b></p>
+      <p class="comment">Possibilité d'augmenter de 0,1 µg/kg/min toutes les 10 minutes</p>
+      <p class="comment">Ne s'envisage qu'en secteur de réanimation</p>
+      <p class="comment">Ne pas administrer pur, dilution minimale de 1/2</p>
+      <br>
+      
+    </ion-card-content>
+  </ion-card> 
+
+</ion-content>

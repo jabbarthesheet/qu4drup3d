@@ -1,0 +1,81 @@
+<ion-header>
+  <!-- HEADER MENU  -->
+  <div class="header"> 
+<br>
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+Catécholamines</div>
+      <br>
+
+      <ion-segment color="turquoise-fonce" [(ngModel)]="CatecholaminesView">
+        <ion-segment-button value="1">Noradrénaline</ion-segment-button>
+      </ion-segment>
+
+      </ion-header>
+
+<ion-content>
+
+  <div padding class="patientHighlight">
+    Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
+  </div>
+
+  <ion-card class="drogueContainer" *ngIf="CatecholaminesView == 1">
+    <ion-card-content>
+
+
+      <ion-item>
+        <ion-label class="drogueInduction" color="dark">
+          <p class="posologieDrogueInduction">Protocole proposé : {{ProtocoleNAD}}</p>
+          <ion-chip color="primary"><ion-label>Noradrénaline : {{QuantiteNAD}}mg/50mL</ion-label></ion-chip>
+          <p class="dilutionDrogueInduction">Présentation : Noradrénaline Tartrate 8mg/4mL</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="drogueInduction" color="dark">
+          Mélanger dans une seringue de 50 mL
+          <ul>
+            <li><ion-chip color="light"><ion-label>{{VolumeNAD}} mL de NAD</ion-label></ion-chip> (soit {{AmpoulesNAD}} ampoules)</li>
+            <li><ion-chip color="light"><ion-label>+ {{VolumeSerumPhyNAD}} mL de NaCl 0,9%</ion-label></ion-chip></li>
+          </ul>
+        </ion-label>
+      </ion-item>
+     
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            Debit
+          </ion-col>
+          <ion-col>
+            {{DebitNADgammakgmin}} µg/kg/min 
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            Vitesse
+          </ion-col>
+          <ion-col>
+            {{DebitNADmlh}} mL/h
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            Posologie
+          </ion-col>
+          <ion-col>
+            {{DebitNADmgh}} mg/h
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+     
+        <ion-range color="turquoise-fonce" max="500" step="10" (ngModelChange)="VariationNAD()" [(ngModel)]="DixiemeDebitNADgammakgmin"> </ion-range>
+
+ 
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

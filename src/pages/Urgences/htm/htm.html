@@ -1,0 +1,35 @@
+<ion-header>
+  <!-- HEADER MENU  -->
+  <div class="header"> 
+<br>
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+Hyperthermie maligne</div>
+      <br>
+
+      </ion-header>
+
+<ion-content>
+  <div padding class="patientHighlight">
+    Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
+    <br>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>
+  </div>
+
+
+    <ion-card class="drogueContainer">
+    <ion-card-content>
+      <p  class="drogueInduction">Evoquer devant  :
+        <p class="dilutionDrogueInduction">- augmentation importante et inexpliquée de l'EtCO2, de la FC ou de la température</p>
+        <p class="dilutionDrogueInduction">- apparition d'une rigidité musculaire des masséters, du tronc ou des membres.</p>
+        <br>
+      <p  class="drogueInduction">Conduite à tenir en cas de suspicion :</p>
+      <p class="dilutionDrogueInduction">- Arrêt halogénés, changement des filtres et tuyaux</p>
+      <p class="dilutionDrogueInduction">- Hyperventilation en FiO2 1</p>
+      <p class="dilutionDrogueInduction">- Contre indication absolue celocurine jusqu'à preuve du contraire</p>
+      <p class="dilutionDrogueInduction">- Dantrolène <b>{{AdminDantroleneHTM}} mg IVL</b> (soit 2,5 mg/kg, renouvelable 4 fois max) à diluer dans de l'<b>EPPI</b></p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

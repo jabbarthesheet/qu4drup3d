@@ -129511,6 +129511,22 @@ figcaption {
   float: center;
 }
 
+.homeActions {
+  width: 10% !important;
+  padding: auto;
+  margin: 2%;
+  float: center;
+  border-radius: 50%;
+}
+
+.homeActionsLarge {
+  width: 15% !important;
+  padding: auto;
+  margin: 2%;
+  float: center;
+  border-radius: 50%;
+}
+
 .SexeToggle {
   position: relative;
   float: left;
@@ -129521,12 +129537,71 @@ figcaption {
   background-color: transparent;
 }
 
+.urgencesScroll {
+  overflow: auto;
+  white-space: nowrap;
+  text-align: center;
+}
+
 .sexLabel {
   text-align: center !important;
 }
 
-.segmentIcon {
-  font-size: 14px !important;
+.anesthesieContainer {
+  width: 100%;
+  margin: auto;
+  float: center;
+  text-align: center;
+}
+
+.urgenceContainer {
+  width: 100%;
+  margin: auto;
+  float: center;
+  text-align: center;
+}
+
+.urgenceBlocName {
+  float: left;
+  font-size: 9px;
+  text-align: center;
+  width: 15%;
+  margin-top: 4%;
+  margin-bottom: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.urgenceReaName {
+  float: left;
+  font-size: 9px;
+  text-align: center;
+  width: 15%;
+  margin-top: 4%;
+  margin-bottom: auto;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.anesthesieName {
+  float: left;
+  font-size: 9px;
+  text-align: center;
+  width: 20%;
+  margin-top: 4%;
+  margin-bottom: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.urgenceButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.anesthContainer {
+  text-align: center;
 }
 
 .entete_protocole {
@@ -130067,21 +130142,4 @@ ion-card {
   font-weight: bold;
   font-size: 14px;
   color: #009c9e;
-}
-
-.AdminNAD {
-  background-color: #f7918c;
-  text-align: center !important;
-}
-
-.DebitNAD {
-  background-color: #8cd0f7;
-}
-
-.QuantiteNAD {
-  background-color: #f7ec8c;
-}
-
-.urgenceIcon {
-  float: right !important;
 }

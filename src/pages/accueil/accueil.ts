@@ -11,15 +11,21 @@ import { EntretienAnesthPage } from '../modules/entretien-anesth/entretien-anest
 import { GestionFluidesPage } from '../modules/gestion-fluides/gestion-fluides';
 import { LocoRegionalePage } from '../modules/loco-regionale/loco-regionale';
 import { AntalgiePage } from '../modules/antalgie/antalgie';
-import { UrgencePage } from '../modules/urgence/urgence';
 import { OptionsPage } from '../modules/options/options';
 import { MonitoragePage } from '../modules/monitorage/monitorage';
-import { CourbesPage } from '../modules/courbes/courbes';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { AntibioprophylaxiePage } from '../modules/antibioprophylaxie/antibioprophylaxie';
-import { ScoresPage } from '../main_pages/scores/scores';
-import { ProtocolesPage } from '../main_pages/protocoles/protocoles';
 import { SauvegardePatientPage } from '../modules/sauvegarde-patient/sauvegarde-patient';
+import { AcrPage } from '../Urgences/acr/acr';
+import { HtmPage } from '../Urgences/htm/htm';
+import { CatecholaminesPage } from '../Urgences/catecholamines/catecholamines';
+import { AnaphylaxiePage } from '../Urgences/anaphylaxie/anaphylaxie';
+import { AsthmePage } from '../Urgences/asthme/asthme';
+import { EpilepsiePage } from '../Urgences/epilepsie/epilepsie';
+import { HtaPage } from '../Urgences/hta/hta';
+import { IntoxicationPage } from '../Urgences/intoxication/intoxication';
+import { MetaboliquePage } from '../Urgences/metabolique/metabolique';
+import { CourbesPage } from '../modules/courbes/courbes';
 
 
 
@@ -35,11 +41,115 @@ export class AccueilPage {
 
   @ViewChild(Nav) nav: Nav;  
 
+public AnesthesiePages: any = [
+  {titre : "Monitorage",
+  page : MonitoragePage,
+  color : "turquoise-fonce", 
+  icon : "pulse", 
+  },
 
+  {titre : "Induction",
+  page : PlateauInductionPage,
+  color : "turquoise-fonce", 
+  icon : "moon", 
+  },
 
-  // make AccueilPage the root (or first) page
+  {titre : "Voies aériennes",
+  page : PlateauVasPage,
+  color : "turquoise-fonce", 
+  icon : "analytics", 
+  },
+
+  {titre : "Antibio",
+  page : AntibioprophylaxiePage,
+  color : "turquoise-fonce", 
+  icon : "checkmark-circle-outline", 
+  },
+
+  {titre : "Entretien",
+  page : EntretienAnesthPage,
+  color : "turquoise-fonce", 
+  icon : "cloudy-night", 
+  },
+
+  {titre : "Apports & PSL",
+  page : GestionFluidesPage,
+  color : "turquoise-fonce", 
+  icon : "water", 
+  },
+
+  {titre : "Loco-régionale",
+  page : LocoRegionalePage,
+  color : "turquoise-fonce", 
+  icon : "pin", 
+  },
+
+  {titre : "Réveil",
+  page : AntalgiePage,
+  color : "turquoise-fonce", 
+  icon : "alarm", 
+  },
+];
+public UrgenceBlocPages :any = [
+  {titre : "Catécho.",
+  page : CatecholaminesPage,
+  color : "dark-turquoise", 
+  icon : "flask", 
+  },
+
+  {titre : "ACR",
+  page : AcrPage,
+  color : "danger", 
+  icon : "medkit", 
+},
+
+{titre : "HTM",
+page : HtmPage,
+color : "warning", 
+icon : "thermometer", 
+},
+
+{titre : "Anaphylaxie",
+page : AnaphylaxiePage,
+color : "dark-turquoise", 
+icon : "help-buoy", 
+},
+]; 
+public UrgenceReaPages :any = [
+
+{titre : "Asthme",
+page : AsthmePage,
+color : "turquoise-fonce", 
+icon : "aperture", 
+},
+
+{titre : "Epilepsie",
+page : EpilepsiePage,
+color : "turquoise-fonce", 
+icon : "compass", 
+},
+
+{titre : "HTA",
+page : HtaPage,
+color : "turquoise-fonce", 
+icon : "speedometer", 
+},
+
+{titre : "Intoxication",
+page : IntoxicationPage,
+color : "turquoise-fonce", 
+icon : "warning", 
+},
+
+{titre : "Métabolique",
+page : MetaboliquePage,
+color : "turquoise-fonce", 
+icon : "nutrition", 
+},
+]
+
+// make AccueilPage the root (or first) page
 rootPage = AccueilPage;
-pages: Array<{title: string, component: any}>;
   
 isShownFooter:boolean=true; 
 biometrie:any = {Kg:"", Gr:"", mois:"", ans:""};
@@ -645,59 +755,25 @@ start() {
 
 /* ----------------------------BOUTONS DE NAVIGATION---------------------------------------------------------------------------- */
 
+displayUrgenceBlocPage(index): void{
+  this.navCtrl.push(this.UrgenceBlocPages[index].page);
+};
 
+displayUrgenceReaPage(index): void{
+  this.navCtrl.push(this.UrgenceReaPages[index].page);
+};
 
-    displayInduction(): void {
-      this.navCtrl.push(PlateauInductionPage);
-    };
+displayAnesthesiePage(index): void{
+  this.navCtrl.push(this.AnesthesiePages[index].page);
+};
 
-    displayVAS(): void {
-      this.navCtrl.push(PlateauVasPage);
-    };
+displayOptions(){
+  this.navCtrl.push(OptionsPage); 
+}
 
-    displayEntretien(): void {
-      this.navCtrl.push(EntretienAnesthPage);
-    };
-
-    displayGestionFluides(): void {
-      this.navCtrl.push(GestionFluidesPage);
-    };
-
-    displayALR(): void {
-      this.navCtrl.push(LocoRegionalePage);
-    };
-
-    displayPostop(): void {
-      this.navCtrl.push(AntalgiePage);
-    };  
-
-    displayUrgences(): void{
-      this.navCtrl.push(UrgencePage);
-    };
-
-    displayOptions(): void{
-      this.navCtrl.push(OptionsPage);
-    };
-
-    displayMonitorage():void{
-      this.navCtrl.push(MonitoragePage);
-    };
-
-    displayCourbes():void{
-      this.navCtrl.push(CourbesPage);
-    };
-
-    displayATBprophylaxie():void {
-      this.navCtrl.push(AntibioprophylaxiePage);
-    };
-
-    displayScores():void {
-      this.navCtrl.push(ScoresPage);
-    };
-
-    displayProtocoles():void {
-      this.navCtrl.push(ProtocolesPage);
-    }
+displayCourbes(){
+  this.navCtrl.push(CourbesPage);
+}
 
 /* ----------------------------BOUTON DAIDE---------------------------------------------------------------------------- */
 
@@ -721,9 +797,6 @@ start() {
 
 
     effacer(){
-
-    
-
         const EffacerToutAlert = this.alertController.create({
           cssClass: 'alerte',
           title: 'Tout supprimer ?',

@@ -1,0 +1,39 @@
+<ion-header>
+  <!-- HEADER MENU  -->
+  <div class="header"> 
+<br>
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+Anaphylaxie</div>
+      <br>
+
+      </ion-header>
+
+
+<ion-content>
+  <div padding class="patientHighlight">
+    Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
+    <br>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>
+  </div>
+
+
+
+  <ion-card class="drogueContainer">
+    <ion-card-content >
+      <p class="drogueInduction">Réaction anaphylactique de grade 2 ou 3 si : </p>
+          <p class="dilutionDrogueInduction">- Hypotension : -30% PAS référence</p> 
+          <p class="dilutionDrogueInduction">- Tachycardie : +30% FC référence</p> 
+          <p class="dilutionDrogueInduction">- Oedeme de Quincke ou bronchospasme</p>
+      
+      <br>
+      <p class="drogueInduction">Mesures à mettre en place :</p>
+      <p class="dilutionDrogueInduction">- éviction de tout allergène suspecté,</p>
+      <p class="dilutionDrogueInduction">- adrénaline : <b>{{PosoAdrenalineAnaph}} µg IVD</b>, renouvelable 5 à 10 fois,</p>
+      <p class="dilutionDrogueInduction">- methylprednisolone (Solumédrol® 20 mg/mL): <b>{{PosoSoluAnaph}} mg IVD</b>, renouvelable 1 fois,</p>
+      <p class="dilutionDrogueInduction">- prévoir bilan allergo-immunologique après contrôle de la situation clinique.</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -15,10 +15,9 @@ Apports et produits sanguins
                 <!-- HEADER MON PATIENT  -->
 
           <ion-segment color="turquoise-fonce" [(ngModel)]="GestionFluidesView">
-            <ion-segment-button value="1">Besoins</ion-segment-button>
-            <ion-segment-button value="2">Apports IV</ion-segment-button>
-            <ion-segment-button value="3">HypoTA</ion-segment-button>
-            <ion-segment-button value="4"><span class="saignement">Hémorragie</span></ion-segment-button>
+            <ion-segment-button value="1">Apports IV</ion-segment-button>
+            <ion-segment-button value="2">HypoTA</ion-segment-button>
+            <ion-segment-button value="3"><span class="saignement">Hémorragie</span></ion-segment-button>
           </ion-segment>
         </ion-header>
      <!-- END HEADER --> 
@@ -30,147 +29,9 @@ Apports et produits sanguins
     </div>
       <!-- ITEMS CALCULES-->
 
-            
-              <ion-grid  fixed="true" *ngIf="GestionFluidesView == 1">
-                <ion-row>
-                  <ion-col>Apports journaliers</ion-col>
-              </ion-row>
-                <ion-row class="subHeaderRow">
-                  <ion-col >
-                    Apports cibles
-                  </ion-col>
-                  <ion-col>
-                    En dose poids (/kg)
-                  </ion-col>
-                  <ion-col>
-                    Pour mon patient
-                  </ion-col>            
-                </ion-row>
+          
 
-                <ion-row class="TableApportsEven">
-                  <ion-col>
-                    Eau (mL/j)
-                  </ion-col>
-                  <ion-col>
-                    {{StandardEau}}
-                  </ion-col>
-                  <ion-col>
-                    {{Eau}}
-                  </ion-col>            
-                </ion-row>
-
-                <ion-row class="TableApportsOdd">
-                <ion-col>
-                  Calories (KCal/j)
-                </ion-col>
-                <ion-col>
-                  {{StandardKCal}}
-                </ion-col>
-                <ion-col>
-                  {{KCal}}
-                </ion-col>            
-              </ion-row>
-
-              <ion-row class="TableApportsEven">
-              <ion-col>
-                Glucides (g/j)
-              </ion-col>
-              <ion-col>
-                {{StandardGlucides}}
-              </ion-col>
-              <ion-col>
-                {{Glucides}}
-              </ion-col>            
-            </ion-row>
-
-            <ion-row class="TableApportsOdd">
-            <ion-col>
-              Acides aminés (g/j)
-            </ion-col>
-            <ion-col>
-              {{StandardAcidesAmines}}
-            </ion-col>
-            <ion-col>
-              {{AcidesAmines}}
-            </ion-col>            
-          </ion-row>
-            
-          <ion-row class="TableApportsEven">
-          <ion-col>
-            Lipides (g/j)
-          </ion-col>
-          <ion-col>
-            {{StandardLipides}}
-          </ion-col>
-          <ion-col>
-            {{Lipides}}
-          </ion-col>            
-        </ion-row>
-
-        <ion-row class="TableApportsOdd">
-        <ion-col>
-        Sodium (mg/j)
-          </ion-col>
-        <ion-col>
-          {{StandardSodium}}
-        </ion-col>
-        <ion-col>
-          {{Sodium}}
-        </ion-col>            
-      </ion-row>
-
-      <ion-row class="TableApportsEven">
-      <ion-col>
-        Potassium (mg/j)
-          </ion-col>
-        <ion-col>
-          {{StandardPotassium}}
-        </ion-col>
-        <ion-col>
-          {{Potassium}}
-        </ion-col>            
-      </ion-row>
-
-      <ion-row class="TableApportsOdd">
-      <ion-col>
-        Calcium (mg/j)
-          </ion-col>
-        <ion-col>
-          {{StandardCalcium}}
-        </ion-col>
-        <ion-col>
-          {{Calcium}}
-        </ion-col>            
-      </ion-row>
-
-      <ion-row class="TableApportsEven">
-      <ion-col>
-        Phosphore (mg/j)
-          </ion-col>
-        <ion-col>
-          {{StandardPhosphore}}
-        </ion-col>
-        <ion-col>
-          {{Phosphore}}
-        </ion-col>            
-      </ion-row>
-
-      <ion-row class="TableApportsOdd">
-      <ion-col>
-        Magnesium (mg/j)
-          </ion-col>
-        <ion-col>
-          {{StandardMagnesium}}
-        </ion-col>
-        <ion-col>
-          {{Magnesium}}
-        </ion-col>            
-      </ion-row>
-
-                </ion-grid>
-
-
-          <ion-card *ngIf="GestionFluidesView == 2" class="drogueContainer">
+          <ion-card *ngIf="GestionFluidesView == 1" class="drogueContainer">
 
            <p class="dilutionDrogueInduction">
               Soluté proposé : {{Solute}} 
@@ -219,7 +80,7 @@ Apports et produits sanguins
 
         </ion-card>
 
-          <ion-card class="drogueContainer" *ngIf="GestionFluidesView == 3">
+          <ion-card class="drogueContainer" *ngIf="GestionFluidesView == 2">
             <ion-item>
               <ion-label>
                 <p class="dilutionDrogueInduction">PAM < 20% de la valeur avant induction.</p>
@@ -258,7 +119,7 @@ Apports et produits sanguins
 
 
 
-          <ion-card *ngIf="GestionFluidesView == 4" class="drogueContainer">
+          <ion-card *ngIf="GestionFluidesView == 3" class="drogueContainer">
           
           <ion-card class="drogueContainer">
           <ion-card-header color="danger">Concentré de globules rouges </ion-card-header>

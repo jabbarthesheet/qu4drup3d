@@ -17,7 +17,6 @@ import { PlateauInductionPage } from '../pages/modules/plateau-induction/plateau
 import { PlateauVasPage } from '../pages/modules/plateau-vas/plateau-vas';
 import { GestionFluidesPage } from '../pages/modules/gestion-fluides/gestion-fluides';
 import { AntalgiePage } from '../pages/modules/antalgie/antalgie';
-import { UrgencePage } from '../pages/modules/urgence/urgence';
 import { EntretienAnesthPage } from '../pages/modules/entretien-anesth/entretien-anesth';
 import { LocoRegionalePage } from '../pages/modules/loco-regionale/loco-regionale';
 
@@ -36,33 +35,62 @@ import { ScoliosePage } from '../pages/chirurgies/scoliose/scoliose';
 import { SauvegardePatientPage } from '../pages/modules/sauvegarde-patient/sauvegarde-patient';
 import { MainPage } from '../pages/main/main';
 import { AniPage } from '../pages/pages_dispositifs/ani/ani';
+import { AcrPage } from '../pages/Urgences/acr/acr';
+import { AnaphylaxiePage } from '../pages/Urgences/anaphylaxie/anaphylaxie';
+import { AsthmePage } from '../pages/Urgences/asthme/asthme';
+import { CatecholaminesPage } from '../pages/Urgences/catecholamines/catecholamines';
+import { EpilepsiePage } from '../pages/Urgences/epilepsie/epilepsie';
+import { HtaPage } from '../pages/Urgences/hta/hta';
+import { HtmPage } from '../pages/Urgences/htm/htm';
+import { IntoxicationPage } from '../pages/Urgences/intoxication/intoxication';
+import { MetaboliquePage } from '../pages/Urgences/metabolique/metabolique';
 
 
 @NgModule({
   declarations: [
+
+    /* MAIN PAGES */
     MyApp,
     AccueilPage,
+    MainPage, 
+    MedicamentsPage,
+    ProtocolesPage,
+    RecommandationsPage,
+    ScoresPage, 
+    InfoPage,
+
+    /* MODULES */
     OptionsPage,
     PlateauInductionPage,
     PlateauVasPage,
     GestionFluidesPage,
     AntalgiePage,
-    UrgencePage,
     EntretienAnesthPage,
-    MedicamentsPage,
     LocoRegionalePage,
-    ExtrophieVesicalePage,
-    ScoliosePage,
-    ProtocolesPage,
-    RecommandationsPage,
     MonitoragePage,
     CourbesPage,
     AntibioprophylaxiePage,
-    ScoresPage, 
-    InfoPage,
     SauvegardePatientPage, 
-    MainPage, 
+   
+
+    /* CHIRURGIES */
+    ExtrophieVesicalePage,
+    ScoliosePage,
+
+    /* DISPOSTIFS */
     AniPage,
+
+
+    /* URGENCES */
+    AcrPage,
+    AnaphylaxiePage,
+    AsthmePage,
+    CatecholaminesPage,
+    EpilepsiePage,
+    HtaPage, 
+    HtmPage,
+    IntoxicationPage,
+    MetaboliquePage, 
   ],
 
   imports: [
@@ -89,7 +117,6 @@ import { AniPage } from '../pages/pages_dispositifs/ani/ani';
     PlateauVasPage,
     GestionFluidesPage,
     AntalgiePage,
-    UrgencePage,
     EntretienAnesthPage,
     MedicamentsPage,
     LocoRegionalePage,
@@ -105,6 +132,15 @@ import { AniPage } from '../pages/pages_dispositifs/ani/ani';
     SauvegardePatientPage, 
     MainPage,
     AniPage,
+    AcrPage,
+    AnaphylaxiePage,
+    AsthmePage,
+    CatecholaminesPage,
+    EpilepsiePage,
+    HtaPage, 
+    HtmPage,
+    IntoxicationPage,
+    MetaboliquePage, 
   ],
 
   providers: [

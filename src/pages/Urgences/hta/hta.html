@@ -9,6 +9,10 @@
 Hypertension artérielle</div>
       <br>
 
+      <ion-segment color="dark-turquoise" [(ngModel)]="HTAView">
+        <ion-segment-button value="1">Posologies</ion-segment-button>
+      </ion-segment>
+
       </ion-header>
 
 <ion-content>
@@ -19,36 +23,69 @@ Hypertension artérielle</div>
 
 
 
-      <ion-card class="drogueContainer">
-      <ion-card-content>
-        <p class="posologieDrogueInduction">Posologie proposée : 60 µg/kg/h</p>
-        <p class="drogueInduction">- <b>Nicardipine (Loxen® 1 mg/mL) : {{LoxenIVSE}} µg/h IVSE </b></p>
-        <p class="comment">Possibilité de doubler la dose si insuffisant</p>
-        <br>
-        <p class="posologieDrogueInduction">Posologie proposée : 2 mg/kg/j en deux prises</p>
-        <p class="drogueInduction">- <b>Acebutolol (Sectral®) : {{SectralPO}} mg/j PO</b></p>
-        <p class="comment">A répartir sur 2 prises PO</p>
-        <br>
-        <p class="posologieDrogueInduction">Posologie proposée : 0,3 mg/kg/prise</p>
-        <p class="drogueInduction">- <b>Labétolol (Trandate®) : {{TrandateBolus}} mg IVL</b></p>
-        <p class="comment">En IVSE : {{TrandateIVSE}} mg/j (pour 2 mg/kg/j), possibilité d'augmenter jusqu'à 24 mg/kg/j </p>
-        <br>
-        <p class="posologieDrogueInduction">Posologie proposée : 50 µg/kg/j en deux prises</p>
-        <p class="drogueInduction">- <b>Enalapril (Renitec®) : {{AdminRenitec}} µg/j PO</b></p>
-        <p class="comment">Sans dépasser 5 mg/j</p>
-        <br>
-        <p class="posologieDrogueInduction">Posologie proposée : 1 mg/kg/prise</p>
-        <p class="drogueInduction">- <b>Furosémide (Lasilix® 10 mg/mL) : {{AdminLasilix}} mg PO ou IV</b></p>
-        <p class="comment">AMM : 4 mg/kg/j maximum, soit 1 prise/6h maximum</p>
-        <br>
-        <p class="posologieDrogueInduction">Posologie proposée : 10 µg/kg/h</p>
-        <p class="drogueInduction">- <b>Bumétanide (Burinex® 500 µg/mL) : {{AdminBurinexIVSE}} mg/h IVSE</b></p>
-        <p class="comment">Possibilité de doubler la dose si insuffisant</p>
-        <br>
-        <p class="posologieDrogueInduction">Posologie proposée : 1 à 5 mg/kg/j</p>
-        <p class="drogueInduction">- <b>Spironolactone (Aldactone®) : {{AdminAldactoneMin}} - {{AdminAldactoneMax}} mg/j PO</b></p>
-        <br>
+<div *ngIf="HTAView == 1">
 
-      </ion-card-content>
-    </ion-card> 
+
+<ion-item>
+  <ion-label>
+    <p class="posologieDrogueInduction">Posologie proposée : 60 µg/kg/h</p>
+    <ion-chip color="light"><ion-label>Nicardipine : {{LoxenIVSE}} µg/h IVSE</ion-label></ion-chip>
+      <p class="dilutionDrogueInduction">Présentation : Loxen® 1 mg/mL sol inj</p>
+      <p class="comment">Possibilité de doubler la dose si insuffisant</p>
+  </ion-label>
+</ion-item>
+
+<ion-item>
+  <ion-label>
+    <p class="posologieDrogueInduction">Posologie proposée : 2 mg/kg/j en deux prises</p>
+    <ion-chip color="light"><ion-label>Acebutolol : {{SectralPO}} mg/j PO</ion-label></ion-chip>
+      <p class="dilutionDrogueInduction">Présentation : Sectral® 200 mg cp</p>
+      <p class="comment">A répartir sur 2 prises PO</p>
+  </ion-label>
+</ion-item>
+
+<ion-item>
+  <ion-label>
+    <p class="posologieDrogueInduction">Posologie proposée : 0,3 mg/kg/prise</p>
+    <ion-chip color="light"><ion-label>Labétolol : {{TrandateBolus}} mg IVL</ion-label></ion-chip>
+      <p class="dilutionDrogueInduction">Présentation : Trandate® 5 mg/mL sol inj</p>
+      <p class="comment">En IVSE : {{TrandateIVSE}} mg/j (pour 2 mg/kg/j)</p>
+  </ion-label>
+</ion-item>
+
+<ion-item>
+  <ion-label>
+    <p class="posologieDrogueInduction">Posologie proposée : 50 µg/kg/j en deux prises</p>
+    <ion-chip color="light"><ion-label>Enalapril : {{AdminRenitec}} µg/j PO</ion-label></ion-chip>
+      <p class="dilutionDrogueInduction">Présentation : Renitec® 5 mg cp</p>
+      <p class="comment">Sans dépasser 5 mg/j</p>
+  </ion-label>
+</ion-item>
+
+<ion-item>
+  <ion-label>
+    <p class="posologieDrogueInduction">Posologie proposée : 1 mg/kg/prise</p>
+    <ion-chip color="light"><ion-label>Furosémide : {{AdminLasilix}} mg PO ou IV</ion-label></ion-chip>
+      <p class="dilutionDrogueInduction">Présentation : Lasilix® 10 mg/mL sol inj</p>
+      <p class="comment">AMM : 4 mg/kg/j maximum, soit 1 prise/6h maximum</p>
+  </ion-label>
+</ion-item>
+
+<ion-item>
+  <ion-label>
+    <p class="posologieDrogueInduction">Posologie proposée : 10 µg/kg/h</p>
+    <ion-chip color="light"><ion-label>Bumétanide : {{AdminBurinexIVSE}} mg/h IVSE</ion-label></ion-chip>
+      <p class="dilutionDrogueInduction">Présentation : Burinex® 500 µg/mL sol inj</p>
+      <p class="comment">Possibilité de doubler la dose si insuffisant</p>
+  </ion-label>
+</ion-item>
+
+<ion-item>
+  <ion-label>
+    <p class="posologieDrogueInduction">Posologie proposée : 1 à 5 mg/kg/j</p>
+    <ion-chip color="light"><ion-label>Spironolactone : {{AdminAldactoneMin}} - {{AdminAldactoneMax}} mg/j PO</ion-label></ion-chip>
+      <p class="dilutionDrogueInduction">Présentation : Aldactone® 25 mg cp</p>
+  </ion-label>
+</ion-item>
+</div>
 </ion-content>

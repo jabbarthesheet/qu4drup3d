@@ -1,0 +1,125 @@
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+
+   Echelle EVENDOL</div>
+   <br>
+ 
+    </ion-header>
+
+<ion-content>
+
+  <ion-card class="drogueContainer">
+    <ion-card-content>
+
+<p class="drogueInduction">Préférer l'auto-évaluation chaque fois que possible. En cas d'impossibilité liée à l'âge ou à l'état du patient, utiliser une échelle d'hétéro-évaluation. L'échelle EVENDOL est proposée ci-dessous.</p>    
+    <br>
+<p class="comment">Renseigner chacun des items de 0 à 3. 
+  <br> - 0 = signe absent
+  <br> - 1 = signe faible ou passager
+  <br> - 2 = signe moyen ou environ la moitié du temps
+  <br> - 3 = signe fort ou quasi permanent
+  <br>
+  <br> Pour l'item Relation, une absence (0) donne 3 points ; un état relationnel normal (3) ne compte aucun point. Seuil de prescription : 4/15.</p>
+
+  <hr>
+
+<p class="EVENDOLlabel">1. Expression vocale ou verbale : </p>
+    <ion-segment [(ngModel)]="EVENDOLVocal" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">
+      <ion-segment-button value="0">
+        <ion-label>0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        <ion-label>1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        <ion-label>2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="3">
+        <ion-label>3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <br>
+
+
+    <p class="EVENDOLlabel">2. Mimique (fronce, grimace) : </p>
+    <ion-segment [(ngModel)]="EVENDOLMimique" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">
+      <ion-segment-button value="0">
+        <ion-label>0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        <ion-label>1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        <ion-label>2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="3">
+        <ion-label>3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <br>
+
+    <p class="EVENDOLlabel">3. Mouvements (s'agite, se crispe) : </p>
+    <ion-segment [(ngModel)]="EVENDOLMouvement" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">
+      <ion-segment-button value="0">
+        <ion-label>0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        <ion-label>1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        <ion-label>2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="3">
+        <ion-label>3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <br>
+
+    <p class="EVENDOLlabel">4. Position (attitude antalgique, se protège) : </p>
+    <ion-segment [(ngModel)]="EVENDOLPosition" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">
+      <ion-segment-button value="0">
+        <ion-label>0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        <ion-label>1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        <ion-label>2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="3">
+        <ion-label>3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <br>
+
+    <p class="EVENDOLlabel">5. Relation (communique, peut être consolé) : </p>
+    <ion-segment [(ngModel)]="EVENDOLRelation" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">
+      <ion-segment-button value="3">
+        <ion-label>0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        <ion-label>1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        <ion-label>2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="0">
+        <ion-label>3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <br>
+
+</ion-card-content>
+</ion-card>
+
+</ion-content>
+
+<ion-footer padding class="scoreFooter">
+  <p class="comment">Total : <b>{{EVENDOLTotal}}/15 pts</b></p>
+  <p class="strategie">Seuil de prescription (3/15) : {{SeuilPrescriptionEVENDOL}}</p>
+</ion-footer>

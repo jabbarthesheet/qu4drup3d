@@ -31,6 +31,8 @@ export class EpilepsiePage {
   AdminMidazolamConvulsion:number;
   AdminKeppra:number;
 
+  EpilepsieView:number=1; 
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController ) {
   }
 

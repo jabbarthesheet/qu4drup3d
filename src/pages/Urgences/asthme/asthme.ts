@@ -26,6 +26,8 @@ export class AsthmePage {
   ageLecture:number;
   sexeMF:string;
 
+  AsthmeView:number=1; 
+
   AerosolSalbutamolAAG:number; 
   AdminSolumedrolAAG:number;
   IVSESolumedrolAAG:number; 

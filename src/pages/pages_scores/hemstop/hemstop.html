@@ -1,0 +1,49 @@
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+
+   Questionnaire HEMSTOP</div>
+   <br>
+ 
+    </ion-header>
+<ion-content padding>
+  <ion-card class="drogueContainer">
+
+    <p class="reference">Référence : Bonhomme et al. Preoperative hemostatic assessment: a new and simple bleeding questionnaire. Can J. Anesthesiology 2016.
+      <br><br>Score développé chez l'adulte. Envisager l'utilisation de ce score pour sensibiliser la prescription du bilan d'hémostase chez un enfant ayant acquis la marche. 6 questions, réponse par oui ou par non.
+      </p>
+
+    <p class="comment">Interprétation : un score supérieur à 2 rend hautement probable la présence d'un sur-risque hémorragique périopératoire (Sn 89,5%, Sp 98,6%).</p>
+  
+  
+    <ion-card-content *ngFor="let entry of HEMSTOPform">
+      
+      <ion-list>
+          {{entry.val}}
+        
+        
+         <ion-segment [(ngModel)]="entry.count" color="dark-turquoise" (ionChange)="countHEMSTOP()">
+          <ion-segment-button value="0">
+            <ion-label>Non</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="1">
+            <ion-label>Oui</ion-label>
+          </ion-segment-button>
+        </ion-segment>            
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+  
+<ion-footer padding class="scoreFooter">
+  <p class="comment">Total : <b>{{totalHEMSTOP}}/6 pts</b></p>
+  <p class="strategie" padding>Stratégie : {{risqueHEMSTOP}}</p>
+  
+
+
+</ion-footer>
+

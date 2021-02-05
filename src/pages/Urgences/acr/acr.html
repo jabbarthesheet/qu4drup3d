@@ -9,6 +9,11 @@
 Arrêt cardiorespiratoire</div>
       <br>
 
+      <ion-segment color="dark-turquoise" [(ngModel)]="ACRview">
+        <ion-segment-button value="1">Mémo</ion-segment-button>
+        <ion-segment-button value="2">Drogues ACR</ion-segment-button>
+      </ion-segment>
+
       </ion-header>
 
 
@@ -18,45 +23,94 @@ Arrêt cardiorespiratoire</div>
     <br>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>
   </div>
 
-    <ion-card class="drogueContainer">
-      <ion-card-content>
-      <p>1. Appel à l'aide (RDB <b>3535</b>).</p>
-      <p>2. Débuter le massage cardiaque externe.</p>
-      <p>3. Ventiler en FiO2 1.</p>
-      <br>
-      <h4>Posologies ACR : </h4>
+  <div *ngIf="ACRview == 1">
+
+    <ion-card class="flashCard">
+          <div class="bigNumber">1.</div>
+          <div class="bigTitle">Conduite à tenir</div> 
+          <div class="algoText">
+        <ul>
+          <li>Début immédiat et continu du MCE (planche à masser en SSPI)</li>
+          <li>Appel à l'aide 3535</li>
+          <li>Arrêt de la chirurgie</li>
+          <li>Arrêt des AAH, FiO2 1, Vt 6-8 mL/kg</li>
+          <li>Vérifier la VVP</li>
+          <li>Rapprocher le défibrillateur</li>
+          </ul>
+        </div>
+        </ion-card>
+
+        <ion-card class="flashCard">
+          <div class="bigNumber">2.</div>
+          <div class="bigTitle">Etiologies à évoquer</div>
+          <div class="algoText">
+        <ul>
+          <li>Erreur d'administration ? Vérifier le plateau d'anesthésie</li>
+          <li>4H : hypoxie, hypovolémie, hypo/hyperkaliémie, hypothermie</li>
+          <li>4T : tension (pneumothorax), tamponnade, toxique, thromboembolique</li>
+        </ul>
+      </div>
+    </ion-card>
+
+    </div>
+
+
+
+    
+
+<div *ngIf="ACRview == 2">
 
     <ion-item>
-      <ion-label class="drogueInduction" color="danger">
-        Adrénaline : <b>{{PosoAdrenalineACR}} µg</b> - IVD/5 minutes
-        <p class="dilutionDrogueInduction">- 10 µg/kg, renouvellable</p>
-        <p>- d'emblée si asystolie, au 3e choc si TV/FV</p>
+      <ion-label class="drogueInduction">
+        <p class="posologieDrogueInduction">Posologie proposée : 10 µg/kg, renouvellable</p>
+         <ion-chip color="danger"><ion-label>Adrénaline : {{PosoAdrenalineACR}} µg IVD/5 minutes</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Stratégie : d'emblée si asystolie, au 3e choc si TV/FV</p>
       </ion-label>
     </ion-item>
 
     <ion-item>
       <ion-label class="drogueInduction" color="danger">
-        CEE : <b>{{CEEACR}} J</b> 
-        <p class="dilutionDrogueInduction">- 4 J/kg</p>
+        <p class="posologieDrogueInduction">Energie proposée : 4 J/kg</p>
+        <ion-chip color="danger"><ion-label>Choc EE : {{CEEACR}} J</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Attention au positionnement des patch</p>
       </ion-label>
     </ion-item>
 
     <ion-item>
-      <ion-label class="drogueInduction" color="dark">
-        Cordarone : <b>{{PosoCordaroneACR}} mg</b> - IVD 
-        <p class="dilutionDrogueInduction">- 5 mg/kg</p>
-        <p class="dilutionDrogueInduction">- renouvelable 1 fois après 5 min</p>
+      <ion-label>
+        <p class="posologieDrogueInduction">Posologie proposée : 5 mg/kg</p>
+        <ion-chip color="grisclair"><ion-label> Cordarone : {{PosoCordaroneACR}} mg - IVD </ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Stratégie : renouvelable 1 fois après 5 min</p>
       </ion-label>
     </ion-item>
 
     <ion-item>
-      <ion-label class="drogueInduction" color="dark">
-        Bicar 4,2% : <b>{{PosoBicarACR}} mL</b> - IVL 
-        <p class="dilutionDrogueInduction">- 2 mL/kg dès la 15e minute</p>
+      <ion-label>
+        <p class="posologieDrogueInduction">Posologie proposée : 2 mL/kg</p>
+        <ion-chip color="grisclair"><ion-label>Bicar 4,2% : {{PosoBicarACR}} mL - IVL 
+        </ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Stratégie : dès la 15e minute</p>
       </ion-label>
     </ion-item>
-  </ion-card-content>
-</ion-card>
+
+    <ion-item>
+      <ion-label>
+        <p class="posologieDrogueInduction">Posologie proposée : 0,15 mL/kg</p>
+        <ion-chip color="grisclair"><ion-label>Sulfate de Mg : {{PosoMgSO4ACR}} mL - IVL </ion-label></ion-chip>
+          <p class="dilutionDrogueInduction">Présentation : MgSO4 1,5g/10mL sol inj</p>
+
+        
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <p class="posologieDrogueInduction">Posologie proposée : 0,5 mL/kg</p>
+        <ion-chip color="grisclair"><ion-label>Gluconate de Ca : {{PosoGlucoCaACR}} mL - IVL </ion-label></ion-chip>
+          <p class="dilutionDrogueInduction">Présentation : Gluconate de Ca 10 % sol inj</p>
+      </ion-label>
+    </ion-item>
+</div>
 
 
 

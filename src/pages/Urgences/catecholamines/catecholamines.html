@@ -16,7 +16,6 @@ Catécholamines</div>
       </ion-header>
 
 <ion-content>
-
   <div padding class="patientHighlight">
     Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
   </div>
@@ -49,7 +48,7 @@ Catécholamines</div>
             Debit
           </ion-col>
           <ion-col>
-            {{DebitNADgammakgmin}} µg/kg/min 
+            <ion-chip color="primary"><ion-label>{{DebitNADgammakgmin}} µg/kg/min </ion-label></ion-chip>
           </ion-col>
         </ion-row>
 
@@ -58,7 +57,7 @@ Catécholamines</div>
             Vitesse
           </ion-col>
           <ion-col>
-            {{DebitNADmlh}} mL/h
+            <ion-chip color="light"><ion-label>{{DebitNADmlh}} mL/h</ion-label></ion-chip>
           </ion-col>
         </ion-row>
 
@@ -67,12 +66,14 @@ Catécholamines</div>
             Posologie
           </ion-col>
           <ion-col>
-            {{DebitNADmgh}} mg/h
+            <ion-chip color="light"><ion-label>{{DebitNADmgh}} mg/h</ion-label></ion-chip>
           </ion-col>
         </ion-row>
       </ion-grid>
      
+
         <ion-range color="turquoise-fonce" max="500" step="10" (ngModelChange)="VariationNAD()" [(ngModel)]="DixiemeDebitNADgammakgmin"> </ion-range>
+        <p padding class="comment">Utilisez le curseur pour faire varier la vitesse d'administration (en mL/h).</p>
 
  
     </ion-card-content>

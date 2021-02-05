@@ -1,3 +1,7 @@
+ion-slides {
+  height: 45%;
+}
+
 .menuButton {
 
 float: left; 
@@ -116,7 +120,8 @@ figcaption {
 
   .homeActions {
 
-    width:10% !important;
+    width:40px;
+    height:40px; 
     padding:auto; 
     margin:2%;
     float:center; 
@@ -126,23 +131,14 @@ figcaption {
 
   .homeActionsLarge {
 
-    width:15% !important;
+    width:40px;
+    height:40px; 
     padding:auto; 
     margin:2%;
     float:center; 
     border-radius: 50%; 
 
   }
-
-.SexeToggle {
-  position:relative;
-  float:left;
-  width:20% !important; 
-  margin-top: -10px !important;
-  margin-left: 10px !important;
-  margin-right: -10px !important;
-  background-color: transparent; 
-}
 
 .urgencesScroll {
   overflow: auto;
@@ -178,7 +174,7 @@ text-align: center;
   text-align:center; 
   width:15%;
   margin-top:4%;
-  margin-bottom:auto;  
+  margin-bottom:2%;  
   margin-left:5%;
   margin-right:5%;
 }
@@ -190,7 +186,7 @@ text-align: center;
   text-align:center; 
   width:15%;
   margin-top:4%;
-  margin-bottom:auto; 
+  margin-bottom:2%; 
   margin-left:2.5%;
   margin-right:2.5%;
 }

@@ -1,0 +1,37 @@
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+
+   Score PADSS</div>
+   <br>
+ 
+    </ion-header>
+
+<ion-content>
+  <p padding>Cocher pour chacune des catégories l'item décrivant l'état du patient.</p>
+
+
+  <ion-card class="drogueContainer" *ngFor="let entry of PADSSForm">
+  <ion-card-header *ngIf="entry.category">{{entry.category}}</ion-card-header>
+    <ion-item><ion-label class="dilutionDrogueInduction">
+    {{entry.val}}
+    <p class="comment">+ {{entry.count}} point(s)</p>
+  </ion-label>  
+    <ion-checkbox color="turquoise-fonce" (click)="countPADSS()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  </ion-card>
+  
+  
+  <ion-card padding class="drogueContainer">
+
+  </ion-card>
+</ion-content>
+
+<ion-footer padding class="scoreFooter">
+  <p class="comment">Total : <b>{{totalPADSS}}/14 pts</b></p>
+  <p padding class="strategie">Stratégie (sortie ambulatoire > 8/10) : {{CATPADSS}}</p>
+</ion-footer>

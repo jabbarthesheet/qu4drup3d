@@ -1,0 +1,142 @@
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+
+   Echelle EDIN</div>
+   <br>
+ 
+    </ion-header>
+
+<ion-content>
+  <ion-card class="drogueContainer">
+    <ion-card-content>
+    
+    <p class="drogueInduction">Utiliser chez le nourrisson entre 0 et 3 mois.</p>    
+    <br>
+    <ion-item class="EVENDOLlabel"><ion-label><br>Visage
+    <p class="comment">0 : visage détendu</p>
+    <p class="comment">1 : grimaces passagères</p>
+    <p class="comment">2 : grimaces fréquentes et prolongées</p>
+    <p class="comment">3 : crispation permanente, prostré, figé</p>
+    </ion-label></ion-item>
+    
+    <ion-segment [(ngModel)]="EDINVisage" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">
+      <ion-segment-button value="0">
+        <ion-label>0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        <ion-label>1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        <ion-label>2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="3">
+        <ion-label>3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    
+    <ion-item class="EVENDOLlabel"><ion-label><br>Corps
+    <p class="comment">0 : détendu</p>
+    <p class="comment">1 : agitation transitoire</p>
+    <p class="comment">2 : agitation fréquente</p>
+    <p class="comment">3 : agitation permanente, crispation, raideur</p>
+    
+    </ion-label></ion-item>
+    
+    <ion-segment [(ngModel)]="EDINCorps" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">
+      <ion-segment-button value="0">
+        <ion-label>0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        <ion-label>1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        <ion-label>2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="3">
+        <ion-label>3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    
+    <ion-item class="EVENDOLlabel"><ion-label><br>Sommeil 
+      <p class="comment">0 : s'endort facilement, sommeil prolongé</p>
+      <p class="comment">1 : s'endort difficilement</p>
+      <p class="comment">2 : se réveille spontanément, sommeil agité</p>
+      <p class="comment">3 : pas de sommeil</p>
+    
+    </ion-label></ion-item>
+    
+    <ion-segment [(ngModel)]="EDINSommeil" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">
+      <ion-segment-button value="0">
+        <ion-label>0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        <ion-label>1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        <ion-label>2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="3">
+        <ion-label>3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    
+    <ion-item class="EVENDOLlabel"><ion-label><br>
+      Relation
+      <p class="comment">0 : sourire réponse, attentif</p>
+      <p class="comment">1 : appréhension passagère du contact</p>
+      <p class="comment">2 : contact difficile, cri à la moindre stimulation</p>
+      <p class="comment">3 : hurlement ou gémissement spontané</p>
+    
+    </ion-label></ion-item>
+    
+    <ion-segment [(ngModel)]="EDINRelation" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">
+      <ion-segment-button value="0">
+        <ion-label>0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        <ion-label>1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        <ion-label>2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="3">
+        <ion-label>3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    
+    <ion-item class="EVENDOLlabel"><ion-label><br>Reconfort
+      <p class="comment">0 : n'a pas besoin de reconfort</p>
+      <p class="comment">1 : se calme rapidement à la caresse/au son de la voix</p>
+      <p class="comment">2 : se calme difficilement</p>
+      <p class="comment">3 : inconsolable, succion désespérée</p>
+    
+    </ion-label></ion-item>
+    
+    <ion-segment [(ngModel)]="EDINReconfort" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">
+      <ion-segment-button value="0">
+        <ion-label>0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        <ion-label>1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        <ion-label>2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="3">
+        <ion-label>3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    </ion-card-content>
+    
+    </ion-card>
+</ion-content>
+
+<ion-footer padding class="scoreFooter">
+  <p class="comment">Total : <b>{{EDINTotal}}/15 pts</b></p>
+  <p class="strategie">Seuil de prescription (3/15) : {{SeuilPrescriptionEDIN}}</p>
+</ion-footer>

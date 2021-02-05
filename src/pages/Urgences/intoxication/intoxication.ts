@@ -34,6 +34,8 @@ export class IntoxicationPage {
   AdminNAC3:number;
   AdminNAC4:number;
 
+  IntoxicationView:number=1; 
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController ) {
   }

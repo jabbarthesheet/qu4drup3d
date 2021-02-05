@@ -36,6 +36,10 @@ export class AcrPage {
   PosoAdrenalineACR:number;
   PosoCordaroneACR:number;
   PosoBicarACR:number;
+  PosoMgSO4ACR:number; 
+  PosoGlucoCaACR:number; 
+
+  ACRview:number=1;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController ) {
   }
@@ -88,6 +92,9 @@ calculs () {
   this.PosoAdrenalineACR = Math.round((this.PoidsNum*10)*10)/10; 
   this.PosoCordaroneACR = Math.round((this.PoidsNum*5)*10)/10;
   this.PosoBicarACR = Math.round((this.PoidsNum*2)*10)/10;
+  this.PosoMgSO4ACR = Math.round(this.PoidsNum*0.15); 
+  this.PosoGlucoCaACR = Math.round(this.PoidsNum*0.5); 
+
 
 
  

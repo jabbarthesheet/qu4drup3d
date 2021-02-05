@@ -7,15 +7,34 @@ Protocoles & dispositifs</div>
       <br>
   
       <ion-segment color="turquoise-fonce" [(ngModel)]="ProtocolesView">
-        <ion-segment-button value="1">Interventions</ion-segment-button>
-        <ion-segment-button value="2">Dispostifs</ion-segment-button>
+        <ion-segment-button value="1"><ion-icon name="stats"></ion-icon> &nbsp; Scores</ion-segment-button>
+        <ion-segment-button value="2"><ion-icon name="list-box"></ion-icon> &nbsp; Protocoles</ion-segment-button>
+        <ion-segment-button value="3"><ion-icon name="easel"></ion-icon> &nbsp; Dispostifs</ion-segment-button>
       </ion-segment>
  <!-- END HEADER -->
 </ion-header>
 
  <ion-content >
 
-  <div *ngIf="ProtocolesView == 1">
+  <div *ngIf="ProtocolesView ==1">
+
+    <ion-card (click)="openScore(index)" class="drogueContainer" *ngFor="let entry of scores, let index = index">
+      <ion-card-content  class="cardRecos">
+      <div class="headerProtocoles">
+        {{entry.soustitre}}
+
+      </div>
+      <div class="contentProtocoles">
+        <ion-icon start name="stats"></ion-icon> &nbsp; <b>{{entry.titre}}</b>
+      <hr> </div>
+        <div *ngIf = "entry.objectif"  class="objectifsProtocoles">
+        Objectif  :  {{entry.objectif}}</div>
+      </ion-card-content>
+      </ion-card>
+  
+  </div>
+
+  <div *ngIf="ProtocolesView == 2">
   <ion-card (click)="openProtocole(index)" class="drogueContainer" *ngFor="let entry of protocoles, let index = index">
     <ion-card-content  class="cardRecos">
     <div class="headerProtocoles">
@@ -37,7 +56,9 @@ Protocoles & dispositifs</div>
     </ion-card>
   </div>
 
-  <div *ngIf="ProtocolesView == 2">
+
+
+  <div *ngIf="ProtocolesView == 3">
 
     <ion-card (click)="openDispositif(index)" class="drogueContainer" *ngFor="let entry of dispositifs, let index = index">
       <ion-card-content  class="cardRecos">

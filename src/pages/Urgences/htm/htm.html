@@ -9,27 +9,109 @@
 Hyperthermie maligne</div>
       <br>
 
+      <ion-segment color="dark-turquoise" [(ngModel)]="HTMview">
+        <ion-segment-button value="1">Mémo</ion-segment-button>
+        <ion-segment-button value="2">Algorithme</ion-segment-button>
+      </ion-segment>
+
       </ion-header>
 
 <ion-content>
+
   <div padding class="patientHighlight">
     Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
     <br>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>
   </div>
 
 
-    <ion-card class="drogueContainer">
-    <ion-card-content>
-      <p  class="drogueInduction">Evoquer devant  :
-        <p class="dilutionDrogueInduction">- augmentation importante et inexpliquée de l'EtCO2, de la FC ou de la température</p>
-        <p class="dilutionDrogueInduction">- apparition d'une rigidité musculaire des masséters, du tronc ou des membres.</p>
+    <div *ngIf="HTMview == 1">
+      <ion-card class="flashCard">
+          <div class="bigNumber">1.</div>
+          <div class="bigTitle">Agents déclenchants</div>
+          <br>
+          <div class="algoText">
+         <ul>
+          <li>Halogénés : sévoflurane, desflurane, isoflurane, enflurane, halotane</li>
+          <li>Suxaméthonium</li>
+          </ul>
+        </div>
+      </ion-card>
+
+      <ion-card class="flashCard">
+        <div class="bigNumber">2.</div>
+        <div class="bigTitle">Signes évocateurs</div>
         <br>
-      <p  class="drogueInduction">Conduite à tenir en cas de suspicion :</p>
-      <p class="dilutionDrogueInduction">- Arrêt halogénés, changement des filtres et tuyaux</p>
-      <p class="dilutionDrogueInduction">- Hyperventilation en FiO2 1</p>
-      <p class="dilutionDrogueInduction">- Contre indication absolue celocurine jusqu'à preuve du contraire</p>
-      <p class="dilutionDrogueInduction">- Dantrolène <b>{{AdminDantroleneHTM}} mg IVL</b> (soit 2,5 mg/kg, renouvelable 4 fois max) à diluer dans de l'<b>EPPI</b></p>
-    </ion-card-content>
-  </ion-card>
+        <div class="algoText">
+        <ul>
+          <li><b>Augmentation brutale de l'EtCO2</b></li>
+          <li>Spasme des masséters, rigités des membres ou du tronc</li>
+          <li>Tachycardie, tachypnée inexpliquées, arythmie</li>
+          <li>Hyperthermie, sueur, marbrures</li>
+          <li>Urines rouges (myoglobinurie), augmentation des CPK en post-opératoire</li>
+          </ul> 
+          </div>
+      </ion-card>
+
+      <ion-card class="flashCard">
+        <div class="bigNumber">3.</div>
+        <div class="bigTitle">Conduite à tenir</div>
+        <br>
+        <div class="algoText">
+        <ul class="dilutionDrogueInduction"> 
+          <li>Arrêt halogénés, changement des filtres et tuyaux</li>
+          <li>Hyperventilation en FiO2 1</li>
+          <li>Contre indication absolue celocurine jusqu'à preuve du contraire</li>
+          <li>Dantrolène <b>{{AdminDantroleneHTM}} mg IVL</b> (soit 2,5 mg/kg, renouvelable 4 fois max) à diluer dans de l'<b>EPPI</b></li>
+        </ul> 
+      </div>
+      </ion-card>
+  </div>
+
+  <ion-card *ngIf="HTMview == 2" class="algoPEC">
+    <ion-card-content>
+      <div  class="algoButtonContainer">
+        <button ion-button color="light" (click)="algoStart()" *ngIf="!encours">GO</button>
+        <button ion-button color="light" (click)="algoPause()" *ngIf="encours">Pause</button>
+
+      </div>
+      <div class="algoTitleContainer">
+        <br>
+          <h2>Timer : {{encours}}{{fin}}{{time}}</h2>
+        </div>
+
+          <hr>  
+ 
+
+          <div *ngFor="let item of AlgoHTM, let index = index">
+          <ion-card padding class="algoHTMcard" *ngIf="item.isShown || item.isChecked">
+              <div class="bigNumber">{{item.stepnumber}}.</div>   
+              <div class="bigTitle">{{item.action}}</div>
+              <div *ngIf="item.time" class="timeAlgo">{{item.time}}</div>
+
+
+              <div class="checkboxAlgo" *ngIf=" !item.isChecked">  
+              <ion-icon color="grisclair" style="zoom:0.8" *ngIf="!item.last" (click)="algoStep(index)" name="checkmark"></ion-icon>
+              <ion-icon color="grisclair" style="zoom:0.8" *ngIf="item.last" (click)="algoStep(index)" name="done-all"></ion-icon>
+              </div>
+
+              <div class="checkboxAlgo" *ngIf=" item.isChecked">  
+                <ion-icon style="zoom:0.8" *ngIf="!item.last" (click)="algoStep(index)"  name="checkmark"></ion-icon>
+                <ion-icon style="zoom:0.8" *ngIf="item.last" (click)="algoStep(index)" name="done-all"></ion-icon>
+                </div>
+
+            <ion-card-content class="algoText" *ngIf="item.text && item.isShown == true">
+              {{item.text}}
+            </ion-card-content>
+            <div class="arrowDown" *ngIf="!item.isChecked">
+            <ion-icon *ngIf="!item.last" name="arrow-down" style="zoom:2.0"></ion-icon></div>
+            <p *ngIf="item.last && item.isChecked" class="finAlgo">Algorithme terminé</p>
+          </ion-card>
+         
+
+        </div>
+
+
+      </ion-card-content>
+      </ion-card>
 
 </ion-content>

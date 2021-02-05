@@ -1,0 +1,56 @@
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+
+   Score SHS</div>
+   <br>
+ 
+    </ion-header>
+
+<ion-content>
+
+    
+    <ion-card class="drogueContainer" >
+    <ion-card-content>
+     Envisager chez le patient pubère (+/- âge > 13 ans). Indiquez les facteurs de risque présents.
+      
+      <ion-list>
+        <ion-item class="dilutionDrogueInduction">Facteurs liés au patient</ion-item>
+        <ion-item *ngFor="let entry1 of Anticoagform1">
+          <ion-label class="dilutionDrogueInduction">{{entry1.val}}
+            <p class="dilutionDrogueInduction">+ {{entry1.count}} point(s)</p>
+          </ion-label>
+          <ion-checkbox color="turquoise-fonce" (click)="countAnticoag()" [(ngModel)]="entry1.isChecked"></ion-checkbox>
+        </ion-item>
+    
+        <ion-item class="dilutionDrogueInduction">Facteurs liés à la chirurgie</ion-item>
+        <ion-item *ngFor="let entry2 of Anticoagform2">
+          <ion-label class="dilutionDrogueInduction">{{entry2.val}}
+            <p class="dilutionDrogueInduction">+ {{entry2.count}} point(s)</p>
+          </ion-label>
+          <ion-checkbox color="turquoise-fonce" (click)="countAnticoag()" [(ngModel)]="entry2.isChecked"></ion-checkbox>
+        </ion-item>
+    
+        <ion-item class="dilutionDrogueInduction">Facteurs liés à l'hospitalisation</ion-item>
+        <ion-item *ngFor="let entry3 of Anticoagform3">
+          <ion-label class="dilutionDrogueInduction">{{entry3.val}}
+            <p class="dilutionDrogueInduction">+ {{entry3.count}} point(s)</p>
+          </ion-label>
+          <ion-checkbox  color="turquoise-fonce" (click)="countAnticoag()" [(ngModel)]="entry3.isChecked"></ion-checkbox>
+        </ion-item>
+    
+    
+
+     </ion-list>
+    </ion-card-content>
+    </ion-card>
+</ion-content>
+
+<ion-footer padding class="scoreFooter">
+  <p class="comment">Total : <b>{{AnticoagTotal}} pts</b> - Risque <b>{{NiveauRisqueThrombose}}</b></p>
+  <p class="strategie">Stratégie : {{prophylaxieAnticoag}} <b>{{MesuresSupplementairesAnticoag}}</b></p>
+</ion-footer>

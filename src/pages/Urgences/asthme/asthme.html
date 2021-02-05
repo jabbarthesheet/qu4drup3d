@@ -8,6 +8,9 @@
     </div>
 Asthme</div>
       <br>
+      <ion-segment color="dark-turquoise" [(ngModel)]="AsthmeView">
+        <ion-segment-button value="1">Posologies</ion-segment-button>
+      </ion-segment>
 </ion-header>
 
 <ion-content>
@@ -17,38 +20,68 @@ Asthme</div>
   </div>
 
 
+<div *ngIf="AsthmeView ==1">
 
-    <ion-card class="drogueContainer">
-    <ion-card-content>
-      <p class="drogueInduction">- <b>Penser à l'hydratation & au potassium !</b></p>
-      <p class="comment">NaCl 0,9% {{ApportBaseJour}} mL/j + KCl {{AdminKClAAGmg}} mg/j (pour 150 mg/kg/j)</p>
-      <p class="comment">Remplacer après 24h par du B26</p>
-      <br>
-      <p class="drogueInduction">- <b>Salbutamol aérosol (Ventoline®): {{AerosolSalbutamolAAG}} mg</b></p>
-      <p class="comment">Renouvelable après 15 minutes</p>
-      <br>
+  <ion-item>
+    <ion-label class="drogueInduction">
+      <p class="posologieDrogueInduction">Penser hydratation & potassium</p>
+       <ion-chip color="primary"><ion-label>NaCl 0,9% {{ApportBaseJour}} mL/j + KCl {{AdminKClAAGmg}} mg/j</ion-label></ion-chip>
+      <p class="dilutionDrogueInduction">Remplacer après 24h par du B26</p>
+    </ion-label>
+  </ion-item>
+   
+
+  <ion-item>
+    <ion-label>
+      <p class="posologieDrogueInduction">Salbutamol aérosol : 1 bouffée/10kg</p>
+      <ion-chip color="light"><ion-label>Salbutamol : {{AerosolSalbutamolAAG}} mg en aérosol</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : SALBUTAMOL 2,5 mg/2,5 ml sol p inhal p nébulis</p>
+        <p class="comment">Renouvelable après 15 minutes</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <p class="posologieDrogueInduction">Salbutamol IVSE : 0,5 µg/kg/min</p>
+      <ion-chip color="light"><ion-label>Salbutamol : {{SalbutamolIVAAG}} µg/min IVSE</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : Salbutamol 5 mg/mL</p>
+        <p class="comment">Augmenter de 0,1 µg/kg/min toutes les 10 minutes</p>
+        <p class="comment">dilution minimale 1/2</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
       <p class="posologieDrogueInduction">Posologie proposée : 2 mg/kg</p>
-      <p class="drogueInduction">- <b>Methylprednisolone (Solumédrol® 20 mg/2mL) : {{AdminSolumedrolAAG}} mg en bolus</b></p>
-      <p class="comment">Puis entretien par {{IVSESolumedrolAAG}} mg/6h IVSE (pour 0,5 mg/kg/6h)</p>
-      <br>
-      <p class="posologieDrogueInduction">Posologie proposée : 1/2 à 1 flacon</p>
-      <p class="drogueInduction">- <b>Ipratropium (Atrovent® 0,5 mg/2mL) : {{AerosolAtroventAAG}} mg en aérosol</b></p>
-      <br>
-      <p class="posologieDrogueInduction">Posologie proposée : 0,2 mg/kg</p>
-      <p class="drogueInduction">- <b>Terbutaline (Bricanyl® 5mg/2mL) : {{AerosolBricanylAAG}} mg en aérosol </b></p> 
-      <br>
-      <p class="posologieDrogueInduction">Posologie proposée : 40 mg/kg sans dépasser 2g</p>
-      <p class="drogueInduction">- <b>MgSO4 (1,5g/10mL) : {{MgSO4AAG}} mg IVL sur 20 minutes</b></p>
-      <p class="comment">A diluer dans du NaCl 0,9%</p>
-      <br>
-      <p class="posologieDrogueInduction">Posologie proposée : 0,5 µg/kg/min</p>
-      <p class="drogueInduction">- <b>Salbutamol (5 mg/5 mL) : {{SalbutamolIVAAG}} µg/min IVSE</b></p>
-      <p class="comment">Possibilité d'augmenter de 0,1 µg/kg/min toutes les 10 minutes</p>
-      <p class="comment">Ne s'envisage qu'en secteur de réanimation</p>
-      <p class="comment">Ne pas administrer pur, dilution minimale de 1/2</p>
-      <br>
-      
-    </ion-card-content>
-  </ion-card> 
+      <ion-chip color="light"><ion-label>Methylprednisolone : {{AdminSolumedrolAAG}} mg en bolus</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : Solumédrol® 20 mg/2mL</p>
+        <p class="comment">Puis entretien par {{IVSESolumedrolAAG}} mg/6h IVSE (pour 0,5 mg/kg/6h)</p>
+    </ion-label>
+  </ion-item>
 
+  <ion-item>
+    <ion-label>
+      <p class="posologieDrogueInduction">Posologie proposée : 1/2 à 1 flacon</p>
+      <ion-chip color="light"><ion-label>Ipratropium : {{AerosolAtroventAAG}} mg en aérosol</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : Atrovent® 0,5 mg/2mL sol p inhal p nébulis</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <p class="posologieDrogueInduction">Posologie proposée : 0,2 mg/kg</p>
+      <ion-chip color="light"><ion-label>Terbutaline : {{AerosolBricanylAAG}} mg en aérosol</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : Bricanyl® 5mg/2mL sol p inhal p nébulis</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <p class="posologieDrogueInduction">Posologie proposée : 40 mg/kg sans dépasser 2g</p>
+      <ion-chip color="light"><ion-label>MgSO4 : {{MgSO4AAG}} mg IVL sur 20 minutes</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : MgSO4 1,5g/10mL sol inj</p>
+        <p class="comment">A diluer dans du NaCl 0,9%</p>
+    </ion-label>
+  </ion-item>
+</div>
 </ion-content>

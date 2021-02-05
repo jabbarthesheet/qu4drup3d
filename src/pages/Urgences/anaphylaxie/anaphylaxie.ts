@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { AccueilPage } from '../../accueil/accueil';
+import { AcrPage } from '../acr/acr';
+import { CatecholaminesPage } from '../catecholamines/catecholamines';
 
 /**
  * Generated class for the AnaphylaxiePage page.
@@ -31,6 +33,12 @@ export class AnaphylaxiePage {
 
   PosoAdrenalineAnaph:number; 
   PosoSoluAnaph:number; 
+  PosoSalbuAerosolAnaph:number; 
+  SalbutamolIVAAG:number; 
+  
+
+  AnaphylaxieView:number=1;
+   
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController ) {
   }
@@ -38,6 +46,14 @@ export class AnaphylaxiePage {
   retourHome() {
     this.navCtrl.pop()
   };
+
+  openACR(){
+    this.navCtrl.push(AcrPage); 
+  };
+
+  openCatecho() {
+    this.navCtrl.push(CatecholaminesPage);
+  }
   
   ionViewDidLoad() {
     console.log('ionViewDidLoad AnaphylaxiePage');
@@ -80,6 +96,10 @@ export class AnaphylaxiePage {
 
    this.PosoAdrenalineAnaph = Math.round((this.PoidsNum*1)*10)/10;
    this.PosoSoluAnaph = Math.round((this.PoidsNum*1)*10)/10;
+   this.PosoSalbuAerosolAnaph = Math.round(this.PoidsNum*0.1);
+   if (this.PosoSalbuAerosolAnaph <= 1){this.PosoSalbuAerosolAnaph = 1;}; 
+   this.SalbutamolIVAAG = Math.round((this.PoidsNum*0.5)*10)/10;
+
     };
 
 }

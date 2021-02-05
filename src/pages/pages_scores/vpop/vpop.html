@@ -1,0 +1,35 @@
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+
+   Score VPOP</div>
+   <br>
+ 
+    </ion-header>
+
+<ion-content padding>
+
+    <ion-card class="drogueContainer">
+    <p class="reference">Référence : Bourdaud et al. Development & validation of a risk score to predict probability of p/o vomiting in pediatric patients. Pediatric Anesthesia 2014.
+    </p>
+
+    <ion-card-content>
+      <ion-item *ngFor="let entry of VPOPform">
+        <ion-label class="dilutionDrogueInduction">{{entry.val}}
+          <p class="dilutionDrogueInduction">+ {{entry.count}} point(s)</p>
+        </ion-label>
+        <ion-checkbox color="turquoise-fonce" (click)="countVPOP()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+      </ion-item>
+    </ion-card-content>
+    </ion-card>
+</ion-content>
+
+
+<ion-footer padding class="scoreFooter">
+  <p class="comment">Total : <b>{{totalVPOP}} pts</b> - Risque NVPO : <b>{{risqueVPOP}} %</b></p>
+  <p class="strategie">Stratégie : {{prophylaxieVPOP}}</p>
+</ion-footer>

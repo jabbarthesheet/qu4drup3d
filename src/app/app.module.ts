@@ -44,6 +44,16 @@ import { HtaPage } from '../pages/Urgences/hta/hta';
 import { HtmPage } from '../pages/Urgences/htm/htm';
 import { IntoxicationPage } from '../pages/Urgences/intoxication/intoxication';
 import { MetaboliquePage } from '../pages/Urgences/metabolique/metabolique';
+import { TutorialPage } from '../pages/tutorial/tutorial';
+import { AldretePage } from '../pages/pages_scores/aldrete/aldrete';
+import { AnticoagscorePage } from '../pages/pages_scores/anticoagscore/anticoagscore';
+import { BromagePage } from '../pages/pages_scores/bromage/bromage';
+import { EdinPage } from '../pages/pages_scores/edin/edin';
+import { EvendolPage } from '../pages/pages_scores/evendol/evendol';
+import { HemstopPage } from '../pages/pages_scores/hemstop/hemstop';
+import { PadssPage } from '../pages/pages_scores/padss/padss';
+import { ShsPage } from '../pages/pages_scores/shs/shs';
+import { VpopPage } from '../pages/pages_scores/vpop/vpop';
 
 
 @NgModule({
@@ -58,6 +68,7 @@ import { MetaboliquePage } from '../pages/Urgences/metabolique/metabolique';
     RecommandationsPage,
     ScoresPage, 
     InfoPage,
+    TutorialPage,
 
     /* MODULES */
     OptionsPage,
@@ -91,6 +102,17 @@ import { MetaboliquePage } from '../pages/Urgences/metabolique/metabolique';
     HtmPage,
     IntoxicationPage,
     MetaboliquePage, 
+
+    /* SCORES  */
+    AldretePage, 
+    AnticoagscorePage,
+    BromagePage,
+    EdinPage,
+    EvendolPage,
+    HemstopPage,
+    PadssPage,
+    ShsPage,
+    VpopPage, 
   ],
 
   imports: [
@@ -141,6 +163,16 @@ import { MetaboliquePage } from '../pages/Urgences/metabolique/metabolique';
     HtmPage,
     IntoxicationPage,
     MetaboliquePage, 
+    TutorialPage,
+    AldretePage, 
+    AnticoagscorePage,
+    BromagePage,
+    EdinPage,
+    EvendolPage,
+    HemstopPage,
+    PadssPage,
+    ShsPage,
+    VpopPage, 
   ],
 
   providers: [

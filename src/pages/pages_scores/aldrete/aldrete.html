@@ -1,0 +1,31 @@
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+
+   Score d'Aldrete</div>
+   <br>
+ 
+    </ion-header>
+
+<ion-content>
+  <p padding>Cocher pour chacune des catégories l'item décrivant l'état du patient.</p>
+
+    <ion-card class="drogueContainer" *ngFor="let entry of AldreteForm">
+      <ion-card-header *ngIf="entry.category">{{entry.category}}</ion-card-header>
+        <ion-item><ion-label class="dilutionDrogueInduction">
+        {{entry.val}}
+        <p class="comment">+ {{entry.count}} point(s)</p>
+      </ion-label>  
+        <ion-checkbox color="turquoise-fonce" (click)="countAldrete()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+    </ion-item>
+    </ion-card>
+</ion-content>
+
+<ion-footer padding class="scoreFooter">
+    <p class="comment">Total : <b>{{totalAldrete}}/14 pts</b></p>
+    <p padding class="strategie">Stratégie (sortie SSPI > 11/14) : {{CATAldrete}}</p>
+</ion-footer>

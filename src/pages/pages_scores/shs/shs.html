@@ -1,0 +1,72 @@
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+
+   Score SHS</div>
+   <br>
+ 
+    </ion-header>
+
+
+<ion-content padding>
+
+
+    
+           
+    
+  <ion-card class="drogueContainer">
+ 
+    <p  class="reference">Référence : Spruyt & al., Screening of pediatric sleep-disordered breathing. Chest 2012.
+      <br>
+    6 questions, 5 choix possibles (dans les 6 derniers mois): 
+      <br> - 0 : jamais 
+      <br> - 1 : rarement (une fois par semaine)
+      <br> - 2 : occasionnelement (deux fois par semaine)
+      <br> - 3 : fréquemment (3 à 4 fois par semaine)
+      <br> - 4 : presque toujours (plus de 4 fois par semaine).
+    </p>
+
+    <p class="comment">Interprétation : un score cumulé global supérieur à 2.72 prédit un index d'apnée-hypopnée supérieur à 5/h, ce qui correspond à un SAOS sévère de l'enfant.
+      <br>
+      Détail du calcul : A = (Q1+Q2)/2, B = (A+Q3)/2, C = (B+Q4)/2, D = (C+Q5)/2, score cumulé global = (D+Q6)/2. 
+    </p>
+
+    <ion-card-content *ngFor="let entry of SHSform">
+
+      <ion-list>
+          {{entry.val}}
+          <br>
+        
+          <ion-segment [(ngModel)]="entry.count" color="dark-turquoise" (ionChange)="countSHS()">
+          <ion-segment-button value="0">
+            <ion-label>0</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="1">
+            <ion-label>1</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="2">
+            <ion-label>2</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="3">
+            <ion-label>3</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="4">
+            <ion-label>4</ion-label>
+          </ion-segment-button>
+        </ion-segment>            
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+    
+  <ion-footer padding class="scoreFooter">
+  <p class="comment">Score cumulé global : <b>{{cumuleSHS}}</b></p>
+  <p class="strategie" padding><b>Stratégie : </b>{{risqueSHS}}</p>
+</ion-footer>
+
+

@@ -8,6 +8,11 @@
     </div>
 Epilepsie</div>
       <br>
+
+      <ion-segment [(ngModel)]="EpilepsieView" color="dark-turquoise">
+        <ion-segment-button value="1">Posologies</ion-segment-button>
+      </ion-segment>
+
       </ion-header>
 
 
@@ -19,29 +24,52 @@ Epilepsie</div>
   </div>
 
 
-      <ion-card class="drogueContainer">
-      <ion-card-content>
-        <p class="posologieDrogueInduction">Posologie proposée : 20 µg/kg/prise</p>
-        <p class="drogueInduction">- <b>Clonazépam (Rivotril® 1 mg/mL) : {{AdminRivotrilConvulsion}} µg IVD </b></p>
+<div *ngIf = "EpilepsieView ==1">
+
+  <ion-item>
+    <ion-label>
+      <p class="posologieDrogueInduction">Posologie proposée : 20 µg/kg/prise</p>
+      <ion-chip color="light"><ion-label>Clonazépam : {{AdminRivotrilConvulsion}} µg IVD</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : Rivotril® 1 mg/mL sol inj</p>
         <p class="comment">Répéter une seconde fois si nécessaire</p>
         <p class="comment">{{AdminRivotrilConvulsion}} mg/6h IVSE si nécessaire</p>
-        <br>
-        <p class="posologieDrogueInduction">Posologie proposée : 15 mg/kg/j prise</p>
-        <p class="drogueInduction">- <b>Phénobarbital (Gardénal® 40 mg/2mL) : {{AdminGardenal}} mg IVL sur 20 minutes </b></p>
-        <p class="comment">Sans dépasser 500 mg/administration</p>
-        <br>
-        <p class="posologieDrogueInduction">Posologie proposée : 20 mg/kg/prise</p>
-        <p class="drogueInduction">- <b>Phénytoïne (Dilantin® 250 µg/5mL) : {{AdminDilantin}} mg IVL sur 20 minutes </b></p>
-        <p class="comment">Sans dépasser 1500 mg/administration</p>
-        <br>
-        <p class="posologieDrogueInduction">Posologie proposée : 0,25 mg/kg/prise</p>
-        <p class="drogueInduction">- <b>Midazolam (Hypnovel® 1 mg/mL) : {{AdminMidazolamConvulsion}} mg IVD</b></p>
-        <br>
-        <p class="posologieDrogueInduction">Posologie proposée : 30 mg/kg/12h</p>
-        <p class="drogueInduction">- <b>Lévétiracetam (Keppra® 100 mg/mL) : {{AdminKeppra}} mg IVL sur 5 min ou PO</b></p>
-        <p class="comment">Sans dépasser 2g/j</p>
-        <br>
+    </ion-label>
+  </ion-item>
 
-      </ion-card-content>
-    </ion-card> 
+  <ion-item>
+    <ion-label>
+      <p class="posologieDrogueInduction">Posologie proposée : 15 mg/kg/j prise</p>
+      <ion-chip color="light"><ion-label>Phénobarbital : {{AdminGardenal}} mg IVL sur 20 minutes</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : Gardénal® 40 mg/2mL sol inj</p>
+        <p class="comment">Sans dépasser 500 mg/administration</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <p class="posologieDrogueInduction">Posologie proposée : 20 mg/kg/prise</p>
+      <ion-chip color="light"><ion-label>Phénytoïne : {{AdminDilantin}} mg IVL sur 20 minutes</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : Dilantin® 250 µg/5mL sol inj</p>
+        <p class="comment">Sans dépasser 1500 mg/administration</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <p class="posologieDrogueInduction">Posologie proposée : 0,25 mg/kg/prise</p>
+      <ion-chip color="light"><ion-label>Midazolam : {{AdminMidazolamConvulsion}} mg IVD</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation : Hypnovel® 1 mg/mL sol inj</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <p class="posologieDrogueInduction">Posologie proposée : 30 mg/kg/12h</p>
+      <ion-chip color="light"><ion-label>Lévétiracetam : {{AdminKeppra}} mg IVL sur 5 min ou PO</ion-label></ion-chip>
+        <p class="dilutionDrogueInduction">Présentation :Keppra® 100 mg/mL sol inj</p>
+        <p class="comment">Sans dépasser 2 g/j</p>
+    </ion-label>
+  </ion-item>
+
+      </div>
 </ion-content>

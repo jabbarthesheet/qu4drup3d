@@ -26,6 +26,7 @@ import { HtaPage } from '../Urgences/hta/hta';
 import { IntoxicationPage } from '../Urgences/intoxication/intoxication';
 import { MetaboliquePage } from '../Urgences/metabolique/metabolique';
 import { CourbesPage } from '../modules/courbes/courbes';
+import { TutorialPage } from '../tutorial/tutorial';
 
 
 
@@ -126,7 +127,7 @@ icon : "aperture",
 {titre : "Epilepsie",
 page : EpilepsiePage,
 color : "turquoise-fonce", 
-icon : "compass", 
+icon : "flash", 
 },
 
 {titre : "HTA",
@@ -778,19 +779,7 @@ displayCourbes(){
 /* ----------------------------BOUTON DAIDE---------------------------------------------------------------------------- */
 
     async help() {
-      const alert = await this.alertController.create({
-        cssClass: 'alerte',
-        title: 'Utiliser QuadruPed',
-        message: 'Pour utiliser QuadruPed, renseignez un âge et un poids pour le patient en appuyant sur les boutons correspondant. Naviguez ensuite entre les différents onglets pour obtenir des suggestions de posologie et de stratégies. Renseignez la taille et le sexe du patient pour utiliser les données de biométrie.',
-        buttons: [
-          {
-            text: "J'ai compris !",
-            handler: () =>  {
-              return; 
-            } } 
-        ],
-      });
-      await alert.present();
+        this.navCtrl.push(TutorialPage)
       };
   
 /* ----------------------------BOUTON EFFACER---------------------------------------------------------------------------- */

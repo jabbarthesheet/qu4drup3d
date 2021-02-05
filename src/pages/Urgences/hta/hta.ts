@@ -35,6 +35,8 @@ export class HtaPage {
   AdminAldactoneMin:number;
   AdminAldactoneMax:number;
 
+  HTAView:number=1; 
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController ) {
   }
 

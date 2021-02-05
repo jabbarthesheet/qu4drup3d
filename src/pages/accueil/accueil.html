@@ -81,77 +81,73 @@
 <button class="homeActions" ion-button color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>
 
 </div>   
+
 <hr>
 
-<!-- BOUTONS ANESTHESIE SI DONNEES PRESENTES -->
+  <ion-slides pager="true">
+    <ion-slide>
+      <p class="titleHome">Anesthésie</p>
+
+      <!-- BOUTONS ANESTHESIE SI DONNEES PRESENTES -->
 <div class="anesthesieContainer" *ngIf = "this.PoidsNum && this.AgeNum">
-  ANESTHESIE
-  <br>
     <div *ngFor="let page of AnesthesiePages, let index = index" class="anesthesieName">
   <button  (click)="displayAnesthesiePage(index)" class="urgenceButton" ion-button color="{{page.color}}"><ion-icon name="{{page.icon}}"></ion-icon></button>
   <br>{{page.titre}}
   </div>
- 
   </div>
-
 
   <!-- BOUTONS ANESTHESIE SI DONNEES ABSENTES -->
   
   <div class="urgenceContainer" *ngIf = "!this.PoidsNum || !this.AgeNum">
-    ANESTHESIE
-    <br>
   <div *ngFor="let page of AnesthesiePages, let index = index" class="anesthesieName">
-<button  (click)="alertPoidsAge()" class="urgenceButton" ion-button color="light"><ion-icon name="{{page.icon}}"></ion-icon></button>
+<button  (click)="alertPoidsAge()" outline class="urgenceButton" ion-button color="light"><ion-icon name="{{page.icon}}"></ion-icon></button>
 <br>{{page.titre}}
 </div>
+</div>
 
-</div> 
+    </ion-slide>
+    <ion-slide>
+      <p class="titleHome"  >Urgences & réanimation</p>
+      <div class="urgenceContainer" *ngIf = "this.PoidsNum && this.AgeNum">
+       
+          <div *ngFor="let page of UrgenceBlocPages, let index = index" class="urgenceBlocName">
+        <button  (click)="displayUrgenceBlocPage(index)"  class="urgenceButton" ion-button color="{{page.color}}"><ion-icon name="{{page.icon}}"></ion-icon></button>
+        <br>{{page.titre}}
+        </div>
+    </div>
+        
+        <div class="urgenceContainer" *ngIf = "this.PoidsNum && this.AgeNum">
+        <div *ngFor="let page of UrgenceReaPages, let index = index" class="urgenceReaName">
+      <button  (click)="displayUrgenceReaPage(index)"  class="urgenceButton" ion-button color="{{page.color}}"><ion-icon name="{{page.icon}}"></ion-icon></button>
+      <br>{{page.titre}}
+      </div>
+    </div>
+      
+      
+      <!-- BOUTONS URGENCE & REA SI DONNEES ABSENTES -->
+      
+      <div class="urgenceContainer" *ngIf = "!this.PoidsNum || !this.AgeNum">
+            <div *ngFor="let page of UrgenceBlocPages, let index = index" class="urgenceBlocName">
+          <button  (click)="alertPoidsAge()" outline class="urgenceButton" ion-button color="light"><ion-icon name="{{page.icon}}"></ion-icon></button>
+          <br>{{page.titre}}
+          </div>
+        </div>
+          
+          <div class="urgenceContainer" *ngIf = "!this.PoidsNum || !this.AgeNum">
+          <div *ngFor="let page of UrgenceReaPages, let index = index" class="urgenceReaName">
+        <button  (click)="alertPoidsAge()" outline class="urgenceButton" ion-button color="light"><ion-icon name="{{page.icon}}"></ion-icon></button>
+        <br>{{page.titre}}
+        </div>
+      </div>
+      
+    </ion-slide>
+  </ion-slides>
+
+
+
 
 
 <!-- BOUTONS URGENCE & REA SI DONNEES PRESENTES -->
-<ion-toolbar class="urgenceContainer" *ngIf = "this.PoidsNum && this.AgeNum">
-  <ion-buttons>
-
-  REANIMATION
-  <br>
-    <div *ngFor="let page of UrgenceBlocPages, let index = index" class="urgenceBlocName">
-  <button  (click)="displayUrgenceBlocPage(index)" outline class="urgenceButton" ion-button color="{{page.color}}"><ion-icon name="{{page.icon}}"></ion-icon></button>
-  <br>{{page.titre}}
-  </div>
-</ion-buttons>
-</ion-toolbar>
-  
-  <ion-toolbar class="urgenceContainer" *ngIf = "this.PoidsNum && this.AgeNum">
-    <ion-buttons>
-  <div *ngFor="let page of UrgenceReaPages, let index = index" class="urgenceReaName">
-<button  (click)="displayUrgenceReaPage(index)" outline class="urgenceButton" ion-button color="{{page.color}}"><ion-icon name="{{page.icon}}"></ion-icon></button>
-<br>{{page.titre}}
-</div>
-</ion-buttons>
-</ion-toolbar>
-
-
-<!-- BOUTONS URGENCE & REA SI DONNEES ABSENTES -->
-
-<ion-toolbar class="urgenceContainer" *ngIf = "!this.PoidsNum || !this.AgeNum">
-
-  REANIMATION
-  <br>
-  <ion-buttons>
-      <div *ngFor="let page of UrgenceBlocPages, let index = index" class="urgenceBlocName">
-    <button  (click)="alertPoidsAge()" outline class="urgenceButton" ion-button color="light"><ion-icon name="{{page.icon}}"></ion-icon></button>
-    <br>{{page.titre}}
-    </div>
-    </ion-buttons></ion-toolbar>
-    
-    <ion-toolbar class="urgenceContainer" *ngIf = "!this.PoidsNum || !this.AgeNum">
-      <ion-buttons>
-    <div *ngFor="let page of UrgenceReaPages, let index = index" class="urgenceReaName">
-  <button  (click)="alertPoidsAge()" outline class="urgenceButton" ion-button color="light"><ion-icon name="{{page.icon}}"></ion-icon></button>
-  <br>{{page.titre}}
-  </div>
-  </ion-buttons>
-  </ion-toolbar>
 
 
  

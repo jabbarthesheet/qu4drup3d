@@ -69,24 +69,10 @@ Hyperthermie maligne</div>
 
   <ion-card *ngIf="HTMview == 2" class="algoPEC">
     <ion-card-content>
-      <div  class="algoButtonContainer">
-        <button ion-button color="light" (click)="algoStart()" *ngIf="!encours">GO</button>
-        <button ion-button color="light" (click)="algoPause()" *ngIf="encours">Pause</button>
-
-      </div>
-      <div class="algoTitleContainer">
-        <br>
-          <h2>Timer : {{encours}}{{fin}}{{time}}</h2>
-        </div>
-
-          <hr>  
- 
-
           <div *ngFor="let item of AlgoHTM, let index = index">
           <ion-card padding class="algoHTMcard" *ngIf="item.isShown || item.isChecked">
               <div class="bigNumber">{{item.stepnumber}}.</div>   
               <div class="bigTitle">{{item.action}}</div>
-              <div *ngIf="item.time" class="timeAlgo">{{item.time}}</div>
 
 
               <div class="checkboxAlgo" *ngIf=" !item.isChecked">  
@@ -104,7 +90,6 @@ Hyperthermie maligne</div>
             </ion-card-content>
             <div class="arrowDown" *ngIf="!item.isChecked">
             <ion-icon *ngIf="!item.last" name="arrow-down" style="zoom:2.0"></ion-icon></div>
-            <p *ngIf="item.last && item.isChecked" class="finAlgo">Algorithme terminé</p>
           </ion-card>
          
 

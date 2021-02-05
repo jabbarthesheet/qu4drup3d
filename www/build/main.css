@@ -137261,7 +137261,7 @@ ion-row {
   height: 40px;
   float: left;
   border-radius: 50%;
-  background-color: #f4f4f4;
+  background-color: white;
   text-align: center;
   color: #ff6961;
   padding: 0px;
@@ -137568,6 +137568,13 @@ ion-card {
   text-align: center;
   font-weight: bold;
   font-size: 14px;
+}
+
+.infoFooter {
+  background-color: #f4f4f4;
+  -webkit-box-shadow: inset;
+  box-shadow: inset;
+  text-align: center;
 }
 
 .medicamentContainer {
@@ -138091,4 +138098,8 @@ ion-card {
 .tutorialText {
   text-align: left;
   font-size: 12px;
+}
+
+.tutorialImg {
+  width: 50% !important;
 }

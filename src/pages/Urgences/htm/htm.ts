@@ -40,6 +40,18 @@ export class HtmPage {
   fin:string="";
 
   public AlgoHTM : any = [
+   
+    { 
+      isShown: true, 
+      isChecked: false, 
+      stepnumber : 0, 
+      action:"Suspicion d'AAH",
+      text: "Augmentation d'EtCO2 brutale, rigidité masséter, tronc ou membres, tachycardie inexpliquée, hyperthermie inexpliquée.", 
+      time: "",
+      last: false,
+      class: "PerCritique",
+     }, 
+   
     { 
       isShown: false, 
       isChecked: false, 
@@ -246,17 +258,6 @@ export class HtmPage {
     }; 
 
     /** FONCTIONS DALGORITHME  */
-    algoStart(){
-      this.start(); 
-      this.AlgoHTM[0].isShown = true;
-      this.encours = "En cours : ";
-      this.fin = ""; 
-    };
-
-    algoPause(){
-      this.stop(); 
-      this.encours = "";
-    }
 
 
     algoStep(index){
@@ -265,59 +266,7 @@ export class HtmPage {
       this.AlgoHTM[index].isChecked = true;
       if (!this.AlgoHTM[index].last) {this.AlgoHTM[index+1].isShown = true;}
       else {
-        this.stop();
-        this.encours = "";
-        this.fin = "Terminé après : ";
+        return; 
       }
     };
-
-    /** FONCTIONS DE TIMER  */
-
-    start() {
-      if(this.running) return;
-      if (this.timeBegan === null) {
-          this.reset();
-          this.timeBegan = new Date();
-      }
-      if (this.timeStopped !== null) {
-        let newStoppedDuration:any = (+new Date() - this.timeStopped)
-        this.stoppedDuration = this.stoppedDuration + newStoppedDuration;
-      }
-      this.started = setInterval(this.clockRunning.bind(this), 10);
-        this.running = true;
-      }
-
-      stop() {
-        this.running = false;
-        this.timeStopped = new Date();
-        clearInterval(this.started);
-     }
-
-      reset() {
-        this.running = false;
-        clearInterval(this.started);
-        this.stoppedDuration = 0;
-        this.timeBegan = null;
-        this.timeStopped = null;
-        this.time = this.blankTime;
-      }
-      zeroPrefix(num, digit) {
-        let zero = '';
-        for(let i = 0; i < digit; i++) {
-          zero += '0';
-        }
-        return (zero + num).slice(-digit);
-      }
-      
-      clockRunning(){
-        let currentTime:any = new Date()
-        let timeElapsed:any = new Date(currentTime - this.timeBegan - this.stoppedDuration)
-        let hour = timeElapsed.getUTCHours()
-        let min = timeElapsed.getUTCMinutes()
-        let sec = timeElapsed.getUTCSeconds()
-      this.time =
-        this.zeroPrefix(hour, 2) + ":" +
-        this.zeroPrefix(min, 2) + ":" +
-        this.zeroPrefix(sec, 2) ;
-      };
 }

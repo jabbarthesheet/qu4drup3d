@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.quadrupedv1.myapp" version="0.1.8" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.quadrupedv1.myapp" version="0.2.00" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>QuadruPed</name>
     <description>Une petite application de calcul pour l'anesthésie pédiatrique.</description>
-    <author email="pierre.pardessus@gmail.com" href="http://www.dar-robertdebre.com">@DebréTeam</author>
+    <author email="contact@quadruped.app" href="http://www.dar-robertdebre.com">@DebréTeam</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

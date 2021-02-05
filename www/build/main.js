@@ -5,23 +5,23 @@ webpackJsonp([1],{
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccueilPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_plateau_induction_plateau_induction__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_plateau_vas_plateau_vas__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_entretien_anesth_entretien_anesth__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modules_gestion_fluides_gestion_fluides__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__modules_loco_regionale_loco_regionale__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__modules_antalgie_antalgie__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__modules_options_options__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__modules_monitorage_monitorage__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_plateau_induction_plateau_induction__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_plateau_vas_plateau_vas__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_entretien_anesth_entretien_anesth__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modules_gestion_fluides_gestion_fluides__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__modules_loco_regionale_loco_regionale__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__modules_antalgie_antalgie__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__modules_options_options__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__modules_monitorage_monitorage__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_in_app_browser_ngx__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__modules_antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(317);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__modules_sauvegarde_patient_sauvegarde_patient__ = __webpack_require__(318);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__Urgences_acr_acr__ = __webpack_require__(319);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__Urgences_htm_htm__ = __webpack_require__(320);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__Urgences_catecholamines_catecholamines__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__modules_antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__modules_sauvegarde_patient_sauvegarde_patient__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__Urgences_acr_acr__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__Urgences_htm_htm__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__Urgences_catecholamines_catecholamines__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__Urgences_anaphylaxie_anaphylaxie__ = __webpack_require__(322);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__Urgences_asthme_asthme__ = __webpack_require__(323);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__Urgences_epilepsie_epilepsie__ = __webpack_require__(324);
@@ -883,7 +883,7 @@ var AccueilPage = /** @class */ (function () {
     ], AccueilPage.prototype, "nav", void 0);
     AccueilPage = AccueilPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-accueil',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/'<ion-content>\n  <div *ngIf="!Prenom" class="titleHome">  \n    QUADRUPED</div> \n    <div *ngIf="Prenom" class="titleHome">  \n      {{Prenom}}</div> \n\n    <br>\n    <br>\n\n \n \n  <ion-card class="homePagePatient">\n    <ion-card-content>\n\n      <ion-toolbar  color="turquoise" class="musicContainer">\n        <ion-buttons>\n        <ion-icon style="zoom:1.2" color="dark-turquoise" name="musical-notes"></ion-icon> \n       <p class="comment">{{MorceauChoisi}}</p>\n        \n       \n          <button (click)="selectMusic()" ion-button class="musicSelector" color="turquoise-fonce"><ion-icon style="zoom:2.0" name="disc"></ion-icon></button>\n          <button *ngIf="!musicPlaying" color="dark-turquoise" ion-button (click)="playMusic()"><ion-icon  style="zoom:1.2" name="play"></ion-icon></button>\n        <button   *ngIf="musicPlaying" color="dark-turquoise" ion-button (click)="stopMusic()"><ion-icon style="zoom:1.2" name="pause"></ion-icon></button> \n      </ion-buttons>\n      </ion-toolbar>\n\n      <ion-toolbar  color="turquoise" class="timerContainer">\n        <ion-buttons >    \n          <ion-icon style="zoom:1.2" color="dark-turquoise" name="stopwatch"></ion-icon>    \n          <br>\n          <p text-center class="timerTime">\n          {{time}}\n          </p>\n      <button  *ngIf="!running" color="dark-turquoise" ion-button (click)="start()"><ion-icon style="zoom:1.2" name="play"></ion-icon></button>\n      <button  *ngIf="running" color="dark-turquoise" ion-button (click)="stop()"><ion-icon style="zoom:1.2" name="pause"></ion-icon></button>         \n      <button ion-button (click)="reset()"><ion-icon color="dark-turquoise" style="zoom:1.2" name="refresh-circle"></ion-icon></button>\n    </ion-buttons>\n  </ion-toolbar>\n\n    <img class="resize" src="/assets/imgs/sleeping-baby.png"  alt="Nouveau patient"> \n    \n    <br>\n\n      <ion-toolbar class="HomeButtonContainer">\n        <ion-buttons>\n          <span class="comment" *ngIf = "!PoidsNum || !AgeNum || !Taille">Ouvrir un dossier ou les données relatives au patient :<br></span>\n          <span class="comment" *ngIf = "PoidsNum && AgeNum && Taille">Choisir parmi les modules accessibles<br></span>\n\n          <button *ngIf = "sexeMF == \'Fille\'" ion-button small color="dark-turquoise"><ion-icon name="female"></ion-icon></button>\n          <button *ngIf = "sexeMF != \'Fille\'" ion-button small color="grisclair"  (click)="SetSexeFille()"><ion-icon name="female"></ion-icon></button>\n          <button *ngIf = "sexeMF == \'Garçon\'" ion-button small color="dark-turquoise"  ><ion-icon name="male"></ion-icon></button>\n          <button *ngIf = "sexeMF != \'Garçon\'" ion-button small color="grisclair"  (click)="SetSexeGarcon()"><ion-icon name="male"></ion-icon></button>\n\n          <button solid *ngIf = "!this.AgeNum" color="dark-turquoise" ion-button  (click)="showPickerAge()">Age </button>\n          <button *ngIf = "this.AgeNum > 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{ageLecture}} ans </button>\n          <button *ngIf = "this.AgeNum > 0 && this.AgeNum <= 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{AgeNum}} mois</button>\n         \n          <button solid *ngIf = " !this.PoidsNum " color="dark-turquoise" ion-button  (click)="showPickerPoids()">Poids</button>\n          <button *ngIf = " this.PoidsNum " color="dark-turquoise" ion-button  (click)="showPickerPoids()">{{PoidsNum}} kg</button>\n         \n          <button solid *ngIf = " !Taille " color="turquoise-fonce" ion-button  (click)="showPickerTaille()">Taille</button>\n          <button *ngIf = " Taille " color="turquoise-fonce" ion-button  (click)="showPickerTaille()">{{Taille}} cm</button>\n\n          <button ion-button small color="dark-turquoise"  (click)="displayOptions()"><ion-icon name="options"></ion-icon></button>\n    </ion-buttons>\n    </ion-toolbar>\n  </ion-card-content>\n</ion-card>\n\n<hr>\n\n<div class="actionButtonsContainer">\n  <button class="homeActionsLarge" style="zoom:1.5" ion-button color="primary"  (click)="openSauvegarde()"> <ion-icon name="filing"></ion-icon></button>\n  &nbsp;  &nbsp;  &nbsp; &nbsp; \n  <button class="homeActions"  *ngIf = "PoidsNum && AgeNum && Taille"  ion-button color="dark-green"  (click)="displayCourbes()"><ion-icon name="trending-up"></ion-icon>\n  </button>\n  <button class="homeActions" outline *ngIf = "!PoidsNum || !AgeNum || !Taille" ion-button color="light"  (click)="alertAgePoidsTaille()"><ion-icon name="trending-up"></ion-icon>\n  </button>\n  <button class="homeActions" ion-button color="primary"  (click)="enregistrer()"><ion-icon name="archive"></ion-icon></button>\n<button class="homeActions" ion-button color="dark-turquoise"  (click)="help()"><ion-icon name="information-circle"></ion-icon></button>\n<button class="homeActions" ion-button color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>\n\n</div>   \n\n<hr>\n\n  <ion-slides pager="true">\n    <ion-slide>\n      <p class="titleHome">Anesthésie</p>\n\n      <!-- BOUTONS ANESTHESIE SI DONNEES PRESENTES -->\n<div class="anesthesieContainer" *ngIf = "this.PoidsNum && this.AgeNum">\n    <div *ngFor="let page of AnesthesiePages, let index = index" class="anesthesieName">\n  <button  (click)="displayAnesthesiePage(index)" class="urgenceButton" ion-button color="{{page.color}}"><ion-icon name="{{page.icon}}"></ion-icon></button>\n  <br>{{page.titre}}\n  </div>\n  </div>\n\n  <!-- BOUTONS ANESTHESIE SI DONNEES ABSENTES -->\n  \n  <div class="urgenceContainer" *ngIf = "!this.PoidsNum || !this.AgeNum">\n  <div *ngFor="let page of AnesthesiePages, let index = index" class="anesthesieName">\n<button  (click)="alertPoidsAge()" outline class="urgenceButton" ion-button color="light"><ion-icon name="{{page.icon}}"></ion-icon></button>\n<br>{{page.titre}}\n</div>\n</div>\n\n    </ion-slide>\n    <ion-slide>\n      <p class="titleHome"  >Urgences & réanimation</p>\n      <div class="urgenceContainer" *ngIf = "this.PoidsNum && this.AgeNum">\n       \n          <div *ngFor="let page of UrgenceBlocPages, let index = index" class="urgenceBlocName">\n        <button  (click)="displayUrgenceBlocPage(index)"  class="urgenceButton" ion-button color="{{page.color}}"><ion-icon name="{{page.icon}}"></ion-icon></button>\n        <br>{{page.titre}}\n        </div>\n    </div>\n        \n        <div class="urgenceContainer" *ngIf = "this.PoidsNum && this.AgeNum">\n        <div *ngFor="let page of UrgenceReaPages, let index = index" class="urgenceReaName">\n      <button  (click)="displayUrgenceReaPage(index)"  class="urgenceButton" ion-button color="{{page.color}}"><ion-icon name="{{page.icon}}"></ion-icon></button>\n      <br>{{page.titre}}\n      </div>\n    </div>\n      \n      \n      <!-- BOUTONS URGENCE & REA SI DONNEES ABSENTES -->\n      \n      <div class="urgenceContainer" *ngIf = "!this.PoidsNum || !this.AgeNum">\n            <div *ngFor="let page of UrgenceBlocPages, let index = index" class="urgenceBlocName">\n          <button  (click)="alertPoidsAge()" outline class="urgenceButton" ion-button color="light"><ion-icon name="{{page.icon}}"></ion-icon></button>\n          <br>{{page.titre}}\n          </div>\n        </div>\n          \n          <div class="urgenceContainer" *ngIf = "!this.PoidsNum || !this.AgeNum">\n          <div *ngFor="let page of UrgenceReaPages, let index = index" class="urgenceReaName">\n        <button  (click)="alertPoidsAge()" outline class="urgenceButton" ion-button color="light"><ion-icon name="{{page.icon}}"></ion-icon></button>\n        <br>{{page.titre}}\n        </div>\n      </div>\n      \n    </ion-slide>\n  </ion-slides>\n\n\n\n\n\n<!-- BOUTONS URGENCE & REA SI DONNEES PRESENTES -->\n\n\n \n      </ion-content>\n\n  \n\n\n  \n \n\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/,
+            selector: 'page-accueil',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/'<ion-content>\n  <div *ngIf="!Prenom" class="titleHome">  \n    QUADRUPED</div> \n    <div *ngIf="Prenom" class="titleHome">  \n      {{Prenom}}</div> \n\n    <br>\n    <br>\n\n \n \n  <ion-card class="homePagePatient">\n    <ion-card-content>\n\n      <ion-toolbar  color="turquoise" class="musicContainer">\n        <ion-buttons>\n        <ion-icon style="zoom:1.2" color="dark-turquoise" name="musical-notes"></ion-icon> \n       <p class="comment">{{MorceauChoisi}}</p>\n        \n       \n          <button (click)="selectMusic()" ion-button class="musicSelector" color="turquoise-fonce"><ion-icon style="zoom:2.0" name="disc"></ion-icon></button>\n          <button *ngIf="!musicPlaying" color="dark-turquoise" ion-button (click)="playMusic()"><ion-icon  style="zoom:1.2" name="play"></ion-icon></button>\n        <button   *ngIf="musicPlaying" color="dark-turquoise" ion-button (click)="stopMusic()"><ion-icon style="zoom:1.2" name="pause"></ion-icon></button> \n      </ion-buttons>\n      </ion-toolbar>\n\n      <ion-toolbar  color="turquoise" class="timerContainer">\n        <ion-buttons >    \n          <ion-icon style="zoom:1.2" color="dark-turquoise" name="stopwatch"></ion-icon>    \n          <br>\n          <p text-center class="timerTime">\n          {{time}}\n          </p>\n      <button  *ngIf="!running" color="dark-turquoise" ion-button (click)="start()"><ion-icon style="zoom:1.2" name="play"></ion-icon></button>\n      <button  *ngIf="running" color="dark-turquoise" ion-button (click)="stop()"><ion-icon style="zoom:1.2" name="pause"></ion-icon></button>         \n      <button ion-button (click)="reset()"><ion-icon color="dark-turquoise" style="zoom:1.2" name="refresh-circle"></ion-icon></button>\n    </ion-buttons>\n  </ion-toolbar>\n\n    <img class="resize" src="/assets/imgs/quadruped_logo.jpeg"  alt="Nouveau patient"> \n    \n    <br>\n\n      <ion-toolbar class="HomeButtonContainer">\n        <ion-buttons>\n          <span class="comment" *ngIf = "!PoidsNum || !AgeNum || !Taille">Ouvrir un dossier ou les données relatives au patient :<br></span>\n          <span class="comment" *ngIf = "PoidsNum && AgeNum && Taille">Choisir parmi les modules accessibles<br></span>\n\n          <button *ngIf = "sexeMF == \'Fille\'" ion-button small color="dark-turquoise"><ion-icon name="female"></ion-icon></button>\n          <button *ngIf = "sexeMF != \'Fille\'" ion-button small color="grisclair"  (click)="SetSexeFille()"><ion-icon name="female"></ion-icon></button>\n          <button *ngIf = "sexeMF == \'Garçon\'" ion-button small color="dark-turquoise"  ><ion-icon name="male"></ion-icon></button>\n          <button *ngIf = "sexeMF != \'Garçon\'" ion-button small color="grisclair"  (click)="SetSexeGarcon()"><ion-icon name="male"></ion-icon></button>\n\n          <button solid *ngIf = "!this.AgeNum" color="dark-turquoise" ion-button  (click)="showPickerAge()">Age </button>\n          <button *ngIf = "this.AgeNum > 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{ageLecture}} ans </button>\n          <button *ngIf = "this.AgeNum > 0 && this.AgeNum <= 24" color="dark-turquoise" ion-button  (click)="showPickerAge()">{{AgeNum}} mois</button>\n         \n          <button solid *ngIf = " !this.PoidsNum " color="dark-turquoise" ion-button  (click)="showPickerPoids()">Poids</button>\n          <button *ngIf = " this.PoidsNum " color="dark-turquoise" ion-button  (click)="showPickerPoids()">{{PoidsNum}} kg</button>\n         \n          <button solid *ngIf = " !Taille " color="turquoise-fonce" ion-button  (click)="showPickerTaille()">Taille</button>\n          <button *ngIf = " Taille " color="turquoise-fonce" ion-button  (click)="showPickerTaille()">{{Taille}} cm</button>\n\n          <button ion-button small color="dark-turquoise"  (click)="displayOptions()"><ion-icon name="options"></ion-icon></button>\n    </ion-buttons>\n    </ion-toolbar>\n  </ion-card-content>\n</ion-card>\n\n<hr>\n\n<div class="actionButtonsContainer">\n  <button class="homeActionsLarge" style="zoom:1.5" ion-button color="primary"  (click)="openSauvegarde()"> <ion-icon name="filing"></ion-icon></button>\n  &nbsp;  &nbsp;  &nbsp; &nbsp; \n  <button class="homeActions"  *ngIf = "PoidsNum && AgeNum && Taille"  ion-button color="dark-green"  (click)="displayCourbes()"><ion-icon name="trending-up"></ion-icon>\n  </button>\n  <button class="homeActions" outline *ngIf = "!PoidsNum || !AgeNum || !Taille" ion-button color="light"  (click)="alertAgePoidsTaille()"><ion-icon name="trending-up"></ion-icon>\n  </button>\n  <button class="homeActions" ion-button color="primary"  (click)="enregistrer()"><ion-icon name="archive"></ion-icon></button>\n<button class="homeActions" ion-button color="dark-turquoise"  (click)="help()"><ion-icon name="information-circle"></ion-icon></button>\n<button class="homeActions" ion-button color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>\n\n</div>   \n\n<hr>\n\n  <ion-slides pager="true">\n    <ion-slide>\n      <p class="titleHome">Anesthésie</p>\n\n      <!-- BOUTONS ANESTHESIE SI DONNEES PRESENTES -->\n<div class="anesthesieContainer" *ngIf = "this.PoidsNum && this.AgeNum">\n    <div *ngFor="let page of AnesthesiePages, let index = index" class="anesthesieName">\n  <button  (click)="displayAnesthesiePage(index)" class="urgenceButton" ion-button color="{{page.color}}"><ion-icon name="{{page.icon}}"></ion-icon></button>\n  <br>{{page.titre}}\n  </div>\n  </div>\n\n  <!-- BOUTONS ANESTHESIE SI DONNEES ABSENTES -->\n  \n  <div class="urgenceContainer" *ngIf = "!this.PoidsNum || !this.AgeNum">\n  <div *ngFor="let page of AnesthesiePages, let index = index" class="anesthesieName">\n<button  (click)="alertPoidsAge()" outline class="urgenceButton" ion-button color="light"><ion-icon name="{{page.icon}}"></ion-icon></button>\n<br>{{page.titre}}\n</div>\n</div>\n\n    </ion-slide>\n    <ion-slide>\n      <p class="titleHome"  >Urgences & réanimation</p>\n      <div class="urgenceContainer" *ngIf = "this.PoidsNum && this.AgeNum">\n       \n          <div *ngFor="let page of UrgenceBlocPages, let index = index" class="urgenceBlocName">\n        <button  (click)="displayUrgenceBlocPage(index)"  class="urgenceButton" ion-button color="{{page.color}}"><ion-icon name="{{page.icon}}"></ion-icon></button>\n        <br>{{page.titre}}\n        </div>\n    </div>\n        \n        <div class="urgenceContainer" *ngIf = "this.PoidsNum && this.AgeNum">\n        <div *ngFor="let page of UrgenceReaPages, let index = index" class="urgenceReaName">\n      <button  (click)="displayUrgenceReaPage(index)"  class="urgenceButton" ion-button color="{{page.color}}"><ion-icon name="{{page.icon}}"></ion-icon></button>\n      <br>{{page.titre}}\n      </div>\n    </div>\n      \n      \n      <!-- BOUTONS URGENCE & REA SI DONNEES ABSENTES -->\n      \n      <div class="urgenceContainer" *ngIf = "!this.PoidsNum || !this.AgeNum">\n            <div *ngFor="let page of UrgenceBlocPages, let index = index" class="urgenceBlocName">\n          <button  (click)="alertPoidsAge()" outline class="urgenceButton" ion-button color="light"><ion-icon name="{{page.icon}}"></ion-icon></button>\n          <br>{{page.titre}}\n          </div>\n        </div>\n          \n          <div class="urgenceContainer" *ngIf = "!this.PoidsNum || !this.AgeNum">\n          <div *ngFor="let page of UrgenceReaPages, let index = index" class="urgenceReaName">\n        <button  (click)="alertPoidsAge()" outline class="urgenceButton" ion-button color="light"><ion-icon name="{{page.icon}}"></ion-icon></button>\n        <br>{{page.titre}}\n        </div>\n      </div>\n      \n    </ion-slide>\n  </ion-slides>\n\n\n\n\n\n<!-- BOUTONS URGENCE & REA SI DONNEES PRESENTES -->\n\n\n \n      </ion-content>\n\n  \n\n\n  \n \n\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\accueil\accueil.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */],
@@ -912,7 +912,7 @@ var AccueilPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScoresPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1000,7 +1000,7 @@ var ScoresPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ServiceDataProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5077,19 +5077,271 @@ var ServiceDataProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 157:
+/***/ 136:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AcrPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the AcrPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AcrPage = /** @class */ (function () {
+    function AcrPage(navCtrl, navParams, storage, alertController) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.storage = storage;
+        this.alertController = alertController;
+        this.SoluteRemplissage = "";
+        this.ACRview = 1;
+    }
+    AcrPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    AcrPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AcrPage');
+    };
+    AcrPage.prototype.ionViewWillEnter = function () {
+        var _this = this;
+        var promiseList = [];
+        promiseList.push(this.storage.get('AgeNum').then(function (Age) {
+            _this.AgeNum = Age;
+            _this.ageLecture = Math.round((_this.AgeNum / 12) * 10) / 10;
+            _this.storage.get('PoidsNum').then(function (Poids) {
+                _this.PoidsNum = Poids;
+                _this.storage.get('DureeJeune').then(function (dureejeune) {
+                    _this.DureeJeune = dureejeune;
+                    _this.storage.get('EstomacPlein').then(function (Estomac) {
+                        _this.EstomacPlein = Estomac;
+                        console.log('lestomac est plein ?', _this.EstomacPlein);
+                        if (_this.EstomacPlein == true) {
+                            _this.EstomacOuiNon = "plein";
+                        }
+                        else {
+                            _this.EstomacOuiNon = "vide";
+                        }
+                        ;
+                        _this.storage.get('Allergie').then(function (allergie) {
+                            _this.Allergie = allergie;
+                            _this.storage.get('sexeMF').then(function (sexe) {
+                                _this.sexeMF = sexe;
+                                if (!sexe) {
+                                    _this.sexeMF = "Fille";
+                                }
+                                ;
+                                _this.storage.get('Taille').then(function (Taille) {
+                                    _this.Taille = Taille;
+                                    _this.calculs();
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        }));
+    };
+    ;
+    AcrPage.prototype.calculs = function () {
+        /* ACR */
+        this.CEEACR = Math.round((this.PoidsNum * 4) * 10) / 10;
+        this.PosoAdrenalineACR = Math.round((this.PoidsNum * 10) * 10) / 10;
+        this.PosoCordaroneACR = Math.round((this.PoidsNum * 5) * 10) / 10;
+        this.PosoBicarACR = Math.round((this.PoidsNum * 2) * 10) / 10;
+        this.PosoMgSO4ACR = Math.round(this.PoidsNum * 0.15);
+        this.PosoGlucoCaACR = Math.round(this.PoidsNum * 0.5);
+    };
+    AcrPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-acr',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\acr\acr.html"*/'<ion-header>\n  <!-- HEADER MENU  -->\n  <div class="header"> \n<br>\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\nArrêt cardiorespiratoire</div>\n      <br>\n\n      <ion-segment color="dark-turquoise" [(ngModel)]="ACRview">\n        <ion-segment-button value="1">Mémo</ion-segment-button>\n        <ion-segment-button value="2">Drogues ACR</ion-segment-button>\n      </ion-segment>\n\n      </ion-header>\n\n\n<ion-content>\n  <div padding class="patientHighlight">\n    Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n    <br>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>\n  </div>\n\n  <div *ngIf="ACRview == 1">\n\n    <ion-card class="flashCard">\n          <div class="bigNumber">1.</div>\n          <div class="bigTitle">Conduite à tenir</div> \n          <div class="algoText">\n        <ul>\n          <li>Début immédiat et continu du MCE (planche à masser en SSPI)</li>\n          <li>Appel à l\'aide 3535</li>\n          <li>Arrêt de la chirurgie</li>\n          <li>Arrêt des AAH, FiO2 1, Vt 6-8 mL/kg</li>\n          <li>Vérifier la VVP</li>\n          <li>Rapprocher le défibrillateur</li>\n          </ul>\n        </div>\n        </ion-card>\n\n        <ion-card class="flashCard">\n          <div class="bigNumber">2.</div>\n          <div class="bigTitle">Etiologies à évoquer</div>\n          <div class="algoText">\n        <ul>\n          <li>Erreur d\'administration ? Vérifier le plateau d\'anesthésie</li>\n          <li>4H : hypoxie, hypovolémie, hypo/hyperkaliémie, hypothermie</li>\n          <li>4T : tension (pneumothorax), tamponnade, toxique, thromboembolique</li>\n        </ul>\n      </div>\n    </ion-card>\n\n    </div>\n\n\n\n    \n\n<div *ngIf="ACRview == 2">\n\n    <ion-item>\n      <ion-label class="drogueInduction">\n        <p class="posologieDrogueInduction">Posologie proposée : 10 µg/kg, renouvellable</p>\n         <ion-chip color="danger"><ion-label>Adrénaline : {{PosoAdrenalineACR}} µg IVD/5 minutes</ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Stratégie : d\'emblée si asystolie, au 3e choc si TV/FV</p>\n      </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label class="drogueInduction" color="danger">\n        <p class="posologieDrogueInduction">Energie proposée : 4 J/kg</p>\n        <ion-chip color="danger"><ion-label>Choc EE : {{CEEACR}} J</ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Attention au positionnement des patch</p>\n      </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>\n        <p class="posologieDrogueInduction">Posologie proposée : 5 mg/kg</p>\n        <ion-chip color="grisclair"><ion-label> Cordarone : {{PosoCordaroneACR}} mg - IVD </ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Stratégie : renouvelable 1 fois après 5 min</p>\n      </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>\n        <p class="posologieDrogueInduction">Posologie proposée : 2 mL/kg</p>\n        <ion-chip color="grisclair"><ion-label>Bicar 4,2% : {{PosoBicarACR}} mL - IVL \n        </ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Stratégie : dès la 15e minute</p>\n      </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>\n        <p class="posologieDrogueInduction">Posologie proposée : 0,15 mL/kg</p>\n        <ion-chip color="grisclair"><ion-label>Sulfate de Mg : {{PosoMgSO4ACR}} mL - IVL </ion-label></ion-chip>\n          <p class="dilutionDrogueInduction">Présentation : MgSO4 1,5g/10mL sol inj</p>\n\n        \n      </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>\n        <p class="posologieDrogueInduction">Posologie proposée : 0,5 mL/kg</p>\n        <ion-chip color="grisclair"><ion-label>Gluconate de Ca : {{PosoGlucoCaACR}} mL - IVL </ion-label></ion-chip>\n          <p class="dilutionDrogueInduction">Présentation : Gluconate de Ca 10 % sol inj</p>\n      </ion-label>\n    </ion-item>\n</div>\n\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\acr\acr.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+    ], AcrPage);
+    return AcrPage;
+}());
+
+//# sourceMappingURL=acr.js.map
+
+/***/ }),
+
+/***/ 137:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CatecholaminesPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the CatecholaminesPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var CatecholaminesPage = /** @class */ (function () {
+    function CatecholaminesPage(navCtrl, navParams, storage, alertController) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.storage = storage;
+        this.alertController = alertController;
+        this.DixiemeDebitNADgammakgmin = 100;
+        this.CatecholaminesView = 1;
+    }
+    CatecholaminesPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    CatecholaminesPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad CatecholaminesPage');
+    };
+    CatecholaminesPage.prototype.ionViewWillEnter = function () {
+        var _this = this;
+        var promiseList = [];
+        promiseList.push(this.storage.get('AgeNum').then(function (Age) {
+            _this.AgeNum = Age;
+            _this.ageLecture = Math.round((_this.AgeNum / 12) * 10) / 10;
+            _this.storage.get('PoidsNum').then(function (Poids) {
+                _this.PoidsNum = Poids;
+                _this.storage.get('DureeJeune').then(function (dureejeune) {
+                    _this.DureeJeune = dureejeune;
+                    _this.storage.get('EstomacPlein').then(function (Estomac) {
+                        _this.EstomacPlein = Estomac;
+                        console.log('lestomac est plein ?', _this.EstomacPlein);
+                        if (_this.EstomacPlein == true) {
+                            _this.EstomacOuiNon = "plein";
+                        }
+                        else {
+                            _this.EstomacOuiNon = "vide";
+                        }
+                        ;
+                        _this.storage.get('Allergie').then(function (allergie) {
+                            _this.Allergie = allergie;
+                            _this.storage.get('sexeMF').then(function (sexe) {
+                                _this.sexeMF = sexe;
+                                if (!sexe) {
+                                    _this.sexeMF = "Fille";
+                                }
+                                ;
+                                _this.storage.get('Taille').then(function (Taille) {
+                                    _this.Taille = Taille;
+                                    _this.calculs();
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        }));
+    };
+    ;
+    CatecholaminesPage.prototype.calculs = function () {
+        /** NAD */
+        if (this.PoidsNum <= 10) {
+            this.ProtocoleNAD = "3 mg/kg dans 50 mL";
+            this.QuantiteNAD = Math.round(this.PoidsNum * 3 * 10) / 10;
+            this.VolumeNAD = Math.round(this.QuantiteNAD / 2 * 10) / 10;
+            this.AmpoulesNAD = Math.round(this.VolumeNAD / 4 * 10) / 10;
+            this.VolumeSerumPhyNAD = Math.round((50 - this.VolumeNAD) * 10) / 10;
+            this.DebitNADmlh = 1;
+            this.DebitNADgammakgmin = 1;
+            this.DebitNADmgh = Math.round((this.DebitNADgammakgmin * this.PoidsNum * 60 / 1000) * 10) / 10;
+            this.DixiemeDebitNADgammakgmin = 100;
+        }
+        else if (this.PoidsNum <= 30) {
+            this.ProtocoleNAD = "1,5 mg/kg dans 50 mL";
+            this.QuantiteNAD = Math.round(this.PoidsNum * 1.5 * 10) / 10;
+            this.VolumeNAD = Math.round(this.QuantiteNAD / 2 * 10) / 10;
+            this.AmpoulesNAD = Math.round(this.VolumeNAD / 4 * 10) / 10;
+            this.VolumeSerumPhyNAD = Math.round((50 - this.VolumeNAD) * 10) / 10;
+            this.DebitNADmlh = 2;
+            this.DebitNADgammakgmin = 1;
+            this.DebitNADmgh = Math.round((this.DebitNADgammakgmin * this.PoidsNum * 60 / 1000) * 10) / 10;
+            this.DixiemeDebitNADgammakgmin = 100;
+        }
+        else {
+            this.ProtocoleNAD = "0,6 mg/kg dans 50 mL";
+            this.QuantiteNAD = Math.round(this.PoidsNum * 0.6 * 10) / 10;
+            this.VolumeNAD = Math.round(this.QuantiteNAD / 2 * 10) / 10;
+            this.AmpoulesNAD = Math.round(this.VolumeNAD / 4 * 10) / 10;
+            this.VolumeSerumPhyNAD = Math.round((50 - this.VolumeNAD) * 10) / 10;
+            this.DebitNADmlh = 5;
+            this.DebitNADgammakgmin = 1;
+            this.DebitNADmgh = Math.round((this.DebitNADgammakgmin * this.PoidsNum * 60 / 1000) * 10) / 10;
+            this.DixiemeDebitNADgammakgmin = 100;
+        }
+        ;
+    };
+    ;
+    /**NAD PREPARATION */
+    CatecholaminesPage.prototype.VariationNAD = function () {
+        this.DebitNADgammakgmin = this.DixiemeDebitNADgammakgmin / 100;
+        this.DebitNADmgh = Math.round((this.DebitNADgammakgmin * this.PoidsNum * 60 / 1000) * 10) / 10;
+        if (this.ProtocoleNAD == "0,6 mg/kg dans 50 mL") {
+            this.DebitNADmlh = Math.round((this.DebitNADgammakgmin * 5) * 10) / 10;
+        }
+        else if (this.ProtocoleNAD == "1,5 mg/kg dans 50 mL") {
+            this.DebitNADmlh = Math.round((this.DebitNADgammakgmin * 2) * 10) / 10;
+        }
+        else if (this.ProtocoleNAD == "3 mg/kg dans 50 mL") {
+            this.DebitNADmlh = this.DebitNADgammakgmin;
+        }
+        ;
+    };
+    CatecholaminesPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-catecholamines',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\catecholamines\catecholamines.html"*/'<ion-header>\n  <!-- HEADER MENU  -->\n  <div class="header"> \n<br>\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\nCatécholamines</div>\n      <br>\n\n      <ion-segment color="turquoise-fonce" [(ngModel)]="CatecholaminesView">\n        <ion-segment-button value="1">Noradrénaline</ion-segment-button>\n      </ion-segment>\n\n      </ion-header>\n\n<ion-content>\n  <div padding class="patientHighlight">\n    Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n  </div>\n\n  <ion-card class="drogueContainer" *ngIf="CatecholaminesView == 1">\n    <ion-card-content>\n\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="dark">\n          <p class="posologieDrogueInduction">Protocole proposé : {{ProtocoleNAD}}</p>\n          <ion-chip color="primary"><ion-label>Noradrénaline : {{QuantiteNAD}}mg/50mL</ion-label></ion-chip>\n          <p class="dilutionDrogueInduction">Présentation : Noradrénaline Tartrate 8mg/4mL</p>\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="dark">\n          Mélanger dans une seringue de 50 mL\n          <ul>\n            <li><ion-chip color="light"><ion-label>{{VolumeNAD}} mL de NAD</ion-label></ion-chip> (soit {{AmpoulesNAD}} ampoules)</li>\n            <li><ion-chip color="light"><ion-label>+ {{VolumeSerumPhyNAD}} mL de NaCl 0,9%</ion-label></ion-chip></li>\n          </ul>\n        </ion-label>\n      </ion-item>\n     \n      <ion-grid>\n        <ion-row>\n          <ion-col>\n            Debit\n          </ion-col>\n          <ion-col>\n            <ion-chip color="primary"><ion-label>{{DebitNADgammakgmin}} µg/kg/min </ion-label></ion-chip>\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col>\n            Vitesse\n          </ion-col>\n          <ion-col>\n            <ion-chip color="light"><ion-label>{{DebitNADmlh}} mL/h</ion-label></ion-chip>\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col>\n            Posologie\n          </ion-col>\n          <ion-col>\n            <ion-chip color="light"><ion-label>{{DebitNADmgh}} mg/h</ion-label></ion-chip>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n     \n\n        <ion-range color="turquoise-fonce" max="500" step="10" (ngModelChange)="VariationNAD()" [(ngModel)]="DixiemeDebitNADgammakgmin"> </ion-range>\n        <p padding class="comment">Utilisez le curseur pour faire varier la vitesse d\'administration (en mL/h).</p>\n\n \n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\catecholamines\catecholamines.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+    ], CatecholaminesPage);
+    return CatecholaminesPage;
+}());
+
+//# sourceMappingURL=catecholamines.js.map
+
+/***/ }),
+
+/***/ 159:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__main_pages_info_info__ = __webpack_require__(465);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__main_pages_protocoles_protocoles__ = __webpack_require__(466);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__main_pages_recommandations_recommandations__ = __webpack_require__(470);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__main_pages_recommandations_recommandations__ = __webpack_require__(479);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__main_pages_scores_scores__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__main_pages_medicaments_medicaments__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__main_pages_medicaments_medicaments__ = __webpack_require__(480);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5125,7 +5377,7 @@ var MainPage = /** @class */ (function () {
     }
     MainPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-main',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\main\main.html"*/'<ion-tabs>\n    <ion-tab [root]="anesthesieRoot" tabTitle="" tabIcon="cloud-circle"></ion-tab>\n    <ion-tab [root]="medicamentsRoot" tabTitle="" tabIcon="search"></ion-tab>\n    <ion-tab [root]="protocolesRoot" tabTitle="" tabIcon="compass"></ion-tab>\n    <ion-tab [root]="recommandationsRoot" tabTitle="" tabIcon="school"></ion-tab>\n    <ion-tab [root]="infoRoot" tabTitle="" tabIcon="information-circle"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\main\main.html"*/
+            selector: 'page-main',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\main\main.html"*/'<ion-tabs>\n    <ion-tab [root]="anesthesieRoot" tabTitle="" tabIcon="cloud-circle"></ion-tab>\n    <ion-tab [root]="protocolesRoot" tabTitle="" tabIcon="compass"></ion-tab>\n    <ion-tab [root]="medicamentsRoot" tabTitle="" tabIcon="search"></ion-tab>\n    <ion-tab [root]="recommandationsRoot" tabTitle="" tabIcon="school"></ion-tab>\n    <ion-tab [root]="infoRoot" tabTitle="" tabIcon="information-circle"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\main\main.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]])
     ], MainPage);
@@ -5136,7 +5388,7 @@ var MainPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 168:
+/***/ 170:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -5149,16 +5401,16 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 168;
+webpackEmptyAsyncContext.id = 170;
 
 /***/ }),
 
-/***/ 212:
+/***/ 214:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/main/main.module": [
-		846,
+		855,
 		0
 	]
 };
@@ -5173,17 +5425,17 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 212;
+webpackAsyncContext.id = 214;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 214:
+/***/ 216:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlateauInductionPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -5565,12 +5817,12 @@ var PlateauInductionPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 215:
+/***/ 217:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlateauVasPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -5897,12 +6149,12 @@ var PlateauVasPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 216:
+/***/ 218:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EntretienAnesthPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -6103,12 +6355,12 @@ var EntretienAnesthPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 217:
+/***/ 219:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GestionFluidesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -6334,12 +6586,12 @@ var GestionFluidesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 218:
+/***/ 220:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocoRegionalePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -6533,12 +6785,12 @@ var LocoRegionalePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 219:
+/***/ 221:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntalgiePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__main_pages_scores_scores__ = __webpack_require__(116);
@@ -6821,12 +7073,12 @@ var AntalgiePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 220:
+/***/ 222:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OptionsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(12);
@@ -6972,12 +7224,12 @@ var OptionsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 221:
+/***/ 223:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MonitoragePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -7368,12 +7620,12 @@ var MonitoragePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 317:
+/***/ 319:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntibioprophylaxiePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_medicaments__ = __webpack_require__(135);
@@ -7646,12 +7898,12 @@ var AntibioprophylaxiePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 318:
+/***/ 320:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SauvegardePatientPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -7774,116 +8026,12 @@ var SauvegardePatientPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 319:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AcrPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the AcrPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var AcrPage = /** @class */ (function () {
-    function AcrPage(navCtrl, navParams, storage, alertController) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.storage = storage;
-        this.alertController = alertController;
-        this.SoluteRemplissage = "";
-        this.ACRview = 1;
-    }
-    AcrPage.prototype.retourHome = function () {
-        this.navCtrl.pop();
-    };
-    ;
-    AcrPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AcrPage');
-    };
-    AcrPage.prototype.ionViewWillEnter = function () {
-        var _this = this;
-        var promiseList = [];
-        promiseList.push(this.storage.get('AgeNum').then(function (Age) {
-            _this.AgeNum = Age;
-            _this.ageLecture = Math.round((_this.AgeNum / 12) * 10) / 10;
-            _this.storage.get('PoidsNum').then(function (Poids) {
-                _this.PoidsNum = Poids;
-                _this.storage.get('DureeJeune').then(function (dureejeune) {
-                    _this.DureeJeune = dureejeune;
-                    _this.storage.get('EstomacPlein').then(function (Estomac) {
-                        _this.EstomacPlein = Estomac;
-                        console.log('lestomac est plein ?', _this.EstomacPlein);
-                        if (_this.EstomacPlein == true) {
-                            _this.EstomacOuiNon = "plein";
-                        }
-                        else {
-                            _this.EstomacOuiNon = "vide";
-                        }
-                        ;
-                        _this.storage.get('Allergie').then(function (allergie) {
-                            _this.Allergie = allergie;
-                            _this.storage.get('sexeMF').then(function (sexe) {
-                                _this.sexeMF = sexe;
-                                if (!sexe) {
-                                    _this.sexeMF = "Fille";
-                                }
-                                ;
-                                _this.storage.get('Taille').then(function (Taille) {
-                                    _this.Taille = Taille;
-                                    _this.calculs();
-                                });
-                            });
-                        });
-                    });
-                });
-            });
-        }));
-    };
-    ;
-    AcrPage.prototype.calculs = function () {
-        /* ACR */
-        this.CEEACR = Math.round((this.PoidsNum * 4) * 10) / 10;
-        this.PosoAdrenalineACR = Math.round((this.PoidsNum * 10) * 10) / 10;
-        this.PosoCordaroneACR = Math.round((this.PoidsNum * 5) * 10) / 10;
-        this.PosoBicarACR = Math.round((this.PoidsNum * 2) * 10) / 10;
-        this.PosoMgSO4ACR = Math.round(this.PoidsNum * 0.15);
-        this.PosoGlucoCaACR = Math.round(this.PoidsNum * 0.5);
-    };
-    AcrPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-acr',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\acr\acr.html"*/'<ion-header>\n  <!-- HEADER MENU  -->\n  <div class="header"> \n<br>\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\nArrêt cardiorespiratoire</div>\n      <br>\n\n      <ion-segment color="dark-turquoise" [(ngModel)]="ACRview">\n        <ion-segment-button value="1">Mémo</ion-segment-button>\n        <ion-segment-button value="2">Drogues ACR</ion-segment-button>\n      </ion-segment>\n\n      </ion-header>\n\n\n<ion-content>\n  <div padding class="patientHighlight">\n    Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n    <br>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>\n  </div>\n\n  <div *ngIf="ACRview == 1">\n\n    <ion-card class="flashCard">\n          <div class="bigNumber">1.</div>\n          <div class="bigTitle">Conduite à tenir</div> \n          <div class="algoText">\n        <ul>\n          <li>Début immédiat et continu du MCE (planche à masser en SSPI)</li>\n          <li>Appel à l\'aide 3535</li>\n          <li>Arrêt de la chirurgie</li>\n          <li>Arrêt des AAH, FiO2 1, Vt 6-8 mL/kg</li>\n          <li>Vérifier la VVP</li>\n          <li>Rapprocher le défibrillateur</li>\n          </ul>\n        </div>\n        </ion-card>\n\n        <ion-card class="flashCard">\n          <div class="bigNumber">2.</div>\n          <div class="bigTitle">Etiologies à évoquer</div>\n          <div class="algoText">\n        <ul>\n          <li>Erreur d\'administration ? Vérifier le plateau d\'anesthésie</li>\n          <li>4H : hypoxie, hypovolémie, hypo/hyperkaliémie, hypothermie</li>\n          <li>4T : tension (pneumothorax), tamponnade, toxique, thromboembolique</li>\n        </ul>\n      </div>\n    </ion-card>\n\n    </div>\n\n\n\n    \n\n<div *ngIf="ACRview == 2">\n\n    <ion-item>\n      <ion-label class="drogueInduction">\n        <p class="posologieDrogueInduction">Posologie proposée : 10 µg/kg, renouvellable</p>\n         <ion-chip color="danger"><ion-label>Adrénaline : {{PosoAdrenalineACR}} µg IVD/5 minutes</ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Stratégie : d\'emblée si asystolie, au 3e choc si TV/FV</p>\n      </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label class="drogueInduction" color="danger">\n        <p class="posologieDrogueInduction">Energie proposée : 4 J/kg</p>\n        <ion-chip color="danger"><ion-label>Choc EE : {{CEEACR}} J</ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Attention au positionnement des patch</p>\n      </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>\n        <p class="posologieDrogueInduction">Posologie proposée : 5 mg/kg</p>\n        <ion-chip color="grisclair"><ion-label> Cordarone : {{PosoCordaroneACR}} mg - IVD </ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Stratégie : renouvelable 1 fois après 5 min</p>\n      </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>\n        <p class="posologieDrogueInduction">Posologie proposée : 2 mL/kg</p>\n        <ion-chip color="grisclair"><ion-label>Bicar 4,2% : {{PosoBicarACR}} mL - IVL \n        </ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Stratégie : dès la 15e minute</p>\n      </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>\n        <p class="posologieDrogueInduction">Posologie proposée : 0,15 mL/kg</p>\n        <ion-chip color="grisclair"><ion-label>Sulfate de Mg : {{PosoMgSO4ACR}} mL - IVL </ion-label></ion-chip>\n          <p class="dilutionDrogueInduction">Présentation : MgSO4 1,5g/10mL sol inj</p>\n\n        \n      </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>\n        <p class="posologieDrogueInduction">Posologie proposée : 0,5 mL/kg</p>\n        <ion-chip color="grisclair"><ion-label>Gluconate de Ca : {{PosoGlucoCaACR}} mL - IVL </ion-label></ion-chip>\n          <p class="dilutionDrogueInduction">Présentation : Gluconate de Ca 10 % sol inj</p>\n      </ion-label>\n    </ion-item>\n</div>\n\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\acr\acr.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-    ], AcrPage);
-    return AcrPage;
-}());
-
-//# sourceMappingURL=acr.js.map
-
-/***/ }),
-
-/***/ 320:
+/***/ 321:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HtmPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -7921,6 +8069,16 @@ var HtmPage = /** @class */ (function () {
         this.encours = "";
         this.fin = "";
         this.AlgoHTM = [
+            {
+                isShown: true,
+                isChecked: false,
+                stepnumber: 0,
+                action: "Suspicion d'AAH",
+                text: "Augmentation d'EtCO2 brutale, rigidité masséter, tronc ou membres, tachycardie inexpliquée, hyperthermie inexpliquée.",
+                time: "",
+                last: false,
+                class: "PerCritique",
+            },
             {
                 isShown: false,
                 isChecked: false,
@@ -8121,17 +8279,6 @@ var HtmPage = /** @class */ (function () {
     };
     ;
     /** FONCTIONS DALGORITHME  */
-    HtmPage.prototype.algoStart = function () {
-        this.start();
-        this.AlgoHTM[0].isShown = true;
-        this.encours = "En cours : ";
-        this.fin = "";
-    };
-    ;
-    HtmPage.prototype.algoPause = function () {
-        this.stop();
-        this.encours = "";
-    };
     HtmPage.prototype.algoStep = function (index) {
         this.AlgoHTM[index].time = (this.time).toString();
         this.AlgoHTM[index].isShown = false;
@@ -8140,62 +8287,13 @@ var HtmPage = /** @class */ (function () {
             this.AlgoHTM[index + 1].isShown = true;
         }
         else {
-            this.stop();
-            this.encours = "";
-            this.fin = "Terminé après : ";
-        }
-    };
-    ;
-    /** FONCTIONS DE TIMER  */
-    HtmPage.prototype.start = function () {
-        if (this.running)
             return;
-        if (this.timeBegan === null) {
-            this.reset();
-            this.timeBegan = new Date();
         }
-        if (this.timeStopped !== null) {
-            var newStoppedDuration = (+new Date() - this.timeStopped);
-            this.stoppedDuration = this.stoppedDuration + newStoppedDuration;
-        }
-        this.started = setInterval(this.clockRunning.bind(this), 10);
-        this.running = true;
-    };
-    HtmPage.prototype.stop = function () {
-        this.running = false;
-        this.timeStopped = new Date();
-        clearInterval(this.started);
-    };
-    HtmPage.prototype.reset = function () {
-        this.running = false;
-        clearInterval(this.started);
-        this.stoppedDuration = 0;
-        this.timeBegan = null;
-        this.timeStopped = null;
-        this.time = this.blankTime;
-    };
-    HtmPage.prototype.zeroPrefix = function (num, digit) {
-        var zero = '';
-        for (var i = 0; i < digit; i++) {
-            zero += '0';
-        }
-        return (zero + num).slice(-digit);
-    };
-    HtmPage.prototype.clockRunning = function () {
-        var currentTime = new Date();
-        var timeElapsed = new Date(currentTime - this.timeBegan - this.stoppedDuration);
-        var hour = timeElapsed.getUTCHours();
-        var min = timeElapsed.getUTCMinutes();
-        var sec = timeElapsed.getUTCSeconds();
-        this.time =
-            this.zeroPrefix(hour, 2) + ":" +
-                this.zeroPrefix(min, 2) + ":" +
-                this.zeroPrefix(sec, 2);
     };
     ;
     HtmPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-htm',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\htm\htm.html"*/'<ion-header>\n  <!-- HEADER MENU  -->\n  <div class="header"> \n<br>\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\nHyperthermie maligne</div>\n      <br>\n\n      <ion-segment color="dark-turquoise" [(ngModel)]="HTMview">\n        <ion-segment-button value="1">Mémo</ion-segment-button>\n        <ion-segment-button value="2">Algorithme</ion-segment-button>\n      </ion-segment>\n\n      </ion-header>\n\n<ion-content>\n\n  <div padding class="patientHighlight">\n    Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n    <br>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>\n  </div>\n\n\n    <div *ngIf="HTMview == 1">\n      <ion-card class="flashCard">\n          <div class="bigNumber">1.</div>\n          <div class="bigTitle">Agents déclenchants</div>\n          <br>\n          <div class="algoText">\n         <ul>\n          <li>Halogénés : sévoflurane, desflurane, isoflurane, enflurane, halotane</li>\n          <li>Suxaméthonium</li>\n          </ul>\n        </div>\n      </ion-card>\n\n      <ion-card class="flashCard">\n        <div class="bigNumber">2.</div>\n        <div class="bigTitle">Signes évocateurs</div>\n        <br>\n        <div class="algoText">\n        <ul>\n          <li><b>Augmentation brutale de l\'EtCO2</b></li>\n          <li>Spasme des masséters, rigités des membres ou du tronc</li>\n          <li>Tachycardie, tachypnée inexpliquées, arythmie</li>\n          <li>Hyperthermie, sueur, marbrures</li>\n          <li>Urines rouges (myoglobinurie), augmentation des CPK en post-opératoire</li>\n          </ul> \n          </div>\n      </ion-card>\n\n      <ion-card class="flashCard">\n        <div class="bigNumber">3.</div>\n        <div class="bigTitle">Conduite à tenir</div>\n        <br>\n        <div class="algoText">\n        <ul class="dilutionDrogueInduction"> \n          <li>Arrêt halogénés, changement des filtres et tuyaux</li>\n          <li>Hyperventilation en FiO2 1</li>\n          <li>Contre indication absolue celocurine jusqu\'à preuve du contraire</li>\n          <li>Dantrolène <b>{{AdminDantroleneHTM}} mg IVL</b> (soit 2,5 mg/kg, renouvelable 4 fois max) à diluer dans de l\'<b>EPPI</b></li>\n        </ul> \n      </div>\n      </ion-card>\n  </div>\n\n  <ion-card *ngIf="HTMview == 2" class="algoPEC">\n    <ion-card-content>\n      <div  class="algoButtonContainer">\n        <button ion-button color="light" (click)="algoStart()" *ngIf="!encours">GO</button>\n        <button ion-button color="light" (click)="algoPause()" *ngIf="encours">Pause</button>\n\n      </div>\n      <div class="algoTitleContainer">\n        <br>\n          <h2>Timer : {{encours}}{{fin}}{{time}}</h2>\n        </div>\n\n          <hr>  \n \n\n          <div *ngFor="let item of AlgoHTM, let index = index">\n          <ion-card padding class="algoHTMcard" *ngIf="item.isShown || item.isChecked">\n              <div class="bigNumber">{{item.stepnumber}}.</div>   \n              <div class="bigTitle">{{item.action}}</div>\n              <div *ngIf="item.time" class="timeAlgo">{{item.time}}</div>\n\n\n              <div class="checkboxAlgo" *ngIf=" !item.isChecked">  \n              <ion-icon color="grisclair" style="zoom:0.8" *ngIf="!item.last" (click)="algoStep(index)" name="checkmark"></ion-icon>\n              <ion-icon color="grisclair" style="zoom:0.8" *ngIf="item.last" (click)="algoStep(index)" name="done-all"></ion-icon>\n              </div>\n\n              <div class="checkboxAlgo" *ngIf=" item.isChecked">  \n                <ion-icon style="zoom:0.8" *ngIf="!item.last" (click)="algoStep(index)"  name="checkmark"></ion-icon>\n                <ion-icon style="zoom:0.8" *ngIf="item.last" (click)="algoStep(index)" name="done-all"></ion-icon>\n                </div>\n\n            <ion-card-content class="algoText" *ngIf="item.text && item.isShown == true">\n              {{item.text}}\n            </ion-card-content>\n            <div class="arrowDown" *ngIf="!item.isChecked">\n            <ion-icon *ngIf="!item.last" name="arrow-down" style="zoom:2.0"></ion-icon></div>\n            <p *ngIf="item.last && item.isChecked" class="finAlgo">Algorithme terminé</p>\n          </ion-card>\n         \n\n        </div>\n\n\n      </ion-card-content>\n      </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\htm\htm.html"*/,
+            selector: 'page-htm',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\htm\htm.html"*/'<ion-header>\n  <!-- HEADER MENU  -->\n  <div class="header"> \n<br>\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\nHyperthermie maligne</div>\n      <br>\n\n      <ion-segment color="dark-turquoise" [(ngModel)]="HTMview">\n        <ion-segment-button value="1">Mémo</ion-segment-button>\n        <ion-segment-button value="2">Algorithme</ion-segment-button>\n      </ion-segment>\n\n      </ion-header>\n\n<ion-content>\n\n  <div padding class="patientHighlight">\n    Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n    <br>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>\n  </div>\n\n\n    <div *ngIf="HTMview == 1">\n      <ion-card class="flashCard">\n          <div class="bigNumber">1.</div>\n          <div class="bigTitle">Agents déclenchants</div>\n          <br>\n          <div class="algoText">\n         <ul>\n          <li>Halogénés : sévoflurane, desflurane, isoflurane, enflurane, halotane</li>\n          <li>Suxaméthonium</li>\n          </ul>\n        </div>\n      </ion-card>\n\n      <ion-card class="flashCard">\n        <div class="bigNumber">2.</div>\n        <div class="bigTitle">Signes évocateurs</div>\n        <br>\n        <div class="algoText">\n        <ul>\n          <li><b>Augmentation brutale de l\'EtCO2</b></li>\n          <li>Spasme des masséters, rigités des membres ou du tronc</li>\n          <li>Tachycardie, tachypnée inexpliquées, arythmie</li>\n          <li>Hyperthermie, sueur, marbrures</li>\n          <li>Urines rouges (myoglobinurie), augmentation des CPK en post-opératoire</li>\n          </ul> \n          </div>\n      </ion-card>\n\n      <ion-card class="flashCard">\n        <div class="bigNumber">3.</div>\n        <div class="bigTitle">Conduite à tenir</div>\n        <br>\n        <div class="algoText">\n        <ul class="dilutionDrogueInduction"> \n          <li>Arrêt halogénés, changement des filtres et tuyaux</li>\n          <li>Hyperventilation en FiO2 1</li>\n          <li>Contre indication absolue celocurine jusqu\'à preuve du contraire</li>\n          <li>Dantrolène <b>{{AdminDantroleneHTM}} mg IVL</b> (soit 2,5 mg/kg, renouvelable 4 fois max) à diluer dans de l\'<b>EPPI</b></li>\n        </ul> \n      </div>\n      </ion-card>\n  </div>\n\n  <ion-card *ngIf="HTMview == 2" class="algoPEC">\n    <ion-card-content>\n          <div *ngFor="let item of AlgoHTM, let index = index">\n          <ion-card padding class="algoHTMcard" *ngIf="item.isShown || item.isChecked">\n              <div class="bigNumber">{{item.stepnumber}}.</div>   \n              <div class="bigTitle">{{item.action}}</div>\n\n\n              <div class="checkboxAlgo" *ngIf=" !item.isChecked">  \n              <ion-icon color="grisclair" style="zoom:0.8" *ngIf="!item.last" (click)="algoStep(index)" name="checkmark"></ion-icon>\n              <ion-icon color="grisclair" style="zoom:0.8" *ngIf="item.last" (click)="algoStep(index)" name="done-all"></ion-icon>\n              </div>\n\n              <div class="checkboxAlgo" *ngIf=" item.isChecked">  \n                <ion-icon style="zoom:0.8" *ngIf="!item.last" (click)="algoStep(index)"  name="checkmark"></ion-icon>\n                <ion-icon style="zoom:0.8" *ngIf="item.last" (click)="algoStep(index)" name="done-all"></ion-icon>\n                </div>\n\n            <ion-card-content class="algoText" *ngIf="item.text && item.isShown == true">\n              {{item.text}}\n            </ion-card-content>\n            <div class="arrowDown" *ngIf="!item.isChecked">\n            <ion-icon *ngIf="!item.last" name="arrow-down" style="zoom:2.0"></ion-icon></div>\n          </ion-card>\n         \n\n        </div>\n\n\n      </ion-card-content>\n      </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\htm\htm.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], HtmPage);
@@ -8206,164 +8304,16 @@ var HtmPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 321:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CatecholaminesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the CatecholaminesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var CatecholaminesPage = /** @class */ (function () {
-    function CatecholaminesPage(navCtrl, navParams, storage, alertController) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.storage = storage;
-        this.alertController = alertController;
-        this.DixiemeDebitNADgammakgmin = 100;
-        this.CatecholaminesView = 1;
-    }
-    CatecholaminesPage.prototype.retourHome = function () {
-        this.navCtrl.pop();
-    };
-    ;
-    CatecholaminesPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad CatecholaminesPage');
-    };
-    CatecholaminesPage.prototype.ionViewWillEnter = function () {
-        var _this = this;
-        var promiseList = [];
-        promiseList.push(this.storage.get('AgeNum').then(function (Age) {
-            _this.AgeNum = Age;
-            _this.ageLecture = Math.round((_this.AgeNum / 12) * 10) / 10;
-            _this.storage.get('PoidsNum').then(function (Poids) {
-                _this.PoidsNum = Poids;
-                _this.storage.get('DureeJeune').then(function (dureejeune) {
-                    _this.DureeJeune = dureejeune;
-                    _this.storage.get('EstomacPlein').then(function (Estomac) {
-                        _this.EstomacPlein = Estomac;
-                        console.log('lestomac est plein ?', _this.EstomacPlein);
-                        if (_this.EstomacPlein == true) {
-                            _this.EstomacOuiNon = "plein";
-                        }
-                        else {
-                            _this.EstomacOuiNon = "vide";
-                        }
-                        ;
-                        _this.storage.get('Allergie').then(function (allergie) {
-                            _this.Allergie = allergie;
-                            _this.storage.get('sexeMF').then(function (sexe) {
-                                _this.sexeMF = sexe;
-                                if (!sexe) {
-                                    _this.sexeMF = "Fille";
-                                }
-                                ;
-                                _this.storage.get('Taille').then(function (Taille) {
-                                    _this.Taille = Taille;
-                                    _this.calculs();
-                                });
-                            });
-                        });
-                    });
-                });
-            });
-        }));
-    };
-    ;
-    CatecholaminesPage.prototype.calculs = function () {
-        /** NAD */
-        if (this.PoidsNum <= 10) {
-            this.ProtocoleNAD = "3 mg/kg dans 50 mL";
-            this.QuantiteNAD = Math.round(this.PoidsNum * 3 * 10) / 10;
-            this.VolumeNAD = Math.round(this.QuantiteNAD / 2 * 10) / 10;
-            this.AmpoulesNAD = Math.round(this.VolumeNAD / 4 * 10) / 10;
-            this.VolumeSerumPhyNAD = Math.round((50 - this.VolumeNAD) * 10) / 10;
-            this.DebitNADmlh = 1;
-            this.DebitNADgammakgmin = 1;
-            this.DebitNADmgh = Math.round((this.DebitNADgammakgmin * this.PoidsNum * 60 / 1000) * 10) / 10;
-            this.DixiemeDebitNADgammakgmin = 100;
-        }
-        else if (this.PoidsNum <= 30) {
-            this.ProtocoleNAD = "1,5 mg/kg dans 50 mL";
-            this.QuantiteNAD = Math.round(this.PoidsNum * 1.5 * 10) / 10;
-            this.VolumeNAD = Math.round(this.QuantiteNAD / 2 * 10) / 10;
-            this.AmpoulesNAD = Math.round(this.VolumeNAD / 4 * 10) / 10;
-            this.VolumeSerumPhyNAD = Math.round((50 - this.VolumeNAD) * 10) / 10;
-            this.DebitNADmlh = 2;
-            this.DebitNADgammakgmin = 1;
-            this.DebitNADmgh = Math.round((this.DebitNADgammakgmin * this.PoidsNum * 60 / 1000) * 10) / 10;
-            this.DixiemeDebitNADgammakgmin = 100;
-        }
-        else {
-            this.ProtocoleNAD = "0,6 mg/kg dans 50 mL";
-            this.QuantiteNAD = Math.round(this.PoidsNum * 0.6 * 10) / 10;
-            this.VolumeNAD = Math.round(this.QuantiteNAD / 2 * 10) / 10;
-            this.AmpoulesNAD = Math.round(this.VolumeNAD / 4 * 10) / 10;
-            this.VolumeSerumPhyNAD = Math.round((50 - this.VolumeNAD) * 10) / 10;
-            this.DebitNADmlh = 5;
-            this.DebitNADgammakgmin = 1;
-            this.DebitNADmgh = Math.round((this.DebitNADgammakgmin * this.PoidsNum * 60 / 1000) * 10) / 10;
-            this.DixiemeDebitNADgammakgmin = 100;
-        }
-        ;
-    };
-    ;
-    /**NAD PREPARATION */
-    CatecholaminesPage.prototype.VariationNAD = function () {
-        this.DebitNADgammakgmin = this.DixiemeDebitNADgammakgmin / 100;
-        this.DebitNADmgh = Math.round((this.DebitNADgammakgmin * this.PoidsNum * 60 / 1000) * 10) / 10;
-        if (this.ProtocoleNAD == "0,6 mg/kg dans 50 mL") {
-            this.DebitNADmlh = Math.round((this.DebitNADgammakgmin * 5) * 10) / 10;
-        }
-        else if (this.ProtocoleNAD == "1,5 mg/kg dans 50 mL") {
-            this.DebitNADmlh = Math.round((this.DebitNADgammakgmin * 2) * 10) / 10;
-        }
-        else if (this.ProtocoleNAD == "3 mg/kg dans 50 mL") {
-            this.DebitNADmlh = this.DebitNADgammakgmin;
-        }
-        ;
-    };
-    CatecholaminesPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-catecholamines',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\catecholamines\catecholamines.html"*/'<ion-header>\n  <!-- HEADER MENU  -->\n  <div class="header"> \n<br>\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\nCatécholamines</div>\n      <br>\n\n      <ion-segment color="turquoise-fonce" [(ngModel)]="CatecholaminesView">\n        <ion-segment-button value="1">Noradrénaline</ion-segment-button>\n      </ion-segment>\n\n      </ion-header>\n\n<ion-content>\n  <div padding class="patientHighlight">\n    Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n  </div>\n\n  <ion-card class="drogueContainer" *ngIf="CatecholaminesView == 1">\n    <ion-card-content>\n\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="dark">\n          <p class="posologieDrogueInduction">Protocole proposé : {{ProtocoleNAD}}</p>\n          <ion-chip color="primary"><ion-label>Noradrénaline : {{QuantiteNAD}}mg/50mL</ion-label></ion-chip>\n          <p class="dilutionDrogueInduction">Présentation : Noradrénaline Tartrate 8mg/4mL</p>\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label class="drogueInduction" color="dark">\n          Mélanger dans une seringue de 50 mL\n          <ul>\n            <li><ion-chip color="light"><ion-label>{{VolumeNAD}} mL de NAD</ion-label></ion-chip> (soit {{AmpoulesNAD}} ampoules)</li>\n            <li><ion-chip color="light"><ion-label>+ {{VolumeSerumPhyNAD}} mL de NaCl 0,9%</ion-label></ion-chip></li>\n          </ul>\n        </ion-label>\n      </ion-item>\n     \n      <ion-grid>\n        <ion-row>\n          <ion-col>\n            Debit\n          </ion-col>\n          <ion-col>\n            <ion-chip color="primary"><ion-label>{{DebitNADgammakgmin}} µg/kg/min </ion-label></ion-chip>\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col>\n            Vitesse\n          </ion-col>\n          <ion-col>\n            <ion-chip color="light"><ion-label>{{DebitNADmlh}} mL/h</ion-label></ion-chip>\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col>\n            Posologie\n          </ion-col>\n          <ion-col>\n            <ion-chip color="light"><ion-label>{{DebitNADmgh}} mg/h</ion-label></ion-chip>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n     \n\n        <ion-range color="turquoise-fonce" max="500" step="10" (ngModelChange)="VariationNAD()" [(ngModel)]="DixiemeDebitNADgammakgmin"> </ion-range>\n        <p padding class="comment">Utilisez le curseur pour faire varier la vitesse d\'administration (en mL/h).</p>\n\n \n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\catecholamines\catecholamines.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-    ], CatecholaminesPage);
-    return CatecholaminesPage;
-}());
-
-//# sourceMappingURL=catecholamines.js.map
-
-/***/ }),
-
 /***/ 322:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnaphylaxiePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__acr_acr__ = __webpack_require__(319);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__catecholamines_catecholamines__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__acr_acr__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__catecholamines_catecholamines__ = __webpack_require__(137);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8476,7 +8426,7 @@ var AnaphylaxiePage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AsthmePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -8603,10 +8553,9 @@ var AsthmePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-asthme',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\asthme\asthme.html"*/'<ion-header>\n  <!-- HEADER MENU  -->\n  <div class="header"> \n<br>\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\nAsthme</div>\n      <br>\n      <ion-segment color="dark-turquoise" [(ngModel)]="AsthmeView">\n        <ion-segment-button value="1">Posologies</ion-segment-button>\n      </ion-segment>\n</ion-header>\n\n<ion-content>\n  <div padding class="patientHighlight">\n    Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n    <br>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>\n  </div>\n\n\n<div *ngIf="AsthmeView ==1">\n\n  <ion-item>\n    <ion-label class="drogueInduction">\n      <p class="posologieDrogueInduction">Penser hydratation & potassium</p>\n       <ion-chip color="primary"><ion-label>NaCl 0,9% {{ApportBaseJour}} mL/j + KCl {{AdminKClAAGmg}} mg/j</ion-label></ion-chip>\n      <p class="dilutionDrogueInduction">Remplacer après 24h par du B26</p>\n    </ion-label>\n  </ion-item>\n   \n\n  <ion-item>\n    <ion-label>\n      <p class="posologieDrogueInduction">Salbutamol aérosol : 1 bouffée/10kg</p>\n      <ion-chip color="light"><ion-label>Salbutamol : {{AerosolSalbutamolAAG}} mg en aérosol</ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Présentation : SALBUTAMOL 2,5 mg/2,5 ml sol p inhal p nébulis</p>\n        <p class="comment">Renouvelable après 15 minutes</p>\n    </ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>\n      <p class="posologieDrogueInduction">Salbutamol IVSE : 0,5 µg/kg/min</p>\n      <ion-chip color="light"><ion-label>Salbutamol : {{SalbutamolIVAAG}} µg/min IVSE</ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Présentation : Salbutamol 5 mg/mL</p>\n        <p class="comment">Augmenter de 0,1 µg/kg/min toutes les 10 minutes</p>\n        <p class="comment">dilution minimale 1/2</p>\n    </ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>\n      <p class="posologieDrogueInduction">Posologie proposée : 2 mg/kg</p>\n      <ion-chip color="light"><ion-label>Methylprednisolone : {{AdminSolumedrolAAG}} mg en bolus</ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Présentation : Solumédrol® 20 mg/2mL</p>\n        <p class="comment">Puis entretien par {{IVSESolumedrolAAG}} mg/6h IVSE (pour 0,5 mg/kg/6h)</p>\n    </ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>\n      <p class="posologieDrogueInduction">Posologie proposée : 1/2 à 1 flacon</p>\n      <ion-chip color="light"><ion-label>Ipratropium : {{AerosolAtroventAAG}} mg en aérosol</ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Présentation : Atrovent® 0,5 mg/2mL sol p inhal p nébulis</p>\n    </ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>\n      <p class="posologieDrogueInduction">Posologie proposée : 0,2 mg/kg</p>\n      <ion-chip color="light"><ion-label>Terbutaline : {{AerosolBricanylAAG}} mg en aérosol</ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Présentation : Bricanyl® 5mg/2mL sol p inhal p nébulis</p>\n    </ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>\n      <p class="posologieDrogueInduction">Posologie proposée : 40 mg/kg sans dépasser 2g</p>\n      <ion-chip color="light"><ion-label>MgSO4 : {{MgSO4AAG}} mg IVL sur 20 minutes</ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Présentation : MgSO4 1,5g/10mL sol inj</p>\n        <p class="comment">A diluer dans du NaCl 0,9%</p>\n    </ion-label>\n  </ion-item>\n</div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\asthme\asthme.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], AsthmePage);
     return AsthmePage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=asthme.js.map
@@ -8618,7 +8567,7 @@ var AsthmePage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EpilepsiePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -8718,10 +8667,9 @@ var EpilepsiePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-epilepsie',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\epilepsie\epilepsie.html"*/'<ion-header>\n  <!-- HEADER MENU  -->\n  <div class="header"> \n<br>\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\nEpilepsie</div>\n      <br>\n\n      <ion-segment [(ngModel)]="EpilepsieView" color="dark-turquoise">\n        <ion-segment-button value="1">Posologies</ion-segment-button>\n      </ion-segment>\n\n      </ion-header>\n\n\n<ion-content>\n\n  <div padding class="patientHighlight">\n    Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n    <br>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>\n  </div>\n\n\n<div *ngIf = "EpilepsieView ==1">\n\n  <ion-item>\n    <ion-label>\n      <p class="posologieDrogueInduction">Posologie proposée : 20 µg/kg/prise</p>\n      <ion-chip color="light"><ion-label>Clonazépam : {{AdminRivotrilConvulsion}} µg IVD</ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Présentation : Rivotril® 1 mg/mL sol inj</p>\n        <p class="comment">Répéter une seconde fois si nécessaire</p>\n        <p class="comment">{{AdminRivotrilConvulsion}} mg/6h IVSE si nécessaire</p>\n    </ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>\n      <p class="posologieDrogueInduction">Posologie proposée : 15 mg/kg/j prise</p>\n      <ion-chip color="light"><ion-label>Phénobarbital : {{AdminGardenal}} mg IVL sur 20 minutes</ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Présentation : Gardénal® 40 mg/2mL sol inj</p>\n        <p class="comment">Sans dépasser 500 mg/administration</p>\n    </ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>\n      <p class="posologieDrogueInduction">Posologie proposée : 20 mg/kg/prise</p>\n      <ion-chip color="light"><ion-label>Phénytoïne : {{AdminDilantin}} mg IVL sur 20 minutes</ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Présentation : Dilantin® 250 µg/5mL sol inj</p>\n        <p class="comment">Sans dépasser 1500 mg/administration</p>\n    </ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>\n      <p class="posologieDrogueInduction">Posologie proposée : 0,25 mg/kg/prise</p>\n      <ion-chip color="light"><ion-label>Midazolam : {{AdminMidazolamConvulsion}} mg IVD</ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Présentation : Hypnovel® 1 mg/mL sol inj</p>\n    </ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>\n      <p class="posologieDrogueInduction">Posologie proposée : 30 mg/kg/12h</p>\n      <ion-chip color="light"><ion-label>Lévétiracetam : {{AdminKeppra}} mg IVL sur 5 min ou PO</ion-label></ion-chip>\n        <p class="dilutionDrogueInduction">Présentation :Keppra® 100 mg/mL sol inj</p>\n        <p class="comment">Sans dépasser 2 g/j</p>\n    </ion-label>\n  </ion-item>\n\n      </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\epilepsie\epilepsie.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], EpilepsiePage);
     return EpilepsiePage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=epilepsie.js.map
@@ -8733,7 +8681,7 @@ var EpilepsiePage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HtaPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -8829,10 +8777,9 @@ var HtaPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-hta',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\hta\hta.html"*/'<ion-header>\n  <!-- HEADER MENU  -->\n  <div class="header"> \n<br>\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\nHypertension artérielle</div>\n      <br>\n\n      <ion-segment color="dark-turquoise" [(ngModel)]="HTAView">\n        <ion-segment-button value="1">Posologies</ion-segment-button>\n      </ion-segment>\n\n      </ion-header>\n\n<ion-content>\n  <div padding class="patientHighlight">\n    Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n    <br>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>\n  </div>\n\n\n\n<div *ngIf="HTAView == 1">\n\n\n<ion-item>\n  <ion-label>\n    <p class="posologieDrogueInduction">Posologie proposée : 60 µg/kg/h</p>\n    <ion-chip color="light"><ion-label>Nicardipine : {{LoxenIVSE}} µg/h IVSE</ion-label></ion-chip>\n      <p class="dilutionDrogueInduction">Présentation : Loxen® 1 mg/mL sol inj</p>\n      <p class="comment">Possibilité de doubler la dose si insuffisant</p>\n  </ion-label>\n</ion-item>\n\n<ion-item>\n  <ion-label>\n    <p class="posologieDrogueInduction">Posologie proposée : 2 mg/kg/j en deux prises</p>\n    <ion-chip color="light"><ion-label>Acebutolol : {{SectralPO}} mg/j PO</ion-label></ion-chip>\n      <p class="dilutionDrogueInduction">Présentation : Sectral® 200 mg cp</p>\n      <p class="comment">A répartir sur 2 prises PO</p>\n  </ion-label>\n</ion-item>\n\n<ion-item>\n  <ion-label>\n    <p class="posologieDrogueInduction">Posologie proposée : 0,3 mg/kg/prise</p>\n    <ion-chip color="light"><ion-label>Labétolol : {{TrandateBolus}} mg IVL</ion-label></ion-chip>\n      <p class="dilutionDrogueInduction">Présentation : Trandate® 5 mg/mL sol inj</p>\n      <p class="comment">En IVSE : {{TrandateIVSE}} mg/j (pour 2 mg/kg/j)</p>\n  </ion-label>\n</ion-item>\n\n<ion-item>\n  <ion-label>\n    <p class="posologieDrogueInduction">Posologie proposée : 50 µg/kg/j en deux prises</p>\n    <ion-chip color="light"><ion-label>Enalapril : {{AdminRenitec}} µg/j PO</ion-label></ion-chip>\n      <p class="dilutionDrogueInduction">Présentation : Renitec® 5 mg cp</p>\n      <p class="comment">Sans dépasser 5 mg/j</p>\n  </ion-label>\n</ion-item>\n\n<ion-item>\n  <ion-label>\n    <p class="posologieDrogueInduction">Posologie proposée : 1 mg/kg/prise</p>\n    <ion-chip color="light"><ion-label>Furosémide : {{AdminLasilix}} mg PO ou IV</ion-label></ion-chip>\n      <p class="dilutionDrogueInduction">Présentation : Lasilix® 10 mg/mL sol inj</p>\n      <p class="comment">AMM : 4 mg/kg/j maximum, soit 1 prise/6h maximum</p>\n  </ion-label>\n</ion-item>\n\n<ion-item>\n  <ion-label>\n    <p class="posologieDrogueInduction">Posologie proposée : 10 µg/kg/h</p>\n    <ion-chip color="light"><ion-label>Bumétanide : {{AdminBurinexIVSE}} mg/h IVSE</ion-label></ion-chip>\n      <p class="dilutionDrogueInduction">Présentation : Burinex® 500 µg/mL sol inj</p>\n      <p class="comment">Possibilité de doubler la dose si insuffisant</p>\n  </ion-label>\n</ion-item>\n\n<ion-item>\n  <ion-label>\n    <p class="posologieDrogueInduction">Posologie proposée : 1 à 5 mg/kg/j</p>\n    <ion-chip color="light"><ion-label>Spironolactone : {{AdminAldactoneMin}} - {{AdminAldactoneMax}} mg/j PO</ion-label></ion-chip>\n      <p class="dilutionDrogueInduction">Présentation : Aldactone® 25 mg cp</p>\n  </ion-label>\n</ion-item>\n</div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\hta\hta.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], HtaPage);
     return HtaPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=hta.js.map
@@ -8844,7 +8791,7 @@ var HtaPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IntoxicationPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -8935,10 +8882,9 @@ var IntoxicationPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-intoxication',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\intoxication\intoxication.html"*/'<ion-header>\n  <!-- HEADER MENU  -->\n  <div class="header"> \n<br>\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\nIntoxication & surdosage</div>\n      <br>\n\n\n      <ion-segment color="dark-turquoise" [(ngModel)]="IntoxicationView">\n        <ion-segment-button value="1">Posologies</ion-segment-button>\n      </ion-segment>\n\n      </ion-header>\n\n<ion-content>\n  <div padding class="patientHighlight">\n    Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n    <br>Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>\n  </div>\n\n<div *ngIf = "IntoxicationView == 1">\n\n    <ion-card padding class="drogueCard">\n      Intoxication aux anesthésiques locaux\n\n      <ion-item>\n        <ion-label>\n          <p class="posologieDrogueInduction">Posologie proposée : 15 µg/kg</p>\n          <ion-chip color="light"><ion-label>Clonazépam : {{PosoRivotrilIAL}} µg IVD</ion-label></ion-chip>\n            <p class="dilutionDrogueInduction">Présentation : Rivotril® 1 mg/mL sol inj</p>\n        </ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>\n          <p class="posologieDrogueInduction">Posologie proposée : 3mL/kg</p>\n          <ion-chip color="light"><ion-label>Intralipides : {{PosoIntralipidesIAL}} mL IVL</ion-label></ion-chip>\n            <p class="dilutionDrogueInduction">Présentation : Intralipides 20% sol inj</p>\n            <p class="comment">Renouvelable</p>\n        </ion-label>\n      </ion-item>\n\n    </ion-card>\n\n\n    <ion-card padding class="drogueCard">\n      Intoxication aux opiacés\n      <ion-item>\n        <ion-label>\n          <p class="posologieDrogueInduction">Posologie proposée : 10 µg/kg dans 10 mL</p>\n          <ion-chip color="light"><ion-label>Naloxone : {{AdminNarcan}} mg IVL</ion-label></ion-chip>\n            <p class="dilutionDrogueInduction">Présentation : Narcan® 0,4mg/mL sol inj</p>\n            <p class="comment">Injecter 1 mL/30 secondes jusqu\'à efficacité</p>\n        </ion-label>\n      </ion-item>\n    </ion-card>\n\n    <ion-card padding class="drogueCard">\n      Intoxication aux benzodiazépines\n      <ion-item>\n        <ion-label>\n          <p class="posologieDrogueInduction">Posologie proposée : 10 µg/kg sur 10 minutes</p>\n          <ion-chip color="light"><ion-label>Flumazénil : {{AdminAnexate}} mg IVL</ion-label></ion-chip>\n            <p class="dilutionDrogueInduction">Présentation : Anexate® 0,1mg/mL sol inj</p>\n            <p class="comment">Puis entretien 10 µg/kg/h IVSE</p>\n        </ion-label>\n      </ion-item>\n    </ion-card>\n\n\n    <ion-card padding class="drogueCard">\n      Intoxication au paracétamol\n      <ion-item>\n        <ion-label>\n          <ion-chip color="light"><ion-label>N-acetyl-cystéine selon protocole</ion-label></ion-chip>\n            <p class="dilutionDrogueInduction">Présentation : Hidonac® 5g/25mL sol inj</p>\n            <p class="comment">1. 150 mg/kg/15min = {{AdminNAC1}} mg en 15 minutes</p>\n            <p class="comment">2. 50 mg/kg/4h = {{AdminNAC2}} mg en 4 heures</p>\n            <p class="comment">3. 100 mg/kg/20h = {{AdminNAC3}} mg en 20 heures</p>\n            <p class="comment">4. 150 mg/kg/j = {{AdminNAC4}} par jour</p>\n        </ion-label>\n      </ion-item>\n    </ion-card>\n</div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\Urgences\intoxication\intoxication.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], IntoxicationPage);
     return IntoxicationPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=intoxication.js.map
@@ -8950,7 +8896,7 @@ var IntoxicationPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MetaboliquePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -9119,10 +9065,10 @@ var MetaboliquePage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CourbesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__(824);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__(833);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_chart_js__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9695,7 +9641,7 @@ var CourbesPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TutorialPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9727,7 +9673,7 @@ var TutorialPage = /** @class */ (function () {
     };
     TutorialPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tutorial',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\tutorial\tutorial.html"*/'<ion-content padding>\n\n  <ion-slides class="tutorialSlides" pager="true">\n    <ion-slide>\n      <h1>Bienvenue sur QuadruPed !</h1>\n\n      <p padding>Pour utiliser l\'application, commencez par saisir un âge et un poids pour votre patient en appuyant sur les boutons dédiés !</p>\n\n      <img src="/assets/imgs/tutorial_1.png">\n\n      <p padding>L\'application vous proposera ensuite des aides au calcul et des suggestions de posologie pour l\'anesthésie pédiatrique.</p>\n\n    </ion-slide>\n\n    <ion-slide>\n\n      <p padding>Accédez ensuite aux modules ainsi débloqués en appuyant sur le bouton correspondant à ce que vous recherchez !</p>\n\n    <img src="/assets/imgs/tutorial_2.png">\n\n    <p padding>Glissez le menu vers la gauche pour faire apparaître les items d\'urgence et de réanimation. Renseignez aussi une taille pour accéder aux courbes de croissance de l\'enfant <ion-icon name="trending-up"></ion-icon>.</p>\n\n    </ion-slide>\n\n    <ion-slide>\n      <p padding>Utilisez le menu en bas de page pour retrouver d\'autres aides-mémoires et coups de pouce  <ion-icon name="thumbs-up"></ion-icon>.</p>\n\n      <img src="/assets/imgs/tutorial_3.png">\n  \n      <ul class="tutorialText">\n        <li><ion-icon name="search"></ion-icon> : rechercher des médicaments par nom ou par indication, </li>\n        <li><ion-icon name="list-box"></ion-icon> : protocoles de chirurgie, scores et aides mémoires sur les dispositifs utilisés en anesthésie, </li>\n        <li><ion-icon name="school"></ion-icon> : recommandations indispensables pour l\'anesthésie pédiatrique ! </li>\n      </ul>\n\n      <button ion-button color="dark-turquoise" small end (click)="dismissTutorial()">J\'ai compris !</button>\n\n\n    </ion-slide>\n\n\n\n  </ion-slides> \n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\tutorial\tutorial.html"*/,
+            selector: 'page-tutorial',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\tutorial\tutorial.html"*/'<ion-content padding>\n\n  <ion-slides class="tutorialSlides" pager="true">\n    <ion-slide>\n      <h1>Bienvenue sur QuadruPed !</h1>\n\n      <p padding>Pour utiliser l\'application, commencez par saisir un âge et un poids pour votre patient en appuyant sur les boutons dédiés !</p>\n\n      <img src="/assets/imgs/tutorial_1.png">\n\n    </ion-slide>\n\n    <ion-slide>\n\n      <p padding>Accédez ensuite aux modules ainsi débloqués en appuyant sur le bouton correspondant à ce que vous recherchez !</p>\n\n    <img class="tutorialImg" src="/assets/imgs/tutorial_2.png">\n\n    <p padding>Glissez le menu vers la gauche pour faire apparaître les items d\'urgence et de réanimation. Renseignez aussi une taille pour accéder aux courbes de croissance de l\'enfant <ion-icon name="trending-up"></ion-icon>.</p>\n\n    </ion-slide>\n\n    <ion-slide>\n      <p padding>Utilisez le menu en bas de page pour retrouver d\'autres aides-mémoires et coups de pouce  <ion-icon name="thumbs-up"></ion-icon>.</p>\n\n      <img class="tutorialImg"   src="/assets/imgs/tutorial_3.png">\n  \n      <ul class="tutorialText">\n        <li><ion-icon name="compass"></ion-icon> : protocoles de chirurgie, scores et aides mémoires sur les dispositifs utilisés en anesthésie, </li>\n        <li><ion-icon name="search"></ion-icon> : rechercher des médicaments par nom ou par indication, </li>\n        <li><ion-icon name="school"></ion-icon> : recommandations indispensables pour l\'anesthésie pédiatrique ! </li>\n      </ul>\n\n      <button ion-button color="dark-turquoise" small end (click)="dismissTutorial()">J\'ai compris !</button>\n\n\n    </ion-slide>\n\n\n\n  </ion-slides> \n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\tutorial\tutorial.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], TutorialPage);
@@ -9743,7 +9689,7 @@ var TutorialPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9781,7 +9727,7 @@ var InfoPage = /** @class */ (function () {
     ;
     InfoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-info',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\main_pages\info\info.html"*/'<ion-header> <br> \n\n  <div padding class="credits">\n    <b>\n    Merci d\'utiliser QuadruPed ! \n  <br>\n  Application gratuite développée avec <ion-icon zoom="0.6" color="danger" name="heart"></ion-icon> par l\'équipe d\'anesthésie de l\'hôpital Robert Debré.</b>\n  <br><br>\n  <ion-icon zoom="0.5" color="primary" name="mail"></ion-icon> : contact@quadruped.app\n  <br> \n  </div>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div class="CGU">\n  <p class="CGUtitle">CONDITIONS GENERALES D\'UTILISATION (CGU) <br>DE L\'APPLICATION</p>\n  <hr> <br>\n  <b>PREAMBULE</b>\n  <br><br>\n\n  L’application QUADRUPED, créée et développée par l\'équipe d\'anesthésie de l\'hôpital Robert Debré, ci-après « l’Editeur », a pour objet de promouvoir la qualité et la sécurité des soins en partageant des protocoles de prise en charge, des suggestions de posologies, des aides au calcul de dose et au calcul de scores en anesthésie pédiatrique.\n  <br><br>L’utilisateur reconnaît avoir pris connaissance des présentes Conditions Générales et s’engage à les respecter.\n  <br><br>\n  <b>ARTICLE 1 : DEFINITION</b>\n  <br><br> « Utilisateur » désigne toute personne physique ayant téléchargé l’Application, tout utilisateur de l’application.\n  <br><br> « Contenu » désigne sans que cette liste soit limitative, la structure de l’Application, le contenu éditorial, les dessins, les illustrations, les images, les photographies, les chartes graphiques, les marques, les logos, les sigles, les dénominations sociales, les œuvres audiovisuelles, les œuvres multimédia, les contenus visuels, les contenus audio  et  sonores,  ainsi  que  tout  autre  contenu  présent  au  sein  de  l’Application  et/ou  tout  autre  élément composant l’Application.\n  <br><br> « Services » désignent les différentes fonctionnalités et services proposées par l’Application.\n \n  <br><br>\n   <b>ARTICLE 2. OBJET DES CGU ET CHAMP D’APPLICATION</b>\n   <br><br>\n   Les présentes conditions générales d’utilisation (ci-après dénommées « CGU ») ont pour objet de déterminer les règles d’utilisation de l’application mobile « QUADRUPED» (ci-après dénommée l’« Application ») développée et éditée par l\'équipe d\'anesthésie de l\'hôpital Robert Debré, ainsi que les droits et obligations des parties.\n   <br><br>Les CGU sont applicables à tout Utilisateur de l’Application et des Services.\n  \n  <br><br>\n  <b>ARTICLE 3 : DROIT DE L’EDITEUR SUR L’APPLICATION ET SON CONTENU</b>\n  <br><br>\n  L’Editeur est le seul titulaire des droits portant sur le Contenu et l’ensemble des éléments de l’application. \n  <br><br> Toute utilisation du Contenu ou des éléments constituant l’application est prohibée et constitutive de contrefaçon.\n  <br><br>L’Application pourra faire l’objet de mises à jour à tout moment et sans préavis par l’Editeur.\n  <br><br> Les interventions de maintenance pourront être effectuées sans que les Utilisateurs aient été préalablement avertis. L’Editeur n’est tenu à aucune continuité dans les services proposés.\n  \n  <br><br>\n  <b>ARTICLE 4 : DROIT D’USAGE A TITRE GRATUIT</b>\n  <br><br>\n  L’éditeur concède à l’Utilisateur un droit d’usage personnel de l’Application à  titre  gratuit,  non  exclusif,  non  cessible,  non  transmissible  à  un  tiers et  révocable à tout moment.\n  <br><br>Ce droit d’usage ne peut faire l’objet d’aucune transaction commerciale.\n  <br><br>Il est strictement interdit à l’Utilisateur :\n  <br>-  d’accéder  et/ou  d’utiliser  les  codes  source  de  l’Application  et/ou  des  composants  logiciels  de l’Application\n  <br>-  de reproduire, représenter, adapter et/ou exploiter l’Application et/ou ses composants logiciels,  ainsi que tout ou partie du Contenu.\n  <br><br>L\'Utilisateur s\'engage expressément à ce que son usage de  l\'Application ne porte en aucun cas atteinte aux droits de l’Editeur.\n  <br><br>L’Utilisateur s’engage expressément :\n  <br>- à télécharger l’Application sur son équipement pour un usage personnel sans but lucratif, \n  <br>- à ne pas reproduire de façon permanente ou provisoire l’Application, le Contenu et/ou les Services, en tout ou partie, par quelque moyen que ce soit et quelle qu’en soit la forme ;\n  <br>- à  ne  procéder à  aucune  adaptation, modification, traduction, transcription,  ou toutes autres actions dites de « rétro-ingénierie » de tout ou partie de l’Application, du Contenu et/ou des Services ;\n  <br>- à ne pas exporter l’Application,\n  <br>- à ne pas fusionner tout ou partie de l’Application avec d\'autres programmes informatiques ;\n  <br>- à  respecter  les  droits  de  propriété  intellectuelle  de  l’Editeur  sur  l’Application,  le Contenu et les Services ; \n  <br>- à ne pas perturber le bon fonctionnement de l’Application quel que ce soit le moyen utilisé, \n  <br>- à  ne  pas  mettre  en  place  de  systèmes  pouvant  pirater  l’Application  et/ou  son  Contenu  et/ou  les Services, en tout ou partie, en violation des présentes CGU ;\n  <br>- à  informer  immédiatement  l’Editeur  d\'un  acte  de  piratage  ou  de  toute  utilisation illicite ou non contractuelle de l’Application et/ou du Contenu  et/ou des Services ;\n  <br>- à ne pas exploiter  l’Application, le Contenu et/ou les Services à d’autres fins que celles prévues aux présentes CGU, telles que notamment la vente ou la location. \n  <br><br>L’Application  est  proposée  gratuitement  aux  Utilisateurs. \n  <br><br>L’éditeur n’est pas responsables des éventuels coûts  d’abonnement  auprès  de  l’opérateur  de téléphonie  mobile,  des coûts  de  connexion  et  d’accès  au  réseau  sécurisé  Internet  et  des  surcoûts  éventuel facturés pour le chargement des données.\n  <br><br>Plusieurs services sont  proposés  à  l’Utilisateur.  \n  <br><br>Ces  services  peuvent être modifiés  à tout moment par  l’éditeur sans que sa responsabilité civile ou pénale puisse être engagée à ce titre.\n  \n  <br><br>\n  <b>ARTICLE 5 : TRAITEMENT DES DONNEES PERSONNELLES</b>\n  <br><br>\n  L’Editeur ne procède à aucun traitement de données personnelles de l’Utilisateur.\n  <br><br>L’utilisation de l’application ne requiert pas la création d’un compte. L’Editeur n’a accès à aucune donnée personne de l’Utilisateur. \n  <br><br>Il est rappelé que conformément à l’article 4 du Règlement 2016/679 du 27 avril 2015, constitue une donnée personnelle toute information se rapportant à une personne physique identifiée ou identifiable. \n  <br><br>Aucune donnée traitée par l’application ne permet d’identifier une personne physique. \n  <br><br>Les données traitées par l’application sont relatives à l’âge, le poids et la taille et traitées entièrement anonymement.\n  <br><br>L’utilisateur s’engage à ne traiter aucune personnelle identifiant ou de nature à identifier une personne physique. \n  \n  <br><br>\n  <b>ARTICLE 6. RESPONSABILITE DE L’EDITEUR ET LIMITATION DE GARANTIE</b>\n  <br><br>\n  L’accès et l’utilisation de l\'Application se font aux risques et périls de l\'Utilisateur.\n  <br><br>La présente application ne fait que proposer des méthodes et calcul en fonction d’éléments introduits par l’Utilisateur. \n  <br><br>Il ne s’agit que d’un support à la décision, sans aucune dimension ou vocation médicale.\n  <br><br>L’Utilisateur reste seul responsable de la décision finale qu’il prend en fonction de nombreux éléments extrinsèques que l’application ne peut traiter. \n  <br><br>En conséquence, l’Utilisateur renonce à toute mise en œuvre de la responsabilité de l’Editeur à cet égard.\n  <br><br>L’Application est fournie « en l’état » sans garantie quelle qu’elle soit.\n  <br><br>L’Editeur ne garantit nullement que l’application sera accessible à tout moment ou sans erreur et/ou exempt de vices.\n  <br><br>Il appartient à  tout  Utilisateur  de  prendre  toutes  les  mesures  appropriées  de  façon  à  protéger  ses  propres données et/ ou logiciels stockés sur ses équipements informatiques et téléphoniques contre toute atteinte.\n  <br><br>L\'éventualité d\'une indisponibilité temporaire ou définitive de l’application ne peut en aucun cas donner lieu à une demande de dommages et intérêts ou toute autre forme de réparation.\n  <br><br>L’Editeur ne peut être tenu pour responsable :\n  <br> - en cas de défaut, de perte, de retard ou d’erreur de transmission de données qui sont indépendants de sa volonté ;\n  <br> - si des données ne lui parvenaient pas, pour quelque raison que ce soit, ou si les données qu’elle reçoit étaient illisibles ou impossibles à traiter ;\n  <br> - au cas où l’Utilisateur ne parvenait à accéder ou à utiliser l’Application et/ou les Services pour quelque raison que ce soit ;\n  <br> - si, pour quelque raison que ce soit, la connexion devait être interrompue.\n  <br><br>L’Editeur  ne saurait  en  aucun  cas  être  tenu  responsable  de  tout  dommage,  de  quelque  nature  que  ce  soit,  causé  aux Utilisateurs, à leurs terminaux, à leurs équipements informatiques et téléphoniques et aux données qui y sont stockées,  ni  des  conséquences  pouvant  en  découler  sur  leur  activité  personnelle,  professionnelle  ou commerciale (notamment, sans que cela ne soit exhaustif manque à gagner, perte d’exploitation, perte de chiffre d’affaires, atteinte à l’image, perte de données).\n  \n  <br><br>\n  <b>ARTICLE 7. MODIFICATION DES CONDITIONS GENERALES D\'UTILISATION</b>\n  <br><br>\n  Les CGU applicables  sont  celles  en  vigueur  à  la  date  de  la  connexion  et  de  l’utilisation  de  l’Application  par l’Utilisateur.\n  <br><br>L’Editeur se réserve le droit de modifier, à tout moment, tout ou partie, des dispositions des CGU sans préavis ni information préalable des Utilisateurs afin notamment de les adapter aux évolutions des Services, aux évolutions techniques, légales ou jurisprudentielles ou lors de la mise en place de nouvelles prestations.  \n  <br><br>Les modifications éventuellement apportées par l’Editeur aux CGU seront portées à la connaissance des Utilisateurs par leur simple mise en ligne.\n  <br><br>Elles sont réputées acceptées sans réserve par tout Utilisateur qui accède à l’Application postérieurement à ladite mise en ligne. \n  <br><br>L’Editeur invite tout Utilisateur à consulter régulièrement les CGU.\n  <br><br>Tout nouveau Service intégrant de nouvelles techniques ou nouvelles caractéristiques améliorant la qualité des Services existants seront aussi soumis aux présentes CGU, sauf disposition expresse contraire.\n  \n  <br><br>\n  <b>ARTICLE 8. DUREE</b>\n  <br><br>\n  Les présentes entrent en vigueur à compter du téléchargement de l’application par l’Utilisateur pour une durée indéterminée.\n  <br>\n  <br>\n  <b>ARTICLE 9. CONSENTEMENT</b> \n  <br><br>\n  L’utilisateur reconnaît être parfaitement informé du fait que son accord concernant le contenu des présentes Conditions Générales ne nécessite pas la signature manuscrite de ce document, mais résulte de sa seule consultation de l’Application. \n  \n  <br><br>\n  <b>ARTICLE 10. CONTACT</b>\n  <br><br>\n  Toute question relative à l’Application et/ou aux Services doit être adressée à la boite mail suivante : contact@quadruped.app. \n  \n  <br><br>\n  <b>ARTICLE 11. LOI APPLICABLE </b>\n  <br><br>\n  Les présentes CGU sont soumises aux lois françaises.\n\n</div>\n  </ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\main_pages\info\info.html"*/,
+            selector: 'page-info',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\main_pages\info\info.html"*/'<ion-header> <br> \n\n  <div padding class="credits">\n    <b>\n    Merci d\'utiliser QuadruPed ! \n  <br>\n  Application gratuite développée avec <ion-icon zoom="0.6" color="danger" name="heart"></ion-icon> par l\'équipe d\'anesthésie de l\'hôpital Robert Debré.</b>\n  <br><br>\n  <ion-icon zoom="0.5" color="primary" name="mail"></ion-icon> : contact@quadruped.app\n  </div>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div class="CGU">\n  <p class="CGUtitle">CONDITIONS GENERALES D\'UTILISATION (CGU) <br>DE L\'APPLICATION</p>\n  <hr> <br>\n  <b>PREAMBULE</b>\n  <br><br>\n\n  L’application QUADRUPED, créée et développée par l\'équipe d\'anesthésie de l\'hôpital Robert Debré, ci-après « l’Editeur », a pour objet de promouvoir la qualité et la sécurité des soins en partageant des protocoles de prise en charge, des suggestions de posologies, des aides au calcul de dose et au calcul de scores en anesthésie pédiatrique.\n  <br><br>L’utilisateur reconnaît avoir pris connaissance des présentes Conditions Générales et s’engage à les respecter.\n  <br><br>\n  <b>ARTICLE 1 : DEFINITION</b>\n  <br><br> « Utilisateur » désigne toute personne physique ayant téléchargé l’Application, tout utilisateur de l’application.\n  <br><br> « Contenu » désigne sans que cette liste soit limitative, la structure de l’Application, le contenu éditorial, les dessins, les illustrations, les images, les photographies, les chartes graphiques, les marques, les logos, les sigles, les dénominations sociales, les œuvres audiovisuelles, les œuvres multimédia, les contenus visuels, les contenus audio  et  sonores,  ainsi  que  tout  autre  contenu  présent  au  sein  de  l’Application  et/ou  tout  autre  élément composant l’Application.\n  <br><br> « Services » désignent les différentes fonctionnalités et services proposées par l’Application.\n \n  <br><br>\n   <b>ARTICLE 2. OBJET DES CGU ET CHAMP D’APPLICATION</b>\n   <br><br>\n   Les présentes conditions générales d’utilisation (ci-après dénommées « CGU ») ont pour objet de déterminer les règles d’utilisation de l’application mobile « QUADRUPED» (ci-après dénommée l’« Application ») développée et éditée par l\'équipe d\'anesthésie de l\'hôpital Robert Debré, ainsi que les droits et obligations des parties.\n   <br><br>Les CGU sont applicables à tout Utilisateur de l’Application et des Services.\n  \n  <br><br>\n  <b>ARTICLE 3 : DROIT DE L’EDITEUR SUR L’APPLICATION ET SON CONTENU</b>\n  <br><br>\n  L’Editeur est le seul titulaire des droits portant sur le Contenu et l’ensemble des éléments de l’application. \n  <br><br> Toute utilisation du Contenu ou des éléments constituant l’application est prohibée et constitutive de contrefaçon.\n  <br><br>L’Application pourra faire l’objet de mises à jour à tout moment et sans préavis par l’Editeur.\n  <br><br> Les interventions de maintenance pourront être effectuées sans que les Utilisateurs aient été préalablement avertis. L’Editeur n’est tenu à aucune continuité dans les services proposés.\n  \n  <br><br>\n  <b>ARTICLE 4 : DROIT D’USAGE A TITRE GRATUIT</b>\n  <br><br>\n  L’éditeur concède à l’Utilisateur un droit d’usage personnel de l’Application à  titre  gratuit,  non  exclusif,  non  cessible,  non  transmissible  à  un  tiers et  révocable à tout moment.\n  <br><br>Ce droit d’usage ne peut faire l’objet d’aucune transaction commerciale.\n  <br><br>Il est strictement interdit à l’Utilisateur :\n  <br>-  d’accéder  et/ou  d’utiliser  les  codes  source  de  l’Application  et/ou  des  composants  logiciels  de l’Application\n  <br>-  de reproduire, représenter, adapter et/ou exploiter l’Application et/ou ses composants logiciels,  ainsi que tout ou partie du Contenu.\n  <br><br>L\'Utilisateur s\'engage expressément à ce que son usage de  l\'Application ne porte en aucun cas atteinte aux droits de l’Editeur.\n  <br><br>L’Utilisateur s’engage expressément :\n  <br>- à télécharger l’Application sur son équipement pour un usage personnel sans but lucratif, \n  <br>- à ne pas reproduire de façon permanente ou provisoire l’Application, le Contenu et/ou les Services, en tout ou partie, par quelque moyen que ce soit et quelle qu’en soit la forme ;\n  <br>- à  ne  procéder à  aucune  adaptation, modification, traduction, transcription,  ou toutes autres actions dites de « rétro-ingénierie » de tout ou partie de l’Application, du Contenu et/ou des Services ;\n  <br>- à ne pas exporter l’Application,\n  <br>- à ne pas fusionner tout ou partie de l’Application avec d\'autres programmes informatiques ;\n  <br>- à  respecter  les  droits  de  propriété  intellectuelle  de  l’Editeur  sur  l’Application,  le Contenu et les Services ; \n  <br>- à ne pas perturber le bon fonctionnement de l’Application quel que ce soit le moyen utilisé, \n  <br>- à  ne  pas  mettre  en  place  de  systèmes  pouvant  pirater  l’Application  et/ou  son  Contenu  et/ou  les Services, en tout ou partie, en violation des présentes CGU ;\n  <br>- à  informer  immédiatement  l’Editeur  d\'un  acte  de  piratage  ou  de  toute  utilisation illicite ou non contractuelle de l’Application et/ou du Contenu  et/ou des Services ;\n  <br>- à ne pas exploiter  l’Application, le Contenu et/ou les Services à d’autres fins que celles prévues aux présentes CGU, telles que notamment la vente ou la location. \n  <br><br>L’Application  est  proposée  gratuitement  aux  Utilisateurs. \n  <br><br>L’éditeur n’est pas responsables des éventuels coûts  d’abonnement  auprès  de  l’opérateur  de téléphonie  mobile,  des coûts  de  connexion  et  d’accès  au  réseau  sécurisé  Internet  et  des  surcoûts  éventuel facturés pour le chargement des données.\n  <br><br>Plusieurs services sont  proposés  à  l’Utilisateur.  \n  <br><br>Ces  services  peuvent être modifiés  à tout moment par  l’éditeur sans que sa responsabilité civile ou pénale puisse être engagée à ce titre.\n  \n  <br><br>\n  <b>ARTICLE 5 : TRAITEMENT DES DONNEES PERSONNELLES</b>\n  <br><br>\n  L’Editeur ne procède à aucun traitement de données personnelles de l’Utilisateur.\n  <br><br>L’utilisation de l’application ne requiert pas la création d’un compte. L’Editeur n’a accès à aucune donnée personne de l’Utilisateur. \n  <br><br>Il est rappelé que conformément à l’article 4 du Règlement 2016/679 du 27 avril 2015, constitue une donnée personnelle toute information se rapportant à une personne physique identifiée ou identifiable. \n  <br><br>Aucune donnée traitée par l’application ne permet d’identifier une personne physique. \n  <br><br>Les données traitées par l’application sont relatives à l’âge, le poids et la taille et traitées entièrement anonymement.\n  <br><br>L’utilisateur s’engage à ne traiter aucune personnelle identifiant ou de nature à identifier une personne physique. \n  \n  <br><br>\n  <b>ARTICLE 6. RESPONSABILITE DE L’EDITEUR ET LIMITATION DE GARANTIE</b>\n  <br><br>\n  L’accès et l’utilisation de l\'Application se font aux risques et périls de l\'Utilisateur.\n  <br><br>La présente application ne fait que proposer des méthodes et calcul en fonction d’éléments introduits par l’Utilisateur. \n  <br><br>Il ne s’agit que d’un support à la décision, sans aucune dimension ou vocation médicale.\n  <br><br>L’Utilisateur reste seul responsable de la décision finale qu’il prend en fonction de nombreux éléments extrinsèques que l’application ne peut traiter. \n  <br><br>En conséquence, l’Utilisateur renonce à toute mise en œuvre de la responsabilité de l’Editeur à cet égard.\n  <br><br>L’Application est fournie « en l’état » sans garantie quelle qu’elle soit.\n  <br><br>L’Editeur ne garantit nullement que l’application sera accessible à tout moment ou sans erreur et/ou exempt de vices.\n  <br><br>Il appartient à  tout  Utilisateur  de  prendre  toutes  les  mesures  appropriées  de  façon  à  protéger  ses  propres données et/ ou logiciels stockés sur ses équipements informatiques et téléphoniques contre toute atteinte.\n  <br><br>L\'éventualité d\'une indisponibilité temporaire ou définitive de l’application ne peut en aucun cas donner lieu à une demande de dommages et intérêts ou toute autre forme de réparation.\n  <br><br>L’Editeur ne peut être tenu pour responsable :\n  <br> - en cas de défaut, de perte, de retard ou d’erreur de transmission de données qui sont indépendants de sa volonté ;\n  <br> - si des données ne lui parvenaient pas, pour quelque raison que ce soit, ou si les données qu’elle reçoit étaient illisibles ou impossibles à traiter ;\n  <br> - au cas où l’Utilisateur ne parvenait à accéder ou à utiliser l’Application et/ou les Services pour quelque raison que ce soit ;\n  <br> - si, pour quelque raison que ce soit, la connexion devait être interrompue.\n  <br><br>L’Editeur  ne saurait  en  aucun  cas  être  tenu  responsable  de  tout  dommage,  de  quelque  nature  que  ce  soit,  causé  aux Utilisateurs, à leurs terminaux, à leurs équipements informatiques et téléphoniques et aux données qui y sont stockées,  ni  des  conséquences  pouvant  en  découler  sur  leur  activité  personnelle,  professionnelle  ou commerciale (notamment, sans que cela ne soit exhaustif manque à gagner, perte d’exploitation, perte de chiffre d’affaires, atteinte à l’image, perte de données).\n  \n  <br><br>\n  <b>ARTICLE 7. MODIFICATION DES CONDITIONS GENERALES D\'UTILISATION</b>\n  <br><br>\n  Les CGU applicables  sont  celles  en  vigueur  à  la  date  de  la  connexion  et  de  l’utilisation  de  l’Application  par l’Utilisateur.\n  <br><br>L’Editeur se réserve le droit de modifier, à tout moment, tout ou partie, des dispositions des CGU sans préavis ni information préalable des Utilisateurs afin notamment de les adapter aux évolutions des Services, aux évolutions techniques, légales ou jurisprudentielles ou lors de la mise en place de nouvelles prestations.  \n  <br><br>Les modifications éventuellement apportées par l’Editeur aux CGU seront portées à la connaissance des Utilisateurs par leur simple mise en ligne.\n  <br><br>Elles sont réputées acceptées sans réserve par tout Utilisateur qui accède à l’Application postérieurement à ladite mise en ligne. \n  <br><br>L’Editeur invite tout Utilisateur à consulter régulièrement les CGU.\n  <br><br>Tout nouveau Service intégrant de nouvelles techniques ou nouvelles caractéristiques améliorant la qualité des Services existants seront aussi soumis aux présentes CGU, sauf disposition expresse contraire.\n  \n  <br><br>\n  <b>ARTICLE 8. DUREE</b>\n  <br><br>\n  Les présentes entrent en vigueur à compter du téléchargement de l’application par l’Utilisateur pour une durée indéterminée.\n  <br>\n  <br>\n  <b>ARTICLE 9. CONSENTEMENT</b> \n  <br><br>\n  L’utilisateur reconnaît être parfaitement informé du fait que son accord concernant le contenu des présentes Conditions Générales ne nécessite pas la signature manuscrite de ce document, mais résulte de sa seule consultation de l’Application. \n  \n  <br><br>\n  <b>ARTICLE 10. CONTACT</b>\n  <br><br>\n  Toute question relative à l’Application et/ou aux Services doit être adressée à la boite mail suivante : contact@quadruped.app. \n  \n  <br><br>\n  <b>ARTICLE 11. LOI APPLICABLE </b>\n  <br><br>\n  Les présentes CGU sont soumises aux lois françaises.\n\n</div>\n  </ion-content>\n\n\n<ion-footer padding class="infoFooter">\n  <ion-icon zoom="0.5" color="black" name="heart-outline"></ion-icon> Remerciements <ion-icon zoom="0.5" color="black" name="heart-outline"></ion-icon>\n  <br>\n  - <ion-icon zoom="0.5" color="black" name="paper"></ion-icon> Anne - <ion-icon zoom="0.5" color="black" name="musical-note"></ion-icon> Nico - <ion-icon zoom="0.5" color="black" name="microphone"></ion-icon> So - <ion-icon zoom="0.5" color="black" name="images"></ion-icon> Rockorico -\n</ion-footer>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\main_pages\info\info.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
@@ -9799,20 +9745,20 @@ var InfoPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProtocolesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_dispositifs_ani_ani__ = __webpack_require__(467);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chirurgies_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(468);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chirurgies_scoliose_scoliose__ = __webpack_require__(469);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_scores_shs_shs__ = __webpack_require__(854);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_scores_hemstop_hemstop__ = __webpack_require__(852);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_scores_vpop_vpop__ = __webpack_require__(855);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_scores_anticoagscore_anticoagscore__ = __webpack_require__(848);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_scores_evendol_evendol__ = __webpack_require__(851);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_scores_edin_edin__ = __webpack_require__(850);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_scores_aldrete_aldrete__ = __webpack_require__(847);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_scores_padss_padss__ = __webpack_require__(853);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_scores_bromage_bromage__ = __webpack_require__(849);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_scores_shs_shs__ = __webpack_require__(470);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_scores_hemstop_hemstop__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_scores_vpop_vpop__ = __webpack_require__(472);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_scores_anticoagscore_anticoagscore__ = __webpack_require__(473);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_scores_evendol_evendol__ = __webpack_require__(474);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_scores_edin_edin__ = __webpack_require__(475);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_scores_aldrete_aldrete__ = __webpack_require__(476);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_scores_padss_padss__ = __webpack_require__(477);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_scores_bromage_bromage__ = __webpack_require__(478);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9941,7 +9887,7 @@ var ProtocolesPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AniPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9990,7 +9936,7 @@ var AniPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExtrophieVesicalePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10218,7 +10164,7 @@ var ExtrophieVesicalePage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScoliosePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10447,8 +10393,714 @@ var ScoliosePage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the ShsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ShsPage = /** @class */ (function () {
+    function ShsPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.risqueSHS = "Répondre aux questions du score.";
+        this.SHSform = [
+            { val: "Q1. Besoin de secouer l'enfant :", count: 0 },
+            { val: "Q2. Arrêts respiratoires nocturnes :", count: 0 },
+            { val: "Q3. Difficultés à respirer la nuit :", count: 0 },
+            { val: "Q4. Inquiétudes des parents sur le sommeil de l'enfant :", count: 0 },
+            { val: "Q5. Intensité du bruit de son ronflement (pour cette question, échelle de 0 = faible à 4 = très bruyant) :", count: 0 },
+            { val: "Q6. Existence de ronflement :", count: 0 },
+        ];
+    }
+    ShsPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    ShsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ShsPage');
+    };
+    ShsPage.prototype.countSHS = function () {
+        this.SHSQ1 = Math.floor(this.SHSform[0].count);
+        this.SHSQ2 = Math.floor(this.SHSform[1].count);
+        this.SHSQ3 = Math.floor(this.SHSform[2].count);
+        this.SHSQ4 = Math.floor(this.SHSform[3].count);
+        this.SHSQ5 = Math.floor(this.SHSform[4].count);
+        this.SHSQ6 = Math.floor(this.SHSform[5].count);
+        console.log(this.SHSQ1, this.SHSQ2, this.SHSQ3);
+        this.cumuleSHS = Math.round(((((((((((this.SHSQ1 + this.SHSQ2) / 2) + this.SHSQ3) / 2) + this.SHSQ4) / 2) + this.SHSQ5) / 2) + this.SHSQ6) / 2) * 100) / 100;
+        console.log("index cumule = ", this.cumuleSHS);
+        if (this.cumuleSHS >= 2.72) {
+            this.risqueSHS = "Enfant présentant probablement un SAOS sévère et à risque élevé d'apnées post-opératoires. Prévoir une hospitalisation et limiter la consommation de morphiniques.";
+        }
+        else {
+            this.risqueSHS = "Enfant ne présentant probablement pas un SAOS sévère. Pas de contre indication à l'ambulatoire liée à ce paramètre.";
+        }
+    };
+    ;
+    ShsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-shs',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\shs\shs.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Score SHS</div>\n   <br>\n \n    </ion-header>\n\n\n<ion-content padding>\n\n\n    \n           \n    \n  <ion-card class="drogueContainer">\n \n    <p  class="reference">Référence : Spruyt & al., Screening of pediatric sleep-disordered breathing. Chest 2012.\n      <br>\n    6 questions, 5 choix possibles (dans les 6 derniers mois): \n      <br> - 0 : jamais \n      <br> - 1 : rarement (une fois par semaine)\n      <br> - 2 : occasionnelement (deux fois par semaine)\n      <br> - 3 : fréquemment (3 à 4 fois par semaine)\n      <br> - 4 : presque toujours (plus de 4 fois par semaine).\n    </p>\n\n    <p class="comment">Interprétation : un score cumulé global supérieur à 2.72 prédit un index d\'apnée-hypopnée supérieur à 5/h, ce qui correspond à un SAOS sévère de l\'enfant.\n      <br>\n      Détail du calcul : A = (Q1+Q2)/2, B = (A+Q3)/2, C = (B+Q4)/2, D = (C+Q5)/2, score cumulé global = (D+Q6)/2. \n    </p>\n\n    <ion-card-content *ngFor="let entry of SHSform">\n\n      <ion-list>\n          {{entry.val}}\n          <br>\n        \n          <ion-segment [(ngModel)]="entry.count" color="dark-turquoise" (ionChange)="countSHS()">\n          <ion-segment-button value="0">\n            <ion-label>0</ion-label>\n          </ion-segment-button>\n          <ion-segment-button value="1">\n            <ion-label>1</ion-label>\n          </ion-segment-button>\n          <ion-segment-button value="2">\n            <ion-label>2</ion-label>\n          </ion-segment-button>\n          <ion-segment-button value="3">\n            <ion-label>3</ion-label>\n          </ion-segment-button>\n          <ion-segment-button value="4">\n            <ion-label>4</ion-label>\n          </ion-segment-button>\n        </ion-segment>            \n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n\n  <br>\n  <br>\n\n</ion-content>\n    \n  <ion-footer padding class="scoreFooter">\n  <p class="comment">Score cumulé global : <b>{{cumuleSHS}}</b></p>\n  <p class="strategie" padding><b>Stratégie : </b>{{risqueSHS}}</p>\n</ion-footer>\n\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\shs\shs.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], ShsPage);
+    return ShsPage;
+}());
+
+//# sourceMappingURL=shs.js.map
+
+/***/ }),
+
+/***/ 471:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HemstopPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the HemstopPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var HemstopPage = /** @class */ (function () {
+    function HemstopPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.isShownHEMSTOP = false;
+        this.risqueHEMSTOP = "Répondre aux questions du score.";
+        this.HEMSTOPform = [
+            { val: "Q1. Avez-vous déjà consulté un médecin ou reçu un traitement pour un saignement prolongé ou inhabituel par exemple un saignement de nez ou une petite coupure ?", count: 0 },
+            { val: "Q2. Avez-vous tendance à faire des bleus de plus de 2 cm ou des hématomes importants, sans choc ou traumatisme ou bien à un traumatisme minime ?", count: 0 },
+            { val: "Q3. Avez-vous reconsulté votre dentiste pour un saignement après une extraction dentaire ?", count: 0 },
+            { val: "Q4. Avez-vous saigné de manière anormale après une intervention chirurgicale (exemple opératoire des amygdales ou circoncision) ?", count: 0 },
+            { val: "Q5. Y a-t-il des membres de la famille proche suivis pour une maladie de la coagulation, comme la maladie de Von Willebrand ou l'hémophilie ?", count: 0 },
+            { val: "Q6. Pour les femmes : avez vous déjà consulté un médecin ou reçu un traitement pour des règles trop abondantes ? Avez vous saigné de façon anormale après un accouchement ?", count: 0 },
+        ];
+    }
+    HemstopPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    HemstopPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad HemstopPage');
+    };
+    HemstopPage.prototype.countHEMSTOP = function () {
+        this.totalHEMSTOP = Math.floor(this.HEMSTOPform[0].count) +
+            Math.floor(this.HEMSTOPform[1].count) +
+            Math.floor(this.HEMSTOPform[2].count) +
+            Math.floor(this.HEMSTOPform[3].count) +
+            Math.floor(this.HEMSTOPform[4].count) +
+            Math.floor(this.HEMSTOPform[5].count);
+        console.log(this.totalHEMSTOP);
+        if (this.totalHEMSTOP >= 2) {
+            this.risqueHEMSTOP = "Forte probabilité de sur-risque hémorragique. Bilan d'hémostase recommandé.";
+        }
+        else if (this.totalHEMSTOP == 1) {
+            this.risqueHEMSTOP = "Probabilité intermédiaire de sur-risque hémorragique. Bilan d'hémostase à discuter.";
+        }
+        else {
+            this.risqueHEMSTOP = "Probabilité très faible de sur-risque hémorragique. Pas de bilan d'hémostase.";
+        }
+    };
+    ;
+    HemstopPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-hemstop',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\hemstop\hemstop.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Questionnaire HEMSTOP</div>\n   <br>\n \n    </ion-header>\n<ion-content padding>\n  <ion-card class="drogueContainer">\n\n    <p class="reference">Référence : Bonhomme et al. Preoperative hemostatic assessment: a new and simple bleeding questionnaire. Can J. Anesthesiology 2016.\n      <br><br>Score développé chez l\'adulte. Envisager l\'utilisation de ce score pour sensibiliser la prescription du bilan d\'hémostase chez un enfant ayant acquis la marche. 6 questions, réponse par oui ou par non.\n      </p>\n\n    <p class="comment">Interprétation : un score supérieur à 2 rend hautement probable la présence d\'un sur-risque hémorragique périopératoire (Sn 89,5%, Sp 98,6%).</p>\n  \n  \n    <ion-card-content *ngFor="let entry of HEMSTOPform">\n      \n      <ion-list>\n          {{entry.val}}\n        \n        \n         <ion-segment [(ngModel)]="entry.count" color="dark-turquoise" (ionChange)="countHEMSTOP()">\n          <ion-segment-button value="0">\n            <ion-label>Non</ion-label>\n          </ion-segment-button>\n          <ion-segment-button value="1">\n            <ion-label>Oui</ion-label>\n          </ion-segment-button>\n        </ion-segment>            \n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n  \n<ion-footer padding class="scoreFooter">\n  <p class="comment">Total : <b>{{totalHEMSTOP}}/6 pts</b></p>\n  <p class="strategie" padding>Stratégie : {{risqueHEMSTOP}}</p>\n  \n\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\hemstop\hemstop.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], HemstopPage);
+    return HemstopPage;
+}());
+
+//# sourceMappingURL=hemstop.js.map
+
+/***/ }),
+
+/***/ 472:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VpopPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the VpopPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var VpopPage = /** @class */ (function () {
+    function VpopPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.VPOPform = [
+            { val: 'Âge inférieur à 3 ans', isChecked: false, count: 0 },
+            { val: 'Âge entre 3 et 6 ans', isChecked: false, count: 1 },
+            { val: 'Âge entre 6 et 13 ans', isChecked: false, count: 2 },
+            { val: 'Âge supérieur à 13 ans', isChecked: false, count: 1 },
+            { val: 'Mal des transports', isChecked: false, count: 1 },
+            { val: 'Chirurgie > 45 minutes', isChecked: false, count: 1 },
+            { val: 'Chirurgie à risque : amygdales, strabisme, tympan', isChecked: false, count: 1 },
+            { val: 'Réinjection de morphiniques', isChecked: false, count: 1 },
+        ];
+        this.totalVPOP = 0;
+        this.prophylaxieVPOP = "Compléter les items du score.";
+    }
+    VpopPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    VpopPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad VpopPage');
+    };
+    VpopPage.prototype.countVPOP = function () {
+        console.log("count");
+        this.totalVPOP = this.VPOPform.filter(function (item) { return item.isChecked === true; }).reduce(function (sum, current) { return sum + current.count; }, 0);
+        this.setRiskVPOP();
+        console.log(this.totalVPOP);
+    };
+    ;
+    VpopPage.prototype.setRiskVPOP = function () {
+        if (this.totalVPOP == 0) {
+            this.risqueVPOP = 6;
+        }
+        else if (this.totalVPOP == 1) {
+            this.risqueVPOP = 7;
+        }
+        else if (this.totalVPOP == 2) {
+            this.risqueVPOP = 15;
+        }
+        else if (this.totalVPOP == 3) {
+            this.risqueVPOP = 25;
+        }
+        else if (this.totalVPOP == 4) {
+            this.risqueVPOP = 39;
+        }
+        else if (this.totalVPOP == 5) {
+            this.risqueVPOP = 53;
+        }
+        else if (this.totalVPOP == 6) {
+            this.risqueVPOP = 69;
+        }
+        ;
+        if (this.totalVPOP <= 2) {
+            this.prophylaxieVPOP = "Risque faible. Dexaméthasone seule en prophylaxie.";
+        }
+        else if (this.totalVPOP <= 4) {
+            this.prophylaxieVPOP = "Risque Modéré. Déxaméthasone et Dropéridol en prophylaxie. Eviter le protoxyde d'azote. Limiter les opioïdes en post-opératoire.";
+        }
+        else {
+            this.prophylaxieVPOP = "Risque élevé. Déxaméthasone et Dropéridol en prophy  laxie. Considérer Ondansétron en per opératoire. Eviter le protoxyde d'azote. Limiter les opioïdes en post-opératoire.";
+        }
+    };
+    ;
+    VpopPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-vpop',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\vpop\vpop.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Score VPOP</div>\n   <br>\n \n    </ion-header>\n\n<ion-content padding>\n\n    <ion-card class="drogueContainer">\n    <p class="reference">Référence : Bourdaud et al. Development & validation of a risk score to predict probability of p/o vomiting in pediatric patients. Pediatric Anesthesia 2014.\n    </p>\n\n    <ion-card-content>\n      <ion-item *ngFor="let entry of VPOPform">\n        <ion-label class="dilutionDrogueInduction">{{entry.val}}\n          <p class="dilutionDrogueInduction">+ {{entry.count}} point(s)</p>\n        </ion-label>\n        <ion-checkbox color="turquoise-fonce" (click)="countVPOP()" [(ngModel)]="entry.isChecked"></ion-checkbox>\n      </ion-item>\n    </ion-card-content>\n    </ion-card>\n</ion-content>\n\n\n<ion-footer padding class="scoreFooter">\n  <p class="comment">Total : <b>{{totalVPOP}} pts</b> - Risque NVPO : <b>{{risqueVPOP}} %</b></p>\n  <p class="strategie">Stratégie : {{prophylaxieVPOP}}</p>\n</ion-footer>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\vpop\vpop.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], VpopPage);
+    return VpopPage;
+}());
+
+//# sourceMappingURL=vpop.js.map
+
+/***/ }),
+
+/***/ 473:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnticoagscorePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the AnticoagscorePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AnticoagscorePage = /** @class */ (function () {
+    function AnticoagscorePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.Anticoagform1 = [
+            { val: 'ASA 3', isChecked: false, count: 1 },
+            { val: 'BMI > 30', isChecked: false, count: 1 },
+            { val: 'KT veineux central', isChecked: false, count: 1 },
+            { val: 'Pathologie tumorale active', isChecked: false, count: 1 },
+            { val: 'Insuffisance rénale', isChecked: false, count: 1 },
+            { val: 'Déshydratation', isChecked: false, count: 1 },
+            { val: 'Grossesse ou accouchement < 6 semaines', isChecked: false, count: 1 },
+            { val: 'Contraception orale', isChecked: false, count: 1 },
+            { val: 'Cardiopathie congénitale', isChecked: false, count: 1 },
+            { val: 'Maladie métabolique ou inflammatoire', isChecked: false, count: 1 },
+            { val: 'Thrombophilie connue', isChecked: false, count: 1 },
+        ];
+        this.Anticoagform2 = [
+            { val: 'Durée anesth + chir > 4h', isChecked: false, count: 1 },
+            { val: 'Chirurgie de hanche', isChecked: false, count: 1 },
+            { val: 'Arthrodèse vertébrale', isChecked: false, count: 1 },
+            { val: 'Âge supérieur à 13 ans', isChecked: false, count: 1 },
+            { val: 'Chirurgie membre inférieur avec ostéotomie ou plâtre', isChecked: false, count: 1 },
+            { val: 'Chirurgie de FAV', isChecked: false, count: 1 },
+        ];
+        this.Anticoagform3 = [
+            { val: 'Alitement > 3j', isChecked: false, count: 1 },
+            { val: 'Sepsis sévère', isChecked: false, count: 1 },
+            { val: 'Traumatisme sévère ISS>9', isChecked: false, count: 1 },
+            { val: 'Traumatisme médullaire et paraplégie', isChecked: false, count: 1 },
+            { val: 'Brûlures sévères', isChecked: false, count: 1 },
+            { val: 'Intubation et ventilation mécanique', isChecked: false, count: 1 },
+        ];
+        this.prophylaxieAnticoag = "Hydratation adéquate, mobilisation précoce, ablation CVC le plus tôt possible (le cas échéant).";
+        this.AnticoagTotal = 0;
+        this.NiveauRisqueThrombose = "faible";
+    }
+    AnticoagscorePage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    AnticoagscorePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AnticoagscorePage');
+    };
+    AnticoagscorePage.prototype.countAnticoag = function () {
+        this.Anticoag1 = this.Anticoagform1.filter(function (item1) { return item1.isChecked === true; }).reduce(function (sum1, current1) { return sum1 + current1.count; }, 0);
+        this.Anticoag2 = this.Anticoagform2.filter(function (item2) { return item2.isChecked === true; }).reduce(function (sum2, current2) { return sum2 + current2.count; }, 0);
+        this.Anticoag3 = this.Anticoagform3.filter(function (item3) { return item3.isChecked === true; }).reduce(function (sum3, current3) { return sum3 + current3.count; }, 0);
+        this.AnticoagTotal = (this.Anticoag1 + this.Anticoag2 + this.Anticoag3);
+        console.log("count total = ", this.AnticoagTotal);
+        if (this.AnticoagTotal == 0) {
+            this.MesuresSupplementairesAnticoag = "";
+            this.NiveauRisqueThrombose = "faible";
+        }
+        else if (this.AnticoagTotal == 1) {
+            this.MesuresSupplementairesAnticoag = "Bas anti-thrombose (grade 2)";
+            this.NiveauRisqueThrombose = "intermédiaire";
+        }
+        else if (this.AnticoagTotal >= 2) {
+            this.MesuresSupplementairesAnticoag = "Bas anti-thrombose (grade 2) + Lovenox 100 UI/kg/j SC sans dépasser 4000 UI/j.";
+            this.NiveauRisqueThrombose = "élevé";
+        }
+        console.log(this.NiveauRisqueThrombose);
+    };
+    ;
+    AnticoagscorePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-anticoagscore',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\anticoagscore\anticoagscore.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Score SHS</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n\n    \n    <ion-card class="drogueContainer" >\n    <ion-card-content>\n     Envisager chez le patient pubère (+/- âge > 13 ans). Indiquez les facteurs de risque présents.\n      \n      <ion-list>\n        <ion-item class="dilutionDrogueInduction">Facteurs liés au patient</ion-item>\n        <ion-item *ngFor="let entry1 of Anticoagform1">\n          <ion-label class="dilutionDrogueInduction">{{entry1.val}}\n            <p class="dilutionDrogueInduction">+ {{entry1.count}} point(s)</p>\n          </ion-label>\n          <ion-checkbox color="turquoise-fonce" (click)="countAnticoag()" [(ngModel)]="entry1.isChecked"></ion-checkbox>\n        </ion-item>\n    \n        <ion-item class="dilutionDrogueInduction">Facteurs liés à la chirurgie</ion-item>\n        <ion-item *ngFor="let entry2 of Anticoagform2">\n          <ion-label class="dilutionDrogueInduction">{{entry2.val}}\n            <p class="dilutionDrogueInduction">+ {{entry2.count}} point(s)</p>\n          </ion-label>\n          <ion-checkbox color="turquoise-fonce" (click)="countAnticoag()" [(ngModel)]="entry2.isChecked"></ion-checkbox>\n        </ion-item>\n    \n        <ion-item class="dilutionDrogueInduction">Facteurs liés à l\'hospitalisation</ion-item>\n        <ion-item *ngFor="let entry3 of Anticoagform3">\n          <ion-label class="dilutionDrogueInduction">{{entry3.val}}\n            <p class="dilutionDrogueInduction">+ {{entry3.count}} point(s)</p>\n          </ion-label>\n          <ion-checkbox  color="turquoise-fonce" (click)="countAnticoag()" [(ngModel)]="entry3.isChecked"></ion-checkbox>\n        </ion-item>\n    \n    \n\n     </ion-list>\n    </ion-card-content>\n    </ion-card>\n</ion-content>\n\n<ion-footer padding class="scoreFooter">\n  <p class="comment">Total : <b>{{AnticoagTotal}} pts</b> - Risque <b>{{NiveauRisqueThrombose}}</b></p>\n  <p class="strategie">Stratégie : {{prophylaxieAnticoag}} <b>{{MesuresSupplementairesAnticoag}}</b></p>\n</ion-footer>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\anticoagscore\anticoagscore.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], AnticoagscorePage);
+    return AnticoagscorePage;
+}());
+
+//# sourceMappingURL=anticoagscore.js.map
+
+/***/ }),
+
+/***/ 474:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EvendolPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the EvendolPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var EvendolPage = /** @class */ (function () {
+    function EvendolPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.isShownEVENDOL = false;
+        this.EVENDOLVocal = 0;
+        this.EVENDOLMimique = 0;
+        this.EVENDOLMouvement = 0;
+        this.EVENDOLPosition = 0;
+        this.EVENDOLRelation = 0;
+        this.EVENDOLTotal = 0;
+        this.SeuilPrescriptionEVENDOL = "Non atteint.";
+    }
+    EvendolPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad EvendolPage');
+    };
+    EvendolPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    EvendolPage.prototype.CalcEVENDOL = function () {
+        this.EVENDOLTotal = Math.floor(this.EVENDOLVocal) + Math.floor(this.EVENDOLMimique) + Math.floor(this.EVENDOLMouvement) + Math.floor(this.EVENDOLPosition) + Math.floor(this.EVENDOLRelation);
+        console.log(this.EVENDOLTotal);
+        if (this.EVENDOLTotal <= 3) {
+            this.SeuilPrescriptionEVENDOL = "Non atteint. Pas de traitement recommandé. Réévaluer régulièrement.";
+        }
+        else {
+            this.SeuilPrescriptionEVENDOL = "Atteint : débuter un traitement antalgique ou augmenter d'un pallier.";
+        }
+        ;
+    };
+    EvendolPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-evendol',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\evendol\evendol.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Echelle EVENDOL</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n\n  <ion-card class="drogueContainer">\n    <ion-card-content>\n\n<p class="drogueInduction">Préférer l\'auto-évaluation chaque fois que possible. En cas d\'impossibilité liée à l\'âge ou à l\'état du patient, utiliser une échelle d\'hétéro-évaluation. L\'échelle EVENDOL est proposée ci-dessous.</p>    \n    <br>\n<p class="comment">Renseigner chacun des items de 0 à 3. \n  <br> - 0 = signe absent\n  <br> - 1 = signe faible ou passager\n  <br> - 2 = signe moyen ou environ la moitié du temps\n  <br> - 3 = signe fort ou quasi permanent\n  <br>\n  <br> Pour l\'item Relation, une absence (0) donne 3 points ; un état relationnel normal (3) ne compte aucun point. Seuil de prescription : 4/15.</p>\n\n  <hr>\n\n<p class="EVENDOLlabel">1. Expression vocale ou verbale : </p>\n    <ion-segment [(ngModel)]="EVENDOLVocal" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    <br>\n\n\n    <p class="EVENDOLlabel">2. Mimique (fronce, grimace) : </p>\n    <ion-segment [(ngModel)]="EVENDOLMimique" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    <br>\n\n    <p class="EVENDOLlabel">3. Mouvements (s\'agite, se crispe) : </p>\n    <ion-segment [(ngModel)]="EVENDOLMouvement" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    <br>\n\n    <p class="EVENDOLlabel">4. Position (attitude antalgique, se protège) : </p>\n    <ion-segment [(ngModel)]="EVENDOLPosition" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    <br>\n\n    <p class="EVENDOLlabel">5. Relation (communique, peut être consolé) : </p>\n    <ion-segment [(ngModel)]="EVENDOLRelation" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n      <ion-segment-button value="3">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="0">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    <br>\n\n</ion-card-content>\n</ion-card>\n\n</ion-content>\n\n<ion-footer padding class="scoreFooter">\n  <p class="comment">Total : <b>{{EVENDOLTotal}}/15 pts</b></p>\n  <p class="strategie">Seuil de prescription (3/15) : {{SeuilPrescriptionEVENDOL}}</p>\n</ion-footer>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\evendol\evendol.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], EvendolPage);
+    return EvendolPage;
+}());
+
+//# sourceMappingURL=evendol.js.map
+
+/***/ }),
+
+/***/ 475:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EdinPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the EdinPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var EdinPage = /** @class */ (function () {
+    function EdinPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.isShownEDIN = false;
+        this.EDINVisage = 0;
+        this.EDINCorps = 0;
+        this.EDINSommeil = 0;
+        this.EDINRelation = 0;
+        this.EDINReconfort = 0;
+        this.EDINTotal = 0;
+        this.SeuilPrescriptionEDIN = "Non atteint.";
+    }
+    EdinPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    EdinPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad EdinPage');
+    };
+    EdinPage.prototype.CalcEDIN = function () {
+        this.EDINTotal = Math.floor(this.EDINVisage) + Math.floor(this.EDINCorps) + Math.floor(this.EDINSommeil) + Math.floor(this.EDINRelation) + Math.floor(this.EDINReconfort);
+        console.log(this.EDINTotal);
+        if (this.EDINTotal <= 3) {
+            this.SeuilPrescriptionEDIN = "Non atteint. Pas de traitement recommandé. Réévaluer régulièrement.";
+        }
+        else {
+            this.SeuilPrescriptionEDIN = "Atteint : débuter un traitement antalgique ou augmenter d'un pallier.";
+        }
+        ;
+    };
+    EdinPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-edin',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\edin\edin.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Echelle EDIN</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n  <ion-card class="drogueContainer">\n    <ion-card-content>\n    \n    <p class="drogueInduction">Utiliser chez le nourrisson entre 0 et 3 mois.</p>    \n    <br>\n    <ion-item class="EVENDOLlabel"><ion-label><br>Visage\n    <p class="comment">0 : visage détendu</p>\n    <p class="comment">1 : grimaces passagères</p>\n    <p class="comment">2 : grimaces fréquentes et prolongées</p>\n    <p class="comment">3 : crispation permanente, prostré, figé</p>\n    </ion-label></ion-item>\n    \n    <ion-segment [(ngModel)]="EDINVisage" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    \n    <ion-item class="EVENDOLlabel"><ion-label><br>Corps\n    <p class="comment">0 : détendu</p>\n    <p class="comment">1 : agitation transitoire</p>\n    <p class="comment">2 : agitation fréquente</p>\n    <p class="comment">3 : agitation permanente, crispation, raideur</p>\n    \n    </ion-label></ion-item>\n    \n    <ion-segment [(ngModel)]="EDINCorps" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    \n    <ion-item class="EVENDOLlabel"><ion-label><br>Sommeil \n      <p class="comment">0 : s\'endort facilement, sommeil prolongé</p>\n      <p class="comment">1 : s\'endort difficilement</p>\n      <p class="comment">2 : se réveille spontanément, sommeil agité</p>\n      <p class="comment">3 : pas de sommeil</p>\n    \n    </ion-label></ion-item>\n    \n    <ion-segment [(ngModel)]="EDINSommeil" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    \n    <ion-item class="EVENDOLlabel"><ion-label><br>\n      Relation\n      <p class="comment">0 : sourire réponse, attentif</p>\n      <p class="comment">1 : appréhension passagère du contact</p>\n      <p class="comment">2 : contact difficile, cri à la moindre stimulation</p>\n      <p class="comment">3 : hurlement ou gémissement spontané</p>\n    \n    </ion-label></ion-item>\n    \n    <ion-segment [(ngModel)]="EDINRelation" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    \n    <ion-item class="EVENDOLlabel"><ion-label><br>Reconfort\n      <p class="comment">0 : n\'a pas besoin de reconfort</p>\n      <p class="comment">1 : se calme rapidement à la caresse/au son de la voix</p>\n      <p class="comment">2 : se calme difficilement</p>\n      <p class="comment">3 : inconsolable, succion désespérée</p>\n    \n    </ion-label></ion-item>\n    \n    <ion-segment [(ngModel)]="EDINReconfort" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    </ion-card-content>\n    \n    </ion-card>\n</ion-content>\n\n<ion-footer padding class="scoreFooter">\n  <p class="comment">Total : <b>{{EDINTotal}}/15 pts</b></p>\n  <p class="strategie">Seuil de prescription (3/15) : {{SeuilPrescriptionEDIN}}</p>\n</ion-footer>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\edin\edin.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], EdinPage);
+    return EdinPage;
+}());
+
+//# sourceMappingURL=edin.js.map
+
+/***/ }),
+
+/***/ 476:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AldretePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the AldretePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AldretePage = /** @class */ (function () {
+    function AldretePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.AldreteForm = [
+            { category: "1. Conscience", val: 'Réveillé et orienté', isChecked: false, count: 2 },
+            { category: "", val: 'Réveillable par stimulation minime', isChecked: false, count: 1 },
+            { category: "", val: 'Non réveillable par stimulation tactile', isChecked: false, count: 0 },
+            { category: "2. Activité", val: 'Mobilité normale des extrémités', isChecked: false, count: 2 },
+            { category: "", val: 'Faiblesse à la mobilité', isChecked: false, count: 1 },
+            { category: "", val: 'Incapable de bouger les extrémités', isChecked: false, count: 0 },
+            { category: "3. Respiration", val: 'Inspiration profonde possible, toux, normopnée', isChecked: false, count: 2 },
+            { category: "", val: 'Tachypnée mais toux préservée', isChecked: false, count: 1 },
+            { category: "", val: 'Dyspnée, pas de toux possible', isChecked: false, count: 0 },
+            { category: "4. Hémodynamique", val: 'PAS ou PAM +/- 15% des valeurs avant induction', isChecked: false, count: 2 },
+            { category: "", val: 'PAS ou PAM +/- 30% des valeurs avant induction', isChecked: false, count: 1 },
+            { category: "", val: 'PAS ou PAM +/- 50% des valeurs avant induction', isChecked: false, count: 0 },
+            { category: "5. Saturation", val: 'SpO2 > 92% en air ambiant', isChecked: false, count: 2 },
+            { category: "", val: 'SpO2 > 90% en air ambiant', isChecked: false, count: 1 },
+            { category: "", val: 'SpO2 < 90% en air ambiant', isChecked: false, count: 0 },
+            { category: "6. Douleur", val: 'Pas de douleur', isChecked: false, count: 2 },
+            { category: "", val: 'Douleur modérée mais contrôlée par les antalgiques', isChecked: false, count: 1 },
+            { category: "", val: 'Douleur non contrôlée par les antalgiques', isChecked: false, count: 0 },
+            { category: "7. NVPO", val: 'Pas de NVPO', isChecked: false, count: 2 },
+            { category: "", val: 'Un épisode de NVPO isolé', isChecked: false, count: 1 },
+            { category: "", val: 'NVPO persistants ', isChecked: false, count: 0 },
+        ];
+        this.totalAldrete = 0;
+        this.CATAldrete = "Cocher les items du score correspondant à l'état du patient.";
+    }
+    AldretePage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    AldretePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AldretePage');
+    };
+    AldretePage.prototype.countAldrete = function () {
+        this.totalAldrete = this.AldreteForm.filter(function (item) { return item.isChecked === true; }).reduce(function (sum, current) { return sum + current.count; }, 0);
+        console.log(this.totalAldrete);
+        if (this.totalAldrete <= 11) {
+            this.CATAldrete = "Réveil insuffisant pour autoriser la sortie de SSPI.";
+        }
+        else {
+            this.CATAldrete = "Sortie de SSPI possible avec accord du MAR référent du patient.";
+        }
+    };
+    ;
+    AldretePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-aldrete',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\aldrete\aldrete.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Score d\'Aldrete</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n  <p padding>Cocher pour chacune des catégories l\'item décrivant l\'état du patient.</p>\n\n    <ion-card class="drogueContainer" *ngFor="let entry of AldreteForm">\n      <ion-card-header *ngIf="entry.category">{{entry.category}}</ion-card-header>\n        <ion-item><ion-label class="dilutionDrogueInduction">\n        {{entry.val}}\n        <p class="comment">+ {{entry.count}} point(s)</p>\n      </ion-label>  \n        <ion-checkbox color="turquoise-fonce" (click)="countAldrete()" [(ngModel)]="entry.isChecked"></ion-checkbox>\n    </ion-item>\n    </ion-card>\n</ion-content>\n\n<ion-footer padding class="scoreFooter">\n    <p class="comment">Total : <b>{{totalAldrete}}/14 pts</b></p>\n    <p padding class="strategie">Stratégie (sortie SSPI > 11/14) : {{CATAldrete}}</p>\n</ion-footer>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\aldrete\aldrete.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], AldretePage);
+    return AldretePage;
+}());
+
+//# sourceMappingURL=aldrete.js.map
+
+/***/ }),
+
+/***/ 477:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PadssPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PadssPage = /** @class */ (function () {
+    function PadssPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.PADSSForm = [
+            { category: "1. FC & PAS", val: 'Variation < 20% par rapport au pré-opératoire', isChecked: false, count: 2, isItem: 1 },
+            { category: "", val: 'Variation entre 20 et 40% par rapport au pré-opératoire', isChecked: false, count: 1, isItem: 1 },
+            { category: "", val: 'Variation > 40% par rapport au pré-opératoire', isChecked: false, count: 0, isItem: 1 },
+            { category: "2. Marche & activité", val: 'Marche stable, sans étourdissement', isChecked: false, count: 2, isItem: 1 },
+            { category: "", val: 'Marche avec aide, activité réduite', isChecked: false, count: 1, isItem: 1 },
+            { category: "", val: 'Marche impossible, hypotonie', isChecked: false, count: 0, isItem: 1 },
+            { category: "3. NVPO", val: 'Pas de NVPO', isChecked: false, count: 2, isItem: 1 },
+            { category: "", val: 'Un épisode de NVPO', isChecked: false, count: 1, isItem: 1 },
+            { category: "", val: 'NVPO persistants', isChecked: false, count: 0, isItem: 1 },
+            { category: "4. Douleur", val: 'Bien contrôlée', isChecked: false, count: 2, isItem: 1 },
+            { category: "", val: 'Mal contrôlée', isChecked: false, count: 1, isItem: 1 },
+            { category: "5. Saignement", val: 'Minime ou nul (pas de réfection de pansement)', isChecked: false, count: 2, isItem: 1 },
+            { category: "", val: 'Significatif (réfection de pansement)', isChecked: false, count: 1, isItem: 1 },
+        ];
+        this.CATPADSS = "Cocher les items du score correspondant à l'état du patient.";
+    }
+    PadssPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    PadssPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad PadssPage');
+    };
+    PadssPage.prototype.countPADSS = function () {
+        this.totalPADSS = this.PADSSForm.filter(function (item) { return item.isChecked === true; }).reduce(function (sum, current) { return sum + current.count; }, 0);
+        console.log("PADSS = ", this.totalPADSS);
+        var IsZeroPADSS = this.PADSSForm.filter(function (item) { return item.count == 0 && item.isChecked === true; }).reduce(function (sum, current) { return sum + current.isItem; }, 0);
+        console.log("nombre d'items cotant 0 cochés = ", IsZeroPADSS);
+        if (this.totalPADSS <= 8 && IsZeroPADSS == 0) {
+            this.CATPADSS = "Etat incompatible avec une sortie en ambulatoire (score total insuffisant).";
+        }
+        else if (this.totalPADSS <= 8 && IsZeroPADSS != 0) {
+            this.CATPADSS = "Etat incompatible avec une sortie en ambulatoire (un item coté 0, score total insuffisant).";
+        }
+        else if (this.totalPADSS > 8 && IsZeroPADSS != 0) {
+            this.CATPADSS = "Etat incompatible avec une sortie en ambulatoire (un item coté 0).";
+        }
+        else {
+            this.CATPADSS = "Sortie ambulatoire possible avec accord du MAR référent du patient.";
+        }
+        ;
+    };
+    ;
+    PadssPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-padss',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\padss\padss.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Score PADSS</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n  <p padding>Cocher pour chacune des catégories l\'item décrivant l\'état du patient.</p>\n\n\n  <ion-card class="drogueContainer" *ngFor="let entry of PADSSForm">\n  <ion-card-header *ngIf="entry.category">{{entry.category}}</ion-card-header>\n    <ion-item><ion-label class="dilutionDrogueInduction">\n    {{entry.val}}\n    <p class="comment">+ {{entry.count}} point(s)</p>\n  </ion-label>  \n    <ion-checkbox color="turquoise-fonce" (click)="countPADSS()" [(ngModel)]="entry.isChecked"></ion-checkbox>\n  </ion-item>\n  </ion-card>\n  \n  \n  <ion-card padding class="drogueContainer">\n\n  </ion-card>\n</ion-content>\n\n<ion-footer padding class="scoreFooter">\n  <p class="comment">Total : <b>{{totalPADSS}}/14 pts</b></p>\n  <p padding class="strategie">Stratégie (sortie ambulatoire > 8/10) : {{CATPADSS}}</p>\n</ion-footer>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\padss\padss.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], PadssPage);
+    return PadssPage;
+}());
+
+//# sourceMappingURL=padss.js.map
+
+/***/ }),
+
+/***/ 478:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BromagePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the BromagePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var BromagePage = /** @class */ (function () {
+    function BromagePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    BromagePage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    BromagePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad BromagePage');
+    };
+    BromagePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-bromage',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\bromage\bromage.html"*/'<ion-header><br>\n  <div class="header"> \n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n   Score de Bromage</div>\n   <br>\n    </ion-header>\n\n\n<ion-content>\n\n \n  <ion-card class="drogueContainer">\n\n    <p  class="reference"> Référence : Bromage PR. A comparison of the hydrochloride and carbon dioxide salts of lidocaine and prilocaine in epidural analgesia. Acta Anaesthesiologica Scandinavica 1965.</p>\n    <br>\n    <p class="comment">Le score proposé est le score de Bromage <i>modifié</i>, utilisable en ambulatoire. Le score original est sur 4 points, le score modifié sur 7. \n    <br>Examiner le patient et attribuer le score correspondant à la motricité observée aux membres inférieurs.</p>\n  \n    <div padding class="dilutionDrogueInduction">\n    <ul>\n      <li>1. Bloc moteur complet.</li>\n      <li>2. Bloc moteur presque complet, bouge les pieds.</li>\n      <li>3. Bloc moteur partiel, bouge les pieds et les genoux.</li>\n      <li>4. Bouge les jambes, faiblesse détectable à la flexion de la hanche.</li>\n      <li>5. Pas de faiblesse de la hanche en position couchée.</li>\n      <li>6. Flexion des genoux debout avec appui.</li>\n      <li>7. Flexion des genoux debout sans appui.</li>\n    </ul>\n  </div>\n    \n      <p class="strategie">Sortie de salle de réveil vers l\'hospitalisation conventionnelle envisageable pour un score supérieur ou égal à 4. Sortie en ambulatoire envisageable pour un score supérieur ou égal à 6.</p>\n    \n    \n    </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\bromage\bromage.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], BromagePage);
+    return BromagePage;
+}());
+
+//# sourceMappingURL=bromage.js.map
+
+/***/ }),
+
+/***/ 479:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecommandationsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser_ngx__ = __webpack_require__(117);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10627,12 +11279,12 @@ var RecommandationsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 471:
+/***/ 480:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MedicamentsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_medicaments__ = __webpack_require__(135);
@@ -10708,13 +11360,13 @@ var MedicamentsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 513:
+/***/ 522:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(514);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(518);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(523);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(527);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -10722,62 +11374,62 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 518:
+/***/ 527:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(844);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(845);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(853);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(854);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser_ngx__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(511);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(512);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(520);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(521);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_service_data_liste_medicaments__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_accueil_accueil__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_modules_options_options__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_modules_plateau_induction_plateau_induction__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_modules_plateau_vas_plateau_vas__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_modules_gestion_fluides_gestion_fluides__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_modules_antalgie_antalgie__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_modules_entretien_anesth_entretien_anesth__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_modules_loco_regionale_loco_regionale__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_modules_options_options__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_modules_plateau_induction_plateau_induction__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_modules_plateau_vas_plateau_vas__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_modules_gestion_fluides_gestion_fluides__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_modules_antalgie_antalgie__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_modules_entretien_anesth_entretien_anesth__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_modules_loco_regionale_loco_regionale__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_chirurgies_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(468);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_main_pages_medicaments_medicaments__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_main_pages_medicaments_medicaments__ = __webpack_require__(480);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_main_pages_protocoles_protocoles__ = __webpack_require__(466);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_main_pages_recommandations_recommandations__ = __webpack_require__(470);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_modules_monitorage_monitorage__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_main_pages_recommandations_recommandations__ = __webpack_require__(479);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_modules_monitorage_monitorage__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_modules_courbes_courbes__ = __webpack_require__(328);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_modules_antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_modules_antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(319);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_main_pages_scores_scores__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_main_pages_info_info__ = __webpack_require__(465);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_chirurgies_scoliose_scoliose__ = __webpack_require__(469);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_modules_sauvegarde_patient_sauvegarde_patient__ = __webpack_require__(318);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_main_main__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_modules_sauvegarde_patient_sauvegarde_patient__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_main_main__ = __webpack_require__(159);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_pages_dispositifs_ani_ani__ = __webpack_require__(467);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_Urgences_acr_acr__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_Urgences_acr_acr__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_Urgences_anaphylaxie_anaphylaxie__ = __webpack_require__(322);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_Urgences_asthme_asthme__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_Urgences_catecholamines_catecholamines__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_Urgences_catecholamines_catecholamines__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_Urgences_epilepsie_epilepsie__ = __webpack_require__(324);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_Urgences_hta_hta__ = __webpack_require__(325);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_Urgences_htm_htm__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_Urgences_htm_htm__ = __webpack_require__(321);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_Urgences_intoxication_intoxication__ = __webpack_require__(326);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_Urgences_metabolique_metabolique__ = __webpack_require__(327);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_tutorial_tutorial__ = __webpack_require__(464);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_pages_scores_aldrete_aldrete__ = __webpack_require__(847);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_pages_scores_anticoagscore_anticoagscore__ = __webpack_require__(848);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_pages_scores_bromage_bromage__ = __webpack_require__(849);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_pages_scores_edin_edin__ = __webpack_require__(850);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_pages_scores_evendol_evendol__ = __webpack_require__(851);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_pages_scores_hemstop_hemstop__ = __webpack_require__(852);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_pages_scores_padss_padss__ = __webpack_require__(853);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_pages_scores_shs_shs__ = __webpack_require__(854);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pages_pages_scores_vpop_vpop__ = __webpack_require__(855);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_pages_scores_aldrete_aldrete__ = __webpack_require__(476);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_pages_scores_anticoagscore_anticoagscore__ = __webpack_require__(473);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_pages_scores_bromage_bromage__ = __webpack_require__(478);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_pages_scores_edin_edin__ = __webpack_require__(475);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_pages_scores_evendol_evendol__ = __webpack_require__(474);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_pages_scores_hemstop_hemstop__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_pages_scores_padss_padss__ = __webpack_require__(477);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_pages_scores_shs_shs__ = __webpack_require__(470);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pages_pages_scores_vpop_vpop__ = __webpack_require__(472);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10966,7 +11618,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 826:
+/***/ 835:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -11255,20 +11907,20 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 826;
+webpackContext.id = 835;
 
 /***/ }),
 
-/***/ 844:
+/***/ 853:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(511);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(512);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_main_main__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(520);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(521);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_main_main__ = __webpack_require__(159);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11322,713 +11974,7 @@ var MyApp = /** @class */ (function () {
 ;
 //# sourceMappingURL=app.component.js.map
 
-/***/ }),
-
-/***/ 847:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AldretePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the AldretePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var AldretePage = /** @class */ (function () {
-    function AldretePage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.AldreteForm = [
-            { category: "1. Conscience", val: 'Réveillé et orienté', isChecked: false, count: 2 },
-            { category: "", val: 'Réveillable par stimulation minime', isChecked: false, count: 1 },
-            { category: "", val: 'Non réveillable par stimulation tactile', isChecked: false, count: 0 },
-            { category: "2. Activité", val: 'Mobilité normale des extrémités', isChecked: false, count: 2 },
-            { category: "", val: 'Faiblesse à la mobilité', isChecked: false, count: 1 },
-            { category: "", val: 'Incapable de bouger les extrémités', isChecked: false, count: 0 },
-            { category: "3. Respiration", val: 'Inspiration profonde possible, toux, normopnée', isChecked: false, count: 2 },
-            { category: "", val: 'Tachypnée mais toux préservée', isChecked: false, count: 1 },
-            { category: "", val: 'Dyspnée, pas de toux possible', isChecked: false, count: 0 },
-            { category: "4. Hémodynamique", val: 'PAS ou PAM +/- 15% des valeurs avant induction', isChecked: false, count: 2 },
-            { category: "", val: 'PAS ou PAM +/- 30% des valeurs avant induction', isChecked: false, count: 1 },
-            { category: "", val: 'PAS ou PAM +/- 50% des valeurs avant induction', isChecked: false, count: 0 },
-            { category: "5. Saturation", val: 'SpO2 > 92% en air ambiant', isChecked: false, count: 2 },
-            { category: "", val: 'SpO2 > 90% en air ambiant', isChecked: false, count: 1 },
-            { category: "", val: 'SpO2 < 90% en air ambiant', isChecked: false, count: 0 },
-            { category: "6. Douleur", val: 'Pas de douleur', isChecked: false, count: 2 },
-            { category: "", val: 'Douleur modérée mais contrôlée par les antalgiques', isChecked: false, count: 1 },
-            { category: "", val: 'Douleur non contrôlée par les antalgiques', isChecked: false, count: 0 },
-            { category: "7. NVPO", val: 'Pas de NVPO', isChecked: false, count: 2 },
-            { category: "", val: 'Un épisode de NVPO isolé', isChecked: false, count: 1 },
-            { category: "", val: 'NVPO persistants ', isChecked: false, count: 0 },
-        ];
-        this.totalAldrete = 0;
-        this.CATAldrete = "Cocher les items du score correspondant à l'état du patient.";
-    }
-    AldretePage.prototype.retourHome = function () {
-        this.navCtrl.pop();
-    };
-    ;
-    AldretePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AldretePage');
-    };
-    AldretePage.prototype.countAldrete = function () {
-        this.totalAldrete = this.AldreteForm.filter(function (item) { return item.isChecked === true; }).reduce(function (sum, current) { return sum + current.count; }, 0);
-        console.log(this.totalAldrete);
-        if (this.totalAldrete <= 11) {
-            this.CATAldrete = "Réveil insuffisant pour autoriser la sortie de SSPI.";
-        }
-        else {
-            this.CATAldrete = "Sortie de SSPI possible avec accord du MAR référent du patient.";
-        }
-    };
-    ;
-    AldretePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-aldrete',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\aldrete\aldrete.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Score d\'Aldrete</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n  <p padding>Cocher pour chacune des catégories l\'item décrivant l\'état du patient.</p>\n\n    <ion-card class="drogueContainer" *ngFor="let entry of AldreteForm">\n      <ion-card-header *ngIf="entry.category">{{entry.category}}</ion-card-header>\n        <ion-item><ion-label class="dilutionDrogueInduction">\n        {{entry.val}}\n        <p class="comment">+ {{entry.count}} point(s)</p>\n      </ion-label>  \n        <ion-checkbox color="turquoise-fonce" (click)="countAldrete()" [(ngModel)]="entry.isChecked"></ion-checkbox>\n    </ion-item>\n    </ion-card>\n</ion-content>\n\n<ion-footer padding class="scoreFooter">\n    <p class="comment">Total : <b>{{totalAldrete}}/14 pts</b></p>\n    <p padding class="strategie">Stratégie (sortie SSPI > 11/14) : {{CATAldrete}}</p>\n</ion-footer>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\aldrete\aldrete.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], AldretePage);
-    return AldretePage;
-}());
-
-//# sourceMappingURL=aldrete.js.map
-
-/***/ }),
-
-/***/ 848:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnticoagscorePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the AnticoagscorePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var AnticoagscorePage = /** @class */ (function () {
-    function AnticoagscorePage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.Anticoagform1 = [
-            { val: 'ASA 3', isChecked: false, count: 1 },
-            { val: 'BMI > 30', isChecked: false, count: 1 },
-            { val: 'KT veineux central', isChecked: false, count: 1 },
-            { val: 'Pathologie tumorale active', isChecked: false, count: 1 },
-            { val: 'Insuffisance rénale', isChecked: false, count: 1 },
-            { val: 'Déshydratation', isChecked: false, count: 1 },
-            { val: 'Grossesse ou accouchement < 6 semaines', isChecked: false, count: 1 },
-            { val: 'Contraception orale', isChecked: false, count: 1 },
-            { val: 'Cardiopathie congénitale', isChecked: false, count: 1 },
-            { val: 'Maladie métabolique ou inflammatoire', isChecked: false, count: 1 },
-            { val: 'Thrombophilie connue', isChecked: false, count: 1 },
-        ];
-        this.Anticoagform2 = [
-            { val: 'Durée anesth + chir > 4h', isChecked: false, count: 1 },
-            { val: 'Chirurgie de hanche', isChecked: false, count: 1 },
-            { val: 'Arthrodèse vertébrale', isChecked: false, count: 1 },
-            { val: 'Âge supérieur à 13 ans', isChecked: false, count: 1 },
-            { val: 'Chirurgie membre inférieur avec ostéotomie ou plâtre', isChecked: false, count: 1 },
-            { val: 'Chirurgie de FAV', isChecked: false, count: 1 },
-        ];
-        this.Anticoagform3 = [
-            { val: 'Alitement > 3j', isChecked: false, count: 1 },
-            { val: 'Sepsis sévère', isChecked: false, count: 1 },
-            { val: 'Traumatisme sévère ISS>9', isChecked: false, count: 1 },
-            { val: 'Traumatisme médullaire et paraplégie', isChecked: false, count: 1 },
-            { val: 'Brûlures sévères', isChecked: false, count: 1 },
-            { val: 'Intubation et ventilation mécanique', isChecked: false, count: 1 },
-        ];
-        this.prophylaxieAnticoag = "Hydratation adéquate, mobilisation précoce, ablation CVC le plus tôt possible (le cas échéant).";
-        this.AnticoagTotal = 0;
-        this.NiveauRisqueThrombose = "faible";
-    }
-    AnticoagscorePage.prototype.retourHome = function () {
-        this.navCtrl.pop();
-    };
-    ;
-    AnticoagscorePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AnticoagscorePage');
-    };
-    AnticoagscorePage.prototype.countAnticoag = function () {
-        this.Anticoag1 = this.Anticoagform1.filter(function (item1) { return item1.isChecked === true; }).reduce(function (sum1, current1) { return sum1 + current1.count; }, 0);
-        this.Anticoag2 = this.Anticoagform2.filter(function (item2) { return item2.isChecked === true; }).reduce(function (sum2, current2) { return sum2 + current2.count; }, 0);
-        this.Anticoag3 = this.Anticoagform3.filter(function (item3) { return item3.isChecked === true; }).reduce(function (sum3, current3) { return sum3 + current3.count; }, 0);
-        this.AnticoagTotal = (this.Anticoag1 + this.Anticoag2 + this.Anticoag3);
-        console.log("count total = ", this.AnticoagTotal);
-        if (this.AnticoagTotal == 0) {
-            this.MesuresSupplementairesAnticoag = "";
-            this.NiveauRisqueThrombose = "faible";
-        }
-        else if (this.AnticoagTotal == 1) {
-            this.MesuresSupplementairesAnticoag = "Bas anti-thrombose (grade 2)";
-            this.NiveauRisqueThrombose = "intermédiaire";
-        }
-        else if (this.AnticoagTotal >= 2) {
-            this.MesuresSupplementairesAnticoag = "Bas anti-thrombose (grade 2) + Lovenox 100 UI/kg/j SC sans dépasser 4000 UI/j.";
-            this.NiveauRisqueThrombose = "élevé";
-        }
-        console.log(this.NiveauRisqueThrombose);
-    };
-    ;
-    AnticoagscorePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-anticoagscore',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\anticoagscore\anticoagscore.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Score SHS</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n\n    \n    <ion-card class="drogueContainer" >\n    <ion-card-content>\n     Envisager chez le patient pubère (+/- âge > 13 ans). Indiquez les facteurs de risque présents.\n      \n      <ion-list>\n        <ion-item class="dilutionDrogueInduction">Facteurs liés au patient</ion-item>\n        <ion-item *ngFor="let entry1 of Anticoagform1">\n          <ion-label class="dilutionDrogueInduction">{{entry1.val}}\n            <p class="dilutionDrogueInduction">+ {{entry1.count}} point(s)</p>\n          </ion-label>\n          <ion-checkbox color="turquoise-fonce" (click)="countAnticoag()" [(ngModel)]="entry1.isChecked"></ion-checkbox>\n        </ion-item>\n    \n        <ion-item class="dilutionDrogueInduction">Facteurs liés à la chirurgie</ion-item>\n        <ion-item *ngFor="let entry2 of Anticoagform2">\n          <ion-label class="dilutionDrogueInduction">{{entry2.val}}\n            <p class="dilutionDrogueInduction">+ {{entry2.count}} point(s)</p>\n          </ion-label>\n          <ion-checkbox color="turquoise-fonce" (click)="countAnticoag()" [(ngModel)]="entry2.isChecked"></ion-checkbox>\n        </ion-item>\n    \n        <ion-item class="dilutionDrogueInduction">Facteurs liés à l\'hospitalisation</ion-item>\n        <ion-item *ngFor="let entry3 of Anticoagform3">\n          <ion-label class="dilutionDrogueInduction">{{entry3.val}}\n            <p class="dilutionDrogueInduction">+ {{entry3.count}} point(s)</p>\n          </ion-label>\n          <ion-checkbox  color="turquoise-fonce" (click)="countAnticoag()" [(ngModel)]="entry3.isChecked"></ion-checkbox>\n        </ion-item>\n    \n    \n\n     </ion-list>\n    </ion-card-content>\n    </ion-card>\n</ion-content>\n\n<ion-footer padding class="scoreFooter">\n  <p class="comment">Total : <b>{{AnticoagTotal}} pts</b> - Risque <b>{{NiveauRisqueThrombose}}</b></p>\n  <p class="strategie">Stratégie : {{prophylaxieAnticoag}} <b>{{MesuresSupplementairesAnticoag}}</b></p>\n</ion-footer>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\anticoagscore\anticoagscore.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], AnticoagscorePage);
-    return AnticoagscorePage;
-}());
-
-//# sourceMappingURL=anticoagscore.js.map
-
-/***/ }),
-
-/***/ 849:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BromagePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the BromagePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var BromagePage = /** @class */ (function () {
-    function BromagePage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    BromagePage.prototype.retourHome = function () {
-        this.navCtrl.pop();
-    };
-    ;
-    BromagePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad BromagePage');
-    };
-    BromagePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bromage',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\bromage\bromage.html"*/'<ion-header><br>\n  <div class="header"> \n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n   Score de Bromage</div>\n   <br>\n    </ion-header>\n\n\n<ion-content>\n\n \n  <ion-card class="drogueContainer">\n\n    <p  class="reference"> Référence : Bromage PR. A comparison of the hydrochloride and carbon dioxide salts of lidocaine and prilocaine in epidural analgesia. Acta Anaesthesiologica Scandinavica 1965.</p>\n    <br>\n    <p class="comment">Le score proposé est le score de Bromage <i>modifié</i>, utilisable en ambulatoire. Le score original est sur 4 points, le score modifié sur 7. \n    <br>Examiner le patient et attribuer le score correspondant à la motricité observée aux membres inférieurs.</p>\n  \n    <div padding class="dilutionDrogueInduction">\n    <ul>\n      <li>1. Bloc moteur complet.</li>\n      <li>2. Bloc moteur presque complet, bouge les pieds.</li>\n      <li>3. Bloc moteur partiel, bouge les pieds et les genoux.</li>\n      <li>4. Bouge les jambes, faiblesse détectable à la flexion de la hanche.</li>\n      <li>5. Pas de faiblesse de la hanche en position couchée.</li>\n      <li>6. Flexion des genoux debout avec appui.</li>\n      <li>7. Flexion des genoux debout sans appui.</li>\n    </ul>\n  </div>\n    \n      <p class="strategie">Sortie de salle de réveil vers l\'hospitalisation conventionnelle envisageable pour un score supérieur ou égal à 4. Sortie en ambulatoire envisageable pour un score supérieur ou égal à 6.</p>\n    \n    \n    </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\bromage\bromage.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], BromagePage);
-    return BromagePage;
-}());
-
-//# sourceMappingURL=bromage.js.map
-
-/***/ }),
-
-/***/ 850:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EdinPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the EdinPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var EdinPage = /** @class */ (function () {
-    function EdinPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.isShownEDIN = false;
-        this.EDINVisage = 0;
-        this.EDINCorps = 0;
-        this.EDINSommeil = 0;
-        this.EDINRelation = 0;
-        this.EDINReconfort = 0;
-        this.EDINTotal = 0;
-        this.SeuilPrescriptionEDIN = "Non atteint.";
-    }
-    EdinPage.prototype.retourHome = function () {
-        this.navCtrl.pop();
-    };
-    ;
-    EdinPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad EdinPage');
-    };
-    EdinPage.prototype.CalcEDIN = function () {
-        this.EDINTotal = Math.floor(this.EDINVisage) + Math.floor(this.EDINCorps) + Math.floor(this.EDINSommeil) + Math.floor(this.EDINRelation) + Math.floor(this.EDINReconfort);
-        console.log(this.EDINTotal);
-        if (this.EDINTotal <= 3) {
-            this.SeuilPrescriptionEDIN = "Non atteint. Pas de traitement recommandé. Réévaluer régulièrement.";
-        }
-        else {
-            this.SeuilPrescriptionEDIN = "Atteint : débuter un traitement antalgique ou augmenter d'un pallier.";
-        }
-        ;
-    };
-    EdinPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-edin',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\edin\edin.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Echelle EDIN</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n  <ion-card class="drogueContainer">\n    <ion-card-content>\n    \n    <p class="drogueInduction">Utiliser chez le nourrisson entre 0 et 3 mois.</p>    \n    <br>\n    <ion-item class="EVENDOLlabel"><ion-label><br>Visage\n    <p class="comment">0 : visage détendu</p>\n    <p class="comment">1 : grimaces passagères</p>\n    <p class="comment">2 : grimaces fréquentes et prolongées</p>\n    <p class="comment">3 : crispation permanente, prostré, figé</p>\n    </ion-label></ion-item>\n    \n    <ion-segment [(ngModel)]="EDINVisage" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    \n    <ion-item class="EVENDOLlabel"><ion-label><br>Corps\n    <p class="comment">0 : détendu</p>\n    <p class="comment">1 : agitation transitoire</p>\n    <p class="comment">2 : agitation fréquente</p>\n    <p class="comment">3 : agitation permanente, crispation, raideur</p>\n    \n    </ion-label></ion-item>\n    \n    <ion-segment [(ngModel)]="EDINCorps" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    \n    <ion-item class="EVENDOLlabel"><ion-label><br>Sommeil \n      <p class="comment">0 : s\'endort facilement, sommeil prolongé</p>\n      <p class="comment">1 : s\'endort difficilement</p>\n      <p class="comment">2 : se réveille spontanément, sommeil agité</p>\n      <p class="comment">3 : pas de sommeil</p>\n    \n    </ion-label></ion-item>\n    \n    <ion-segment [(ngModel)]="EDINSommeil" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    \n    <ion-item class="EVENDOLlabel"><ion-label><br>\n      Relation\n      <p class="comment">0 : sourire réponse, attentif</p>\n      <p class="comment">1 : appréhension passagère du contact</p>\n      <p class="comment">2 : contact difficile, cri à la moindre stimulation</p>\n      <p class="comment">3 : hurlement ou gémissement spontané</p>\n    \n    </ion-label></ion-item>\n    \n    <ion-segment [(ngModel)]="EDINRelation" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    \n    <ion-item class="EVENDOLlabel"><ion-label><br>Reconfort\n      <p class="comment">0 : n\'a pas besoin de reconfort</p>\n      <p class="comment">1 : se calme rapidement à la caresse/au son de la voix</p>\n      <p class="comment">2 : se calme difficilement</p>\n      <p class="comment">3 : inconsolable, succion désespérée</p>\n    \n    </ion-label></ion-item>\n    \n    <ion-segment [(ngModel)]="EDINReconfort" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEDIN()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    </ion-card-content>\n    \n    </ion-card>\n</ion-content>\n\n<ion-footer padding class="scoreFooter">\n  <p class="comment">Total : <b>{{EDINTotal}}/15 pts</b></p>\n  <p class="strategie">Seuil de prescription (3/15) : {{SeuilPrescriptionEDIN}}</p>\n</ion-footer>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\edin\edin.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], EdinPage);
-    return EdinPage;
-}());
-
-//# sourceMappingURL=edin.js.map
-
-/***/ }),
-
-/***/ 851:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EvendolPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the EvendolPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var EvendolPage = /** @class */ (function () {
-    function EvendolPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.isShownEVENDOL = false;
-        this.EVENDOLVocal = 0;
-        this.EVENDOLMimique = 0;
-        this.EVENDOLMouvement = 0;
-        this.EVENDOLPosition = 0;
-        this.EVENDOLRelation = 0;
-        this.EVENDOLTotal = 0;
-        this.SeuilPrescriptionEVENDOL = "Non atteint.";
-    }
-    EvendolPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad EvendolPage');
-    };
-    EvendolPage.prototype.retourHome = function () {
-        this.navCtrl.pop();
-    };
-    ;
-    EvendolPage.prototype.CalcEVENDOL = function () {
-        this.EVENDOLTotal = Math.floor(this.EVENDOLVocal) + Math.floor(this.EVENDOLMimique) + Math.floor(this.EVENDOLMouvement) + Math.floor(this.EVENDOLPosition) + Math.floor(this.EVENDOLRelation);
-        console.log(this.EVENDOLTotal);
-        if (this.EVENDOLTotal <= 3) {
-            this.SeuilPrescriptionEVENDOL = "Non atteint. Pas de traitement recommandé. Réévaluer régulièrement.";
-        }
-        else {
-            this.SeuilPrescriptionEVENDOL = "Atteint : débuter un traitement antalgique ou augmenter d'un pallier.";
-        }
-        ;
-    };
-    EvendolPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-evendol',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\evendol\evendol.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Echelle EVENDOL</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n\n  <ion-card class="drogueContainer">\n    <ion-card-content>\n\n<p class="drogueInduction">Préférer l\'auto-évaluation chaque fois que possible. En cas d\'impossibilité liée à l\'âge ou à l\'état du patient, utiliser une échelle d\'hétéro-évaluation. L\'échelle EVENDOL est proposée ci-dessous.</p>    \n    <br>\n<p class="comment">Renseigner chacun des items de 0 à 3. \n  <br> - 0 = signe absent\n  <br> - 1 = signe faible ou passager\n  <br> - 2 = signe moyen ou environ la moitié du temps\n  <br> - 3 = signe fort ou quasi permanent\n  <br>\n  <br> Pour l\'item Relation, une absence (0) donne 3 points ; un état relationnel normal (3) ne compte aucun point. Seuil de prescription : 4/15.</p>\n\n  <hr>\n\n<p class="EVENDOLlabel">1. Expression vocale ou verbale : </p>\n    <ion-segment [(ngModel)]="EVENDOLVocal" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    <br>\n\n\n    <p class="EVENDOLlabel">2. Mimique (fronce, grimace) : </p>\n    <ion-segment [(ngModel)]="EVENDOLMimique" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    <br>\n\n    <p class="EVENDOLlabel">3. Mouvements (s\'agite, se crispe) : </p>\n    <ion-segment [(ngModel)]="EVENDOLMouvement" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    <br>\n\n    <p class="EVENDOLlabel">4. Position (attitude antalgique, se protège) : </p>\n    <ion-segment [(ngModel)]="EVENDOLPosition" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n      <ion-segment-button value="0">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="3">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    <br>\n\n    <p class="EVENDOLlabel">5. Relation (communique, peut être consolé) : </p>\n    <ion-segment [(ngModel)]="EVENDOLRelation" class="EVENDOLrange" color="dark-turquoise" (ionChange)="CalcEVENDOL()">\n      <ion-segment-button value="3">\n        <ion-label>0</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="2">\n        <ion-label>1</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="1">\n        <ion-label>2</ion-label>\n      </ion-segment-button>\n      <ion-segment-button value="0">\n        <ion-label>3</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    <br>\n\n</ion-card-content>\n</ion-card>\n\n</ion-content>\n\n<ion-footer padding class="scoreFooter">\n  <p class="comment">Total : <b>{{EVENDOLTotal}}/15 pts</b></p>\n  <p class="strategie">Seuil de prescription (3/15) : {{SeuilPrescriptionEVENDOL}}</p>\n</ion-footer>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\evendol\evendol.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], EvendolPage);
-    return EvendolPage;
-}());
-
-//# sourceMappingURL=evendol.js.map
-
-/***/ }),
-
-/***/ 852:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HemstopPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the HemstopPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var HemstopPage = /** @class */ (function () {
-    function HemstopPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.isShownHEMSTOP = false;
-        this.risqueHEMSTOP = "Répondre aux questions du score.";
-        this.HEMSTOPform = [
-            { val: "Q1. Avez-vous déjà consulté un médecin ou reçu un traitement pour un saignement prolongé ou inhabituel par exemple un saignement de nez ou une petite coupure ?", count: 0 },
-            { val: "Q2. Avez-vous tendance à faire des bleus de plus de 2 cm ou des hématomes importants, sans choc ou traumatisme ou bien à un traumatisme minime ?", count: 0 },
-            { val: "Q3. Avez-vous reconsulté votre dentiste pour un saignement après une extraction dentaire ?", count: 0 },
-            { val: "Q4. Avez-vous saigné de manière anormale après une intervention chirurgicale (exemple opératoire des amygdales ou circoncision) ?", count: 0 },
-            { val: "Q5. Y a-t-il des membres de la famille proche suivis pour une maladie de la coagulation, comme la maladie de Von Willebrand ou l'hémophilie ?", count: 0 },
-            { val: "Q6. Pour les femmes : avez vous déjà consulté un médecin ou reçu un traitement pour des règles trop abondantes ? Avez vous saigné de façon anormale après un accouchement ?", count: 0 },
-        ];
-    }
-    HemstopPage.prototype.retourHome = function () {
-        this.navCtrl.pop();
-    };
-    HemstopPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad HemstopPage');
-    };
-    HemstopPage.prototype.countHEMSTOP = function () {
-        this.totalHEMSTOP = Math.floor(this.HEMSTOPform[0].count) +
-            Math.floor(this.HEMSTOPform[1].count) +
-            Math.floor(this.HEMSTOPform[2].count) +
-            Math.floor(this.HEMSTOPform[3].count) +
-            Math.floor(this.HEMSTOPform[4].count) +
-            Math.floor(this.HEMSTOPform[5].count);
-        console.log(this.totalHEMSTOP);
-        if (this.totalHEMSTOP >= 2) {
-            this.risqueHEMSTOP = "Forte probabilité de sur-risque hémorragique. Bilan d'hémostase recommandé.";
-        }
-        else if (this.totalHEMSTOP == 1) {
-            this.risqueHEMSTOP = "Probabilité intermédiaire de sur-risque hémorragique. Bilan d'hémostase à discuter.";
-        }
-        else {
-            this.risqueHEMSTOP = "Probabilité très faible de sur-risque hémorragique. Pas de bilan d'hémostase.";
-        }
-    };
-    ;
-    HemstopPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-hemstop',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\hemstop\hemstop.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Questionnaire HEMSTOP</div>\n   <br>\n \n    </ion-header>\n<ion-content padding>\n  <ion-card class="drogueContainer">\n\n    <p class="reference">Référence : Bonhomme et al. Preoperative hemostatic assessment: a new and simple bleeding questionnaire. Can J. Anesthesiology 2016.\n      <br><br>Score développé chez l\'adulte. Envisager l\'utilisation de ce score pour sensibiliser la prescription du bilan d\'hémostase chez un enfant ayant acquis la marche. 6 questions, réponse par oui ou par non.\n      </p>\n\n    <p class="comment">Interprétation : un score supérieur à 2 rend hautement probable la présence d\'un sur-risque hémorragique périopératoire (Sn 89,5%, Sp 98,6%).</p>\n  \n  \n    <ion-card-content *ngFor="let entry of HEMSTOPform">\n      \n      <ion-list>\n          {{entry.val}}\n        \n        \n         <ion-segment [(ngModel)]="entry.count" color="dark-turquoise" (ionChange)="countHEMSTOP()">\n          <ion-segment-button value="0">\n            <ion-label>Non</ion-label>\n          </ion-segment-button>\n          <ion-segment-button value="1">\n            <ion-label>Oui</ion-label>\n          </ion-segment-button>\n        </ion-segment>            \n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n  \n<ion-footer padding class="scoreFooter">\n  <p class="comment">Total : <b>{{totalHEMSTOP}}/6 pts</b></p>\n  <p class="strategie" padding>Stratégie : {{risqueHEMSTOP}}</p>\n  \n\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\hemstop\hemstop.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], HemstopPage);
-    return HemstopPage;
-}());
-
-//# sourceMappingURL=hemstop.js.map
-
-/***/ }),
-
-/***/ 853:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PadssPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var PadssPage = /** @class */ (function () {
-    function PadssPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.PADSSForm = [
-            { category: "1. FC & PAS", val: 'Variation < 20% par rapport au pré-opératoire', isChecked: false, count: 2, isItem: 1 },
-            { category: "", val: 'Variation entre 20 et 40% par rapport au pré-opératoire', isChecked: false, count: 1, isItem: 1 },
-            { category: "", val: 'Variation > 40% par rapport au pré-opératoire', isChecked: false, count: 0, isItem: 1 },
-            { category: "2. Marche & activité", val: 'Marche stable, sans étourdissement', isChecked: false, count: 2, isItem: 1 },
-            { category: "", val: 'Marche avec aide, activité réduite', isChecked: false, count: 1, isItem: 1 },
-            { category: "", val: 'Marche impossible, hypotonie', isChecked: false, count: 0, isItem: 1 },
-            { category: "3. NVPO", val: 'Pas de NVPO', isChecked: false, count: 2, isItem: 1 },
-            { category: "", val: 'Un épisode de NVPO', isChecked: false, count: 1, isItem: 1 },
-            { category: "", val: 'NVPO persistants', isChecked: false, count: 0, isItem: 1 },
-            { category: "4. Douleur", val: 'Bien contrôlée', isChecked: false, count: 2, isItem: 1 },
-            { category: "", val: 'Mal contrôlée', isChecked: false, count: 1, isItem: 1 },
-            { category: "5. Saignement", val: 'Minime ou nul (pas de réfection de pansement)', isChecked: false, count: 2, isItem: 1 },
-            { category: "", val: 'Significatif (réfection de pansement)', isChecked: false, count: 1, isItem: 1 },
-        ];
-        this.CATPADSS = "Cocher les items du score correspondant à l'état du patient.";
-    }
-    PadssPage.prototype.retourHome = function () {
-        this.navCtrl.pop();
-    };
-    ;
-    PadssPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad PadssPage');
-    };
-    PadssPage.prototype.countPADSS = function () {
-        this.totalPADSS = this.PADSSForm.filter(function (item) { return item.isChecked === true; }).reduce(function (sum, current) { return sum + current.count; }, 0);
-        console.log("PADSS = ", this.totalPADSS);
-        var IsZeroPADSS = this.PADSSForm.filter(function (item) { return item.count == 0 && item.isChecked === true; }).reduce(function (sum, current) { return sum + current.isItem; }, 0);
-        console.log("nombre d'items cotant 0 cochés = ", IsZeroPADSS);
-        if (this.totalPADSS <= 8 && IsZeroPADSS == 0) {
-            this.CATPADSS = "Etat incompatible avec une sortie en ambulatoire (score total insuffisant).";
-        }
-        else if (this.totalPADSS <= 8 && IsZeroPADSS != 0) {
-            this.CATPADSS = "Etat incompatible avec une sortie en ambulatoire (un item coté 0, score total insuffisant).";
-        }
-        else if (this.totalPADSS > 8 && IsZeroPADSS != 0) {
-            this.CATPADSS = "Etat incompatible avec une sortie en ambulatoire (un item coté 0).";
-        }
-        else {
-            this.CATPADSS = "Sortie ambulatoire possible avec accord du MAR référent du patient.";
-        }
-        ;
-    };
-    ;
-    PadssPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-padss',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\padss\padss.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Score PADSS</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n  <p padding>Cocher pour chacune des catégories l\'item décrivant l\'état du patient.</p>\n\n\n  <ion-card class="drogueContainer" *ngFor="let entry of PADSSForm">\n  <ion-card-header *ngIf="entry.category">{{entry.category}}</ion-card-header>\n    <ion-item><ion-label class="dilutionDrogueInduction">\n    {{entry.val}}\n    <p class="comment">+ {{entry.count}} point(s)</p>\n  </ion-label>  \n    <ion-checkbox color="turquoise-fonce" (click)="countPADSS()" [(ngModel)]="entry.isChecked"></ion-checkbox>\n  </ion-item>\n  </ion-card>\n  \n  \n  <ion-card padding class="drogueContainer">\n\n  </ion-card>\n</ion-content>\n\n<ion-footer padding class="scoreFooter">\n  <p class="comment">Total : <b>{{totalPADSS}}/14 pts</b></p>\n  <p padding class="strategie">Stratégie (sortie ambulatoire > 8/10) : {{CATPADSS}}</p>\n</ion-footer>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\padss\padss.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], PadssPage);
-    return PadssPage;
-}());
-
-//# sourceMappingURL=padss.js.map
-
-/***/ }),
-
-/***/ 854:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the ShsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ShsPage = /** @class */ (function () {
-    function ShsPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.risqueSHS = "Répondre aux questions du score.";
-        this.SHSform = [
-            { val: "Q1. Besoin de secouer l'enfant :", count: 0 },
-            { val: "Q2. Arrêts respiratoires nocturnes :", count: 0 },
-            { val: "Q3. Difficultés à respirer la nuit :", count: 0 },
-            { val: "Q4. Inquiétudes des parents sur le sommeil de l'enfant :", count: 0 },
-            { val: "Q5. Intensité du bruit de son ronflement (pour cette question, échelle de 0 = faible à 4 = très bruyant) :", count: 0 },
-            { val: "Q6. Existence de ronflement :", count: 0 },
-        ];
-    }
-    ShsPage.prototype.retourHome = function () {
-        this.navCtrl.pop();
-    };
-    ;
-    ShsPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ShsPage');
-    };
-    ShsPage.prototype.countSHS = function () {
-        this.SHSQ1 = Math.floor(this.SHSform[0].count);
-        this.SHSQ2 = Math.floor(this.SHSform[1].count);
-        this.SHSQ3 = Math.floor(this.SHSform[2].count);
-        this.SHSQ4 = Math.floor(this.SHSform[3].count);
-        this.SHSQ5 = Math.floor(this.SHSform[4].count);
-        this.SHSQ6 = Math.floor(this.SHSform[5].count);
-        console.log(this.SHSQ1, this.SHSQ2, this.SHSQ3);
-        this.cumuleSHS = Math.round(((((((((((this.SHSQ1 + this.SHSQ2) / 2) + this.SHSQ3) / 2) + this.SHSQ4) / 2) + this.SHSQ5) / 2) + this.SHSQ6) / 2) * 100) / 100;
-        console.log("index cumule = ", this.cumuleSHS);
-        if (this.cumuleSHS >= 2.72) {
-            this.risqueSHS = "Enfant présentant probablement un SAOS sévère et à risque élevé d'apnées post-opératoires. Prévoir une hospitalisation et limiter la consommation de morphiniques.";
-        }
-        else {
-            this.risqueSHS = "Enfant ne présentant probablement pas un SAOS sévère. Pas de contre indication à l'ambulatoire liée à ce paramètre.";
-        }
-    };
-    ;
-    ShsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-shs',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\shs\shs.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Score SHS</div>\n   <br>\n \n    </ion-header>\n\n\n<ion-content padding>\n\n\n    \n           \n    \n  <ion-card class="drogueContainer">\n \n    <p  class="reference">Référence : Spruyt & al., Screening of pediatric sleep-disordered breathing. Chest 2012.\n      <br>\n    6 questions, 5 choix possibles (dans les 6 derniers mois): \n      <br> - 0 : jamais \n      <br> - 1 : rarement (une fois par semaine)\n      <br> - 2 : occasionnelement (deux fois par semaine)\n      <br> - 3 : fréquemment (3 à 4 fois par semaine)\n      <br> - 4 : presque toujours (plus de 4 fois par semaine).\n    </p>\n\n    <p class="comment">Interprétation : un score cumulé global supérieur à 2.72 prédit un index d\'apnée-hypopnée supérieur à 5/h, ce qui correspond à un SAOS sévère de l\'enfant.\n      <br>\n      Détail du calcul : A = (Q1+Q2)/2, B = (A+Q3)/2, C = (B+Q4)/2, D = (C+Q5)/2, score cumulé global = (D+Q6)/2. \n    </p>\n\n    <ion-card-content *ngFor="let entry of SHSform">\n\n      <ion-list>\n          {{entry.val}}\n          <br>\n        \n          <ion-segment [(ngModel)]="entry.count" color="dark-turquoise" (ionChange)="countSHS()">\n          <ion-segment-button value="0">\n            <ion-label>0</ion-label>\n          </ion-segment-button>\n          <ion-segment-button value="1">\n            <ion-label>1</ion-label>\n          </ion-segment-button>\n          <ion-segment-button value="2">\n            <ion-label>2</ion-label>\n          </ion-segment-button>\n          <ion-segment-button value="3">\n            <ion-label>3</ion-label>\n          </ion-segment-button>\n          <ion-segment-button value="4">\n            <ion-label>4</ion-label>\n          </ion-segment-button>\n        </ion-segment>            \n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n    \n  <ion-footer padding class="scoreFooter">\n  <p class="comment">Score cumulé global : <b>{{cumuleSHS}}</b></p>\n  <p class="strategie" padding><b>Stratégie : </b>{{risqueSHS}}</p>\n</ion-footer>\n\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\shs\shs.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], ShsPage);
-    return ShsPage;
-}());
-
-//# sourceMappingURL=shs.js.map
-
-/***/ }),
-
-/***/ 855:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VpopPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the VpopPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var VpopPage = /** @class */ (function () {
-    function VpopPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.VPOPform = [
-            { val: 'Âge inférieur à 3 ans', isChecked: false, count: 0 },
-            { val: 'Âge entre 3 et 6 ans', isChecked: false, count: 1 },
-            { val: 'Âge entre 6 et 13 ans', isChecked: false, count: 2 },
-            { val: 'Âge supérieur à 13 ans', isChecked: false, count: 1 },
-            { val: 'Mal des transports', isChecked: false, count: 1 },
-            { val: 'Chirurgie > 45 minutes', isChecked: false, count: 1 },
-            { val: 'Chirurgie à risque : amygdales, strabisme, tympan', isChecked: false, count: 1 },
-            { val: 'Réinjection de morphiniques', isChecked: false, count: 1 },
-        ];
-        this.totalVPOP = 0;
-        this.prophylaxieVPOP = "Compléter les items du score.";
-    }
-    VpopPage.prototype.retourHome = function () {
-        this.navCtrl.pop();
-    };
-    ;
-    VpopPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad VpopPage');
-    };
-    VpopPage.prototype.countVPOP = function () {
-        console.log("count");
-        this.totalVPOP = this.VPOPform.filter(function (item) { return item.isChecked === true; }).reduce(function (sum, current) { return sum + current.count; }, 0);
-        this.setRiskVPOP();
-        console.log(this.totalVPOP);
-    };
-    ;
-    VpopPage.prototype.setRiskVPOP = function () {
-        if (this.totalVPOP == 0) {
-            this.risqueVPOP = 6;
-        }
-        else if (this.totalVPOP == 1) {
-            this.risqueVPOP = 7;
-        }
-        else if (this.totalVPOP == 2) {
-            this.risqueVPOP = 15;
-        }
-        else if (this.totalVPOP == 3) {
-            this.risqueVPOP = 25;
-        }
-        else if (this.totalVPOP == 4) {
-            this.risqueVPOP = 39;
-        }
-        else if (this.totalVPOP == 5) {
-            this.risqueVPOP = 53;
-        }
-        else if (this.totalVPOP == 6) {
-            this.risqueVPOP = 69;
-        }
-        ;
-        if (this.totalVPOP <= 2) {
-            this.prophylaxieVPOP = "Risque faible. Dexaméthasone seule en prophylaxie.";
-        }
-        else if (this.totalVPOP <= 4) {
-            this.prophylaxieVPOP = "Risque Modéré. Déxaméthasone et Dropéridol en prophylaxie. Eviter le protoxyde d'azote. Limiter les opioïdes en post-opératoire.";
-        }
-        else {
-            this.prophylaxieVPOP = "Risque élevé. Déxaméthasone et Dropéridol en prophy  laxie. Considérer Ondansétron en per opératoire. Eviter le protoxyde d'azote. Limiter les opioïdes en post-opératoire.";
-        }
-    };
-    ;
-    VpopPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-vpop',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\vpop\vpop.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Score VPOP</div>\n   <br>\n \n    </ion-header>\n\n<ion-content padding>\n\n    <ion-card class="drogueContainer">\n    <p class="reference">Référence : Bourdaud et al. Development & validation of a risk score to predict probability of p/o vomiting in pediatric patients. Pediatric Anesthesia 2014.\n    </p>\n\n    <ion-card-content>\n      <ion-item *ngFor="let entry of VPOPform">\n        <ion-label class="dilutionDrogueInduction">{{entry.val}}\n          <p class="dilutionDrogueInduction">+ {{entry.count}} point(s)</p>\n        </ion-label>\n        <ion-checkbox color="turquoise-fonce" (click)="countVPOP()" [(ngModel)]="entry.isChecked"></ion-checkbox>\n      </ion-item>\n    </ion-card-content>\n    </ion-card>\n</ion-content>\n\n\n<ion-footer padding class="scoreFooter">\n  <p class="comment">Total : <b>{{totalVPOP}} pts</b> - Risque NVPO : <b>{{risqueVPOP}} %</b></p>\n  <p class="strategie">Stratégie : {{prophylaxieVPOP}}</p>\n</ion-footer>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\vpop\vpop.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], VpopPage);
-    return VpopPage;
-}());
-
-//# sourceMappingURL=vpop.js.map
-
 /***/ })
 
-},[513]);
+},[522]);
 //# sourceMappingURL=main.js.map

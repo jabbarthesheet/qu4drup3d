@@ -1,5 +1,16 @@
 ion-slides {
-  height: 45%;
+  height: 40%;
+  
+}
+
+.slideTitle{
+  text-align: center;
+  color:#009c9e; 
+  font-size:12px; 
+}
+
+.accueilHeader {
+  box-shadow: none;
 }
 
 .menuButton {
@@ -214,3 +225,13 @@ text-align: center;
   text-align:center;
 }
 
+
+.searchBarSwitch{
+  width: 8%; 
+  height: 30px; 
+  margin-top:15px; 
+  margin-right: 5px; 
+  float: right;
+  color: #009c9e;
+  border-color: #009c9e;
+}

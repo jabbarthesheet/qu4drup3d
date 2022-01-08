@@ -1,0 +1,137 @@
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+
+   Bilan pré-opératoire</div>
+   <br>
+ 
+    </ion-header>
+
+<ion-content>
+  <ion-chip style="margin-top: 5%; margin-left:2%;" color="dark-turquoise"><ion-icon color="dark-turquoise" name="bulb"></ion-icon></ion-chip>
+  <div class="comment" padding style="float:right; width:87%; color:darkgray;">
+  Une circoncision sans saignement et un doigt de porte avec hémostase spontanée rassurent sur la diathèse hémorragique si l'enfant va bien par ailleurs.
+  </div>
+
+  <ion-card>
+
+  <ion-card-header color="dark-turquoise">1. Chirurgie à risque hémorragique élevé ?</ion-card-header>  
+  <ion-card-content>
+    <div class="comment">
+      Notamment : 
+      <br>
+      - Chirurgie du rachis, ostéotomie, reprise de chirurgie endonasale, arthrite septique (suspecter une hémophilie),<br>
+      - Chirurgie hépatique ou carcinologique à risque hémorragique, <br>
+      - Anesthésie pour pose de cathéter veineux central.
+    </div>
+    <button *ngIf = "chirRisqueEleve == 'Inconnue' " (click)="chirRisqueOui()" outline ion-button color="dark-turquoise">Oui</button>
+    <button *ngIf = "chirRisqueEleve == 'Inconnue' " (click)="chirRisqueNon()" outline ion-button color="dark-turquoise">Non</button>
+
+    <button *ngIf = "chirRisqueEleve == 'Oui' " (click)="chirRisqueOui()" outline ion-button color="danger">Oui</button>
+    <button *ngIf = "chirRisqueEleve == 'Oui' " (click)="chirRisqueNon()" outline ion-button color="dark-turquoise">Non</button>
+
+    <button *ngIf = "chirRisqueEleve == 'Non' " (click)="chirRisqueOui()" outline ion-button color="dark-turquoise">Oui</button>
+    <button *ngIf = "chirRisqueEleve == 'Non' " (click)="chirRisqueNon()" outline ion-button color="danger">Non</button>
+
+  </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf = "chirRisqueEleve == 'Oui' " >
+    <ion-card-header color="dark-turquoise">Bilan obligatoire.   
+    </ion-card-header>
+    <ion-card-content>
+      <span class="mesurespreventives"> &nbsp;Bilan biologique : &nbsp;</span>
+      <br>
+      - Numération formule sanguine avec numération plaquettaire,
+      <br>
+      - Hémostase biologique comportant en première intention TP, TCA, TCK, fibrinogène,
+      <br>
+      - Bilan pré-transfusionnel : deux déterminations de groupe sanguin, recherche d'agglutinines irrégulières (attention, validité limitée à 72h),
+      <br>
+      - Compléter le cas échéant par un bilan adapté aux comorbidités : dénutrition, fonction rénale, fonction hépatique, etc.
+    </ion-card-content>
+      </ion-card> 
+
+  <ion-card *ngIf = "chirRisqueEleve == 'Non' ">
+    <ion-card-header color="dark-turquoise">2. Marche acquise ?</ion-card-header>
+    <ion-card-content>Station debout sans aide acquise depuis plus de 2 mois.<br>
+      <button *ngIf = "MarcheAcquise == 'Inconnue' " (click)="MarcheOui()" outline ion-button color="dark-turquoise">Oui</button>
+      <button *ngIf = "MarcheAcquise == 'Inconnue' " (click)="MarcheNon()" outline ion-button color="dark-turquoise">Non</button>
+      
+      <button *ngIf = "MarcheAcquise == 'Non' " (click)="MarcheOui()" outline ion-button color="dark-turquoise">Oui</button>
+      <button *ngIf = "MarcheAcquise == 'Non' " (click)="MarcheNon()" outline ion-button color="danger">Non</button>
+
+      <button *ngIf = "MarcheAcquise == 'Oui' " (click)="MarcheOui()" outline ion-button color="danger">Oui</button>
+      <button *ngIf = "MarcheAcquise == 'Oui' " (click)="MarcheNon()" outline ion-button color="dark-turquoise">Non</button>
+      
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf = "MarcheAcquise == 'Non' ">
+    <ion-card-content color="danger">
+      Bilan biologique minimal obligatoire : NFS, plaquettes, TP, TCA, TCK, fibrinogène.
+  </ion-card-content>
+  </ion-card>
+    
+  <ion-card *ngIf = "MarcheAcquise == 'Oui' ">
+    <ion-card-header color="dark-turquoise">3. Doute diathèse hémorragique ?</ion-card-header>
+    <ion-card-content>
+      Rechercher par l'interrogatoire une diathèse hémorragique chez l'enfant et ses parents biologiques. 
+      <br>
+      On considèrera qu'il n'y a aucun doute si les parents ont par ailleurs une bonne compréhension des questions et sont les parents biologiques de l'enfant.
+      <br>
+      L'interrogatoire à réaliser est présenté <ion-chip (click)="afficherQuestionnaire()" color="dark-turquoise"><ion-label> &nbsp; ici &nbsp;</ion-label></ion-chip>. 
+      
+      <button *ngIf = "DiatheseHemo == 'Inconnue' " (click)="DiatheseHemoOui()" outline ion-button color="dark-turquoise">Oui</button>
+      <button *ngIf = "DiatheseHemo == 'Inconnue' " (click)="DiatheseHemoNon()" outline ion-button color="dark-turquoise">Non</button>
+      
+      <button *ngIf = "DiatheseHemo == 'Non' " (click)="DiatheseHemoOui()" outline ion-button color="dark-turquoise">Oui</button>
+      <button *ngIf = "DiatheseHemo == 'Non' " (click)="DiatheseHemoNon()" outline ion-button color="danger">Non</button>
+
+      <button *ngIf = "DiatheseHemo == 'Oui' " (click)="DiatheseHemoOui()" outline ion-button color="danger">Oui</button>
+      <button *ngIf = "DiatheseHemo == 'Oui' " (click)="DiatheseHemoNon()" outline ion-button color="dark-turquoise">Non</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf = "DiatheseHemo == 'Oui' ">
+    <ion-card-content color="danger">
+      Bilan biologique minimal obligatoire : NFS, plaquettes, TP, TCA, TCK, fibrinogène.
+  </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf = "DiatheseHemo == 'Non' ">
+    <ion-card-header color="dark-turquoise">4. Facteurs de risque ?</ion-card-header>
+    <ion-card-content>
+      Eliminer des éléments en faveur d'un syndrome anémique ou d'un syndrome carentiel :
+      <br>
+      - Paleur conjonctivale, dyspnée, polypnée, asthénie, 
+      <br>
+      - Retard staturopondéral, anomalie des phanères, pica, etc... 
+      <br>
+      <button *ngIf = "FdRCarence == 'Inconnue' " (click)="FdRoui()" outline ion-button color="dark-turquoise">Oui</button>
+      <button *ngIf = "FdRCarence == 'Inconnue' " (click)="FdRnon()" outline ion-button color="dark-turquoise">Non</button>
+      
+      <button *ngIf = "FdRCarence == 'Non' " (click)="FdRoui()" outline ion-button color="dark-turquoise">Oui</button>
+      <button *ngIf = "FdRCarence == 'Non' " (click)="FdRnon()" outline ion-button color="danger">Non</button>
+
+      <button *ngIf = "FdRCarence == 'Oui' " (click)="FdRoui()" outline ion-button color="danger">Oui</button>
+      <button *ngIf = "FdRCarence == 'Oui' " (click)="FdRnon()" outline ion-button color="dark-turquoise">Non</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf = "FdRCarence == 'Oui' ">
+    <ion-card-content color="danger">
+      Bilan biologique minimal obligatoire : NFS, plaquettes, TP, TCA, TCK, fibrinogène.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf = "FdRCarence == 'Non' " >
+    <ion-card-header color="dark-turquoise">Pas de bilan.   
+    </ion-card-header>
+      </ion-card> 
+    
+</ion-content>

@@ -1,6 +1,13 @@
-import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { TapBlockPage } from '../../pages-alr/tap-block/tap-block';
+import { PeriduralePage } from '../../pages-alr/peridurale/peridurale';
+import { BlocGrandsDroitsPage } from '../../pages-alr/bloc-grands-droits/bloc-grands-droits';
+import { GeneralitesAlrPage } from '../../pages-alr/generalites-alr/generalites-alr';
+
+import { Component, OnInit } from '@angular/core';
+import { ServiceDataProvider } from "../../../providers/service-data/liste_medicaments";
+import 'rxjs/add/operator/debounceTime';
 
 
 /**
@@ -16,8 +23,17 @@ import { Storage } from '@ionic/storage';
 })
 export class LocoRegionalePage {
 
+  public pagesALR = [
+    { titre : "APD" , soustitre : "Anesthésie Péridurale" , page : PeriduralePage },
+    { titre : "Grands droits" , soustitre : "Bloc des muscles grands droits abdominaux" , page : BlocGrandsDroitsPage },
+    { titre : "TAP block" , soustitre : "Transversus Abdominis Plane Block", page : TapBlockPage },
+  ]; 
+  
+  searchBarType:boolean=false;  
+
   AgeNum:number; 
   PoidsNum:number;
+  PoidsRound:number; 
   DureeJeune:number; 
   Allergie:number; 
   EstomacPlein:boolean; 
@@ -47,46 +63,48 @@ export class LocoRegionalePage {
   VolPudendal:number;
   VolQL:number; 
 
-ALRView:number=1; 
+  public searchTerm: string = "";
+  public searchTermSpecialite : string = "";
+  public chirurgie : any ; 
 
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public alertController: AlertController ) {
+  constructor(
+    
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public alertController: AlertController, 
+    public storage : Storage,
+    public dataService: ServiceDataProvider, 
+    ) {
   }
 
   retourHome() {
     this.navCtrl.pop();
   };
 
+  ngOnInit() {
+    this.setFilteredChirurgie();
+    this.dataService.orderChirurgie();
+  };
 
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      cssClass: 'alerte',
-      title: 'Minute papillon !',
-      message: 'Saisissez un âge et un poids pour le patient.',
-      buttons: [
-        {
-          text: 'Plus tard.',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {
-            console.log('Confirm Cancel: Nan');
+  setFilteredChirurgie() {
+    this.chirurgie = this.dataService.filterChirurgie(this.searchTerm);
+  };
 
-          }
-        }, {
-          text: 'OK.',
-          handler: () => {
-            console.log('Confirm Okay');
-            this.navCtrl.pop();          }
-        }
-      ]
-    });
+  setFilteredSpecialite() {
+    this.chirurgie = this.dataService.filterSpecialite(this.searchTermSpecialite);
+  }
 
-    await alert.present();
-    };
+
+  displayChirurgie(index) {
+    this.chirurgie[index].isShown = !this.chirurgie[index].isShown; 
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LocoRegionalePage');
+  }
+
+  toggleSearchBars (){
+    this.searchBarType = !this.searchBarType; 
   }
 
   ionViewWillEnter(){
@@ -97,6 +115,7 @@ ALRView:number=1;
         this.ageLecture = Math.round((this.AgeNum/12)*10)/10; 
     this.storage.get('PoidsNum').then((Poids) => {
         this.PoidsNum = Poids;
+        this.PoidsRound = Math.round(this.PoidsNum);
     this.storage.get('DureeJeune').then((dureejeune) => {
         this.DureeJeune = dureejeune ;   
     this.storage.get('EstomacPlein').then((Estomac) => {
@@ -110,9 +129,7 @@ ALRView:number=1;
         if(!sexe){this.sexeMF="Fille"}
     this.storage.get('Taille').then((Taille) => {
         this.Taille = Taille; 
-    if (!this.PoidsNum || !this.AgeNum) { this.presentAlert(); this.calculs()}
-    else { this.calculs()
-    };
+    this.calculs();
     });
     });
     });
@@ -149,5 +166,12 @@ ALRView:number=1;
           this.VolQL = Math.round((this.PoidsNum * 0.25)*10)/10; 
           };
 
+openPageALR(index) {
+  this.navCtrl.push(this.pagesALR[index].page);
+};
+
+openPageGeneralites() {
+  this.navCtrl.push( GeneralitesAlrPage )
+};
 
 }

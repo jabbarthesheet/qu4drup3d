@@ -137344,7 +137344,18 @@ ion-row {
 }
 
 ion-slides {
-  height: 45%;
+  height: 40%;
+}
+
+.slideTitle {
+  text-align: center;
+  color: #009c9e;
+  font-size: 12px;
+}
+
+.accueilHeader {
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .menuButton {
@@ -137540,6 +137551,16 @@ figcaption {
   text-align: center;
 }
 
+.searchBarSwitch {
+  width: 8%;
+  height: 30px;
+  margin-top: 15px;
+  margin-right: 5px;
+  float: right;
+  color: #009c9e;
+  border-color: #009c9e;
+}
+
 .entete_protocole {
   font-size: smaller !important;
 }
@@ -137648,8 +137669,8 @@ ion-card {
   width: 90%;
   float: left;
   border-radius: 15px !important;
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
+  -webkit-box-shadow: white !important;
+  box-shadow: white !important;
 }
 
 .headerProtocoles {
@@ -137881,6 +137902,16 @@ ion-card {
   color: black;
 }
 
+.ALRnonRecommandee {
+  background-color: #C0C0C0;
+  font-size: 16px;
+}
+
+.ALRRecommandee {
+  background-color: #85D0D2;
+  font-size: 16px;
+}
+
 .lightbulb {
   width: 15% !important;
   margin-right: 10px;
@@ -137908,6 +137939,21 @@ ion-card {
 
 .tableauALR {
   font-size: 12px !important;
+}
+
+.detersion {
+  width: auto;
+  text-align: center;
+  padding: 6px;
+  background-color: #85D0D2;
+  border-radius: 25px;
+  margin: 10px;
+  color: #FFFFFF;
+}
+
+.pop-up {
+  -webkit-box-shadow: inset;
+  box-shadow: inset;
 }
 
 .intitules {
@@ -138087,8 +138133,17 @@ ion-card {
   color: #009c9e;
 }
 
+.mesurespreventives {
+  color: #ff6961;
+  font-weight: bold;
+}
+
 .scoreFooter {
   background-color: #f4f4f4;
+}
+
+.VMSlides {
+  height: 90%;
 }
 
 .tutorialSlides {

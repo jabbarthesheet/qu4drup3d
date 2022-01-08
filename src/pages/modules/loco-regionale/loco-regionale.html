@@ -8,409 +8,122 @@
           <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
           Retour
           </div>
-Anesthésie Loco-régionale
-            </div>
-            <br>
-      
-            <ion-segment color="turquoise-fonce" [(ngModel)]="ALRView" >
-              <ion-segment-button value="1">
-            Péridurale
-              </ion-segment-button>
-              <ion-segment-button value="2">
-            Rachianesthésie
-              </ion-segment-button>
-              <ion-segment-button value="3">
-                Blocs
-                  </ion-segment-button>
-            </ion-segment>
-       
+          ALR</div><br>
 
-          </ion-header>
+            <ion-toolbar>
+
+              <ion-searchbar *ngIf = "!this.searchBarType"
+              class="interventionSearchbar"
+              [(ngModel)]="searchTerm"
+              (ionChange)="setFilteredChirurgie()"
+              placeholder="Intervention..."
+              inputmode="text"
+            ></ion-searchbar><br *ngIf = "!this.searchBarType"><ion-icon *ngIf = "!this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>
+            
+            <ion-searchbar *ngIf = "this.searchBarType"
+            class="specialiteSearchbar"
+            [(ngModel)]="searchTermSpecialite"
+            (ionChange)="setFilteredSpecialite()"
+            placeholder="Specialite..."
+            inputmode="text"
+            ></ion-searchbar><br *ngIf = "this.searchBarType"><ion-icon *ngIf = "this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>
+            
+            
+            
+            </ion-toolbar>
+
+
+              </ion-header>
        <!-- END HEADER -->
-       <ion-content>
+
+
+<ion-content>
 
         <div padding class="patientHighlight">
           Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
           <br> Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>
         </div>
 
-    <ion-grid *ngIf="ALRView ==1">
+        <div *ngIf="!searchTerm && !searchTermSpecialite">
+          <ion-card (click)="openPageGeneralites()" class="drogueContainer">
+            <ion-card-content  class="cardRecos">
+            <div class="headerProtocoles">
+              Particularités de l'ALR en pédiatrie
+            </div>
+            <hr>
+            <div class="contentProtocoles">
+              <ion-icon start name="bulb"></ion-icon> &nbsp; <b>Généralités</b>
+            </div>
+            </ion-card-content>
+            </ion-card>  
+          </div>
 
-      <ion-row class="subHeaderRow">
-        <ion-col>
-          Réalisation
-        </ion-col>
-      </ion-row>
+          <hr>
 
-      <ion-row>
-        <ion-col>
-          Ponction
-        </ion-col>
-        <ion-col>
-         <ion-chip color="primary"><ion-label>L4-L5</ion-label></ion-chip>  </ion-col>
-      </ion-row>
+        <div *ngIf="!searchTerm && !searchTermSpecialite">
+        <ion-card (click)="openPageALR(index)" class="drogueContainer" *ngFor="let entry of pagesALR, let index = index">
+          <ion-card-content  class="cardRecos">
+          <div class="headerProtocoles">
+            {{entry.soustitre}}
+          </div>
+          <hr>
+          <div class="contentProtocoles">
+            <ion-icon start name="flag"></ion-icon> &nbsp; <b>{{entry.titre}}</b>
+          </div>
+          </ion-card-content>
+          </ion-card>  
 
-      <ion-row>
-        <ion-col>
-          Aiguille
-        </ion-col>
-        <ion-col>
-         <ion-chip color="primary"><ion-label>Pédiatrique</ion-label></ion-chip> (graduation/5mm)
-         </ion-col>
-      </ion-row>
-
-
-      <ion-row class="subHeaderRow">
-        <ion-col>
-          Mesures
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          Estimation EPD Kemura 
-          <p class="comment">(Poids+10)*0,8</p>
-        </ion-col>
-        <ion-col>
-          <ion-chip color="turquoise"><ion-label>{{Kemura}} mm</ion-label></ion-chip>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          Estimation EPD Busoni 
-          <p class="comment">Agex2 + 10</p>
-        </ion-col>
-        <ion-col>
-          <ion-chip color="turquoise"><ion-label>{{Busoni}} mm</ion-label></ion-chip>
-          </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          Cathétérisation 
-        </ion-col>
-        <ion-col>
-          <ion-chip color="turquoise"><ion-label>30 mm</ion-label></ion-chip>
-       </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          Insertion
-          <p class="comment">Distance espace + Cathétérisation</p> 
-        </ion-col>
-        <ion-col>
-          <ion-chip color="warning"><ion-label>{{(Busoni+Kemura)/2 + 30}} mm</ion-label></ion-chip>
-       </ion-col>
-      </ion-row>
-
-      <ion-row class="subHeaderRow">
-        <ion-col>
-          Cassette PIEB & PCEA
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          Volume total
-        </ion-col>
-        <ion-col>
-          <ion-chip color="light"><ion-label>50 mL</ion-label></ion-chip>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          Mélange
-        </ion-col>
-        <ion-col>
-          <ion-chip color="grisclair"><ion-label>Ropi 1 mg/mL</ion-label></ion-chip>
-          + <ion-chip color="primary"><ion-label>Suf 0,2 µg/mL</ion-label></ion-chip>  
-        </ion-col>
-      </ion-row>
-
-      <ion-row class="subHeaderRow">
-        <ion-col>
-        Posologies
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          Bolus horaire
-          <p class="comment">0,2 mL/kg/h</p>
-
-        </ion-col>
-        <ion-col>
-          <ion-chip color="warning"><ion-label>{{BolusPIEBRopiSuf}} mL </ion-label></ion-chip>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          Bolus demande
-          <p class="comment">0,15 mL/kg/bolus</p>
-        </ion-col>
-        <ion-col>
-          <ion-chip color="warning"><ion-label>{{BolusPCEARopiSuf}} mL</ion-label></ion-chip>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          Période réfractaire
-        </ion-col>
-        <ion-col>
-          <ion-chip color="warning"><ion-label>20 minutes</ion-label></ion-chip>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          Dose max. /4h
-          <p class="comment">1,5 mL/kg/4h</p>
-        </ion-col>
-        <ion-col>
-          <ion-chip color="danger"><ion-label>{{DoseMaxPCEARopiSuf}} mL</ion-label></ion-chip>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-
-
-
-
-    <ion-card *ngIf="ALRView == 2 && PoidsNum > 5" class="drogueContainer">
-    <ion-card-content>
-      Non applicable au delà de 5 kg.
-    </ion-card-content>
-    </ion-card>
-
- 
-
-    <ion-grid *ngIf="ALRView == 2 && PoidsNum <= 5">
-
-      <ion-row class="subHeaderRow">
-        <ion-col>
-          Critères
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          Nouveau né de moins de 5 kg
-        </ion-col>
-      </ion-row> 
-      
-      <ion-row>
-        <ion-col>
-          Chirurgie sous ombilicale
-        </ion-col>
-      </ion-row>
-
-      <ion-row class="subHeaderRow">
-        <ion-col>
-          Réalisation
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          Ponction
-        </ion-col>
-        <ion-col>
-         <ion-chip color="primary"><ion-label>L4-L5</ion-label></ion-chip>  </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          Aiguille
-        </ion-col>
-        <ion-col>
-         <ion-chip color="primary"><ion-label>25G - 25mm</ion-label></ion-chip>  </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          Seringue
-        </ion-col>
-        <ion-col>
-         <ion-chip color="primary"><ion-label>1 mL - 10 graduations</ion-label></ion-chip> (type insuline)  </ion-col>
-      </ion-row>
-
-      <ion-row class="subHeaderRow">
-        <ion-col>
-          Posologie
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          Bupivacaïne 5 mg/mL
-          <p class="comment">0,2 mL/kg</p>
-        </ion-col>
-        <ion-col>
-         <ion-chip color="warning"><ion-label>{{VolBupi5NN}}</ion-label></ion-chip>  </ion-col>
-      </ion-row>
-      </ion-grid>
-
-      <div *ngIf="ALRView == 2 && PoidsNum <= 5" class="astucediv" padding = "15 px">
-        <img class="lightbulb" src="/assets/imgs/light-bulb.png">
-        <p class="astuce"> 
-        <b>L'astuce de Joëlle</b> : Quelques gouttes de G30% sur les lèvres, avant, pendant et après la rachianesthésie</p>
         </div>
 
 
-  <ion-grid *ngIf="ALRView ==3">
+          <div *ngIf="searchTerm || searchTermSpecialite">
 
-    <ion-row class="subHeaderRow">
-      <ion-col>
-        Produits
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        Ropivacaïne
-      </ion-col>
-      <ion-col>
-        2 mg/mL
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        Injection
-      </ion-col>
-      <ion-col>
-        Unique
-      </ion-col>
-    </ion-row>
-
-    <ion-row class="subHeaderRow">
-      <ion-col>
-      Bloc
-      <p class="comment">Posologie</p>
-      </ion-col>
-      <ion-col>
-      Volume
-      </ion-col>
-
-    </ion-row>
+            <div class="detersion" *ngIf="AgeNum <= 3">Détersion cutanée : chlorexidine avant 3 mois</div>
+            <div class="detersion" *ngIf="AgeNum > 3">Détersion cutanée : bétadine jaune après 3 mois</div>
 
 
-
-    <ion-row>
-      <ion-col>
-        Axillaire
-        <p class="comment">0,2 à 0,5 mL/kg</p>
-            </ion-col>
-      <ion-col>
-        <ion-chip color="light"><ion-label>{{VolBAXmin}} à {{VolBAXmax}} mL</ion-label></ion-chip>
-     
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        Fémoral
-        <p class="comment">0,3 à 1 mL/kg</p>
-            </ion-col>
-      <ion-col>
-        <ion-chip color="light"><ion-label>{{VolFEMmin}} à {{VolFEMmax}} mL</ion-label></ion-chip>
-      
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        Sciatique
-        <p class="comment">0,3 à 1 mL/kg</p>
-      </ion-col>
-      <ion-col>
-        <ion-chip color="light"><ion-label>{{VolSciatMin}} à {{VolSciatMax}} mL</ion-label></ion-chip>
-      
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        Ilio-hypogastrique
-        <p class="comment">0,5 mL/kg</p>
-       </ion-col>
-      <ion-col>
-        <ion-chip color="light"><ion-label>{{VolIH}} mL</ion-label></ion-chip>
+            <ion-card padding class="chirurgieContainer" *ngFor="let chir of chirurgie, let index = index" [attr.data-index]="index">
+                  <div class="comment" *ngIf="chir.recommandationALR == 'Non recommandée'">
+                  <ion-chip class="ALRnonRecommandee">
+                    <ion-label>{{chir.intitule}} </ion-label>
+                  </ion-chip> - anesthésie loco-régionale non recommandée</div>
         
-      </ion-col>
-    </ion-row>
+                  <div class="comment" *ngIf="chir.recommandationALR == 'Recommandée'">
+                  <ion-chip class="ALRRecommandee">
+                    <ion-label>{{chir.intitule}}</ion-label>
+                  </ion-chip> - anesthésie loco-régionale recommandée</div>
 
-    <ion-row>
-      <ion-col>
-        Pénien
-        <p class="comment"> 0,1 mL/kg</p>
-       </ion-col>
-      <ion-col>
-        <ion-chip color="light"><ion-label>{{VolPenien}} mL</ion-label></ion-chip>
-    
-      </ion-col>
-    </ion-row>
+                  <!-- Technique A produit 1 -->  
+                <div *ngIf="chir.techniqueproposeeA">
+                <span class="specialiteChirurgie">Technique recommandée : {{chir.techniqueproposeeA}}</span> 
+                <br>
+                <span *ngIf="chir.produitALR1A" class="specialiteChirurgie">Produit : {{chir.produitALR1A}} - {{chir.posologieALR1A}} soit {{PoidsRound * chir.posologieNumALR1A}} mg/côté (ou {{PoidsRound * chir.posologieNumALR1A/chir.concentrationProduit1A}} mL/côté).</span> 
+                <br>
+                <span *ngIf="chir.dosetoxiqueALR1A" class="specialiteChirurgie">Dose toxique : {{chir.dosetoxiqueALR1A}} - soit {{PoidsRound * chir.dosetoxiqueNumALR1A}} mg (ou {{PoidsRound * chir.dosetoxiqueNumALR1A/chir.concentrationProduit1A}} mL).</span> 
+                <br> 
+                <span *ngIf="chir.adjuvantALRA" class="specialiteChirurgie">Adjuvant proposé : {{chir.adjuvantALRA}} soit {{PoidsRound}} µg dilués dans la seringue.</span>
+                <br>
+              </div>
 
-    <ion-row>
-      <ion-col>
-        Paravertébral
-        <p class="comment">0,5 mL/kg</p>
-      </ion-col>
-      <ion-col>
-        <ion-chip color="light"><ion-label>{{VolBPV}} mL</ion-label></ion-chip>
-        
-      </ion-col>
-    </ion-row>
+                <!-- Technique A produit 2 NON REMPLI POUR LE MOMENT -->  
 
-  <ion-row>
-    <ion-col>
-      TAP
-      <p class="comment">0,3 à 0,5 mL/kg/côté</p>
-   </ion-col>
-    <ion-col>
-      <ion-chip color="light"><ion-label>{{VolTAPmin}} à {{VolTAPmax}} mL/côté</ion-label></ion-chip>
-      
-    </ion-col>
-  </ion-row>
 
-  <ion-row>
-    <ion-col>
-      Carré des lombes 
-      <p class="comment"> 0,25 mL/kg/côté</p>
-       </ion-col>
-    <ion-col>
-      <ion-chip color="light"><ion-label>{{VolQL}} mL/côté</ion-label></ion-chip>
-      
-     </ion-col>
-  </ion-row>
+                <!-- Technique B produit 1   --> 
+                 <div *ngIf="chir.techniqueproposeeB">
+                --<br>
+                 <span *ngIf="chir.techniqueproposeeB" class="specialiteChirurgie">Technique alternative : {{chir.techniqueproposeeB}}</span> 
+                 <br>
+                 <span *ngIf="chir.produitALR1B" class="specialiteChirurgie">Produit : {{chir.produitALR1B}} - {{chir.posologieALR1B}} soit {{(PoidsRound * chir.posologieNumALR1B)}} mg/côté (ou {{PoidsRound * chir.posologieNumALR1B/chir.concentrationProduit1B}} mL/côté).</span> 
+                 <br>
+                 <span *ngIf="chir.dosetoxiqueALR1B" class="specialiteChirurgie">Dose toxique : {{chir.dosetoxiqueALR1B}} - soit {{PoidsRound * chir.dosetoxiqueNumALR1B}} mg (ou {{PoidsRound * chir.dosetoxiqueNumALR1B/chir.concentrationProduit1B}} mL).</span> 
+                 <br> 
+                 <span *ngIf="chir.adjuvantALRB" class="specialiteChirurgie">Adjuvant proposé : {{chir.adjuvantALRB}} soit {{PoidsRound}} µg dilués dans la seringue.</span>
+                 <br>
+                </div> 
 
-  <ion-row>
-    <ion-col>
-      Erecteurs du rachis
-      <p class="comment">0,25 mL/kg/côté</p>
-    </ion-col>
-    <ion-col>
-      <ion-chip color="light"><ion-label>{{VolQL}} mL/côté</ion-label></ion-chip>
-      
-    </ion-col>
-  </ion-row>
+                <!-- Technique B produit 2 NON REMPLI POUR LE MOMENT -->  
 
-  <ion-row>
-    <ion-col>
-    Pudendal    
-    <p class="comment">0,2 mL/kg/côté
-    </p>
-    </ion-col>
-    <ion-col>
-      <ion-chip color="light"><ion-label>{{VolPudendal}} mL/côté</ion-label></ion-chip>
-      
-    </ion-col>
-  </ion-row>
-</ion-grid>
-
+              </ion-card>
+              </div>
 </ion-content>
 

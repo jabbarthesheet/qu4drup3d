@@ -1,0 +1,81 @@
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+
+   VM & IOT impossibles</div>
+   <br>
+ 
+    </ion-header>
+
+    <ion-content>
+
+      <ion-item color="danger" style="text-align:center">
+        VM & IOT difficiles <ion-icon name="arrow-forward"></ion-icon> O2 100% <ion-icon name="arrow-forward"></ion-icon> Appel à l'aide
+      </ion-item>
+
+      <ion-slides  class="VMSlides" pager="true">
+
+        <ion-slide>
+          <h2>Etape A</h2>
+        <ion-card>
+        <ion-card-content style="padding:0%">
+          <ion-item color="dark-turquoise">
+          Continuer à ventiler et oxygéner
+        </ion-item>
+          <ul  class="comment">
+            <li>FiO2 1</li>
+            <li>Optimiser la position de la tête</li>
+            <li>Dispositif supra glottique</li>
+            <li>Vidéolaryngoscope</li>
+            <li>Lutter contre la distension gastrique</li>
+          </ul>
+          <ion-item color="warning">SpO2 > 80%</ion-item>
+          <ul class="comment">
+            <li>Tenter le réveil</li>
+            <li>Suggamadex 16 mg/kg si Rocuronium</li>
+          </ul>
+          <ion-item color="danger">SpO2 < 80% ou bradycardie <ion-icon name="arrow-forward"></ion-icon> étape B</ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <h2>Etape B</h2>
+    <ion-card>
+    <ion-card-content style="padding:0%">
+      <ion-item color="danger" style="text-align: center;">Techniques de <i>rescue</i></ion-item>
+      <ion-item color="warning" style="text-align: center;">Chirurgien ORL disponible ? </ion-item>
+
+      <div style="width:40%; margin:5%; text-align:center; float:left">
+        <ion-icon name="arrow-down"></ion-icon>
+          <br>
+          Oui
+          <br>
+          <ion-icon name="arrow-down"></ion-icon>
+          <br>
+          <ion-item color="warning" style="text-align: center;">Trachéotomie <br> chirurgicale</ion-item>
+        </div>
+      
+        <div style="width:40%; margin:5%; text-align:center; float:right">
+          <ion-icon name="arrow-down"></ion-icon>
+            <br>
+            Non
+            <br>
+            <ion-icon name="arrow-down"></ion-icon>
+            <br>
+            <ion-item color="danger" style="text-align: center;">
+              Trachéotomie 
+              <br>percutanée,
+            <br>Jet ventilation,
+            <br>Cricothyroïdotomie
+          </ion-item>
+          </div>
+    </ion-card-content>
+  </ion-card>
+</ion-slide>
+    </ion-slides>
+    </ion-content>

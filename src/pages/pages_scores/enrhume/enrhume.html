@@ -1,0 +1,149 @@
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+
+   Gestion de l'enfant enrhumé</div>
+   <br>
+ 
+    </ion-header>
+
+<ion-content>
+  <ion-card>
+
+  <ion-card-header color="dark-turquoise">1. Chirurgie urgente ?</ion-card-header>  
+  <ion-card-content>
+    <button *ngIf = "chirurgieUrgente == 'Inconnue' " (click)="urgenceOui()" outline ion-button color="dark-turquoise">Oui</button>
+    <button *ngIf = "chirurgieUrgente == 'Inconnue' " (click)="urgenceNon()" outline ion-button color="dark-turquoise">Non</button>
+
+    <button *ngIf = "chirurgieUrgente == 'Oui' " (click)="urgenceOui()" outline ion-button color="danger">Oui</button>
+    <button *ngIf = "chirurgieUrgente == 'Oui' " (click)="urgenceNon()" outline ion-button color="dark-turquoise">Non</button>
+
+    <button *ngIf = "chirurgieUrgente == 'Non' " (click)="urgenceOui()" outline ion-button color="dark-turquoise">Oui</button>
+    <button *ngIf = "chirurgieUrgente == 'Non' " (click)="urgenceNon()" outline ion-button color="danger">Non</button>
+  </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf = "chirurgieUrgente == 'Oui' " >
+    <ion-card-header color="dark-turquoise">Procéder à l'anesthésie.   
+    </ion-card-header>
+    <ion-card-content>
+      <span class="mesurespreventives"> &nbsp;Mesures préventives : &nbsp;</span>
+      <br>
+      - Enfant < 20 kg : aérosol Bricanyl 2,5 mg et Pulmicort 1 mg,
+      <br>
+      - Enfant > 20 kg : aérosol Bricanyl 5 mg et Pulmicort 2 mg,
+      <br>
+      - Kinésithérapie respiratoire et désobstruction rhinopharyngée,
+      <br>
+      - Présence d'un anesthésiste et d'un IADE confirmés, vérifier la disponibilité d'un aide supplémentaire, 
+      <br>
+      - Chaque fois que possible, préférer dans l'ordre masque facial, masque laryngé, sonde d'intubation, 
+      <br>
+      - Induction ou coinduction intraveineuse préférable.  
+    </ion-card-content>
+      </ion-card> 
+
+  <ion-card *ngIf = "chirurgieUrgente == 'Non' ">
+    <ion-card-header color="dark-turquoise">2. IVAI ou fièvre ?</ion-card-header>
+    <ion-card-content>
+      Rechercher une infection des voies aériennes inférieures (crépitants ou sibilants auscultatoires) et/ou la présence d'une hyperthermie supérieure à 38°C. 
+      <br>
+      <button *ngIf = "IVAIouFievre == 'Inconnue' " (click)="IVAIoui()" outline ion-button color="dark-turquoise">Oui</button>
+      <button *ngIf = "IVAIouFievre == 'Inconnue' " (click)="IVAInon()" outline ion-button color="dark-turquoise">Non</button>
+      
+      <button *ngIf = "IVAIouFievre == 'Non' " (click)="IVAIoui()" outline ion-button color="dark-turquoise">Oui</button>
+      <button *ngIf = "IVAIouFievre == 'Non' " (click)="IVAInon()" outline ion-button color="danger">Non</button>
+
+      <button *ngIf = "IVAIouFievre == 'Oui' " (click)="IVAIoui()" outline ion-button color="danger">Oui</button>
+      <button *ngIf = "IVAIouFievre == 'Oui' " (click)="IVAInon()" outline ion-button color="dark-turquoise">Non</button>
+      
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf = "IVAIouFievre == 'Oui' ">
+    <ion-card-content color="danger">
+      Reporter l'intervention pour 4 semaines minimum. 
+    </ion-card-content>
+  </ion-card>
+    
+  <ion-card *ngIf = "IVAIouFievre == 'Non' ">
+    <ion-card-header color="dark-turquoise">3. Gravité IVAS ?</ion-card-header>
+    <ion-card-content>
+      Rechercher un signe de gravité de l'infection des voies aériennes supérieures : 
+      <br>
+      - bronchite productive (toux productive, expectorations sales, ronchis auscultatoires), 
+      <br>
+      et/ou
+      <br>
+      - laryngite (toux aboyante). 
+      <br>
+      <button *ngIf = "IVASsevere == 'Inconnue' " (click)="IVASsevereoui()" outline ion-button color="dark-turquoise">Oui</button>
+      <button *ngIf = "IVASsevere == 'Inconnue' " (click)="IVASseverenon()" outline ion-button color="dark-turquoise">Non</button>
+      
+      <button *ngIf = "IVASsevere == 'Non' " (click)="IVASsevereoui()" outline ion-button color="dark-turquoise">Oui</button>
+      <button *ngIf = "IVASsevere == 'Non' " (click)="IVASseverenon()" outline ion-button color="danger">Non</button>
+
+      <button *ngIf = "IVASsevere == 'Oui' " (click)="IVASsevereoui()" outline ion-button color="danger">Oui</button>
+      <button *ngIf = "IVASsevere == 'Oui' " (click)="IVASseverenon()" outline ion-button color="dark-turquoise">Non</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf = "IVASsevere == 'Oui' ">
+    <ion-card-content color="danger">
+      Reporter l'intervention pour 2 semaines minimum. 
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf = "IVASsevere == 'Non' ">
+    <ion-card-header color="dark-turquoise">4. Facteurs de risque ?</ion-card-header>
+    <ion-card-content>
+      Rechercher un facteur de risque de complication per-opératoire : 
+      <br>
+      - âge inférieur à 1 an, 
+      <br>
+      et/ou 
+      <br>
+      - chirurgie en VS sur les voies aériennes. 
+      <br>
+      <button *ngIf = "FdRComplication == 'Inconnue' " (click)="FdRoui()" outline ion-button color="dark-turquoise">Oui</button>
+      <button *ngIf = "FdRComplication == 'Inconnue' " (click)="FdRnon()" outline ion-button color="dark-turquoise">Non</button>
+      
+      <button *ngIf = "FdRComplication == 'Non' " (click)="FdRoui()" outline ion-button color="dark-turquoise">Oui</button>
+      <button *ngIf = "FdRComplication == 'Non' " (click)="FdRnon()" outline ion-button color="danger">Non</button>
+
+      <button *ngIf = "FdRComplication == 'Oui' " (click)="FdRoui()" outline ion-button color="danger">Oui</button>
+      <button *ngIf = "FdRComplication == 'Oui' " (click)="FdRnon()" outline ion-button color="dark-turquoise">Non</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf = "FdRComplication == 'Oui' ">
+    <ion-card-content color="danger">
+      Reporter l'intervention pour 2 semaines minimum. 
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf = "FdRComplication == 'Non' " >
+    <ion-card-header color="dark-turquoise">Procéder à l'anesthésie.   
+    </ion-card-header>
+    <ion-card-content>
+     <span class="mesurespreventives"> &nbsp;Mesures préventives : &nbsp;</span>
+     <br>
+      - Enfant < 20 kg : aérosol Bricanyl 2,5 mg et Pulmicort 1 mg,
+      <br>
+      - Enfant > 20 kg : aérosol Bricanyl 5 mg et Pulmicort 2 mg,
+      <br>
+      - Kinésithérapie respiratoire et désobstruction rhinopharyngée,
+      <br>
+      - Présence d'un anesthésiste et d'un IADE confirmés, vérifier la disponibilité d'un aide supplémentaire, 
+      <br>
+      - Chaque fois que possible, préférer dans l'ordre masque facial, masque laryngé, sonde d'intubation, 
+      <br>
+      - Induction ou coinduction intraveineuse préférable.  
+    </ion-card-content>
+      </ion-card> 
+    
+</ion-content>

@@ -1,3 +1,14 @@
+.ALRnonRecommandee {
+    background-color: #C0C0C0;
+    font-size:16px; 
+}
+
+.ALRRecommandee {
+    background-color: #85D0D2;
+    font-size:16px; 
+}
+
+
 
 .lightbulb
 {
@@ -30,4 +41,18 @@
 
 .tableauALR {
     font-size: 12px !important;
+}
+
+.detersion {
+    width: auto;
+    text-align: center;
+    padding:6px; 
+    background-color: #85D0D2;
+    border-radius: 25px;
+    margin: 10px; 
+    color: #FFFFFF;
+}
+
+.pop-up{
+    box-shadow: inset;
 }

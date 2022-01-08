@@ -13,8 +13,16 @@ export class ServiceDataProvider {
 
   public chirurgie : any = []; 
 
+  public ALRprotocole : any = []; 
+
 
   constructor() {
+
+    this.ALRprotocole = [
+
+      
+    ] ; 
+
     this.medicaments = [
       { 
         isShown:false, 
@@ -3778,6 +3786,25 @@ export class ServiceDataProvider {
           classeConta : "Propre",
           recommandation : "Non recommandée",
           remarque : "",
+          
+          recommandationALR : "Recommandée", 
+          techniqueproposeeA : "Bloc ilio-inguinal échoguidé si abord inguinal.", 
+          produitALR1A : "Ropivacaïne 2 mg/mL",
+          concentrationProduit1A : 2,  
+	        posologieALR1A : "1 mg/kg/côté",
+	        posologieNumALR1A : 1 ,	 
+          dosetoxiqueALR1A : "3 mg/kg",
+	        dosetoxiqueNumALR1A : 3, 
+          adjuvantALRA : "Clonidine 1 µg/kg", 
+
+          techniqueproposeeB : "Bloc pudendal sous neuro-stimulation si abord scrotal.", 
+          produitALR1B : "Ropivacaïne 2 mg/mL",
+          concentrationProduit1B : 2,  
+	        posologieALR1B : "0,4 mg/kg/côté",
+	        posologieNumALR1B : .4 ,	 
+          dosetoxiqueALR1B : "3 mg/kg",
+	        dosetoxiqueNumALR1B : 3, 
+          adjuvantALRB : "Clonidine 1 µg/kg",
         },
 
         {
@@ -4418,6 +4445,7 @@ export class ServiceDataProvider {
           voieATB : "",  
           recommandation : "Recommandée",
 
+
           ATB1 : "Ceftazidime",
           presentationATB1 : "250 mg pdr inj", 
           posologieATB1 : "50 mg/kg", 
@@ -4445,6 +4473,9 @@ export class ServiceDataProvider {
 
   }
 
+
+  // traitement des éléments chirurgie pour ATB prophylaxie 
+
 orderChirurgie(){
     const sorted = this.chirurgie.sort((a, b) => a.intitule > b.intitule ? 1 : -1);
     const grouped = sorted.reduce((groups, chir) => {
@@ -4471,6 +4502,10 @@ filterChirurgie(searchTerm) {
       .toLowerCase().indexOf(searchTermSpecialite.toLowerCase()) > -1 ;
    });
  } 
+
+
+   // traitement des éléments médicaments pour recherche par nom  
+
 
   orderMedicaments(){
 

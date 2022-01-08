@@ -1,0 +1,51 @@
+<ion-header padding>
+  <div class="header"> 
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+    Doppler Oesophagien</div>
+    <br>
+    <span class="reference">Fabriquant : <a href="https://www.gamida.fr/index.html" target="_blank">Gamida</a>, Eaubonne, France</span>
+</ion-header>
+<ion-content>
+  <ion-card class="drogueContainer">
+    <ion-card-content>
+      <p class="aideMemoire"><b>Objectif</b> : Evaluation du débit cardiaque en continu au bloc opératoire</p> 
+      <br>
+      <p class="aideMemoire"><b>Principe</b> : Estimation peu invasive basée sur la mesure continue de la fréquence d'éjection et des vélocités dans l’aorte descendante, rapportées à des abaques correspondant aux données biométriques (sexe, âge, taille et poids) renseignées. 
+        <br>
+        <br>Schématiquement, Qc = ITV<sub>AoD</sub> * S<sub>AoD</sub> * FC * k ; où k représente le rapport entre le VES dans l'aorte descendante et le VES transvalvulaire aortique.
+      </p> 
+      <br>
+      <p class="aideMemoire"><b>Interprétation (cf. illustration ci-dessous)</b> : 
+        <ul>
+          <li>Grande variabilité selon l'âge et le sujet : intérêt de l'étude des variations per-opératoires par rapport aux valeurs post-induction immédiates ;</li>
+          <li>La précharge est le déterminant majeur du volume d'éjection systolique et du temps d'éjection systolique corrigé ;</li>
+          <li>La contractilité myocardique (inotropisme) est le déterminant majeur du pic de vélocité et de l'accélération moyenne ;</li>
+          <li>La variation per-opératoire de ces éléments guide le remplissage vasculaire et l'éventuel recours aux catécholamines.</li>
+        </ul>
+     
+        <img src="assets/imgs/dopper_trans_oeso.png">
+        
+      <p class="aideMemoire"><b>Intérêt</b> :
+      <ul>
+        <li>Monitorage continu, validé dans la prédiction de l'efficacité du remplissage vasculaire ; </li>
+        <li>Technique peu invasive.</li>
+      </ul>
+
+      <br>
+      
+      <p class="aideMemoire"><b>Limites</b> : 
+        <ul>
+          <li>Anomalies anatomiques ou mécaniques de l'appareil aortique : insuffisance aortique (reflux CCVG non pris en compte dans l'estimation du DC), dissection aortique, coarctation aortique ;</li>
+          <li>Non utilisable chez le patient en arythmie cardiaque ;</li>
+          <li>Difficultés pratiques : requiert l'anesthésie du patient, l'accès à la tête, artéfacté par le bistouri électrique, déplacement de la sonde en per-opératoire</li>
+          <li>Contre-indications : lésion oesophagienne (sténose, fistule, tumeur, varices ++), troubles majeurs de l'hémostase.</li>
+        </ul> 
+      
+        <br>
+        Pour en savoir plus : <a href="https://www.srlf.org/wp-content/uploads/2015/11/0203-Reanimation-Vol11-N2-p132_137.pdf" target="_blank">Monitorage du débit cardiaque par le Doppler Oesophagien</a>, B. Cholley, Réanimation 2002
+    </ion-card-content>
+  </ion-card>
+</ion-content>

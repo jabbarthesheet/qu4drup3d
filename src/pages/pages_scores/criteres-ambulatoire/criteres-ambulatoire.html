@@ -1,0 +1,81 @@
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+
+   Critères pour l'ambulatoire</div>
+   <br>
+ 
+    </ion-header>
+
+    <ion-content>
+
+      <ion-chip style="margin-top: 5%; margin-left:2%;" color="dark-turquoise"><ion-icon color="dark-turquoise" name="bulb"></ion-icon></ion-chip>
+      <div class="comment" padding style="float:right; width:87%; color:darkgray;">
+        Evaluer les trois catégories de critères en faisant défiler les cartes ci-dessous. 
+      </div>
+
+      <ion-slides  class="VMSlides" pager="true">
+
+        <ion-slide>
+          <h2>Critères généraux</h2>
+        <ion-card>
+        <ion-card-content style="padding:0%">
+          <ion-item color="warning"><p class="comment">Ambulatoire contre-indiqué si un critère est absent.</p></ion-item>
+          <div padding>
+          <ul  class="comment">
+            <li>La surveillance post-opératoire ne nécessite pas de moyens, matériels ou humains, spécifiques au milieu hospitalier ; ainsi le retour à domicile préserve le confort et la sécurité de l'enfant</li>
+            <li>Les parents peuvent rejoindre à tout moment un centre chirurgical susceptible de prendre l'enfant en charge dans un délai de une heure environ, même s'il ne s'agit pas du centre ayant réalisé l'internvetion</li>
+            <li>Les parents peuvent téléphoner pour joindre le 15 à tout moment et peuvent être contactés</li>
+            <li>Les parents sont informés que des contre indications appréciées par l'anesthésiste ou le chirurgien peuvent apparaître à tout moment de la prise en charge, avant, pendant et après l'intervention.</li>
+          </ul>
+        </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <h2>Critères liés au patient</h2>
+    <ion-card>
+    <ion-card-content style="padding:0%">
+      <ion-item color="warning"><p class="comment">Ambulatoire contre-indiqué si un critère est absent.</p></ion-item>
+      <div padding>
+         <ul  class="comment">
+        <li>Tous les patients ASA 1 ou ASA 2 sont éligibles</li>
+        <li>Après accord préalable de l'anesthésiste et de l'opérateur, les patients ASA 3 dont la pathologie est stabilisée avec ou sans traitement peuvent être inclus si l'interférence de l'intervention avec la pathologie ou le traitement est négligeable (asthme, épilepsie, cardiopathie simple).</li>
+        <li>Les enfants nés à terme de plus de 3 mois sont éligibles</li>
+        <li>Les enfants prématurés dont l'âge post-conceptionnel est supérieur à 60 SA sont éligibles.</li>
+      </ul>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-slide>
+
+<ion-slide>
+  <h2>Contre-indications</h2>
+<ion-card>
+<ion-card-content style="padding:0%">
+  <ion-item color="danger"><p class="comment">Ambulatoire contre-indiqué si un critère est présent.</p></ion-item>
+  <div padding> 
+  <ul  class="comment">
+      <li>Enfant classé ASA 3 ou 4, âge < 3 mois, prématuré d'APC < 60 SA</li>
+      <li>Pathologie pré-existante ou intervention nécessitant surveillance ou traitement en milieu hospitalier</li>
+      <li>Survenue d'une complication per ou post-anesthésique</li>
+      <li>Survenue d'une complication chirurgicale per ou post-opératoire</li>
+      <li>Refus des parents, incompréhension des consignes pré-opératoires ou fiabilité insuffisante de la prise en charge à domicile</li>
+      <li>Contraites géographiques en rapport avec la durée de trajet (>1h) ou parents non joignables (absence de téléphone)</li>
+      <li>Mode de transport non adapté pour la sortie (transport en VL impossible ou 1 seul accompagnateur avant 10 ans)</li>
+      <li>Intervention à risque hémorragique ou réputée douloureuse</li>
+    </ul> 
+  </div>
+</ion-card-content>
+</ion-card>
+</ion-slide>
+
+    </ion-slides>
+
+
+    </ion-content>

@@ -3,20 +3,24 @@
   <br>
   <!-- HEADER MENU  -->
   <div class="header"> 
-Protocoles & dispositifs</div>
+Protocoles, algorithmes & dispositifs</div>
       <br>
   
       <ion-segment color="turquoise-fonce" [(ngModel)]="ProtocolesView">
-        <ion-segment-button value="1"><ion-icon name="stats"></ion-icon> &nbsp; Scores</ion-segment-button>
-        <ion-segment-button value="2"><ion-icon name="list-box"></ion-icon> &nbsp; Protocoles</ion-segment-button>
-        <ion-segment-button value="3"><ion-icon name="easel"></ion-icon> &nbsp; Dispostifs</ion-segment-button>
+        <ion-segment-button value="1"><ion-icon style="zoom:1" name="stats"></ion-icon></ion-segment-button>
+        <ion-segment-button value="2"><ion-icon style="zoom:1" name="git-merge"></ion-icon></ion-segment-button>
+        <ion-segment-button value="3"><ion-icon style="zoom:1" name="list-box"></ion-icon></ion-segment-button>
+        <ion-segment-button value="4"><ion-icon style="zoom:1" name="easel"></ion-icon></ion-segment-button>
       </ion-segment>
  <!-- END HEADER -->
 </ion-header>
 
  <ion-content >
 
-  <div *ngIf="ProtocolesView ==1">
+  <div *ngIf="ProtocolesView == 1">
+
+    <br>
+    <ion-title>Scores</ion-title>
 
     <ion-card (click)="openScore(index)" class="drogueContainer" *ngFor="let entry of scores, let index = index">
       <ion-card-content  class="cardRecos">
@@ -34,7 +38,32 @@ Protocoles & dispositifs</div>
   
   </div>
 
+
   <div *ngIf="ProtocolesView == 2">
+
+    <br>
+    <ion-title>Algorithmes & stratégies</ion-title>
+
+    <ion-card (click)="openAlgorithme(index)" class="drogueContainer" *ngFor="let entry of algorithmes, let index = index">
+      <ion-card-content  class="cardRecos">
+      <div class="headerProtocoles">
+        {{entry.nomcomplet}}
+      </div>
+      <div class="contentProtocoles">
+        <ion-icon start name="git-merge"></ion-icon> &nbsp; <b>{{entry.nom}}</b>
+      <hr> </div>
+        <div *ngIf = "entry.validation"  class="objectifsProtocoles">
+        Validation  :  {{entry.validation}}</div>
+      </ion-card-content>
+      </ion-card>
+  
+  </div>
+
+  <div *ngIf="ProtocolesView == 3">
+
+    <br>
+    <ion-title>Protocoles de prise en charge</ion-title>
+
   <ion-card (click)="openProtocole(index)" class="drogueContainer" *ngFor="let entry of protocoles, let index = index">
     <ion-card-content  class="cardRecos">
     <div class="headerProtocoles">
@@ -58,7 +87,10 @@ Protocoles & dispositifs</div>
 
 
 
-  <div *ngIf="ProtocolesView == 3">
+  <div *ngIf="ProtocolesView == 4">
+
+    <br>
+    <ion-title>Dispositifs et monitoring</ion-title>
 
     <ion-card (click)="openDispositif(index)" class="drogueContainer" *ngFor="let entry of dispositifs, let index = index">
       <ion-card-content  class="cardRecos">

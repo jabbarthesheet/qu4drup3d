@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { AlertController, App, MenuController, NavController, NavParams, PickerController, PickerOptions, PopoverController, ToastController } from 'ionic-angular';
 import { ModalController, ViewController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
@@ -27,6 +27,7 @@ import { IntoxicationPage } from '../Urgences/intoxication/intoxication';
 import { MetaboliquePage } from '../Urgences/metabolique/metabolique';
 import { CourbesPage } from '../modules/courbes/courbes';
 import { TutorialPage } from '../tutorial/tutorial';
+import { ServiceDataProvider } from '../../providers/service-data/liste_medicaments';
 
 
 
@@ -116,6 +117,7 @@ color : "dark-turquoise",
 icon : "help-buoy", 
 },
 ]; 
+
 public UrgenceReaPages :any = [
 
 {titre : "Asthme",
@@ -151,8 +153,13 @@ icon : "nutrition",
 
 // make AccueilPage the root (or first) page
 rootPage = AccueilPage;
+
+public searchTerm: string = "";
+public searchTermIndication: string = ""; 
+public medicaments: any;
+
+searchBarType:boolean=false; 
   
-isShownFooter:boolean=true; 
 biometrie:any = {Kg:"", Gr:"", mois:"", ans:""};
 AgeNum:number=0; 
 PoidsNum:number=0;
@@ -209,6 +216,8 @@ public PatientsSauvegardes: any =[];
     public popoverController: PopoverController,
     public menu: MenuController,
     public alertController : AlertController,
+    public dataService: ServiceDataProvider, 
+
   ) {}
     
   menuToggle()
@@ -217,6 +226,31 @@ public PatientsSauvegardes: any =[];
     this.stopMusic(); 
   };
 
+  /** SEARCH DRUGS BY NAME  */
+  ngOnInit() {
+    this.setFilteredItems();
+    this.dataService.orderMedicaments();
+  };
+
+  setFilteredItems() {
+    this.medicaments = this.dataService.filterMedicaments(this.searchTerm);
+  };
+
+  setFilteredIndication() {
+    this.medicaments = this.dataService.filterIndication(this.searchTermIndication);
+  }
+
+  displayMedicament(index) {
+    this.medicaments[index].isShown = !this.medicaments[index].isShown;  
+  };
+
+  toggleSearchBars(){
+    this.searchBarType = !this.searchBarType;
+  }
+
+  openVidal(index){
+    window.open(this.medicaments[index].lien, '_system');
+  }
 
 
     /** ----------------------------  MODULE ENREGISTREMENT  ----------------------------------------------------------------- */

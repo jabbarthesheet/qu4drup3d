@@ -301,8 +301,8 @@ export class MonitoragePage {
         this.SpO2dangerBas = 94 ;
       
         this.PASnormale = "110-130";
-        this.PASdangerHaut = " < 90" ;
-        this.PASdangerBas = " > 160";
+        this.PASdangerHaut = " > 160" ;
+        this.PASdangerBas = " < 90";
       
         this.PADnormale = "65 - 80";
         this.PADdangerHaut = " > 85";

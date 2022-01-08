@@ -1,0 +1,103 @@
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+
+   Ventilation au masque difficile</div>
+   <br>
+ 
+    </ion-header>
+
+    <ion-content>
+
+      <ion-item color="danger" style="text-align:center">
+        VM difficile <ion-icon name="arrow-forward"></ion-icon> O2 100% <ion-icon name="arrow-forward"></ion-icon> Appel à l'aide
+      </ion-item>
+
+      <ion-slides  class="VMSlides" pager="true">
+
+        <ion-slide>
+          <h2>Etape A</h2>
+        <ion-card>
+        <ion-card-content style="padding:0%">
+          <ion-item color="dark-turquoise">
+            Optimiser la position de la tête
+          </ion-item>
+          <ul  class="comment">
+            <li>Subluxation mandibule</li>
+            <li>Billot sous les épaules avant 2 ans</li>
+            <li>Position neutre après deux ans</li>
+            <li>Ventilation à 4 mains</li>
+          </ul>
+          <ion-item color="dark-turquoise">Vérifier les équipements</ion-item>
+          
+            <div padding  class="comment">Changer les éléments du circuit si suspicion de dysfonctionnement</div>
+
+          <ion-item color="dark-turquoise">Profondeur de l'anesthésie</ion-item>
+          <ul  class="comment">
+            <li>Penser à approfondir l'anesthésie</li>
+            <li>Ventiler en pression positive</li>
+          </ul>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <h2>Etape B</h2>
+    <ion-card>
+    <ion-card-content style="padding:0%">
+      <ion-item color="dark-turquoise">
+        Insérer une canule oropharyngée 
+      </ion-item>
+      <ion-item color="dark-turquoise">
+        Rechercher la cause de la VM difficile  
+      </ion-item>
+      <ul  class="comment">
+        <li>Profondeur d'anesthésie insuffisante</li>
+        <li>Laryngospasme</li>
+        <li>Distension gastrique</li>
+      </ul>
+      <div style="text-align:center">
+      <ion-icon name="arrow-up"></ion-icon><ion-icon name="arrow-down"></ion-icon>
+      </div>
+      <ul  class="comment">
+        <li>Maintenir la ventilation en pression positive</li>
+        <li>Approfondir l'anesthésie</li>
+        <li>Si possible, intuber</li>
+      </ul>
+      <ion-item color="danger">Appeler à l'aide si non arrivée</ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-slide>
+
+<ion-slide>
+  <h2>Etape C</h2>
+<ion-card>
+<ion-card-content style="padding:0%">
+  <ion-item color="danger">
+    Insérer un dispositif supra-glottique 
+  </ion-item>
+  <ion-item color="dark-turquoise">
+    Succès <ion-icon name="arrow-forward"></ion-icon> Poursuite de la ventilation</ion-item>
+  <ion-item color="warning">Echec et Spo2 > 80%</ion-item>
+    <ul  class="comment">
+      <li>Eliminer malposition DSG ou dysfonction matériel</li>
+      <li>Rechercher pneumothorax ou spasme </li>
+      <li>Réveiller le patient</li>
+    </ul> 
+    <ion-item color="danger">Echec et Spo2 < 80% <ion-icon name="arrow-forward"></ion-icon> Intubation </ion-item>
+    <ul  class="comment">
+      <li>Succès <ion-icon name="arrow-forward"></ion-icon> Chirurgie </li>
+      <li color="danger">Echec <ion-icon name="arrow-forward"></ion-icon>Algorithme VM & IOT impossibles</li>
+    </ul> 
+</ion-card-content>
+</ion-card>
+</ion-slide>
+
+    </ion-slides>
+
+
+    </ion-content>

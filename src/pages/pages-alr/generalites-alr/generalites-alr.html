@@ -1,0 +1,103 @@
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+
+   ALR en pédiatrie</div>
+   <br>
+ 
+    </ion-header>
+
+<ion-content>
+
+  <ion-card color="turquoise-fonce">
+    <ion-card-content>  Objectifs : 
+      <p class="dilutionDrogueInduction"> - Optimiser l'analgésie.</p> 
+      <p class="dilutionDrogueInduction"> - Réduire la consommation de morphiniques.</p>
+      <p class="dilutionDrogueInduction"> - Favoriser la réhabilitation précoce.</p></ion-card-content>
+  </ion-card>
+
+  <ion-item><ion-label color="danger">Antiseptique<p class="comment">Utiliser la chlorexidine avant l'âge de 3 mois.<br>La bétadine alcoolique peut être utilisée pour les enfants plus âgés.</p> 
+  </ion-label>  </ion-item>
+
+  <ion-item (click)="toggle1()"><ion-label color="turquoise-fonce">
+    Immaturité physiologique & anatomique
+    <ion-icon *ngIf="!isShown1" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+    <ion-icon *ngIf="isShown1" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label></ion-item>
+  <div *ngIf="isShown1">
+  <div padding>
+  Clairance des anesthésiques locaux abaissée et concentration des formes circulantes libres augmentée :  
+  <ul class="comment">
+      <li>La posologie doit systématiquement être adaptée au poids de l'enfant ;</li>
+      <li>Les risques de toxicités sont majorés en cas de réinjections itératives. </li>
+    </ul>
+    <hr>
+  Fibre nerveuse en développement : 
+  <ul class="comment">
+    <li>Faible adhérence des gaines et aponévroses, myélinisation incomplète ;</li>
+    <li>Meilleure diffusion des anesthésiques locaux, permettant l'utilisation de plus faibles concentrations ; </li>
+    <li>Risque lésionnel majoré en cas de contact nerveux dans les blocs tronculaires. </li>
+  </ul>
+  <hr>
+  Immaturité du système vasculaire et sympathique : 
+  <ul class="comment">
+    <li>Résistances vasculaires systémiques basales plus faibles ;</li>
+    <li>Capacité veineuse des membres inférieures proportionnellement plus faible ; </li>
+    <li>Effets hémodynamiques minorés suite à la réalisation d'une anesthésie loco-régionale péri-médullaire.</li>
+  </ul>
+</div></div>
+  
+  <ion-item (click)="toggle2()"><ion-label color="turquoise-fonce">
+    Particularités techniques
+    <ion-icon *ngIf="!isShown2" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+    <ion-icon *ngIf="isShown2" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label></ion-item>
+  <div *ngIf="isShown2">
+    <div padding>
+    Réalisation d'une ALR :  
+    <ul class="comment">
+        <li>Mauvaise tolérance des ponctions vigiles chez l'enfant ;</li>
+        <li>Les blocs à visée analgésique sont réalisés sous AG : le risque de lésion nerveuse est majoré ;</li>
+        <li>Les dimensions sont plus faibles, les distances variables selon l'âge et le poids : utiliser du matériel adapté (aiguilles, sondes d'échographie).</li>
+      </ul>
+      <hr>
+    Analgésie périmédullaire : 
+    <ul class="comment">
+      <li>Ossification incomplète des vertèbres : attention au risque de pénétration et d'injection intra-osseuse, qui correspond à une injection intravasculaire ;</li>
+      <li>Terminaison médullaire abaissée jusqu'à 1 an  ; </li>
+      <li>Lordose lombaire inexistante avant  9 mois : adapter l'orientation de l'aiguille. </li>
+    </ul>
+  </div></div>
+
+  <ion-item (click)="toggle3()"><ion-label color="turquoise-fonce">
+    Avantages et limites
+    <ion-icon *ngIf="!isShown3" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+    <ion-icon *ngIf="isShown3" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label></ion-item>
+  <div *ngIf="isShown3">
+    <div padding>
+    Avantages :  
+    <ul class="comment">
+        <li>Réduction du stress lié à la prise en charge ;</li>
+        <li>Réduction des NVPO ;</li>
+        <li>Epargne morphinique, d'un intérêt tout particulier chez le nouveau-né et le prématuré (apnées) ; </li>
+        <li>Réduction des besoins ventilatoires.</li>
+      </ul>
+      <hr>
+    Contre-indications : 
+    <ul class="comment">
+      <li>Refus de l'enfant ou des parents ;</li>
+      <li>Allergie aux anesthésiques locaux ;</li>
+      <li>Trouble de l'hémostase majeur, notamment pour l'analgésie périmédullaire ;</li>
+      <li>Contexte septique local ou systémique non contrôlé. </li>
+    </ul>
+  </div></div>
+
+
+
+
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header><br>
+  <div class="header"> 
+
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>Bloc des grands droits</div>
+   <br>
+ 
+    </ion-header>
+
+<ion-content>
+
+  <ion-card color="turquoise-fonce">
+    <ion-card-content>  Indications : 
+      <p class="dilutionDrogueInduction"> - Hernie ombilicale.</p> 
+      <p class="dilutionDrogueInduction"> - Chirurgie de la ligne blanche.</p>
+      <p class="dilutionDrogueInduction"> - Sténose hyperthrophique du pylore.</p></ion-card-content>
+  </ion-card>
+    <ion-item><ion-label color="dark-turquoise">Technnique</ion-label></ion-item>
+      <div padding>
+        <ul>
+          <li>Echoguidé : sonde haute fréquence large ou "club de Golf" ;</li>
+          <li>Repérage des muscles grands droits, latéralement et au dessus de l'ombilic ; </li>
+          <li>Ponction <i>in plane</i> latéro-médiale permettant de positionner l'aiguille en arrière du grand droit et en avant du <i>fascia transversalis.</i></li>
+        </ul>
+        <hr>
+      </div>
+      
+    <ion-item><ion-label color="dark-turquoise">Injection</ion-label></ion-item>
+    <div padding>
+      <ul>
+        <li>Ropivacaïne 2 mg/mL jusqu'à 6 ans et 30 kg puis Ropivacaïne 3,75 mg/mL ;</li>
+        <li>0,1 à 0,2 mL/kg et par côté. </li>
+      </ul>
+      <hr>
+    </div>
+    
+    <ion-item>
+      <ion-label color="dark-turquoise">Imagerie  
+        <div style="float:right ; margin-right:20px">
+        <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>
+        <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>
+      </div>
+      </ion-label>
+    </ion-item>
+    <img *ngIf="!hasLegend" src="assets/imgs/grands_droits_nolegende.png">
+    <img *ngIf="hasLegend" src="assets/imgs/grands_droits_legende.png">
+</ion-content>

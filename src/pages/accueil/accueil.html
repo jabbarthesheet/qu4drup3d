@@ -1,13 +1,13 @@
 <ion-content>
+
   <div *ngIf="!Prenom" class="titleHome">  
     QUADRUPED</div> 
     <div *ngIf="Prenom" class="titleHome">  
       {{Prenom}}</div> 
 
-    <br>
-    <br>
+      <br>
 
- 
+ <div>
  
   <ion-card class="homePagePatient">
     <ion-card-content>
@@ -38,7 +38,8 @@
   </ion-toolbar>
 
     <img class="resize" src="/assets/imgs/quadruped_logo.jpeg"  alt="Nouveau patient"> 
-    
+
+
     <br>
 
       <ion-toolbar class="HomeButtonContainer">
@@ -67,7 +68,6 @@
   </ion-card-content>
 </ion-card>
 
-<hr>
 
 <div class="actionButtonsContainer">
   <button class="homeActionsLarge" style="zoom:1.5" ion-button color="primary"  (click)="openSauvegarde()"> <ion-icon name="filing"></ion-icon></button>
@@ -79,15 +79,14 @@
   <button class="homeActions" ion-button color="primary"  (click)="enregistrer()"><ion-icon name="archive"></ion-icon></button>
 <button class="homeActions" ion-button color="dark-turquoise"  (click)="help()"><ion-icon name="information-circle"></ion-icon></button>
 <button class="homeActions" ion-button color="danger"  (click)="effacer()"><ion-icon name="trash"></ion-icon></button>
-
-</div>   
-
 <hr>
 
-  <ion-slides pager="true">
-    <ion-slide>
-      <p class="titleHome">Anesthésie</p>
+</div>  
 
+</div>
+
+<ion-slides *ngIf="!searchTerm && !searchTermIndication" pager="true" color="dark-turquoise">
+    <ion-slide><span class="slideTitle">Anesthésie</span>
       <!-- BOUTONS ANESTHESIE SI DONNEES PRESENTES -->
 <div class="anesthesieContainer" *ngIf = "this.PoidsNum && this.AgeNum">
     <div *ngFor="let page of AnesthesiePages, let index = index" class="anesthesieName">
@@ -106,8 +105,7 @@
 </div>
 
     </ion-slide>
-    <ion-slide>
-      <p class="titleHome"  >Urgences & réanimation</p>
+    <ion-slide><span class="slideTitle">Urgences & Réanimation</span>
       <div class="urgenceContainer" *ngIf = "this.PoidsNum && this.AgeNum">
        
           <div *ngFor="let page of UrgenceBlocPages, let index = index" class="urgenceBlocName">
@@ -143,11 +141,10 @@
     </ion-slide>
   </ion-slides>
 
+  <!-- BOUTONS URGENCE & REA SI DONNEES PRESENTES -->
 
 
 
-
-<!-- BOUTONS URGENCE & REA SI DONNEES PRESENTES -->
 
 
  

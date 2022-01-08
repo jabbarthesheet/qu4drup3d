@@ -1,0 +1,207 @@
+<ion-header>
+  <br>
+  <div class="header"> 
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+    Nouveau-né en SSPI</div>
+    <br>
+      <ion-item color="warning">
+        <p class="entete_protocole">Auteurs : Dr. D. Michelet, Dr. L. Marsac, Dr. S. Malbezin, Pr. S. Dahmani</p>
+        <p class="entete_protocole">Date de publication : 01/05/2017</p>
+      </ion-item>
+    </ion-header>
+
+    <ion-content>
+  <ion-card color="turquoise-fonce">
+    <ion-card-content>  Objectifs : 
+      <p class="dilutionDrogueInduction"> - Evaluation et prise en charge pré-opératoire d'un nouveau-né accueilli en SSPI.</p> 
+      </ion-card-content>
+      </ion-card>
+
+  <!-- PARTIE Mesures Générales  -->
+
+  <ion-item class="drogueContainer" (click)="ToggleMesuresGenerales()">
+    <ion-label class="drogueInduction" color="dark-turquoise">Mesures générales &nbsp;&nbsp;
+    <ion-icon *ngIf="allCheckedMesuresGenerales" name="checkbox"  style="zoom:1"></ion-icon>
+    <ion-icon *ngIf="!isShownMesuresGenerales" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+    <ion-icon *ngIf="isShownMesuresGenerales" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+    </ion-label>
+    </ion-item>
+
+    <div *ngIf="isShownMesuresGenerales">
+    <ion-card *ngFor="let entry of MesuresGenerales" class="drogueContainer">
+      <ion-item>
+      <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+      <ion-checkbox color="turquoise-fonce" (click)="checkMesuresGenerales()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+    </ion-item>
+    <ion-card-content *ngIf="!entry.isChecked" class="comment">{{entry.item}}
+    </ion-card-content></ion-card>
+    <img src="assets/imgs/algorithme_desaturation_cerebrale.png">
+    </div>
+
+  
+  <!-- PARTIE Examen Clinique -->
+
+  <ion-item class="drogueContainer" (click)="ToggleExamenClinique()">
+      <ion-label class="drogueInduction" color="dark-turquoise">Examen clinique &nbsp;&nbsp;
+      <ion-icon *ngIf="allCheckedExamenClinique" name="checkbox"  style="zoom:1"></ion-icon>
+      <ion-icon *ngIf="!isShownExamenClinique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+      <ion-icon *ngIf="isShownExamenClinique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+      </ion-label>
+      </ion-item>
+
+      <div *ngIf="isShownExamenClinique">
+      <ion-card *ngFor="let entry of ExamenClinique" class="drogueContainer">
+        <ion-item>
+        <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+        <ion-checkbox color="turquoise-fonce" (click)="checkExamenClinique()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+      </ion-item>
+      <ion-card-content *ngIf="!entry.isChecked" class="comment">{{entry.item}}
+      </ion-card-content></ion-card>
+      </div>
+
+
+
+<!-- PARTIE Examens Paracliniques -->
+
+<ion-item class="drogueContainer" (click)="ToggleExamensParacliniques()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Examens paracliniques &nbsp;&nbsp;
+  <ion-icon *ngIf="allCheckedExamensParacliniques" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownExamensParacliniques" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownExamensParacliniques" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+
+  <div *ngIf="isShownExamensParacliniques">
+  <ion-card *ngFor="let entry of ExamensParacliniques" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkExamensParacliniques()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content *ngIf="!entry.isChecked" class="comment">{{entry.item}}</ion-card-content></ion-card>
+  </div>
+
+
+  <!-- PARTIE Ventilation  -->
+
+<ion-item class="drogueContainer" (click)="ToggleVentilation()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Ventilation mécanique (si requise) &nbsp;&nbsp;
+    <ion-icon *ngIf="allCheckedVentilation" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownVentilation" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownVentilation" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+ 
+  <div *ngIf="isShownVentilation">
+  <ion-card *ngFor="let entry of Ventilation" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkVentilation()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content *ngIf="!entry.isChecked" class="comment">{{entry.item}}
+  </ion-card-content></ion-card>
+  <img src="assets/imgs/taille_de_sonde.png">
+  </div>
+
+
+
+<!-- PARTIE Glycémie -->
+
+<ion-item class="drogueContainer" (click)="ToggleGlycemie()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Glycémie &nbsp;&nbsp;
+    <ion-icon *ngIf="allCheckedGlycemie" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownGlycemie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownGlycemie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+
+  <div *ngIf="isShownGlycemie">
+  <ion-card *ngFor="let entry of Glycemie" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkGlycemie()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content *ngIf="!entry.isChecked" class="comment"> {{entry.item}}
+  </ion-card-content></ion-card>
+  <img src="assets/imgs/glycemie_nouveaune.png">
+  </div>
+
+
+  <!-- PARTIE Ictère NN -->
+
+<ion-item class="drogueContainer" (click)="ToggleIctereNeonatal()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Ictère néonatal &nbsp;&nbsp;
+    <ion-icon *ngIf="allCheckedIctereNeonatal" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownIctereNeonatal" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownIctereNeonatal" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+
+  <div *ngIf="isShownIctereNeonatal">
+  <ion-card *ngFor="let entry of IctereNeonatal" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkIctereNeonatal()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content *ngIf="!entry.isChecked" class="comment"> {{entry.item}}
+  </ion-card-content></ion-card>
+  <img src="assets/imgs/ictere_neonatal.png">
+</div>
+ 
+<!-- PARTIE hémoglobine -->
+
+<ion-item class="drogueContainer" (click)="ToggleHemoglobine()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Hémoglobine et transfusion &nbsp;&nbsp;
+    <ion-icon *ngIf="allCheckedHemoglobine" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownHemoglobine" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownHemoglobine" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+
+  <div *ngIf="isShownHemoglobine">
+  <ion-card *ngFor="let entry of Hemoglobine" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkHemoglobine()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content *ngIf="!entry.isChecked" class="comment"> {{entry.item}}
+  </ion-card-content></ion-card>
+</div>
+
+<!-- PARTIE infection materno foetale -->
+
+<ion-item class="drogueContainer" (click)="ToggleIMF()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Infection materno-foetale &nbsp;&nbsp;
+    <ion-icon *ngIf="allCheckedIMF" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownIMF" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownIMF" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+
+  <div *ngIf="isShownIMF">
+  <ion-card *ngFor="let entry of IMF" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkIMF()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content *ngIf="!entry.isChecked" class="comment"> {{entry.item}}
+  </ion-card-content></ion-card>
+
+ <div padding style="text-align: justify;"> Indications d'antibiothérapie : 
+  <ul class="comment">
+    <li>Fièvre maternelle ou foetale associée à l'une des manifestations suivantes : SFA, poche des eaux rompue >12h avant la naissance, examen bactériologique positif, jumeau atteint d'une IMF ; </li>
+    <li>Antibiothérapie maternelle mal conduite ;</li>
+    <li>Prélèvement gastrique positif au direct ;</li>
+    <li>Ictère précoce ;</li>
+    <li>Hépatomégalie ;</li>
+    <li>Détresse respiratoire ou circulatoire ; </li>
+    <li>Décalage de la PCT sanguine ou de cordon.</li>
+  </ul>
+</div>
+</div>
+ 
+
+
+</ion-content>

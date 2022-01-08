@@ -46,6 +46,7 @@ export class GestionFluidesPage {
   Total2et3:number;
 
   UnitesPlaquettaires:number; 
+  VolumePlaquettes:number;
   VolPFC:number; 
   ExacylChocHemorragique:number;
   FibrinogengeChocHemorragique:number;
@@ -112,8 +113,8 @@ export class GestionFluidesPage {
           this.Total1 = this.TotalHoraire + this.CompJeune1; 
           this.Total2et3 = this.TotalHoraire + this.CompJeune2;
   
-          if (this.AgeNum <= 15*12){this.UnitesPlaquettaires = Math.round(this.PoidsNum/5);}
-          else {this.UnitesPlaquettaires = Math.round(this.PoidsNum/7);}; 
+          this.UnitesPlaquettaires = Math.round(this.PoidsNum/10); 
+          this.VolumePlaquettes = Math.round(this.PoidsNum * 20);
   
           this.VolPFC = Math.round(this.PoidsNum*20); 
   

@@ -23,7 +23,23 @@ import { GeneralitesAlrPage } from '../pages/pages-alr/generalites-alr/generalit
 import { LocoRegionalePage } from '../pages/modules/loco-regionale/loco-regionale';
 import { TapBlockPage } from '../pages/pages-alr/tap-block/tap-block'; 
 import { PeriduralePage } from '../pages/pages-alr/peridurale/peridurale'; 
-import { BlocGrandsDroitsPage } from '../pages/pages-alr/bloc-grands-droits/bloc-grands-droits'; 
+import { BlocGrandsDroitsPage } from '../pages/pages-alr/bloc-grands-droits/bloc-grands-droits';
+import { BlocMaxillairePage } from '../pages/pages-alr/bloc-maxillaire/bloc-maxillaire'; 
+import { BlocTronculaireAbPage } from '../pages/pages-alr/bloc-tronculaire-ab/bloc-tronculaire-ab';
+import { BlocInterCostoBrachialPage } from '../pages/pages-alr/bloc-inter-costo-brachial/bloc-inter-costo-brachial';
+import { BlocAxillairePage } from '../pages/pages-alr/bloc-axillaire/bloc-axillaire';
+import { BlocSupraClaviculairePage } from '../pages/pages-alr/bloc-supra-claviculaire/bloc-supra-claviculaire';
+import { BlocInterScaleniquePage } from '../pages/pages-alr/bloc-inter-scalenique/bloc-inter-scalenique';
+import { BlocNerfSaphenePage } from '../pages/pages-alr/bloc-nerf-saphene/bloc-nerf-saphene';
+import { BlocSciatiquePoplitePage } from '../pages/pages-alr/bloc-sciatique-poplite/bloc-sciatique-poplite';
+import { BlocSciatiqueSousGlutealPage } from '../pages/pages-alr/bloc-sciatique-sous-gluteal/bloc-sciatique-sous-gluteal';
+import { BlocNerfObturateurPage } from '../pages/pages-alr/bloc-nerf-obturateur/bloc-nerf-obturateur';
+import { BlocCanalAdducteursPage } from '../pages/pages-alr/bloc-canal-adducteurs/bloc-canal-adducteurs';
+import { BlocFemoralPage } from '../pages/pages-alr/bloc-femoral/bloc-femoral';
+import { PengBlocPage } from '../pages/pages-alr/peng-bloc/peng-bloc';
+import { CutaneLateralCuissePage } from '../pages/pages-alr/cutane-lateral-cuisse/cutane-lateral-cuisse';
+import { BlocPudendalPage } from '../pages/pages-alr/bloc-pudendal/bloc-pudendal';
+import { BlocPenienPage } from '../pages/pages-alr/bloc-penien/bloc-penien';
 
 import { NouveauNeSspiPage } from '../pages/chirurgies/nouveau-ne-sspi/nouveau-ne-sspi'; 
 import { ExtrophieVesicalePage } from '../pages/chirurgies/extrophie-vesicale/extrophie-vesicale';
@@ -162,6 +178,22 @@ import { ALRPageModule } from '../pages/modules/loco-regionale/loco-regionale.mo
     PeriduralePage,
     GeneralitesAlrPage,
     BlocGrandsDroitsPage,
+    BlocMaxillairePage, 
+    CutaneLateralCuissePage,
+    PengBlocPage,
+    BlocFemoralPage,
+    BlocCanalAdducteursPage,
+    BlocNerfObturateurPage,
+    BlocSciatiqueSousGlutealPage,
+    BlocSciatiquePoplitePage,
+    BlocNerfSaphenePage,
+    BlocInterScaleniquePage,
+    BlocSupraClaviculairePage,
+    BlocAxillairePage,
+    BlocInterCostoBrachialPage,
+    BlocTronculaireAbPage,
+    BlocPudendalPage,
+    BlocPenienPage,
   ],
 
   imports: [
@@ -249,6 +281,22 @@ import { ALRPageModule } from '../pages/modules/loco-regionale/loco-regionale.mo
     PeriduralePage, 
     GeneralitesAlrPage,
     BlocGrandsDroitsPage,
+    BlocMaxillairePage,
+    CutaneLateralCuissePage,
+    PengBlocPage,
+    BlocFemoralPage,
+    BlocCanalAdducteursPage,
+    BlocNerfObturateurPage,
+    BlocSciatiqueSousGlutealPage,
+    BlocSciatiquePoplitePage,
+    BlocNerfSaphenePage,
+    BlocInterScaleniquePage,
+    BlocSupraClaviculairePage,
+    BlocAxillairePage,
+    BlocInterCostoBrachialPage,
+    BlocTronculaireAbPage,
+    BlocPudendalPage,
+    BlocPenienPage
 
   ],
 

@@ -14,6 +14,8 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class DrepanocytosePage {
 
+  TypeChir:number=1;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -23,6 +25,12 @@ export class DrepanocytosePage {
 
   retourHome() {
     this.navCtrl.pop(); 
-  }
+  };
+
+  UpdatePerteChir(){
+    console.log("type de chirurgie =" + this.TypeChir);
+  };
+
+
 
 }

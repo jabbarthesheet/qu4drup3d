@@ -27,14 +27,20 @@
             <hr>
           </div>
           
-        <ion-item><ion-label color="dark-turquoise">Injection</ion-label></ion-item>
-        <div padding>
-          <ul>
-            <li>Ropivacaïne 2 mg/mL jusqu'à 6 ans et 30 kg puis Ropivacaïne 3,75 mg/mL ;</li>
-            <li>0,5 mL/kg et par côté. </li>
-          </ul>
-          <hr>
-        </div>
+        <ion-item><ion-label color="dark-turquoise">Posologie</ion-label></ion-item>
+        <ul class="comment">
+          <li>Ropivacaïne 2 mg/mL jusqu'à 6 ans et 30 kg, 0,5 mL/kg/côté</li>
+          <li>Ropivacaïne 3,75 mg/mL au-delà de 6 ans et 30 kg, 0,5 mL/kg/côté</li>
+        </ul> 
+        <div padding>       
+          <div padding class="patientALR">
+            Pour mon patient 
+            <br>
+            Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
+            <br><b>
+            <span *ngIf="AgeNum <= 72 || PoidsNum <=30">Ropivacaïne 2 mg/mL : {{PoidsNum/2}} mL/côté</span>
+            <span *ngIf="AgeNum > 72 && PoidsNum > 30">Ropivacaïne 3,75 mg/mL : {{PoidsNum/2}} mL/côté</span></b>
+        </div></div>
         
         <ion-item>
           <ion-label color="dark-turquoise">Imagerie  

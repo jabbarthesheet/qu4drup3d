@@ -106,6 +106,9 @@
 
     </ion-slide>
     <ion-slide><span class="slideTitle">Urgences & Réanimation</span>
+
+            <!-- BOUTONS URGENCE & REA SI DONNEES PRESENTES -->
+
       <div class="urgenceContainer" *ngIf = "this.PoidsNum && this.AgeNum">
        
           <div *ngFor="let page of UrgenceBlocPages, let index = index" class="urgenceBlocName">

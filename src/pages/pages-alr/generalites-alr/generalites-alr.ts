@@ -17,6 +17,10 @@ export class GeneralitesAlrPage {
   isShown1:boolean=false; 
   isShown2:boolean=false;
   isShown3:boolean=false; 
+  isShown4:boolean=false; 
+  isShown5:boolean=false; 
+  isShown6:boolean=false;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -41,4 +45,15 @@ export class GeneralitesAlrPage {
     this.isShown3 = !this.isShown3;
   };
 
+  toggle4(){
+    this.isShown4 = !this.isShown4;
+  };
+
+  toggle5(){
+    this.isShown5 = !this.isShown5;
+  };
+
+  toggle6(){
+    this.isShown6 = !this.isShown6;
+  };
 }

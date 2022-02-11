@@ -47,11 +47,11 @@ import { DopplerOesophagienPage } from '../../pages_dispositifs/doppler-oesophag
 export class ProtocolesPage {
 
   public protocoles = [
-      { titre : "Extrophie vésicale" , auteurs : "Dr. Charlotte Fait, Pr. Souhayl Dahmani" , datepublication : "21/09/2020" , page : ExtrophieVesicalePage , objectif1 : "réduction des jours de réanimation avec intubation.", objectif2 : "réhabilitation précoce avec passage de la première nuit en SSPI puis USC à J1.", objectif3 : "optimisation de l'analgésie.", objectif4 : "" },
-      { titre : "Laparoschisis" , auteurs : "Dr. B. Bruneau, Dr. L. Marsac" , datepublication : "03/03/2021" , page : LaparoschisisPage , objectif1 : "Optimiser l'interfaçage Salle de naissance - bloc - néonatalogie", objectif2 : "Optimiser les délais de prise en charge" , objectif3 : "" , objectif4 : "" }, 
-      { titre : "Nouveau né en SSPI" , auteurs : "Dr. D. Michelet, Dr. L. Marsac" , datepublication : "01/05/2017" , page : NouveauNeSspiPage , objectif1 : "Evaluation et prise en charge pré-opératoire d'un nouveau né accueilli en SSPI" , objectif2 :"", objectif3 : "", objectif4 : "" },
-      { titre : "Scoliose" , auteurs : "Dr. Florence Julien-Marsollier, Pr. Souhayl Dahmani" , datepublication : "15/11/2018" , page : ScoliosePage , objectif1 : "anticiper les risques.", objectif2 : "favoriser réhabilitation accélérée après chirurgie : raccourcir les séjours en SSPI & USC.", objectif3 : "", objectif4 : "" }, 
-      { titre : "Chirurgies orthognatiques" , auteur : "Pr. S. Dahmani" , datepublication : "27/03/2018" , page : ChirurgieOrthognatiquePage }
+    { titre : "Chirurgies orthognatiques" , auteurs : "Pr. S. Dahmani" , datepublication : "27/03/2018" , page : ChirurgieOrthognatiquePage, objectif1: "Sécuriser la prise en charge des chirurgies de Lefort 1, génioplasties et OSBM", objectif2 : "Favoriser la réhabilitation précoce et la sortie au domicile."},  
+    { titre : "Extrophie vésicale" , auteurs : "Dr. Charlotte Fait, Pr. Souhayl Dahmani" , datepublication : "21/09/2020" , page : ExtrophieVesicalePage , objectif1 : "Réduction des jours de réanimation avec intubation.", objectif2 : "Réhabilitation précoce avec passage de la première nuit en SSPI puis USC à J1.", objectif3 : "Optimisation de l'analgésie.", objectif4 : "" },
+    { titre : "Laparoschisis" , auteurs : "Dr. B. Bruneau, Dr. L. Marsac" , datepublication : "03/03/2021" , page : LaparoschisisPage , objectif1 : "Optimiser l'interfaçage Salle de naissance - bloc - néonatalogie", objectif2 : "Optimiser les délais de prise en charge" , objectif3 : "" , objectif4 : "" }, 
+    { titre : "Nouveau né en SSPI" , auteurs : "Dr. D. Michelet, Dr. L. Marsac" , datepublication : "01/05/2017" , page : NouveauNeSspiPage , objectif1 : "Evaluation et prise en charge pré-opératoire d'un nouveau né accueilli en SSPI" , objectif2 :"", objectif3 : "", objectif4 : "" },
+    { titre : "Scoliose" , auteurs : "Dr. Florence Julien-Marsollier, Pr. Souhayl Dahmani" , datepublication : "15/11/2018" , page : ScoliosePage , objectif1 : "Anticiper les risques.", objectif2 : "Favoriser réhabilitation accélérée après chirurgie : raccourcir les séjours en SSPI & USC.", objectif3 : "", objectif4 : "" }, 
     ]; 
 
   public dispositifs = [

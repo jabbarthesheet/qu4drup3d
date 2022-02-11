@@ -8,46 +8,70 @@
    Drépanocytose</div>
    <br>
     </ion-header>
-<ion-content>
+<ion-content padding>
 
   <ion-chip style="margin-top: 5%; margin-left:2%;" color="dark-turquoise"><ion-icon color="dark-turquoise" name="bulb"></ion-icon></ion-chip>
   <div class="comment" padding style="float:right; width:87%; color:darkgray;">Penser à contacter l'hématologue en charge du patient et récupérer les derniers comptes-rendus.</div>
 
-  <ion-item color="turquoise-fonce">Evaluer la sévérité</ion-item>
-  <div padding>
-    Antécédents :
-    <ul class="comment">
-      <li>Hémoglobine de base, traitements, greffe</li>
-      <li>Syndrome thoracique aigu</li>
-      <li>Vasculopathie cérébrale</li>
-    </ul>
-  </div>
-  <ion-item color="warning">Hydrater en pré-opératoire</ion-item>
-  <div padding>Dès l'entrée en hospitalisation : 
-    <ul class="comment">
-      <li>2 L/m²/24h en dessous de 50 kg,</li>
-      <li>1,5 L/m²/24h au dessus de 50 kg.</li>
-      <li>Repères : 10 kg = 40 mL/h, 20 kg = 66 mL/h, 30 kg = 88 mL/h.</li>
-    </ul>
-  </div>
-  <ion-item color="warning">Oxygéner : 1L/min lunettes</ion-item>
-  <ion-item color="danger">Préparation transfusionnelle</ion-item>
-    <div padding>
-      Selon la durée et le type de chirurgie :
-      <ul class="comment">
-      <li>Chirurgie mineure de moins de 45 minutes : transfusion si Hb < 8g/dL, cible finale Hb à 10 g/dL <br> <span class="comment">Végétations, ATT, circoncision, hernie de paroi, ...</span></li>
-      <li>Chirurgie de 45 minutes à 2h ou chirurgie thoraco-abdominale : transfusion ou échange transfusionnel, cible HbS &le; 40%, cible Hb finale entre 10 et 10,5 g/dL <br> <span class="comment">Cholecystectomie, splénectomie, ostéotomie, ...</span></li>
-      <li>Chirurgie supérieure à 2h, neurochirurgie : échange transfusionnel, cible Hbs &lt; 30%, Hb finale à 10 g/dL</li>
-    </ul></div>
-  <ion-item color="turquoise-fonce">En per et post-opératoire</ion-item>
-    <div padding>
-      Ensemble de mesures systématiques :
-      <ul class="comment">
-      <li>Oxygénation continue</li>
-      <li>Réchauffement pour euthermie</li>
-      <li>Seuil transfusionnel à 8 g/dL, 10 g/dL si antécédent de SCA ou vasculopathie cérébrale</li>
-      <li>Monitorage adapté au maintien de la normovolémie (DTO)</li>
-      <li>Analgésie adaptée (ALR, PCA morphine</li>
-      <li>Surveillance prolongée en SSPI puis orientation en USC</li>
-    </ul></div>
+  <ion-card class="drogueContainer">
+    <ion-card-header color="turquoise-fonce">Evaluer la sévérité</ion-card-header>
+    <ion-card-content class="comment">
+      - Génotype, comorbidités (déficit en G6PD), hémoglobine de base, traitements, greffe ;<br>
+      - Fréquence des crises vaso-occlusives ;<br>
+      - Antécédent d'hospitalisation, notamment en réanimation ; <br>
+      - Antécédent de syndrome thoracique aigu, vasculopathie cérébrale.
+    </ion-card-content>
+  </ion-card>
+
+    <hr>
+  
+  <ion-card class="drogueContainer">
+    <ion-card-header color="danger">Préparation transfusionnelle :</ion-card-header>
+    <ion-card-content>
+  <ion-item>
+    <ion-label color="dark-turquoise" class="drogueInduction">Durée d'intervention :</ion-label>
+  <ion-select #newselect (ionChange)="UpdatePerteChir()" [(ngModel)]="TypeChir" interface="action-sheet" cancelText="Retour" class="drogueInduction">
+   <ion-option value="1" color="turquoise-fonce">&le;45 min.</ion-option>
+   <ion-option value="2" color="turquoise-fonce">&le; 2h.</ion-option>
+   <ion-option value="3" color="turquoise-fonce">&gt; 2h.</ion-option>
+  </ion-select>
+  </ion-item>
+        <div class="comment">
+        <div *ngIf="TypeChir == 1">- Transfusion si Hb &le; 8g/dL <br>- Cible en fin de chirurgie à 10 g/dL</div>
+        <div *ngIf="TypeChir == 2">- Mesure HbS par EPHb<br>- Transfusion ou échange ; objectif HbS &le; 40%<br>- Cible en fin de chirurgie entre 10 et 10,5 g/dL</div>
+        <div *ngIf="TypeChir == 3">- Mesure HbS par EPHb<br>- Transfusion ou échange ; objectif Hbs &lt; 30%<br>- Cible en fin de chirurgie à 10g/dL</div>  
+      </div>  
+      </ion-card-content>
+      </ion-card>
+
+<hr>
+
+<ion-card class="drogueContainer">
+  <ion-card-header color="turquoise-fonce">Hydrater dès l'hospitalisation</ion-card-header>
+  <ion-card-content class="comment">
+    - 2 L/m²/24h en dessous de 50 kg ;<br>
+    - 1,5 L/m²/24h au dessus de 50 kg ;<br>
+    <span style="font-size: smaller;">- Repères : 10 kg = 40 mL/h, 20 kg = 66 mL/h, 30 kg = 88 mL/h.</span>
+  </ion-card-content>
+</ion-card>
+
+<hr>
+
+<ion-card class="drogueContainer">
+  <ion-card-header color="primary">Oxygéner : 1L/min lunettes</ion-card-header>
+</ion-card>
+
+<hr>
+
+<ion-card class="drogueContainer">
+  <ion-card-header color="turquoise-fonce">Per et post-opératoire</ion-card-header>
+  <ion-card-content class="comment">
+    - Oxygénation et réchauffement continus ;<br>
+    - Seuil transfusionnel à 8 g/dL, 10 g/dL si antécédent de SCA ou vasculopathie cérébrale ;<br>
+    - Monitorage adapté au maintien de la normovolémie (DTO)<br>
+    - Analgésie adaptée aux besoins (ALR, PCA morphine)<br>
+    - Surveillance prolongée en SSPI puis orientation adaptée (USC).
+  </ion-card-content>
+</ion-card>
+
 </ion-content>

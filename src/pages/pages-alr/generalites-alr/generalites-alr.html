@@ -95,9 +95,105 @@
       <li>Trouble de l'hémostase majeur, notamment pour l'analgésie périmédullaire ;</li>
       <li>Contexte septique local ou systémique non contrôlé. </li>
     </ul>
+    <hr>
+  </div></div>
+
+
+  <ion-item (click)="toggle4()"><ion-label color="turquoise-fonce">
+    Particularités en orthopédie
+    <ion-icon *ngIf="!isShown4" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+    <ion-icon *ngIf="isShown4" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label></ion-item>
+  <div *ngIf="isShown4">
+    <div padding style="text-align: justify;">
+    Les particularités anatomiques du tiers proximal de jambe et de tout l'avant-bras impliquent un risque accru de syndrome des loges (SDL) en période périopératoire. 
+    Une <b>surveillance attentive</b> des signes cliniques évocateurs de SDL est de rigueur. L'ALR efficace tend à rendre cette surveillance plus difficile. 
+    L'ALR n'est pas contre-indiquée dans ces situations mais implique une évaluation du rapport bénéfice-risque avec l'opérateur et une utilisation de faibles concentrations d'anesthésique locaux, en évitant les adjuvants.   
+   <br>
+   <br>
+   Il convient de prévoir systématiquement l'administration d'antalgiques par voie systémique en per- et post-opératoire, même en l'absence totale de douleur, pour prévenir le réveil douloureux à la levée du bloc analgésique. 
+      <hr>
+  </div></div>
+
+  <ion-item (click)="toggle5()"><ion-label color="turquoise-fonce">
+    Injection unique
+    <ion-icon *ngIf="!isShown5" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+    <ion-icon *ngIf="isShown5" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label></ion-item>
+  <div *ngIf="isShown5">
+    <div padding style="text-align: justify;">
+    Choix du produit : préférer la Levobupivacaïne à la Ropivacaïne, car la durée d'action est probablement supérieure à dose équivalente
+      <br><br>
+    Calculs de dose 
+    <ul class="comment">
+      <li>Le calcul de dose se base sur le <b>poids idéal théorique</b> de l'enfant</li>
+      <li>Les doses <b>maximales en injection unique</b> à ne pas dépasser sont de <b>5 mg/kg pour la Lidocaïne</b> et de <b>2,5 mg/kg pour la Ropivacaïne et la Levobupivacaïne.</b></li>
+    </ul>
+    En pratique, les doses <b>maximales en injection unique</b> sont les suivantes : 
+    <ul class="comment">
+      <li>Lidocaïne 0,5% (5 mg/mL) : 1 mL/kg</li>
+      <li>Lidocaïne 1% (10 mg/mL) : 0,5 mL/kg</li>
+      <li>Lidocaïne 1,5% (mélange 50/50 de 1% et 2%) : 0,375 mL/kg</li>
+      <li>Lidocaïne 2% (20 mg/mL) : 0,25 mL/kg</li>
+      <li>Ropivacaïne 0,2% (2 mg/mL) : 1,25 mL/kg</li>
+      <li>Levobupivacaïne 0,25% (2,5 mg/mL) : 1 mL/kg</li>
+    </ul>
+    Adjuvants :
+    <ul class="comment">
+      <li>Clonidine : 1 µg/kg de poids idéal théorique. Prolonge l'analgésie et optimise la qualité du bloc sensitif. Ne pas utiliser en période néonatale, prendre en compte les effets secondaires notamment la bradycardie. RFE SFAR 2016.</li>
+      <li>Dexaméthasone : pas de recommandation SFAR à ce jour (2022).</li>
+    </ul>
+      <hr>
+  </div></div>
+
+
+  <ion-item (click)="toggle6()"><ion-label color="turquoise-fonce">
+    Cathéter péri-nerveux
+    <ion-icon *ngIf="!isShown6" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+    <ion-icon *ngIf="isShown6" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label></ion-item>
+  <div *ngIf="isShown6">
+    <div padding style="text-align: justify;">
+      Critères pour envisager la pose : 
+      <ul class="comment">
+        <li>Discussion avec l'opérateur sur la balance bénéfice-risque</li>
+        <li>Geste unilatéral</li>
+        <li>Durée d'hospitalisation post-opératoire prévue > 24h</li>
+        <li>Retrait dans un délai de 48 à 72h</li>
+        <li>Absence d'immobilisation plâtrée ou plâtre ne rendant pas impossible (1) la surveillance du point d'entrée cutané du cathéter et (2) le retrait du cathéter</li>
+      </ul>
+      <br>
+      Fixation du cathéter : 
+      <ul class="comment">
+        <li>Option 1 : Colle cutanée (type Dermabond, évitant la fuite d'anesthésique local) + Stéritrips + Tégaderm, renforcé par des bandes adhésives Tensoplast</li>
+        <li>Option 2 : LOCK-IT Plus + Tégaderm, renforcé par des bandes adhésives type Tensoplast. Attention au risque de plicature des cathéters de pédiatrie dans le LOCK-IT.</li>
+      </ul>
+      Modalités d'administration : 
+      <ul class="comment">
+        <li>Utiliser exclusivement la Ropivacaïne 0,2% ou la Levobupivacaïne 0,125%</li>
+        <li>Privilégier la pompe électronique à l'infuseur élastomérique, surtout chez le petit enfant</li>
+        <li>Privilégier les débits continus + bolus par PCA (ou NCA chez le petit enfant)</li>
+        <li>Démarrer le débit continu une heure après le bolus d'induction</li>
+      </ul>
+      <br>
+      Doses maximales en administration continue 
+      <ul class="comment">
+        <li>Avant 2 ans : 0,2 mg/kg/h soit 0,1 mL/kg/h de Ropivacaïne 0,2% et 0,15 mL/kg/h de Levobupivacaïne 0,125%</li>
+        <li>Après 2 ans : 0,4 mg/kg/h soit 0,2 mL/kg/h de Ropivacaïne 0,2% et 0,3 mL/kg/h de Levobupivacaïne 0,125% ; sans dépasser 18,75 mg/h et 400 mg/24h</li>
+      </ul>
+
+     
+     
+     
+    
+
+      <hr>
   </div></div>
 
 
 
+
+
+ 
 
 </ion-content>

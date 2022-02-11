@@ -1,15 +1,89 @@
-<!--
-  Generated template for the ChirurgieOrthognatiquePage page.
+<ion-header><br>
+  <div class="header"> 
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-  <ion-navbar>
-    <ion-title>ChirurgieOrthognatique</ion-title>
-  </ion-navbar>
-</ion-header>
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+    Chirurgies orthognatiques</div>
+      <br>
+      <ion-item color="warning">
+        <p class="entete_protocole">Auteurs : Pr. Souhayl DAHMANI</p>
+        <p class="entete_protocole">Date de publication : 27/03/2018</p>
+      </ion-item>
+  
+    
+    </ion-header>
 
-<ion-content padding>
+<ion-content>
+
+  <ion-card color="turquoise-fonce">
+    <ion-card-content>  Objectifs : 
+      <p class="dilutionDrogueInduction"> - Sécuriser la prise en charge des chirurgies de Lefort 1, génioplasties et OSBM.</p> 
+      <p class="dilutionDrogueInduction"> - Favoriser la réhabilitation précoce et la sortie au domicile.</p></ion-card-content>
+  </ion-card>
+
+   <!-- PARTIE "SYSTEMATIQUE" -->
+
+<ion-item class="drogueContainer" (click)="ToggleDispositifs()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Dispositifs &nbsp;&nbsp;
+    <ion-icon *ngIf="allCheckedDispositifs" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownDispositifs" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownDispositifs" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+ 
+  <div *ngIf="isShownDispositifs">
+  <ion-card *ngFor="let entry of Dispositifs" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkDispositifs()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content *ngIf="!entry.isChecked" class="comment">{{entry.item}}
+  </ion-card-content></ion-card>
+  </div>
+
+
+<!-- PARTIE PER OP -->
+
+<ion-item class="drogueContainer" (click)="TogglePerOp()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Per-opératoire &nbsp;&nbsp;
+    <ion-icon *ngIf="allCheckedPerOp" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownPerOp" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownPerOp" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+
+  <div *ngIf="isShownPerOp">
+  <ion-card *ngFor="let entry of PerOperatoire" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkPerOperatoire()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content  *ngIf="!entry.isChecked" class="comment"> {{entry.item}}
+  </ion-card-content></ion-card>
+  </div>
+
+
+<!-- PARTIE POST OP -->
+
+<ion-item class="drogueContainer" (click)="TogglePostOp()">
+  <ion-label class="drogueInduction" color="dark-turquoise">Post-opératoire & SSPI &nbsp;&nbsp;
+    <ion-icon *ngIf="allCheckedPostOp" name="checkbox"  style="zoom:1"></ion-icon>
+  <ion-icon *ngIf="!isShownPostOp" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+  <ion-icon *ngIf="isShownPostOp" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+  </ion-label>
+  </ion-item>
+
+  <div *ngIf="isShownPostOp">
+  <ion-card *ngFor="let entry of PostOperatoire" class="drogueContainer">
+    <ion-item>
+    <ion-label class="drogueInduction">{{entry.title}}</ion-label>
+    <ion-checkbox color="turquoise-fonce" (click)="checkPostOperatoire()" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+  <ion-card-content *ngIf="!entry.isChecked" class="comment"> {{entry.item}}
+  </ion-card-content></ion-card>
+  </div>
+
 
 </ion-content>

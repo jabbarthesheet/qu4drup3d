@@ -38,11 +38,11 @@
 
 
 <ion-content>
-
         <div padding class="patientHighlight">
           Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
           <br> Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>
-        </div>
+        </div>        
+
 
         <div *ngIf="!searchTerm && !searchTermSpecialite">
           <ion-card (click)="openPageGeneralites()" class="drogueContainer">
@@ -68,13 +68,20 @@
           </div>
           <hr>
           <div class="contentProtocoles">
-            <ion-icon start name="flag"></ion-icon> &nbsp; <b>{{entry.titre}}</b>
+            <ion-icon start name="pin"></ion-icon> &nbsp; <b>{{entry.titre}}</b>
           </div>
-          </ion-card-content>
+          <hr>
+          <div> 
+            <span *ngIf="entry.critere1" style="color:#009c9e">{{entry.produit1}} : {{entry.posologie1 * PoidsNum}} mL/côté</span>
+            <span *ngIf="entry.critere2" style="color:#009c9e">{{entry.produit2}} : {{entry.posologie2 * PoidsNum}} mL/côté</span>
+          </div>
+          </ion-card-content> 
           </ion-card>  
 
         </div>
 
+
+        <!-- SEULEMENT EN CAS DE RECHERCHE DONC SI RESULTAT-->
 
           <div *ngIf="searchTerm || searchTermSpecialite">
 
@@ -86,23 +93,30 @@
                   <div class="comment" *ngIf="chir.recommandationALR == 'Non recommandée'">
                   <ion-chip class="ALRnonRecommandee">
                     <ion-label>{{chir.intitule}} </ion-label>
-                  </ion-chip> - anesthésie loco-régionale non recommandée</div>
+                  </ion-chip>&nbsp; ALR non recommandée</div>
         
                   <div class="comment" *ngIf="chir.recommandationALR == 'Recommandée'">
                   <ion-chip class="ALRRecommandee">
                     <ion-label>{{chir.intitule}}</ion-label>
-                  </ion-chip> - anesthésie loco-régionale recommandée</div>
-
+                  </ion-chip>&nbsp; ALR recommandée
+                  <br>
+                  <span *ngIf="chir.commentaire">{{chir.commentaire}}</span>
+                </div>
+                
                   <!-- Technique A produit 1 -->  
                 <div *ngIf="chir.techniqueproposeeA">
-                <span class="specialiteChirurgie">Technique recommandée : {{chir.techniqueproposeeA}}</span> 
+                <hr style="height:2px">
+                <span class="specialiteChirurgie">1. <b>{{chir.techniqueproposeeA}}</b></span><br>
+                <span class="comment">{{chir.commentairetechniqueA}}</span> 
+                <hr>
+                <span *ngIf="chir.produitALR1A" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1A}}</span>. <br><u>Posologie</u> : {{chir.posologieALR1A}}.</span> 
                 <br>
-                <span *ngIf="chir.produitALR1A" class="specialiteChirurgie">Produit : {{chir.produitALR1A}} - {{chir.posologieALR1A}} soit {{PoidsRound * chir.posologieNumALR1A}} mg/côté (ou {{PoidsRound * chir.posologieNumALR1A/chir.concentrationProduit1A}} mL/côté).</span> 
+                <span class="comment"><u>Dose patient</u> : <span style="color:#009c9e; font-weight:bold;">{{PoidsRound * chir.posologieNumALR1A/chir.concentrationProduit1A}} mL (={{PoidsRound * chir.posologieNumALR1A}} mg)</span><span *ngIf="chir.commentairePosologieA">&nbsp;{{chir.commentairePosologieA}}</span>.</span> 
                 <br>
-                <span *ngIf="chir.dosetoxiqueALR1A" class="specialiteChirurgie">Dose toxique : {{chir.dosetoxiqueALR1A}} - soit {{PoidsRound * chir.dosetoxiqueNumALR1A}} mg (ou {{PoidsRound * chir.dosetoxiqueNumALR1A/chir.concentrationProduit1A}} mL).</span> 
+                <span *ngIf="chir.dosetoxiqueALR1A" class="comment"><u>{{chir.commentaireDoseToxiqueA}}</u> : {{chir.dosetoxiqueALR1A}} - soit <span style="color:#ff6961; font-weight:bold;">{{PoidsRound * chir.dosetoxiqueNumALR1A}} mg (={{PoidsRound * chir.dosetoxiqueNumALR1A/chir.concentrationProduit1A}} mL)</span>.</span> 
                 <br> 
-                <span *ngIf="chir.adjuvantALRA" class="specialiteChirurgie">Adjuvant proposé : {{chir.adjuvantALRA}} soit {{PoidsRound}} µg dilués dans la seringue.</span>
-                <br>
+                <span *ngIf="chir.adjuvantALRA" class="comment">Adjuvant proposé : {{chir.adjuvantALRA}} soit {{PoidsRound}} µg.</span>
+                <hr style="height:2px">
               </div>
 
                 <!-- Technique A produit 2 NON REMPLI POUR LE MOMENT -->  
@@ -110,14 +124,16 @@
 
                 <!-- Technique B produit 1   --> 
                  <div *ngIf="chir.techniqueproposeeB">
-                --<br>
-                 <span *ngIf="chir.techniqueproposeeB" class="specialiteChirurgie">Technique alternative : {{chir.techniqueproposeeB}}</span> 
+                 <span *ngIf="chir.techniqueproposeeB" class="specialiteChirurgie">2. <b>{{chir.techniqueproposeeB}}</b></span> <br>
+                 <span class="comment">{{chir.commentairetechniqueB}}</span> 
+                 <hr>
+                 <span *ngIf="chir.produitALR1B" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1B}}</span>. <br><u>Posologie</u> : {{chir.posologieALR1B}}.</span>
                  <br>
-                 <span *ngIf="chir.produitALR1B" class="specialiteChirurgie">Produit : {{chir.produitALR1B}} - {{chir.posologieALR1B}} soit {{(PoidsRound * chir.posologieNumALR1B)}} mg/côté (ou {{PoidsRound * chir.posologieNumALR1B/chir.concentrationProduit1B}} mL/côté).</span> 
+                 <span class="comment"><u>Dose patient</u> : <span style="color:#009c9e ; font-weight: bold;">{{PoidsRound * chir.posologieNumALR1B/chir.concentrationProduit1B}} mL (={{(PoidsRound * chir.posologieNumALR1B)}} mg)</span><span *ngIf="chir.commentairePosologieB">&nbsp;{{chir.commentairePosologieA}}</span>.</span> 
                  <br>
-                 <span *ngIf="chir.dosetoxiqueALR1B" class="specialiteChirurgie">Dose toxique : {{chir.dosetoxiqueALR1B}} - soit {{PoidsRound * chir.dosetoxiqueNumALR1B}} mg (ou {{PoidsRound * chir.dosetoxiqueNumALR1B/chir.concentrationProduit1B}} mL).</span> 
+                 <span *ngIf="chir.dosetoxiqueALR1B" class="comment"><u>{{chir.commentaireDoseToxiqueB}}</u> : {{chir.dosetoxiqueALR1B}} - soit <span style="color:#ff6961; font-weight:bold;">{{PoidsRound * chir.dosetoxiqueNumALR1B}} mg (={{PoidsRound * chir.dosetoxiqueNumALR1B/chir.concentrationProduit1B}} mL)</span>.</span> 
                  <br> 
-                 <span *ngIf="chir.adjuvantALRB" class="specialiteChirurgie">Adjuvant proposé : {{chir.adjuvantALRB}} soit {{PoidsRound}} µg dilués dans la seringue.</span>
+                 <span *ngIf="chir.adjuvantALRB" class="comment">Adjuvant proposé : {{chir.adjuvantALRB}} soit {{PoidsRound}} µg.</span>
                  <br>
                 </div> 
 

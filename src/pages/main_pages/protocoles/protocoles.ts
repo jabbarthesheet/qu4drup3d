@@ -64,11 +64,11 @@ export class ProtocolesPage {
       { nom : "Drépanocytose" , nomcomplet : "Stratégie de prise en charge péri-opératoire d'un syndrome drépanocytaire majeur" , validation : "Pr. S. Dahmani, mai 2017", page : DrepanocytosePage },
       { nom : "Eligibilité à l'ambulatoire" , nomcomplet : "Evaluation des critères d'éligibilité à la chirurgie ambulatoire en pédiatrie" , validation : "Pr. S. Dahmani, novembre 2021", page : CriteresAmbulatoirePage },
       { nom : "Enfant enrhumé" , nomcomplet : "Gestion de l'enfant enrhumé en CS ou VPA" , validation : "Pr. S. Dahmani, avril 2019" , page : EnrhumePage},
-      { nom : "Intubation difficile" , nomcomplet: "Conduite à tenir en cas d'intubation difficile non prévue en pédiatrie" , validation : "Pr. S. Dahmani, octobre 2018" , page : IotDifficilePage },
+  //    { nom : "Intubation difficile" , nomcomplet: "Conduite à tenir en cas d'intubation difficile non prévue en pédiatrie" , validation : "Pr. S. Dahmani, octobre 2018" , page : IotDifficilePage },
       { nom : "Mucopolysaccharidoses" , nomcomplet : "Stratégie de prise en charge péri-opératoire des patients atteints de mucopolysaccharidose" , validation : " Pr. S. Dahmani, octobre 2017" , page : MucopolysaccharidosePage },
       { nom : "Myopathies" , nomcomplet : "Stratégies de prise en charge péri-opératoire des principales myopathies." , validation : "Pr. S. Dahmani, avril 2013"  , page : MyopathiesPage },
-      { nom : "Ventilation difficile"  , nomcomplet : "Conduite à tenir en cas de ventilation difficile non prévue en pédiatrie", validation : "Pr. S. Dahmani, octobre 2018", page : VentilationDifficilePage},
-      { nom : "VM & IOT impossibles" , nomcomplet : "Conduite à tenir en cas de ventilation et intubation difficiles non prévues en pédiatrie" , validation : "Pr. S. Dahmani, octobre 2018", page : VmiotImpossiblePage },
+   //   { nom : "Ventilation difficile"  , nomcomplet : "Conduite à tenir en cas de ventilation difficile non prévue en pédiatrie", validation : "Pr. S. Dahmani, octobre 2018", page : VentilationDifficilePage},
+   //   { nom : "VM & IOT impossibles" , nomcomplet : "Conduite à tenir en cas de ventilation et intubation difficiles non prévues en pédiatrie" , validation : "Pr. S. Dahmani, octobre 2018", page : VmiotImpossiblePage },
   ]
 
   public scores = [

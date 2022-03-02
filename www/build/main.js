@@ -1286,9 +1286,9 @@ var CatecholaminesPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__main_pages_info_info__ = __webpack_require__(485);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__main_pages_protocoles_protocoles__ = __webpack_require__(486);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__main_pages_recommandations_recommandations__ = __webpack_require__(513);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__main_pages_recommandations_recommandations__ = __webpack_require__(510);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__main_pages_scores_scores__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__main_pages_medicaments_medicaments__ = __webpack_require__(514);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__main_pages_medicaments_medicaments__ = __webpack_require__(511);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2607,8 +2607,6 @@ var LocoRegionalePage = /** @class */ (function () {
         this.storage = storage;
         this.dataService = dataService;
         this.pagesALR = [
-            { titre: "Anesthésie péridurale", soustitre: "Pose de cathéter d'anesthésie péridurale", page: __WEBPACK_IMPORTED_MODULE_3__pages_alr_peridurale_peridurale__["a" /* PeriduralePage */] },
-            { titre: "Bloc axillaire", soustitre: "Bloc du plexus brachial au creux axillaire", page: __WEBPACK_IMPORTED_MODULE_9__pages_alr_bloc_axillaire_bloc_axillaire__["a" /* BlocAxillairePage */] },
             { titre: "Bloc cutané latéral de cuisse", soustitre: "Bloc du nerf cutané latéral de cuisse", page: __WEBPACK_IMPORTED_MODULE_19__pages_alr_cutane_lateral_cuisse_cutane_lateral_cuisse__["a" /* CutaneLateralCuissePage */] },
             { titre: "Bloc des grands droits", soustitre: "Bloc des muscles grands droits abdominaux", page: __WEBPACK_IMPORTED_MODULE_4__pages_alr_bloc_grands_droits_bloc_grands_droits__["a" /* BlocGrandsDroitsPage */] },
             { titre: "Bloc du canal des adducteurs", soustitre: "Bloc du nerf fémoral au canal des adducteurs", page: __WEBPACK_IMPORTED_MODULE_16__pages_alr_bloc_canal_adducteurs_bloc_canal_adducteurs__["a" /* BlocCanalAdducteursPage */] },
@@ -2698,12 +2696,9 @@ var LocoRegionalePage = /** @class */ (function () {
     ;
     LocoRegionalePage.prototype.calculs = function () {
         /*placer les calculs ici*/
-        if (this.AgeNum <= 72 || this.PoidsNum <= 30) {
-            this.pagesALR[18].critere1 = true;
-        }
-        else {
-            this.pagesALR[18].critere2 = true;
-        }
+        this.BolusPIEBRopiSuf = Math.round((this.PoidsNum * 0.2) * 10) / 10;
+        this.BolusPCEARopiSuf = Math.round((this.PoidsNum * 0.15) * 10) / 10;
+        this.DoseMaxPCEARopiSuf = Math.round((this.PoidsNum * 1.5) * 10) / 10;
     };
     ;
     LocoRegionalePage.prototype.openPageALR = function (index) {
@@ -2714,9 +2709,17 @@ var LocoRegionalePage = /** @class */ (function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__pages_alr_generalites_alr_generalites_alr__["a" /* GeneralitesAlrPage */]);
     };
     ;
+    LocoRegionalePage.prototype.openPageAPD = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__pages_alr_peridurale_peridurale__["a" /* PeriduralePage */]);
+    };
+    ;
+    LocoRegionalePage.prototype.openPageBlocAxillaire = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_9__pages_alr_bloc_axillaire_bloc_axillaire__["a" /* BlocAxillairePage */]);
+    };
+    ;
     LocoRegionalePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_22__angular_core__["m" /* Component */])({
-            selector: 'page-loco-regionale',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\modules\loco-regionale\loco-regionale.html"*/'<ion-header>\n  <br>\n\n        <!-- HEADER MENU  -->\n        <div class="header"> \n\n          <div (click)="retourHome()" class="backButton">\n          <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n          Retour\n          </div>\n          ALR</div><br>\n\n            <ion-toolbar>\n\n              <ion-searchbar *ngIf = "!this.searchBarType"\n              class="interventionSearchbar"\n              [(ngModel)]="searchTerm"\n              (ionChange)="setFilteredChirurgie()"\n              placeholder="Intervention..."\n              inputmode="text"\n            ></ion-searchbar><br *ngIf = "!this.searchBarType"><ion-icon *ngIf = "!this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>\n            \n            <ion-searchbar *ngIf = "this.searchBarType"\n            class="specialiteSearchbar"\n            [(ngModel)]="searchTermSpecialite"\n            (ionChange)="setFilteredSpecialite()"\n            placeholder="Specialite..."\n            inputmode="text"\n            ></ion-searchbar><br *ngIf = "this.searchBarType"><ion-icon *ngIf = "this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>\n            \n            \n            \n            </ion-toolbar>\n\n\n              </ion-header>\n       <!-- END HEADER -->\n\n\n<ion-content>\n        <div padding class="patientHighlight">\n          Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n          <br> Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>\n        </div>        \n\n\n        <div *ngIf="!searchTerm && !searchTermSpecialite">\n          <ion-card (click)="openPageGeneralites()" class="drogueContainer">\n            <ion-card-content  class="cardRecos">\n            <div class="headerProtocoles">\n              Particularités de l\'ALR en pédiatrie\n            </div>\n            <hr>\n            <div class="contentProtocoles">\n              <ion-icon start name="bulb"></ion-icon> &nbsp; <b>Généralités</b>\n            </div>\n            </ion-card-content>\n            </ion-card>  \n          </div>\n\n          <hr>\n\n        <div *ngIf="!searchTerm && !searchTermSpecialite">\n        <ion-card (click)="openPageALR(index)" class="drogueContainer" *ngFor="let entry of pagesALR, let index = index">\n          <ion-card-content  class="cardRecos">\n          <div class="headerProtocoles">\n            {{entry.soustitre}}\n          </div>\n          <hr>\n          <div class="contentProtocoles">\n            <ion-icon start name="pin"></ion-icon> &nbsp; <b>{{entry.titre}}</b>\n          </div>\n          <hr>\n          <div> \n            <span *ngIf="entry.critere1" style="color:#009c9e">{{entry.produit1}} : {{entry.posologie1 * PoidsNum}} mL/côté</span>\n            <span *ngIf="entry.critere2" style="color:#009c9e">{{entry.produit2}} : {{entry.posologie2 * PoidsNum}} mL/côté</span>\n          </div>\n          </ion-card-content> \n          </ion-card>  \n\n        </div>\n\n\n        <!-- SEULEMENT EN CAS DE RECHERCHE DONC SI RESULTAT-->\n\n          <div *ngIf="searchTerm || searchTermSpecialite">\n\n            <div class="detersion" *ngIf="AgeNum <= 3">Détersion cutanée : chlorexidine avant 3 mois</div>\n            <div class="detersion" *ngIf="AgeNum > 3">Détersion cutanée : bétadine jaune après 3 mois</div>\n\n\n            <ion-card padding class="chirurgieContainer" *ngFor="let chir of chirurgie, let index = index" [attr.data-index]="index">\n                  <div class="comment" *ngIf="chir.recommandationALR == \'Non recommandée\'">\n                  <ion-chip class="ALRnonRecommandee">\n                    <ion-label>{{chir.intitule}} </ion-label>\n                  </ion-chip>&nbsp; ALR non recommandée</div>\n        \n                  <div class="comment" *ngIf="chir.recommandationALR == \'Recommandée\'">\n                  <ion-chip class="ALRRecommandee">\n                    <ion-label>{{chir.intitule}}</ion-label>\n                  </ion-chip>&nbsp; ALR recommandée\n                  <br>\n                  <span *ngIf="chir.commentaire">{{chir.commentaire}}</span>\n                </div>\n                \n                  <!-- Technique A produit 1 -->  \n                <div *ngIf="chir.techniqueproposeeA">\n                <hr style="height:2px">\n                <span class="specialiteChirurgie">1. <b>{{chir.techniqueproposeeA}}</b></span><br>\n                <span class="comment">{{chir.commentairetechniqueA}}</span> \n                <hr>\n                <span *ngIf="chir.produitALR1A" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1A}}</span>. <br><u>Posologie</u> : {{chir.posologieALR1A}}.</span> \n                <br>\n                <span class="comment"><u>Dose patient</u> : <span style="color:#009c9e; font-weight:bold;">{{PoidsRound * chir.posologieNumALR1A/chir.concentrationProduit1A}} mL (={{PoidsRound * chir.posologieNumALR1A}} mg)</span><span *ngIf="chir.commentairePosologieA">&nbsp;{{chir.commentairePosologieA}}</span>.</span> \n                <br>\n                <span *ngIf="chir.dosetoxiqueALR1A" class="comment"><u>{{chir.commentaireDoseToxiqueA}}</u> : {{chir.dosetoxiqueALR1A}} - soit <span style="color:#ff6961; font-weight:bold;">{{PoidsRound * chir.dosetoxiqueNumALR1A}} mg (={{PoidsRound * chir.dosetoxiqueNumALR1A/chir.concentrationProduit1A}} mL)</span>.</span> \n                <br> \n                <span *ngIf="chir.adjuvantALRA" class="comment">Adjuvant proposé : {{chir.adjuvantALRA}} soit {{PoidsRound}} µg.</span>\n                <hr style="height:2px">\n              </div>\n\n                <!-- Technique A produit 2 NON REMPLI POUR LE MOMENT -->  \n\n\n                <!-- Technique B produit 1   --> \n                 <div *ngIf="chir.techniqueproposeeB">\n                 <span *ngIf="chir.techniqueproposeeB" class="specialiteChirurgie">2. <b>{{chir.techniqueproposeeB}}</b></span> <br>\n                 <span class="comment">{{chir.commentairetechniqueB}}</span> \n                 <hr>\n                 <span *ngIf="chir.produitALR1B" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1B}}</span>. <br><u>Posologie</u> : {{chir.posologieALR1B}}.</span>\n                 <br>\n                 <span class="comment"><u>Dose patient</u> : <span style="color:#009c9e ; font-weight: bold;">{{PoidsRound * chir.posologieNumALR1B/chir.concentrationProduit1B}} mL (={{(PoidsRound * chir.posologieNumALR1B)}} mg)</span><span *ngIf="chir.commentairePosologieB">&nbsp;{{chir.commentairePosologieA}}</span>.</span> \n                 <br>\n                 <span *ngIf="chir.dosetoxiqueALR1B" class="comment"><u>{{chir.commentaireDoseToxiqueB}}</u> : {{chir.dosetoxiqueALR1B}} - soit <span style="color:#ff6961; font-weight:bold;">{{PoidsRound * chir.dosetoxiqueNumALR1B}} mg (={{PoidsRound * chir.dosetoxiqueNumALR1B/chir.concentrationProduit1B}} mL)</span>.</span> \n                 <br> \n                 <span *ngIf="chir.adjuvantALRB" class="comment">Adjuvant proposé : {{chir.adjuvantALRB}} soit {{PoidsRound}} µg.</span>\n                 <br>\n                </div> \n\n                <!-- Technique B produit 2 NON REMPLI POUR LE MOMENT -->  \n\n              </ion-card>\n              </div>\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\modules\loco-regionale\loco-regionale.html"*/,
+            selector: 'page-loco-regionale',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\modules\loco-regionale\loco-regionale.html"*/'<ion-header>\n  <br>\n\n        <!-- HEADER MENU  -->\n        <div class="header"> \n\n          <div (click)="retourHome()" class="backButton">\n          <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n          Retour\n          </div>\n          ALR</div><br>\n\n            <ion-toolbar>\n\n              <ion-searchbar *ngIf = "!this.searchBarType"\n              class="interventionSearchbar"\n              [(ngModel)]="searchTerm"\n              (ionChange)="setFilteredChirurgie()"\n              placeholder="Intervention..."\n              inputmode="text"\n            ></ion-searchbar><br *ngIf = "!this.searchBarType"><ion-icon *ngIf = "!this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>\n            \n            <ion-searchbar *ngIf = "this.searchBarType"\n            class="specialiteSearchbar"\n            [(ngModel)]="searchTermSpecialite"\n            (ionChange)="setFilteredSpecialite()"\n            placeholder="Specialite..."\n            inputmode="text"\n            ></ion-searchbar><br *ngIf = "this.searchBarType"><ion-icon *ngIf = "this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>\n            \n            \n            \n            </ion-toolbar>\n\n\n              </ion-header>\n       <!-- END HEADER -->\n\n\n<ion-content>\n        <div padding class="patientHighlight">\n          Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n          <br> Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>\n        </div>        \n\n\n        <div *ngIf="!searchTerm && !searchTermSpecialite">\n\n          <ion-card (click)="openPageGeneralites()" class="drogueContainer">\n            <ion-card-content  class="cardRecos">\n            <div class="headerProtocoles">\n              Particularités de l\'ALR en pédiatrie\n            </div>\n            <hr>\n            <div class="contentProtocoles">\n              <ion-icon start name="bulb"></ion-icon> &nbsp; <b>Généralités</b>\n            </div>\n            </ion-card-content>\n            </ion-card>  \n    \n          <hr>\n\n          <ion-card (click)="openPageAPD()" class="drogueContainer">\n            <ion-card-content  class="cardRecos">\n            <div class="headerProtocoles">\n              Pose de cathéter d\'anesthésie péridurale lombaire\n            </div>\n            <hr>\n            <div class="contentProtocoles">\n              <ion-icon start name="pin"></ion-icon> &nbsp; <b>Anesthésie péridurale</b>\n            </div>\n            <hr>\n            <div>\n            <div class="ALRCalculatorDiv"> \n            <div class="ALRCalculatorIcon"><ion-icon start style="zoom:2" name="calculator"></ion-icon></div>\n              Ropivacaïne 1 mg/mL + Sufentanil 0,25 µg/mL<br>\n              PIEB : {{BolusPIEBRopiSuf}} mL/h - PCEA : {{BolusPCEARopiSuf}} mL/bolus<br>\n              PR : 20 minutes - Dose max. : {{DoseMaxPCEARopiSuf}} mL/4h\n            </div>\n          </div>\n            </ion-card-content>\n            </ion-card>  \n    \n          <hr>\n\n          <ion-card (click)="openPageBlocAxillaire()" class="drogueContainer">\n            <ion-card-content  class="cardRecos">\n            <div class="headerProtocoles">\n            Bloc du plexus brachial au creux axillaire\n            </div>\n            <hr>\n            <div class="contentProtocoles">\n              <ion-icon start name="pin"></ion-icon> &nbsp; <b>Bloc axillaire</b>\n            </div>\n            <hr>\n            <div>\n            <div class="ALRCalculatorDiv"> \n            <div class="ALRCalculatorIcon"><ion-icon start style="zoom:2" name="calculator"></ion-icon></div>\n            A visée analgésique : Ropivacaïne 2 mg/mL : xxx mL <br>  \n            A visée anesthésique : Carbocaïne 20 mg/mL : xxx mL \n            </div>\n          </div>\n            </ion-card-content>\n            </ion-card>  \n    \n          <hr>\n\n\n\n        <ion-card (click)="openPageALR(index)" class="drogueContainer" *ngFor="let entry of pagesALR, let index = index">\n          <ion-card-content  class="cardRecos">\n          <div class="headerProtocoles">\n            {{entry.soustitre}}\n          </div>\n          <hr>\n          <div class="contentProtocoles">\n            <ion-icon start name="pin"></ion-icon> &nbsp; <b>{{entry.titre}}</b>\n          </div>\n          <hr>\n          <div> \n            <span style="color:#009c9e">{{entry.produit1}} : {{entry.posologie1 * PoidsNum}} mL/côté</span>\n            <span style="color:#009c9e">{{entry.produit2}} : {{entry.posologie2 * PoidsNum}} mL/côté</span>\n          </div>\n          </ion-card-content> \n          </ion-card>  \n\n        </div>\n\n\n        <!-- SEULEMENT EN CAS DE RECHERCHE DONC SI RESULTAT-->\n\n          <div *ngIf="searchTerm || searchTermSpecialite">\n\n            <div class="detersion" *ngIf="AgeNum <= 3">Détersion cutanée : chlorexidine avant 3 mois</div>\n            <div class="detersion" *ngIf="AgeNum > 3">Détersion cutanée : bétadine jaune après 3 mois</div>\n\n\n            <ion-card padding class="chirurgieContainer" *ngFor="let chir of chirurgie, let index = index" [attr.data-index]="index">\n                 \n              <!--  ALR NON -->\n              <div class="comment" *ngIf="chir.recommandationALR == \'Non recommandée\'">\n                  <ion-chip class="ALRnonRecommandee">\n                    <ion-label>{{chir.intitule}} </ion-label>\n                  </ion-chip><ion-icon name="radio-button-off" style="zoom:2.5; float: right; color:darkgrey"></ion-icon>\n                  <br>\n                  <span>Specialité : {{chir.specialite}}</span>\n                  <br>\n                  <span>Suggestion : <b>ALR non recommandée</b></span>\n                  <br>\n                  <span *ngIf="chir.commentaire">Remarque : {{chir.commentaire}}</span>\n                </div>\n\n                <!--  ALR OUI -->\n        \n                  <div class="comment" *ngIf="chir.recommandationALR == \'Recommandée\'">\n                    <div>\n                    <ion-chip class="ALRRecommandee">\n                    <ion-label>{{chir.intitule}}</ion-label>\n                  </ion-chip>\n                  <ion-icon name="checkmark-circle" style="zoom:2.5; float: right; color:#009c9e"></ion-icon>\n                  <br>\n                  <span>Specialité : {{chir.specialite}}</span>\n                  <br>\n                  <span>Suggestion : <b>ALR recommandée</b></span>\n                  <br>\n                  <span *ngIf="chir.commentaire">Remarque : {{chir.commentaire}}</span>\n                </div>\n                \n                  <!-- Technique A-->  \n                <div *ngIf="chir.techniqueproposeeA">\n                <hr style="height:2px">\n                <span class="specialiteChirurgie">1. <b>{{chir.techniqueproposeeA}}</b></span><br>\n                <span *ngIf="chir.commentairetechniqueB" class="comment">{{chir.commentairetechniqueA}}<br></span> \n                \n                <span *ngIf="chir.produitALR1A" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1A}}</span>.</span> \n                <br *ngIf="chir.produitALR2A">\n                <span *ngIf="chir.produitALR2A" class="comment"><u>Alternative produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR2A}}</span>.</span>\n                <br>\n                <span *ngIf="chir.adjuvantALRA" class="comment">Adjuvant proposé : {{chir.adjuvantALRA}}.</span>\n              </div>\n\n                <!-- Technique B--> \n                 <div *ngIf="chir.techniqueproposeeB">\n                  <hr style="height:2px">\n                 <span *ngIf="chir.techniqueproposeeB" class="specialiteChirurgie">2. <b>{{chir.techniqueproposeeB}}</b></span> <br>\n                 <span *ngIf="chir.commentairetechniqueB" class="comment">{{chir.commentairetechniqueB}}<br></span> \n                 \n                 <span *ngIf="chir.produitALR1B" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1B}}</span>.</span>\n                 <br *ngIf="chir.produitALR2B">\n                 <span *ngIf="chir.produitALR2B" class="comment"><u>Alternative produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR2B}}</span>.</span>\n                 <br> \n                 <span *ngIf="chir.adjuvantALRB" class="comment">Adjuvant proposé : {{chir.adjuvantALRB}}.</span>\n                 <br>\n                </div> \n              </div>\n                \n                                <!--  ALR A DISCUTER -->\n\n\n                <div class="comment" *ngIf="chir.recommandationALR == \'A discuter\'">\n                  <div>\n                  <ion-chip class="ALRAdiscuter">\n                    <ion-label>{{chir.intitule}}</ion-label>\n                  </ion-chip>\n                  <ion-icon name="help-circle" style="zoom:2.5; float: right; color:#FFA500"></ion-icon>\n                  <br>\n                  <span>Specialité : {{chir.specialite}}</span>\n                  <br>\n                  <span>Suggestion : <b>Discuter l\'intérêt d\'une ALR</b></span>\n                  <br>\n                  <span *ngIf="chir.commentaire">Remarque : {{chir.commentaire}}</span>\n                </div>\n                \n                  <!-- Technique A-->  \n                <div *ngIf="chir.techniqueproposeeA">\n                <hr style="height:2px">\n                <span class="specialiteChirurgie">1. <b>{{chir.techniqueproposeeA}}</b></span><br>\n                <span *ngIf="chir.commentairetechniqueA" class="comment">{{chir.commentairetechniqueA}}<br></span>\n                <span *ngIf="chir.produitALR1A" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1A}}</span>.</span> \n                <br *ngIf="chir.produitALR2A">\n                <span *ngIf="chir.produitALR2A" class="comment"><u>Alternative produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR2A}}</span>.</span>\n                <br>\n                <span *ngIf="chir.adjuvantALRA" class="comment">Adjuvant proposé : {{chir.adjuvantALRA}}.</span>\n              </div>\n\n                <!-- Technique B--> \n                 <div *ngIf="chir.techniqueproposeeB">\n                  <hr style="height:2px">\n                 <span *ngIf="chir.techniqueproposeeB" class="specialiteChirurgie">2. <b>{{chir.techniqueproposeeB}}</b></span> <br>\n                 <span *ngIf="chir.commentairetechniqueB" class="comment">{{chir.commentairetechniqueB}}<br></span> \n                 <span *ngIf="chir.produitALR1B" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1B}}</span>.</span>\n                 <br *ngIf="chir.produitALR2B">\n                 <span *ngIf="chir.produitALR2B" class="comment"><u>Alternative produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR2B}}</span>.</span>\n                 <br> \n                 <span *ngIf="chir.adjuvantALRB" class="comment">Adjuvant proposé : {{chir.adjuvantALRB}}.</span>\n                 <br>\n                </div> \n              </div>\n\n\n\n              </ion-card>\n              </div>\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\modules\loco-regionale\loco-regionale.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["k" /* NavParams */],
@@ -3208,6 +3211,7 @@ var BlocInterCostoBrachialPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BlocAxillairePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3219,6 +3223,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
  * Generated class for the BlocAxillairePage page.
  *
@@ -3226,18 +3231,64 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var BlocAxillairePage = /** @class */ (function () {
-    function BlocAxillairePage(navCtrl, navParams) {
+    function BlocAxillairePage(navCtrl, navParams, storage) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.storage = storage;
     }
     BlocAxillairePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad BlocAxillairePage');
     };
+    BlocAxillairePage.prototype.ionViewWillEnter = function () {
+        var _this = this;
+        var promiseList = [];
+        promiseList.push(this.storage.get('AgeNum').then(function (Age) {
+            _this.AgeNum = Age;
+            _this.ageLecture = Math.round((_this.AgeNum / 12) * 10) / 10;
+            _this.storage.get('PoidsNum').then(function (Poids) {
+                _this.PoidsNum = Poids;
+                _this.PoidsRound = Math.round(_this.PoidsNum);
+                _this.storage.get('DureeJeune').then(function (dureejeune) {
+                    _this.DureeJeune = dureejeune;
+                    _this.storage.get('EstomacPlein').then(function (Estomac) {
+                        _this.EstomacPlein = Estomac;
+                        console.log('lestomac est plein ?', _this.EstomacPlein);
+                        if (_this.EstomacPlein == true) {
+                            _this.EstomacOuiNon = "plein";
+                        }
+                        else {
+                            _this.EstomacOuiNon = "vide";
+                        }
+                        ;
+                        _this.storage.get('Allergie').then(function (allergie) {
+                            _this.Allergie = allergie;
+                            _this.storage.get('sexeMF').then(function (sexe) {
+                                _this.sexeMF = sexe;
+                                if (!sexe) {
+                                    _this.sexeMF = "Fille";
+                                }
+                                _this.storage.get('Taille').then(function (Taille) {
+                                    _this.Taille = Taille;
+                                    _this.calculs();
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        }));
+    };
+    ;
+    BlocAxillairePage.prototype.calculs = function () { };
+    ;
+    BlocAxillairePage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
     BlocAxillairePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bloc-axillaire',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-axillaire\bloc-axillaire.html"*/'<!--\n  Generated template for the BlocAxillairePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>BlocAxillaire</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-axillaire\bloc-axillaire.html"*/,
+            selector: 'page-bloc-axillaire',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-axillaire\bloc-axillaire.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc axillaire</div>\n   <br>\n \n    </ion-header>\n\n    <ion-content>\n\n      <ion-card color="turquoise-fonce">\n        <ion-card-content>  Indications : \n          <p class="dilutionDrogueInduction"> - Chirurgie du coude, en associant le bloc du cutané médial du bras.</p> \n          <p class="dilutionDrogueInduction"> - Chirurgie de l\'avant-bras.</p>\n          <p class="dilutionDrogueInduction"> - Chirurgie de la main.</p></ion-card-content>\n      </ion-card>\n        <ion-item><ion-label color="dark-turquoise">Technnique</ion-label></ion-item>\n          <div padding>\n            <ul>\n              <li>Echoguidé : sonde haute fréquence large ou "club de Golf" ;</li>\n              <li>Repérage des muscles de la paroi abdominale, latéralement et au dessus de l\'ombilic ; </li>\n              <li>Ponction <i>in plane</i> latéro-médiale permettant de positionner l\'aiguille en arrière de l\'oblique interne et en avant du transverse</li>\n            </ul>\n            <hr>\n          </div>\n          \n        <ion-item><ion-label color="dark-turquoise">Posologie</ion-label></ion-item>\n        <ul class="comment">\n          <li>Ropivacaïne 2 mg/mL jusqu\'à 6 ans et 30 kg, 0,5 mL/kg/côté</li>\n          <li>Ropivacaïne 3,75 mg/mL au-delà de 6 ans et 30 kg, 0,5 mL/kg/côté</li>\n        </ul> \n        <div padding>       \n          <div padding class="patientALR">\n            Pour mon patient \n            <br>\n            Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n            <br><b>\n            <span *ngIf="AgeNum <= 72 || PoidsNum <=30">Ropivacaïne 2 mg/mL : {{PoidsNum/2}} mL/côté</span>\n            <span *ngIf="AgeNum > 72 && PoidsNum > 30">Ropivacaïne 3,75 mg/mL : {{PoidsNum/2}} mL/côté</span></b>\n        </div></div>\n        \n        <ion-item>\n          <ion-label color="dark-turquoise">Imagerie  \n            <div style="float:right ; margin-right:20px">\n            <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n            <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n          </div>\n          </ion-label>\n        </ion-item>\n        <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n        <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n    </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-axillaire\bloc-axillaire.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
     ], BlocAxillairePage);
     return BlocAxillairePage;
 }());
@@ -6069,7 +6120,7 @@ var MetaboliquePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__(867);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__(864);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_chart_js__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -6761,18 +6812,15 @@ var InfoPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_scores_padss_padss__ = __webpack_require__(497);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_scores_bromage_bromage__ = __webpack_require__(498);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_scores_enrhume_enrhume__ = __webpack_require__(499);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_scores_ventilation_difficile_ventilation_difficile__ = __webpack_require__(500);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_scores_iot_difficile_iot_difficile__ = __webpack_require__(501);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_scores_vmiot_impossible_vmiot_impossible__ = __webpack_require__(502);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__chirurgies_laparoschisis_laparoschisis__ = __webpack_require__(503);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_scores_bilan_pre_op_bilan_pre_op__ = __webpack_require__(504);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_scores_criteres_ambulatoire_criteres_ambulatoire__ = __webpack_require__(506);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_scores_drepanocytose_drepanocytose__ = __webpack_require__(507);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__chirurgies_nouveau_ne_sspi_nouveau_ne_sspi__ = __webpack_require__(508);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_scores_myopathies_myopathies__ = __webpack_require__(509);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_scores_mucopolysaccharidose_mucopolysaccharidose__ = __webpack_require__(510);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__chirurgies_chirurgie_orthognatique_chirurgie_orthognatique__ = __webpack_require__(511);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_dispositifs_doppler_oesophagien_doppler_oesophagien__ = __webpack_require__(512);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__chirurgies_laparoschisis_laparoschisis__ = __webpack_require__(500);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_scores_bilan_pre_op_bilan_pre_op__ = __webpack_require__(501);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_scores_criteres_ambulatoire_criteres_ambulatoire__ = __webpack_require__(503);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_scores_drepanocytose_drepanocytose__ = __webpack_require__(504);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__chirurgies_nouveau_ne_sspi_nouveau_ne_sspi__ = __webpack_require__(505);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_scores_myopathies_myopathies__ = __webpack_require__(506);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_scores_mucopolysaccharidose_mucopolysaccharidose__ = __webpack_require__(507);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__chirurgies_chirurgie_orthognatique_chirurgie_orthognatique__ = __webpack_require__(508);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_dispositifs_doppler_oesophagien_doppler_oesophagien__ = __webpack_require__(509);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6782,9 +6830,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
 
 
 
@@ -6820,26 +6865,24 @@ var ProtocolesPage = /** @class */ (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.protocoles = [
-            { titre: "Chirurgies orthognatiques", auteurs: "Pr. S. Dahmani", datepublication: "27/03/2018", page: __WEBPACK_IMPORTED_MODULE_25__chirurgies_chirurgie_orthognatique_chirurgie_orthognatique__["a" /* ChirurgieOrthognatiquePage */], objectif1: "Sécuriser la prise en charge des chirurgies de Lefort 1, génioplasties et OSBM", objectif2: "Favoriser la réhabilitation précoce et la sortie au domicile." },
+            { titre: "Chirurgies orthognatiques", auteurs: "Pr. S. Dahmani", datepublication: "27/03/2018", page: __WEBPACK_IMPORTED_MODULE_22__chirurgies_chirurgie_orthognatique_chirurgie_orthognatique__["a" /* ChirurgieOrthognatiquePage */], objectif1: "Sécuriser la prise en charge des chirurgies de Lefort 1, génioplasties et OSBM", objectif2: "Favoriser la réhabilitation précoce et la sortie au domicile." },
             { titre: "Extrophie vésicale", auteurs: "Dr. Charlotte Fait, Pr. Souhayl Dahmani", datepublication: "21/09/2020", page: __WEBPACK_IMPORTED_MODULE_3__chirurgies_extrophie_vesicale_extrophie_vesicale__["a" /* ExtrophieVesicalePage */], objectif1: "Réduction des jours de réanimation avec intubation.", objectif2: "Réhabilitation précoce avec passage de la première nuit en SSPI puis USC à J1.", objectif3: "Optimisation de l'analgésie.", objectif4: "" },
-            { titre: "Laparoschisis", auteurs: "Dr. B. Bruneau, Dr. L. Marsac", datepublication: "03/03/2021", page: __WEBPACK_IMPORTED_MODULE_18__chirurgies_laparoschisis_laparoschisis__["a" /* LaparoschisisPage */], objectif1: "Optimiser l'interfaçage Salle de naissance - bloc - néonatalogie", objectif2: "Optimiser les délais de prise en charge", objectif3: "", objectif4: "" },
-            { titre: "Nouveau né en SSPI", auteurs: "Dr. D. Michelet, Dr. L. Marsac", datepublication: "01/05/2017", page: __WEBPACK_IMPORTED_MODULE_22__chirurgies_nouveau_ne_sspi_nouveau_ne_sspi__["a" /* NouveauNeSspiPage */], objectif1: "Evaluation et prise en charge pré-opératoire d'un nouveau né accueilli en SSPI", objectif2: "", objectif3: "", objectif4: "" },
+            { titre: "Laparoschisis", auteurs: "Dr. B. Bruneau, Dr. L. Marsac", datepublication: "03/03/2021", page: __WEBPACK_IMPORTED_MODULE_15__chirurgies_laparoschisis_laparoschisis__["a" /* LaparoschisisPage */], objectif1: "Optimiser l'interfaçage Salle de naissance - bloc - néonatalogie", objectif2: "Optimiser les délais de prise en charge", objectif3: "", objectif4: "" },
+            { titre: "Nouveau né en SSPI", auteurs: "Dr. D. Michelet, Dr. L. Marsac", datepublication: "01/05/2017", page: __WEBPACK_IMPORTED_MODULE_19__chirurgies_nouveau_ne_sspi_nouveau_ne_sspi__["a" /* NouveauNeSspiPage */], objectif1: "Evaluation et prise en charge pré-opératoire d'un nouveau né accueilli en SSPI", objectif2: "", objectif3: "", objectif4: "" },
             { titre: "Scoliose", auteurs: "Dr. Florence Julien-Marsollier, Pr. Souhayl Dahmani", datepublication: "15/11/2018", page: __WEBPACK_IMPORTED_MODULE_4__chirurgies_scoliose_scoliose__["a" /* ScoliosePage */], objectif1: "Anticiper les risques.", objectif2: "Favoriser réhabilitation accélérée après chirurgie : raccourcir les séjours en SSPI & USC.", objectif3: "", objectif4: "" },
         ];
         this.dispositifs = [
             { nom: "ANI", nomcomplet: "Analgesia/Nociception Index", page: __WEBPACK_IMPORTED_MODULE_2__pages_dispositifs_ani_ani__["a" /* AniPage */] },
-            { nom: "DTO", nomcomplet: "Doppler Trans-Oesophagien", page: __WEBPACK_IMPORTED_MODULE_26__pages_dispositifs_doppler_oesophagien_doppler_oesophagien__["a" /* DopplerOesophagienPage */] },
+            { nom: "DTO", nomcomplet: "Doppler Trans-Oesophagien", page: __WEBPACK_IMPORTED_MODULE_23__pages_dispositifs_doppler_oesophagien_doppler_oesophagien__["a" /* DopplerOesophagienPage */] },
         ];
         this.algorithmes = [
-            { nom: "Bilan préopératoire", nomcomplet: "Algorithme décisionnel d'aide à la prescription de bilan pré-opératoire en pédiatrie", validation: "Pr. S. Dahmani, juin 2018", page: __WEBPACK_IMPORTED_MODULE_19__pages_scores_bilan_pre_op_bilan_pre_op__["a" /* BilanPreOpPage */] },
-            { nom: "Drépanocytose", nomcomplet: "Stratégie de prise en charge péri-opératoire d'un syndrome drépanocytaire majeur", validation: "Pr. S. Dahmani, mai 2017", page: __WEBPACK_IMPORTED_MODULE_21__pages_scores_drepanocytose_drepanocytose__["a" /* DrepanocytosePage */] },
-            { nom: "Eligibilité à l'ambulatoire", nomcomplet: "Evaluation des critères d'éligibilité à la chirurgie ambulatoire en pédiatrie", validation: "Pr. S. Dahmani, novembre 2021", page: __WEBPACK_IMPORTED_MODULE_20__pages_scores_criteres_ambulatoire_criteres_ambulatoire__["a" /* CriteresAmbulatoirePage */] },
+            { nom: "Bilan préopératoire", nomcomplet: "Algorithme décisionnel d'aide à la prescription de bilan pré-opératoire en pédiatrie", validation: "Pr. S. Dahmani, juin 2018", page: __WEBPACK_IMPORTED_MODULE_16__pages_scores_bilan_pre_op_bilan_pre_op__["a" /* BilanPreOpPage */] },
+            { nom: "Drépanocytose", nomcomplet: "Stratégie de prise en charge péri-opératoire d'un syndrome drépanocytaire majeur", validation: "Pr. S. Dahmani, mai 2017", page: __WEBPACK_IMPORTED_MODULE_18__pages_scores_drepanocytose_drepanocytose__["a" /* DrepanocytosePage */] },
+            { nom: "Eligibilité à l'ambulatoire", nomcomplet: "Evaluation des critères d'éligibilité à la chirurgie ambulatoire en pédiatrie", validation: "Pr. S. Dahmani, novembre 2021", page: __WEBPACK_IMPORTED_MODULE_17__pages_scores_criteres_ambulatoire_criteres_ambulatoire__["a" /* CriteresAmbulatoirePage */] },
             { nom: "Enfant enrhumé", nomcomplet: "Gestion de l'enfant enrhumé en CS ou VPA", validation: "Pr. S. Dahmani, avril 2019", page: __WEBPACK_IMPORTED_MODULE_14__pages_scores_enrhume_enrhume__["a" /* EnrhumePage */] },
-            { nom: "Intubation difficile", nomcomplet: "Conduite à tenir en cas d'intubation difficile non prévue en pédiatrie", validation: "Pr. S. Dahmani, octobre 2018", page: __WEBPACK_IMPORTED_MODULE_16__pages_scores_iot_difficile_iot_difficile__["a" /* IotDifficilePage */] },
-            { nom: "Mucopolysaccharidoses", nomcomplet: "Stratégie de prise en charge péri-opératoire des patients atteints de mucopolysaccharidose", validation: " Pr. S. Dahmani, octobre 2017", page: __WEBPACK_IMPORTED_MODULE_24__pages_scores_mucopolysaccharidose_mucopolysaccharidose__["a" /* MucopolysaccharidosePage */] },
-            { nom: "Myopathies", nomcomplet: "Stratégies de prise en charge péri-opératoire des principales myopathies.", validation: "Pr. S. Dahmani, avril 2013", page: __WEBPACK_IMPORTED_MODULE_23__pages_scores_myopathies_myopathies__["a" /* MyopathiesPage */] },
-            { nom: "Ventilation difficile", nomcomplet: "Conduite à tenir en cas de ventilation difficile non prévue en pédiatrie", validation: "Pr. S. Dahmani, octobre 2018", page: __WEBPACK_IMPORTED_MODULE_15__pages_scores_ventilation_difficile_ventilation_difficile__["a" /* VentilationDifficilePage */] },
-            { nom: "VM & IOT impossibles", nomcomplet: "Conduite à tenir en cas de ventilation et intubation difficiles non prévues en pédiatrie", validation: "Pr. S. Dahmani, octobre 2018", page: __WEBPACK_IMPORTED_MODULE_17__pages_scores_vmiot_impossible_vmiot_impossible__["a" /* VmiotImpossiblePage */] },
+            //    { nom : "Intubation difficile" , nomcomplet: "Conduite à tenir en cas d'intubation difficile non prévue en pédiatrie" , validation : "Pr. S. Dahmani, octobre 2018" , page : IotDifficilePage },
+            { nom: "Mucopolysaccharidoses", nomcomplet: "Stratégie de prise en charge péri-opératoire des patients atteints de mucopolysaccharidose", validation: " Pr. S. Dahmani, octobre 2017", page: __WEBPACK_IMPORTED_MODULE_21__pages_scores_mucopolysaccharidose_mucopolysaccharidose__["a" /* MucopolysaccharidosePage */] },
+            { nom: "Myopathies", nomcomplet: "Stratégies de prise en charge péri-opératoire des principales myopathies.", validation: "Pr. S. Dahmani, avril 2013", page: __WEBPACK_IMPORTED_MODULE_20__pages_scores_myopathies_myopathies__["a" /* MyopathiesPage */] },
         ];
         this.scores = [
             {
@@ -8240,152 +8283,6 @@ var EnrhumePage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VentilationDifficilePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the VentilationDifficilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var VentilationDifficilePage = /** @class */ (function () {
-    function VentilationDifficilePage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    VentilationDifficilePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad VentilationDifficilePage');
-    };
-    VentilationDifficilePage.prototype.retourHome = function () {
-        this.navCtrl.pop();
-    };
-    VentilationDifficilePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-ventilation-difficile',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\ventilation-difficile\ventilation-difficile.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Ventilation au masque difficile</div>\n   <br>\n \n    </ion-header>\n\n    <ion-content>\n\n      <ion-item color="danger" style="text-align:center">\n        VM difficile <ion-icon name="arrow-forward"></ion-icon> O2 100% <ion-icon name="arrow-forward"></ion-icon> Appel à l\'aide\n      </ion-item>\n\n      <ion-slides  class="VMSlides" pager="true">\n\n        <ion-slide>\n          <h2>Etape A</h2>\n        <ion-card>\n        <ion-card-content class="drogueContainer">\n          <ion-item><ion-label color="dark-turquoise">1. Optimiser la position de la tête</ion-label></ion-item>\n          <ul  class="comment">\n            <li>Subluxation mandibule</li>\n            <li>Billot sous les épaules avant 2 ans</li>\n            <li>Position neutre après 2 ans</li>\n            <li>Ventilation à 4 mains</li>\n          </ul>\n          <ion-item><ion-label color="dark-turquoise">2. Vérifier les équipements</ion-label></ion-item>\n              <ul class="comment">\n                <li>Changer les éléments du circuit si suspicion de dysfonctionnement</li>\n                <li>Ventiler en pression positive</li>\n              </ul>\n          <ion-item><ion-label color="dark-turquoise">3. Approfondir l\'anesthésie</ion-label></ion-item>\n        </ion-card-content>\n      </ion-card>\n    </ion-slide>\n\n    <ion-slide>\n      <h2>Etape B</h2>\n    <ion-card>\n    <ion-card-content class="drogueContainer">\n      <ion-item><ion-label color="dark-turquoise">4. Insérer une canule oropharyngée</ion-label></ion-item>\n      <ion-item><ion-label color="dark-turquoise">5. Rechercher la cause</ion-label></ion-item>\n      <ul  class="comment">\n        <li>Profondeur d\'anesthésie insuffisante</li>\n        <li>Laryngospasme</li>\n        <li>Distension gastrique</li>\n      </ul>\n      <div style="text-align:center">\n      <ion-icon name="arrow-up"></ion-icon><ion-icon name="arrow-down"></ion-icon>\n      </div>\n      <ul  class="comment">\n        <li>Maintenir la ventilation en pression positive</li>\n        <li>Approfondir l\'anesthésie</li>\n        <li>Si possible, intuber</li>\n      </ul>\n      <ion-item><ion-label color="danger">6. Appeler à l\'aide si non arrivée</ion-label></ion-item>\n    </ion-card-content>\n  </ion-card>\n</ion-slide>\n\n<ion-slide>\n  <h2>Etape C</h2>\n<ion-card>\n<ion-card-content style="padding:0%">\n  <ion-item><ion-label color="danger">7. Dispositif supra-glottique</ion-label></ion-item>\n  <div padding>\n  <ion-item><ion-label color="dark-turquoise">&#8627; Succès &#8594; Poursuite de la ventilation</ion-label></ion-item>\n  <ion-item><ion-label color="warning">&#8627; Echec et Spo2 > 80%</ion-label></ion-item>\n    <ul  class="comment">\n      <li>Eliminer malposition DSG ou dysfonction matériel</li>\n      <li>Rechercher pneumothorax ou spasme </li>\n      <li>Réveiller le patient</li>\n    </ul> \n    <ion-item><ion-label color="danger">&#8627; Echec et Spo2 < 80% &#8594; Intubation</ion-label></ion-item>\n    <ul  class="comment">\n      <li>Succès &#8594; Chirurgie </li>\n      <li color="danger">Echec &#8594; Algorithme VM & IOT impossibles</li>\n    </ul>\n  </div>\n</ion-card-content>\n</ion-card>\n</ion-slide>\n\n    </ion-slides>\n\n\n    </ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\ventilation-difficile\ventilation-difficile.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], VentilationDifficilePage);
-    return VentilationDifficilePage;
-}());
-
-//# sourceMappingURL=ventilation-difficile.js.map
-
-/***/ }),
-
-/***/ 501:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IotDifficilePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the IotDifficilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var IotDifficilePage = /** @class */ (function () {
-    function IotDifficilePage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    IotDifficilePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad IotDifficilePage');
-    };
-    ;
-    IotDifficilePage.prototype.retourHome = function () {
-        this.navCtrl.pop();
-    };
-    ;
-    IotDifficilePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-iot-difficile',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\iot-difficile\iot-difficile.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Intubation difficile</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n  <ion-item color="danger" style="text-align:center">\n    <ion-label>\n    Exposition difficile <ion-icon name="arrow-forward"></ion-icon> O2 100% <ion-icon name="arrow-forward"></ion-icon> Appel à l\'aide\n  </ion-label>\n  </ion-item>\n\n  <ion-slides  class="VMSlides" pager="true">\n\n    <ion-slide>\n      <h2>Etape A</h2>\n    <ion-card>\n    <ion-card-content style="padding:0%">\n      <ion-item><ion-label color="dark-turquoise">\n        Ventilation au masque possible</ion-label></ion-item>\n      <ul class="comment">\n        <li>Anesthésie adaptée</li>\n        <li>Ventilation en pressiun positive</li>\n        <li>Vidange gastrique</li>\n      </ul>\n      <ion-item><ion-label color="dark-turquoise">Optimiser la laryngoscopie</ion-label></ion-item>\n      <ul class="comment">\n        <li>Pas plus de 4 tentatives</li>\n        <li>Flexion de la nuque, extension de la tête, appui cricoïdien</li>\n        <li>Optimiser le relachement musculaire</li>\n        <li>Vidéolaryngoscope et mandrin</li>\n      </ul>\n      <div padding>\n        <hr>\n      <ion-item><ion-label color="dark-turquoise"> &#8627; Succès &#8594; ventiler<p class="comment">Vérifier la bonne position de la sonde : capnographie, auscultation ;<br>Procéder à l\'intervention.</p></ion-label></ion-item>\n      <ion-item><ion-label color="danger">&#8627; Echec &#8594; passer à l\'étape B</ion-label></ion-item>\n    </div>\n    </ion-card-content>\n  </ion-card>\n</ion-slide>\n\n<ion-slide>\n  <h2>Etape B</h2>\n<ion-card>\n<ion-card-content style="padding:0%">\n  <ion-item><ion-label color="danger">\n    Appel à l\'aide si non arrivée</ion-label></ion-item>\n  <ion-item><ion-label color="dark-turquoise">Mettre en place un DSG</ion-label></ion-item>\n  <ul class="comment">\n    <li>Oxygéner et ventiler</li>\n    <li>Ajuster la taille si peu ou inefficace</li>\n  </ul>\n  <div padding>\n    <hr>\n  <ion-item><ion-label color="dark-turquoise"> &#8627; Succès <br> &#8594; Procédure possible sous DSG ?</ion-label></ion-item>\n  <div padding>\n    <span padding class="comment">&#8627; Oui &#8594; Ventiler et procéder à l\'intervention.</span><br>\n    <span padding class="comment">&#8627; Non &#8594; Annuler l\'intervention et réveiller.</span>\n  </div>\n  <ion-item><ion-label color="danger">&#8627; Echec &#8594; Passer à l\'étape C</ion-label></ion-item>\n    </div>\n</ion-card-content>\n</ion-card>\n</ion-slide>\n\n<ion-slide>\n<h2>Etape C</h2>\n<ion-card>\n<ion-card-content style="padding:0%">\n<ion-item><ion-label color="danger">SpO2 &lt; 90% sous DSG en FiO2 1</ion-label></ion-item>\n<ul class="comment">\n  <li>Retrait du DSG</li>\n  <li>Ventilation au masque en pression positive</li>\n  <li>Optimiser la position de la tête</li>\n  <li>Technique à 4 mains</li>\n  <li>Antagoniser les curares</li>\n</ul> \n<div padding><hr>\n<ion-item><ion-label color="dark-turquoise">&#8627; Succès &#8594; Ventilation possible.\n  <br>&nbsp; &#8594; Annuler la chirurgie et réveiller. </ion-label></ion-item>\n\n<ion-item><ion-label color="danger">&#8627; Echec &#8594; Ventilation impossible.\n  <br>&nbsp; &#8594; Algorithme VM & IOT impossibles. </ion-label></ion-item>\n</div>\n\n</ion-card-content>\n</ion-card>\n</ion-slide>\n\n</ion-slides>\n\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\iot-difficile\iot-difficile.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], IotDifficilePage);
-    return IotDifficilePage;
-}());
-
-//# sourceMappingURL=iot-difficile.js.map
-
-/***/ }),
-
-/***/ 502:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VmiotImpossiblePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the VmiotImpossiblePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var VmiotImpossiblePage = /** @class */ (function () {
-    function VmiotImpossiblePage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    VmiotImpossiblePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad VmiotImpossiblePage');
-    };
-    VmiotImpossiblePage.prototype.retourHome = function () {
-        this.navCtrl.pop();
-    };
-    VmiotImpossiblePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-vmiot-impossible',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\vmiot-impossible\vmiot-impossible.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   VM & IOT impossibles</div>\n   <br>\n \n    </ion-header>\n\n    <ion-content>\n\n      <ion-item color="danger" style="text-align:center">\n        VM & IOT difficiles <ion-icon name="arrow-forward"></ion-icon> O2 100% <ion-icon name="arrow-forward"></ion-icon> Appel à l\'aide\n      </ion-item>\n\n      <ion-slides  class="VMSlides" pager="true">\n\n        <ion-slide>\n          <h2>Etape A</h2>\n        <ion-card>\n        <ion-card-content style="padding:0%">\n          <ion-item><ion-label color="dark-turquoise">\n          Continuer à ventiler et oxygéner</ion-label></ion-item>\n          <ul  class="comment">\n            <li>FiO2 1</li>\n            <li>Optimiser la position de la tête</li>\n            <li>Dispositif supra glottique</li>\n            <li>Vidéolaryngoscope</li>\n            <li>Lutter contre la distension gastrique</li>\n          </ul>\n          <div padding>\n            <hr>\n          <ion-item><ion-label color="warning"> &#8627; SpO2 &gt; 80%</ion-label></ion-item>\n          <ul class="comment">\n            <li>Tenter le réveil</li>\n            <li>Suggamadex 16 mg/kg si Rocuronium</li>\n          </ul>\n          <ion-item><ion-label color="danger">&#8627; SpO2 &le; 80% ou bradycardie\n            <br> &#8594; étape B</ion-label></ion-item>\n        </div>\n        </ion-card-content>\n      </ion-card>\n    </ion-slide>\n\n    <ion-slide>\n      <h2>Etape B</h2>\n    <ion-card>\n    <ion-card-content style="padding:0%">\n      <ion-item><ion-label color="danger">Techniques de <i>rescue</i></ion-label></ion-item>\n\n      <div padding>\n      <hr>\n      <br>\n      <p>&#8627; Chirurgien ORL &#8594; <span style="color:#009c9e;">Trachéotomie chirurgicale</span> </p>\n      <br>\n      <p>&#8627; Pas de chirurgien &#8594; <span style="color:#ff6961;">Trachéotomie percutanée, jet ventilation, cricothyroïdotomie</span> </p>\n    </div>\n    </ion-card-content>\n  </ion-card>\n</ion-slide>\n    </ion-slides>\n    </ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\vmiot-impossible\vmiot-impossible.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], VmiotImpossiblePage);
-    return VmiotImpossiblePage;
-}());
-
-//# sourceMappingURL=vmiot-impossible.js.map
-
-/***/ }),
-
-/***/ 503:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaparoschisisPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
@@ -8575,14 +8472,14 @@ var LaparoschisisPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 504:
+/***/ 501:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BilanPreOpPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__questionnaire_hemostase_questionnaire_hemostase__ = __webpack_require__(505);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__questionnaire_hemostase_questionnaire_hemostase__ = __webpack_require__(502);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8678,7 +8575,7 @@ var BilanPreOpPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 505:
+/***/ 502:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8728,7 +8625,7 @@ var QuestionnaireHemostasePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 506:
+/***/ 503:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8765,7 +8662,7 @@ var CriteresAmbulatoirePage = /** @class */ (function () {
     };
     CriteresAmbulatoirePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-criteres-ambulatoire',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\criteres-ambulatoire\criteres-ambulatoire.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Critères pour l\'ambulatoire</div>\n   <br>\n \n    </ion-header>\n\n    <ion-content>\n\n      <ion-chip style="margin-top: 5%; margin-left:2%;" color="dark-turquoise"><ion-icon color="dark-turquoise" name="bulb"></ion-icon></ion-chip>\n      <div class="comment" padding style="float:right; width:87%; color:darkgray;">\n        Evaluer les trois catégories de critères en faisant défiler les cartes ci-dessous. \n      </div>\n\n      <ion-slides  class="VMSlides" pager="true">\n\n        <ion-slide>\n          <h2>Critères généraux</h2>\n        <ion-card class="drogueContainer">\n          <ion-card-header color="warning">Critères requis :</ion-card-header>\n        <ion-card-content>\n          <ul class="comment">\n            <li>La surveillance post-opératoire ne nécessite pas de moyens, matériels ou humains, spécifiques au milieu hospitalier ; ainsi le retour à domicile préserve le confort et la sécurité de l\'enfant</li>\n            <li>Les parents peuvent rejoindre à tout moment un centre chirurgical susceptible de prendre l\'enfant en charge dans un délai de une heure environ, même s\'il ne s\'agit pas du centre ayant réalisé l\'internvetion</li>\n            <li>Les parents peuvent téléphoner pour joindre le 15 à tout moment et peuvent être contactés</li>\n            <li>Les parents sont informés que des contre indications appréciées par l\'anesthésiste ou le chirurgien peuvent apparaître à tout moment de la prise en charge, avant, pendant et après l\'intervention.</li>\n          </ul>\n        </ion-card-content>\n      </ion-card>\n    </ion-slide>\n\n    <ion-slide>\n      <h2>Critères liés au patient</h2>\n    <ion-card class="drogueContainer">\n      <ion-card-header color="warning">Critères requis :</ion-card-header>\n    <ion-card-content>\n         <ul  class="comment">\n        <li>Tous les patients ASA 1 ou ASA 2 sont éligibles</li>\n        <li>Après accord préalable de l\'anesthésiste et de l\'opérateur, les patients ASA 3 dont la pathologie est stabilisée avec ou sans traitement peuvent être inclus si l\'interférence de l\'intervention avec la pathologie ou le traitement est négligeable (asthme, épilepsie, cardiopathie simple).</li>\n        <li>Les enfants nés à terme de plus de 3 mois sont éligibles</li>\n        <li>Les enfants prématurés dont l\'âge post-conceptionnel est supérieur à 60 SA sont éligibles.</li>\n      </ul>\n    </ion-card-content>\n  </ion-card>\n</ion-slide>\n\n<ion-slide>\n  <h2>Contre-indications</h2>\n<ion-card class="drogueContainer">\n<ion-card-header color="danger">Critères d\'exclusion :</ion-card-header>\n<ion-card-content>\n  <ul  class="comment">\n      <li>Enfant classé ASA 3 ou 4, âge < 3 mois, prématuré d\'APC < 60 SA</li>\n      <li>Pathologie pré-existante ou intervention nécessitant surveillance ou traitement en milieu hospitalier</li>\n      <li>Survenue d\'une complication per ou post-anesthésique</li>\n      <li>Survenue d\'une complication chirurgicale per ou post-opératoire</li>\n      <li>Refus des parents, incompréhension des consignes pré-opératoires ou fiabilité insuffisante de la prise en charge à domicile</li>\n      <li>Contraites géographiques en rapport avec la durée de trajet (>1h) ou parents non joignables (absence de téléphone)</li>\n      <li>Mode de transport non adapté pour la sortie (transport en VL impossible ou 1 seul accompagnateur avant 10 ans)</li>\n      <li>Intervention à risque hémorragique ou réputée douloureuse</li>\n    </ul> \n</ion-card-content>\n</ion-card>\n</ion-slide>\n\n    </ion-slides>\n\n\n    </ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\criteres-ambulatoire\criteres-ambulatoire.html"*/,
+            selector: 'page-criteres-ambulatoire',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\criteres-ambulatoire\criteres-ambulatoire.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Critères pour l\'ambulatoire</div>\n   <br>\n \n    </ion-header>\n\n    <ion-content>\n\n      <ion-chip style="margin-top: 5%; margin-left:2%;" color="dark-turquoise"><ion-icon color="dark-turquoise" name="bulb"></ion-icon></ion-chip>\n      <div class="comment" padding style="float:right; width:87%; color:darkgray;">\n        Evaluer les trois catégories de critères afin d\'autoriser ou de refuser une prise en charge ambulatoire. \n      </div>\n\n      <ion-item><ion-label color="dark-turquoise">Critères généraux</ion-label></ion-item>\n          <ul class="comment">\n            <li>La surveillance post-opératoire ne nécessite pas de moyens, matériels ou humains, spécifiques au milieu hospitalier ; ainsi le retour à domicile préserve le confort et la sécurité de l\'enfant</li>\n            <li>Les parents peuvent rejoindre à tout moment un centre chirurgical susceptible de prendre l\'enfant en charge dans un délai de une heure environ, même s\'il ne s\'agit pas du centre ayant réalisé l\'internvetion</li>\n            <li>Les parents peuvent téléphoner pour joindre le 15 à tout moment et peuvent être contactés</li>\n            <li>Les parents sont informés que des contre indications appréciées par l\'anesthésiste ou le chirurgien peuvent apparaître à tout moment de la prise en charge, avant, pendant et après l\'intervention.</li>\n          </ul>\n      \n          <ion-item><ion-label color="dark-turquoise">Critères liés au patient</ion-label></ion-item>\n         <ul  class="comment">\n        <li>Tous les patients ASA 1 ou ASA 2 sont éligibles</li>\n        <li>Après accord préalable de l\'anesthésiste et de l\'opérateur, les patients ASA 3 dont la pathologie est stabilisée avec ou sans traitement peuvent être inclus si l\'interférence de l\'intervention avec la pathologie ou le traitement est négligeable (asthme, épilepsie, cardiopathie simple).</li>\n        <li>Les enfants nés à terme de plus de 3 mois sont éligibles</li>\n        <li>Les enfants prématurés dont l\'âge post-conceptionnel est supérieur à 60 SA sont éligibles.</li>\n      </ul>\n\n      <ion-item><ion-label color="danger">Critères d\'exclusion</ion-label></ion-item>\n  <ul  class="comment">\n      <li>Enfant classé ASA 3 ou 4, âge < 3 mois, prématuré d\'APC < 60 SA</li>\n      <li>Pathologie pré-existante ou intervention nécessitant surveillance ou traitement en milieu hospitalier</li>\n      <li>Survenue d\'une complication per ou post-anesthésique</li>\n      <li>Survenue d\'une complication chirurgicale per ou post-opératoire</li>\n      <li>Refus des parents, incompréhension des consignes pré-opératoires ou fiabilité insuffisante de la prise en charge à domicile</li>\n      <li>Contraites géographiques en rapport avec la durée de trajet (>1h) ou parents non joignables (absence de téléphone)</li>\n      <li>Mode de transport non adapté pour la sortie (transport en VL impossible ou 1 seul accompagnateur avant 10 ans)</li>\n      <li>Intervention à risque hémorragique ou réputée douloureuse</li>\n    </ul> \n\n\n\n    </ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\criteres-ambulatoire\criteres-ambulatoire.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], CriteresAmbulatoirePage);
@@ -8776,7 +8673,7 @@ var CriteresAmbulatoirePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 507:
+/***/ 504:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8820,7 +8717,7 @@ var DrepanocytosePage = /** @class */ (function () {
     ;
     DrepanocytosePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-drepanocytose',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\drepanocytose\drepanocytose.html"*/'<ion-header><br>\n  <div class="header"> \n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Drépanocytose</div>\n   <br>\n    </ion-header>\n<ion-content padding>\n\n  <ion-chip style="margin-top: 5%; margin-left:2%;" color="dark-turquoise"><ion-icon color="dark-turquoise" name="bulb"></ion-icon></ion-chip>\n  <div class="comment" padding style="float:right; width:87%; color:darkgray;">Penser à contacter l\'hématologue en charge du patient et récupérer les derniers comptes-rendus.</div>\n\n  <ion-card class="drogueContainer">\n    <ion-card-header color="turquoise-fonce">Evaluer la sévérité</ion-card-header>\n    <ion-card-content class="comment">\n      - Génotype, comorbidités (déficit en G6PD), hémoglobine de base, traitements, greffe ;<br>\n      - Fréquence des crises vaso-occlusives ;<br>\n      - Antécédent d\'hospitalisation, notamment en réanimation ; <br>\n      - Antécédent de syndrome thoracique aigu, vasculopathie cérébrale.\n    </ion-card-content>\n  </ion-card>\n\n    <hr>\n  \n  <ion-card class="drogueContainer">\n    <ion-card-header color="danger">Préparation transfusionnelle :</ion-card-header>\n    <ion-card-content>\n  <ion-item>\n    <ion-label color="dark-turquoise" class="drogueInduction">Durée d\'intervention :</ion-label>\n  <ion-select #newselect (ionChange)="UpdatePerteChir()" [(ngModel)]="TypeChir" interface="action-sheet" cancelText="Retour" class="drogueInduction">\n   <ion-option value="1" color="turquoise-fonce">&le;45 min.</ion-option>\n   <ion-option value="2" color="turquoise-fonce">&le; 2h.</ion-option>\n   <ion-option value="3" color="turquoise-fonce">&gt; 2h.</ion-option>\n  </ion-select>\n  </ion-item>\n        <div class="comment">\n        <div *ngIf="TypeChir == 1">- Transfusion si Hb &le; 8g/dL <br>- Cible en fin de chirurgie à 10 g/dL</div>\n        <div *ngIf="TypeChir == 2">- Mesure HbS par EPHb<br>- Transfusion ou échange ; objectif HbS &le; 40%<br>- Cible en fin de chirurgie entre 10 et 10,5 g/dL</div>\n        <div *ngIf="TypeChir == 3">- Mesure HbS par EPHb<br>- Transfusion ou échange ; objectif Hbs &lt; 30%<br>- Cible en fin de chirurgie à 10g/dL</div>  \n      </div>  \n      </ion-card-content>\n      </ion-card>\n\n<hr>\n\n<ion-card class="drogueContainer">\n  <ion-card-header color="turquoise-fonce">Hydrater dès l\'hospitalisation</ion-card-header>\n  <ion-card-content class="comment">\n    - 2 L/m²/24h en dessous de 50 kg ;<br>\n    - 1,5 L/m²/24h au dessus de 50 kg ;<br>\n    <span style="font-size: smaller;">- Repères : 10 kg = 40 mL/h, 20 kg = 66 mL/h, 30 kg = 88 mL/h.</span>\n  </ion-card-content>\n</ion-card>\n\n<hr>\n\n<ion-card class="drogueContainer">\n  <ion-card-header color="primary">Oxygéner : 1L/min lunettes</ion-card-header>\n</ion-card>\n\n<hr>\n\n<ion-card class="drogueContainer">\n  <ion-card-header color="turquoise-fonce">Per et post-opératoire</ion-card-header>\n  <ion-card-content class="comment">\n    - Oxygénation et réchauffement continus ;<br>\n    - Seuil transfusionnel à 8 g/dL, 10 g/dL si antécédent de SCA ou vasculopathie cérébrale ;<br>\n    - Monitorage adapté au maintien de la normovolémie (DTO)<br>\n    - Analgésie adaptée aux besoins (ALR, PCA morphine)<br>\n    - Surveillance prolongée en SSPI puis orientation adaptée (USC).\n  </ion-card-content>\n</ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\drepanocytose\drepanocytose.html"*/,
+            selector: 'page-drepanocytose',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\drepanocytose\drepanocytose.html"*/'<ion-header><br>\n  <div class="header"> \n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Drépanocytose</div>\n   <br>\n    </ion-header>\n<ion-content>\n\n  <ion-chip style="margin-top: 5%; margin-left:2%;" color="dark-turquoise"><ion-icon color="dark-turquoise" name="bulb"></ion-icon></ion-chip>\n  <div class="comment" padding style="float:right; width:87%; color:darkgray;">Penser à contacter l\'hématologue en charge du patient et récupérer les derniers comptes-rendus.</div>\n\n  <ion-card class="drogueContainer">\n    <ion-card-header color="turquoise-fonce">Evaluer la sévérité</ion-card-header>\n    <ion-card-content class="comment">\n      - Génotype, comorbidités (déficit en G6PD), hémoglobine de base, traitements, greffe ;<br>\n      - Fréquence des crises vaso-occlusives ;<br>\n      - Antécédent d\'hospitalisation, notamment en réanimation ; <br>\n      - Antécédent de syndrome thoracique aigu, vasculopathie cérébrale.\n    </ion-card-content>\n  </ion-card>\n\n    <hr>\n  \n  <ion-card class="drogueContainer">\n    <ion-card-header color="danger">Préparation transfusionnelle :</ion-card-header>\n    <ion-card-content>\n  <ion-item>\n    <ion-label color="dark-turquoise" class="drogueInduction">Durée d\'intervention :</ion-label>\n  <ion-select #newselect (ionChange)="UpdatePerteChir()" [(ngModel)]="TypeChir" interface="action-sheet" cancelText="Retour" class="drogueInduction">\n   <ion-option value="1" color="turquoise-fonce">&le;45 min.</ion-option>\n   <ion-option value="2" color="turquoise-fonce">&le; 2h.</ion-option>\n   <ion-option value="3" color="turquoise-fonce">&gt; 2h.</ion-option>\n  </ion-select>\n  </ion-item>\n        <div class="comment">\n        <div *ngIf="TypeChir == 1">- Transfusion si Hb &le; 8g/dL <br>- Cible en fin de chirurgie à 10 g/dL</div>\n        <div *ngIf="TypeChir == 2">- Mesure HbS par EPHb<br>- Transfusion ou échange ; objectif HbS &le; 40%<br>- Cible en fin de chirurgie entre 10 et 10,5 g/dL</div>\n        <div *ngIf="TypeChir == 3">- Mesure HbS par EPHb<br>- Transfusion ou échange ; objectif Hbs &lt; 30%<br>- Cible en fin de chirurgie à 10g/dL</div>  \n      </div>  \n      </ion-card-content>\n      </ion-card>\n\n<hr>\n\n<ion-card class="drogueContainer">\n  <ion-card-header color="turquoise-fonce">Hydrater dès l\'hospitalisation</ion-card-header>\n  <ion-card-content class="comment">\n    - 2 L/m²/24h en dessous de 50 kg ;<br>\n    - 1,5 L/m²/24h au dessus de 50 kg ;<br>\n    <span style="font-size: smaller;">- Repères : 10 kg = 40 mL/h, 20 kg = 66 mL/h, 30 kg = 88 mL/h.</span>\n  </ion-card-content>\n</ion-card>\n\n<hr>\n\n<ion-card class="drogueContainer">\n  <ion-card-header color="primary">Oxygéner : 1L/min lunettes</ion-card-header>\n</ion-card>\n\n<hr>\n\n<ion-card class="drogueContainer">\n  <ion-card-header color="turquoise-fonce">Per et post-opératoire</ion-card-header>\n  <ion-card-content class="comment">\n    - Oxygénation et réchauffement continus ;<br>\n    - Seuil transfusionnel à 8 g/dL, 10 g/dL si antécédent de SCA ou vasculopathie cérébrale ;<br>\n    - Monitorage adapté au maintien de la normovolémie (DTO)<br>\n    - Analgésie adaptée aux besoins (ALR, PCA morphine)<br>\n    - Surveillance prolongée en SSPI puis orientation adaptée (USC).\n  </ion-card-content>\n</ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\drepanocytose\drepanocytose.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], DrepanocytosePage);
@@ -8831,7 +8728,7 @@ var DrepanocytosePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 508:
+/***/ 505:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9156,7 +9053,7 @@ var NouveauNeSspiPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 509:
+/***/ 506:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9204,7 +9101,7 @@ var MyopathiesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 510:
+/***/ 507:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9253,7 +9150,7 @@ var MucopolysaccharidosePage = /** @class */ (function () {
     ;
     MucopolysaccharidosePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-mucopolysaccharidose',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\mucopolysaccharidose\mucopolysaccharidose.html"*/'<ion-header><br>\n  <div class="header"> \n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Mucopolysaccharidoses</div>\n   <br>\n   \n    </ion-header>\n<ion-content>\n\n  <ion-chip style="margin-top: 5%; margin-left:2%;" color="dark-turquoise"><ion-icon color="dark-turquoise" name="bulb"></ion-icon></ion-chip>\n      <div class="comment" padding style="float:right; width:87%; color:darkgray;">\n        Penser à prévenir un aidant à proximité au début de la prise en charge. \n      </div>\n\n      <ion-item color="turquoise-fonce">Evaluation diététique : IMC > 18 kg/m²</ion-item>\n\n      <ion-item color="turquoise-fonce">Lettre opérateur : type MPS, type de chirurgie</ion-item>\n\n\n      <ion-item color="warning">Consultation d\'anesthésie (-8 semaines)</ion-item>\n        <div style="text-align: justify; padding:10px ;">\n          Bilan cardio-vasculaire :\n          <ul class="comment">\n            <li>Electrocardiogramme</li>\n            <li>Consultation de cardiologie, échographie transthoracique</li>\n            </ul>\n\n            Bilan respiratoire :\n            <ul class="comment">\n              <li>Rechercher par l\'interrogatoire : syndrome d\'apnée du sommeil, encombrement bronchique, fausses routes</li>\n              <li>Polysomnographie ou saturation nocturne systématiques</li>\n              <li>Consultation de pneumologie si encombrement ou fausses routes, discuter l\'intérêt d\'une séance de VNI pré-opératoire</li>\n              <li>Prévoir kinésithérapie respiratoire dans les semaines précédant le geste</li>\n              </ul>\n            \n            Bilan ORL :\n            <ul class="comment">\n              <li>Consultation ORL avec nasofibroscopie</li>\n              <li>Tomodensitométrie trachéale</li>\n            </ul>\n\n              Protocole d\'épargne sanguine :\n              <ul class="comment">\n                <li>Supplémentation en fer et foldine débuté 6 semaines avant l\'intervention (sauf MPS type 3)</li>\n                <li>Protocole EPREX 4 semaines, 600UI/kg SC par semaine, objectif 15g/dL</li>\n                <li>Mise en réserve de produits sanguins labiles à prévoir</li>\n                </ul>\n          Bilan ORL :\n         <ul class="comment">\n             <li>Consultation ORL avec nasofibroscopie</li>\n             <li>Tomodensitométrie trachéale</li>\n          </ul>\n    \n        Bilan infectieux :\n          <ul class="comment">\n            <li>ECBU pré-opératoire</li>\n            <li>Recherche de foyer infectieux dentaire</li>\n            <li>Dépistage nasal du staphylocoque doré</li>\n          </ul>\n\n          Bilan neurochirurgical : \n          <ul class="comment">\n            <li>Consultation neurochirurgicale avec CRO si rachis cervical opéré</li>\n            <li>Potentiels évoqués somesthésiques pré-opératoires</li>\n            <li>IRM rachis : risque d\'instabilité du rachis, de malformation de la charnière occipitale et de compression medullaire ou HTIC en rapport avec l\'infiltration diffuse dans le cadre de l\'évolution de la pathologie.</li>\n          </ul>\n\n        </div>\n\n          <ion-item color="danger">Prévenir la réanimation</ion-item>\n          <br>\n          <ion-item color="warning">Période péri-opératoire</ion-item>\n          <div style="text-align:justify ; padding:10px ;">\n              Voies aériennes :\n              <ul class="comment">\n                <li><b>Risque d\'intubation difficile systématique</b></li>\n                <li>Intubation orotrachéale par vidéolaryngoscope ou fibroscope</li>\n                <li>Boite de trachéotomie en salle, chirurgie ORL présent</li>\n                <li>Mobilisation précautionneuse : fragilité du rachis cervical</li>\n                </ul>\n              Equipement et monitorage :\n              <ul class="comment">\n                <li><b>Risque de saignement et d\'instabilité hémodynamique</b></li>\n                <li>Deux abords veineux périphériques, voie veineuse centrale, sonde vésicale</li>\n                <li>Pression artérielle invasive et monitorage du débit cardiaque (VPP, DTO)</li>\n                <li>Monitorage de la narcose par BIS</li>\n                <li>Exacyl per-opératoire : 10 mg/kg sur 30 minutes puis 5 mg/kg/h (max 4g/24h)</li>\n              </ul>\n              Réveil : \n              <ul class="comment">\n                <li>Extubation après stabilisation hémodynamique</li>\n                <li>Boite de trachéotomie prête, chirurgien ORL présent</li>\n                <li>Vidéolaryngoscope et fibroscope prêts</li>\n                <li>Drogues d\'urgence préparées</li>\n              </ul>\n            </div>\n            <ion-item color="danger">Transfert en réanimation</ion-item>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\mucopolysaccharidose\mucopolysaccharidose.html"*/,
+            selector: 'page-mucopolysaccharidose',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\mucopolysaccharidose\mucopolysaccharidose.html"*/'<ion-header><br>\n  <div class="header"> \n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Mucopolysaccharidoses</div>\n   <br>\n   \n    </ion-header>\n<ion-content>\n\n  <ion-chip style="margin-top: 5%; margin-left:2%;" color="dark-turquoise"><ion-icon color="dark-turquoise" name="bulb"></ion-icon></ion-chip>\n      <div class="comment" padding style="float:right; width:87%; color:darkgray;">\n        Penser à prévenir un aidant à proximité au début de la prise en charge au bloc opératoire. \n      </div>\n\n      <ion-item><ion-label color="turquoise-fonce">Evaluation diététique : IMC > 18 kg/m²</ion-label></ion-item>\n\n      <ion-item><ion-label color="turquoise-fonce">Lettre opérateur : type MPS, type de chirurgie</ion-label></ion-item>\n\n\n      <ion-item><ion-label color="dark-turquoise">Consultation d\'anesthésie (-8 semaines)</ion-label></ion-item>\n        <div style="text-align: justify; padding:15px ;">\n          Bilan cardio-vasculaire :\n          <ul class="comment">\n            <li>Electrocardiogramme</li>\n            <li>Consultation de cardiologie, échographie transthoracique</li>\n            </ul>\n\n            Bilan respiratoire :\n            <ul class="comment">\n              <li>Rechercher par l\'interrogatoire : syndrome d\'apnée du sommeil, encombrement bronchique, fausses routes</li>\n              <li>Polysomnographie ou saturation nocturne systématiques</li>\n              <li>Consultation de pneumologie si encombrement ou fausses routes, discuter l\'intérêt d\'une séance de VNI pré-opératoire</li>\n              <li>Prévoir kinésithérapie respiratoire dans les semaines précédant le geste</li>\n              </ul>\n            \n            Bilan ORL :\n            <ul class="comment">\n              <li>Consultation ORL avec nasofibroscopie</li>\n              <li>Tomodensitométrie trachéale</li>\n            </ul>\n\n              Protocole d\'épargne sanguine :\n              <ul class="comment">\n                <li>Supplémentation en fer et foldine débuté 6 semaines avant l\'intervention (sauf MPS type 3)</li>\n                <li>Protocole EPREX 4 semaines, 600UI/kg SC par semaine, objectif 15g/dL</li>\n                <li>Mise en réserve de produits sanguins labiles à prévoir</li>\n                </ul>\n          Bilan ORL :\n         <ul class="comment">\n             <li>Consultation ORL avec nasofibroscopie</li>\n             <li>Tomodensitométrie trachéale</li>\n          </ul>\n    \n        Bilan infectieux :\n          <ul class="comment">\n            <li>ECBU pré-opératoire</li>\n            <li>Recherche de foyer infectieux dentaire</li>\n            <li>Dépistage nasal du staphylocoque doré</li>\n          </ul>\n\n          Bilan neurochirurgical : \n          <ul class="comment">\n            <li>Consultation neurochirurgicale avec CRO si rachis cervical opéré</li>\n            <li>Potentiels évoqués somesthésiques pré-opératoires</li>\n            <li>IRM rachis : risque d\'instabilité du rachis, de malformation de la charnière occipitale et de compression medullaire ou HTIC en rapport avec l\'infiltration diffuse dans le cadre de l\'évolution de la pathologie.</li>\n          </ul>\n\n        </div>\n\n          <ion-item><ion-label color="danger">Prévenir la réanimation</ion-label></ion-item>\n          <br>\n          <ion-item><ion-label color="dark-turquoise">Période péri-opératoire</ion-label></ion-item>\n          <div style="text-align:justify ; padding:15px ;">\n              Voies aériennes :\n              <ul class="comment">\n                <li><b>Risque d\'intubation difficile systématique</b></li>\n                <li>Intubation orotrachéale par vidéolaryngoscope ou fibroscope</li>\n                <li>Boite de trachéotomie en salle, chirurgie ORL présent</li>\n                <li>Mobilisation précautionneuse : fragilité du rachis cervical</li>\n                </ul>\n              Equipement et monitorage :\n              <ul class="comment">\n                <li><b>Risque de saignement et d\'instabilité hémodynamique</b></li>\n                <li>Deux abords veineux périphériques, voie veineuse centrale, sonde vésicale</li>\n                <li>Pression artérielle invasive et monitorage du débit cardiaque (VPP, DTO)</li>\n                <li>Monitorage de la narcose par BIS</li>\n                <li>Exacyl per-opératoire : 10 mg/kg sur 30 minutes puis 5 mg/kg/h (max 4g/24h)</li>\n              </ul>\n              Réveil : \n              <ul class="comment">\n                <li>Extubation après stabilisation hémodynamique</li>\n                <li>Boite de trachéotomie prête, chirurgien ORL présent</li>\n                <li>Vidéolaryngoscope et fibroscope prêts</li>\n                <li>Drogues d\'urgence préparées</li>\n              </ul>\n            </div>\n            <ion-item><ion-label color="danger">Transfert en réanimation</ion-label></ion-item>\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\mucopolysaccharidose\mucopolysaccharidose.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], MucopolysaccharidosePage);
@@ -9264,7 +9161,7 @@ var MucopolysaccharidosePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 511:
+/***/ 508:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9421,7 +9318,7 @@ var ChirurgieOrthognatiquePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 512:
+/***/ 509:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9470,7 +9367,7 @@ var DopplerOesophagienPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 513:
+/***/ 510:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9654,7 +9551,7 @@ var RecommandationsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 514:
+/***/ 511:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9735,13 +9632,13 @@ var MedicamentsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 556:
+/***/ 553:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(557);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(561);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(554);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(558);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -9749,7 +9646,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 561:
+/***/ 558:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9758,12 +9655,12 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(887);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(888);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(884);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(885);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser_ngx__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(554);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(555);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(551);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(552);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_service_data_liste_medicaments__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_accueil_accueil__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_modules_options_options__ = __webpack_require__(243);
@@ -9793,24 +9690,24 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_pages_alr_cutane_lateral_cuisse_cutane_lateral_cuisse__ = __webpack_require__(238);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_pages_alr_bloc_pudendal_bloc_pudendal__ = __webpack_require__(239);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_pages_alr_bloc_penien_bloc_penien__ = __webpack_require__(240);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_chirurgies_nouveau_ne_sspi_nouveau_ne_sspi__ = __webpack_require__(508);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_chirurgies_nouveau_ne_sspi_nouveau_ne_sspi__ = __webpack_require__(505);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_chirurgies_extrophie_vesicale_extrophie_vesicale__ = __webpack_require__(488);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_chirurgies_scoliose_scoliose__ = __webpack_require__(489);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_chirurgies_laparoschisis_laparoschisis__ = __webpack_require__(503);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_chirurgies_chirurgie_orthognatique_chirurgie_orthognatique__ = __webpack_require__(511);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_main_pages_medicaments_medicaments__ = __webpack_require__(514);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_chirurgies_laparoschisis_laparoschisis__ = __webpack_require__(500);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_chirurgies_chirurgie_orthognatique_chirurgie_orthognatique__ = __webpack_require__(508);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_main_pages_medicaments_medicaments__ = __webpack_require__(511);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_pages_scores_enrhume_enrhume__ = __webpack_require__(499);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_pages_scores_ventilation_difficile_ventilation_difficile__ = __webpack_require__(500);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_pages_scores_iot_difficile_iot_difficile__ = __webpack_require__(501);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_pages_scores_vmiot_impossible_vmiot_impossible__ = __webpack_require__(502);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_pages_scores_bilan_pre_op_bilan_pre_op__ = __webpack_require__(504);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pages_pages_scores_questionnaire_hemostase_questionnaire_hemostase__ = __webpack_require__(505);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__pages_pages_scores_criteres_ambulatoire_criteres_ambulatoire__ = __webpack_require__(506);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__pages_pages_scores_drepanocytose_drepanocytose__ = __webpack_require__(507);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__pages_pages_scores_myopathies_myopathies__ = __webpack_require__(509);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__pages_pages_scores_mucopolysaccharidose_mucopolysaccharidose__ = __webpack_require__(510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_pages_scores_ventilation_difficile_ventilation_difficile__ = __webpack_require__(886);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_pages_scores_iot_difficile_iot_difficile__ = __webpack_require__(887);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_pages_scores_vmiot_impossible_vmiot_impossible__ = __webpack_require__(888);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_pages_scores_bilan_pre_op_bilan_pre_op__ = __webpack_require__(501);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pages_pages_scores_questionnaire_hemostase_questionnaire_hemostase__ = __webpack_require__(502);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__pages_pages_scores_criteres_ambulatoire_criteres_ambulatoire__ = __webpack_require__(503);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__pages_pages_scores_drepanocytose_drepanocytose__ = __webpack_require__(504);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__pages_pages_scores_myopathies_myopathies__ = __webpack_require__(506);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__pages_pages_scores_mucopolysaccharidose_mucopolysaccharidose__ = __webpack_require__(507);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__pages_main_pages_protocoles_protocoles__ = __webpack_require__(486);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__pages_main_pages_recommandations_recommandations__ = __webpack_require__(513);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__pages_main_pages_recommandations_recommandations__ = __webpack_require__(510);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__pages_modules_monitorage_monitorage__ = __webpack_require__(244);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__pages_modules_courbes_courbes__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__pages_modules_antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(339);
@@ -9838,7 +9735,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_81__pages_pages_scores_shs_shs__ = __webpack_require__(490);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_82__pages_pages_scores_vpop_vpop__ = __webpack_require__(492);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_83__pages_pages_dispositifs_ani_ani__ = __webpack_require__(487);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_84__pages_pages_dispositifs_doppler_oesophagien_doppler_oesophagien__ = __webpack_require__(512);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_84__pages_pages_dispositifs_doppler_oesophagien_doppler_oesophagien__ = __webpack_require__(509);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10147,10 +10044,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 /*
-  Generated class for the ServiceDataProvider provider.
+Generated class for the ServiceDataProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
+See https://angular.io/guide/dependency-injection for more info on providers
+and Angular DI.
 */
 var ServiceDataProvider = /** @class */ (function () {
     function ServiceDataProvider() {
@@ -10163,61 +10060,820 @@ var ServiceDataProvider = /** @class */ (function () {
         this.chirurgie = [];
         this.ALRprotocole = [];
         this.ALRprotocole = [
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////CHIRURGIE ORTHOPEDIQUE//////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Fracture de tuberosite tibiale anterieure (TTA)",
+                specialite: "Orthopedie",
+                commentaire: "Risque élevé de syndrome de loges.",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Fracture malleolaire",
+                specialite: "Orthopedie",
+                commentaire: "Risque élevé de syndrome de loges.",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Fracture supra-condylienne (stades 1 à 4)",
+                specialite: "Orthopedie",
+                commentaire: "Risque élevé de syndrome de loges dans les stades 3 et 4, la réduction soulage la douleur dans les stades 1 et 2.",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Fracture humerale distale",
+                specialite: "Orthopedie",
+                commentaire: "Risque élevé de syndrome de loges.",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Fracture distale du radius et poignet",
+                specialite: "Orthopedie",
+                commentaire: "Risque élevé de syndrome de loges.",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Fracture des deux os de l'avant bras",
+                specialite: "Orthopedie",
+                commentaire: "Risque élevé de syndrome de loges.",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Injection de toxine botulique",
+                specialite: "Orthopedie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Pose de halo",
+                specialite: "Orthopedie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Ponction de hanche",
+                specialite: "Orthopedie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Ponction de genou",
+                specialite: "Orthopedie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Ablation de materiel orthopedique (AMO)",
+                specialite: "Orthopedie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Osteotomie malleolaire",
+                specialite: "Orthopedie",
+                commentaire: "Risque élevé de syndrome de loges.",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Main de petard",
+                specialite: "Orthopedie",
+                commentaire: "Risque élevé de syndrome de loges.",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Panaris",
+                specialite: "Orthopedie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Phlegmon",
+                specialite: "Orthopedie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Hygroma coude",
+                specialite: "Orthopedie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Hygroma genou",
+                specialite: "Orthopedie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Fracture diaphysaire tibiale",
+                specialite: "Orthopedie",
+                commentaire: "Risque élevé de syndrome de loges.",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Epiphysiolyse par vissage simple",
+                specialite: "Orthopedie",
+                commentaire: "Geste peu pourvoyeur de douleur post-opératoire.",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Allongement tendineux au membre supérieur",
+                specialite: "Orthopedie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Reduction sanglante LCH (Salter)",
+                specialite: "Orthopedie",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Anesthésie péridurale lombaire",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne +/- Sufentanil",
+                produitALR2A: "Lévobupivacaïne +/- Sufentanil",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Allongement tendineux au membre supérieur",
+                specialite: "Orthopedie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////CHIRURGIE NEONATALE//////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Young Dees",
+                specialite: "Neonatologie (digestive)",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Laparoschisis",
+                specialite: "Neonatologie (digestive)",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Omphalocèle avec ou sans Schuster",
+                specialite: "Neonatologie (digestive)",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Entérostomie",
+                specialite: "Neonatologie (digestive)",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Hernie du cordon",
+                specialite: "Neonatologie (digestive)",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Hernie diaphragmatique",
+                specialite: "Neonatologie (digestive)",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Fermeture de canal artériel",
+                specialite: "Neonatologie (thoracique)",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Anoplastie",
+                specialite: "Neonatologie (digestive)",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Fermeture de Schuster",
+                specialite: "Neonatologie (digestive)",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Transposition anale",
+                specialite: "Neonatologie (digestive)",
+                commentaire: "",
+                recommandationALR: "A discuter",
+                techniqueproposeeA: "Anesthésie péridurale lombaire",
+                commentairetechniqueA: "Envisageable au delà de 5kg",
+                produitALR1A: "Ropivacaïne +/- Sufentanil",
+                produitALR2A: "Levobupivacaïne +/- SUfentanil",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////CHIRURGIE UROLOGIQUE//////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////
             { isShown: false,
                 intitule: "Hydrocele",
                 specialite: "Urologie",
                 commentaire: "Chirurgie classiquement réalisée par abord inguinal chez l'enfant (hydrocèle d'origine péritonéale), abord scrotal chez le grand enfant ou l'adulte (hydrocèle en rapport avec la vaginale testiculaire). En cas de recours à la Clonidine, utiliser une seule fois.",
                 recommandationALR: "Recommandée",
-                techniqueproposeeA: "Bloc ilio-inguinal échoguidé.",
+                techniqueproposeeA: "Bloc ilio-inguinal échoguidé",
                 commentairetechniqueA: "Si abord inguinal.",
-                produitALR1A: "Ropivacaïne 2 mg/mL",
-                concentrationProduit1A: 2,
-                posologieALR1A: "0,5 mg/kg/côté",
-                posologieNumALR1A: 0.5,
-                commentairePosologieA: "par côté",
-                dosetoxiqueALR1A: "3 mg/kg",
-                dosetoxiqueNumALR1A: 3,
-                commentaireDoseToxiqueA: "Dose toxique",
-                adjuvantALRA: "Clonidine 1 µg/kg",
-                techniqueproposeeB: "Bloc pudendal sous neuro-stimulation.",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "Clonidine",
+                techniqueproposeeB: "Bloc pudendal sous neuro-stimulation",
                 commentairetechniqueB: "Si abord scrotal.",
-                produitALR1B: "Ropivacaïne 2 mg/mL",
-                concentrationProduit1B: 2,
-                posologieALR1B: "0,4 mg/kg/côté",
-                posologieNumALR1B: .4,
-                commentairePosologieB: "par côté",
-                dosetoxiqueALR1B: "3 mg/kg",
-                dosetoxiqueNumALR1B: 3,
-                commentaireDoseToxiqueB: "Dose toxique",
-                adjuvantALRB: "Clonidine 1 µg/kg", },
+                produitALR1B: "Ropivacaïne",
+                produitALR2B: "Levobupivacaïne",
+                adjuvantALRB: "Clonidine", },
             //////////////////////////////////////////////////////////////////////////////////////////////
             { isShown: false,
-                intitule: "Abaissement transanal",
+                intitule: "Ectopie testiculaire par coelioscopie",
+                specialite: "Urologie",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Infiltration des trous de trocarts",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "Bloc pudendal sous neuro-stimulation",
+                commentairetechniqueB: "Si abord scrotal.",
+                produitALR1B: "Ropivacaïne",
+                produitALR2B: "Levobupivacaïne",
+                adjuvantALRB: "Clonidine", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Ectopie testiculaire par laparotomie",
+                specialite: "Urologie",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Bloc ilio-inguinal",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "Bloc pudendal sous neuro-stimulation",
+                commentairetechniqueB: "Si abord scrotal.",
+                produitALR1B: "Ropivacaïne",
+                produitALR2B: "Levobupivacaïne",
+                adjuvantALRB: "Clonidine", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Posthectomie (circoncision)",
+                specialite: "Urologie",
+                commentaire: "Choisir l'une ou l'autre des techniques ; le bloc pudendal reste la technique de référence.",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Bloc pudendal sous neuro-stimulation",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "Clonidine",
+                techniqueproposeeB: "Bloc pénien",
+                commentairetechniqueB: "Alternative possible avec recours à l'échographie, vérifier la diffusion de l'anesthésique local sous les corps caverneux.",
+                produitALR1B: "Ropivacaïne",
+                produitALR2B: "Levobupivacaïne",
+                adjuvantALRB: "Clonidine", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Nephrectomie",
+                specialite: "Urologie",
+                commentaire: "Discuter avec l'opérateur la balance bénéfice-risque en fonction de l'indication et de l'âge de l'enfant.",
+                recommandationALR: "A discuter",
+                techniqueproposeeA: "Anesthésie péridurale lombaire",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne +/- sufentanil",
+                produitALR2A: "Levobupivacaïne +/- sufentanil",
+                adjuvantALRA: "",
+                techniqueproposeeB: "Bloc du muscle carré des lombes",
+                commentairetechniqueB: "Technique présentant une morbidité non négligeable, avec notamment un risque d'hématome au point de ponction, requiérant un opérateur entraîné.",
+                produitALR1B: "Ropivacaïne",
+                produitALR2B: "Levobupivacaïne",
+                adjuvantALRB: "Clonidine", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Hypospade antérieur ou moyen",
+                specialite: "Urologie",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Bloc pudendal sous neuro-stimulation",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "Clonidine",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Hypospade postérieur",
+                specialite: "Urologie",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Anesthésie péridurale lombaire",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne +/- sufentanil",
+                produitALR2A: "Levobupivacaïne +/- sufentanil",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Bricker",
+                specialite: "Urologie",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Anesthésie péridurale lombaire",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne +/- sufentanil",
+                produitALR2A: "Levobupivacaïne +/- sufentanil",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Enterocystoplastie",
+                specialite: "Urologie",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Anesthésie péridurale lombaire",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne +/- sufentanil",
+                produitALR2A: "Levobupivacaïne +/- sufentanil",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Transplantation rénale (greffe)",
+                specialite: "Urologie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Deflux (par cystoscopie)",
+                specialite: "Urologie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Cryopreservation testiculaire",
+                specialite: "Urologie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Uréthroscopie ou cystoscopie",
+                specialite: "Urologie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Valves de l'uretre postérieur",
+                specialite: "Urologie",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Infiltration des trocarts",
+                commentairetechniqueA: "Pour les abords par coelioscopie et par robot",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Nephrolithotomie percutanee",
+                specialite: "Urologie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Ureteroscopie souple ou rigide",
+                specialite: "Urologie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Pyeloplastie",
+                specialite: "Urologie",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Infiltration des trocarts",
+                commentairetechniqueA: "Pour les abords par coelioscopie et robot.",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////CHIRURGIE DIGESTIVE//////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Abaissement colique transanal",
                 specialite: "Chirurgie digestive",
                 commentaire: "Chirurgie majeure source de douleurs importantes.",
                 recommandationALR: "Recommandée",
-                techniqueproposeeA: "Anesthésie péridurale lombaire.",
+                techniqueproposeeA: "Anesthésie péridurale lombaire",
                 commentairetechniqueA: "Se référer à la fiche APD pour évaluer la profondeur de l'espace selon l'âge et le poids et le détail du calcul des doses horaires et bolus PCEA.",
-                produitALR1A: "Ropivacaïne 1 mg/mL + Sufentanil 0,25 mg/mL",
-                concentrationProduit1A: 1,
-                posologieALR1A: "0,2 mL/kg/heure",
-                posologieNumALR1A: 0.2,
-                commentairePosologieA: "par heure",
-                dosetoxiqueALR1A: "1,5 mL/kg/4h",
-                dosetoxiqueNumALR1A: 1.5,
-                commentaireDoseToxiqueA: "Dose max. par 4h",
-                adjuvantALRA: "",
-                techniqueproposeeB: "TAP block bilatéral.",
+                produitALR1A: "Ropivacaïne 1 mg/mL +/- Sufentanil 0,25 mg/mL",
+                produitALR2A: "Lévobupivacaïne 1,25 mg/mL +/- Sufentanil 0,25 mg/mL",
+                techniqueproposeeB: "TAP block bilatéral",
                 commentairetechniqueB: "En cas de contre-indication à l'APD.",
-                produitALR1B: "Ropivacaïne 2 mg/mL",
-                concentrationProduit1B: 2,
-                posologieALR1B: "0,4 mg/kg/côté",
-                posologieNumALR1B: .4,
-                commentairePosologieB: "par côté",
-                dosetoxiqueALR1B: "3 mg/kg",
-                dosetoxiqueNumALR1B: 3,
-                commentaireDoseToxiqueB: "Dose toxique",
-                adjuvantALRB: "Clonidine 1 µg/kg", },
+                produitALR1B: "Ropivacaïne",
+                produitALR2B: "Levobupivacaïne",
+                adjuvantALRB: "Clonidine", },
             //////////////////////////////////////////////////////////////////////////////////////////////
             { isShown: false,
                 intitule: "Biopsie rectale",
@@ -10225,6 +10881,1042 @@ var ServiceDataProvider = /** @class */ (function () {
                 commentaire: "",
                 recommandationALR: "Non recommandée",
             },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Dilatation anale",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Bloc pudendal bilatéral",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "Clonidine",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Fistule anale",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Bloc pudendal bilatéral",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "Clonidine",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Fermeture de stomie",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "TAP bloc ipsilatéral",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "Clonidine",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Colostomie",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "TAP bloc bilatéral",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "Clonidine",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Ileostomie",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "TAP bloc bilatéral",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "Clonidine",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Resection grelique par laparotomie",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "TAP bloc bilatéral",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "Clonidine",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Colectomie par coelioscopie",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "A discuter",
+                techniqueproposeeA: "Infiltration des trous de trocarts",
+                commentairetechniqueA: "Technique la plus fréquemment employée",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "TAP bloc bilatéral",
+                commentairetechniqueB: "En cas de chirurgie longue ou compliquée, risque de douleurs sous-diaphragmatiques ou sous-scapulaires en rapport avec la coelioscopie pour lesquelles le TAP bloc pourrait apporter un meilleur résultat.",
+                produitALR1B: "Ropivacaïne",
+                produitALR2B: "Levobupivacaïne",
+                adjuvantALRB: "Clonidine", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Colectomie par laparotomie",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "TAP bloc bilatéral",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "Clonidine",
+                techniqueproposeeB: "Anesthésie péridurale lombaire",
+                commentairetechniqueB: "En cas de douleurs importantes en post-opératoires anticipées par l'opérateur.",
+                produitALR1B: "Ropivacaïne+/- Sufentanil",
+                produitALR2B: "Lévobupivacaïne +/- Sufentanil",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Jéjunostomie",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "A discuter",
+                techniqueproposeeA: "TAP bloc bilatéral",
+                commentairetechniqueA: "Technique la plus fréquemment employée",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Resection grelique par coelioscopie",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "A discuter",
+                techniqueproposeeA: "Infiltration des trous de trocarts",
+                commentairetechniqueA: "Technique la plus fréquemment employée",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "TAP bloc bilatéral",
+                commentairetechniqueB: "En cas de chirurgie longue ou compliquée, risque de douleurs sous-diaphragmatiques ou sous-scapulaires en rapport avec la coelioscopie pour lesquelles le TAP bloc pourrait apporter un meilleur résultat.",
+                produitALR1B: "Ropivacaïne",
+                produitALR2B: "Levobupivacaïne",
+                adjuvantALRB: "Clonidine", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Anastomose bilio-digestive",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Infiltration des trous de trocarts",
+                commentairetechniqueA: "Technique la plus fréquemment employée",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "TAP bloc bilatéral",
+                commentairetechniqueB: "En cas de chirurgie longue ou compliquée, risque de douleurs sous-diaphragmatiques ou sous-scapulaires en rapport avec la coelioscopie pour lesquelles le TAP bloc pourrait apporter un meilleur résultat.",
+                produitALR1B: "Ropivacaïne",
+                produitALR2B: "Levobupivacaïne",
+                adjuvantALRB: "Clonidine", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Anastomose bilio-digestive",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Infiltration des trous de trocarts",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Levobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Pancréatectomie céphalique",
+                specialite: "Chirurgie digestive",
+                commentaire: "Discuter avec l'opérateur et selon l'âge et la balance bénéfice risque la faisabilité de l'une ou l'autre des techniques.",
+                recommandationALR: "A discuter",
+                techniqueproposeeA: "Anesthésie péridurale thoracique",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "Anesthésie péridurale lombaire",
+                commentairetechniqueB: "",
+                produitALR1B: "Ropivacaïne +/- Sufentanil",
+                produitALR2B: "Lévobupivacaïne +/- Sufentanil",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Pancréatectomie caudale",
+                specialite: "Chirurgie digestive",
+                commentaire: "Discuter avec l'opérateur et selon l'âge et la balance bénéfice risque la faisabilité de l'une ou l'autre des techniques.",
+                recommandationALR: "A discuter",
+                techniqueproposeeA: "Anesthésie péridurale thoracique",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "Anesthésie péridurale lombaire",
+                commentairetechniqueB: "",
+                produitALR1B: "Ropivacaïne +/- Sufentanil",
+                produitALR2B: "Lévobupivacaïne +/- Sufentanil",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Oeso-coloplastie",
+                specialite: "Chirurgie digestive",
+                commentaire: "Discuter avec l'opérateur et selon l'âge et la balance bénéfice risque la faisabilité de l'une ou l'autre des techniques.",
+                recommandationALR: "A discuter",
+                techniqueproposeeA: "Anesthésie péridurale thoracique",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "Anesthésie péridurale lombaire",
+                commentairetechniqueB: "",
+                produitALR1B: "Ropivacaïne +/- Sufentanil",
+                produitALR2B: "Lévobupivacaïne +/- Sufentanil",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Chirurgie de Nissen",
+                specialite: "Chirurgie digestive",
+                commentaire: "Discuter avec l'opérateur et selon l'âge et la balance bénéfice risque la faisabilité de l'une ou l'autre des techniques.",
+                recommandationALR: "A discuter",
+                techniqueproposeeA: "Anesthésie péridurale thoracique",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "Anesthésie péridurale lombaire",
+                commentairetechniqueB: "",
+                produitALR1B: "Ropivacaïne +/- Sufentanil",
+                produitALR2B: "Lévobupivacaïne +/- Sufentanil",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Kyste du choledoque par coelioscopie",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Infiltration des trocarts",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Cholecystectomie par coelioscopie",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Infiltration des trocarts",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Pose de prothèse biliaire",
+                specialite: "Endoscopie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Endoscopie des voies biliaires",
+                specialite: "Endoscopie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Gastrostomie chirurgicale",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Duplication oesophagienne",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Appendicectomie",
+                specialite: "Chirurgie digestive",
+                commentaire: "Préciser le diagnostic et la voie d'abord avec l'opérateur : infiltration des trous de trocarts semble préférable pour les appendicites aiguës simples et les péritonites localisées ; le TAP bloc serait préférable dans les péritonites appendiculaires généralisées.",
+                recommandationALR: "A discuter",
+                techniqueproposeeA: "Infiltration des trous de trocarts",
+                commentairetechniqueA: "Pour les abords coelioscopiques sur appendicite simple ou péritonite localisée",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "TAP bloc droit ou bilatéral",
+                commentairetechniqueB: "Pour les abords laparotomiques ou les péritonites généralisées",
+                produitALR1B: "Ropivacaïne",
+                produitALR2B: "Lévobupivacaïne",
+                adjuvantALRB: "Clonidine", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Splénectomie",
+                specialite: "Chirurgie digestive",
+                commentaire: "Préciser la voie d'abord avec l'opérateur. En cas de recours à la Clonidine, n'utiliser qu'une seule fois.",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "TAP bloc gauche ''haut''",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "Clonidine",
+                techniqueproposeeB: "Bloc du grand droit gauche ''haut''",
+                commentairetechniqueB: "Selon la voie d'abord",
+                produitALR1B: "Ropivacaïne",
+                produitALR2B: "Lévobupivacaïne",
+                adjuvantALRB: "Clonidine", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Hernie inguinale",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Bloc ilio-inguinal ipsilatéral",
+                commentairetechniqueA: "Pour les chirurgies sous anesthésie générale.",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "Clonidine",
+                techniqueproposeeB: "Rachianesthésie",
+                commentairetechniqueB: "Envisageable uniquement chez le nouveau-né avant 5 kg ou chez le grand enfant.",
+                produitALR1B: "Bupivacaïne",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Hernie ombilicale",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Bloc des grands droits bilatéral",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "Clonidine",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Cure d'éventration",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "TAP bloc ipsilatéral",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "Clonidine",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Coelioscopie exploratrice",
+                specialite: "Chirurgie digestive",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Infiltration des trous de trocarts",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "Clonidine",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            { isShown: false,
+                intitule: "Sténose du pylore",
+                specialite: "Chirurgie digestive",
+                commentaire: "L'objectif de l'ALR est notamment de permettre chaque fois que possible l'abstention de morphinomimétiques en per-opératoires. L'ajout de la barrette sous-cutanée autorise à débuter la chirurgie sans morphinique. Attention aux quantités totales d'anesthésique local chez le nouveau-né.",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Bloc des grands droits",
+                commentairetechniqueA: "Diluer les produits pour autoriser plus de volume.",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "Barrette sous-cutanée ",
+                commentairetechniqueB: "",
+                produitALR1B: "Ropivacaïne",
+                produitALR2B: "Lévobupivacaïne",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////ENDOSCOPIE//////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Fibroscopie oesogastroduodénale",
+                specialite: "Endoscopie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Coloscopie",
+                specialite: "Endoscopie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Pose de prothèse digestive",
+                specialite: "Endoscopie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Ligature de varices oesophagiennes",
+                specialite: "Endoscopie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Sclérose de varices oesophagiennes",
+                specialite: "Endoscopie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Gastrostomie par voie endoscopique",
+                specialite: "Endoscopie",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////CHIRURGIE GYNECOLOGIQUE//////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Hernie de l'ovaire",
+                specialite: "Chirurgie gynécologique",
+                commentaire: "Rachianesthésie envisageable uniquement pour les nouveaux-nés de moins de 5kg.",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Rachianesthésie",
+                commentairetechniqueA: "Chez le nouveau né de moins de 5 kg.",
+                produitALR1A: "Bupivacaïne",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "Bloc ilio-inguinal",
+                commentairetechniqueB: "Pour les chirurgies sous anesthésie générale.",
+                produitALR1B: "Ropivacaïne",
+                produitALR2B: "Lévobupivacaïne",
+                adjuvantALRB: "Clonidine", },
+            ///////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Kyste ovarien coelioscopie",
+                specialite: "Chirurgie gynécologique",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Infiltration des trous de trocarts",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Kyste ovarien par laparatomie",
+                specialite: "Chirurgie gynécologique",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "TAP bloc ipsilatéral",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Coelioscopie exploratrice",
+                specialite: "Chirurgie gynécologique",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Infiltration des trous de trocarts",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Torsion d'annexe par coelioscopie",
+                specialite: "Chirurgie gynécologique",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Infiltration des trous de trocarts",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Cryoconservation ovarienne par coelioscopie",
+                specialite: "Chirurgie gynécologique",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Infiltration des trous de trocarts",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Cryoconservation ovarienne par laparotomie",
+                specialite: "Chirurgie gynécologique",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "TAP bloc ipsilatéral",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Hystérectomie par voie haute",
+                specialite: "Chirurgie gynécologique",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "TAP bloc bilatéral",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            ///////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Hystérectomie par voie basse",
+                specialite: "Chirurgie gynécologique",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "TAP bloc bilatéral",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////CHIRURGIE ORL//////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Amygdalectomie",
+                specialite: "Chirurgie ORL",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Adénoïdectomie",
+                specialite: "Chirurgie ORL",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Trachéotomie",
+                specialite: "Chirurgie ORL",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Chirurgie d'oreille moyenne",
+                specialite: "Chirurgie ORL",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Implant cochléaire",
+                specialite: "Chirurgie ORL",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Infiltration cutanée chirurgicale",
+                commentairetechniqueA: "Xylocaïne adrénalinée envisageable chez l'enfant d'âge scolaire et l'adolescent.",
+                produitALR1A: "Xylocaïne adrénalinée",
+                produitALR2A: "Ropivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Avulsion dentaire",
+                specialite: "Chirurgie ORL",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Chirurgie des glandes salivaires",
+                specialite: "Chirurgie ORL",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Chirurgie de Nagata",
+                specialite: "Chirurgie ORL",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Cervictomie",
+                specialite: "Chirurgie ORL",
+                commentaire: "Discuter avec l'opérateur la balance bénéfice-risque d'une ALR en tenant notamment compte de l'âge de l'enfant.",
+                recommandationALR: "A discuter",
+                techniqueproposeeA: "Bloc cervical superficiel",
+                commentairetechniqueA: "Ne s'envisage pas chez le petit enfant.",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Curage ganglionnaire cervical",
+                specialite: "Chirurgie ORL",
+                commentaire: "Discuter avec l'opérateur la balance bénéfice-risque d'une ALR en tenant notamment compte de l'âge de l'enfant.",
+                recommandationALR: "A discuter",
+                techniqueproposeeA: "Bloc cervical superficiel",
+                commentairetechniqueA: "Ne s'envisage pas chez le petit enfant.",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Cure de fente palatine",
+                specialite: "Chirurgie ORL",
+                commentaire: "Discuter avec l'opérateur la balance bénéfice-risque d'une ALR en tenant compte de l'emplacement de la fente (antérieure ou postérieure).",
+                recommandationALR: "A discuter",
+                techniqueproposeeA: "Bloc du V-2 bilatéral échoguidé",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Cure de fente labiale et chéiloplastie",
+                specialite: "Chirurgie ORL",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Bloc du V-2 bilatéral échoguidé",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////CHIRURGIE PLASTIQUE//////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Exerese de naevus",
+                specialite: "Chirurgie plastique",
+                commentaire: "Discuter avec l'opérateur selon la localisation, la largeur des marges et la profondeur de la résection.",
+                recommandationALR: "A discuter",
+                techniqueproposeeA: "Infiltration cutanée péri-lésionnelle",
+                commentairetechniqueA: "",
+                produitALR1A: "Xylocaïne adrénalinée",
+                produitALR2A: "Ropivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Enchondrome",
+                specialite: "Chirurgie plastique",
+                commentaire: "Discuter avec l'opérateur selon la localisation et la balance bénéfice-risque au regard de l'âge de l'enfant.",
+                recommandationALR: "A discuter",
+                techniqueproposeeA: "Bloc nerveux adapté à la localisation",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Kyste sebace",
+                specialite: "Chirurgie plastique",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Plastie cutanee",
+                specialite: "Chirurgie plastique",
+                commentaire: "Discuter avec l'opérateur selon la localisation et l'étendue du geste, et l'âge de l'enfant.",
+                recommandationALR: "A discuter",
+                techniqueproposeeA: "Infiltration sous cutanée",
+                commentairetechniqueA: "",
+                produitALR1A: "Xylocaïne adrénalinée",
+                produitALR2A: "Ropivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Rhinoplastie",
+                specialite: "Chirurgie plastique",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Ablation de prothese sous cutanee",
+                specialite: "Chirurgie plastique",
+                commentaire: "",
+                recommandationALR: "Non recommandée",
+                techniqueproposeeA: "",
+                commentairetechniqueA: "",
+                produitALR1A: "",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Greffe maxillaire",
+                specialite: "Chirurgie plastique",
+                commentaire: "",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Bloc du V-2 bilatéral",
+                commentairetechniqueA: "",
+                produitALR1A: "Ropivacaïne",
+                produitALR2A: "Lévobupivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Pose d'expanseur sous cutane",
+                specialite: "Chirurgie plastique",
+                commentaire: "Discuter avec l'opérateur l'intérêt d'une infiltration sous-cutanée selon la localisation et l'étendue de l'intervention.",
+                recommandationALR: "ALR à discuter",
+                techniqueproposeeA: "Infiltration sous cutanée",
+                commentairetechniqueA: "",
+                produitALR1A: "Xylocaïne adrénalinée",
+                produitALR2A: "Ropivacaïne",
+                adjuvantALRA: "",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
         ];
         //////////////////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////////////////////
@@ -13685,7 +15377,7 @@ var ServiceDataProvider = /** @class */ (function () {
             },
             {
                 isShown: false,
-                intitule: "Néphrectomie",
+                intitule: "Nephrectomie",
                 specialite: "Urologie",
                 classeConta: "Propre",
                 recommandation: "Non recommandée",
@@ -13960,7 +15652,7 @@ var ServiceDataProvider = /** @class */ (function () {
             },
             {
                 isShown: false,
-                intitule: "Entérocystoplastie",
+                intitule: "Enterocystoplastie",
                 specialite: "Urologie",
                 classeConta: "Contaminée",
                 recommandation: "Recommandée",
@@ -14376,7 +16068,7 @@ var ServiceDataProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 869:
+/***/ 866:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -14665,19 +16357,19 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 869;
+webpackContext.id = 866;
 
 /***/ }),
 
-/***/ 887:
+/***/ 884:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(554);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(555);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(551);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(552);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_main_main__ = __webpack_require__(159);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -14732,7 +16424,153 @@ var MyApp = /** @class */ (function () {
 ;
 //# sourceMappingURL=app.component.js.map
 
+/***/ }),
+
+/***/ 886:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VentilationDifficilePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the VentilationDifficilePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var VentilationDifficilePage = /** @class */ (function () {
+    function VentilationDifficilePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    VentilationDifficilePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad VentilationDifficilePage');
+    };
+    VentilationDifficilePage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    VentilationDifficilePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-ventilation-difficile',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\ventilation-difficile\ventilation-difficile.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Ventilation au masque difficile</div>\n   <br>\n \n    </ion-header>\n\n    <ion-content>\n\n      <ion-item color="danger" style="text-align:center">\n        VM difficile <ion-icon name="arrow-forward"></ion-icon> O2 100% <ion-icon name="arrow-forward"></ion-icon> Appel à l\'aide\n      </ion-item>\n\n      <ion-slides  class="VMSlides" pager="true">\n\n        <ion-slide>\n          <h2>Etape A</h2>\n        <ion-card>\n        <ion-card-content class="drogueContainer">\n          <ion-item><ion-label color="dark-turquoise">1. Optimiser la position de la tête</ion-label></ion-item>\n          <ul  class="comment">\n            <li>Subluxation mandibule</li>\n            <li>Billot sous les épaules avant 2 ans</li>\n            <li>Position neutre après 2 ans</li>\n            <li>Ventilation à 4 mains</li>\n          </ul>\n          <ion-item><ion-label color="dark-turquoise">2. Vérifier les équipements</ion-label></ion-item>\n              <ul class="comment">\n                <li>Changer les éléments du circuit si suspicion de dysfonctionnement</li>\n                <li>Ventiler en pression positive</li>\n              </ul>\n          <ion-item><ion-label color="dark-turquoise">3. Approfondir l\'anesthésie</ion-label></ion-item>\n        </ion-card-content>\n      </ion-card>\n    </ion-slide>\n\n    <ion-slide>\n      <h2>Etape B</h2>\n    <ion-card>\n    <ion-card-content class="drogueContainer">\n      <ion-item><ion-label color="dark-turquoise">4. Insérer une canule oropharyngée</ion-label></ion-item>\n      <ion-item><ion-label color="dark-turquoise">5. Rechercher la cause</ion-label></ion-item>\n      <ul  class="comment">\n        <li>Profondeur d\'anesthésie insuffisante</li>\n        <li>Laryngospasme</li>\n        <li>Distension gastrique</li>\n      </ul>\n      <div style="text-align:center">\n      <ion-icon name="arrow-up"></ion-icon><ion-icon name="arrow-down"></ion-icon>\n      </div>\n      <ul  class="comment">\n        <li>Maintenir la ventilation en pression positive</li>\n        <li>Approfondir l\'anesthésie</li>\n        <li>Si possible, intuber</li>\n      </ul>\n      <ion-item><ion-label color="danger">6. Appeler à l\'aide si non arrivée</ion-label></ion-item>\n    </ion-card-content>\n  </ion-card>\n</ion-slide>\n\n<ion-slide>\n  <h2>Etape C</h2>\n<ion-card>\n<ion-card-content style="padding:0%">\n  <ion-item><ion-label color="danger">7. Dispositif supra-glottique</ion-label></ion-item>\n  <div padding>\n  <ion-item><ion-label color="dark-turquoise">&#8627; Succès &#8594; Poursuite de la ventilation</ion-label></ion-item>\n  <ion-item><ion-label color="warning">&#8627; Echec et Spo2 > 80%</ion-label></ion-item>\n    <ul  class="comment">\n      <li>Eliminer malposition DSG ou dysfonction matériel</li>\n      <li>Rechercher pneumothorax ou spasme </li>\n      <li>Réveiller le patient</li>\n    </ul> \n    <ion-item><ion-label color="danger">&#8627; Echec et Spo2 < 80% &#8594; Intubation</ion-label></ion-item>\n    <ul  class="comment">\n      <li>Succès &#8594; Chirurgie </li>\n      <li color="danger">Echec &#8594; Algorithme VM & IOT impossibles</li>\n    </ul>\n  </div>\n</ion-card-content>\n</ion-card>\n</ion-slide>\n\n    </ion-slides>\n\n\n    </ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\ventilation-difficile\ventilation-difficile.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], VentilationDifficilePage);
+    return VentilationDifficilePage;
+}());
+
+//# sourceMappingURL=ventilation-difficile.js.map
+
+/***/ }),
+
+/***/ 887:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IotDifficilePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the IotDifficilePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var IotDifficilePage = /** @class */ (function () {
+    function IotDifficilePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    IotDifficilePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad IotDifficilePage');
+    };
+    ;
+    IotDifficilePage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    IotDifficilePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-iot-difficile',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\iot-difficile\iot-difficile.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   Intubation difficile</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n  <ion-item color="danger" style="text-align:center">\n    <ion-label>\n    Exposition difficile <ion-icon name="arrow-forward"></ion-icon> O2 100% <ion-icon name="arrow-forward"></ion-icon> Appel à l\'aide\n  </ion-label>\n  </ion-item>\n\n  <ion-slides  class="VMSlides" pager="true">\n\n    <ion-slide>\n      <h2>Etape A</h2>\n    <ion-card>\n    <ion-card-content style="padding:0%">\n      <ion-item><ion-label color="dark-turquoise">\n        Ventilation au masque possible</ion-label></ion-item>\n      <ul class="comment">\n        <li>Anesthésie adaptée</li>\n        <li>Ventilation en pressiun positive</li>\n        <li>Vidange gastrique</li>\n      </ul>\n      <ion-item><ion-label color="dark-turquoise">Optimiser la laryngoscopie</ion-label></ion-item>\n      <ul class="comment">\n        <li>Pas plus de 4 tentatives</li>\n        <li>Flexion de la nuque, extension de la tête, appui cricoïdien</li>\n        <li>Optimiser le relachement musculaire</li>\n        <li>Vidéolaryngoscope et mandrin</li>\n      </ul>\n      <div padding>\n        <hr>\n      <ion-item><ion-label color="dark-turquoise"> &#8627; Succès &#8594; ventiler<p class="comment">Vérifier la bonne position de la sonde : capnographie, auscultation ;<br>Procéder à l\'intervention.</p></ion-label></ion-item>\n      <ion-item><ion-label color="danger">&#8627; Echec &#8594; passer à l\'étape B</ion-label></ion-item>\n    </div>\n    </ion-card-content>\n  </ion-card>\n</ion-slide>\n\n<ion-slide>\n  <h2>Etape B</h2>\n<ion-card>\n<ion-card-content style="padding:0%">\n  <ion-item><ion-label color="danger">\n    Appel à l\'aide si non arrivée</ion-label></ion-item>\n  <ion-item><ion-label color="dark-turquoise">Mettre en place un DSG</ion-label></ion-item>\n  <ul class="comment">\n    <li>Oxygéner et ventiler</li>\n    <li>Ajuster la taille si peu ou inefficace</li>\n  </ul>\n  <div padding>\n    <hr>\n  <ion-item><ion-label color="dark-turquoise"> &#8627; Succès <br> &#8594; Procédure possible sous DSG ?</ion-label></ion-item>\n  <div padding>\n    <span padding class="comment">&#8627; Oui &#8594; Ventiler et procéder à l\'intervention.</span><br>\n    <span padding class="comment">&#8627; Non &#8594; Annuler l\'intervention et réveiller.</span>\n  </div>\n  <ion-item><ion-label color="danger">&#8627; Echec &#8594; Passer à l\'étape C</ion-label></ion-item>\n    </div>\n</ion-card-content>\n</ion-card>\n</ion-slide>\n\n<ion-slide>\n<h2>Etape C</h2>\n<ion-card>\n<ion-card-content style="padding:0%">\n<ion-item><ion-label color="danger">SpO2 &lt; 90% sous DSG en FiO2 1</ion-label></ion-item>\n<ul class="comment">\n  <li>Retrait du DSG</li>\n  <li>Ventilation au masque en pression positive</li>\n  <li>Optimiser la position de la tête</li>\n  <li>Technique à 4 mains</li>\n  <li>Antagoniser les curares</li>\n</ul> \n<div padding><hr>\n<ion-item><ion-label color="dark-turquoise">&#8627; Succès &#8594; Ventilation possible.\n  <br>&nbsp; &#8594; Annuler la chirurgie et réveiller. </ion-label></ion-item>\n\n<ion-item><ion-label color="danger">&#8627; Echec &#8594; Ventilation impossible.\n  <br>&nbsp; &#8594; Algorithme VM & IOT impossibles. </ion-label></ion-item>\n</div>\n\n</ion-card-content>\n</ion-card>\n</ion-slide>\n\n</ion-slides>\n\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\iot-difficile\iot-difficile.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], IotDifficilePage);
+    return IotDifficilePage;
+}());
+
+//# sourceMappingURL=iot-difficile.js.map
+
+/***/ }),
+
+/***/ 888:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VmiotImpossiblePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the VmiotImpossiblePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var VmiotImpossiblePage = /** @class */ (function () {
+    function VmiotImpossiblePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    VmiotImpossiblePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad VmiotImpossiblePage');
+    };
+    VmiotImpossiblePage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    VmiotImpossiblePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-vmiot-impossible',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\vmiot-impossible\vmiot-impossible.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   VM & IOT impossibles</div>\n   <br>\n \n    </ion-header>\n\n    <ion-content>\n\n      <ion-item color="danger" style="text-align:center">\n        VM & IOT difficiles <ion-icon name="arrow-forward"></ion-icon> O2 100% <ion-icon name="arrow-forward"></ion-icon> Appel à l\'aide\n      </ion-item>\n\n      <ion-slides  class="VMSlides" pager="true">\n\n        <ion-slide>\n          <h2>Etape A</h2>\n        <ion-card>\n        <ion-card-content style="padding:0%">\n          <ion-item><ion-label color="dark-turquoise">\n          Continuer à ventiler et oxygéner</ion-label></ion-item>\n          <ul  class="comment">\n            <li>FiO2 1</li>\n            <li>Optimiser la position de la tête</li>\n            <li>Dispositif supra glottique</li>\n            <li>Vidéolaryngoscope</li>\n            <li>Lutter contre la distension gastrique</li>\n          </ul>\n          <div padding>\n            <hr>\n          <ion-item><ion-label color="warning"> &#8627; SpO2 &gt; 80%</ion-label></ion-item>\n          <ul class="comment">\n            <li>Tenter le réveil</li>\n            <li>Suggamadex 16 mg/kg si Rocuronium</li>\n          </ul>\n          <ion-item><ion-label color="danger">&#8627; SpO2 &le; 80% ou bradycardie\n            <br> &#8594; étape B</ion-label></ion-item>\n        </div>\n        </ion-card-content>\n      </ion-card>\n    </ion-slide>\n\n    <ion-slide>\n      <h2>Etape B</h2>\n    <ion-card>\n    <ion-card-content style="padding:0%">\n      <ion-item><ion-label color="danger">Techniques de <i>rescue</i></ion-label></ion-item>\n\n      <div padding>\n      <hr>\n      <br>\n      <p>&#8627; Chirurgien ORL &#8594; <span style="color:#009c9e;">Trachéotomie chirurgicale</span> </p>\n      <br>\n      <p>&#8627; Pas de chirurgien &#8594; <span style="color:#ff6961;">Trachéotomie percutanée, jet ventilation, cricothyroïdotomie</span> </p>\n    </div>\n    </ion-card-content>\n  </ion-card>\n</ion-slide>\n    </ion-slides>\n    </ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_scores\vmiot-impossible\vmiot-impossible.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], VmiotImpossiblePage);
+    return VmiotImpossiblePage;
+}());
+
+//# sourceMappingURL=vmiot-impossible.js.map
+
 /***/ })
 
-},[556]);
+},[553]);
 //# sourceMappingURL=main.js.map

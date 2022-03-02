@@ -45,6 +45,7 @@
 
 
         <div *ngIf="!searchTerm && !searchTermSpecialite">
+
           <ion-card (click)="openPageGeneralites()" class="drogueContainer">
             <ion-card-content  class="cardRecos">
             <div class="headerProtocoles">
@@ -56,11 +57,56 @@
             </div>
             </ion-card-content>
             </ion-card>  
-          </div>
-
+    
           <hr>
 
-        <div *ngIf="!searchTerm && !searchTermSpecialite">
+          <ion-card (click)="openPageAPD()" class="drogueContainer">
+            <ion-card-content  class="cardRecos">
+            <div class="headerProtocoles">
+              Pose de cathéter d'anesthésie péridurale lombaire
+            </div>
+            <hr>
+            <div class="contentProtocoles">
+              <ion-icon start name="pin"></ion-icon> &nbsp; <b>Anesthésie péridurale</b>
+            </div>
+            <hr>
+            <div>
+            <div class="ALRCalculatorDiv"> 
+            <div class="ALRCalculatorIcon"><ion-icon start style="zoom:2" name="calculator"></ion-icon></div>
+              Ropivacaïne 1 mg/mL + Sufentanil 0,25 µg/mL<br>
+              PIEB : {{BolusPIEBRopiSuf}} mL/h - PCEA : {{BolusPCEARopiSuf}} mL/bolus<br>
+              PR : 20 minutes - Dose max. : {{DoseMaxPCEARopiSuf}} mL/4h
+            </div>
+          </div>
+            </ion-card-content>
+            </ion-card>  
+    
+          <hr>
+
+          <ion-card (click)="openPageBlocAxillaire()" class="drogueContainer">
+            <ion-card-content  class="cardRecos">
+            <div class="headerProtocoles">
+            Bloc du plexus brachial au creux axillaire
+            </div>
+            <hr>
+            <div class="contentProtocoles">
+              <ion-icon start name="pin"></ion-icon> &nbsp; <b>Bloc axillaire</b>
+            </div>
+            <hr>
+            <div>
+            <div class="ALRCalculatorDiv"> 
+            <div class="ALRCalculatorIcon"><ion-icon start style="zoom:2" name="calculator"></ion-icon></div>
+            A visée analgésique : Ropivacaïne 2 mg/mL : xxx mL <br>  
+            A visée anesthésique : Carbocaïne 20 mg/mL : xxx mL 
+            </div>
+          </div>
+            </ion-card-content>
+            </ion-card>  
+    
+          <hr>
+
+
+
         <ion-card (click)="openPageALR(index)" class="drogueContainer" *ngFor="let entry of pagesALR, let index = index">
           <ion-card-content  class="cardRecos">
           <div class="headerProtocoles">
@@ -72,8 +118,8 @@
           </div>
           <hr>
           <div> 
-            <span *ngIf="entry.critere1" style="color:#009c9e">{{entry.produit1}} : {{entry.posologie1 * PoidsNum}} mL/côté</span>
-            <span *ngIf="entry.critere2" style="color:#009c9e">{{entry.produit2}} : {{entry.posologie2 * PoidsNum}} mL/côté</span>
+            <span style="color:#009c9e">{{entry.produit1}} : {{entry.posologie1 * PoidsNum}} mL/côté</span>
+            <span style="color:#009c9e">{{entry.produit2}} : {{entry.posologie2 * PoidsNum}} mL/côté</span>
           </div>
           </ion-card-content> 
           </ion-card>  
@@ -90,54 +136,108 @@
 
 
             <ion-card padding class="chirurgieContainer" *ngFor="let chir of chirurgie, let index = index" [attr.data-index]="index">
-                  <div class="comment" *ngIf="chir.recommandationALR == 'Non recommandée'">
+                 
+              <!--  ALR NON -->
+              <div class="comment" *ngIf="chir.recommandationALR == 'Non recommandée'">
                   <ion-chip class="ALRnonRecommandee">
                     <ion-label>{{chir.intitule}} </ion-label>
-                  </ion-chip>&nbsp; ALR non recommandée</div>
+                  </ion-chip><ion-icon name="radio-button-off" style="zoom:2.5; float: right; color:darkgrey"></ion-icon>
+                  <br>
+                  <span>Specialité : {{chir.specialite}}</span>
+                  <br>
+                  <span>Suggestion : <b>ALR non recommandée</b></span>
+                  <br>
+                  <span *ngIf="chir.commentaire">Remarque : {{chir.commentaire}}</span>
+                </div>
+
+                <!--  ALR OUI -->
         
                   <div class="comment" *ngIf="chir.recommandationALR == 'Recommandée'">
-                  <ion-chip class="ALRRecommandee">
+                    <div>
+                    <ion-chip class="ALRRecommandee">
                     <ion-label>{{chir.intitule}}</ion-label>
-                  </ion-chip>&nbsp; ALR recommandée
+                  </ion-chip>
+                  <ion-icon name="checkmark-circle" style="zoom:2.5; float: right; color:#009c9e"></ion-icon>
                   <br>
-                  <span *ngIf="chir.commentaire">{{chir.commentaire}}</span>
+                  <span>Specialité : {{chir.specialite}}</span>
+                  <br>
+                  <span>Suggestion : <b>ALR recommandée</b></span>
+                  <br>
+                  <span *ngIf="chir.commentaire">Remarque : {{chir.commentaire}}</span>
                 </div>
                 
-                  <!-- Technique A produit 1 -->  
+                  <!-- Technique A-->  
                 <div *ngIf="chir.techniqueproposeeA">
                 <hr style="height:2px">
                 <span class="specialiteChirurgie">1. <b>{{chir.techniqueproposeeA}}</b></span><br>
-                <span class="comment">{{chir.commentairetechniqueA}}</span> 
-                <hr>
-                <span *ngIf="chir.produitALR1A" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1A}}</span>. <br><u>Posologie</u> : {{chir.posologieALR1A}}.</span> 
+                <span *ngIf="chir.commentairetechniqueB" class="comment">{{chir.commentairetechniqueA}}<br></span> 
+                
+                <span *ngIf="chir.produitALR1A" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1A}}</span>.</span> 
+                <br *ngIf="chir.produitALR2A">
+                <span *ngIf="chir.produitALR2A" class="comment"><u>Alternative produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR2A}}</span>.</span>
                 <br>
-                <span class="comment"><u>Dose patient</u> : <span style="color:#009c9e; font-weight:bold;">{{PoidsRound * chir.posologieNumALR1A/chir.concentrationProduit1A}} mL (={{PoidsRound * chir.posologieNumALR1A}} mg)</span><span *ngIf="chir.commentairePosologieA">&nbsp;{{chir.commentairePosologieA}}</span>.</span> 
-                <br>
-                <span *ngIf="chir.dosetoxiqueALR1A" class="comment"><u>{{chir.commentaireDoseToxiqueA}}</u> : {{chir.dosetoxiqueALR1A}} - soit <span style="color:#ff6961; font-weight:bold;">{{PoidsRound * chir.dosetoxiqueNumALR1A}} mg (={{PoidsRound * chir.dosetoxiqueNumALR1A/chir.concentrationProduit1A}} mL)</span>.</span> 
-                <br> 
-                <span *ngIf="chir.adjuvantALRA" class="comment">Adjuvant proposé : {{chir.adjuvantALRA}} soit {{PoidsRound}} µg.</span>
-                <hr style="height:2px">
+                <span *ngIf="chir.adjuvantALRA" class="comment">Adjuvant proposé : {{chir.adjuvantALRA}}.</span>
               </div>
 
-                <!-- Technique A produit 2 NON REMPLI POUR LE MOMENT -->  
-
-
-                <!-- Technique B produit 1   --> 
+                <!-- Technique B--> 
                  <div *ngIf="chir.techniqueproposeeB">
+                  <hr style="height:2px">
                  <span *ngIf="chir.techniqueproposeeB" class="specialiteChirurgie">2. <b>{{chir.techniqueproposeeB}}</b></span> <br>
-                 <span class="comment">{{chir.commentairetechniqueB}}</span> 
-                 <hr>
-                 <span *ngIf="chir.produitALR1B" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1B}}</span>. <br><u>Posologie</u> : {{chir.posologieALR1B}}.</span>
-                 <br>
-                 <span class="comment"><u>Dose patient</u> : <span style="color:#009c9e ; font-weight: bold;">{{PoidsRound * chir.posologieNumALR1B/chir.concentrationProduit1B}} mL (={{(PoidsRound * chir.posologieNumALR1B)}} mg)</span><span *ngIf="chir.commentairePosologieB">&nbsp;{{chir.commentairePosologieA}}</span>.</span> 
-                 <br>
-                 <span *ngIf="chir.dosetoxiqueALR1B" class="comment"><u>{{chir.commentaireDoseToxiqueB}}</u> : {{chir.dosetoxiqueALR1B}} - soit <span style="color:#ff6961; font-weight:bold;">{{PoidsRound * chir.dosetoxiqueNumALR1B}} mg (={{PoidsRound * chir.dosetoxiqueNumALR1B/chir.concentrationProduit1B}} mL)</span>.</span> 
+                 <span *ngIf="chir.commentairetechniqueB" class="comment">{{chir.commentairetechniqueB}}<br></span> 
+                 
+                 <span *ngIf="chir.produitALR1B" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1B}}</span>.</span>
+                 <br *ngIf="chir.produitALR2B">
+                 <span *ngIf="chir.produitALR2B" class="comment"><u>Alternative produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR2B}}</span>.</span>
                  <br> 
-                 <span *ngIf="chir.adjuvantALRB" class="comment">Adjuvant proposé : {{chir.adjuvantALRB}} soit {{PoidsRound}} µg.</span>
+                 <span *ngIf="chir.adjuvantALRB" class="comment">Adjuvant proposé : {{chir.adjuvantALRB}}.</span>
                  <br>
                 </div> 
+              </div>
+                
+                                <!--  ALR A DISCUTER -->
 
-                <!-- Technique B produit 2 NON REMPLI POUR LE MOMENT -->  
+
+                <div class="comment" *ngIf="chir.recommandationALR == 'A discuter'">
+                  <div>
+                  <ion-chip class="ALRAdiscuter">
+                    <ion-label>{{chir.intitule}}</ion-label>
+                  </ion-chip>
+                  <ion-icon name="help-circle" style="zoom:2.5; float: right; color:#FFA500"></ion-icon>
+                  <br>
+                  <span>Specialité : {{chir.specialite}}</span>
+                  <br>
+                  <span>Suggestion : <b>Discuter l'intérêt d'une ALR</b></span>
+                  <br>
+                  <span *ngIf="chir.commentaire">Remarque : {{chir.commentaire}}</span>
+                </div>
+                
+                  <!-- Technique A-->  
+                <div *ngIf="chir.techniqueproposeeA">
+                <hr style="height:2px">
+                <span class="specialiteChirurgie">1. <b>{{chir.techniqueproposeeA}}</b></span><br>
+                <span *ngIf="chir.commentairetechniqueA" class="comment">{{chir.commentairetechniqueA}}<br></span>
+                <span *ngIf="chir.produitALR1A" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1A}}</span>.</span> 
+                <br *ngIf="chir.produitALR2A">
+                <span *ngIf="chir.produitALR2A" class="comment"><u>Alternative produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR2A}}</span>.</span>
+                <br>
+                <span *ngIf="chir.adjuvantALRA" class="comment">Adjuvant proposé : {{chir.adjuvantALRA}}.</span>
+              </div>
+
+                <!-- Technique B--> 
+                 <div *ngIf="chir.techniqueproposeeB">
+                  <hr style="height:2px">
+                 <span *ngIf="chir.techniqueproposeeB" class="specialiteChirurgie">2. <b>{{chir.techniqueproposeeB}}</b></span> <br>
+                 <span *ngIf="chir.commentairetechniqueB" class="comment">{{chir.commentairetechniqueB}}<br></span> 
+                 <span *ngIf="chir.produitALR1B" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1B}}</span>.</span>
+                 <br *ngIf="chir.produitALR2B">
+                 <span *ngIf="chir.produitALR2B" class="comment"><u>Alternative produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR2B}}</span>.</span>
+                 <br> 
+                 <span *ngIf="chir.adjuvantALRB" class="comment">Adjuvant proposé : {{chir.adjuvantALRB}}.</span>
+                 <br>
+                </div> 
+              </div>
+
+
 
               </ion-card>
               </div>

@@ -40,8 +40,6 @@ import 'rxjs/add/operator/debounceTime';
 export class LocoRegionalePage {
 
   public pagesALR : any = [
-    { titre : "Anesthésie péridurale" , soustitre : "Pose de cathéter d'anesthésie péridurale" , page : PeriduralePage },
-    { titre : "Bloc axillaire", soustitre : "Bloc du plexus brachial au creux axillaire" , page : BlocAxillairePage },
     { titre : "Bloc cutané latéral de cuisse", soustitre : "Bloc du nerf cutané latéral de cuisse" , page :CutaneLateralCuissePage },
     { titre : "Bloc des grands droits" , soustitre : "Bloc des muscles grands droits abdominaux" , page : BlocGrandsDroitsPage },
     { titre : "Bloc du canal des adducteurs", soustitre : "Bloc du nerf fémoral au canal des adducteurs" , page : BlocCanalAdducteursPage },
@@ -173,8 +171,12 @@ export class LocoRegionalePage {
 
     calculs () {
         /*placer les calculs ici*/
-        if ( this.AgeNum <= 72 || this.PoidsNum <= 30 )  { this.pagesALR[18].critere1 = true } 
-        else { this.pagesALR[18].critere2 = true }
+        this.BolusPIEBRopiSuf = Math.round((this.PoidsNum*0.2)*10)/10 ;
+        this.BolusPCEARopiSuf = Math.round((this.PoidsNum*0.15)*10)/10;
+        this.DoseMaxPCEARopiSuf = Math.round((this.PoidsNum*1.5)*10)/10; 
+
+
+
           };
 
 openPageALR(index) {
@@ -183,6 +185,14 @@ openPageALR(index) {
 
 openPageGeneralites() {
   this.navCtrl.push( GeneralitesAlrPage )
+};
+
+openPageAPD() {
+  this.navCtrl.push( PeriduralePage )
+};
+
+openPageBlocAxillaire(){
+  this.navCtrl.push( BlocAxillairePage )
 };
 
 }

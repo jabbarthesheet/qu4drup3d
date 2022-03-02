@@ -1,15 +1,55 @@
-<!--
-  Generated template for the BlocAxillairePage page.
+<ion-header><br>
+  <div class="header"> 
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-  <ion-navbar>
-    <ion-title>BlocAxillaire</ion-title>
-  </ion-navbar>
-</ion-header>
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>Bloc axillaire</div>
+   <br>
+ 
+    </ion-header>
 
-<ion-content padding>
+    <ion-content>
 
-</ion-content>
+      <ion-card color="turquoise-fonce">
+        <ion-card-content>  Indications : 
+          <p class="dilutionDrogueInduction"> - Chirurgie du coude, en associant le bloc du cutané médial du bras.</p> 
+          <p class="dilutionDrogueInduction"> - Chirurgie de l'avant-bras.</p>
+          <p class="dilutionDrogueInduction"> - Chirurgie de la main.</p></ion-card-content>
+      </ion-card>
+        <ion-item><ion-label color="dark-turquoise">Technnique</ion-label></ion-item>
+          <div padding>
+            <ul>
+              <li>Echoguidé : sonde haute fréquence large ou "club de Golf" ;</li>
+              <li>Repérage des muscles de la paroi abdominale, latéralement et au dessus de l'ombilic ; </li>
+              <li>Ponction <i>in plane</i> latéro-médiale permettant de positionner l'aiguille en arrière de l'oblique interne et en avant du transverse</li>
+            </ul>
+            <hr>
+          </div>
+          
+        <ion-item><ion-label color="dark-turquoise">Posologie</ion-label></ion-item>
+        <ul class="comment">
+          <li>Ropivacaïne 2 mg/mL jusqu'à 6 ans et 30 kg, 0,5 mL/kg/côté</li>
+          <li>Ropivacaïne 3,75 mg/mL au-delà de 6 ans et 30 kg, 0,5 mL/kg/côté</li>
+        </ul> 
+        <div padding>       
+          <div padding class="patientALR">
+            Pour mon patient 
+            <br>
+            Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
+            <br><b>
+            <span *ngIf="AgeNum <= 72 || PoidsNum <=30">Ropivacaïne 2 mg/mL : {{PoidsNum/2}} mL/côté</span>
+            <span *ngIf="AgeNum > 72 && PoidsNum > 30">Ropivacaïne 3,75 mg/mL : {{PoidsNum/2}} mL/côté</span></b>
+        </div></div>
+        
+        <ion-item>
+          <ion-label color="dark-turquoise">Imagerie  
+            <div style="float:right ; margin-right:20px">
+            <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>
+            <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>
+          </div>
+          </ion-label>
+        </ion-item>
+        <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">
+        <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">
+    </ion-content>

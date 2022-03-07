@@ -14,11 +14,44 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class BlocFemoralPage {
 
+  
+  isShownIndications : boolean = false; 
+  isShownAnatomie : boolean = false; 
+  isShownTechnique : boolean = false; 
+  isShownPosologie : boolean = false; 
+  isShownKTPN : boolean = false; 
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BlocFemoralPage');
-  }
+  };
+
+  toggleIndications(){
+    this.isShownIndications = !this.isShownIndications;
+  };
+
+  toggleAnatomie(){
+    this.isShownAnatomie = !this.isShownAnatomie;
+  };
+
+  toggleTechnique(){
+    this.isShownTechnique = !this.isShownTechnique; 
+  }; 
+
+  togglePosologie(){
+    this.isShownPosologie = !this.isShownPosologie; 
+  }; 
+
+  toggleKTPN(){
+    this.isShownKTPN = !this.isShownKTPN;
+  };
+
+  retourHome(){
+    this.navCtrl.pop();
+  };
+
 
 }

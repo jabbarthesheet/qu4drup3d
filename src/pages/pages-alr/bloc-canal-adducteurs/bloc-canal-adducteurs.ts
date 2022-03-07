@@ -14,11 +14,37 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class BlocCanalAdducteursPage {
 
+  isShownIndications : boolean = false; 
+  isShownAnatomie : boolean = false; 
+  isShownTechnique : boolean = false; 
+  isShownPosologie : boolean = false; 
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BlocCanalAdducteursPage');
-  }
+  };
+
+  toggleIndications(){
+    this.isShownIndications = !this.isShownIndications;
+  };
+
+  toggleAnatomie(){
+    this.isShownAnatomie = !this.isShownAnatomie;
+  };
+
+  toggleTechnique(){
+    this.isShownTechnique = !this.isShownTechnique; 
+  }; 
+
+  togglePosologie(){
+    this.isShownPosologie = !this.isShownPosologie; 
+  }; 
+
+  retourHome(){
+    this.navCtrl.pop();
+  };
+
 
 }

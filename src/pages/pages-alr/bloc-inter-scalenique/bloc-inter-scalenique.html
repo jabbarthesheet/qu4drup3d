@@ -1,15 +1,87 @@
-<!--
-  Generated template for the BlocInterScaleniquePage page.
+<ion-header><br>
+  <div class="header"> 
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-  <ion-navbar>
-    <ion-title>BlocInterScalenique</ion-title>
-  </ion-navbar>
-</ion-header>
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>Bloc inter-scalénique</div>
+   <br>
+ 
+    </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <ion-card color="turquoise-fonce">
+    <ion-card-header (click)="toggleIndications()">
+      Indications
+      <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+      <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+    </ion-card-header>
+    <ion-card-content *ngIf="isShownIndications"> 
+      <ul>
+        <li>Intervention sur la moitié supérieure de l'humérus.</li>
+        <li>Chirurgie de l'épaule.</li>
+        <li>Chirurgie des deux tiers externes de la clavicule.</li>
+        </ul> 
+    </ion-card-content>
+  </ion-card>
 
+      <ion-card>
+        <ion-card-header (click)="toggleTechnique()">
+          Technique
+          <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+        </ion-card-header>
+        <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">
+          Bloc échoguidé utilisant la sonde linéaire à haute fréquence.
+          <br>
+          Installer le patient en décubitus dorsal ou en position assise à 45°, tête tournée à 45° vers le côté non opéré, bras ipsilatéral le long du corps.
+          <br>
+          Poser la sonde dans la fosse supra-claviculaire, parallèlement à la clavicule. Identifier les structures : première côté, dôme pleural, artère subclavière, plexus brachial sous forme de grappes de raisins ronds ou ovales, hypoéchogènes, sur la face latérale de l'artère ; muscle scalène antérieur en position médiale par rapport à l'artère et muscle sternocléidomastoïdien en superficie. 
+          <br>
+          Remonter la sonde en direction céphalique : le plexus brachial apparaît comme un ensemble de structures rondes ou ovales, positionnées dans le sillon inter-scalénique, entre les muscles scalène antérieur et moyen. Des mouvements d'anisotropie en direction céphalique et caudale permettent de visualiser les apophyses transverses cervicales et l'émergence des racines nerveuses. Les apophyses transverses bituberculées de C4, C5 et C6 forment une image en U associée à l'ombre osseuse. L'apophyse transverse de C7 possède un tubercule antérieur rudimentaire voire absent et un tubercule postérieur proéminant et permettant l'identification de la racine C7. 
+          <br>
+          Identifier l'artère vertébrale en dessous de l'apophyse transverse de C6 et rechercher la présence d'autres structures vasculaires pouvant croiser le plexus en recourant au Doppler couleur : artère dorsale de la scapula, artère cervicale superficielle, artère cervicale transverse, artère suprascapulaire.
+          <br> 
+          Insérer l'aiguille dans le plan à hauteur de C5-C6. L'approche <i>in plane</i> permet de diminuer le risque de bloc du nerf phrénique, généralement situé entre le SCM et le scalène antérieur, donc en position médiale par rapport au plexus brachial. 
+          <br>
+          Injecter l'anesthésique local au contact du fascia latéral en restant à l'extérieur du plexus du manière à limiter le risque de lésion nerveuse. 
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card color="turquoise-fonce">
+        <ion-card-header (click)="toggleKTPN()">
+          Bloc continu
+          <ion-icon *ngIf="!isShownKTPN" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownKTPN" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+        </ion-card-header>
+        <ion-card-content *ngIf="isShownKTPN"> 
+          Il est préférable de choisir une approche <i>out of plane</i> avec insertion de l'aiguille au niveau de C5-C6. L'insertion trop distale du cathéter peut entraîne une anesthésie de la main sans effet analgésique au niveau de l'épaule. 
+        </ion-card-content>
+      </ion-card>
+      
+    <ion-card color="warning">
+      <ion-card-header (click)="togglePosologie()">
+        Posologie
+        <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+        <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+      </ion-card-header>
+      <ion-card-content *ngIf="isShownPosologie">
+        - Ropivacaïne 2 mg/mL jusqu'à 6 ans et 30 kg puis Ropivacaïne 3,75 mg/mL, 0,3 mL/kg.</ion-card-content>
+    </ion-card>
+    
+    <!-- 
+    <ion-card>
+      <ion-card-header (click)="toggleLegend()">Imagerie
+        <ion-icon *ngIf="!hasLegend" class="OpenCloseIcon" color="dark-turquoise" name="eye"></ion-icon>
+        <ion-icon *ngIf="hasLegend" class="OpenCloseIcon" color="dark-turquoise" name="eye-off"></ion-icon>
+      </ion-card-header>
+    <ion-card-content>
+      <div style="float:right ; margin-right:20px">
+        </div>
+      <img *ngIf="!hasLegend" src="assets/imgs/grands_droits_nolegende.png">
+    <img *ngIf="hasLegend" src="assets/imgs/grands_droits_legende.png">
+    </ion-card-content>
+    </ion-card>
+    -->  
 </ion-content>
+

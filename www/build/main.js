@@ -7,7 +7,7 @@ webpackJsonp([1],{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccueilPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_plateau_induction_plateau_induction__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_plateau_vas_plateau_vas__ = __webpack_require__(217);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_entretien_anesth_entretien_anesth__ = __webpack_require__(218);
@@ -943,7 +943,7 @@ var AccueilPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScoresPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1031,7 +1031,7 @@ var ScoresPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AcrPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1135,7 +1135,7 @@ var AcrPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CatecholaminesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1286,9 +1286,9 @@ var CatecholaminesPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__main_pages_info_info__ = __webpack_require__(485);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__main_pages_protocoles_protocoles__ = __webpack_require__(486);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__main_pages_recommandations_recommandations__ = __webpack_require__(510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__main_pages_recommandations_recommandations__ = __webpack_require__(511);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__main_pages_scores_scores__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__main_pages_medicaments_medicaments__ = __webpack_require__(511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__main_pages_medicaments_medicaments__ = __webpack_require__(512);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1357,7 +1357,7 @@ webpackEmptyAsyncContext.id = 170;
 
 var map = {
 	"../pages/main/main.module": [
-		889,
+		890,
 		0
 	]
 };
@@ -1384,7 +1384,7 @@ module.exports = webpackAsyncContext;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlateauInductionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1771,7 +1771,7 @@ var PlateauInductionPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlateauVasPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2103,7 +2103,7 @@ var PlateauVasPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EntretienAnesthPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2309,7 +2309,7 @@ var EntretienAnesthPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GestionFluidesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2534,31 +2534,12 @@ var GestionFluidesPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocoRegionalePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_alr_tap_block_tap_block__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_alr_peridurale_peridurale__ = __webpack_require__(222);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_alr_bloc_grands_droits_bloc_grands_droits__ = __webpack_require__(223);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_alr_generalites_alr_generalites_alr__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_alr_bloc_maxillaire_bloc_maxillaire__ = __webpack_require__(225);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_alr_bloc_tronculaire_ab_bloc_tronculaire_ab__ = __webpack_require__(226);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_alr_bloc_inter_costo_brachial_bloc_inter_costo_brachial__ = __webpack_require__(227);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_alr_bloc_axillaire_bloc_axillaire__ = __webpack_require__(228);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_alr_bloc_supra_claviculaire_bloc_supra_claviculaire__ = __webpack_require__(229);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_alr_bloc_inter_scalenique_bloc_inter_scalenique__ = __webpack_require__(230);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_alr_bloc_nerf_saphene_bloc_nerf_saphene__ = __webpack_require__(231);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_alr_bloc_sciatique_poplite_bloc_sciatique_poplite__ = __webpack_require__(232);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_alr_bloc_sciatique_sous_gluteal_bloc_sciatique_sous_gluteal__ = __webpack_require__(233);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_alr_bloc_nerf_obturateur_bloc_nerf_obturateur__ = __webpack_require__(234);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_alr_bloc_canal_adducteurs_bloc_canal_adducteurs__ = __webpack_require__(235);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_alr_bloc_femoral_bloc_femoral__ = __webpack_require__(236);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_alr_peng_bloc_peng_bloc__ = __webpack_require__(237);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_alr_cutane_lateral_cuisse_cutane_lateral_cuisse__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_alr_bloc_pudendal_bloc_pudendal__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_alr_bloc_penien_bloc_penien__ = __webpack_require__(240);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_service_data_liste_medicaments__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_rxjs_add_operator_debounceTime__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_rxjs_add_operator_debounceTime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_rxjs_add_operator_debounceTime__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_alr_generalites_alr_generalites_alr__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_service_data_liste_medicaments__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_debounceTime__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_debounceTime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_debounceTime__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2568,25 +2549,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2606,26 +2568,9 @@ var LocoRegionalePage = /** @class */ (function () {
         this.alertController = alertController;
         this.storage = storage;
         this.dataService = dataService;
-        this.pagesALR = [
-            { titre: "Bloc cutané latéral de cuisse", soustitre: "Bloc du nerf cutané latéral de cuisse", page: __WEBPACK_IMPORTED_MODULE_19__pages_alr_cutane_lateral_cuisse_cutane_lateral_cuisse__["a" /* CutaneLateralCuissePage */] },
-            { titre: "Bloc des grands droits", soustitre: "Bloc des muscles grands droits abdominaux", page: __WEBPACK_IMPORTED_MODULE_4__pages_alr_bloc_grands_droits_bloc_grands_droits__["a" /* BlocGrandsDroitsPage */] },
-            { titre: "Bloc du canal des adducteurs", soustitre: "Bloc du nerf fémoral au canal des adducteurs", page: __WEBPACK_IMPORTED_MODULE_16__pages_alr_bloc_canal_adducteurs_bloc_canal_adducteurs__["a" /* BlocCanalAdducteursPage */] },
-            { titre: "Bloc fémoral", soustitre: "Bloc du nerf fémoral au triangle de Scarpa", page: __WEBPACK_IMPORTED_MODULE_17__pages_alr_bloc_femoral_bloc_femoral__["a" /* BlocFemoralPage */] },
-            { titre: "Bloc intercostobrachial", soustitre: "Bloc des nerfs intercostobrachiaux ou cutané médial du bras et de l'avant-bras", page: __WEBPACK_IMPORTED_MODULE_8__pages_alr_bloc_inter_costo_brachial_bloc_inter_costo_brachial__["a" /* BlocInterCostoBrachialPage */] },
-            { titre: "Bloc interscalénique", soustitre: "Bloc du plexus brachial au niveau interscalénique", page: __WEBPACK_IMPORTED_MODULE_11__pages_alr_bloc_inter_scalenique_bloc_inter_scalenique__["a" /* BlocInterScaleniquePage */] },
-            { titre: "Bloc maxillaire", soustitre: "Bloc de la branche maxillaire (2) du nerf trijumeau", page: __WEBPACK_IMPORTED_MODULE_6__pages_alr_bloc_maxillaire_bloc_maxillaire__["a" /* BlocMaxillairePage */] },
-            { titre: "Bloc obturateur", soustitre: "Bloc du nerf obturateur", page: __WEBPACK_IMPORTED_MODULE_15__pages_alr_bloc_nerf_obturateur_bloc_nerf_obturateur__["a" /* BlocNerfObturateurPage */] },
-            { titre: "Bloc pénien", soustitre: "Bloc des nerfs péniens", page: __WEBPACK_IMPORTED_MODULE_21__pages_alr_bloc_penien_bloc_penien__["a" /* BlocPenienPage */] },
-            { titre: "Bloc pudendal", soustitre: "Bloc du nerf pudendal par voie transglutéale", page: __WEBPACK_IMPORTED_MODULE_20__pages_alr_bloc_pudendal_bloc_pudendal__["a" /* BlocPudendalPage */] },
-            { titre: "Bloc saphène", soustitre: "Bloc du nerf saphène à la jambe", page: __WEBPACK_IMPORTED_MODULE_12__pages_alr_bloc_nerf_saphene_bloc_nerf_saphene__["a" /* BlocNerfSaphenePage */] },
-            { titre: "Bloc sciatique poplité", soustitre: "Bloc du nerf sciatique au niveau du creux poplité", page: __WEBPACK_IMPORTED_MODULE_13__pages_alr_bloc_sciatique_poplite_bloc_sciatique_poplite__["a" /* BlocSciatiquePoplitePage */] },
-            { titre: "Bloc sciatique sous glutéal", soustitre: "Bloc du nerf sciatique par l'approche sous glutéale", page: __WEBPACK_IMPORTED_MODULE_14__pages_alr_bloc_sciatique_sous_gluteal_bloc_sciatique_sous_gluteal__["a" /* BlocSciatiqueSousGlutealPage */] },
-            { titre: "Bloc supra-claviculaire", soustitre: "Bloc du plexus brachial à l'étage supra-claviculaire", page: __WEBPACK_IMPORTED_MODULE_10__pages_alr_bloc_supra_claviculaire_bloc_supra_claviculaire__["a" /* BlocSupraClaviculairePage */] },
-            { titre: "Blocs tronculaires", soustitre: "Bloc du nerf médian, radial ou ulnaire à l'avant-bras", page: __WEBPACK_IMPORTED_MODULE_7__pages_alr_bloc_tronculaire_ab_bloc_tronculaire_ab__["a" /* BlocTronculaireAbPage */] },
-            { titre: "PENG Bloc", soustitre: "Bloc obturateur par voie sous pectinéale (PEricapsular Nerve Group)", page: __WEBPACK_IMPORTED_MODULE_18__pages_alr_peng_bloc_peng_bloc__["a" /* PengBlocPage */] },
-            { titre: "TAP block", soustitre: "Transversus Abdominis Plane Block", page: __WEBPACK_IMPORTED_MODULE_2__pages_alr_tap_block_tap_block__["a" /* TapBlockPage */], critere1: false, critere2: false, produit1: "Ropivacaïne 2 mg/mL", posologie1: 0.5, produit2: "Ropivacaïne 3,75 mg/mL", posologie2: 0.5 },
-        ];
         this.searchBarType = false;
+        this.ALRView = 1;
+        this.searchTermBloc = "";
         this.searchTerm = "";
         this.searchTermSpecialite = "";
     }
@@ -2636,6 +2581,7 @@ var LocoRegionalePage = /** @class */ (function () {
     LocoRegionalePage.prototype.ngOnInit = function () {
         this.setFilteredChirurgie();
         this.dataService.orderALR();
+        this.setFilteredBloc();
     };
     ;
     LocoRegionalePage.prototype.setFilteredChirurgie = function () {
@@ -2645,9 +2591,10 @@ var LocoRegionalePage = /** @class */ (function () {
     LocoRegionalePage.prototype.setFilteredSpecialite = function () {
         this.chirurgie = this.dataService.filterALRspecialite(this.searchTermSpecialite);
     };
-    LocoRegionalePage.prototype.displayChirurgie = function (index) {
-        this.chirurgie[index].isShown = !this.chirurgie[index].isShown;
+    LocoRegionalePage.prototype.setFilteredBloc = function () {
+        this.pagesALR = this.dataService.filterBloc(this.searchTermBloc);
     };
+    ;
     LocoRegionalePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad LocoRegionalePage');
     };
@@ -2696,6 +2643,7 @@ var LocoRegionalePage = /** @class */ (function () {
     ;
     LocoRegionalePage.prototype.calculs = function () {
         /*placer les calculs ici*/
+        this.PoidsRoundALR = Math.round(this.PoidsNum);
         this.BolusPIEBRopiSuf = Math.round((this.PoidsNum * 0.2) * 10) / 10;
         this.BolusPCEARopiSuf = Math.round((this.PoidsNum * 0.15) * 10) / 10;
         this.DoseMaxPCEARopiSuf = Math.round((this.PoidsNum * 1.5) * 10) / 10;
@@ -2706,26 +2654,18 @@ var LocoRegionalePage = /** @class */ (function () {
     };
     ;
     LocoRegionalePage.prototype.openPageGeneralites = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__pages_alr_generalites_alr_generalites_alr__["a" /* GeneralitesAlrPage */]);
-    };
-    ;
-    LocoRegionalePage.prototype.openPageAPD = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__pages_alr_peridurale_peridurale__["a" /* PeriduralePage */]);
-    };
-    ;
-    LocoRegionalePage.prototype.openPageBlocAxillaire = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_9__pages_alr_bloc_axillaire_bloc_axillaire__["a" /* BlocAxillairePage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__pages_alr_generalites_alr_generalites_alr__["a" /* GeneralitesAlrPage */]);
     };
     ;
     LocoRegionalePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_22__angular_core__["m" /* Component */])({
-            selector: 'page-loco-regionale',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\modules\loco-regionale\loco-regionale.html"*/'<ion-header>\n  <br>\n\n        <!-- HEADER MENU  -->\n        <div class="header"> \n\n          <div (click)="retourHome()" class="backButton">\n          <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n          Retour\n          </div>\n          ALR</div><br>\n\n            <ion-toolbar>\n\n              <ion-searchbar *ngIf = "!this.searchBarType"\n              class="interventionSearchbar"\n              [(ngModel)]="searchTerm"\n              (ionChange)="setFilteredChirurgie()"\n              placeholder="Intervention..."\n              inputmode="text"\n            ></ion-searchbar><br *ngIf = "!this.searchBarType"><ion-icon *ngIf = "!this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>\n            \n            <ion-searchbar *ngIf = "this.searchBarType"\n            class="specialiteSearchbar"\n            [(ngModel)]="searchTermSpecialite"\n            (ionChange)="setFilteredSpecialite()"\n            placeholder="Specialite..."\n            inputmode="text"\n            ></ion-searchbar><br *ngIf = "this.searchBarType"><ion-icon *ngIf = "this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>\n            \n            \n            \n            </ion-toolbar>\n\n\n              </ion-header>\n       <!-- END HEADER -->\n\n\n<ion-content>\n        <div padding class="patientHighlight">\n          Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n          <br> Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>\n        </div>        \n\n\n        <div *ngIf="!searchTerm && !searchTermSpecialite">\n\n          <ion-card (click)="openPageGeneralites()" class="drogueContainer">\n            <ion-card-content  class="cardRecos">\n            <div class="headerProtocoles">\n              Particularités de l\'ALR en pédiatrie\n            </div>\n            <hr>\n            <div class="contentProtocoles">\n              <ion-icon start name="bulb"></ion-icon> &nbsp; <b>Généralités</b>\n            </div>\n            </ion-card-content>\n            </ion-card>  \n    \n          <hr>\n\n          <ion-card (click)="openPageAPD()" class="drogueContainer">\n            <ion-card-content  class="cardRecos">\n            <div class="headerProtocoles">\n              Pose de cathéter d\'anesthésie péridurale lombaire\n            </div>\n            <hr>\n            <div class="contentProtocoles">\n              <ion-icon start name="pin"></ion-icon> &nbsp; <b>Anesthésie péridurale</b>\n            </div>\n            <hr>\n            <div>\n            <div class="ALRCalculatorDiv"> \n            <div class="ALRCalculatorIcon"><ion-icon start style="zoom:2" name="calculator"></ion-icon></div>\n              Ropivacaïne 1 mg/mL + Sufentanil 0,25 µg/mL<br>\n              PIEB : {{BolusPIEBRopiSuf}} mL/h - PCEA : {{BolusPCEARopiSuf}} mL/bolus<br>\n              PR : 20 minutes - Dose max. : {{DoseMaxPCEARopiSuf}} mL/4h\n            </div>\n          </div>\n            </ion-card-content>\n            </ion-card>  \n    \n          <hr>\n\n          <ion-card (click)="openPageBlocAxillaire()" class="drogueContainer">\n            <ion-card-content  class="cardRecos">\n            <div class="headerProtocoles">\n            Bloc du plexus brachial au creux axillaire\n            </div>\n            <hr>\n            <div class="contentProtocoles">\n              <ion-icon start name="pin"></ion-icon> &nbsp; <b>Bloc axillaire</b>\n            </div>\n            <hr>\n            <div>\n            <div class="ALRCalculatorDiv"> \n            <div class="ALRCalculatorIcon"><ion-icon start style="zoom:2" name="calculator"></ion-icon></div>\n            A visée analgésique : Ropivacaïne 2 mg/mL : xxx mL <br>  \n            A visée anesthésique : Carbocaïne 20 mg/mL : xxx mL \n            </div>\n          </div>\n            </ion-card-content>\n            </ion-card>  \n    \n          <hr>\n\n\n\n        <ion-card (click)="openPageALR(index)" class="drogueContainer" *ngFor="let entry of pagesALR, let index = index">\n          <ion-card-content  class="cardRecos">\n          <div class="headerProtocoles">\n            {{entry.soustitre}}\n          </div>\n          <hr>\n          <div class="contentProtocoles">\n            <ion-icon start name="pin"></ion-icon> &nbsp; <b>{{entry.titre}}</b>\n          </div>\n          <hr>\n          <div> \n            <span style="color:#009c9e">{{entry.produit1}} : {{entry.posologie1 * PoidsNum}} mL/côté</span>\n            <span style="color:#009c9e">{{entry.produit2}} : {{entry.posologie2 * PoidsNum}} mL/côté</span>\n          </div>\n          </ion-card-content> \n          </ion-card>  \n\n        </div>\n\n\n        <!-- SEULEMENT EN CAS DE RECHERCHE DONC SI RESULTAT-->\n\n          <div *ngIf="searchTerm || searchTermSpecialite">\n\n            <div class="detersion" *ngIf="AgeNum <= 3">Détersion cutanée : chlorexidine avant 3 mois</div>\n            <div class="detersion" *ngIf="AgeNum > 3">Détersion cutanée : bétadine jaune après 3 mois</div>\n\n\n            <ion-card padding class="chirurgieContainer" *ngFor="let chir of chirurgie, let index = index" [attr.data-index]="index">\n                 \n              <!--  ALR NON -->\n              <div class="comment" *ngIf="chir.recommandationALR == \'Non recommandée\'">\n                  <ion-chip class="ALRnonRecommandee">\n                    <ion-label>{{chir.intitule}} </ion-label>\n                  </ion-chip><ion-icon name="radio-button-off" style="zoom:2.5; float: right; color:darkgrey"></ion-icon>\n                  <br>\n                  <span>Specialité : {{chir.specialite}}</span>\n                  <br>\n                  <span>Suggestion : <b>ALR non recommandée</b></span>\n                  <br>\n                  <span *ngIf="chir.commentaire">Remarque : {{chir.commentaire}}</span>\n                </div>\n\n                <!--  ALR OUI -->\n        \n                  <div class="comment" *ngIf="chir.recommandationALR == \'Recommandée\'">\n                    <div>\n                    <ion-chip class="ALRRecommandee">\n                    <ion-label>{{chir.intitule}}</ion-label>\n                  </ion-chip>\n                  <ion-icon name="checkmark-circle" style="zoom:2.5; float: right; color:#009c9e"></ion-icon>\n                  <br>\n                  <span>Specialité : {{chir.specialite}}</span>\n                  <br>\n                  <span>Suggestion : <b>ALR recommandée</b></span>\n                  <br>\n                  <span *ngIf="chir.commentaire">Remarque : {{chir.commentaire}}</span>\n                </div>\n                \n                  <!-- Technique A-->  \n                <div *ngIf="chir.techniqueproposeeA">\n                <hr style="height:2px">\n                <span class="specialiteChirurgie">1. <b>{{chir.techniqueproposeeA}}</b></span><br>\n                <span *ngIf="chir.commentairetechniqueB" class="comment">{{chir.commentairetechniqueA}}<br></span> \n                \n                <span *ngIf="chir.produitALR1A" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1A}}</span>.</span> \n                <br *ngIf="chir.produitALR2A">\n                <span *ngIf="chir.produitALR2A" class="comment"><u>Alternative produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR2A}}</span>.</span>\n                <br>\n                <span *ngIf="chir.adjuvantALRA" class="comment">Adjuvant proposé : {{chir.adjuvantALRA}}.</span>\n              </div>\n\n                <!-- Technique B--> \n                 <div *ngIf="chir.techniqueproposeeB">\n                  <hr style="height:2px">\n                 <span *ngIf="chir.techniqueproposeeB" class="specialiteChirurgie">2. <b>{{chir.techniqueproposeeB}}</b></span> <br>\n                 <span *ngIf="chir.commentairetechniqueB" class="comment">{{chir.commentairetechniqueB}}<br></span> \n                 \n                 <span *ngIf="chir.produitALR1B" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1B}}</span>.</span>\n                 <br *ngIf="chir.produitALR2B">\n                 <span *ngIf="chir.produitALR2B" class="comment"><u>Alternative produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR2B}}</span>.</span>\n                 <br> \n                 <span *ngIf="chir.adjuvantALRB" class="comment">Adjuvant proposé : {{chir.adjuvantALRB}}.</span>\n                 <br>\n                </div> \n              </div>\n                \n                                <!--  ALR A DISCUTER -->\n\n\n                <div class="comment" *ngIf="chir.recommandationALR == \'A discuter\'">\n                  <div>\n                  <ion-chip class="ALRAdiscuter">\n                    <ion-label>{{chir.intitule}}</ion-label>\n                  </ion-chip>\n                  <ion-icon name="help-circle" style="zoom:2.5; float: right; color:#FFA500"></ion-icon>\n                  <br>\n                  <span>Specialité : {{chir.specialite}}</span>\n                  <br>\n                  <span>Suggestion : <b>Discuter l\'intérêt d\'une ALR</b></span>\n                  <br>\n                  <span *ngIf="chir.commentaire">Remarque : {{chir.commentaire}}</span>\n                </div>\n                \n                  <!-- Technique A-->  \n                <div *ngIf="chir.techniqueproposeeA">\n                <hr style="height:2px">\n                <span class="specialiteChirurgie">1. <b>{{chir.techniqueproposeeA}}</b></span><br>\n                <span *ngIf="chir.commentairetechniqueA" class="comment">{{chir.commentairetechniqueA}}<br></span>\n                <span *ngIf="chir.produitALR1A" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1A}}</span>.</span> \n                <br *ngIf="chir.produitALR2A">\n                <span *ngIf="chir.produitALR2A" class="comment"><u>Alternative produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR2A}}</span>.</span>\n                <br>\n                <span *ngIf="chir.adjuvantALRA" class="comment">Adjuvant proposé : {{chir.adjuvantALRA}}.</span>\n              </div>\n\n                <!-- Technique B--> \n                 <div *ngIf="chir.techniqueproposeeB">\n                  <hr style="height:2px">\n                 <span *ngIf="chir.techniqueproposeeB" class="specialiteChirurgie">2. <b>{{chir.techniqueproposeeB}}</b></span> <br>\n                 <span *ngIf="chir.commentairetechniqueB" class="comment">{{chir.commentairetechniqueB}}<br></span> \n                 <span *ngIf="chir.produitALR1B" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1B}}</span>.</span>\n                 <br *ngIf="chir.produitALR2B">\n                 <span *ngIf="chir.produitALR2B" class="comment"><u>Alternative produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR2B}}</span>.</span>\n                 <br> \n                 <span *ngIf="chir.adjuvantALRB" class="comment">Adjuvant proposé : {{chir.adjuvantALRB}}.</span>\n                 <br>\n                </div> \n              </div>\n\n\n\n              </ion-card>\n              </div>\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\modules\loco-regionale\loco-regionale.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["m" /* Component */])({
+            selector: 'page-loco-regionale',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\modules\loco-regionale\loco-regionale.html"*/'<ion-header>\n  <br>\n\n        <!-- HEADER MENU  -->\n        <div class="header"> \n\n          <div (click)="retourHome()" class="backButton">\n          <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n          Retour\n          </div>\n          ALR</div><br>\n\n\n\n              <ion-segment color="turquoise-fonce" [(ngModel)]="ALRView">\n                <ion-segment-button  value="1">Indication</ion-segment-button>\n                <ion-segment-button  value="2">Technique</ion-segment-button>\n                <ion-segment-button  value="3" style="color:#ff6961">Toxicité</ion-segment-button>\n              </ion-segment>\n          \n          \n                <div padding class="patientHighlight">\n                  Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n                  <br> Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>\n                </div>        \n              </ion-header>\n\n       <!-- END HEADER -->\n\n\n<ion-content>\n\n  <ion-toolbar *ngIf = "ALRView == 1">\n\n    <ion-searchbar *ngIf = "!this.searchBarType"\n    class="interventionSearchbar"\n    [(ngModel)]="searchTerm"\n    (ionChange)="setFilteredChirurgie()"\n    placeholder="Intervention..."\n    inputmode="text"\n  ></ion-searchbar><br *ngIf = "!this.searchBarType"><ion-icon *ngIf = "!this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>\n  \n  <ion-searchbar *ngIf = "this.searchBarType"\n  class="specialiteSearchbar"\n  [(ngModel)]="searchTermSpecialite"\n  (ionChange)="setFilteredSpecialite()"\n  placeholder="Specialite..."\n  inputmode="text"\n  ></ion-searchbar><br *ngIf = "this.searchBarType"><ion-icon *ngIf = "this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>\n  \n  \n  </ion-toolbar>\n            <ion-card *ngIf="!searchTerm && !searchTermSpecialite && ALRView == 1" class="drogueContainer">\n              <div  padding><ion-icon name="information-circle" color="dark-turquoise"></ion-icon>\n                &nbsp; \n                Utilisez la barre de recherche par nom pour trouver une intervention ou appuyez sur <ion-icon name="swap" color="dark-turquoise"></ion-icon> pour effectuer une recherche par spécialité chirurgicale. \n                <br><br>\n                Les indications proposées sont envisagées pour la pédiatrie uniquement.\n                <br><br>\n                Cliquez sur l\'onglet de droite, "Techniques", pour consulter les aides au calcul de dose et les aides-mémoire pour chacune des techniques proposées. \n                <br><br>\n                <b>Légende ALR :</b> \n                <ul>\n                  <li>Recommandée : \n                    <ion-chip color="turquoise-fonce">\n                        <ion-label>Intervention</ion-label>\n                      </ion-chip> + <ion-icon name="checkmark-circle" style="zoom:1.5; color: #009c9e"></ion-icon></li>\n                  <li>Non recommandée :\n                    <ion-chip color="#C0C0C0">\n                      <ion-label>Intervention</ion-label>\n                    </ion-chip> + <ion-icon name="radio-button-off" style=" zoom:1.5; color: darkgrey"></ion-icon></li>\n                  <li>A discuter : \n                    <ion-chip color="warning">\n                      <ion-label>Intervention</ion-label>\n                    </ion-chip> + <ion-icon name="help-circle" style="zoom:1.5; color: #FFA500"></ion-icon></li>\n                </ul>\n              </div>\n            </ion-card>\n\n\n        <!-- SEULEMENT EN CAS DE RECHERCHE DONC SI RESULTAT pour INDICATIONS-->\n            <div *ngIf="ALRView == 1">\n          <div *ngIf="searchTerm || searchTermSpecialite">\n\n            <div class="detersion" *ngIf="AgeNum <= 3">Détersion cutanée : chlorexidine avant 3 mois</div>\n            <div class="detersion" *ngIf="AgeNum > 3">Détersion cutanée : bétadine jaune après 3 mois</div>\n\n\n            <ion-card padding class="chirurgieContainer" *ngFor="let chir of chirurgie, let index = index" [attr.data-index]="index">\n                 \n              <!--  ALR NON -->\n              <div class="comment" *ngIf="chir.recommandationALR == \'Non recommandée\'">\n                  <ion-chip class="ALRnonRecommandee">\n                    <ion-label>{{chir.intitule}} </ion-label>\n                  </ion-chip><ion-icon name="radio-button-off" style="zoom:2.5; float: right; color:darkgrey"></ion-icon>\n                  <br>\n                  <span>Specialité : {{chir.specialite}}</span>\n                  <br>\n                  <span>Suggestion : <b>ALR non recommandée</b></span>\n                  <br>\n                  <span *ngIf="chir.commentaire">Remarque : {{chir.commentaire}}</span>\n                </div>\n\n                <!--  ALR OUI -->\n        \n                  <div class="comment" *ngIf="chir.recommandationALR == \'Recommandée\'">\n                    <div>\n                    <ion-chip class="ALRRecommandee">\n                    <ion-label>{{chir.intitule}}</ion-label>\n                  </ion-chip>\n                  <ion-icon name="checkmark-circle" style="zoom:2.5; float: right; color:#009c9e"></ion-icon>\n                  <br>\n                  <span>Specialité : {{chir.specialite}}</span>\n                  <br>\n                  <span>Suggestion : <b>ALR recommandée</b></span>\n                  <br>\n                  <span *ngIf="chir.commentaire">Remarque : {{chir.commentaire}}</span>\n                </div>\n                \n                  <!-- Technique A-->  \n                <div *ngIf="chir.techniqueproposeeA">\n                <hr style="height:2px">\n                <span class="specialiteChirurgie">1. <b>{{chir.techniqueproposeeA}}</b></span><br>\n                <span *ngIf="chir.commentairetechniqueB" class="comment">{{chir.commentairetechniqueA}}<br></span> \n                \n                <span *ngIf="chir.produitALR1A" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1A}}</span>.</span> \n                <br *ngIf="chir.produitALR2A">\n                <span *ngIf="chir.produitALR2A" class="comment"><u>Alternative produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR2A}}</span>.</span>\n                <br>\n                <span *ngIf="chir.adjuvantALRA" class="comment">Adjuvant proposé : {{chir.adjuvantALRA}}.</span>\n              </div>\n\n                <!-- Technique B--> \n                 <div *ngIf="chir.techniqueproposeeB">\n                  <hr style="height:2px">\n                 <span *ngIf="chir.techniqueproposeeB" class="specialiteChirurgie">2. <b>{{chir.techniqueproposeeB}}</b></span> <br>\n                 <span *ngIf="chir.commentairetechniqueB" class="comment">{{chir.commentairetechniqueB}}<br></span> \n                 \n                 <span *ngIf="chir.produitALR1B" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1B}}</span>.</span>\n                 <br *ngIf="chir.produitALR2B">\n                 <span *ngIf="chir.produitALR2B" class="comment"><u>Alternative produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR2B}}</span>.</span>\n                 <br> \n                 <span *ngIf="chir.adjuvantALRB" class="comment">Adjuvant proposé : {{chir.adjuvantALRB}}.</span>\n                 <br>\n                </div> \n              </div>\n                \n                                <!--  ALR A DISCUTER -->\n\n\n                <div class="comment" *ngIf="chir.recommandationALR == \'A discuter\'">\n                  <div>\n                  <ion-chip class="ALRAdiscuter">\n                    <ion-label>{{chir.intitule}}</ion-label>\n                  </ion-chip>\n                  <ion-icon name="help-circle" style="zoom:2.5; float: right; color:#FFA500"></ion-icon>\n                  <br>\n                  <span>Specialité : {{chir.specialite}}</span>\n                  <br>\n                  <span>Suggestion : <b>Discuter l\'intérêt d\'une ALR</b></span>\n                  <br>\n                  <span *ngIf="chir.commentaire">Remarque : {{chir.commentaire}}</span>\n                </div>\n                \n                  <!-- Technique A-->  \n                <div *ngIf="chir.techniqueproposeeA">\n                <hr style="height:2px">\n                <span class="specialiteChirurgie">1. <b>{{chir.techniqueproposeeA}}</b></span><br>\n                <span *ngIf="chir.commentairetechniqueA" class="comment">{{chir.commentairetechniqueA}}<br></span>\n                <span *ngIf="chir.produitALR1A" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1A}}</span>.</span> \n                <br *ngIf="chir.produitALR2A">\n                <span *ngIf="chir.produitALR2A" class="comment"><u>Alternative produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR2A}}</span>.</span>\n                <br>\n                <span *ngIf="chir.adjuvantALRA" class="comment">Adjuvant proposé : {{chir.adjuvantALRA}}.</span>\n              </div>\n\n                <!-- Technique B--> \n                 <div *ngIf="chir.techniqueproposeeB">\n                  <hr style="height:2px">\n                 <span *ngIf="chir.techniqueproposeeB" class="specialiteChirurgie">2. <b>{{chir.techniqueproposeeB}}</b></span> <br>\n                 <span *ngIf="chir.commentairetechniqueB" class="comment">{{chir.commentairetechniqueB}}<br></span> \n                 <span *ngIf="chir.produitALR1B" class="comment"><u>Produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR1B}}</span>.</span>\n                 <br *ngIf="chir.produitALR2B">\n                 <span *ngIf="chir.produitALR2B" class="comment"><u>Alternative produit</u> : <span style="color:#009c9e; font-weight:bold;">{{chir.produitALR2B}}</span>.</span>\n                 <br> \n                 <span *ngIf="chir.adjuvantALRB" class="comment">Adjuvant proposé : {{chir.adjuvantALRB}}.</span>\n                 <br>\n                </div> \n              </div>\n              </ion-card>\n              </div>\n            </div>\n\n <!-- //////////////////////////////////////////2E ONGLET TECHNIQUE///////////////////////////////////////////////  -->\n\n <div *ngIf ="ALRView == 2">\n\n\n  <ion-searchbar\n    [(ngModel)]="searchTermBloc"\n    (ionChange)="setFilteredBloc()"\n    placeholder="Technique..."\n    inputmode="text"\n  ></ion-searchbar>\n\n                <ion-card (click)="openPageGeneralites()" class="drogueContainer">\n                  <ion-card-content  class="cardRecos">\n                  <div class="headerProtocoles">\n                    Particularités de l\'ALR en pédiatrie\n                  </div>\n                  <hr>\n                  <div class="contentProtocoles">\n                    <ion-icon start name="bulb"></ion-icon> &nbsp; <b>Généralités</b>\n                  </div>\n                  </ion-card-content>\n                  </ion-card>    \n          \n              <ion-card (click)="openPageALR(index)" class="drogueContainer" *ngFor="let entry of pagesALR, let index = index">\n                <ion-card-content  class="cardRecos">\n                <div class="headerProtocoles">\n                  {{entry.soustitre}} \n                </div>\n                <hr>\n                <div class="contentProtocoles">\n                  <ion-icon start name="pin"></ion-icon> &nbsp; <b>{{entry.titre}}</b> \n                </div>\n                <hr>\n                <div class="drogueContainer">               \n                  <span *ngIf="entry.objectif1"><b>A visée {{entry.objectif1}}</b><br></span>\n                  <span *ngIf="entry.SingleShot && entry.produitSSAG1">{{entry.produitSSAG1}} : {{entry.posologieSSAG1texte}} soit {{entry.posologieSSAG1 * PoidsRoundALR}} mL<br></span>\n                  <span *ngIf="entry.SingleShot && entry.produitSSAG2">{{entry.produitSSAG2}} : {{entry.posologieSSAG2texte}} soit {{entry.posologieSSAG2 * PoidsRoundALR}} mL<br></span>\n                \n                  <span *ngIf="entry.objectif2"><b>A visée {{entry.objectif2}}</b><br></span>\n                  <span *ngIf="entry.SingleShot && entry.produitSSAN1">{{entry.produitSSAN1}} : {{entry.posologieSSAN1texte}} soit {{entry.posologieSSAN1 * PoidsRoundALR}} mL<br></span>\n                  <span *ngIf="entry.SingleShot && entry.produitSSAN2">{{entry.produitSSAN2}} : {{entry.posologieSSAN2texte}} soit {{entry.posologieSSAN2 * PoidsRoundALR}} mL<br></span>\n\n                  <span *ngIf="entry.APD">Ropivacaïne 1 mg/mL + Sufentanil 0,25 µg/mL<br></span>\n                  <span *ngIf="entry.APD">PIEB : {{BolusPIEBRopiSuf}} mL/h - PCEA : {{BolusPCEARopiSuf}} mL/bolus<br></span>\n                  <span *ngIf="entry.APD">PR : 20 minutes - Dose max. : {{DoseMaxPCEARopiSuf}} mL/4h</span>\n\n                  \n                </div>\n                </ion-card-content> \n                </ion-card>  \n      \n</div>\n\n<div *ngIf ="ALRView == 3">\n\n<ion-card class="drogueContainer">\n  <ion-card-content  class="cardRecos">\n  <div class="headerProtocoles">\n    Volume maximal par produit et concentration</div>\n  <hr>\n  <div class="contentProtocoles">\n    <ion-icon start name="warning" style="color:#ff6961"></ion-icon> &nbsp; <b>Doses toxiques (injection unique)</b>\n  </div>\n  <hr>\n  - Lidocaïne non adré : 5 mg/kg soit {{PoidsRoundALR * 5}} mg :   \n      <li>10 mg/mL : {{PoidsRoundALR * 0.5}} mL</li>\n      <li>20 mg/mL : {{PoidsRoundALR * 0.25}} mL</li>\n  <hr>\n  - Lidocaïne adrénalinée : 7 mg/kg soit {{PoidsRoundALR * 7}} mg :\n      <li>20 mg/mL : {{PoidsRoundALR * 0.35}} mL </li>\n  <hr>\n  - Ropivacaïne : 3 mg/kg soit {{PoidsRoundALR * 3}} mg :\n    <li>1 mg/mL : {{PoidsRoundALR * 3}} mL</li> \n    <li>2 mg/mL : {{PoidsRoundALR * 1.5}} mL</li>\n    <li>3,75 mg/mL : {{PoidsRoundALR * 0.8}} mL</li>\n  <hr>\n  - Mépivacaïne : 5 mg/kg soit {{PoidsRoundALR * 5}} mg : \n    <li>10 mg/mL : {{PoidsRoundALR * 0.5}} mL</li>\n    <li>15 mg/mL : {{PoidsRoundALR * 0.3}} mL</li>\n  <hr>\n  - Lévobupivacaïne : 3 mg/kg soit {{PoidsRoundALR * 3}} mg : \n    <li>1,25 mg/mL : {{PoidsRoundALR * 2.4}} mL</li>\n    <li>2,5 mg/mL : {{PoidsRoundALR * 1.2}} mL</li>\n  <hr>\n    - Bupivacaïne : 3 mg/kg soit {{PoidsRoundALR * 3}} mg :  \n    <li>5 mg/mL : {{PoidsRoundALR * 0.6}} mL</li>  \n  </ion-card-content>\n  </ion-card> \n  </div>\n      \n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\modules\loco-regionale\loco-regionale.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["k" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_1__ionic_storage__["b" /* Storage */],
-            __WEBPACK_IMPORTED_MODULE_23__providers_service_data_liste_medicaments__["a" /* ServiceDataProvider */]])
+            __WEBPACK_IMPORTED_MODULE_4__providers_service_data_liste_medicaments__["a" /* ServiceDataProvider */]])
     ], LocoRegionalePage);
     return LocoRegionalePage;
 }());
@@ -2738,10 +2678,90 @@ var LocoRegionalePage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GeneralitesAlrPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the GeneralitesAlrPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var GeneralitesAlrPage = /** @class */ (function () {
+    function GeneralitesAlrPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.isShown1 = false;
+        this.isShown2 = false;
+        this.isShown3 = false;
+        this.isShown4 = false;
+        this.isShown5 = false;
+        this.isShown6 = false;
+    }
+    GeneralitesAlrPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad GeneralitesAlrPage');
+    };
+    ;
+    GeneralitesAlrPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    GeneralitesAlrPage.prototype.toggle1 = function () {
+        this.isShown1 = !this.isShown1;
+    };
+    ;
+    GeneralitesAlrPage.prototype.toggle2 = function () {
+        this.isShown2 = !this.isShown2;
+    };
+    ;
+    GeneralitesAlrPage.prototype.toggle3 = function () {
+        this.isShown3 = !this.isShown3;
+    };
+    ;
+    GeneralitesAlrPage.prototype.toggle4 = function () {
+        this.isShown4 = !this.isShown4;
+    };
+    ;
+    GeneralitesAlrPage.prototype.toggle5 = function () {
+        this.isShown5 = !this.isShown5;
+    };
+    ;
+    GeneralitesAlrPage.prototype.toggle6 = function () {
+        this.isShown6 = !this.isShown6;
+    };
+    ;
+    GeneralitesAlrPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-generalites-alr',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\generalites-alr\generalites-alr.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   ALR en pédiatrie</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n\n  <ion-card color="turquoise-fonce">\n    <ion-card-content>  Objectifs : \n      <p class="dilutionDrogueInduction"> - Optimiser l\'analgésie.</p> \n      <p class="dilutionDrogueInduction"> - Réduire la consommation de morphiniques.</p>\n      <p class="dilutionDrogueInduction"> - Favoriser la réhabilitation précoce.</p></ion-card-content>\n  </ion-card>\n\n  <ion-item><ion-label color="danger">Antiseptique<p class="comment">Utiliser la chlorexidine avant l\'âge de 3 mois.<br>La bétadine alcoolique peut être utilisée pour les enfants plus âgés.</p> \n  </ion-label>  </ion-item>\n\n  <ion-item (click)="toggle1()"><ion-label color="turquoise-fonce">\n    Immaturité physiologique & anatomique\n    <ion-icon *ngIf="!isShown1" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShown1" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label></ion-item>\n  <div *ngIf="isShown1">\n  <div padding>\n  Clairance des anesthésiques locaux abaissée et concentration des formes circulantes libres augmentée :  \n  <ul class="comment">\n      <li>La posologie doit systématiquement être adaptée au poids de l\'enfant ;</li>\n      <li>Les risques de toxicités sont majorés en cas de réinjections itératives. </li>\n    </ul>\n    <hr>\n  Fibre nerveuse en développement : \n  <ul class="comment">\n    <li>Faible adhérence des gaines et aponévroses, myélinisation incomplète ;</li>\n    <li>Meilleure diffusion des anesthésiques locaux, permettant l\'utilisation de plus faibles concentrations ; </li>\n    <li>Risque lésionnel majoré en cas de contact nerveux dans les blocs tronculaires. </li>\n  </ul>\n  <hr>\n  Immaturité du système vasculaire et sympathique : \n  <ul class="comment">\n    <li>Résistances vasculaires systémiques basales plus faibles ;</li>\n    <li>Capacité veineuse des membres inférieures proportionnellement plus faible ; </li>\n    <li>Effets hémodynamiques minorés suite à la réalisation d\'une anesthésie loco-régionale péri-médullaire.</li>\n  </ul>\n</div></div>\n  \n  <ion-item (click)="toggle2()"><ion-label color="turquoise-fonce">\n    Particularités techniques\n    <ion-icon *ngIf="!isShown2" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShown2" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label></ion-item>\n  <div *ngIf="isShown2">\n    <div padding>\n    Réalisation d\'une ALR :  \n    <ul class="comment">\n        <li>Mauvaise tolérance des ponctions vigiles chez l\'enfant ;</li>\n        <li>Les blocs à visée analgésique sont réalisés sous AG : le risque de lésion nerveuse est majoré ;</li>\n        <li>Les dimensions sont plus faibles, les distances variables selon l\'âge et le poids : utiliser du matériel adapté (aiguilles, sondes d\'échographie).</li>\n      </ul>\n      <hr>\n    Analgésie périmédullaire : \n    <ul class="comment">\n      <li>Ossification incomplète des vertèbres : attention au risque de pénétration et d\'injection intra-osseuse, qui correspond à une injection intravasculaire ;</li>\n      <li>Terminaison médullaire abaissée jusqu\'à 1 an  ; </li>\n      <li>Lordose lombaire inexistante avant  9 mois : adapter l\'orientation de l\'aiguille. </li>\n    </ul>\n  </div></div>\n\n  <ion-item (click)="toggle3()"><ion-label color="turquoise-fonce">\n    Avantages et limites\n    <ion-icon *ngIf="!isShown3" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShown3" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label></ion-item>\n  <div *ngIf="isShown3">\n    <div padding>\n    Avantages :  \n    <ul class="comment">\n        <li>Réduction du stress lié à la prise en charge ;</li>\n        <li>Réduction des NVPO ;</li>\n        <li>Epargne morphinique, d\'un intérêt tout particulier chez le nouveau-né et le prématuré (apnées) ; </li>\n        <li>Réduction des besoins ventilatoires.</li>\n      </ul>\n      <hr>\n    Contre-indications : \n    <ul class="comment">\n      <li>Refus de l\'enfant ou des parents ;</li>\n      <li>Allergie aux anesthésiques locaux ;</li>\n      <li>Trouble de l\'hémostase majeur, notamment pour l\'analgésie périmédullaire ;</li>\n      <li>Contexte septique local ou systémique non contrôlé. </li>\n    </ul>\n    <hr>\n  </div></div>\n\n\n  <ion-item (click)="toggle4()"><ion-label color="turquoise-fonce">\n    Particularités en orthopédie\n    <ion-icon *ngIf="!isShown4" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShown4" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label></ion-item>\n  <div *ngIf="isShown4">\n    <div padding style="text-align: justify;">\n    Les particularités anatomiques du tiers proximal de jambe et de tout l\'avant-bras impliquent un risque accru de syndrome des loges (SDL) en période périopératoire. \n    Une <b>surveillance attentive</b> des signes cliniques évocateurs de SDL est de rigueur. L\'ALR efficace tend à rendre cette surveillance plus difficile. \n    L\'ALR n\'est pas contre-indiquée dans ces situations mais implique une évaluation du rapport bénéfice-risque avec l\'opérateur et une utilisation de faibles concentrations d\'anesthésique locaux, en évitant les adjuvants.   \n   <br>\n   <br>\n   Il convient de prévoir systématiquement l\'administration d\'antalgiques par voie systémique en per- et post-opératoire, même en l\'absence totale de douleur, pour prévenir le réveil douloureux à la levée du bloc analgésique. \n      <hr>\n  </div></div>\n\n  <ion-item (click)="toggle5()"><ion-label color="turquoise-fonce">\n    Injection unique\n    <ion-icon *ngIf="!isShown5" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShown5" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label></ion-item>\n  <div *ngIf="isShown5">\n    <div padding style="text-align: justify;">\n    Choix du produit : préférer la Levobupivacaïne à la Ropivacaïne, car la durée d\'action est probablement supérieure à dose équivalente\n      <br><br>\n    Calculs de dose \n    <ul class="comment">\n      <li>Le calcul de dose se base sur le <b>poids idéal théorique</b> de l\'enfant</li>\n      <li>Les doses <b>maximales en injection unique</b> à ne pas dépasser sont de <b>5 mg/kg pour la Lidocaïne</b> et de <b>2,5 mg/kg pour la Ropivacaïne et la Levobupivacaïne.</b></li>\n    </ul>\n    En pratique, les doses <b>maximales en injection unique</b> sont les suivantes : \n    <ul class="comment">\n      <li>Lidocaïne 0,5% (5 mg/mL) : 1 mL/kg</li>\n      <li>Lidocaïne 1% (10 mg/mL) : 0,5 mL/kg</li>\n      <li>Lidocaïne 1,5% (mélange 50/50 de 1% et 2%) : 0,375 mL/kg</li>\n      <li>Lidocaïne 2% (20 mg/mL) : 0,25 mL/kg</li>\n      <li>Ropivacaïne 0,2% (2 mg/mL) : 1,25 mL/kg</li>\n      <li>Levobupivacaïne 0,25% (2,5 mg/mL) : 1 mL/kg</li>\n    </ul>\n    Adjuvants :\n    <ul class="comment">\n      <li>Clonidine : 1 µg/kg de poids idéal théorique. Prolonge l\'analgésie et optimise la qualité du bloc sensitif. Ne pas utiliser en période néonatale, prendre en compte les effets secondaires notamment la bradycardie. RFE SFAR 2016.</li>\n      <li>Dexaméthasone : pas de recommandation SFAR à ce jour (2022).</li>\n    </ul>\n      <hr>\n  </div></div>\n\n\n  <ion-item (click)="toggle6()"><ion-label color="turquoise-fonce">\n    Cathéter péri-nerveux\n    <ion-icon *ngIf="!isShown6" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShown6" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label></ion-item>\n  <div *ngIf="isShown6">\n    <div padding style="text-align: justify;">\n      Critères pour envisager la pose : \n      <ul class="comment">\n        <li>Discussion avec l\'opérateur sur la balance bénéfice-risque</li>\n        <li>Geste unilatéral</li>\n        <li>Durée d\'hospitalisation post-opératoire prévue > 24h</li>\n        <li>Retrait dans un délai de 48 à 72h</li>\n        <li>Absence d\'immobilisation plâtrée ou plâtre ne rendant pas impossible (1) la surveillance du point d\'entrée cutané du cathéter et (2) le retrait du cathéter</li>\n      </ul>\n      <br>\n      Fixation du cathéter : \n      <ul class="comment">\n        <li>Option 1 : Colle cutanée (type Dermabond, évitant la fuite d\'anesthésique local) + Stéritrips + Tégaderm, renforcé par des bandes adhésives Tensoplast</li>\n        <li>Option 2 : LOCK-IT Plus + Tégaderm, renforcé par des bandes adhésives type Tensoplast. Attention au risque de plicature des cathéters de pédiatrie dans le LOCK-IT.</li>\n      </ul>\n      Modalités d\'administration : \n      <ul class="comment">\n        <li>Utiliser exclusivement la Ropivacaïne 0,2% ou la Levobupivacaïne 0,125%</li>\n        <li>Privilégier la pompe électronique à l\'infuseur élastomérique, surtout chez le petit enfant</li>\n        <li>Privilégier les débits continus + bolus par PCA (ou NCA chez le petit enfant)</li>\n        <li>Démarrer le débit continu une heure après le bolus d\'induction</li>\n      </ul>\n      <br>\n      Doses maximales en administration continue \n      <ul class="comment">\n        <li>Avant 2 ans : 0,2 mg/kg/h soit 0,1 mL/kg/h de Ropivacaïne 0,2% et 0,15 mL/kg/h de Levobupivacaïne 0,125%</li>\n        <li>Après 2 ans : 0,4 mg/kg/h soit 0,2 mL/kg/h de Ropivacaïne 0,2% et 0,3 mL/kg/h de Levobupivacaïne 0,125% ; sans dépasser 18,75 mg/h et 400 mg/24h</li>\n      </ul>\n\n     \n     \n     \n    \n\n      <hr>\n  </div></div>\n\n\n\n\n\n \n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\generalites-alr\generalites-alr.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], GeneralitesAlrPage);
+    return GeneralitesAlrPage;
+}());
+
+//# sourceMappingURL=generalites-alr.js.map
+
+/***/ }),
+
+/***/ 222:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TapBlockPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2766,51 +2786,16 @@ var TapBlockPage = /** @class */ (function () {
         this.navParams = navParams;
         this.storage = storage;
         this.hasLegend = false;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
+        this.isShownKTPN = false;
     }
     TapBlockPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad TapBlockPage');
     };
     TapBlockPage.prototype.ionViewWillEnter = function () {
-        var _this = this;
-        var promiseList = [];
-        promiseList.push(this.storage.get('AgeNum').then(function (Age) {
-            _this.AgeNum = Age;
-            _this.ageLecture = Math.round((_this.AgeNum / 12) * 10) / 10;
-            _this.storage.get('PoidsNum').then(function (Poids) {
-                _this.PoidsNum = Poids;
-                _this.storage.get('DureeJeune').then(function (dureejeune) {
-                    _this.DureeJeune = dureejeune;
-                    _this.storage.get('EstomacPlein').then(function (Estomac) {
-                        _this.EstomacPlein = Estomac;
-                        console.log('lestomac est plein ?', _this.EstomacPlein);
-                        if (_this.EstomacPlein == true) {
-                            _this.EstomacOuiNon = "plein";
-                        }
-                        else {
-                            _this.EstomacOuiNon = "vide";
-                        }
-                        ;
-                        _this.storage.get('Allergie').then(function (allergie) {
-                            _this.Allergie = allergie;
-                            _this.storage.get('sexeMF').then(function (sexe) {
-                                _this.sexeMF = sexe;
-                                if (!sexe) {
-                                    _this.sexeMF = "Fille";
-                                }
-                                _this.storage.get('Taille').then(function (Taille) {
-                                    _this.Taille = Taille;
-                                    _this.calculs();
-                                });
-                            });
-                        });
-                    });
-                });
-            });
-        }));
-    };
-    ;
-    TapBlockPage.prototype.calculs = function () {
-        /*placer les calculs ici*/
     };
     ;
     TapBlockPage.prototype.retourHome = function () {
@@ -2821,9 +2806,29 @@ var TapBlockPage = /** @class */ (function () {
         this.hasLegend = !this.hasLegend;
     };
     ;
+    TapBlockPage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    TapBlockPage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    TapBlockPage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    TapBlockPage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
+    TapBlockPage.prototype.toggleKTPN = function () {
+        this.isShownKTPN = !this.isShownKTPN;
+    };
+    ;
     TapBlockPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tap-block',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\tap-block\tap-block.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>TAP bloc</div>\n   <br>\n \n    </ion-header>\n\n    <ion-content>\n\n      <ion-card color="turquoise-fonce">\n        <ion-card-content>  Indications : \n          <p class="dilutionDrogueInduction"> - Laparotomie.</p> \n          <p class="dilutionDrogueInduction"> - Chirurgie appendiculaire.</p>\n          <p class="dilutionDrogueInduction"> - Chirurgie de hernie.</p></ion-card-content>\n      </ion-card>\n        <ion-item><ion-label color="dark-turquoise">Technnique</ion-label></ion-item>\n          <div padding>\n            <ul>\n              <li>Echoguidé : sonde haute fréquence large ou "club de Golf" ;</li>\n              <li>Repérage des muscles de la paroi abdominale, latéralement et au dessus de l\'ombilic ; </li>\n              <li>Ponction <i>in plane</i> latéro-médiale permettant de positionner l\'aiguille en arrière de l\'oblique interne et en avant du transverse</li>\n            </ul>\n            <hr>\n          </div>\n          \n        <ion-item><ion-label color="dark-turquoise">Posologie</ion-label></ion-item>\n        <ul class="comment">\n          <li>Ropivacaïne 2 mg/mL jusqu\'à 6 ans et 30 kg, 0,5 mL/kg/côté</li>\n          <li>Ropivacaïne 3,75 mg/mL au-delà de 6 ans et 30 kg, 0,5 mL/kg/côté</li>\n        </ul> \n        <div padding>       \n          <div padding class="patientALR">\n            Pour mon patient \n            <br>\n            Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n            <br><b>\n            <span *ngIf="AgeNum <= 72 || PoidsNum <=30">Ropivacaïne 2 mg/mL : {{PoidsNum/2}} mL/côté</span>\n            <span *ngIf="AgeNum > 72 && PoidsNum > 30">Ropivacaïne 3,75 mg/mL : {{PoidsNum/2}} mL/côté</span></b>\n        </div></div>\n        \n        <ion-item>\n          <ion-label color="dark-turquoise">Imagerie  \n            <div style="float:right ; margin-right:20px">\n            <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n            <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n          </div>\n          </ion-label>\n        </ion-item>\n        <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n        <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n    </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\tap-block\tap-block.html"*/,
+            selector: 'page-tap-block',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\tap-block\tap-block.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>TAP bloc</div>\n   <br>\n \n    </ion-header>\n\n    <ion-content>\n                <ion-card color="turquoise-fonce">\n                  <ion-card-header (click)="toggleIndications()">\n                    Indications\n                    <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n                    <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n                  </ion-card-header>\n                  <ion-card-content *ngIf="isShownIndications"> \n                    <ul>\n                      <li>Chirurgie abdominale et gynécologique par laparotomie.</li>\n                      <li>Chirurgie appendiculaire et herniaire.</li>\n                      </ul> \n                  </ion-card-content>\n                </ion-card>\n          \n                <ion-card>\n                  <ion-card-header (click)="toggleTechnique()">\n                    Technique\n                    <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n                    <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n                  </ion-card-header>\n                  <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">\n                    Bloc réalisé sous échographie, en utilisant la sonde haute fréquence linéaire ou la sonde "club de Golf". \n                    <br>\n                    Repérage des muscles de la paroi abdominale, latéralement et au dessus de l\'ombilic, puis ponction <i>in plane</i> latéro-médiale permettant de positionner l\'aiguille en arrière de l\'oblique interne et en avant du transverse.\n                  </ion-card-content>\n                </ion-card>\n\n\n                <ion-card color="warning">\n                  <ion-card-header (click)="togglePosologie()">\n                    Posologie\n                    <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n                    <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n                  </ion-card-header>\n                  <ion-card-content *ngIf="isShownPosologie">\n                    - Ropivacaïne 2 mg/mL jusqu\'à 6 ans et 30 kg, 0,5 mL/kg/côté. <br>\n                    - Ropivacaïne 3,75 mg/mL au-delà de 6 ans et 30 kg, 0,5 mL/kg/côté.\n                  </ion-card-content>\n                </ion-card>\n\n                <ion-card>\n                  <ion-card-header (click)="toggleLegend()">Imagerie\n                    <ion-icon *ngIf="!hasLegend" class="OpenCloseIcon" color="dark-turquoise" name="eye"></ion-icon>\n                    <ion-icon *ngIf="hasLegend" class="OpenCloseIcon" color="dark-turquoise" name="eye-off"></ion-icon>\n                  </ion-card-header>\n                <ion-card-content>\n                  <div style="float:right ; margin-right:20px">\n                    </div>\n                  <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n                <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n                </ion-card-content>\n                </ion-card>  \n          </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\tap-block\tap-block.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
     ], TapBlockPage);
@@ -2834,14 +2839,14 @@ var TapBlockPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 222:
+/***/ 223:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PeriduralePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2934,7 +2939,7 @@ var PeriduralePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 223:
+/***/ 224:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2963,6 +2968,11 @@ var BlocGrandsDroitsPage = /** @class */ (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.hasLegend = false;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
+        this.isShownKTPN = false;
     }
     BlocGrandsDroitsPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad BlocGrandsDroitsPage');
@@ -2976,9 +2986,29 @@ var BlocGrandsDroitsPage = /** @class */ (function () {
         this.hasLegend = !this.hasLegend;
     };
     ;
+    BlocGrandsDroitsPage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    BlocGrandsDroitsPage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    BlocGrandsDroitsPage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    BlocGrandsDroitsPage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
+    BlocGrandsDroitsPage.prototype.toggleKTPN = function () {
+        this.isShownKTPN = !this.isShownKTPN;
+    };
+    ;
     BlocGrandsDroitsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bloc-grands-droits',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-grands-droits\bloc-grands-droits.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc des grands droits</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n\n  <ion-card color="turquoise-fonce">\n    <ion-card-content>  Indications : \n      <p class="dilutionDrogueInduction"> - Hernie ombilicale.</p> \n      <p class="dilutionDrogueInduction"> - Chirurgie de la ligne blanche.</p>\n      <p class="dilutionDrogueInduction"> - Sténose hyperthrophique du pylore.</p></ion-card-content>\n  </ion-card>\n    <ion-item><ion-label color="dark-turquoise">Technnique</ion-label></ion-item>\n      <div padding>\n        <ul>\n          <li>Echoguidé : sonde haute fréquence large ou "club de Golf" ;</li>\n          <li>Repérage des muscles grands droits, latéralement et au dessus de l\'ombilic ; </li>\n          <li>Ponction <i>in plane</i> latéro-médiale permettant de positionner l\'aiguille en arrière du grand droit et en avant du <i>fascia transversalis.</i></li>\n        </ul>\n        <hr>\n      </div>\n      \n    <ion-item><ion-label color="dark-turquoise">Injection</ion-label></ion-item>\n    <div padding>\n      <ul>\n        <li>Ropivacaïne 2 mg/mL jusqu\'à 6 ans et 30 kg puis Ropivacaïne 3,75 mg/mL ;</li>\n        <li>0,1 à 0,2 mL/kg et par côté. </li>\n      </ul>\n      <hr>\n    </div>\n    \n    <ion-item>\n      <ion-label color="dark-turquoise">Imagerie  \n        <div style="float:right ; margin-right:20px">\n        <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n        <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n      </div>\n      </ion-label>\n    </ion-item>\n    <img *ngIf="!hasLegend" src="assets/imgs/grands_droits_nolegende.png">\n    <img *ngIf="hasLegend" src="assets/imgs/grands_droits_legende.png">\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-grands-droits\bloc-grands-droits.html"*/,
+            selector: 'page-bloc-grands-droits',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-grands-droits\bloc-grands-droits.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc des grands droits</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n  <ion-card color="turquoise-fonce">\n    <ion-card-header (click)="toggleIndications()">\n      Indications\n      <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n      <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n    </ion-card-header>\n    <ion-card-content *ngIf="isShownIndications"> \n      <ul>\n        <li>Hernie ombilicale.</li>\n        <li>Chirurgie de la ligne blanche.</li>\n        <li>Sténose hypertrophique du pylore.</li>\n        </ul> \n    </ion-card-content>\n  </ion-card>\n\n      <ion-card>\n        <ion-card-header (click)="toggleTechnique()">\n          Technique\n          <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n        </ion-card-header>\n        <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">\n          Bloc échoguidé utilisant la sonde linéaire à haute fréquence ou la sonde "club de golf".\n          <br>\n          La sonde est posée en position transverse de part et d\'autre de l\'ombilic, quelques centimètres au dessus. On repère les muscles grands droits, latéralement et au dessus de l\'ombilic. \n          <br>\n          Ponction <i>in plane</i> latéro-médiale permettant de positionner l\'aiguille en arrière du grand droit et en avant du <i>fascia transversalis.</i>\n        </ion-card-content>\n      </ion-card>\n      \n    <ion-card color="warning">\n      <ion-card-header (click)="togglePosologie()">\n        Posologie\n        <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n      </ion-card-header>\n      <ion-card-content *ngIf="isShownPosologie">\n        - Ropivacaïne 2 mg/mL jusqu\'à 6 ans et 30 kg puis Ropivacaïne 3,75 mg/mL, 0,1 à 0,2 mL/kg et par côté.</ion-card-content>\n    </ion-card>\n    \n    <ion-card>\n      <ion-card-header (click)="toggleLegend()">Imagerie\n        <ion-icon *ngIf="!hasLegend" class="OpenCloseIcon" color="dark-turquoise" name="eye"></ion-icon>\n        <ion-icon *ngIf="hasLegend" class="OpenCloseIcon" color="dark-turquoise" name="eye-off"></ion-icon>\n      </ion-card-header>\n    <ion-card-content>\n      <div style="float:right ; margin-right:20px">\n        </div>\n      <img *ngIf="!hasLegend" src="assets/imgs/grands_droits_nolegende.png">\n    <img *ngIf="hasLegend" src="assets/imgs/grands_droits_legende.png">\n    </ion-card-content>\n    </ion-card>  \n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-grands-droits\bloc-grands-droits.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], BlocGrandsDroitsPage);
@@ -2986,86 +3016,6 @@ var BlocGrandsDroitsPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=bloc-grands-droits.js.map
-
-/***/ }),
-
-/***/ 224:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GeneralitesAlrPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the GeneralitesAlrPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var GeneralitesAlrPage = /** @class */ (function () {
-    function GeneralitesAlrPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.isShown1 = false;
-        this.isShown2 = false;
-        this.isShown3 = false;
-        this.isShown4 = false;
-        this.isShown5 = false;
-        this.isShown6 = false;
-    }
-    GeneralitesAlrPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad GeneralitesAlrPage');
-    };
-    ;
-    GeneralitesAlrPage.prototype.retourHome = function () {
-        this.navCtrl.pop();
-    };
-    ;
-    GeneralitesAlrPage.prototype.toggle1 = function () {
-        this.isShown1 = !this.isShown1;
-    };
-    ;
-    GeneralitesAlrPage.prototype.toggle2 = function () {
-        this.isShown2 = !this.isShown2;
-    };
-    ;
-    GeneralitesAlrPage.prototype.toggle3 = function () {
-        this.isShown3 = !this.isShown3;
-    };
-    ;
-    GeneralitesAlrPage.prototype.toggle4 = function () {
-        this.isShown4 = !this.isShown4;
-    };
-    ;
-    GeneralitesAlrPage.prototype.toggle5 = function () {
-        this.isShown5 = !this.isShown5;
-    };
-    ;
-    GeneralitesAlrPage.prototype.toggle6 = function () {
-        this.isShown6 = !this.isShown6;
-    };
-    ;
-    GeneralitesAlrPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-generalites-alr',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\generalites-alr\generalites-alr.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n\n   ALR en pédiatrie</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n\n  <ion-card color="turquoise-fonce">\n    <ion-card-content>  Objectifs : \n      <p class="dilutionDrogueInduction"> - Optimiser l\'analgésie.</p> \n      <p class="dilutionDrogueInduction"> - Réduire la consommation de morphiniques.</p>\n      <p class="dilutionDrogueInduction"> - Favoriser la réhabilitation précoce.</p></ion-card-content>\n  </ion-card>\n\n  <ion-item><ion-label color="danger">Antiseptique<p class="comment">Utiliser la chlorexidine avant l\'âge de 3 mois.<br>La bétadine alcoolique peut être utilisée pour les enfants plus âgés.</p> \n  </ion-label>  </ion-item>\n\n  <ion-item (click)="toggle1()"><ion-label color="turquoise-fonce">\n    Immaturité physiologique & anatomique\n    <ion-icon *ngIf="!isShown1" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShown1" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label></ion-item>\n  <div *ngIf="isShown1">\n  <div padding>\n  Clairance des anesthésiques locaux abaissée et concentration des formes circulantes libres augmentée :  \n  <ul class="comment">\n      <li>La posologie doit systématiquement être adaptée au poids de l\'enfant ;</li>\n      <li>Les risques de toxicités sont majorés en cas de réinjections itératives. </li>\n    </ul>\n    <hr>\n  Fibre nerveuse en développement : \n  <ul class="comment">\n    <li>Faible adhérence des gaines et aponévroses, myélinisation incomplète ;</li>\n    <li>Meilleure diffusion des anesthésiques locaux, permettant l\'utilisation de plus faibles concentrations ; </li>\n    <li>Risque lésionnel majoré en cas de contact nerveux dans les blocs tronculaires. </li>\n  </ul>\n  <hr>\n  Immaturité du système vasculaire et sympathique : \n  <ul class="comment">\n    <li>Résistances vasculaires systémiques basales plus faibles ;</li>\n    <li>Capacité veineuse des membres inférieures proportionnellement plus faible ; </li>\n    <li>Effets hémodynamiques minorés suite à la réalisation d\'une anesthésie loco-régionale péri-médullaire.</li>\n  </ul>\n</div></div>\n  \n  <ion-item (click)="toggle2()"><ion-label color="turquoise-fonce">\n    Particularités techniques\n    <ion-icon *ngIf="!isShown2" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShown2" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label></ion-item>\n  <div *ngIf="isShown2">\n    <div padding>\n    Réalisation d\'une ALR :  \n    <ul class="comment">\n        <li>Mauvaise tolérance des ponctions vigiles chez l\'enfant ;</li>\n        <li>Les blocs à visée analgésique sont réalisés sous AG : le risque de lésion nerveuse est majoré ;</li>\n        <li>Les dimensions sont plus faibles, les distances variables selon l\'âge et le poids : utiliser du matériel adapté (aiguilles, sondes d\'échographie).</li>\n      </ul>\n      <hr>\n    Analgésie périmédullaire : \n    <ul class="comment">\n      <li>Ossification incomplète des vertèbres : attention au risque de pénétration et d\'injection intra-osseuse, qui correspond à une injection intravasculaire ;</li>\n      <li>Terminaison médullaire abaissée jusqu\'à 1 an  ; </li>\n      <li>Lordose lombaire inexistante avant  9 mois : adapter l\'orientation de l\'aiguille. </li>\n    </ul>\n  </div></div>\n\n  <ion-item (click)="toggle3()"><ion-label color="turquoise-fonce">\n    Avantages et limites\n    <ion-icon *ngIf="!isShown3" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShown3" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label></ion-item>\n  <div *ngIf="isShown3">\n    <div padding>\n    Avantages :  \n    <ul class="comment">\n        <li>Réduction du stress lié à la prise en charge ;</li>\n        <li>Réduction des NVPO ;</li>\n        <li>Epargne morphinique, d\'un intérêt tout particulier chez le nouveau-né et le prématuré (apnées) ; </li>\n        <li>Réduction des besoins ventilatoires.</li>\n      </ul>\n      <hr>\n    Contre-indications : \n    <ul class="comment">\n      <li>Refus de l\'enfant ou des parents ;</li>\n      <li>Allergie aux anesthésiques locaux ;</li>\n      <li>Trouble de l\'hémostase majeur, notamment pour l\'analgésie périmédullaire ;</li>\n      <li>Contexte septique local ou systémique non contrôlé. </li>\n    </ul>\n    <hr>\n  </div></div>\n\n\n  <ion-item (click)="toggle4()"><ion-label color="turquoise-fonce">\n    Particularités en orthopédie\n    <ion-icon *ngIf="!isShown4" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShown4" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label></ion-item>\n  <div *ngIf="isShown4">\n    <div padding style="text-align: justify;">\n    Les particularités anatomiques du tiers proximal de jambe et de tout l\'avant-bras impliquent un risque accru de syndrome des loges (SDL) en période périopératoire. \n    Une <b>surveillance attentive</b> des signes cliniques évocateurs de SDL est de rigueur. L\'ALR efficace tend à rendre cette surveillance plus difficile. \n    L\'ALR n\'est pas contre-indiquée dans ces situations mais implique une évaluation du rapport bénéfice-risque avec l\'opérateur et une utilisation de faibles concentrations d\'anesthésique locaux, en évitant les adjuvants.   \n   <br>\n   <br>\n   Il convient de prévoir systématiquement l\'administration d\'antalgiques par voie systémique en per- et post-opératoire, même en l\'absence totale de douleur, pour prévenir le réveil douloureux à la levée du bloc analgésique. \n      <hr>\n  </div></div>\n\n  <ion-item (click)="toggle5()"><ion-label color="turquoise-fonce">\n    Injection unique\n    <ion-icon *ngIf="!isShown5" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShown5" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label></ion-item>\n  <div *ngIf="isShown5">\n    <div padding style="text-align: justify;">\n    Choix du produit : préférer la Levobupivacaïne à la Ropivacaïne, car la durée d\'action est probablement supérieure à dose équivalente\n      <br><br>\n    Calculs de dose \n    <ul class="comment">\n      <li>Le calcul de dose se base sur le <b>poids idéal théorique</b> de l\'enfant</li>\n      <li>Les doses <b>maximales en injection unique</b> à ne pas dépasser sont de <b>5 mg/kg pour la Lidocaïne</b> et de <b>2,5 mg/kg pour la Ropivacaïne et la Levobupivacaïne.</b></li>\n    </ul>\n    En pratique, les doses <b>maximales en injection unique</b> sont les suivantes : \n    <ul class="comment">\n      <li>Lidocaïne 0,5% (5 mg/mL) : 1 mL/kg</li>\n      <li>Lidocaïne 1% (10 mg/mL) : 0,5 mL/kg</li>\n      <li>Lidocaïne 1,5% (mélange 50/50 de 1% et 2%) : 0,375 mL/kg</li>\n      <li>Lidocaïne 2% (20 mg/mL) : 0,25 mL/kg</li>\n      <li>Ropivacaïne 0,2% (2 mg/mL) : 1,25 mL/kg</li>\n      <li>Levobupivacaïne 0,25% (2,5 mg/mL) : 1 mL/kg</li>\n    </ul>\n    Adjuvants :\n    <ul class="comment">\n      <li>Clonidine : 1 µg/kg de poids idéal théorique. Prolonge l\'analgésie et optimise la qualité du bloc sensitif. Ne pas utiliser en période néonatale, prendre en compte les effets secondaires notamment la bradycardie. RFE SFAR 2016.</li>\n      <li>Dexaméthasone : pas de recommandation SFAR à ce jour (2022).</li>\n    </ul>\n      <hr>\n  </div></div>\n\n\n  <ion-item (click)="toggle6()"><ion-label color="turquoise-fonce">\n    Cathéter péri-nerveux\n    <ion-icon *ngIf="!isShown6" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n    <ion-icon *ngIf="isShown6" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n  </ion-label></ion-item>\n  <div *ngIf="isShown6">\n    <div padding style="text-align: justify;">\n      Critères pour envisager la pose : \n      <ul class="comment">\n        <li>Discussion avec l\'opérateur sur la balance bénéfice-risque</li>\n        <li>Geste unilatéral</li>\n        <li>Durée d\'hospitalisation post-opératoire prévue > 24h</li>\n        <li>Retrait dans un délai de 48 à 72h</li>\n        <li>Absence d\'immobilisation plâtrée ou plâtre ne rendant pas impossible (1) la surveillance du point d\'entrée cutané du cathéter et (2) le retrait du cathéter</li>\n      </ul>\n      <br>\n      Fixation du cathéter : \n      <ul class="comment">\n        <li>Option 1 : Colle cutanée (type Dermabond, évitant la fuite d\'anesthésique local) + Stéritrips + Tégaderm, renforcé par des bandes adhésives Tensoplast</li>\n        <li>Option 2 : LOCK-IT Plus + Tégaderm, renforcé par des bandes adhésives type Tensoplast. Attention au risque de plicature des cathéters de pédiatrie dans le LOCK-IT.</li>\n      </ul>\n      Modalités d\'administration : \n      <ul class="comment">\n        <li>Utiliser exclusivement la Ropivacaïne 0,2% ou la Levobupivacaïne 0,125%</li>\n        <li>Privilégier la pompe électronique à l\'infuseur élastomérique, surtout chez le petit enfant</li>\n        <li>Privilégier les débits continus + bolus par PCA (ou NCA chez le petit enfant)</li>\n        <li>Démarrer le débit continu une heure après le bolus d\'induction</li>\n      </ul>\n      <br>\n      Doses maximales en administration continue \n      <ul class="comment">\n        <li>Avant 2 ans : 0,2 mg/kg/h soit 0,1 mL/kg/h de Ropivacaïne 0,2% et 0,15 mL/kg/h de Levobupivacaïne 0,125%</li>\n        <li>Après 2 ans : 0,4 mg/kg/h soit 0,2 mL/kg/h de Ropivacaïne 0,2% et 0,3 mL/kg/h de Levobupivacaïne 0,125% ; sans dépasser 18,75 mg/h et 400 mg/24h</li>\n      </ul>\n\n     \n     \n     \n    \n\n      <hr>\n  </div></div>\n\n\n\n\n\n \n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\generalites-alr\generalites-alr.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], GeneralitesAlrPage);
-    return GeneralitesAlrPage;
-}());
-
-//# sourceMappingURL=generalites-alr.js.map
 
 /***/ }),
 
@@ -3142,13 +3092,48 @@ var BlocTronculaireAbPage = /** @class */ (function () {
     function BlocTronculaireAbPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.hasLegend = false;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
+        this.isShownKTPN = false;
     }
     BlocTronculaireAbPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad BlocTronculaireAbPage');
     };
+    ;
+    BlocTronculaireAbPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    BlocTronculaireAbPage.prototype.toggleLegend = function () {
+        this.hasLegend = !this.hasLegend;
+    };
+    ;
+    BlocTronculaireAbPage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    BlocTronculaireAbPage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    BlocTronculaireAbPage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    BlocTronculaireAbPage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
+    BlocTronculaireAbPage.prototype.toggleKTPN = function () {
+        this.isShownKTPN = !this.isShownKTPN;
+    };
+    ;
     BlocTronculaireAbPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bloc-tronculaire-ab',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-tronculaire-ab\bloc-tronculaire-ab.html"*/'<!--\n  Generated template for the BlocTronculaireAbPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>BlocTronculaireAB</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-tronculaire-ab\bloc-tronculaire-ab.html"*/,
+            selector: 'page-bloc-tronculaire-ab',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-tronculaire-ab\bloc-tronculaire-ab.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Blocs tronculaires à l\'avant-bras</div>\n   <br>\n \n    </ion-header>\n    \n        <ion-content>\n    \n          <ion-card color="turquoise-fonce">\n            <ion-card-header (click)="toggleIndications()">\n              Indications\n              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownIndications"> \n              <ul>\n                <li>Les actes chirurgicaux limités à un ou deux territoires nerveux avec un garrot ne dépassant pas 20 minutes : excision de panaris, suture de lit de l’ongle.</li>\n                <li>Complément au bloc supraclaviculaire ou axillaire imparfait.</li>\n                </ul> \n            </ion-card-content>\n          </ion-card>\n\n    \n          <ion-card>\n            <ion-card-header (click)="toggleTechnique()">\n              Technique\n              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">\n              Bloc échoguidé utilisant la sonde haute fréquence large.\n              <br><br>\n              <b>Bloc du nerf médian</b>\n              <br>\n              Placer la sonde en position transverse sur la face antérieure de l’avant-bras. Balayer la région en remontant la sonde vers le coude. \n              <br>\n              Entre le tiers inférieur et le tiers supérieur de l’avant- bras, au milieu de la ligne entre le bord médial et latéral de l’avant-bras, le nerf médian est facilement identifiable comme une structure hyperéchogène, situé dans le fascia séparant deux groupes musculaires (la loge musculaire antérieure superficielle et profonde de l’avant-bras). Eviter la partie très distale de l’avant-bras (quart distal) car dans cette région le nerf peut être facilement confondu avec de nombreux tendons présents.\n              <br>\n              L’approche dans le plan pourrait être préférable, surtout si le nerf ulnaire est à bloquer en même temps que le nerf médian, pour faire les deux avec une seule ponction. Entourer le nerf d’une petite quantité d’AL ( maximum 5 ml  \n              <br><br>\n              <b>Bloc du nerf ulnaire</b>\n              <br>\n              Placer la sonde en position transverse sur la moitié inféro-interne de l’avant-bras. Identifier l’artère ulnaire accolé au nerf ulnaire dans la partie distale de l’avant-bras.\n              <br>\n              En remontant la sonde en direction du coude, l’artère se détache du nerf, cela correspond à la zone entre le tiers inférieur et le tiers supérieur de l’avant-bras. Le nerf ulnaire se présente comme une structure hyperéchogène, de forme triangulaire ou arrondie entre le plans superficiel et profond des muscles.\n              <br>\n              L’endroit optimal pour entourer le nerf d’une petite quantité d’AL (maximum 5 ml), dans le plan, notamment si on fait le bloc du nerf médian en même temps, ou hors plan, se situe au niveau ou le nerf est tout juste séparé de son artère satellite car il devient plus profond en se dirigeant vers le coude.\n              <br><br>\n              <b>Bloc du nerf radial</b>\n              <br>\n              Abord proximal : placer la sonde en position transverse sur la moitié supéro-externe de l’avant-bras, identifier le radius et le nerf radial, hyperéchogène entre les deux groupes musculaires.\n              <br>\n              Identifier l’artère radiale au niveau du poignet, repérer le nerf radial, hyperéchogène, accolé à celle-ci.\n              <br>  \n              Entourer le nerf d’une petite quantité d’AL (maximum 5 ml).\n            </ion-card-content>\n          </ion-card>\n    \n          <ion-card color="warning">\n            <ion-card-header (click)="togglePosologie()">\n              Posologie\n              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownPosologie">\n              - A visée analgésique, Ropivacaïne 2 mg/mL, 0,2 mg/kg soit 0,1 mL/kg. \n            </ion-card-content>\n          </ion-card>\n    \n            <!--\n            <ion-item>\n              <ion-label color="dark-turquoise">Imagerie  \n                <div style="float:right ; margin-right:20px">\n                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n              </div>\n              </ion-label>\n            </ion-item>\n            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n            -->\n\n    </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-tronculaire-ab\bloc-tronculaire-ab.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], BlocTronculaireAbPage);
@@ -3187,13 +3172,48 @@ var BlocInterCostoBrachialPage = /** @class */ (function () {
     function BlocInterCostoBrachialPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.hasLegend = false;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
+        this.isShownKTPN = false;
     }
     BlocInterCostoBrachialPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad BlocInterCostoBrachialPage');
     };
+    ;
+    BlocInterCostoBrachialPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    BlocInterCostoBrachialPage.prototype.toggleLegend = function () {
+        this.hasLegend = !this.hasLegend;
+    };
+    ;
+    BlocInterCostoBrachialPage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    BlocInterCostoBrachialPage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    BlocInterCostoBrachialPage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    BlocInterCostoBrachialPage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
+    BlocInterCostoBrachialPage.prototype.toggleKTPN = function () {
+        this.isShownKTPN = !this.isShownKTPN;
+    };
+    ;
     BlocInterCostoBrachialPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bloc-inter-costo-brachial',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-inter-costo-brachial\bloc-inter-costo-brachial.html"*/'<!--\n  Generated template for the BlocInterCostoBrachialPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>BlocInterCostoBrachial</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-inter-costo-brachial\bloc-inter-costo-brachial.html"*/,
+            selector: 'page-bloc-inter-costo-brachial',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-inter-costo-brachial\bloc-inter-costo-brachial.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc du nerf intercostobrachial</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n  <ion-card color="turquoise-fonce">\n    <ion-card-header (click)="toggleIndications()">\n      Indications : en complément du bloc axillaire\n      <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n      <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n    </ion-card-header>\n    <ion-card-content *ngIf="isShownIndications"> \n      <ul>\n        <li>Intervention sur la partie médiale du bras.</li>\n        <li>Intervention sur le coude.</li>\n        <li>Amélioration de la tolérance du garrot au bras pour les chirurgies de l\'avant-bras et de la main.</li>\n        </ul> \n    </ion-card-content>\n  </ion-card>\n\n  <ion-card color="tertiary">\n    <ion-card-header (click)="toggleAnatomie()">Rappels d\'anatomie\n      <ion-icon *ngIf="!isShownAnatomie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n      <ion-icon *ngIf="isShownAnatomie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n    </ion-card-header>\n    <ion-card-content *ngIf="isShownAnatomie">\n      L\'innervation cutanée de la région antéro-médiale et postéro-médiale du bras est assurée par les nerfs cutanés médiaux du bras et de l\'avant-bras, qui sont situés en dehors de l\'espace définit entre le fascia brachial et le tendon du grand dorsal dans lequel est réalisé le bloc axillaire. \n    </ion-card-content>\n  </ion-card>\n\n      <ion-card>\n        <ion-card-header (click)="toggleTechnique()">\n          Technique\n          <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n        </ion-card-header>\n        <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">\n          Bloc échoguidé utilisant la sonde linéaire à haute fréquence. Prévoir une aiguille de taille suffisante à la réalisation du bloc dans le plan. \n          <br>\n          Au terme de la réalisation du bloc axillaire, compléter en déplaçant la sonde en direction du thorax de manière à faire apparaître la fusion du fascia brachial avec le fascia grand dorsal. \n          <br>\n          Visualiser alors les deux petits nerfs posés dans le prolongement du fascia du grand dorsant, entre les tissus mous sous-cutanés et le fascia du grand dorsal. Une petite quantité d\'AL suffit à entourer ces deux nerfs.\n          </ion-card-content>\n      </ion-card>\n      \n    <ion-card color="warning">\n      <ion-card-header (click)="togglePosologie()">\n        Posologie\n        <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n      </ion-card-header>\n      <ion-card-content *ngIf="isShownPosologie">\n        - Ropivacaïne 2 mg/mL jusqu\'à 6 ans et 30 kg puis Ropivacaïne 3,75 mg/mL, 0,1 mL/kg.</ion-card-content>\n    </ion-card>\n    \n    <!-- \n    <ion-card>\n      <ion-card-header (click)="toggleLegend()">Imagerie\n        <ion-icon *ngIf="!hasLegend" class="OpenCloseIcon" color="dark-turquoise" name="eye"></ion-icon>\n        <ion-icon *ngIf="hasLegend" class="OpenCloseIcon" color="dark-turquoise" name="eye-off"></ion-icon>\n      </ion-card-header>\n    <ion-card-content>\n      <div style="float:right ; margin-right:20px">\n        </div>\n      <img *ngIf="!hasLegend" src="assets/imgs/grands_droits_nolegende.png">\n    <img *ngIf="hasLegend" src="assets/imgs/grands_droits_legende.png">\n    </ion-card-content>\n    </ion-card>\n    -->  \n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-inter-costo-brachial\bloc-inter-costo-brachial.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], BlocInterCostoBrachialPage);
@@ -3211,7 +3231,6 @@ var BlocInterCostoBrachialPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BlocAxillairePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3223,7 +3242,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 /**
  * Generated class for the BlocAxillairePage page.
  *
@@ -3231,64 +3249,43 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var BlocAxillairePage = /** @class */ (function () {
-    function BlocAxillairePage(navCtrl, navParams, storage) {
+    function BlocAxillairePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.storage = storage;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
     }
     BlocAxillairePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad BlocAxillairePage');
     };
-    BlocAxillairePage.prototype.ionViewWillEnter = function () {
-        var _this = this;
-        var promiseList = [];
-        promiseList.push(this.storage.get('AgeNum').then(function (Age) {
-            _this.AgeNum = Age;
-            _this.ageLecture = Math.round((_this.AgeNum / 12) * 10) / 10;
-            _this.storage.get('PoidsNum').then(function (Poids) {
-                _this.PoidsNum = Poids;
-                _this.PoidsRound = Math.round(_this.PoidsNum);
-                _this.storage.get('DureeJeune').then(function (dureejeune) {
-                    _this.DureeJeune = dureejeune;
-                    _this.storage.get('EstomacPlein').then(function (Estomac) {
-                        _this.EstomacPlein = Estomac;
-                        console.log('lestomac est plein ?', _this.EstomacPlein);
-                        if (_this.EstomacPlein == true) {
-                            _this.EstomacOuiNon = "plein";
-                        }
-                        else {
-                            _this.EstomacOuiNon = "vide";
-                        }
-                        ;
-                        _this.storage.get('Allergie').then(function (allergie) {
-                            _this.Allergie = allergie;
-                            _this.storage.get('sexeMF').then(function (sexe) {
-                                _this.sexeMF = sexe;
-                                if (!sexe) {
-                                    _this.sexeMF = "Fille";
-                                }
-                                _this.storage.get('Taille').then(function (Taille) {
-                                    _this.Taille = Taille;
-                                    _this.calculs();
-                                });
-                            });
-                        });
-                    });
-                });
-            });
-        }));
-    };
-    ;
-    BlocAxillairePage.prototype.calculs = function () { };
-    ;
     BlocAxillairePage.prototype.retourHome = function () {
         this.navCtrl.pop();
     };
+    ;
+    BlocAxillairePage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    BlocAxillairePage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    BlocAxillairePage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    BlocAxillairePage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
     BlocAxillairePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bloc-axillaire',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-axillaire\bloc-axillaire.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc axillaire</div>\n   <br>\n \n    </ion-header>\n\n    <ion-content>\n\n      <ion-card color="turquoise-fonce">\n        <ion-card-content>  Indications : \n          <p class="dilutionDrogueInduction"> - Chirurgie du coude, en associant le bloc du cutané médial du bras.</p> \n          <p class="dilutionDrogueInduction"> - Chirurgie de l\'avant-bras.</p>\n          <p class="dilutionDrogueInduction"> - Chirurgie de la main.</p></ion-card-content>\n      </ion-card>\n        <ion-item><ion-label color="dark-turquoise">Technnique</ion-label></ion-item>\n          <div padding>\n            <ul>\n              <li>Echoguidé : sonde haute fréquence large ou "club de Golf" ;</li>\n              <li>Repérage des muscles de la paroi abdominale, latéralement et au dessus de l\'ombilic ; </li>\n              <li>Ponction <i>in plane</i> latéro-médiale permettant de positionner l\'aiguille en arrière de l\'oblique interne et en avant du transverse</li>\n            </ul>\n            <hr>\n          </div>\n          \n        <ion-item><ion-label color="dark-turquoise">Posologie</ion-label></ion-item>\n        <ul class="comment">\n          <li>Ropivacaïne 2 mg/mL jusqu\'à 6 ans et 30 kg, 0,5 mL/kg/côté</li>\n          <li>Ropivacaïne 3,75 mg/mL au-delà de 6 ans et 30 kg, 0,5 mL/kg/côté</li>\n        </ul> \n        <div padding>       \n          <div padding class="patientALR">\n            Pour mon patient \n            <br>\n            Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n            <br><b>\n            <span *ngIf="AgeNum <= 72 || PoidsNum <=30">Ropivacaïne 2 mg/mL : {{PoidsNum/2}} mL/côté</span>\n            <span *ngIf="AgeNum > 72 && PoidsNum > 30">Ropivacaïne 3,75 mg/mL : {{PoidsNum/2}} mL/côté</span></b>\n        </div></div>\n        \n        <ion-item>\n          <ion-label color="dark-turquoise">Imagerie  \n            <div style="float:right ; margin-right:20px">\n            <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n            <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n          </div>\n          </ion-label>\n        </ion-item>\n        <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n        <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n    </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-axillaire\bloc-axillaire.html"*/,
+            selector: 'page-bloc-axillaire',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-axillaire\bloc-axillaire.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc axillaire</div>\n   <br>\n \n    </ion-header>\n    \n        <ion-content>\n    \n          <ion-card color="turquoise-fonce">\n            <ion-card-header (click)="toggleIndications()">\n              Indications\n              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownIndications"> \n              <ul>\n                <li>Chirurgie du coude, en associant le bloc du cutané médial du bras.</li>\n                <li>Chirurgie de l\'avant-bras.</li>\n                <li>Chirurgie de la main.</li>\n                </ul> \n            </ion-card-content>\n          </ion-card>\n\n          <ion-card color="tertiary">\n            <ion-card-header (click)="toggleAnatomie()">Rappels d\'anatomie\n              <ion-icon *ngIf="!isShownAnatomie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownAnatomie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownAnatomie">\n              Les variations anatomiques de la région axillaire sont fréquentes. \n              <br>\n              Dans une étude associant l\'échographie à la neurostimulation réalisée chez 153 patients, les variations anatomiques de la région peuvent se résumer de la manière suivante chez 90% des patients, par rapport à l\'artère axillaire : \n              <ul>\n                <li>Le nerf radial se situe entre 3h et 6h,</li>\n                <li>Le nerf ulnaire se situe entre midi et 3h,</li>\n                <li>le nerf médian se situe entre 9h et midi,</li>\n                <li>le nerf musculo-cutané se situe entre 7h et 9h. </li>\n              </ul>           \n            </ion-card-content>\n          </ion-card>\n    \n          <ion-card>\n            <ion-card-header (click)="toggleTechnique()">\n              Technique\n              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">\n              Bloc échoguidé utilisant la sonde haute fréquence large.\n              <br>\n              Installation du patient en décubitus dorsal, le bras en abduction à 90°.\n              <br>\n              Poser la sonde en position transverse dans le creux axillaire, contre le muscle grand pectoral. Identifier les structures : artère axillaire pulsative, veines axillaires compressibles, tendon conjoint des muscles grand dorsal et grand rond en dessous de l\'artère.\n              <br>\n              Le nerf radial est niché entre l\'artère et le tendon conjoint, le nerf ulnaire en position médiale, au dessus de l\'artère, le nerf médian en position latérale au dessus de l\'artère. Le nerf musculo-cutné est situé entre le biceps brachial et le muscle coracobrachial. \n              La ponction <i>in plane</i> est préférable, en direction postérieure à partir du bord antérieur de la sonde d\'échographie.\n            </ion-card-content>\n          </ion-card>\n    \n          <ion-card color="warning">\n            <ion-card-header (click)="togglePosologie()">\n              Posologie\n              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownPosologie">\n              - A visée analgésique, Ropivacaïne 2 mg/mL, 1 mg/kg soit 0,5 mL/kg. \n            </ion-card-content>\n          </ion-card>\n    \n            <!--\n            <ion-item>\n              <ion-label color="dark-turquoise">Imagerie  \n                <div style="float:right ; margin-right:20px">\n                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n              </div>\n              </ion-label>\n            </ion-item>\n            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n            -->\n\n    </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-axillaire\bloc-axillaire.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], BlocAxillairePage);
     return BlocAxillairePage;
 }());
@@ -3325,13 +3322,48 @@ var BlocSupraClaviculairePage = /** @class */ (function () {
     function BlocSupraClaviculairePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.hasLegend = false;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
+        this.isShownKTPN = false;
     }
     BlocSupraClaviculairePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad BlocSupraClaviculairePage');
     };
+    ;
+    BlocSupraClaviculairePage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    BlocSupraClaviculairePage.prototype.toggleLegend = function () {
+        this.hasLegend = !this.hasLegend;
+    };
+    ;
+    BlocSupraClaviculairePage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    BlocSupraClaviculairePage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    BlocSupraClaviculairePage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    BlocSupraClaviculairePage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
+    BlocSupraClaviculairePage.prototype.toggleKTPN = function () {
+        this.isShownKTPN = !this.isShownKTPN;
+    };
+    ;
     BlocSupraClaviculairePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bloc-supra-claviculaire',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-supra-claviculaire\bloc-supra-claviculaire.html"*/'<!--\n  Generated template for the BlocSupraClaviculairePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>BlocSupraClaviculaire</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-supra-claviculaire\bloc-supra-claviculaire.html"*/,
+            selector: 'page-bloc-supra-claviculaire',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-supra-claviculaire\bloc-supra-claviculaire.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc supra-claviculaire</div>\n   <br>\n \n    </ion-header>\n    \n        <ion-content>\n    \n          <ion-card color="turquoise-fonce">\n            <ion-card-header (click)="toggleIndications()">\n              Indications\n              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownIndications"> \n              <ul>\n                <li>Chirurgie du coude.</li>\n                <li>Chirurgie de l\'avant-bras.</li>\n                <li>Chirurgie de la main.</li>\n                </ul> \n            </ion-card-content>\n          </ion-card>\n    \n          <ion-card>\n            <ion-card-header (click)="toggleTechnique()">\n              Technique\n              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">\n              Bloc échoguidé utilisant la sonde haute fréquence large.\n              <br>\n              Installation du patient en position dorsale, la tête légèrement tournée du côté controlatéral             \n              <br>\n              Poser la sonde dans la fosse supraclaviculaire parallèlement à la clavicule, pour obtenir une coupe transverse de l’artère subclavière et du plexus brachial.\n              <br>\n              Identifier, de l’intérieur vers l’extérieur, l’artère subclavière, la première côte, la plèvre et le plexus brachial, situé sur la face latérale de l’artère, au-dessus de la première côte. Les nerfs se présentent sous forme d’une grappe de raisins ronds ou ovales, hypoéchogènes.\n              <br>\n              Incliner la sonde en direction caudale, jusqu’à l’obtention d’une image optimale de l’artère subclavière posée <b>sur la première côte</b> ; l’image de l’artère subclavière posée sur la plèvre doit être rejetée en raison du risque de pneumothorax. L’inclinaison caudale de la sonde permet de visualiser l’artère et le plexus posés sur la première côte. A l’inverse, l’inclinaison céphalique offre régulièrement une image montrant l’artère et le plexus posés sur la plèvre.\n              <br>\n              Insérer l’aiguille dans le plan au niveau de l’extrémité latérale de la sonde en direction de l’angle formé par l’artère et la première côte. Injecter la moitié de l’AL et observer la surélévation de l’artère subclavière. Repositionner l’aiguille dans la moitié supérieure du plexus et injecter l’autre moitié de l’AL.\n            </ion-card-content>\n          </ion-card>\n    \n\n          <ion-card color="turquoise-fonce">\n            <ion-card-header (click)="toggleKTPN()">\n              Bloc continu\n              <ion-icon *ngIf="!isShownKTPN" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownKTPN" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownKTPN"> \n              L’approche dans le plan est recommandée. L’aiguille doit être dirigée vers l’angle latéral formé par l’artère et la première côte.\n            </ion-card-content>\n          </ion-card>\n\n          <ion-card color="warning">\n            <ion-card-header (click)="togglePosologie()">\n              Posologie\n              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownPosologie">\n              - A visée analgésique, Ropivacaïne 2 mg/mL, 1 mg/kg soit 0,5 mL/kg. \n            </ion-card-content>\n          </ion-card>\n    \n            <!--\n            <ion-item>\n              <ion-label color="dark-turquoise">Imagerie  \n                <div style="float:right ; margin-right:20px">\n                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n              </div>\n              </ion-label>\n            </ion-item>\n            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n            -->\n\n    </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-supra-claviculaire\bloc-supra-claviculaire.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], BlocSupraClaviculairePage);
@@ -3370,13 +3402,47 @@ var BlocInterScaleniquePage = /** @class */ (function () {
     function BlocInterScaleniquePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.hasLegend = false;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
+        this.isShownKTPN = false;
     }
     BlocInterScaleniquePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad BlocInterScaleniquePage');
     };
+    BlocInterScaleniquePage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    BlocInterScaleniquePage.prototype.toggleLegend = function () {
+        this.hasLegend = !this.hasLegend;
+    };
+    ;
+    BlocInterScaleniquePage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    BlocInterScaleniquePage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    BlocInterScaleniquePage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    BlocInterScaleniquePage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
+    BlocInterScaleniquePage.prototype.toggleKTPN = function () {
+        this.isShownKTPN = !this.isShownKTPN;
+    };
+    ;
     BlocInterScaleniquePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bloc-inter-scalenique',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-inter-scalenique\bloc-inter-scalenique.html"*/'<!--\n  Generated template for the BlocInterScaleniquePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>BlocInterScalenique</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-inter-scalenique\bloc-inter-scalenique.html"*/,
+            selector: 'page-bloc-inter-scalenique',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-inter-scalenique\bloc-inter-scalenique.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc inter-scalénique</div>\n   <br>\n \n    </ion-header>\n\n<ion-content>\n  <ion-card color="turquoise-fonce">\n    <ion-card-header (click)="toggleIndications()">\n      Indications\n      <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n      <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n    </ion-card-header>\n    <ion-card-content *ngIf="isShownIndications"> \n      <ul>\n        <li>Intervention sur la moitié supérieure de l\'humérus.</li>\n        <li>Chirurgie de l\'épaule.</li>\n        <li>Chirurgie des deux tiers externes de la clavicule.</li>\n        </ul> \n    </ion-card-content>\n  </ion-card>\n\n      <ion-card>\n        <ion-card-header (click)="toggleTechnique()">\n          Technique\n          <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n        </ion-card-header>\n        <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">\n          Bloc échoguidé utilisant la sonde linéaire à haute fréquence.\n          <br>\n          Installer le patient en décubitus dorsal ou en position assise à 45°, tête tournée à 45° vers le côté non opéré, bras ipsilatéral le long du corps.\n          <br>\n          Poser la sonde dans la fosse supra-claviculaire, parallèlement à la clavicule. Identifier les structures : première côté, dôme pleural, artère subclavière, plexus brachial sous forme de grappes de raisins ronds ou ovales, hypoéchogènes, sur la face latérale de l\'artère ; muscle scalène antérieur en position médiale par rapport à l\'artère et muscle sternocléidomastoïdien en superficie. \n          <br>\n          Remonter la sonde en direction céphalique : le plexus brachial apparaît comme un ensemble de structures rondes ou ovales, positionnées dans le sillon inter-scalénique, entre les muscles scalène antérieur et moyen. Des mouvements d\'anisotropie en direction céphalique et caudale permettent de visualiser les apophyses transverses cervicales et l\'émergence des racines nerveuses. Les apophyses transverses bituberculées de C4, C5 et C6 forment une image en U associée à l\'ombre osseuse. L\'apophyse transverse de C7 possède un tubercule antérieur rudimentaire voire absent et un tubercule postérieur proéminant et permettant l\'identification de la racine C7. \n          <br>\n          Identifier l\'artère vertébrale en dessous de l\'apophyse transverse de C6 et rechercher la présence d\'autres structures vasculaires pouvant croiser le plexus en recourant au Doppler couleur : artère dorsale de la scapula, artère cervicale superficielle, artère cervicale transverse, artère suprascapulaire.\n          <br> \n          Insérer l\'aiguille dans le plan à hauteur de C5-C6. L\'approche <i>in plane</i> permet de diminuer le risque de bloc du nerf phrénique, généralement situé entre le SCM et le scalène antérieur, donc en position médiale par rapport au plexus brachial. \n          <br>\n          Injecter l\'anesthésique local au contact du fascia latéral en restant à l\'extérieur du plexus du manière à limiter le risque de lésion nerveuse. \n        </ion-card-content>\n      </ion-card>\n\n      <ion-card color="turquoise-fonce">\n        <ion-card-header (click)="toggleKTPN()">\n          Bloc continu\n          <ion-icon *ngIf="!isShownKTPN" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownKTPN" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n        </ion-card-header>\n        <ion-card-content *ngIf="isShownKTPN"> \n          Il est préférable de choisir une approche <i>out of plane</i> avec insertion de l\'aiguille au niveau de C5-C6. L\'insertion trop distale du cathéter peut entraîne une anesthésie de la main sans effet analgésique au niveau de l\'épaule. \n        </ion-card-content>\n      </ion-card>\n      \n    <ion-card color="warning">\n      <ion-card-header (click)="togglePosologie()">\n        Posologie\n        <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n        <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n      </ion-card-header>\n      <ion-card-content *ngIf="isShownPosologie">\n        - Ropivacaïne 2 mg/mL jusqu\'à 6 ans et 30 kg puis Ropivacaïne 3,75 mg/mL, 0,3 mL/kg.</ion-card-content>\n    </ion-card>\n    \n    <!-- \n    <ion-card>\n      <ion-card-header (click)="toggleLegend()">Imagerie\n        <ion-icon *ngIf="!hasLegend" class="OpenCloseIcon" color="dark-turquoise" name="eye"></ion-icon>\n        <ion-icon *ngIf="hasLegend" class="OpenCloseIcon" color="dark-turquoise" name="eye-off"></ion-icon>\n      </ion-card-header>\n    <ion-card-content>\n      <div style="float:right ; margin-right:20px">\n        </div>\n      <img *ngIf="!hasLegend" src="assets/imgs/grands_droits_nolegende.png">\n    <img *ngIf="hasLegend" src="assets/imgs/grands_droits_legende.png">\n    </ion-card-content>\n    </ion-card>\n    -->  \n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-inter-scalenique\bloc-inter-scalenique.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], BlocInterScaleniquePage);
@@ -3415,13 +3481,48 @@ var BlocNerfSaphenePage = /** @class */ (function () {
     function BlocNerfSaphenePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.hasLegend = false;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
+        this.isShownKTPN = false;
     }
     BlocNerfSaphenePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad BlocNerfSaphenePage');
     };
+    ;
+    BlocNerfSaphenePage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    BlocNerfSaphenePage.prototype.toggleLegend = function () {
+        this.hasLegend = !this.hasLegend;
+    };
+    ;
+    BlocNerfSaphenePage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    BlocNerfSaphenePage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    BlocNerfSaphenePage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    BlocNerfSaphenePage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
+    BlocNerfSaphenePage.prototype.toggleKTPN = function () {
+        this.isShownKTPN = !this.isShownKTPN;
+    };
+    ;
     BlocNerfSaphenePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bloc-nerf-saphene',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-nerf-saphene\bloc-nerf-saphene.html"*/'<!--\n  Generated template for the BlocNerfSaphenePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>BlocNerfSaphene</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-nerf-saphene\bloc-nerf-saphene.html"*/,
+            selector: 'page-bloc-nerf-saphene',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-nerf-saphene\bloc-nerf-saphene.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc du nerf saphène</div>\n   <br>\n \n    </ion-header>\n    \n        <ion-content>\n    \n          <ion-card color="turquoise-fonce">\n            <ion-card-header (click)="toggleIndications()">\n              Indications\n              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownIndications"> \n              <ul>\n                <li>Intervention chirurgicale sur la partie médiale du pied.</li>\n                </ul> \n            </ion-card-content>\n          </ion-card>\n\n          \n          <ion-card>\n            <ion-card-header (click)="toggleTechnique()">\n              Technique\n              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">\n              Utiliser la sonde linéaire à haute fréquence. L’identification échographique peut être difficile car le nerf est de petit diamètre et se confond avec les tissus adjacents.\n              <br>\n              Mettre le garrot en dessous du genou, placer la sonde au dessus de la malléole interne. Identifier alors la grande veine saphène, le fascia sous-cutané, situé juste au dessus de la veine saphène et le nerf saphène, fine structure hyperechogène, à proximité de la grande veine saphène, sous le fascia sous cutané. Celui-ci est parfois invisible.\n              <br>\n              Injecter de l’AL, sous le fascia sous cutané, à côté de la veine saphène, en se limitant à un petit volume (ne pas dépasser 10 mL).     \n            </ion-card-content>\n          </ion-card>\n    \n          <ion-card color="warning">\n            <ion-card-header (click)="togglePosologie()">\n              Posologie\n              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownPosologie">\n              - A visée analgésique, Ropivacaïne 2 mg/mL, 0,2 mg/kg soit 0,1 mL/kg. \n            </ion-card-content>\n          </ion-card>\n    \n            <!--\n            <ion-item>\n              <ion-label color="dark-turquoise">Imagerie  \n                <div style="float:right ; margin-right:20px">\n                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n              </div>\n              </ion-label>\n            </ion-item>\n            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n            -->\n\n    </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-nerf-saphene\bloc-nerf-saphene.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], BlocNerfSaphenePage);
@@ -3460,13 +3561,48 @@ var BlocSciatiquePoplitePage = /** @class */ (function () {
     function BlocSciatiquePoplitePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.hasLegend = false;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
+        this.isShownKTPN = false;
     }
     BlocSciatiquePoplitePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad BlocSciatiquePoplitePage');
     };
+    ;
+    BlocSciatiquePoplitePage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    BlocSciatiquePoplitePage.prototype.toggleLegend = function () {
+        this.hasLegend = !this.hasLegend;
+    };
+    ;
+    BlocSciatiquePoplitePage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    BlocSciatiquePoplitePage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    BlocSciatiquePoplitePage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    BlocSciatiquePoplitePage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
+    BlocSciatiquePoplitePage.prototype.toggleKTPN = function () {
+        this.isShownKTPN = !this.isShownKTPN;
+    };
+    ;
     BlocSciatiquePoplitePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bloc-sciatique-poplite',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-sciatique-poplite\bloc-sciatique-poplite.html"*/'<!--\n  Generated template for the BlocSciatiquePoplitePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>BlocSciatiquePoplite</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-sciatique-poplite\bloc-sciatique-poplite.html"*/,
+            selector: 'page-bloc-sciatique-poplite',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-sciatique-poplite\bloc-sciatique-poplite.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc sciatique poplité</div>\n   <br>\n \n    </ion-header>\n    \n        <ion-content>\n    \n          <ion-card color="turquoise-fonce">\n            <ion-card-header (click)="toggleIndications()">\n              Indications\n              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownIndications"> \n              <ul>\n                <li>Chirurgie du pied et de la cheville.</li>\n                <li>Chirurgie sur la partie médiale du pied en association avec un bloc du nerf saphène.</li>\n                </ul> \n            </ion-card-content>\n          </ion-card>\n    \n          <ion-card>\n            <ion-card-header (click)="toggleTechnique()">\n              Technique\n              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">\n              Bloc échoguidé utilisant la sonde haute fréquence linéaire.\n              <br>\n              Patient installé sur le coté, de sorte que la jambe à anesthésier soit positionnée en haut et en extension et la jambe en dessous – légèrement en flexion, un billot au niveau du genou entre les deux extrémités.\n              <br>\n              Poser la sonde en position transverse dans le creux poplité à proximité du pli de flexion du genou.            \n              <br>\n              Identifier l’artère poplité en profondeur. Si elle n’est pas visible, déplacer la sonde distalement, car elle est plus superficielle au niveau du creux poplité. Identifier la veine poplitée, au-dessus de l’artère et le nerf sciatique, ou ses deux composantes, se situant généralement au-dessus et latéralement au paquet vasculaire.\n              <br>\n              Incliner la sonde en direction caudale en remontant vers le haut (vers la tête). Effectuer un balayage céphalo-caudal pour repérer la division du nerf sciatique en nerf fibulaire commun (composante latéral) et nerf tibial (composante médiale) ; parfois le nerf sural est visible entre les deux. Les approches dans et hors du plan peuvent être utilisées. L’aiguille est insérée en direction latéromédiale en cas d’approche dans le plan et sous la sonde – en cas d’approche hors du plan. \n                Positionner l’aiguille au niveau de la division du nerf sciatique, sous la gaine commune et visionner le décollement des deux branches au cours de l\'injection de l\'AL. Attention à ne pas injecter en intraneural, surtout chez le patient endormi.\n           </ion-card-content>\n          </ion-card>\n    \n          <ion-card color="warning">\n            <ion-card-header (click)="togglePosologie()">\n              Posologie\n              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownPosologie">\n              - A visée analgésique, Ropivacaïne 2 mg/mL, 1 mg/kg soit 0,5 mL/kg. \n            </ion-card-content>\n          </ion-card>\n    \n            <!--\n            <ion-item>\n              <ion-label color="dark-turquoise">Imagerie  \n                <div style="float:right ; margin-right:20px">\n                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n              </div>\n              </ion-label>\n            </ion-item>\n            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n            -->\n\n    </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-sciatique-poplite\bloc-sciatique-poplite.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], BlocSciatiquePoplitePage);
@@ -3505,13 +3641,48 @@ var BlocSciatiqueSousGlutealPage = /** @class */ (function () {
     function BlocSciatiqueSousGlutealPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.hasLegend = false;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
+        this.isShownKTPN = false;
     }
     BlocSciatiqueSousGlutealPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad BlocSciatiqueSousGlutealPage');
     };
+    ;
+    BlocSciatiqueSousGlutealPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    BlocSciatiqueSousGlutealPage.prototype.toggleLegend = function () {
+        this.hasLegend = !this.hasLegend;
+    };
+    ;
+    BlocSciatiqueSousGlutealPage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    BlocSciatiqueSousGlutealPage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    BlocSciatiqueSousGlutealPage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    BlocSciatiqueSousGlutealPage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
+    BlocSciatiqueSousGlutealPage.prototype.toggleKTPN = function () {
+        this.isShownKTPN = !this.isShownKTPN;
+    };
+    ;
     BlocSciatiqueSousGlutealPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bloc-sciatique-sous-gluteal',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-sciatique-sous-gluteal\bloc-sciatique-sous-gluteal.html"*/'<!--\n  Generated template for the BlocSciatiqueSousGlutealPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>BlocSciatiqueSousGluteal</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-sciatique-sous-gluteal\bloc-sciatique-sous-gluteal.html"*/,
+            selector: 'page-bloc-sciatique-sous-gluteal',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-sciatique-sous-gluteal\bloc-sciatique-sous-gluteal.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc sciatique sous glutéal</div>\n   <br>\n \n    </ion-header>\n    \n        <ion-content>\n    \n          <ion-card color="turquoise-fonce">\n            <ion-card-header (click)="toggleIndications()">\n              Indications\n              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownIndications"> \n              <ul>\n                <li>Intervention sur la partie distale du fémur.</li>\n                </ul> \n            </ion-card-content>\n          </ion-card>\n    \n          <ion-card>\n            <ion-card-header (click)="toggleTechnique()">\n              Technique\n              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">\n              Bloc échoguidé utilisant la sonde incurvée à basse fréquence.\n              <br>\n              Installer le patient en décubitus ventral ou latéral, côté à bloquer vers le haut, le membre inférieur fléchi à 90°.\n              <br>\n              Tracer une ligne droite entre le grand trochanter et la tubérosité ischiatique. Poser la sonde en position transverse sur la face latérale de la fesse à mi-distance entre le grand trochanteur et la tubérosité ischiatique.\n              <br>\n              Identifier la tubérosité ischiatique médialement, le grand trochanteur latéralement, le muscle grand fessier en superficie, en dessous du tissu adipeux et le muscle carré du fémur en profondeur. \n              Le nerf sciatique est hyperéchogène, de forme ovalaire, situé dans le fascia hyperéchogène des muscles grand fessier et carré du fémur, discrétement plus proche de la tubérosité ischiatique que du grand trochanter.\n              <br>\n              Les approches dans et hors du plan sont possibles.  \n            </ion-card-content>\n          </ion-card>\n    \n          <ion-card color="warning">\n            <ion-card-header (click)="togglePosologie()">\n              Posologie\n              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownPosologie">\n              - A visée analgésique, Ropivacaïne 2 mg/mL, 1 mg/kg soit 0,5 mL/kg. \n            </ion-card-content>\n          </ion-card>\n    \n            <!--\n            <ion-item>\n              <ion-label color="dark-turquoise">Imagerie  \n                <div style="float:right ; margin-right:20px">\n                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n              </div>\n              </ion-label>\n            </ion-item>\n            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n            -->\n\n    </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-sciatique-sous-gluteal\bloc-sciatique-sous-gluteal.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], BlocSciatiqueSousGlutealPage);
@@ -3550,13 +3721,48 @@ var BlocNerfObturateurPage = /** @class */ (function () {
     function BlocNerfObturateurPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.hasLegend = false;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
+        this.isShownKTPN = false;
     }
     BlocNerfObturateurPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad BlocNerfObturateurPage');
     };
+    ;
+    BlocNerfObturateurPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    BlocNerfObturateurPage.prototype.toggleLegend = function () {
+        this.hasLegend = !this.hasLegend;
+    };
+    ;
+    BlocNerfObturateurPage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    BlocNerfObturateurPage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    BlocNerfObturateurPage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    BlocNerfObturateurPage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
+    BlocNerfObturateurPage.prototype.toggleKTPN = function () {
+        this.isShownKTPN = !this.isShownKTPN;
+    };
+    ;
     BlocNerfObturateurPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bloc-nerf-obturateur',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-nerf-obturateur\bloc-nerf-obturateur.html"*/'<!--\n  Generated template for the BlocNerfObturateurPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>BlocNerfObturateur</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-nerf-obturateur\bloc-nerf-obturateur.html"*/,
+            selector: 'page-bloc-nerf-obturateur',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-nerf-obturateur\bloc-nerf-obturateur.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc du nerf obturateur</div>\n   <br>\n \n    </ion-header>\n    \n        <ion-content>\n    \n          <ion-card color="turquoise-fonce">\n            <ion-card-header (click)="toggleIndications()">\n              Indications\n              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownIndications"> \n              <ul>\n                <li>Chirurgie sur la partie proximale du fémur, en association avec le bloc fémoral ou PENG bloc.</li>\n                </ul> \n            </ion-card-content>\n          </ion-card>\n    \n          <ion-card>\n            <ion-card-header (click)="toggleTechnique()">\n              Technique\n              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">\n              Bloc échoguidé utilisant la sonde haute fréquence large.\n              <br>\n              Installer le patient en position dorsale, la jambe en légère rotation externe. \n              <br>\n              Placer la sonde en position transverse, un peu en dessous du pli inguinal et balayer la région supéro-interne de la cuisse.\n              <br>\n              Identifier l’artère et la veine fémorale en dessous du pli inguinal, le muscle iliopsoas, en profondeur des vaisseaux fémoraux et le muscle pectiné. Identifier ensuite les muscles long adducteur, court adducteur et grand adducteur (de la superficie en profondeur), en déplaçant la sonde vers la partie interne de la cuisse.\n              <br>\n              La branche antérieur du nerf obturateur, généralement hyperéchogène, dans le fascia qui sépare les muscles long adducteur et court adducteur (plus superficiels) ; un balayage proximal permet de la repérer à la jonction des fascias des muscles pectiné, long adducteur et court adducteur. \n              La branche postérieure, souvent hyperéchogène, dans le fascia qui sépare les muscles court adducteur et grand adducteur (plus profonds).\n              <br>\n              Remonter très légérement la sonde en direction céphalique et en l’orientant vers le haut. Les deux branches du nerf obturateur se rapprochent progressivement l’une à l’autre et le nerf obturateur apparait sous le muscle pectiné.\n          </ion-card-content>\n          </ion-card>\n    \n          <ion-card color="warning">\n            <ion-card-header (click)="togglePosologie()">\n              Posologie\n              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownPosologie">\n              - A visée analgésique, Ropivacaïne 2 mg/mL, 1 mg/kg soit 0,5 mL/kg. \n            </ion-card-content>\n          </ion-card>\n    \n            <!--\n            <ion-item>\n              <ion-label color="dark-turquoise">Imagerie  \n                <div style="float:right ; margin-right:20px">\n                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n              </div>\n              </ion-label>\n            </ion-item>\n            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n            -->\n\n    </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-nerf-obturateur\bloc-nerf-obturateur.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], BlocNerfObturateurPage);
@@ -3595,13 +3801,38 @@ var BlocCanalAdducteursPage = /** @class */ (function () {
     function BlocCanalAdducteursPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
     }
     BlocCanalAdducteursPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad BlocCanalAdducteursPage');
     };
+    ;
+    BlocCanalAdducteursPage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    BlocCanalAdducteursPage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    BlocCanalAdducteursPage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    BlocCanalAdducteursPage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
+    BlocCanalAdducteursPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
     BlocCanalAdducteursPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bloc-canal-adducteurs',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-canal-adducteurs\bloc-canal-adducteurs.html"*/'<!--\n  Generated template for the BlocCanalAdducteursPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>BlocCanalAdducteurs</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-canal-adducteurs\bloc-canal-adducteurs.html"*/,
+            selector: 'page-bloc-canal-adducteurs',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-canal-adducteurs\bloc-canal-adducteurs.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc au canal des adducteurs</div>\n   <br>\n \n    </ion-header>\n    \n        <ion-content>\n    \n          <ion-card color="turquoise-fonce">\n            <ion-card-header (click)="toggleIndications()">\n              Indications\n              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownIndications"> \n              <ul>\n                <li>Chirurgie du genou : ligamentoplastie, arthrolyse, geste sur le ménisque.</li>\n                <li>Ostéotomie tibiale.</li>\n                <li>Ostéotomie fémorale basse.</li>\n                <li>Intervention sur la face médiale du pied et de la cheville, en complément d\'un bloc sciatique ou d\'un bloc tronculaire.</li>\n                </ul> \n            </ion-card-content>\n          </ion-card>\n    \n          <ion-card>\n            <ion-card-header (click)="toggleTechnique()">\n              Technique\n              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">\n              Bloc échoguidé utilisant la sonde linéaire à haute fréquence.\n              <br>\n              Installation du patient en décubitus dorsal, la jambe en rotation externe légère.\n              <br>\n              Poser la sonde en position transverse sur la partie proximale de la cuisse et balayer en direction du genou.\n              <br>\n              Identifier l\'artère fémorale profonde, le muscle sartorius qui la recouvre et le muscle vaste médial, en position latérale. Le nerf saphène, généralement hyperéchogène, peut être difficile à visualiser. Il se trouve en position latérale à l\'artère, entre le sartorius et le chef vaste médial du quadriceps chez 80% des sujets.\n              <br>\n              Les approches <i>in plane</i> et <i>out of plane</i> sont possibles, en injectant deux tiers du volume d\'AL sur la partie latérale du nerf, et un tiers sur la partie médiale.\n            </ion-card-content>\n          </ion-card>\n    \n          <ion-card color="warning">\n            <ion-card-header (click)="togglePosologie()">\n              Posologie\n              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownPosologie">\n              - A visée analgésique, Ropivacaïne 2 mg/mL, 1 mg/kg soit 0,5 mL/kg. \n            </ion-card-content>\n          </ion-card>\n    \n            <!--\n            <ion-item>\n              <ion-label color="dark-turquoise">Imagerie  \n                <div style="float:right ; margin-right:20px">\n                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n              </div>\n              </ion-label>\n            </ion-item>\n            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n            -->\n\n    </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-canal-adducteurs\bloc-canal-adducteurs.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], BlocCanalAdducteursPage);
@@ -3640,13 +3871,43 @@ var BlocFemoralPage = /** @class */ (function () {
     function BlocFemoralPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
+        this.isShownKTPN = false;
     }
     BlocFemoralPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad BlocFemoralPage');
     };
+    ;
+    BlocFemoralPage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    BlocFemoralPage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    BlocFemoralPage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    BlocFemoralPage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
+    BlocFemoralPage.prototype.toggleKTPN = function () {
+        this.isShownKTPN = !this.isShownKTPN;
+    };
+    ;
+    BlocFemoralPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
     BlocFemoralPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bloc-femoral',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-femoral\bloc-femoral.html"*/'<!--\n  Generated template for the BlocFemoralPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>BlocFemoral</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-femoral\bloc-femoral.html"*/,
+            selector: 'page-bloc-femoral',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-femoral\bloc-femoral.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc fémoral sous inguinal</div>\n   <br>\n \n    </ion-header>\n    \n        <ion-content>\n    \n          <ion-card color="turquoise-fonce">\n            <ion-card-header (click)="toggleIndications()">\n              Indications\n              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownIndications"> \n              <ul>\n                <li>Chirurgie du genou : ligamentoplastie, arthrolyse, geste sur le ménisque.</li>\n                <li>Ostéotomie tibiale.</li>\n                <li>Geste fémoral : ostéotomie, clou, etc.</li>\n                </ul> \n            </ion-card-content>\n          </ion-card>\n    \n          <ion-card>\n            <ion-card-header (click)="toggleTechnique()">\n              Technique\n              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">\n              Bloc échoguidé utilisant la sonde linéaire à haute fréquence.\n              <br>\n              Installation du patient en décubitus dorsal, exposer le pli inguinal, quelques centimètres en dessous du ligament inguinal qui relie l\'épine iliaque antéro-supérieure et le tubercule pubien.\n              <br>\n              Poser la sonde en position transverse le long du pli inguinal. Identifier l\'artère fémorale (en présence de deux artères, déplacer la sonde en direction céphalique afin de la positionner au dessus de la bifurcation fémorale profonde et superficielle). La veine fémorale est médiale par rapport l\'artère.\n              <br>\n              Repérer le muscle iliopsoas en profondeur, en dessous des vaisseaux fémoraux, et le fascia iliaca, ligne hyperéchogène se divisant en deux pour entourer le paquet neurovasculaire.\n              <br>\n              Le nerf fémoral apparait alors comme une structure hyperéchogène ellipsoïde ou triangulaire, posée sur le muscle iliopsoaos et située entre les deux feuilles du fascia iliaca. Il peut aussi être fin et aplati ; parfois se diviser à ce niveau en de multiples brances.\n              <br>\n              Les approches <i>in plane</i> et <i>out of plane</i> sont possibles, en injectant l\'AL à proximité du nerf, entre les deux couches du fascia iliaca.\n              <br>\n              Attention à ne pas confondre le nerf fémoral avec le renforcement postérieur du signal échographique sous l\'artère. L\'utilisation du Doppler couleur permet la visualisation de l\'artère circonflexe latérale lorsqu\'elle croise le nerf fémoral. Le franchissement des fascias lata et iliaca produit souvent une sensation de double ressaut confirmant le bon trajet de l\'aiguille.\n            </ion-card-content>\n          </ion-card>\n\n          <ion-card color="turquoise-fonce">\n            <ion-card-header (click)="toggleKTPN()">\n              Bloc continu\n              <ion-icon *ngIf="!isShownKTPN" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownKTPN" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownKTPN"> \n              L\'objectif est le placement du cathéter dans la partie latérale du trigone fémoral, entre les deux feuilles du fascia iliaca. Le cathéter est avancé de 3 à 4 cm dans l\'espace périneural ; le contrôle de son positionnement est effectué par l\'échographie <b>avant</b> le retrait du guide métallique permettant sa visualisation. Après retrait du guide, un second contrôle est fait en injectant l\'AL et en visualisation sa diffusion en échographie.\n              <br>\n            </ion-card-content>\n          </ion-card>\n    \n          <ion-card color="warning">\n            <ion-card-header (click)="togglePosologie()">\n              Posologie\n              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownPosologie">\n              - A visée analgésique, Ropivacaïne 2 mg/mL, 1 mg/kg soit 0,5 mL/kg. \n            </ion-card-content>\n          </ion-card>\n    \n            <!--\n            <ion-item>\n              <ion-label color="dark-turquoise">Imagerie  \n                <div style="float:right ; margin-right:20px">\n                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n              </div>\n              </ion-label>\n            </ion-item>\n            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n            -->\n\n    </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-femoral\bloc-femoral.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], BlocFemoralPage);
@@ -3664,6 +3925,7 @@ var BlocFemoralPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PengBlocPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3675,6 +3937,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
  * Generated class for the PengBlocPage page.
  *
@@ -3682,22 +3945,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var PengBlocPage = /** @class */ (function () {
-    function PengBlocPage(navCtrl, navParams) {
+    function PengBlocPage(navCtrl, navParams, storage) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.storage = storage;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
     }
     PengBlocPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad PengBlocPage');
+        console.log('ionViewDidLoad PENGBlocPage');
     };
+    ;
+    PengBlocPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    PengBlocPage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    PengBlocPage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    PengBlocPage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    PengBlocPage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
     PengBlocPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-peng-bloc',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\peng-bloc\peng-bloc.html"*/'<!--\n  Generated template for the PengBlocPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>PENGBloc</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\peng-bloc\peng-bloc.html"*/,
+            selector: 'page-peng-bloc',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\peng-bloc\peng-bloc.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>PENG bloc</div> \n   <br>\n \n    </ion-header>\n\n    <ion-content>\n\n      <ion-card color="turquoise-fonce">\n        <ion-card-header (click)="toggleIndications()">\n          Indications\n          <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n        </ion-card-header>\n        <ion-card-content *ngIf="isShownIndications"> \n          <ul>\n            <li>Chirurgie de la partie proximale du fémur.</li>\n            </ul> \n        </ion-card-content>\n      </ion-card>\n\n      <ion-card color="tertiary">\n        <ion-card-header (click)="toggleAnatomie()">Rappels d\'anatomie\n          <ion-icon *ngIf="!isShownAnatomie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownAnatomie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n        </ion-card-header>\n        <ion-card-content *ngIf="isShownAnatomie">La capsule antérieure de la hanche est innervée par le nerf fémoral, le nerf obturateur et le nerf obturateur accessoire. \n          Ces sont les branches articulaires du nerf fémoral et du nerf obturateur accessoire qui sont ciblées par ce bloc. \n          Il doit donc être associé au bloc du nerf obturateur.            \n        </ion-card-content>\n      </ion-card>\n\n      <ion-card>\n        <ion-card-header (click)="toggleTechnique()">\n          Technique\n          <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n        </ion-card-header>\n        <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">\n          Echoguidé : sonde haute fréquence linéaire chez le petit enfant, sonde curviligne chez le grand enfant et l\'adolescent. \n          <br>\n          Installation en décubitus doral, Poser la sonde en position transverse le long du pli inguinal et identifier les structures : artère et veine fémorale, nerf fémoral, muscle iliopsoas en dessous des vaisseaux fémoraux, lignes hyperéchogènes des fascia lata et iliaca.\n          <br>\n          Remonter légèrement en direction céphalique afin de repérer l\'épine iliaque antéro-supérieure latéralement et l\'éminence ilio-pubienne médialement ; au dessus de ces structures osseuses se trouve le muscle iliopsoas, qui apparait comme une structure hypoéchogène arrondie au sein de laquelle est visualisé son tendon, hyperéchogène. \n          <br>\n            Ponctionner <i>in plane</i>, en direction médiale à partir du bord latéral de la sonde d\'échographie, en direction du fond de la cuvette osseuse et sous le tendon iliopsoas. \n            L\'injection d\'AL dans cet espace entraîne l\'élévation du tendon, on cherchera à obtenir une diffusion médiale de l\'AL.\n        </ion-card-content>\n      </ion-card>\n\n      <ion-card color="warning">\n        <ion-card-header (click)="togglePosologie()">\n          Posologie\n          <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n          <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n        </ion-card-header>\n        <ion-card-content *ngIf="isShownPosologie">\n          - Ropivacaïne 2 mg/mL, 1 mg/kg soit 0,5 mL/kg. \n        </ion-card-content>\n      </ion-card>\n\n        <!--\n        <ion-item>\n          <ion-label color="dark-turquoise">Imagerie  \n            <div style="float:right ; margin-right:20px">\n            <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n            <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n          </div>\n          </ion-label>\n        </ion-item>\n        <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n        <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n        -->\n    </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\peng-bloc\peng-bloc.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
     ], PengBlocPage);
     return PengBlocPage;
 }());
 
+;
 //# sourceMappingURL=peng-bloc.js.map
 
 /***/ }),
@@ -3709,6 +4001,7 @@ var PengBlocPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CutaneLateralCuissePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3720,6 +4013,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
  * Generated class for the CutaneLateralCuissePage page.
  *
@@ -3727,22 +4021,61 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var CutaneLateralCuissePage = /** @class */ (function () {
-    function CutaneLateralCuissePage(navCtrl, navParams) {
+    function CutaneLateralCuissePage(navCtrl, navParams, storage) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.storage = storage;
+        this.hasLegend = false;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
+        this.isShownKTPN = false;
     }
     CutaneLateralCuissePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad CutaneLateralCuissePage');
     };
+    ;
+    CutaneLateralCuissePage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    CutaneLateralCuissePage.prototype.toggleLegend = function () {
+        this.hasLegend = !this.hasLegend;
+    };
+    ;
+    CutaneLateralCuissePage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    CutaneLateralCuissePage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    CutaneLateralCuissePage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    CutaneLateralCuissePage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
+    CutaneLateralCuissePage.prototype.toggleKTPN = function () {
+        this.isShownKTPN = !this.isShownKTPN;
+    };
+    ;
     CutaneLateralCuissePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cutane-lateral-cuisse',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\cutane-lateral-cuisse\cutane-lateral-cuisse.html"*/'<!--\n  Generated template for the CutaneLateralCuissePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>CutaneLateralCuisse</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\cutane-lateral-cuisse\cutane-lateral-cuisse.html"*/,
+            selector: 'page-cutane-lateral-cuisse',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\cutane-lateral-cuisse\cutane-lateral-cuisse.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc du nerf CL de cuisse</div>\n   <br>\n \n    </ion-header>\n\n    <ion-content>\n\n      <ion-card color="turquoise-fonce">\n        <ion-card-content>  Indications : \n          <p class="dilutionDrogueInduction"> - Ostéotomie fémorale distale.</p> \n          <p class="dilutionDrogueInduction"> - Ostéotomie fémorale moyenne avec incision de la face latérale de cuisse.</p>\n        </ion-card-content>\n      </ion-card>\n        <ion-item><ion-label color="dark-turquoise">Technnique</ion-label></ion-item>\n          <div padding>\n            <ul class="comment" style="text-align: justify;">\n              <li>Echoguidé : sonde haute fréquence large ;</li>\n              <li>Installation en décubitus doral ;</li>\n              <li>Poser la sonde en position transverse le long du pli inguinal ; </li>\n              <li>Identifier les structures : artère et veine fémorale, muscle iliopsoas en dessous des vaisseaux fémoraux, lignes hyperéchogènes des fascia lata et iliaca ;</li>\n              <li>Les muscles sartorius et tenseur du fascia lata apparaissent lorsque la sonde est déplacée latéralement, en dessous des fascias</li>\n              <li>Les branches du nerf cutané latéral de cuisse sont situées dans le triangle formé par le fascia lata (superficiellement), le sartorius (médialement) et le muscle tenseur du fascia lata (latéralement) ;</li>\n              <li>Ces branches apparaissent comme de fines structures hyper ou hyperéchogènes, parfois difficiles à visualiser ;</li>\n              <li>Ponction <i>in plane</i> préférable, en direction médiale à partir du bord latéral de la sonde d\'échographie.</li>\n            </ul>\n            <hr>\n          </div>\n          \n        <ion-item><ion-label color="dark-turquoise">Posologie</ion-label></ion-item>\n        <ul class="comment">\n          <li>Ropivacaïne 2 mg/mL jusqu\'à 6 ans et 30 kg, 0,5 mL/kg</li>\n          <li>Ropivacaïne 3,75 mg/mL au-delà de 6 ans et 30 kg, 0,5 mL/kg</li>\n        </ul>\n        <div padding>       \n          <div padding class="patientALR">\n            Pour mon patient \n            <br>\n            Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg\n            <br><b>\n            <span *ngIf="AgeNum <= 72 || PoidsNum <=30">Ropivacaïne 2 mg/mL : {{PoidsNum/2}} mL/côté</span>\n            <span *ngIf="AgeNum > 72 && PoidsNum > 30">Ropivacaïne 3,75 mg/mL : {{PoidsNum/2}} mL/côté</span></b>\n        </div></div>\n        \n        <!--\n        <ion-item>\n          <ion-label color="dark-turquoise">Imagerie  \n            <div style="float:right ; margin-right:20px">\n            <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n            <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n          </div>\n          </ion-label>\n        </ion-item>\n        <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n        <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n        -->\n    </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\cutane-lateral-cuisse\cutane-lateral-cuisse.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
     ], CutaneLateralCuissePage);
     return CutaneLateralCuissePage;
 }());
 
+;
 //# sourceMappingURL=cutane-lateral-cuisse.js.map
 
 /***/ }),
@@ -3775,13 +4108,48 @@ var BlocPudendalPage = /** @class */ (function () {
     function BlocPudendalPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.hasLegend = false;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
+        this.isShownKTPN = false;
     }
     BlocPudendalPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad BlocPudendalPage');
     };
+    ;
+    BlocPudendalPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    BlocPudendalPage.prototype.toggleLegend = function () {
+        this.hasLegend = !this.hasLegend;
+    };
+    ;
+    BlocPudendalPage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    BlocPudendalPage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    BlocPudendalPage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    BlocPudendalPage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
+    BlocPudendalPage.prototype.toggleKTPN = function () {
+        this.isShownKTPN = !this.isShownKTPN;
+    };
+    ;
     BlocPudendalPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bloc-pudendal',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-pudendal\bloc-pudendal.html"*/'<!--\n  Generated template for the BlocPudendalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>BlocPudendal</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-pudendal\bloc-pudendal.html"*/,
+            selector: 'page-bloc-pudendal',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-pudendal\bloc-pudendal.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc pudendal</div>\n   <br>\n \n    </ion-header>\n    \n        <ion-content>\n    \n          <ion-card color="turquoise-fonce">\n            <ion-card-header (click)="toggleIndications()">\n              Indications\n              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownIndications"> \n              <ul>\n                <li>Chirurgie de la verge, notamment la circoncision.</li>\n                <li>Chirurgie testiculaire avec abord scrotal.</li>\n                <li>Chirurgie anale.</li>\n                </ul> \n            </ion-card-content>\n          </ion-card>\n    \n          <ion-card>\n            <ion-card-header (click)="toggleTechnique()">\n              Technique\n              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">\n              Bloc utilisant la neurostimulation.\n              </ion-card-content>\n          </ion-card>\n    \n          <ion-card color="warning">\n            <ion-card-header (click)="togglePosologie()">\n              Posologie\n              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownPosologie">\n              - A visée analgésique, Ropivacaïne 2 mg/mL, 0,6 mg/kg soit 0,3 mL/kg/côté. \n            </ion-card-content>\n          </ion-card>\n    \n            <!--\n            <ion-item>\n              <ion-label color="dark-turquoise">Imagerie  \n                <div style="float:right ; margin-right:20px">\n                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n              </div>\n              </ion-label>\n            </ion-item>\n            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n            -->\n\n    </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-pudendal\bloc-pudendal.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], BlocPudendalPage);
@@ -3820,13 +4188,48 @@ var BlocPenienPage = /** @class */ (function () {
     function BlocPenienPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.hasLegend = false;
+        this.isShownIndications = false;
+        this.isShownAnatomie = false;
+        this.isShownTechnique = false;
+        this.isShownPosologie = false;
+        this.isShownKTPN = false;
     }
     BlocPenienPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad BlocPenienPage');
     };
+    ;
+    BlocPenienPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    BlocPenienPage.prototype.toggleLegend = function () {
+        this.hasLegend = !this.hasLegend;
+    };
+    ;
+    BlocPenienPage.prototype.toggleIndications = function () {
+        this.isShownIndications = !this.isShownIndications;
+    };
+    ;
+    BlocPenienPage.prototype.toggleAnatomie = function () {
+        this.isShownAnatomie = !this.isShownAnatomie;
+    };
+    ;
+    BlocPenienPage.prototype.toggleTechnique = function () {
+        this.isShownTechnique = !this.isShownTechnique;
+    };
+    ;
+    BlocPenienPage.prototype.togglePosologie = function () {
+        this.isShownPosologie = !this.isShownPosologie;
+    };
+    ;
+    BlocPenienPage.prototype.toggleKTPN = function () {
+        this.isShownKTPN = !this.isShownKTPN;
+    };
+    ;
     BlocPenienPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bloc-penien',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-penien\bloc-penien.html"*/'<!--\n  Generated template for the BlocPenienPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>BlocPenien</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-penien\bloc-penien.html"*/,
+            selector: 'page-bloc-penien',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-penien\bloc-penien.html"*/'<ion-header><br>\n  <div class="header"> \n\n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>Bloc pénien</div>\n   <br>\n \n    </ion-header>\n    \n        <ion-content>\n    \n          <ion-card color="turquoise-fonce">\n            <ion-card-header (click)="toggleIndications()">\n              Indications\n              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownIndications"> \n              <ul>\n                <li>Chirurgie de la verge, notamment la circoncision.</li>\n              </ul> \n            </ion-card-content>\n          </ion-card>\n\n          <ion-card color="tertiary">\n            <ion-card-header (click)="toggleAnatomie()">Rappels d\'anatomie\n              <ion-icon *ngIf="!isShownAnatomie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownAnatomie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownAnatomie">\n                \n            </ion-card-content>\n          </ion-card>\n    \n          <ion-card>\n            <ion-card-header (click)="toggleTechnique()">\n              Technique\n              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">\n              Bloc échoguidé utilisant la sonde haute fréquence large ou la sonde "club de golf".\n              <br>\n              Installation du patient en décubitus dorsal.\n              <br>\n              Placer la sonde au-dessus de la verge, en dessous de l\'os pubien.\n              <br>\n              Identifier les corps caverneux, avancer l\'aiguille dans le sens latéro-médial, veiller à bien observer la diffusion de l\'AL sous les corps caverneux.\n            </ion-card-content>\n          </ion-card>\n    \n          <ion-card color="warning">\n            <ion-card-header (click)="togglePosologie()">\n              Posologie\n              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>\n              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>\n            </ion-card-header>\n            <ion-card-content *ngIf="isShownPosologie">\n              - A visée analgésique, Ropivacaïne 2 mg/mL, 0,2 mg/kg soit 0,1 mL/kg/côté. \n            </ion-card-content>\n          </ion-card>\n    \n            <!--\n            <ion-item>\n              <ion-label color="dark-turquoise">Imagerie  \n                <div style="float:right ; margin-right:20px">\n                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>\n                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>\n              </div>\n              </ion-label>\n            </ion-item>\n            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">\n            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">\n            -->\n\n    </ion-content>'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages-alr\bloc-penien\bloc-penien.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], BlocPenienPage);
@@ -3844,7 +4247,7 @@ var BlocPenienPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntalgiePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__main_pages_scores_scores__ = __webpack_require__(118);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4133,7 +4536,7 @@ var AntalgiePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accueil_accueil__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4283,7 +4686,7 @@ var OptionsPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MonitoragePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4679,7 +5082,7 @@ var MonitoragePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AntibioprophylaxiePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_medicaments__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__);
@@ -4957,7 +5360,7 @@ var AntibioprophylaxiePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SauvegardePatientPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5085,7 +5488,7 @@ var SauvegardePatientPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HtmPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5363,7 +5766,7 @@ var HtmPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnaphylaxiePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__acr_acr__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__catecholamines_catecholamines__ = __webpack_require__(137);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -5480,7 +5883,7 @@ var AnaphylaxiePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AsthmePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5621,7 +6024,7 @@ var AsthmePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EpilepsiePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5735,7 +6138,7 @@ var EpilepsiePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HtaPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5845,7 +6248,7 @@ var HtaPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IntoxicationPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5950,7 +6353,7 @@ var IntoxicationPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MetaboliquePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6119,8 +6522,8 @@ var MetaboliquePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CourbesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__(864);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__(865);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_chart_js__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -6821,6 +7224,7 @@ var InfoPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_scores_mucopolysaccharidose_mucopolysaccharidose__ = __webpack_require__(507);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__chirurgies_chirurgie_orthognatique_chirurgie_orthognatique__ = __webpack_require__(508);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_dispositifs_doppler_oesophagien_doppler_oesophagien__ = __webpack_require__(509);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_dispositifs_nirs_nirs__ = __webpack_require__(510);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6830,6 +7234,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -6874,6 +7279,7 @@ var ProtocolesPage = /** @class */ (function () {
         this.dispositifs = [
             { nom: "ANI", nomcomplet: "Analgesia/Nociception Index", page: __WEBPACK_IMPORTED_MODULE_2__pages_dispositifs_ani_ani__["a" /* AniPage */] },
             { nom: "DTO", nomcomplet: "Doppler Trans-Oesophagien", page: __WEBPACK_IMPORTED_MODULE_23__pages_dispositifs_doppler_oesophagien_doppler_oesophagien__["a" /* DopplerOesophagienPage */] },
+            { nom: "NIRS", nomcomplet: "Near-InfraRed Spectrometry", page: __WEBPACK_IMPORTED_MODULE_24__pages_dispositifs_nirs_nirs__["a" /* NirsPage */] },
         ];
         this.algorithmes = [
             { nom: "Bilan préopératoire", nomcomplet: "Algorithme décisionnel d'aide à la prescription de bilan pré-opératoire en pédiatrie", validation: "Pr. S. Dahmani, juin 2018", page: __WEBPACK_IMPORTED_MODULE_16__pages_scores_bilan_pre_op_bilan_pre_op__["a" /* BilanPreOpPage */] },
@@ -7008,7 +7414,7 @@ var AniPage = /** @class */ (function () {
     ;
     AniPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-ani',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_dispositifs\ani\ani.html"*/'<!--\n  Generated template for the AniPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header padding>\n  <div class="header"> \n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n    ANI</div>\n    <br>\n    <span class="reference">Fabriquant : <a href="https://mdoloris.com/technologies/adults-and-pediatrics/" target="_blank"> MDoloris Medical Systems </a>, Lille, France</span>\n</ion-header>\n<ion-content>\n  <ion-card class="drogueContainer">\n    <ion-card-content>\n     \n  \n      <div class="aideMemoire"><b>Objectif</b> : \n        <p class="comment">Faciliter la gestion des drogues antalgiques en per-opératoire</p></div> \n      <hr>\n      <div class="aideMemoire"><b>Principe</b> :\n        <p class="comment">Propose un index d\'activité parasympathique (p&Sigma;) calculé sur la base des variations de l\'espace RR (ECG) au cours du cycle respiratoire. </p> </div>\n      <hr>\n      <div class="aideMemoire">\n        <b>Interprétation</b> : \n        <p class="comment">Réactivité sympathique à une stimulation nociceptive dans les 10 minutes.\n        <br>- p&Sigma; > 70 :  très improbable, envisager une réduction de l\'analgésie ;\n        <br>- 50 < p&Sigma; < 70 : peu probable, fenêtre cible ;\n        <br>- p&Sigma; < 50 : très probable, envisager l\'administration d\'antalgique.\n      </p></div>\n      <hr>\n      <div class="aideMemoire"><b>Limites</b> : \n        <p class="comment">\n        - Arythmie cardiaque ;\n        <br> - Changement de volume courant dans la dernière minute, respiration irrégulière ;\n        <br> - Fréquence respiratoire < 9/minute ou apnée ;\n        <br> - Modification pharmacologique de la fréquence cardiaque : atropine, éphédrine, catécholamines, etc.\n      </p></div>\n      <hr>\n      <p class="aideMemoire"><b>Electrodes & moniteur</b> :</p>\n      <img class="imgAideMemoire" src="/assets/imgs/ani.jpg">\n      <img class="imgANIMoniteur" src="/assets/imgs/animoniteur.png">\n  \n    </ion-card-content>\n  \n  \n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_dispositifs\ani\ani.html"*/,
+            selector: 'page-ani',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_dispositifs\ani\ani.html"*/'<ion-header padding>\n  <div class="header"> \n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n    ANI</div>\n    <br>\n    <span class="reference">Fabriquant : <a href="https://mdoloris.com/technologies/adults-and-pediatrics/" target="_blank"> MDoloris Medical Systems </a>, Lille, France</span>\n</ion-header>\n<ion-content>\n  <ion-card class="drogueContainer">\n    <ion-card-content>\n     \n  \n      <div class="aideMemoire"><b>Objectif</b> : \n        <p class="comment">Faciliter la gestion des drogues antalgiques en per-opératoire</p></div> \n      <hr>\n      <div class="aideMemoire"><b>Principe</b> :\n        <p class="comment">Propose un index d\'activité parasympathique (p&Sigma;) calculé sur la base des variations de l\'espace RR (ECG) au cours du cycle respiratoire. </p> </div>\n      <hr>\n      <div class="aideMemoire">\n        <b>Interprétation</b> : \n        <p class="comment">Réactivité sympathique à une stimulation nociceptive dans les 10 minutes.\n        <br>- p&Sigma; > 70 :  très improbable, envisager une réduction de l\'analgésie ;\n        <br>- 50 < p&Sigma; < 70 : peu probable, fenêtre cible ;\n        <br>- p&Sigma; < 50 : très probable, envisager l\'administration d\'antalgique.\n      </p></div>\n      <hr>\n      <div class="aideMemoire"><b>Limites</b> : \n        <p class="comment">\n        - Arythmie cardiaque ;\n        <br> - Changement de volume courant dans la dernière minute, respiration irrégulière ;\n        <br> - Fréquence respiratoire < 9/minute ou apnée ;\n        <br> - Modification pharmacologique de la fréquence cardiaque : atropine, éphédrine, catécholamines, etc.\n      </p></div>\n      <hr>\n      <p class="aideMemoire"><b>Electrodes & moniteur</b> :</p>\n      <img class="imgAideMemoire" src="/assets/imgs/ani.jpg">\n      <img class="imgANIMoniteur" src="/assets/imgs/animoniteur.png">\n  \n    </ion-card-content>\n  \n  \n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_dispositifs\ani\ani.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], AniPage);
@@ -7026,7 +7432,7 @@ var AniPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExtrophieVesicalePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7254,7 +7660,7 @@ var ExtrophieVesicalePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScoliosePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8286,7 +8692,7 @@ var EnrhumePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaparoschisisPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8735,7 +9141,7 @@ var DrepanocytosePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NouveauNeSspiPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9168,7 +9574,7 @@ var MucopolysaccharidosePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChirurgieOrthognatiquePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9371,6 +9777,56 @@ var DopplerOesophagienPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NirsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the NirsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var NirsPage = /** @class */ (function () {
+    function NirsPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    NirsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad NirsPage');
+    };
+    ;
+    NirsPage.prototype.retourHome = function () {
+        this.navCtrl.pop();
+    };
+    ;
+    NirsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-nirs',template:/*ion-inline-start:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_dispositifs\nirs\nirs.html"*/'<ion-header padding>\n  <div class="header"> \n    <div (click)="retourHome()" class="backButton">\n    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>\n    Retour\n    </div>\n    NIRS</div>\n    <br>\n    <span class="reference">Fabriquant : <a href="https://www.medtronic.com/fr-fr/index.html" target="_blank"> MedTronic </a>, Paris, France</span>\n</ion-header>\n<ion-content>\n  <ion-card class="drogueContainer">\n    <ion-card-content>\n     \n      <div class="aideMemoire"><b>Objectif</b> : \n        <p class="comment">Optimiser l\'hémodynamique par la mesure de la saturation régionale en O2 cérébrale, reflet indirect de la perfusion cérébrale</p></div> \n      <hr>\n      <div class="aideMemoire"><b>Principe</b> :\n        <p class="comment">\n          Mesure de la transmission de la lumière proche infra-rouge (Near InfraRed Spectrometry) à travers les tissus et son absorption par les chromophores (molécules capables d’absorber les photons et d’ainsi donner une couleur à la molécule) qui dépend du coefficient d’absorption du chromophore et de la distance entre le tissu et la lumière proche infra-rouge (formule de Beer-Lambert). \n          <br>\n          Deux chromophores sont utilisés par le NIRS l\'oxyhémoglobine et l\'hémoglobine réduite. La saturation tissulaire régionale en O2 est donnée par le rapport Hb<sub>O2</sub>/(Hb<sub>O2</sub> + Hb<sub>réduite</sub>). \n          <br>\n          Deux couples émetteur-récepteur sont utilisés : un pour les tissus superficiels, l\'autre couvrant une zone de tissus superficiels et profonds. La soustraction du signal du premier couple permet d’obtenir une valeur plus précise de l’oxygénation cérébrale.\n        </p> </div>\n\n        <div class="aideMemoire">\n          <b>Intérêt</b> :\n          <p class="comment">\n            Évaluation de l\'oxygénation cérébrale en continu, dont les déterminants principaux sont la SaO2, le débit cardiaque et de la CMRO2 (consommation cérébrale en O2) et la vasodilatation cérébrale.\n          </p>\n        </div>\n        \n\n          <hr>\n\n      <div class="aideMemoire">\n        <b>Interprétation</b> : \n        <p class="comment">\n          La valeur absolue et les variations par rapport à la valeur de référence du patient sont à interpréter. \n          <br>\n          Une variation de plus de 20% par rapport aux valeurs de référence du patient ou une diminution du NIRS en dessous de 65% témoigne d\'un défaut d\'oxygénation cérébrale, lié soit à un défaut d\'oxygénation global, soit le plus souvent à une anomalie du transporteur (baisse de la pression de perfusion cérébrale, baisse du débit cardiaque ou anémie aiguë). \n          <br>\n          Il convient alors de considérer une intervention correctrice, adaptée aux autres données de monitorage, en évaluant : \n          <br> - l\'hématose (vérifier la capnographie et la la Spo2) ; \n          <br> - la pression artérielle ;  \n          <br> - la volémie ; \n          <br> - l\'hémoglobinémie. \n        </p>\n      </div>\n      \n      <hr>\n\n      <div class="aideMemoire"><b>Limites</b> : \n        <p class="comment">\n          -	Ne permet pas de faire la différence entre l’O2 dans les artères et dans les veines (car absence de pléthysmographie).\n      <br>-	Pas de mesure possible de la quantité absolue d’HbO2 (distance entre source de lumière et tissu variable, algorithme différents).\n      <br>-	Pas de garantie de mesurer la « vraie » rScO2 cérébrale (car plusieurs tissus présents mais atténuation des erreurs par algorithme).\n      <br>-	Les variations de proportions entre sang veineux et artériel (l’ouverture ou la fermeture d’un shunt vasculaire, la constitution d’un hématome, l’hémodilution) et les variations de distance entre le tissu et le capteur (œdème, kyste) sont autant de facteurs pouvant faire varier le NIRS sans pour autant être une vraie variation de l’oxygénation cérébrale.\n      <br>-	Ne permet d’analyser qu’une faible partie du parenchyme cérébral &lt; 1,5cm<sup>3</sup>.\n      <br>-	Attention en cas d’ictère, risque de valeur « aberrante » initiale.\n        </p></div>\n      <hr>\n      <p class="aideMemoire"><b>Electrodes & moniteur</b> :</p>\n      <img src="/assets/imgs/nirs.jpg">\n  \n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\pierr\OneDrive\Documents\GitHub\qu4drup3d\src\pages\pages_dispositifs\nirs\nirs.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], NirsPage);
+    return NirsPage;
+}());
+
+//# sourceMappingURL=nirs.js.map
+
+/***/ }),
+
+/***/ 511:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecommandationsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
@@ -9551,14 +10007,14 @@ var RecommandationsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 511:
+/***/ 512:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MedicamentsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_service_data_liste_medicaments__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__);
@@ -9632,13 +10088,13 @@ var MedicamentsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 553:
+/***/ 554:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(554);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(558);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(555);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(559);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -9646,7 +10102,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 558:
+/***/ 559:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9654,13 +10110,13 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(884);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(885);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(885);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(886);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser_ngx__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(551);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(552);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(552);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(553);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_service_data_liste_medicaments__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_accueil_accueil__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_modules_options_options__ = __webpack_require__(243);
@@ -9669,11 +10125,11 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_modules_gestion_fluides_gestion_fluides__ = __webpack_require__(219);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_modules_antalgie_antalgie__ = __webpack_require__(242);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_modules_entretien_anesth_entretien_anesth__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_pages_alr_generalites_alr_generalites_alr__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_pages_alr_generalites_alr_generalites_alr__ = __webpack_require__(221);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_modules_loco_regionale_loco_regionale__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_pages_alr_tap_block_tap_block__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_pages_alr_peridurale_peridurale__ = __webpack_require__(222);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_pages_alr_bloc_grands_droits_bloc_grands_droits__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_pages_alr_tap_block_tap_block__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_pages_alr_peridurale_peridurale__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_pages_alr_bloc_grands_droits_bloc_grands_droits__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_pages_alr_bloc_maxillaire_bloc_maxillaire__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_pages_alr_bloc_tronculaire_ab_bloc_tronculaire_ab__ = __webpack_require__(226);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_pages_alr_bloc_inter_costo_brachial_bloc_inter_costo_brachial__ = __webpack_require__(227);
@@ -9695,11 +10151,11 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_chirurgies_scoliose_scoliose__ = __webpack_require__(489);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_chirurgies_laparoschisis_laparoschisis__ = __webpack_require__(500);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_chirurgies_chirurgie_orthognatique_chirurgie_orthognatique__ = __webpack_require__(508);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_main_pages_medicaments_medicaments__ = __webpack_require__(511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_main_pages_medicaments_medicaments__ = __webpack_require__(512);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_pages_scores_enrhume_enrhume__ = __webpack_require__(499);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_pages_scores_ventilation_difficile_ventilation_difficile__ = __webpack_require__(886);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_pages_scores_iot_difficile_iot_difficile__ = __webpack_require__(887);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_pages_scores_vmiot_impossible_vmiot_impossible__ = __webpack_require__(888);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_pages_scores_ventilation_difficile_ventilation_difficile__ = __webpack_require__(887);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_pages_scores_iot_difficile_iot_difficile__ = __webpack_require__(888);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_pages_scores_vmiot_impossible_vmiot_impossible__ = __webpack_require__(889);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_pages_scores_bilan_pre_op_bilan_pre_op__ = __webpack_require__(501);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pages_pages_scores_questionnaire_hemostase_questionnaire_hemostase__ = __webpack_require__(502);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__pages_pages_scores_criteres_ambulatoire_criteres_ambulatoire__ = __webpack_require__(503);
@@ -9707,7 +10163,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__pages_pages_scores_myopathies_myopathies__ = __webpack_require__(506);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__pages_pages_scores_mucopolysaccharidose_mucopolysaccharidose__ = __webpack_require__(507);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__pages_main_pages_protocoles_protocoles__ = __webpack_require__(486);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__pages_main_pages_recommandations_recommandations__ = __webpack_require__(510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__pages_main_pages_recommandations_recommandations__ = __webpack_require__(511);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__pages_modules_monitorage_monitorage__ = __webpack_require__(244);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__pages_modules_courbes_courbes__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__pages_modules_antibioprophylaxie_antibioprophylaxie__ = __webpack_require__(339);
@@ -9736,12 +10192,14 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_82__pages_pages_scores_vpop_vpop__ = __webpack_require__(492);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_83__pages_pages_dispositifs_ani_ani__ = __webpack_require__(487);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_84__pages_pages_dispositifs_doppler_oesophagien_doppler_oesophagien__ = __webpack_require__(509);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_85__pages_pages_dispositifs_nirs_nirs__ = __webpack_require__(510);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -9864,6 +10322,7 @@ var AppModule = /** @class */ (function () {
                 /* DISPOSTIFS */
                 __WEBPACK_IMPORTED_MODULE_83__pages_pages_dispositifs_ani_ani__["a" /* AniPage */],
                 __WEBPACK_IMPORTED_MODULE_84__pages_pages_dispositifs_doppler_oesophagien_doppler_oesophagien__["a" /* DopplerOesophagienPage */],
+                __WEBPACK_IMPORTED_MODULE_85__pages_pages_dispositifs_nirs_nirs__["a" /* NirsPage */],
                 /* URGENCES */
                 __WEBPACK_IMPORTED_MODULE_64__pages_Urgences_acr_acr__["a" /* AcrPage */],
                 __WEBPACK_IMPORTED_MODULE_65__pages_Urgences_anaphylaxie_anaphylaxie__["a" /* AnaphylaxiePage */],
@@ -9960,6 +10419,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_63__pages_main_main__["a" /* MainPage */],
                 __WEBPACK_IMPORTED_MODULE_83__pages_pages_dispositifs_ani_ani__["a" /* AniPage */],
                 __WEBPACK_IMPORTED_MODULE_84__pages_pages_dispositifs_doppler_oesophagien_doppler_oesophagien__["a" /* DopplerOesophagienPage */],
+                __WEBPACK_IMPORTED_MODULE_85__pages_pages_dispositifs_nirs_nirs__["a" /* NirsPage */],
                 __WEBPACK_IMPORTED_MODULE_64__pages_Urgences_acr_acr__["a" /* AcrPage */],
                 __WEBPACK_IMPORTED_MODULE_65__pages_Urgences_anaphylaxie_anaphylaxie__["a" /* AnaphylaxiePage */],
                 __WEBPACK_IMPORTED_MODULE_66__pages_Urgences_asthme_asthme__["a" /* AsthmePage */],
@@ -10033,6 +10493,26 @@ var AppModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ServiceDataProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_pages_alr_tap_block_tap_block__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_pages_alr_peridurale_peridurale__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_pages_alr_bloc_grands_droits_bloc_grands_droits__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_pages_alr_bloc_maxillaire_bloc_maxillaire__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_pages_alr_bloc_tronculaire_ab_bloc_tronculaire_ab__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_pages_alr_bloc_inter_costo_brachial_bloc_inter_costo_brachial__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_pages_alr_bloc_axillaire_bloc_axillaire__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_pages_alr_bloc_supra_claviculaire_bloc_supra_claviculaire__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_pages_alr_bloc_inter_scalenique_bloc_inter_scalenique__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_pages_alr_bloc_nerf_saphene_bloc_nerf_saphene__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_pages_alr_bloc_sciatique_poplite_bloc_sciatique_poplite__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_pages_alr_bloc_sciatique_sous_gluteal_bloc_sciatique_sous_gluteal__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_pages_alr_bloc_nerf_obturateur_bloc_nerf_obturateur__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_pages_alr_bloc_canal_adducteurs_bloc_canal_adducteurs__ = __webpack_require__(235);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_pages_alr_bloc_femoral_bloc_femoral__ = __webpack_require__(236);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_pages_alr_peng_bloc_peng_bloc__ = __webpack_require__(237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_pages_alr_cutane_lateral_cuisse_cutane_lateral_cuisse__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_pages_alr_bloc_pudendal_bloc_pudendal__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_pages_alr_bloc_penien_bloc_penien__ = __webpack_require__(240);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10043,6 +10523,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 Generated class for the ServiceDataProvider provider.
 
@@ -10050,20 +10550,37 @@ See https://angular.io/guide/dependency-injection for more info on providers
 and Angular DI.
 */
 var ServiceDataProvider = /** @class */ (function () {
-    function ServiceDataProvider() {
+    function ServiceDataProvider(storage) {
         //////////////////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////////////////////
+        this.storage = storage;
         this.medicaments = [];
         this.chirurgie = [];
         this.ALRprotocole = [];
+        this.pagesALR = [];
         this.ALRprotocole = [
             //////////////////////////////////////////////////////////////////////////////////////////////////////
             ////////////////////////////////////////////////////////////////////////////////////////////////////
             ////////////////////////////////CHIRURGIE ORTHOPEDIQUE//////////////////////////////////////////////////////////
             //////////////////////////////////////////////////////////////////////////////////////////////
+            { isShown: false,
+                intitule: "Creation de fistule artério-veineuse (FAV)",
+                specialite: "Orthopedie",
+                commentaire: "Le bloc axillaire peut être utilisé à visée anesthésique chez l'adolescent acceptant la technique. Il doit être systématiquement proposé à visée analgésique pour les créations de fistules sous anesthésie générale.",
+                recommandationALR: "Recommandée",
+                techniqueproposeeA: "Bloc axillaire",
+                commentairetechniqueA: "Administrer la déxaméthasone au moment de la réalisation du bloc pour optimiser la durée d'action.",
+                produitALR1A: "Ropivacaïne à visée analgésique",
+                produitALR2A: "Mépivacaïne à visée anesthésique",
+                adjuvantALRA: "Clonidine",
+                techniqueproposeeB: "",
+                commentairetechniqueB: "",
+                produitALR1B: "",
+                produitALR2B: "",
+                adjuvantALRB: "", },
             { isShown: false,
                 intitule: "Fracture de tuberosite tibiale anterieure (TTA)",
                 specialite: "Orthopedie",
@@ -11075,7 +11592,7 @@ var ServiceDataProvider = /** @class */ (function () {
                 adjuvantALRB: "", },
             //////////////////////////////////////////////////////////////////////////////////////////////
             { isShown: false,
-                intitule: "Pancréatectomie céphalique",
+                intitule: "Pancreatectomie cephalique",
                 specialite: "Chirurgie digestive",
                 commentaire: "Discuter avec l'opérateur et selon l'âge et la balance bénéfice risque la faisabilité de l'une ou l'autre des techniques.",
                 recommandationALR: "A discuter",
@@ -11269,18 +11786,18 @@ var ServiceDataProvider = /** @class */ (function () {
             { isShown: false,
                 intitule: "Hernie inguinale",
                 specialite: "Chirurgie digestive",
-                commentaire: "",
+                commentaire: "Rachianesthésie envisageable uniquement pour les nouveaux-nés de moins de 5kg",
                 recommandationALR: "Recommandée",
-                techniqueproposeeA: "Bloc ilio-inguinal ipsilatéral",
-                commentairetechniqueA: "Pour les chirurgies sous anesthésie générale.",
-                produitALR1A: "Ropivacaïne",
-                produitALR2A: "Lévobupivacaïne",
-                adjuvantALRA: "Clonidine",
-                techniqueproposeeB: "Rachianesthésie",
-                commentairetechniqueB: "Envisageable uniquement chez le nouveau-né avant 5 kg ou chez le grand enfant.",
-                produitALR1B: "Bupivacaïne",
-                produitALR2B: "",
-                adjuvantALRB: "", },
+                techniqueproposeeA: "Rachianesthésie",
+                commentairetechniqueA: "Chez le nouveau-né de moins de 5 kg ou chez le grand enfant.",
+                produitALR1A: "Bupivacaïne",
+                produitALR2A: "",
+                adjuvantALRA: "",
+                techniqueproposeeB: "Bloc ilio-inguinal",
+                commentairetechniqueB: "Pour les chirurgies sous anesthésie générale",
+                produitALR1B: "Ropivacaïne",
+                produitALR2B: "Lévobupivacaïne",
+                adjuvantALRB: "Clonidine", },
             //////////////////////////////////////////////////////////////////////////////////////////////
             { isShown: false,
                 intitule: "Hernie ombilicale",
@@ -11627,7 +12144,7 @@ var ServiceDataProvider = /** @class */ (function () {
                 adjuvantALRB: "", },
             //////////////////////////////////////////////////////////////////////////////////////////////
             { isShown: false,
-                intitule: "Trachéotomie",
+                intitule: "Tracheotomie",
                 specialite: "Chirurgie ORL",
                 commentaire: "",
                 recommandationALR: "Non recommandée",
@@ -11755,7 +12272,7 @@ var ServiceDataProvider = /** @class */ (function () {
                 adjuvantALRB: "", },
             //////////////////////////////////////////////////////////////////////////////////////////////
             { isShown: false,
-                intitule: "Cure de fente palatine",
+                intitule: "Cure de fente velaire ou palatine (veloplastie)",
                 specialite: "Chirurgie ORL",
                 commentaire: "Discuter avec l'opérateur la balance bénéfice-risque d'une ALR en tenant compte de l'emplacement de la fente (antérieure ou postérieure).",
                 recommandationALR: "A discuter",
@@ -11771,7 +12288,7 @@ var ServiceDataProvider = /** @class */ (function () {
                 adjuvantALRB: "", },
             //////////////////////////////////////////////////////////////////////////////////////////////
             { isShown: false,
-                intitule: "Cure de fente labiale et chéiloplastie",
+                intitule: "Cure de fente labiale et cheiloplastie",
                 specialite: "Chirurgie ORL",
                 commentaire: "",
                 recommandationALR: "Recommandée",
@@ -15952,32 +16469,337 @@ var ServiceDataProvider = /** @class */ (function () {
                 delaiReinjectionATB3: "Réinjection selon bactériologie, toutes les 12h",
             },
         ];
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        this.pagesALR = [
+            {
+                titre: "Anesthésie péridurale (APD)",
+                soustitre: "Pose de cathéter d'anesthésie péridurale lombaire ou thoracique",
+                APD: true,
+                objectif1: "analgésique",
+                page: __WEBPACK_IMPORTED_MODULE_3__pages_pages_alr_peridurale_peridurale__["a" /* PeriduralePage */],
+            },
+            {
+                titre: "Bloc axillaire (BAX)",
+                soustitre: "Bloc du plexus brachial au creux axillaire",
+                page: __WEBPACK_IMPORTED_MODULE_8__pages_pages_alr_bloc_axillaire_bloc_axillaire__["a" /* BlocAxillairePage */],
+                objectif1: "analgésique",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,5 mL/kg",
+                posologieSSAG1: 0.5,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+                objectif2: "anesthésique (adolescent seulement)",
+                produitSSAN1: "Mépivacaïne 10 mg/mL",
+                posologieSSAN1texte: "0,3 mL/kg",
+                posologieSSAN1: 0.3,
+                produitSSAN2: "",
+                posologieSSAN2: "",
+            },
+            {
+                titre: "Bloc cutané latéral de cuisse (CLC)",
+                soustitre: "Bloc du nerf cutané latéral de cuisse",
+                page: __WEBPACK_IMPORTED_MODULE_18__pages_pages_alr_cutane_lateral_cuisse_cutane_lateral_cuisse__["a" /* CutaneLateralCuissePage */],
+                objectif1: "analgésique",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,5 mL/kg",
+                posologieSSAG1: 0.5,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+            },
+            {
+                titre: "Bloc des grands droits",
+                soustitre: "Bloc des muscles grands droits abdominaux",
+                page: __WEBPACK_IMPORTED_MODULE_4__pages_pages_alr_bloc_grands_droits_bloc_grands_droits__["a" /* BlocGrandsDroitsPage */],
+                objectif1: "analgésique (uni ou bilatéral)",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,3 mL/kg",
+                posologieSSAG1: 0.3,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+            },
+            {
+                titre: "Bloc du canal des adducteurs (FCA)",
+                soustitre: "Bloc du nerf fémoral au canal des adducteurs",
+                page: __WEBPACK_IMPORTED_MODULE_15__pages_pages_alr_bloc_canal_adducteurs_bloc_canal_adducteurs__["a" /* BlocCanalAdducteursPage */],
+                objectif1: "analgésique",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,5 mL/kg",
+                posologieSSAG1: 0.5,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+                objectif2: "anesthésique (adolescent seulement)",
+                produitSSAN1: "Mépivacaïne 10 mg/mL",
+                posologieSSAN1texte: "0,3 mL/kg",
+                posologieSSAN1: 0.3,
+                produitSSAN2: "",
+                posologieSSAN2: "",
+            },
+            {
+                titre: "Bloc fémoral",
+                soustitre: "Bloc du nerf fémoral au triangle de Scarpa",
+                page: __WEBPACK_IMPORTED_MODULE_16__pages_pages_alr_bloc_femoral_bloc_femoral__["a" /* BlocFemoralPage */],
+                objectif1: "analgésique",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,5 mL/kg",
+                posologieSSAG1: 0.5,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+                objectif2: "anesthésique (adolescent seulement)",
+                produitSSAN1: "Mépivacaïne 10 mg/mL",
+                posologieSSAN1texte: "0,3 mL/kg",
+                posologieSSAN1: 0.3,
+                produitSSAN2: "",
+                posologieSSAN2: "",
+            },
+            {
+                titre: "Bloc intercostobrachial",
+                soustitre: "Bloc des nerfs intercostobrachiaux ou cutané médial du bras et de l'avant-bras",
+                page: __WEBPACK_IMPORTED_MODULE_7__pages_pages_alr_bloc_inter_costo_brachial_bloc_inter_costo_brachial__["a" /* BlocInterCostoBrachialPage */],
+                objectif1: "analgésique en complément du bloc axillaire",
+            },
+            {
+                titre: "Bloc interscalénique (BIS)",
+                soustitre: "Bloc du plexus brachial au niveau interscalénique",
+                page: __WEBPACK_IMPORTED_MODULE_10__pages_pages_alr_bloc_inter_scalenique_bloc_inter_scalenique__["a" /* BlocInterScaleniquePage */],
+                objectif1: "analgésique",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,4 mL/kg",
+                posologieSSAG1: 0.4,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+            },
+            {
+                titre: "Bloc maxillaire (V-2)",
+                soustitre: "Bloc de la branche maxillaire (2) du nerf trijumeau",
+                page: __WEBPACK_IMPORTED_MODULE_5__pages_pages_alr_bloc_maxillaire_bloc_maxillaire__["a" /* BlocMaxillairePage */],
+                objectif1: "analgésique (bilatéral)",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,3 mL/kg/côté",
+                posologieSSAG1: 0.3,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+            },
+            {
+                titre: "Bloc obturateur",
+                soustitre: "Bloc du nerf obturateur",
+                page: __WEBPACK_IMPORTED_MODULE_14__pages_pages_alr_bloc_nerf_obturateur_bloc_nerf_obturateur__["a" /* BlocNerfObturateurPage */],
+                objectif1: "analgésique",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,5 mL/kg",
+                posologieSSAG1: 0.5,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+            },
+            {
+                titre: "Bloc pénien",
+                soustitre: "Bloc des nerfs péniens",
+                page: __WEBPACK_IMPORTED_MODULE_20__pages_pages_alr_bloc_penien_bloc_penien__["a" /* BlocPenienPage */],
+                objectif1: "analgésique (bilatéral)",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,1 mL/kg/côté",
+                posologieSSAG1: 0.1,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+            },
+            {
+                titre: "Bloc pudendal",
+                soustitre: "Bloc du nerf pudendal par voie transglutéale",
+                page: __WEBPACK_IMPORTED_MODULE_19__pages_pages_alr_bloc_pudendal_bloc_pudendal__["a" /* BlocPudendalPage */],
+                objectif1: "analgésique (bilatéral)",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,2 mL/kg/côté",
+                posologieSSAG1: 0.2,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+            },
+            {
+                titre: "Bloc saphène",
+                soustitre: "Bloc du nerf saphène à la jambe",
+                page: __WEBPACK_IMPORTED_MODULE_11__pages_pages_alr_bloc_nerf_saphene_bloc_nerf_saphene__["a" /* BlocNerfSaphenePage */],
+                objectif1: "analgésique",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,5 mL/kg",
+                posologieSSAG1: 0.5,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+                objectif2: "anesthésique (adolescent seulement)",
+                produitSSAN1: "Mépivacaïne 10 mg/mL",
+                posologieSSAN1texte: "0,3 mL/kg",
+                posologieSSAN1: 0.3,
+                produitSSAN2: "",
+                posologieSSAN2: "",
+            },
+            {
+                titre: "Bloc sciatique poplité (BSP)",
+                soustitre: "Bloc du nerf sciatique au niveau du creux poplité",
+                page: __WEBPACK_IMPORTED_MODULE_12__pages_pages_alr_bloc_sciatique_poplite_bloc_sciatique_poplite__["a" /* BlocSciatiquePoplitePage */],
+                objectif1: "analgésique",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,5 mL/kg",
+                posologieSSAG1: 0.5,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+                objectif2: "anesthésique (adolescent seulement)",
+                produitSSAN1: "Mépivacaïne 10 mg/mL",
+                posologieSSAN1texte: "0,3 mL/kg",
+                posologieSSAN1: 0.3,
+                produitSSAN2: "",
+                posologieSSAN2: "",
+            },
+            {
+                titre: "Bloc sciatique sous glutéal (BSG)",
+                soustitre: "Bloc du nerf sciatique par l'approche sous glutéale",
+                page: __WEBPACK_IMPORTED_MODULE_13__pages_pages_alr_bloc_sciatique_sous_gluteal_bloc_sciatique_sous_gluteal__["a" /* BlocSciatiqueSousGlutealPage */],
+                objectif1: "analgésique",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,5 mL/kg",
+                posologieSSAG1: 0.5,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+                objectif2: "anesthésique (adolescent seulement)",
+                produitSSAN1: "Mépivacaïne 10 mg/mL",
+                posologieSSAN1texte: "0,3 mL/kg",
+                posologieSSAN1: 0.3,
+                produitSSAN2: "",
+                posologieSSAN2: "",
+                mepivacaine10: true,
+            },
+            {
+                titre: "Bloc supra-claviculaire (BSC)",
+                soustitre: "Bloc du plexus brachial à l'étage supra-claviculaire",
+                page: __WEBPACK_IMPORTED_MODULE_9__pages_pages_alr_bloc_supra_claviculaire_bloc_supra_claviculaire__["a" /* BlocSupraClaviculairePage */],
+                objectif1: "analgésique",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,5 mL/kg",
+                posologieSSAG1: 0.5,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+                objectif2: "anesthésique (adolescent seulement)",
+                produitSSAN1: "Mépivacaïne 10 mg/mL",
+                posologieSSAN1texte: "0,3 mL/kg",
+                posologieSSAN1: 0.3,
+                produitSSAN2: "",
+                posologieSSAN2: "",
+                mepivacaine10: true,
+            },
+            {
+                titre: "Blocs tronculaires",
+                soustitre: "Bloc du nerf médian, radial ou ulnaire à l'avant-bras",
+                page: __WEBPACK_IMPORTED_MODULE_6__pages_pages_alr_bloc_tronculaire_ab_bloc_tronculaire_ab__["a" /* BlocTronculaireAbPage */],
+                objectif1: "analgésique",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,2 mL/kg",
+                posologieSSAG1: 0.2,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+                objectif2: "anesthésique (adolescent seulement)",
+                produitSSAN1: "Mépivacaïne 10 mg/mL",
+                posologieSSAN1texte: "0,2 mL/kg",
+                posologieSSAN1: 0.2,
+                produitSSAN2: "",
+                posologieSSAN2: "",
+            },
+            {
+                titre: "PENG Bloc",
+                soustitre: "Bloc obturateur par voie sous pectinéale (PEricapsular Nerve Group)",
+                page: __WEBPACK_IMPORTED_MODULE_17__pages_pages_alr_peng_bloc_peng_bloc__["a" /* PengBlocPage */],
+                objectif1: "analgésique",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,5 mL/kg",
+                posologieSSAG1: 0.5,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+            },
+            {
+                titre: "TAP bloc",
+                soustitre: "Transversus Abdominis Plane Block",
+                page: __WEBPACK_IMPORTED_MODULE_2__pages_pages_alr_tap_block_tap_block__["a" /* TapBlockPage */],
+                objectif1: "analgésique (uni ou bilatéral)",
+                SingleShot: true,
+                KTPN: true,
+                produitSSAG1: "Ropivacaïne 2 mg/mL",
+                posologieSSAG1texte: "0,5 mL/kg/côté",
+                posologieSSAG1: 0.5,
+                produitSSAG2: "",
+                posologieSSAG2: "",
+            },
+        ];
     }
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////
+    // traitement des éléments pour technique d'ALR
+    ServiceDataProvider.prototype.orderBlocs = function () {
+        var sortedBlocs = this.pagesALR.sort(function (a, b) { return a.intitule > b.intitule ? 1 : -1; });
+        var groupedBlocs = sortedBlocs.reduce(function (groups, blocs) {
+            var letterBlocs = blocs.titre.charAt(0);
+            groups[letterBlocs] = groups[letterBlocs] || [];
+            groups[letterBlocs].push(blocs);
+            return groups;
+        }, {});
+        var result = Object.keys(groupedBlocs).map(function (key) { return ({ key: key, chirurgie: groupedBlocs[key] }); });
+    };
+    ;
+    ServiceDataProvider.prototype.filterBloc = function (searchTerm) {
+        return this.pagesALR.filter(function (bloc) {
+            return bloc.titre
+                .toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+        });
+    };
+    ;
     // traitement des éléments pour recommandations ALR
     ServiceDataProvider.prototype.orderALR = function () {
         var sorted = this.ALRprotocole.sort(function (a, b) { return a.intitule > b.intitule ? 1 : -1; });
@@ -16058,7 +16880,7 @@ var ServiceDataProvider = /** @class */ (function () {
     ;
     ServiceDataProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ionic_storage__["b" /* Storage */]])
     ], ServiceDataProvider);
     return ServiceDataProvider;
 }());
@@ -16068,7 +16890,7 @@ var ServiceDataProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 866:
+/***/ 867:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -16357,19 +17179,19 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 866;
+webpackContext.id = 867;
 
 /***/ }),
 
-/***/ 884:
+/***/ 885:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(551);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(552);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(552);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(553);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_main_main__ = __webpack_require__(159);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -16426,7 +17248,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 886:
+/***/ 887:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16474,7 +17296,7 @@ var VentilationDifficilePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 887:
+/***/ 888:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16524,7 +17346,7 @@ var IotDifficilePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 888:
+/***/ 889:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16572,5 +17394,5 @@ var VmiotImpossiblePage = /** @class */ (function () {
 
 /***/ })
 
-},[553]);
+},[554]);
 //# sourceMappingURL=main.js.map

@@ -1,15 +1,79 @@
-<!--
-  Generated template for the PengBlocPage page.
+<ion-header><br>
+  <div class="header"> 
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-  <ion-navbar>
-    <ion-title>PENGBloc</ion-title>
-  </ion-navbar>
-</ion-header>
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>PENG bloc</div> 
+   <br>
+ 
+    </ion-header>
 
-<ion-content padding>
+    <ion-content>
 
-</ion-content>
+      <ion-card color="turquoise-fonce">
+        <ion-card-header (click)="toggleIndications()">
+          Indications
+          <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+        </ion-card-header>
+        <ion-card-content *ngIf="isShownIndications"> 
+          <ul>
+            <li>Chirurgie de la partie proximale du fémur.</li>
+            </ul> 
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card color="tertiary">
+        <ion-card-header (click)="toggleAnatomie()">Rappels d'anatomie
+          <ion-icon *ngIf="!isShownAnatomie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownAnatomie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+        </ion-card-header>
+        <ion-card-content *ngIf="isShownAnatomie">La capsule antérieure de la hanche est innervée par le nerf fémoral, le nerf obturateur et le nerf obturateur accessoire. 
+          Ces sont les branches articulaires du nerf fémoral et du nerf obturateur accessoire qui sont ciblées par ce bloc. 
+          Il doit donc être associé au bloc du nerf obturateur.            
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header (click)="toggleTechnique()">
+          Technique
+          <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+        </ion-card-header>
+        <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">
+          Echoguidé : sonde haute fréquence linéaire chez le petit enfant, sonde curviligne chez le grand enfant et l'adolescent. 
+          <br>
+          Installation en décubitus doral, Poser la sonde en position transverse le long du pli inguinal et identifier les structures : artère et veine fémorale, nerf fémoral, muscle iliopsoas en dessous des vaisseaux fémoraux, lignes hyperéchogènes des fascia lata et iliaca.
+          <br>
+          Remonter légèrement en direction céphalique afin de repérer l'épine iliaque antéro-supérieure latéralement et l'éminence ilio-pubienne médialement ; au dessus de ces structures osseuses se trouve le muscle iliopsoas, qui apparait comme une structure hypoéchogène arrondie au sein de laquelle est visualisé son tendon, hyperéchogène. 
+          <br>
+            Ponctionner <i>in plane</i>, en direction médiale à partir du bord latéral de la sonde d'échographie, en direction du fond de la cuvette osseuse et sous le tendon iliopsoas. 
+            L'injection d'AL dans cet espace entraîne l'élévation du tendon, on cherchera à obtenir une diffusion médiale de l'AL.
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card color="warning">
+        <ion-card-header (click)="togglePosologie()">
+          Posologie
+          <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+          <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+        </ion-card-header>
+        <ion-card-content *ngIf="isShownPosologie">
+          - Ropivacaïne 2 mg/mL, 1 mg/kg soit 0,5 mL/kg. 
+        </ion-card-content>
+      </ion-card>
+
+        <!--
+        <ion-item>
+          <ion-label color="dark-turquoise">Imagerie  
+            <div style="float:right ; margin-right:20px">
+            <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>
+            <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>
+          </div>
+          </ion-label>
+        </ion-item>
+        <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">
+        <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">
+        -->
+    </ion-content>

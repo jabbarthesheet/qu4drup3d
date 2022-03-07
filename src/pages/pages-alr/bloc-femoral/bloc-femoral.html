@@ -1,15 +1,88 @@
-<!--
-  Generated template for the BlocFemoralPage page.
+<ion-header><br>
+  <div class="header"> 
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-  <ion-navbar>
-    <ion-title>BlocFemoral</ion-title>
-  </ion-navbar>
-</ion-header>
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>Bloc fémoral sous inguinal</div>
+   <br>
+ 
+    </ion-header>
+    
+        <ion-content>
+    
+          <ion-card color="turquoise-fonce">
+            <ion-card-header (click)="toggleIndications()">
+              Indications
+              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownIndications"> 
+              <ul>
+                <li>Chirurgie du genou : ligamentoplastie, arthrolyse, geste sur le ménisque.</li>
+                <li>Ostéotomie tibiale.</li>
+                <li>Geste fémoral : ostéotomie, clou, etc.</li>
+                </ul> 
+            </ion-card-content>
+          </ion-card>
+    
+          <ion-card>
+            <ion-card-header (click)="toggleTechnique()">
+              Technique
+              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">
+              Bloc échoguidé utilisant la sonde linéaire à haute fréquence.
+              <br>
+              Installation du patient en décubitus dorsal, exposer le pli inguinal, quelques centimètres en dessous du ligament inguinal qui relie l'épine iliaque antéro-supérieure et le tubercule pubien.
+              <br>
+              Poser la sonde en position transverse le long du pli inguinal. Identifier l'artère fémorale (en présence de deux artères, déplacer la sonde en direction céphalique afin de la positionner au dessus de la bifurcation fémorale profonde et superficielle). La veine fémorale est médiale par rapport l'artère.
+              <br>
+              Repérer le muscle iliopsoas en profondeur, en dessous des vaisseaux fémoraux, et le fascia iliaca, ligne hyperéchogène se divisant en deux pour entourer le paquet neurovasculaire.
+              <br>
+              Le nerf fémoral apparait alors comme une structure hyperéchogène ellipsoïde ou triangulaire, posée sur le muscle iliopsoaos et située entre les deux feuilles du fascia iliaca. Il peut aussi être fin et aplati ; parfois se diviser à ce niveau en de multiples brances.
+              <br>
+              Les approches <i>in plane</i> et <i>out of plane</i> sont possibles, en injectant l'AL à proximité du nerf, entre les deux couches du fascia iliaca.
+              <br>
+              Attention à ne pas confondre le nerf fémoral avec le renforcement postérieur du signal échographique sous l'artère. L'utilisation du Doppler couleur permet la visualisation de l'artère circonflexe latérale lorsqu'elle croise le nerf fémoral. Le franchissement des fascias lata et iliaca produit souvent une sensation de double ressaut confirmant le bon trajet de l'aiguille.
+            </ion-card-content>
+          </ion-card>
 
-<ion-content padding>
+          <ion-card color="turquoise-fonce">
+            <ion-card-header (click)="toggleKTPN()">
+              Bloc continu
+              <ion-icon *ngIf="!isShownKTPN" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownKTPN" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownKTPN"> 
+              L'objectif est le placement du cathéter dans la partie latérale du trigone fémoral, entre les deux feuilles du fascia iliaca. Le cathéter est avancé de 3 à 4 cm dans l'espace périneural ; le contrôle de son positionnement est effectué par l'échographie <b>avant</b> le retrait du guide métallique permettant sa visualisation. Après retrait du guide, un second contrôle est fait en injectant l'AL et en visualisation sa diffusion en échographie.
+              <br>
+            </ion-card-content>
+          </ion-card>
+    
+          <ion-card color="warning">
+            <ion-card-header (click)="togglePosologie()">
+              Posologie
+              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownPosologie">
+              - A visée analgésique, Ropivacaïne 2 mg/mL, 1 mg/kg soit 0,5 mL/kg. 
+            </ion-card-content>
+          </ion-card>
+    
+            <!--
+            <ion-item>
+              <ion-label color="dark-turquoise">Imagerie  
+                <div style="float:right ; margin-right:20px">
+                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>
+                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>
+              </div>
+              </ion-label>
+            </ion-item>
+            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">
+            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">
+            -->
 
-</ion-content>
+    </ion-content>

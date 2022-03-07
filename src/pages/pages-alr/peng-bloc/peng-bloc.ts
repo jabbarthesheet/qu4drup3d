@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+
 
 /**
  * Generated class for the PengBlocPage page.
@@ -13,12 +15,43 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'peng-bloc.html',
 })
 export class PengBlocPage {
+    
+  isShownIndications : boolean = false; 
+  isShownAnatomie : boolean = false; 
+  isShownTechnique : boolean = false; 
+  isShownPosologie : boolean = false; 
+ 
+   constructor(
+     public navCtrl: NavController, 
+     public navParams: NavParams,
+     public storage: Storage) {
+   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+   ionViewDidLoad() {
+    console.log('ionViewDidLoad PENGBlocPage');
+   };
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PengBlocPage');
-  }
 
-}
+  retourHome(){
+    this.navCtrl.pop();
+  };
+
+  toggleIndications(){
+    this.isShownIndications = !this.isShownIndications;
+  };
+
+  toggleAnatomie(){
+    this.isShownAnatomie = !this.isShownAnatomie;
+  };
+
+  toggleTechnique(){
+    this.isShownTechnique = !this.isShownTechnique; 
+  }; 
+
+  togglePosologie(){
+    this.isShownPosologie = !this.isShownPosologie; 
+  }; 
+
+
+
+};

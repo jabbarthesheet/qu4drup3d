@@ -1,15 +1,73 @@
-<!--
-  Generated template for the BlocCanalAdducteursPage page.
+<ion-header><br>
+  <div class="header"> 
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-  <ion-navbar>
-    <ion-title>BlocCanalAdducteurs</ion-title>
-  </ion-navbar>
-</ion-header>
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>Bloc au canal des adducteurs</div>
+   <br>
+ 
+    </ion-header>
+    
+        <ion-content>
+    
+          <ion-card color="turquoise-fonce">
+            <ion-card-header (click)="toggleIndications()">
+              Indications
+              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownIndications"> 
+              <ul>
+                <li>Chirurgie du genou : ligamentoplastie, arthrolyse, geste sur le ménisque.</li>
+                <li>Ostéotomie tibiale.</li>
+                <li>Ostéotomie fémorale basse.</li>
+                <li>Intervention sur la face médiale du pied et de la cheville, en complément d'un bloc sciatique ou d'un bloc tronculaire.</li>
+                </ul> 
+            </ion-card-content>
+          </ion-card>
+    
+          <ion-card>
+            <ion-card-header (click)="toggleTechnique()">
+              Technique
+              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">
+              Bloc échoguidé utilisant la sonde linéaire à haute fréquence.
+              <br>
+              Installation du patient en décubitus dorsal, la jambe en rotation externe légère.
+              <br>
+              Poser la sonde en position transverse sur la partie proximale de la cuisse et balayer en direction du genou.
+              <br>
+              Identifier l'artère fémorale profonde, le muscle sartorius qui la recouvre et le muscle vaste médial, en position latérale. Le nerf saphène, généralement hyperéchogène, peut être difficile à visualiser. Il se trouve en position latérale à l'artère, entre le sartorius et le chef vaste médial du quadriceps chez 80% des sujets.
+              <br>
+              Les approches <i>in plane</i> et <i>out of plane</i> sont possibles, en injectant deux tiers du volume d'AL sur la partie latérale du nerf, et un tiers sur la partie médiale.
+            </ion-card-content>
+          </ion-card>
+    
+          <ion-card color="warning">
+            <ion-card-header (click)="togglePosologie()">
+              Posologie
+              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownPosologie">
+              - A visée analgésique, Ropivacaïne 2 mg/mL, 1 mg/kg soit 0,5 mL/kg. 
+            </ion-card-content>
+          </ion-card>
+    
+            <!--
+            <ion-item>
+              <ion-label color="dark-turquoise">Imagerie  
+                <div style="float:right ; margin-right:20px">
+                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>
+                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>
+              </div>
+              </ion-label>
+            </ion-item>
+            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">
+            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">
+            -->
 
-<ion-content padding>
-
-</ion-content>
+    </ion-content>

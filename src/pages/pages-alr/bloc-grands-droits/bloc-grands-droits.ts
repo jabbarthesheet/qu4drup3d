@@ -15,6 +15,11 @@ import { NavController, NavParams } from 'ionic-angular';
 export class BlocGrandsDroitsPage {
 
   hasLegend:boolean=false;
+  isShownIndications : boolean = false; 
+  isShownAnatomie : boolean = false; 
+  isShownTechnique : boolean = false; 
+  isShownPosologie : boolean = false; 
+  isShownKTPN : boolean = false; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -29,6 +34,26 @@ export class BlocGrandsDroitsPage {
 
   toggleLegend(){
     this.hasLegend = !this.hasLegend;
+  };
+
+  toggleIndications(){
+    this.isShownIndications = !this.isShownIndications;
+  };
+
+  toggleAnatomie(){
+    this.isShownAnatomie = !this.isShownAnatomie;
+  };
+
+  toggleTechnique(){
+    this.isShownTechnique = !this.isShownTechnique; 
+  }; 
+
+  togglePosologie(){
+    this.isShownPosologie = !this.isShownPosologie; 
+  }; 
+
+  toggleKTPN(){
+    this.isShownKTPN = !this.isShownKTPN;
   };
 
 }

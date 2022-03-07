@@ -1,15 +1,71 @@
-<!--
-  Generated template for the BlocSciatiqueSousGlutealPage page.
+<ion-header><br>
+  <div class="header"> 
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-  <ion-navbar>
-    <ion-title>BlocSciatiqueSousGluteal</ion-title>
-  </ion-navbar>
-</ion-header>
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>Bloc sciatique sous glutéal</div>
+   <br>
+ 
+    </ion-header>
+    
+        <ion-content>
+    
+          <ion-card color="turquoise-fonce">
+            <ion-card-header (click)="toggleIndications()">
+              Indications
+              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownIndications"> 
+              <ul>
+                <li>Intervention sur la partie distale du fémur.</li>
+                </ul> 
+            </ion-card-content>
+          </ion-card>
+    
+          <ion-card>
+            <ion-card-header (click)="toggleTechnique()">
+              Technique
+              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">
+              Bloc échoguidé utilisant la sonde incurvée à basse fréquence.
+              <br>
+              Installer le patient en décubitus ventral ou latéral, côté à bloquer vers le haut, le membre inférieur fléchi à 90°.
+              <br>
+              Tracer une ligne droite entre le grand trochanter et la tubérosité ischiatique. Poser la sonde en position transverse sur la face latérale de la fesse à mi-distance entre le grand trochanteur et la tubérosité ischiatique.
+              <br>
+              Identifier la tubérosité ischiatique médialement, le grand trochanteur latéralement, le muscle grand fessier en superficie, en dessous du tissu adipeux et le muscle carré du fémur en profondeur. 
+              Le nerf sciatique est hyperéchogène, de forme ovalaire, situé dans le fascia hyperéchogène des muscles grand fessier et carré du fémur, discrétement plus proche de la tubérosité ischiatique que du grand trochanter.
+              <br>
+              Les approches dans et hors du plan sont possibles.  
+            </ion-card-content>
+          </ion-card>
+    
+          <ion-card color="warning">
+            <ion-card-header (click)="togglePosologie()">
+              Posologie
+              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownPosologie">
+              - A visée analgésique, Ropivacaïne 2 mg/mL, 1 mg/kg soit 0,5 mL/kg. 
+            </ion-card-content>
+          </ion-card>
+    
+            <!--
+            <ion-item>
+              <ion-label color="dark-turquoise">Imagerie  
+                <div style="float:right ; margin-right:20px">
+                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>
+                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>
+              </div>
+              </ion-label>
+            </ion-item>
+            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">
+            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">
+            -->
 
-<ion-content padding>
-
-</ion-content>
+    </ion-content>

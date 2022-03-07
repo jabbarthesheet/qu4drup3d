@@ -98,6 +98,7 @@ import { VpopPage } from '../pages/pages_scores/vpop/vpop';
 
 import { AniPage } from '../pages/pages_dispositifs/ani/ani';
 import { DopplerOesophagienPage } from '../pages/pages_dispositifs/doppler-oesophagien/doppler-oesophagien' ;
+import { NirsPage } from '../pages/pages_dispositifs/nirs/nirs';
 import { ALRPageModule } from '../pages/modules/loco-regionale/loco-regionale.module';
 
 
@@ -139,6 +140,7 @@ import { ALRPageModule } from '../pages/modules/loco-regionale/loco-regionale.mo
     /* DISPOSTIFS */
     AniPage,
     DopplerOesophagienPage,
+    NirsPage,
 
 
     /* URGENCES */
@@ -244,6 +246,7 @@ import { ALRPageModule } from '../pages/modules/loco-regionale/loco-regionale.mo
 
     AniPage,
     DopplerOesophagienPage,
+    NirsPage,
     
     AcrPage,
     AnaphylaxiePage,

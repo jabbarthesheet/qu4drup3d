@@ -1,0 +1,69 @@
+<ion-header padding>
+  <div class="header"> 
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>
+    NIRS</div>
+    <br>
+    <span class="reference">Fabriquant : <a href="https://www.medtronic.com/fr-fr/index.html" target="_blank"> MedTronic </a>, Paris, France</span>
+</ion-header>
+<ion-content>
+  <ion-card class="drogueContainer">
+    <ion-card-content>
+     
+      <div class="aideMemoire"><b>Objectif</b> : 
+        <p class="comment">Optimiser l'hémodynamique par la mesure de la saturation régionale en O2 cérébrale, reflet indirect de la perfusion cérébrale</p></div> 
+      <hr>
+      <div class="aideMemoire"><b>Principe</b> :
+        <p class="comment">
+          Mesure de la transmission de la lumière proche infra-rouge (Near InfraRed Spectrometry) à travers les tissus et son absorption par les chromophores (molécules capables d’absorber les photons et d’ainsi donner une couleur à la molécule) qui dépend du coefficient d’absorption du chromophore et de la distance entre le tissu et la lumière proche infra-rouge (formule de Beer-Lambert). 
+          <br>
+          Deux chromophores sont utilisés par le NIRS l'oxyhémoglobine et l'hémoglobine réduite. La saturation tissulaire régionale en O2 est donnée par le rapport Hb<sub>O2</sub>/(Hb<sub>O2</sub> + Hb<sub>réduite</sub>). 
+          <br>
+          Deux couples émetteur-récepteur sont utilisés : un pour les tissus superficiels, l'autre couvrant une zone de tissus superficiels et profonds. La soustraction du signal du premier couple permet d’obtenir une valeur plus précise de l’oxygénation cérébrale.
+        </p> </div>
+
+        <div class="aideMemoire">
+          <b>Intérêt</b> :
+          <p class="comment">
+            Évaluation de l'oxygénation cérébrale en continu, dont les déterminants principaux sont la SaO2, le débit cardiaque et de la CMRO2 (consommation cérébrale en O2) et la vasodilatation cérébrale.
+          </p>
+        </div>
+        
+
+          <hr>
+
+      <div class="aideMemoire">
+        <b>Interprétation</b> : 
+        <p class="comment">
+          La valeur absolue et les variations par rapport à la valeur de référence du patient sont à interpréter. 
+          <br>
+          Une variation de plus de 20% par rapport aux valeurs de référence du patient ou une diminution du NIRS en dessous de 65% témoigne d'un défaut d'oxygénation cérébrale, lié soit à un défaut d'oxygénation global, soit le plus souvent à une anomalie du transporteur (baisse de la pression de perfusion cérébrale, baisse du débit cardiaque ou anémie aiguë). 
+          <br>
+          Il convient alors de considérer une intervention correctrice, adaptée aux autres données de monitorage, en évaluant : 
+          <br> - l'hématose (vérifier la capnographie et la la Spo2) ; 
+          <br> - la pression artérielle ;  
+          <br> - la volémie ; 
+          <br> - l'hémoglobinémie. 
+        </p>
+      </div>
+      
+      <hr>
+
+      <div class="aideMemoire"><b>Limites</b> : 
+        <p class="comment">
+          -	Ne permet pas de faire la différence entre l’O2 dans les artères et dans les veines (car absence de pléthysmographie).
+      <br>-	Pas de mesure possible de la quantité absolue d’HbO2 (distance entre source de lumière et tissu variable, algorithme différents).
+      <br>-	Pas de garantie de mesurer la « vraie » rScO2 cérébrale (car plusieurs tissus présents mais atténuation des erreurs par algorithme).
+      <br>-	Les variations de proportions entre sang veineux et artériel (l’ouverture ou la fermeture d’un shunt vasculaire, la constitution d’un hématome, l’hémodilution) et les variations de distance entre le tissu et le capteur (œdème, kyste) sont autant de facteurs pouvant faire varier le NIRS sans pour autant être une vraie variation de l’oxygénation cérébrale.
+      <br>-	Ne permet d’analyser qu’une faible partie du parenchyme cérébral &lt; 1,5cm<sup>3</sup>.
+      <br>-	Attention en cas d’ictère, risque de valeur « aberrante » initiale.
+        </p></div>
+      <hr>
+      <p class="aideMemoire"><b>Electrodes & moniteur</b> :</p>
+      <img src="/assets/imgs/nirs.jpg">
+  
+    </ion-card-content>
+  </ion-card>
+</ion-content>

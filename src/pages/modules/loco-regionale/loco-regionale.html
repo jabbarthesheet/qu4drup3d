@@ -10,125 +10,76 @@
           </div>
           ALR</div><br>
 
-            <ion-toolbar>
-
-              <ion-searchbar *ngIf = "!this.searchBarType"
-              class="interventionSearchbar"
-              [(ngModel)]="searchTerm"
-              (ionChange)="setFilteredChirurgie()"
-              placeholder="Intervention..."
-              inputmode="text"
-            ></ion-searchbar><br *ngIf = "!this.searchBarType"><ion-icon *ngIf = "!this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>
-            
-            <ion-searchbar *ngIf = "this.searchBarType"
-            class="specialiteSearchbar"
-            [(ngModel)]="searchTermSpecialite"
-            (ionChange)="setFilteredSpecialite()"
-            placeholder="Specialite..."
-            inputmode="text"
-            ></ion-searchbar><br *ngIf = "this.searchBarType"><ion-icon *ngIf = "this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>
-            
-            
-            
-            </ion-toolbar>
 
 
+              <ion-segment color="turquoise-fonce" [(ngModel)]="ALRView">
+                <ion-segment-button  value="1">Indication</ion-segment-button>
+                <ion-segment-button  value="2">Technique</ion-segment-button>
+                <ion-segment-button  value="3" style="color:#ff6961">Toxicité</ion-segment-button>
+              </ion-segment>
+          
+          
+                <div padding class="patientHighlight">
+                  Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
+                  <br> Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>
+                </div>        
               </ion-header>
+
        <!-- END HEADER -->
 
 
 <ion-content>
-        <div padding class="patientHighlight">
-          Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
-          <br> Allergie : <span *ngIf="!Allergie">non renseigné</span> <span *ngIf="Allergie">{{Allergie}}</span>
-        </div>        
+
+  <ion-toolbar *ngIf = "ALRView == 1">
+
+    <ion-searchbar *ngIf = "!this.searchBarType"
+    class="interventionSearchbar"
+    [(ngModel)]="searchTerm"
+    (ionChange)="setFilteredChirurgie()"
+    placeholder="Intervention..."
+    inputmode="text"
+  ></ion-searchbar><br *ngIf = "!this.searchBarType"><ion-icon *ngIf = "!this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>
+  
+  <ion-searchbar *ngIf = "this.searchBarType"
+  class="specialiteSearchbar"
+  [(ngModel)]="searchTermSpecialite"
+  (ionChange)="setFilteredSpecialite()"
+  placeholder="Specialite..."
+  inputmode="text"
+  ></ion-searchbar><br *ngIf = "this.searchBarType"><ion-icon *ngIf = "this.searchBarType" zoom:1.5 name="swap" (click)="toggleSearchBars()"></ion-icon>
+  
+  
+  </ion-toolbar>
+            <ion-card *ngIf="!searchTerm && !searchTermSpecialite && ALRView == 1" class="drogueContainer">
+              <div  padding><ion-icon name="information-circle" color="dark-turquoise"></ion-icon>
+                &nbsp; 
+                Utilisez la barre de recherche par nom pour trouver une intervention ou appuyez sur <ion-icon name="swap" color="dark-turquoise"></ion-icon> pour effectuer une recherche par spécialité chirurgicale. 
+                <br><br>
+                Les indications proposées sont envisagées pour la pédiatrie uniquement.
+                <br><br>
+                Cliquez sur l'onglet de droite, "Techniques", pour consulter les aides au calcul de dose et les aides-mémoire pour chacune des techniques proposées. 
+                <br><br>
+                <b>Légende ALR :</b> 
+                <ul>
+                  <li>Recommandée : 
+                    <ion-chip color="turquoise-fonce">
+                        <ion-label>Intervention</ion-label>
+                      </ion-chip> + <ion-icon name="checkmark-circle" style="zoom:1.5; color: #009c9e"></ion-icon></li>
+                  <li>Non recommandée :
+                    <ion-chip color="#C0C0C0">
+                      <ion-label>Intervention</ion-label>
+                    </ion-chip> + <ion-icon name="radio-button-off" style=" zoom:1.5; color: darkgrey"></ion-icon></li>
+                  <li>A discuter : 
+                    <ion-chip color="warning">
+                      <ion-label>Intervention</ion-label>
+                    </ion-chip> + <ion-icon name="help-circle" style="zoom:1.5; color: #FFA500"></ion-icon></li>
+                </ul>
+              </div>
+            </ion-card>
 
 
-        <div *ngIf="!searchTerm && !searchTermSpecialite">
-
-          <ion-card (click)="openPageGeneralites()" class="drogueContainer">
-            <ion-card-content  class="cardRecos">
-            <div class="headerProtocoles">
-              Particularités de l'ALR en pédiatrie
-            </div>
-            <hr>
-            <div class="contentProtocoles">
-              <ion-icon start name="bulb"></ion-icon> &nbsp; <b>Généralités</b>
-            </div>
-            </ion-card-content>
-            </ion-card>  
-    
-          <hr>
-
-          <ion-card (click)="openPageAPD()" class="drogueContainer">
-            <ion-card-content  class="cardRecos">
-            <div class="headerProtocoles">
-              Pose de cathéter d'anesthésie péridurale lombaire
-            </div>
-            <hr>
-            <div class="contentProtocoles">
-              <ion-icon start name="pin"></ion-icon> &nbsp; <b>Anesthésie péridurale</b>
-            </div>
-            <hr>
-            <div>
-            <div class="ALRCalculatorDiv"> 
-            <div class="ALRCalculatorIcon"><ion-icon start style="zoom:2" name="calculator"></ion-icon></div>
-              Ropivacaïne 1 mg/mL + Sufentanil 0,25 µg/mL<br>
-              PIEB : {{BolusPIEBRopiSuf}} mL/h - PCEA : {{BolusPCEARopiSuf}} mL/bolus<br>
-              PR : 20 minutes - Dose max. : {{DoseMaxPCEARopiSuf}} mL/4h
-            </div>
-          </div>
-            </ion-card-content>
-            </ion-card>  
-    
-          <hr>
-
-          <ion-card (click)="openPageBlocAxillaire()" class="drogueContainer">
-            <ion-card-content  class="cardRecos">
-            <div class="headerProtocoles">
-            Bloc du plexus brachial au creux axillaire
-            </div>
-            <hr>
-            <div class="contentProtocoles">
-              <ion-icon start name="pin"></ion-icon> &nbsp; <b>Bloc axillaire</b>
-            </div>
-            <hr>
-            <div>
-            <div class="ALRCalculatorDiv"> 
-            <div class="ALRCalculatorIcon"><ion-icon start style="zoom:2" name="calculator"></ion-icon></div>
-            A visée analgésique : Ropivacaïne 2 mg/mL : xxx mL <br>  
-            A visée anesthésique : Carbocaïne 20 mg/mL : xxx mL 
-            </div>
-          </div>
-            </ion-card-content>
-            </ion-card>  
-    
-          <hr>
-
-
-
-        <ion-card (click)="openPageALR(index)" class="drogueContainer" *ngFor="let entry of pagesALR, let index = index">
-          <ion-card-content  class="cardRecos">
-          <div class="headerProtocoles">
-            {{entry.soustitre}}
-          </div>
-          <hr>
-          <div class="contentProtocoles">
-            <ion-icon start name="pin"></ion-icon> &nbsp; <b>{{entry.titre}}</b>
-          </div>
-          <hr>
-          <div> 
-            <span style="color:#009c9e">{{entry.produit1}} : {{entry.posologie1 * PoidsNum}} mL/côté</span>
-            <span style="color:#009c9e">{{entry.produit2}} : {{entry.posologie2 * PoidsNum}} mL/côté</span>
-          </div>
-          </ion-card-content> 
-          </ion-card>  
-
-        </div>
-
-
-        <!-- SEULEMENT EN CAS DE RECHERCHE DONC SI RESULTAT-->
-
+        <!-- SEULEMENT EN CAS DE RECHERCHE DONC SI RESULTAT pour INDICATIONS-->
+            <div *ngIf="ALRView == 1">
           <div *ngIf="searchTerm || searchTermSpecialite">
 
             <div class="detersion" *ngIf="AgeNum <= 3">Détersion cutanée : chlorexidine avant 3 mois</div>
@@ -236,10 +187,100 @@
                  <br>
                 </div> 
               </div>
-
-
-
               </ion-card>
               </div>
+            </div>
+
+ <!-- //////////////////////////////////////////2E ONGLET TECHNIQUE///////////////////////////////////////////////  -->
+
+ <div *ngIf ="ALRView == 2">
+
+
+  <ion-searchbar
+    [(ngModel)]="searchTermBloc"
+    (ionChange)="setFilteredBloc()"
+    placeholder="Technique..."
+    inputmode="text"
+  ></ion-searchbar>
+
+                <ion-card (click)="openPageGeneralites()" class="drogueContainer">
+                  <ion-card-content  class="cardRecos">
+                  <div class="headerProtocoles">
+                    Particularités de l'ALR en pédiatrie
+                  </div>
+                  <hr>
+                  <div class="contentProtocoles">
+                    <ion-icon start name="bulb"></ion-icon> &nbsp; <b>Généralités</b>
+                  </div>
+                  </ion-card-content>
+                  </ion-card>    
+          
+              <ion-card (click)="openPageALR(index)" class="drogueContainer" *ngFor="let entry of pagesALR, let index = index">
+                <ion-card-content  class="cardRecos">
+                <div class="headerProtocoles">
+                  {{entry.soustitre}} 
+                </div>
+                <hr>
+                <div class="contentProtocoles">
+                  <ion-icon start name="pin"></ion-icon> &nbsp; <b>{{entry.titre}}</b> 
+                </div>
+                <hr>
+                <div class="drogueContainer">               
+                  <span *ngIf="entry.objectif1"><b>A visée {{entry.objectif1}}</b><br></span>
+                  <span *ngIf="entry.SingleShot && entry.produitSSAG1">{{entry.produitSSAG1}} : {{entry.posologieSSAG1texte}} soit {{entry.posologieSSAG1 * PoidsRoundALR}} mL<br></span>
+                  <span *ngIf="entry.SingleShot && entry.produitSSAG2">{{entry.produitSSAG2}} : {{entry.posologieSSAG2texte}} soit {{entry.posologieSSAG2 * PoidsRoundALR}} mL<br></span>
+                
+                  <span *ngIf="entry.objectif2"><b>A visée {{entry.objectif2}}</b><br></span>
+                  <span *ngIf="entry.SingleShot && entry.produitSSAN1">{{entry.produitSSAN1}} : {{entry.posologieSSAN1texte}} soit {{entry.posologieSSAN1 * PoidsRoundALR}} mL<br></span>
+                  <span *ngIf="entry.SingleShot && entry.produitSSAN2">{{entry.produitSSAN2}} : {{entry.posologieSSAN2texte}} soit {{entry.posologieSSAN2 * PoidsRoundALR}} mL<br></span>
+
+                  <span *ngIf="entry.APD">Ropivacaïne 1 mg/mL + Sufentanil 0,25 µg/mL<br></span>
+                  <span *ngIf="entry.APD">PIEB : {{BolusPIEBRopiSuf}} mL/h - PCEA : {{BolusPCEARopiSuf}} mL/bolus<br></span>
+                  <span *ngIf="entry.APD">PR : 20 minutes - Dose max. : {{DoseMaxPCEARopiSuf}} mL/4h</span>
+
+                  
+                </div>
+                </ion-card-content> 
+                </ion-card>  
+      
+</div>
+
+<div *ngIf ="ALRView == 3">
+
+<ion-card class="drogueContainer">
+  <ion-card-content  class="cardRecos">
+  <div class="headerProtocoles">
+    Volume maximal par produit et concentration</div>
+  <hr>
+  <div class="contentProtocoles">
+    <ion-icon start name="warning" style="color:#ff6961"></ion-icon> &nbsp; <b>Doses toxiques (injection unique)</b>
+  </div>
+  <hr>
+  - Lidocaïne non adré : 5 mg/kg soit {{PoidsRoundALR * 5}} mg :   
+      <li>10 mg/mL : {{PoidsRoundALR * 0.5}} mL</li>
+      <li>20 mg/mL : {{PoidsRoundALR * 0.25}} mL</li>
+  <hr>
+  - Lidocaïne adrénalinée : 7 mg/kg soit {{PoidsRoundALR * 7}} mg :
+      <li>20 mg/mL : {{PoidsRoundALR * 0.35}} mL </li>
+  <hr>
+  - Ropivacaïne : 3 mg/kg soit {{PoidsRoundALR * 3}} mg :
+    <li>1 mg/mL : {{PoidsRoundALR * 3}} mL</li> 
+    <li>2 mg/mL : {{PoidsRoundALR * 1.5}} mL</li>
+    <li>3,75 mg/mL : {{PoidsRoundALR * 0.8}} mL</li>
+  <hr>
+  - Mépivacaïne : 5 mg/kg soit {{PoidsRoundALR * 5}} mg : 
+    <li>10 mg/mL : {{PoidsRoundALR * 0.5}} mL</li>
+    <li>15 mg/mL : {{PoidsRoundALR * 0.3}} mL</li>
+  <hr>
+  - Lévobupivacaïne : 3 mg/kg soit {{PoidsRoundALR * 3}} mg : 
+    <li>1,25 mg/mL : {{PoidsRoundALR * 2.4}} mL</li>
+    <li>2,5 mg/mL : {{PoidsRoundALR * 1.2}} mL</li>
+  <hr>
+    - Bupivacaïne : 3 mg/kg soit {{PoidsRoundALR * 3}} mg :  
+    <li>5 mg/mL : {{PoidsRoundALR * 0.6}} mL</li>  
+  </ion-card-content>
+  </ion-card> 
+  </div>
+      
 </ion-content>
 

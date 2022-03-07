@@ -1,15 +1,72 @@
-<!--
-  Generated template for the BlocSciatiquePoplitePage page.
+<ion-header><br>
+  <div class="header"> 
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-  <ion-navbar>
-    <ion-title>BlocSciatiquePoplite</ion-title>
-  </ion-navbar>
-</ion-header>
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>Bloc sciatique poplité</div>
+   <br>
+ 
+    </ion-header>
+    
+        <ion-content>
+    
+          <ion-card color="turquoise-fonce">
+            <ion-card-header (click)="toggleIndications()">
+              Indications
+              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownIndications"> 
+              <ul>
+                <li>Chirurgie du pied et de la cheville.</li>
+                <li>Chirurgie sur la partie médiale du pied en association avec un bloc du nerf saphène.</li>
+                </ul> 
+            </ion-card-content>
+          </ion-card>
+    
+          <ion-card>
+            <ion-card-header (click)="toggleTechnique()">
+              Technique
+              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">
+              Bloc échoguidé utilisant la sonde haute fréquence linéaire.
+              <br>
+              Patient installé sur le coté, de sorte que la jambe à anesthésier soit positionnée en haut et en extension et la jambe en dessous – légèrement en flexion, un billot au niveau du genou entre les deux extrémités.
+              <br>
+              Poser la sonde en position transverse dans le creux poplité à proximité du pli de flexion du genou.            
+              <br>
+              Identifier l’artère poplité en profondeur. Si elle n’est pas visible, déplacer la sonde distalement, car elle est plus superficielle au niveau du creux poplité. Identifier la veine poplitée, au-dessus de l’artère et le nerf sciatique, ou ses deux composantes, se situant généralement au-dessus et latéralement au paquet vasculaire.
+              <br>
+              Incliner la sonde en direction caudale en remontant vers le haut (vers la tête). Effectuer un balayage céphalo-caudal pour repérer la division du nerf sciatique en nerf fibulaire commun (composante latéral) et nerf tibial (composante médiale) ; parfois le nerf sural est visible entre les deux. Les approches dans et hors du plan peuvent être utilisées. L’aiguille est insérée en direction latéromédiale en cas d’approche dans le plan et sous la sonde – en cas d’approche hors du plan. 
+                Positionner l’aiguille au niveau de la division du nerf sciatique, sous la gaine commune et visionner le décollement des deux branches au cours de l'injection de l'AL. Attention à ne pas injecter en intraneural, surtout chez le patient endormi.
+           </ion-card-content>
+          </ion-card>
+    
+          <ion-card color="warning">
+            <ion-card-header (click)="togglePosologie()">
+              Posologie
+              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownPosologie">
+              - A visée analgésique, Ropivacaïne 2 mg/mL, 1 mg/kg soit 0,5 mL/kg. 
+            </ion-card-content>
+          </ion-card>
+    
+            <!--
+            <ion-item>
+              <ion-label color="dark-turquoise">Imagerie  
+                <div style="float:right ; margin-right:20px">
+                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>
+                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>
+              </div>
+              </ion-label>
+            </ion-item>
+            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">
+            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">
+            -->
 
-<ion-content padding>
-
-</ion-content>
+    </ion-content>

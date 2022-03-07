@@ -28,6 +28,7 @@ import { MyopathiesPage } from '../../pages_scores/myopathies/myopathies';
 import { MucopolysaccharidosePage } from '../../pages_scores/mucopolysaccharidose/mucopolysaccharidose';
 import { ChirurgieOrthognatiquePage } from '../../chirurgies/chirurgie-orthognatique/chirurgie-orthognatique';
 import { DopplerOesophagienPage } from '../../pages_dispositifs/doppler-oesophagien/doppler-oesophagien';
+import { NirsPage } from '../../pages_dispositifs/nirs/nirs';
 
 
 /**
@@ -57,6 +58,7 @@ export class ProtocolesPage {
   public dispositifs = [
       { nom : "ANI" , nomcomplet : "Analgesia/Nociception Index" , page : AniPage },
       { nom : "DTO" , nomcomplet : "Doppler Trans-Oesophagien" , page : DopplerOesophagienPage },
+      { nom : "NIRS", nomcomplet : "Near-InfraRed Spectrometry" , page : NirsPage},
   ];
 
   public algorithmes = [ 

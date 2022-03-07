@@ -1,15 +1,88 @@
-<!--
-  Generated template for the BlocTronculaireAbPage page.
+<ion-header><br>
+  <div class="header"> 
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-  <ion-navbar>
-    <ion-title>BlocTronculaireAB</ion-title>
-  </ion-navbar>
-</ion-header>
+    <div (click)="retourHome()" class="backButton">
+    <ion-icon start color="turquoise-fonce" name="arrow-back"></ion-icon>
+    Retour
+    </div>Blocs tronculaires à l'avant-bras</div>
+   <br>
+ 
+    </ion-header>
+    
+        <ion-content>
+    
+          <ion-card color="turquoise-fonce">
+            <ion-card-header (click)="toggleIndications()">
+              Indications
+              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownIndications"> 
+              <ul>
+                <li>Les actes chirurgicaux limités à un ou deux territoires nerveux avec un garrot ne dépassant pas 20 minutes : excision de panaris, suture de lit de l’ongle.</li>
+                <li>Complément au bloc supraclaviculaire ou axillaire imparfait.</li>
+                </ul> 
+            </ion-card-content>
+          </ion-card>
 
-<ion-content padding>
+    
+          <ion-card>
+            <ion-card-header (click)="toggleTechnique()">
+              Technique
+              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">
+              Bloc échoguidé utilisant la sonde haute fréquence large.
+              <br><br>
+              <b>Bloc du nerf médian</b>
+              <br>
+              Placer la sonde en position transverse sur la face antérieure de l’avant-bras. Balayer la région en remontant la sonde vers le coude. 
+              <br>
+              Entre le tiers inférieur et le tiers supérieur de l’avant- bras, au milieu de la ligne entre le bord médial et latéral de l’avant-bras, le nerf médian est facilement identifiable comme une structure hyperéchogène, situé dans le fascia séparant deux groupes musculaires (la loge musculaire antérieure superficielle et profonde de l’avant-bras). Eviter la partie très distale de l’avant-bras (quart distal) car dans cette région le nerf peut être facilement confondu avec de nombreux tendons présents.
+              <br>
+              L’approche dans le plan pourrait être préférable, surtout si le nerf ulnaire est à bloquer en même temps que le nerf médian, pour faire les deux avec une seule ponction. Entourer le nerf d’une petite quantité d’AL ( maximum 5 ml  
+              <br><br>
+              <b>Bloc du nerf ulnaire</b>
+              <br>
+              Placer la sonde en position transverse sur la moitié inféro-interne de l’avant-bras. Identifier l’artère ulnaire accolé au nerf ulnaire dans la partie distale de l’avant-bras.
+              <br>
+              En remontant la sonde en direction du coude, l’artère se détache du nerf, cela correspond à la zone entre le tiers inférieur et le tiers supérieur de l’avant-bras. Le nerf ulnaire se présente comme une structure hyperéchogène, de forme triangulaire ou arrondie entre le plans superficiel et profond des muscles.
+              <br>
+              L’endroit optimal pour entourer le nerf d’une petite quantité d’AL (maximum 5 ml), dans le plan, notamment si on fait le bloc du nerf médian en même temps, ou hors plan, se situe au niveau ou le nerf est tout juste séparé de son artère satellite car il devient plus profond en se dirigeant vers le coude.
+              <br><br>
+              <b>Bloc du nerf radial</b>
+              <br>
+              Abord proximal : placer la sonde en position transverse sur la moitié supéro-externe de l’avant-bras, identifier le radius et le nerf radial, hyperéchogène entre les deux groupes musculaires.
+              <br>
+              Identifier l’artère radiale au niveau du poignet, repérer le nerf radial, hyperéchogène, accolé à celle-ci.
+              <br>  
+              Entourer le nerf d’une petite quantité d’AL (maximum 5 ml).
+            </ion-card-content>
+          </ion-card>
+    
+          <ion-card color="warning">
+            <ion-card-header (click)="togglePosologie()">
+              Posologie
+              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownPosologie">
+              - A visée analgésique, Ropivacaïne 2 mg/mL, 0,2 mg/kg soit 0,1 mL/kg. 
+            </ion-card-content>
+          </ion-card>
+    
+            <!--
+            <ion-item>
+              <ion-label color="dark-turquoise">Imagerie  
+                <div style="float:right ; margin-right:20px">
+                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>
+                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>
+              </div>
+              </ion-label>
+            </ion-item>
+            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">
+            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">
+            -->
 
-</ion-content>
+    </ion-content>

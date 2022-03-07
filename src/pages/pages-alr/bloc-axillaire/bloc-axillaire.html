@@ -8,48 +8,82 @@
    <br>
  
     </ion-header>
+    
+        <ion-content>
+    
+          <ion-card color="turquoise-fonce">
+            <ion-card-header (click)="toggleIndications()">
+              Indications
+              <ion-icon *ngIf="!isShownIndications" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownIndications" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownIndications"> 
+              <ul>
+                <li>Chirurgie du coude, en associant le bloc du cutané médial du bras.</li>
+                <li>Chirurgie de l'avant-bras.</li>
+                <li>Chirurgie de la main.</li>
+                </ul> 
+            </ion-card-content>
+          </ion-card>
 
-    <ion-content>
+          <ion-card color="tertiary">
+            <ion-card-header (click)="toggleAnatomie()">Rappels d'anatomie
+              <ion-icon *ngIf="!isShownAnatomie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownAnatomie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownAnatomie">
+              Les variations anatomiques de la région axillaire sont fréquentes. 
+              <br>
+              Dans une étude associant l'échographie à la neurostimulation réalisée chez 153 patients, les variations anatomiques de la région peuvent se résumer de la manière suivante chez 90% des patients, par rapport à l'artère axillaire : 
+              <ul>
+                <li>Le nerf radial se situe entre 3h et 6h,</li>
+                <li>Le nerf ulnaire se situe entre midi et 3h,</li>
+                <li>le nerf médian se situe entre 9h et midi,</li>
+                <li>le nerf musculo-cutané se situe entre 7h et 9h. </li>
+              </ul>           
+            </ion-card-content>
+          </ion-card>
+    
+          <ion-card>
+            <ion-card-header (click)="toggleTechnique()">
+              Technique
+              <ion-icon *ngIf="!isShownTechnique" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownTechnique" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownTechnique" style="text-align: justify;">
+              Bloc échoguidé utilisant la sonde haute fréquence large.
+              <br>
+              Installation du patient en décubitus dorsal, le bras en abduction à 90°.
+              <br>
+              Poser la sonde en position transverse dans le creux axillaire, contre le muscle grand pectoral. Identifier les structures : artère axillaire pulsative, veines axillaires compressibles, tendon conjoint des muscles grand dorsal et grand rond en dessous de l'artère.
+              <br>
+              Le nerf radial est niché entre l'artère et le tendon conjoint, le nerf ulnaire en position médiale, au dessus de l'artère, le nerf médian en position latérale au dessus de l'artère. Le nerf musculo-cutné est situé entre le biceps brachial et le muscle coracobrachial. 
+              La ponction <i>in plane</i> est préférable, en direction postérieure à partir du bord antérieur de la sonde d'échographie.
+            </ion-card-content>
+          </ion-card>
+    
+          <ion-card color="warning">
+            <ion-card-header (click)="togglePosologie()">
+              Posologie
+              <ion-icon *ngIf="!isShownPosologie" class="OpenCloseIcon" name="open"  style="zoom:0.9"></ion-icon>
+              <ion-icon *ngIf="isShownPosologie" class="OpenCloseIcon" name="close" style="zoom:0.9"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="isShownPosologie">
+              - A visée analgésique, Ropivacaïne 2 mg/mL, 1 mg/kg soit 0,5 mL/kg. 
+            </ion-card-content>
+          </ion-card>
+    
+            <!--
+            <ion-item>
+              <ion-label color="dark-turquoise">Imagerie  
+                <div style="float:right ; margin-right:20px">
+                <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>
+                <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>
+              </div>
+              </ion-label>
+            </ion-item>
+            <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">
+            <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">
+            -->
 
-      <ion-card color="turquoise-fonce">
-        <ion-card-content>  Indications : 
-          <p class="dilutionDrogueInduction"> - Chirurgie du coude, en associant le bloc du cutané médial du bras.</p> 
-          <p class="dilutionDrogueInduction"> - Chirurgie de l'avant-bras.</p>
-          <p class="dilutionDrogueInduction"> - Chirurgie de la main.</p></ion-card-content>
-      </ion-card>
-        <ion-item><ion-label color="dark-turquoise">Technnique</ion-label></ion-item>
-          <div padding>
-            <ul>
-              <li>Echoguidé : sonde haute fréquence large ou "club de Golf" ;</li>
-              <li>Repérage des muscles de la paroi abdominale, latéralement et au dessus de l'ombilic ; </li>
-              <li>Ponction <i>in plane</i> latéro-médiale permettant de positionner l'aiguille en arrière de l'oblique interne et en avant du transverse</li>
-            </ul>
-            <hr>
-          </div>
-          
-        <ion-item><ion-label color="dark-turquoise">Posologie</ion-label></ion-item>
-        <ul class="comment">
-          <li>Ropivacaïne 2 mg/mL jusqu'à 6 ans et 30 kg, 0,5 mL/kg/côté</li>
-          <li>Ropivacaïne 3,75 mg/mL au-delà de 6 ans et 30 kg, 0,5 mL/kg/côté</li>
-        </ul> 
-        <div padding>       
-          <div padding class="patientALR">
-            Pour mon patient 
-            <br>
-            Enfant de <span *ngIf="AgeNum <= 24">{{AgeNum}} mois</span><span *ngIf="AgeNum > 24">{{ageLecture}} ans</span> et {{PoidsNum}} kg
-            <br><b>
-            <span *ngIf="AgeNum <= 72 || PoidsNum <=30">Ropivacaïne 2 mg/mL : {{PoidsNum/2}} mL/côté</span>
-            <span *ngIf="AgeNum > 72 && PoidsNum > 30">Ropivacaïne 3,75 mg/mL : {{PoidsNum/2}} mL/côté</span></b>
-        </div></div>
-        
-        <ion-item>
-          <ion-label color="dark-turquoise">Imagerie  
-            <div style="float:right ; margin-right:20px">
-            <button ion-button color="dark-turquoise" *ngIf="!hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye"></ion-icon></button>
-            <button ion-button color="dark-turquoise" *ngIf="hasLegend" outline round small (click)="toggleLegend()"><ion-icon color="dark-turquoise" name="eye-off"></ion-icon></button>
-          </div>
-          </ion-label>
-        </ion-item>
-        <img *ngIf="!hasLegend" src="assets/imgs/tap_nolegende.png">
-        <img *ngIf="hasLegend" src="assets/imgs/tap_legende.png">
     </ion-content>

@@ -1,4 +1,27 @@
 import { Injectable } from '@angular/core';
+import { Storage } from '@ionic/storage';
+
+import { TapBlockPage } from '../../pages/pages-alr/tap-block/tap-block';
+import { PeriduralePage } from '../../pages/pages-alr/peridurale/peridurale';
+import { BlocGrandsDroitsPage } from '../../pages/pages-alr/bloc-grands-droits/bloc-grands-droits';
+import { GeneralitesAlrPage } from '../../pages/pages-alr/generalites-alr/generalites-alr';
+import { BlocMaxillairePage } from '../../pages/pages-alr/bloc-maxillaire/bloc-maxillaire';
+import { BlocTronculaireAbPage } from '../../pages/pages-alr/bloc-tronculaire-ab/bloc-tronculaire-ab';
+import { BlocInterCostoBrachialPage } from '../../pages/pages-alr/bloc-inter-costo-brachial/bloc-inter-costo-brachial';
+import { BlocAxillairePage } from '../../pages/pages-alr/bloc-axillaire/bloc-axillaire';
+import { BlocSupraClaviculairePage } from '../../pages/pages-alr/bloc-supra-claviculaire/bloc-supra-claviculaire';
+import { BlocInterScaleniquePage } from '../../pages/pages-alr/bloc-inter-scalenique/bloc-inter-scalenique';
+import { BlocNerfSaphenePage } from '../../pages/pages-alr/bloc-nerf-saphene/bloc-nerf-saphene';
+import { BlocSciatiquePoplitePage } from '../../pages/pages-alr/bloc-sciatique-poplite/bloc-sciatique-poplite';
+import { BlocSciatiqueSousGlutealPage } from '../../pages/pages-alr/bloc-sciatique-sous-gluteal/bloc-sciatique-sous-gluteal';
+import { BlocNerfObturateurPage } from '../../pages/pages-alr/bloc-nerf-obturateur/bloc-nerf-obturateur';
+import { BlocCanalAdducteursPage } from '../../pages/pages-alr/bloc-canal-adducteurs/bloc-canal-adducteurs';
+import { BlocFemoralPage } from '../../pages/pages-alr/bloc-femoral/bloc-femoral';
+import { PengBlocPage } from '../../pages/pages-alr/peng-bloc/peng-bloc';
+import { CutaneLateralCuissePage } from '../../pages/pages-alr/cutane-lateral-cuisse/cutane-lateral-cuisse';
+import { BlocPudendalPage } from '../../pages/pages-alr/bloc-pudendal/bloc-pudendal';
+import { BlocPenienPage } from '../../pages/pages-alr/bloc-penien/bloc-penien';
+
 
 /*
 Generated class for the ServiceDataProvider provider.
@@ -15,9 +38,9 @@ public chirurgie : any = [];
 
 public ALRprotocole : any = []; 
 
+public pagesALR : any = []; 
 
-constructor() {
-
+constructor(public storage : Storage) {
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -31,6 +54,24 @@ this.ALRprotocole = [
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////CHIRURGIE ORTHOPEDIQUE//////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
+{ isShown: false, 
+  intitule: "Creation de fistule artério-veineuse (FAV)",
+  specialite : "Orthopedie",
+  commentaire : "Le bloc axillaire peut être utilisé à visée anesthésique chez l'adolescent acceptant la technique. Il doit être systématiquement proposé à visée analgésique pour les créations de fistules sous anesthésie générale.",
+  
+  recommandationALR : "Recommandée", 
+  techniqueproposeeA : "Bloc axillaire", 
+  commentairetechniqueA : "Administrer la déxaméthasone au moment de la réalisation du bloc pour optimiser la durée d'action.",
+  produitALR1A : "Ropivacaïne à visée analgésique",
+  produitALR2A : "Mépivacaïne à visée anesthésique",
+  adjuvantALRA : "Clonidine", 
+  
+  techniqueproposeeB : "", 
+  commentairetechniqueB : "",
+  produitALR1B : "",
+  produitALR2B : "",
+  adjuvantALRB : "",},
+
 
 { isShown: false, 
   intitule: "Fracture de tuberosite tibiale anterieure (TTA)",
@@ -1302,7 +1343,7 @@ adjuvantALRB : "",},
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 { isShown: false, 
-intitule: "Pancréatectomie céphalique",
+intitule: "Pancreatectomie cephalique",
 specialite : "Chirurgie digestive",
 commentaire : "Discuter avec l'opérateur et selon l'âge et la balance bénéfice risque la faisabilité de l'une ou l'autre des techniques.",
 
@@ -1545,20 +1586,20 @@ adjuvantALRB : "Clonidine",},
 { isShown: false, 
 intitule: "Hernie inguinale",
 specialite : "Chirurgie digestive",
-commentaire : "",
+commentaire : "Rachianesthésie envisageable uniquement pour les nouveaux-nés de moins de 5kg",
 
 recommandationALR : "Recommandée", 
-techniqueproposeeA : "Bloc ilio-inguinal ipsilatéral", 
-commentairetechniqueA : "Pour les chirurgies sous anesthésie générale.",
-produitALR1A : "Ropivacaïne",
-produitALR2A : "Lévobupivacaïne",
-adjuvantALRA : "Clonidine", 
+techniqueproposeeA : "Rachianesthésie", 
+commentairetechniqueA : "Chez le nouveau-né de moins de 5 kg ou chez le grand enfant.",
+produitALR1A : "Bupivacaïne",
+produitALR2A : "",
+adjuvantALRA : "", 
 
-techniqueproposeeB : "Rachianesthésie", 
-commentairetechniqueB : "Envisageable uniquement chez le nouveau-né avant 5 kg ou chez le grand enfant.",
-produitALR1B : "Bupivacaïne",
-produitALR2B : "",
-adjuvantALRB : "",},
+techniqueproposeeB : "Bloc ilio-inguinal", 
+commentairetechniqueB : "Pour les chirurgies sous anesthésie générale",
+produitALR1B : "Ropivacaïne",
+produitALR2B : "Lévobupivacaïne",
+adjuvantALRB : "Clonidine",},
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1999,7 +2040,7 @@ adjuvantALRB : "",},
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 { isShown: false, 
-intitule: "Trachéotomie",
+intitule: "Tracheotomie",
 specialite : "Chirurgie ORL",
 commentaire : "",
 
@@ -2158,7 +2199,7 @@ adjuvantALRB : "",},
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 { isShown: false, 
-intitule: "Cure de fente palatine",
+intitule: "Cure de fente velaire ou palatine (veloplastie)",
 specialite : "Chirurgie ORL",
 commentaire : "Discuter avec l'opérateur la balance bénéfice-risque d'une ALR en tenant compte de l'emplacement de la fente (antérieure ou postérieure).",
 
@@ -2178,7 +2219,7 @@ adjuvantALRB : "",},
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 { isShown: false, 
-intitule: "Cure de fente labiale et chéiloplastie",
+intitule: "Cure de fente labiale et cheiloplastie",
 specialite : "Chirurgie ORL",
 commentaire : "",
 
@@ -6845,7 +6886,6 @@ delaiReinjectionATB3 : "Réinjection selon bactériologie, toutes les 12h",
 
 ];
 
-}
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -6872,6 +6912,351 @@ delaiReinjectionATB3 : "Réinjection selon bactériologie, toutes les 12h",
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
+
+this.pagesALR = [
+
+  { 
+    titre : "Anesthésie péridurale (APD)", 
+    soustitre : "Pose de cathéter d'anesthésie péridurale lombaire ou thoracique",
+    APD: true,  
+    objectif1 : "analgésique", 
+    page : PeriduralePage,
+  },
+
+  { 
+    titre : "Bloc axillaire (BAX)", 
+    soustitre : "Bloc du plexus brachial au creux axillaire" , 
+    page : BlocAxillairePage,
+
+    objectif1 : "analgésique",  
+    SingleShot: true, 
+    KTPN: true, 
+    produitSSAG1: "Ropivacaïne 2 mg/mL",
+    posologieSSAG1texte : "0,5 mL/kg", 
+    posologieSSAG1 : 0.5, 
+    produitSSAG2 : "", 
+    posologieSSAG2 : "", 
+
+    objectif2: "anesthésique (adolescent seulement)",
+    produitSSAN1: "Mépivacaïne 10 mg/mL", 
+    posologieSSAN1texte : "0,3 mL/kg",
+    posologieSSAN1 : 0.3, 
+    produitSSAN2 : "", 
+    posologieSSAN2 : "",
+    },
+
+  { 
+    titre : "Bloc cutané latéral de cuisse (CLC)", 
+    soustitre : "Bloc du nerf cutané latéral de cuisse" , 
+    page :CutaneLateralCuissePage, 
+    objectif1 : "analgésique",  
+    SingleShot: true, 
+    KTPN: true, 
+    produitSSAG1: "Ropivacaïne 2 mg/mL",
+    posologieSSAG1texte : "0,5 mL/kg",  
+    posologieSSAG1 : 0.5, 
+    produitSSAG2 : "", 
+    posologieSSAG2 : "", 
+  },
+  
+  { 
+    titre : "Bloc des grands droits" , 
+    soustitre : "Bloc des muscles grands droits abdominaux" , 
+    page : BlocGrandsDroitsPage,
+    objectif1 : "analgésique (uni ou bilatéral)",  
+    SingleShot: true, 
+    KTPN: true, 
+    produitSSAG1: "Ropivacaïne 2 mg/mL", 
+    posologieSSAG1texte : "0,3 mL/kg", 
+    posologieSSAG1 : 0.3, 
+    produitSSAG2 : "", 
+    posologieSSAG2 : "", 
+  },
+
+  { 
+    titre : "Bloc du canal des adducteurs (FCA)", 
+    soustitre : "Bloc du nerf fémoral au canal des adducteurs" , 
+    page : BlocCanalAdducteursPage,
+    objectif1 : "analgésique",  
+    SingleShot: true, 
+    KTPN: true, 
+    produitSSAG1: "Ropivacaïne 2 mg/mL", 
+    posologieSSAG1texte : "0,5 mL/kg", 
+    posologieSSAG1 : 0.5, 
+    produitSSAG2 : "", 
+    posologieSSAG2 : "", 
+  
+    objectif2: "anesthésique (adolescent seulement)",
+    produitSSAN1: "Mépivacaïne 10 mg/mL", 
+    posologieSSAN1texte : "0,3 mL/kg",
+    posologieSSAN1 : 0.3, 
+    produitSSAN2 : "", 
+    posologieSSAN2 : "",
+  },
+
+  { 
+    titre : "Bloc fémoral", 
+    soustitre : "Bloc du nerf fémoral au triangle de Scarpa", 
+    page : BlocFemoralPage,
+    objectif1 : "analgésique",  
+    SingleShot: true, 
+    KTPN: true, 
+    produitSSAG1: "Ropivacaïne 2 mg/mL", 
+    posologieSSAG1texte : "0,5 mL/kg", 
+    posologieSSAG1 : 0.5, 
+    produitSSAG2 : "", 
+    posologieSSAG2 : "", 
+
+    objectif2: "anesthésique (adolescent seulement)",
+    produitSSAN1: "Mépivacaïne 10 mg/mL", 
+    posologieSSAN1texte : "0,3 mL/kg",
+    posologieSSAN1 : 0.3, 
+    produitSSAN2 : "", 
+    posologieSSAN2 : "",
+    },
+
+  { 
+    titre : "Bloc intercostobrachial", 
+    soustitre : "Bloc des nerfs intercostobrachiaux ou cutané médial du bras et de l'avant-bras" , 
+    page : BlocInterCostoBrachialPage,
+    objectif1 : "analgésique en complément du bloc axillaire",
+  },
+
+  { 
+    titre : "Bloc interscalénique (BIS)", 
+    soustitre :"Bloc du plexus brachial au niveau interscalénique" , 
+    page : BlocInterScaleniquePage,
+    objectif1 : "analgésique",  
+    SingleShot: true, 
+    KTPN: true, 
+    produitSSAG1: "Ropivacaïne 2 mg/mL", 
+    posologieSSAG1texte : "0,4 mL/kg", 
+    posologieSSAG1 : 0.4, 
+    produitSSAG2 : "", 
+    posologieSSAG2 : "", 
+  },
+
+  { 
+    titre : "Bloc maxillaire (V-2)" , 
+    soustitre : "Bloc de la branche maxillaire (2) du nerf trijumeau", 
+    page : BlocMaxillairePage,
+    objectif1 : "analgésique (bilatéral)",  
+    SingleShot: true, 
+    KTPN: true, 
+    produitSSAG1: "Ropivacaïne 2 mg/mL", 
+    posologieSSAG1texte : "0,3 mL/kg/côté", 
+    posologieSSAG1 : 0.3, 
+    produitSSAG2 : "", 
+    posologieSSAG2 : "", 
+   },
+
+  { 
+    titre : "Bloc obturateur", 
+    soustitre : "Bloc du nerf obturateur", 
+    page : BlocNerfObturateurPage,
+    objectif1 : "analgésique",  
+    SingleShot: true, 
+    KTPN: true, 
+    produitSSAG1: "Ropivacaïne 2 mg/mL", 
+    posologieSSAG1texte : "0,5 mL/kg", 
+    posologieSSAG1 : 0.5, 
+    produitSSAG2 : "", 
+    posologieSSAG2 : "", 
+   },
+
+  { 
+    titre : "Bloc pénien" , 
+    soustitre : "Bloc des nerfs péniens" , 
+    page : BlocPenienPage,
+    objectif1 : "analgésique (bilatéral)",  
+    SingleShot: true, 
+    KTPN: true, 
+    produitSSAG1: "Ropivacaïne 2 mg/mL",
+    posologieSSAG1texte : "0,1 mL/kg/côté",  
+    posologieSSAG1 : 0.1, 
+    produitSSAG2 : "", 
+    posologieSSAG2 : "", 
+  },
+
+  { 
+    titre : "Bloc pudendal" , 
+    soustitre : "Bloc du nerf pudendal par voie transglutéale" , 
+    page : BlocPudendalPage,
+    objectif1 : "analgésique (bilatéral)",  
+    SingleShot: true, 
+    KTPN: true, 
+    produitSSAG1: "Ropivacaïne 2 mg/mL", 
+    posologieSSAG1texte : "0,2 mL/kg/côté", 
+    posologieSSAG1 : 0.2, 
+    produitSSAG2 : "", 
+    posologieSSAG2 : "", 
+  },
+
+  { 
+    titre : "Bloc saphène", 
+    soustitre :"Bloc du nerf saphène à la jambe" , 
+    page : BlocNerfSaphenePage,
+    objectif1 : "analgésique",  
+    SingleShot: true, 
+    KTPN: true, 
+    produitSSAG1: "Ropivacaïne 2 mg/mL", 
+    posologieSSAG1texte : "0,5 mL/kg", 
+    posologieSSAG1 : 0.5, 
+    produitSSAG2 : "", 
+    posologieSSAG2 : "", 
+
+    objectif2: "anesthésique (adolescent seulement)",
+    produitSSAN1: "Mépivacaïne 10 mg/mL", 
+    posologieSSAN1texte : "0,3 mL/kg",
+    posologieSSAN1 : 0.3, 
+    produitSSAN2 : "", 
+    posologieSSAN2 : "",
+  },
+
+  {
+     titre : "Bloc sciatique poplité (BSP)", 
+     soustitre : "Bloc du nerf sciatique au niveau du creux poplité" , 
+     page : BlocSciatiquePoplitePage,
+     objectif1 : "analgésique",  
+     SingleShot: true, 
+     KTPN: true, 
+     produitSSAG1: "Ropivacaïne 2 mg/mL", 
+     posologieSSAG1texte : "0,5 mL/kg", 
+     posologieSSAG1 : 0.5, 
+     produitSSAG2 : "", 
+     posologieSSAG2 : "", 
+
+     objectif2: "anesthésique (adolescent seulement)",
+     produitSSAN1: "Mépivacaïne 10 mg/mL", 
+     posologieSSAN1texte : "0,3 mL/kg",
+     posologieSSAN1 : 0.3, 
+     produitSSAN2 : "", 
+     posologieSSAN2 : "",
+    },
+
+  { 
+    titre : "Bloc sciatique sous glutéal (BSG)", 
+    soustitre : "Bloc du nerf sciatique par l'approche sous glutéale" , 
+    page : BlocSciatiqueSousGlutealPage,
+    objectif1 : "analgésique",  
+    SingleShot: true, 
+    KTPN: true, 
+    produitSSAG1: "Ropivacaïne 2 mg/mL", 
+    posologieSSAG1texte : "0,5 mL/kg", 
+    posologieSSAG1 : 0.5, 
+    produitSSAG2 : "", 
+    posologieSSAG2 : "", 
+
+    objectif2: "anesthésique (adolescent seulement)",
+    produitSSAN1: "Mépivacaïne 10 mg/mL", 
+    posologieSSAN1texte : "0,3 mL/kg",
+    posologieSSAN1 : 0.3, 
+    produitSSAN2 : "", 
+    posologieSSAN2 : "",
+    mepivacaine10:true,
+  },
+
+  { 
+    titre : "Bloc supra-claviculaire (BSC)", 
+    soustitre : "Bloc du plexus brachial à l'étage supra-claviculaire" , 
+    page : BlocSupraClaviculairePage,
+    objectif1 : "analgésique",  
+    SingleShot: true, 
+    KTPN: true, 
+    produitSSAG1: "Ropivacaïne 2 mg/mL", 
+    posologieSSAG1texte : "0,5 mL/kg", 
+    posologieSSAG1 : 0.5, 
+    produitSSAG2 : "", 
+    posologieSSAG2 : "", 
+
+    objectif2: "anesthésique (adolescent seulement)",
+    produitSSAN1: "Mépivacaïne 10 mg/mL", 
+    posologieSSAN1texte : "0,3 mL/kg",
+    posologieSSAN1 : 0.3, 
+    produitSSAN2 : "", 
+    posologieSSAN2 : "",
+    mepivacaine10:true,
+  },
+
+  { 
+    titre : "Blocs tronculaires", 
+    soustitre : "Bloc du nerf médian, radial ou ulnaire à l'avant-bras" , 
+    page : BlocTronculaireAbPage,
+    objectif1 : "analgésique",  
+    SingleShot: true, 
+    KTPN: true, 
+    produitSSAG1: "Ropivacaïne 2 mg/mL", 
+    posologieSSAG1texte : "0,2 mL/kg", 
+    posologieSSAG1 : 0.2, 
+    produitSSAG2 : "", 
+    posologieSSAG2 : "", 
+
+    objectif2: "anesthésique (adolescent seulement)",
+    produitSSAN1: "Mépivacaïne 10 mg/mL", 
+    posologieSSAN1texte : "0,2 mL/kg",
+    posologieSSAN1 : 0.2, 
+    produitSSAN2 : "", 
+    posologieSSAN2 : "",
+
+  },
+
+  { 
+    titre : "PENG Bloc", 
+    soustitre : "Bloc obturateur par voie sous pectinéale (PEricapsular Nerve Group)" , 
+    page : PengBlocPage,
+    objectif1 : "analgésique",  
+    SingleShot: true, 
+    KTPN: true, 
+    produitSSAG1: "Ropivacaïne 2 mg/mL", 
+    posologieSSAG1texte : "0,5 mL/kg", 
+    posologieSSAG1 : 0.5, 
+    produitSSAG2 : "", 
+    posologieSSAG2 : "", 
+   },
+
+  { 
+    titre : "TAP bloc" , 
+    soustitre : "Transversus Abdominis Plane Block", 
+    page : TapBlockPage, 
+    objectif1 : "analgésique (uni ou bilatéral)",  
+    SingleShot: true, 
+    KTPN: true, 
+    produitSSAG1: "Ropivacaïne 2 mg/mL", 
+    posologieSSAG1texte : "0,5 mL/kg/côté", 
+    posologieSSAG1 : 0.5, 
+    produitSSAG2 : "", 
+    posologieSSAG2 : "", 
+  },
+]; 
+
+
+}
+
+
+
+// traitement des éléments pour technique d'ALR
+
+orderBlocs(){
+  const sortedBlocs = this.pagesALR.sort((a, b) => a.intitule > b.intitule ? 1 : -1);
+  const groupedBlocs = sortedBlocs.reduce((groups, blocs:any) => {
+  const letterBlocs = blocs.titre.charAt(0);
+  
+  groups[letterBlocs] = groups[letterBlocs] || [];
+  groups[letterBlocs].push(blocs);
+  
+  return groups;}, {});
+  
+  const result = Object.keys(groupedBlocs).map(key => ({key, chirurgie: groupedBlocs[key]}));
+  };
+  
+ 
+  filterBloc(searchTerm) {
+  return this.pagesALR.filter(bloc => {
+  return bloc.titre
+  .toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 ;
+  });
+  };
+
 
 // traitement des éléments pour recommandations ALR
 orderALR(){
@@ -6961,6 +7346,11 @@ return item.indication
 .toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 ;
 });
 } ;
+
+
+
+
+
 
 
 };
